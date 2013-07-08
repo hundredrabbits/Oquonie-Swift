@@ -72,10 +72,55 @@
                                     <action selector="moveBR:" destination="2" eventType="touchUpInside" id="Oa5-CH-ATc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="9gx-Ca-BCQ" userLabel="floor11">
+                                <rect key="frame" x="91" y="237" width="139" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="8Dr-bW-Pwg" userLabel="floor01">
+                                <rect key="frame" x="90" y="237" width="139" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Pap-re-eJt" userLabel="floor-11">
+                                <rect key="frame" x="90" y="237" width="139" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="4zb-7k-bnm" userLabel="floor10">
+                                <rect key="frame" x="90" y="237" width="139" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="JCv-bJ-j64" userLabel="floor00">
+                                <rect key="frame" x="90" y="237" width="139" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="gRy-sj-ySu" userLabel="floor-1-0">
+                                <rect key="frame" x="90" y="237" width="139" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="NB5-gg-G9z" userLabel="floor1-1">
+                                <rect key="frame" x="90" y="237" width="139" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="7S7-zo-KJe" userLabel="floor0-1">
+                                <rect key="frame" x="90" y="237" width="139" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="ixp-fE-lfr" userLabel="floor-1-1">
+                                <rect key="frame" x="90" y="237" width="139" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="floor00" destination="JCv-bJ-j64" id="4da-uc-oBG"/>
+                        <outlet property="floor01" destination="8Dr-bW-Pwg" id="SJ8-8F-vvY"/>
+                        <outlet property="floor0e" destination="7S7-zo-KJe" id="N16-nY-8c6"/>
+                        <outlet property="floor10" destination="4zb-7k-bnm" id="lK6-lc-78v"/>
+                        <outlet property="floor11" destination="9gx-Ca-BCQ" id="M4n-zb-YeG"/>
+                        <outlet property="floor1e" destination="NB5-gg-G9z" id="Iyc-2m-Vns"/>
+                        <outlet property="floore0" destination="gRy-sj-ySu" id="zbo-9Z-Ru8"/>
+                        <outlet property="floore1" destination="Pap-re-eJt" id="QGi-CL-I2q"/>
+                        <outlet property="flooree" destination="ixp-fE-lfr" id="ltB-2i-Fi7"/>
                         <outlet property="moveBL" destination="ue8-e5-uKv" id="IQc-yF-75T"/>
                         <outlet property="moveBR" destination="hdX-gI-9Qt" id="jZG-Pv-WGO"/>
                         <outlet property="moveTL" destination="0lD-p4-yOS" id="8Gx-DJ-26X"/>
@@ -94,6 +139,15 @@
                 <relationship kind="action" name="moveBR:"/>
                 <relationship kind="action" name="moveTL:"/>
                 <relationship kind="action" name="moveTR:"/>
+                <relationship kind="outlet" name="floor00" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor01" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor0e" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor10" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor11" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor1e" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floore0" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floore1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="flooree" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="moveBL" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="moveBR" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="moveTL" candidateClass="UIButton"/>

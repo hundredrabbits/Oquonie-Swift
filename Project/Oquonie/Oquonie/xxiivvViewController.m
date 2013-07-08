@@ -35,8 +35,6 @@
 }
 
 
-
-
 - (IBAction)moveTL:(id)sender {
 	[self moveRouter:1 :0];
 }
