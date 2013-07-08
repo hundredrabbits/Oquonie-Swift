@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03BBFAAC178A9E4E00E79C3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BBFAAB178A9E4E00E79C3D /* UIKit.framework */; };
+		03BBFAAE178A9E4E00E79C3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BBFAAD178A9E4E00E79C3D /* Foundation.framework */; };
+		03BBFAB0178A9E4E00E79C3D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BBFAAF178A9E4E00E79C3D /* CoreGraphics.framework */; };
+		03BBFAB6178A9E4E00E79C3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFAB4178A9E4E00E79C3D /* InfoPlist.strings */; };
+		03BBFAB8178A9E4E00E79C3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BBFAB7178A9E4E00E79C3D /* main.m */; };
+		03BBFABC178A9E4E00E79C3D /* xxiivvAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BBFABB178A9E4E00E79C3D /* xxiivvAppDelegate.m */; };
+		03BBFABE178A9E4E00E79C3D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFABD178A9E4E00E79C3D /* Default.png */; };
+		03BBFAC0178A9E4E00E79C3D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFABF178A9E4E00E79C3D /* Default@2x.png */; };
+		03BBFAC2178A9E4E00E79C3D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFAC1178A9E4E00E79C3D /* Default-568h@2x.png */; };
+		03BBFAC5178A9E4E00E79C3D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFAC3178A9E4E00E79C3D /* MainStoryboard.storyboard */; };
+		03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03BBFAA8178A9E4E00E79C3D /* Oquonie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oquonie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03BBFAAB178A9E4E00E79C3D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		03BBFAAD178A9E4E00E79C3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		03BBFAAF178A9E4E00E79C3D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		03BBFAB3178A9E4E00E79C3D /* Oquonie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Oquonie-Info.plist"; sourceTree = "<group>"; };
+		03BBFAB5178A9E4E00E79C3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		03BBFAB7178A9E4E00E79C3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		03BBFAB9178A9E4E00E79C3D /* Oquonie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oquonie-Prefix.pch"; sourceTree = "<group>"; };
+		03BBFABA178A9E4E00E79C3D /* xxiivvAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xxiivvAppDelegate.h; sourceTree = "<group>"; };
+		03BBFABB178A9E4E00E79C3D /* xxiivvAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvAppDelegate.m; sourceTree = "<group>"; };
+		03BBFABD178A9E4E00E79C3D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		03BBFABF178A9E4E00E79C3D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		03BBFAC1178A9E4E00E79C3D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		03BBFAC4178A9E4E00E79C3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		03BBFAC6178A9E4E00E79C3D /* xxiivvViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xxiivvViewController.h; sourceTree = "<group>"; };
+		03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03BBFAA5178A9E4E00E79C3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03BBFAAC178A9E4E00E79C3D /* UIKit.framework in Frameworks */,
+				03BBFAAE178A9E4E00E79C3D /* Foundation.framework in Frameworks */,
+				03BBFAB0178A9E4E00E79C3D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03BBFA9F178A9E4E00E79C3D = {
+			isa = PBXGroup;
+			children = (
+				03BBFAB1178A9E4E00E79C3D /* Oquonie */,
+				03BBFAAA178A9E4E00E79C3D /* Frameworks */,
+				03BBFAA9178A9E4E00E79C3D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		03BBFAA9178A9E4E00E79C3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03BBFAA8178A9E4E00E79C3D /* Oquonie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03BBFAAA178A9E4E00E79C3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03BBFAAB178A9E4E00E79C3D /* UIKit.framework */,
+				03BBFAAD178A9E4E00E79C3D /* Foundation.framework */,
+				03BBFAAF178A9E4E00E79C3D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		03BBFAB1178A9E4E00E79C3D /* Oquonie */ = {
+			isa = PBXGroup;
+			children = (
+				03BBFABA178A9E4E00E79C3D /* xxiivvAppDelegate.h */,
+				03BBFABB178A9E4E00E79C3D /* xxiivvAppDelegate.m */,
+				03BBFAC3178A9E4E00E79C3D /* MainStoryboard.storyboard */,
+				03BBFAC6178A9E4E00E79C3D /* xxiivvViewController.h */,
+				03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */,
+				03BBFAB2178A9E4E00E79C3D /* Supporting Files */,
+			);
+			path = Oquonie;
+			sourceTree = "<group>";
+		};
+		03BBFAB2178A9E4E00E79C3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				03BBFAB3178A9E4E00E79C3D /* Oquonie-Info.plist */,
+				03BBFAB4178A9E4E00E79C3D /* InfoPlist.strings */,
+				03BBFAB7178A9E4E00E79C3D /* main.m */,
+				03BBFAB9178A9E4E00E79C3D /* Oquonie-Prefix.pch */,
+				03BBFABD178A9E4E00E79C3D /* Default.png */,
+				03BBFABF178A9E4E00E79C3D /* Default@2x.png */,
+				03BBFAC1178A9E4E00E79C3D /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03BBFAA7178A9E4E00E79C3D /* Oquonie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03BBFACB178A9E4E00E79C3D /* Build configuration list for PBXNativeTarget "Oquonie" */;
+			buildPhases = (
+				03BBFAA4178A9E4E00E79C3D /* Sources */,
+				03BBFAA5178A9E4E00E79C3D /* Frameworks */,
+				03BBFAA6178A9E4E00E79C3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Oquonie;
+			productName = Oquonie;
+			productReference = 03BBFAA8178A9E4E00E79C3D /* Oquonie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03BBFAA0178A9E4E00E79C3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = xxiivv;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = XXIIVV;
+			};
+			buildConfigurationList = 03BBFAA3178A9E4E00E79C3D /* Build configuration list for PBXProject "Oquonie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 03BBFA9F178A9E4E00E79C3D;
+			productRefGroup = 03BBFAA9178A9E4E00E79C3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03BBFAA7178A9E4E00E79C3D /* Oquonie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03BBFAA6178A9E4E00E79C3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03BBFAB6178A9E4E00E79C3D /* InfoPlist.strings in Resources */,
+				03BBFABE178A9E4E00E79C3D /* Default.png in Resources */,
+				03BBFAC0178A9E4E00E79C3D /* Default@2x.png in Resources */,
+				03BBFAC2178A9E4E00E79C3D /* Default-568h@2x.png in Resources */,
+				03BBFAC5178A9E4E00E79C3D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03BBFAA4178A9E4E00E79C3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03BBFAB8178A9E4E00E79C3D /* main.m in Sources */,
+				03BBFABC178A9E4E00E79C3D /* xxiivvAppDelegate.m in Sources */,
+				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		03BBFAB4178A9E4E00E79C3D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BBFAB5178A9E4E00E79C3D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		03BBFAC3178A9E4E00E79C3D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03BBFAC4178A9E4E00E79C3D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03BBFAC9178A9E4E00E79C3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		03BBFACA178A9E4E00E79C3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03BBFACC178A9E4E00E79C3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Oquonie/Oquonie-Prefix.pch";
+				INFOPLIST_FILE = "Oquonie/Oquonie-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		03BBFACD178A9E4E00E79C3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Oquonie/Oquonie-Prefix.pch";
+				INFOPLIST_FILE = "Oquonie/Oquonie-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03BBFAA3178A9E4E00E79C3D /* Build configuration list for PBXProject "Oquonie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03BBFAC9178A9E4E00E79C3D /* Debug */,
+				03BBFACA178A9E4E00E79C3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03BBFACB178A9E4E00E79C3D /* Build configuration list for PBXNativeTarget "Oquonie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03BBFACC178A9E4E00E79C3D /* Debug */,
+				03BBFACD178A9E4E00E79C3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03BBFAA0178A9E4E00E79C3D /* Project object */;
+}
