@@ -14,16 +14,44 @@
 
 @implementation xxiivvViewController
 
-- (void)viewDidLoad
+- (void)viewDidLoad { [super viewDidLoad]; [self start]; }
+
+- (void)didReceiveMemoryWarning { [super didReceiveMemoryWarning]; }
+
+- (void) start
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	userPositionX = 0;
+	userPositionY = 0;
 }
 
-- (void)didReceiveMemoryWarning
+
+
+- (void) moveRouter :(int)posX :(int)posY
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	NSLog(@"move: %d %d",posX,posY);
 }
+
+
+
+
+- (IBAction)moveTL:(id)sender {
+	[self moveRouter:-1 :1];
+}
+
+- (IBAction)moveTR:(id)sender {
+	[self moveRouter:1 :1];
+}
+
+- (IBAction)moveBL:(id)sender {
+	[self moveRouter:-1 :-1];
+}
+
+- (IBAction)moveBR:(id)sender {
+	[self moveRouter:1 :-1];
+}
+
+
+
+
 
 @end
