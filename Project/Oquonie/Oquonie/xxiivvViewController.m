@@ -38,19 +38,19 @@
 
 
 - (IBAction)moveTL:(id)sender {
-	[self moveRouter:-1 :1];
+	[self moveRouter:1 :0];
 }
 
 - (IBAction)moveTR:(id)sender {
-	[self moveRouter:1 :1];
+	[self moveRouter:0 :1];
 }
 
 - (IBAction)moveBL:(id)sender {
-	[self moveRouter:-1 :-1];
+	[self moveRouter:0 :-1];
 }
 
 - (IBAction)moveBR:(id)sender {
-	[self moveRouter:1 :-1];
+	[self moveRouter:-1 :0];
 }
 
 
