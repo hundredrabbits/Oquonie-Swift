@@ -30,16 +30,10 @@
 @property (strong, nonatomic) IBOutlet UIImageView *floor0e;
 @property (strong, nonatomic) IBOutlet UIImageView *flooree;
 
-
-
-
-
-
-
-
-
-
 @end
 
 int userPositionX;
 int userPositionY;
+
+CGRect	screen;
+int		screenMargin;

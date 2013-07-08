@@ -18,6 +18,7 @@
 		03BBFAC2178A9E4E00E79C3D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFAC1178A9E4E00E79C3D /* Default-568h@2x.png */; };
 		03BBFAC5178A9E4E00E79C3D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFAC3178A9E4E00E79C3D /* MainStoryboard.storyboard */; };
 		03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */; };
+		03BBFAD0178AC8D600E79C3D /* tile.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFACF178AC8D600E79C3D /* tile.1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		03BBFAC4178A9E4E00E79C3D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		03BBFAC6178A9E4E00E79C3D /* xxiivvViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xxiivvViewController.h; sourceTree = "<group>"; };
 		03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvViewController.m; sourceTree = "<group>"; };
+		03BBFACF178AC8D600E79C3D /* tile.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.1.png; path = en.assets/tile.1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				03BBFAC3178A9E4E00E79C3D /* MainStoryboard.storyboard */,
 				03BBFAC6178A9E4E00E79C3D /* xxiivvViewController.h */,
 				03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */,
+				03BBFACE178AC8C200E79C3D /* Assets */,
 				03BBFAB2178A9E4E00E79C3D /* Supporting Files */,
 			);
 			path = Oquonie;
@@ -105,6 +108,14 @@
 				03BBFAC1178A9E4E00E79C3D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03BBFACE178AC8C200E79C3D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				03BBFACF178AC8D600E79C3D /* tile.1.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 				03BBFAC0178A9E4E00E79C3D /* Default@2x.png in Resources */,
 				03BBFAC2178A9E4E00E79C3D /* Default-568h@2x.png in Resources */,
 				03BBFAC5178A9E4E00E79C3D /* MainStoryboard.storyboard in Resources */,
+				03BBFAD0178AC8D600E79C3D /* tile.1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +276,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oquonie/Oquonie-Prefix.pch";
 				INFOPLIST_FILE = "Oquonie/Oquonie-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -275,7 +289,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oquonie/Oquonie-Prefix.pch";
 				INFOPLIST_FILE = "Oquonie/Oquonie-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
