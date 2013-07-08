@@ -28,7 +28,10 @@
 
 - (void) moveRouter :(int)posX :(int)posY
 {
-	NSLog(@"move: %d %d",posX,posY);
+	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
+	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
+	
+	NSLog(@"Moved: %d %d",userPositionX, userPositionY);	
 }
 
 
