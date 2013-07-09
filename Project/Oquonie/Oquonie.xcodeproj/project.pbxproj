@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03268AE5178C1913001CE6F3 /* character.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03268AE4178C1913001CE6F3 /* character.1.png */; };
 		03BBFAAC178A9E4E00E79C3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BBFAAB178A9E4E00E79C3D /* UIKit.framework */; };
 		03BBFAAE178A9E4E00E79C3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BBFAAD178A9E4E00E79C3D /* Foundation.framework */; };
 		03BBFAB0178A9E4E00E79C3D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BBFAAF178A9E4E00E79C3D /* CoreGraphics.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03268AE4178C1913001CE6F3 /* character.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = character.1.png; path = en.assets/character.1.png; sourceTree = "<group>"; };
 		03BBFAA8178A9E4E00E79C3D /* Oquonie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oquonie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03BBFAAB178A9E4E00E79C3D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03BBFAAD178A9E4E00E79C3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -113,6 +115,7 @@
 		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				03268AE4178C1913001CE6F3 /* character.1.png */,
 				03BBFACF178AC8D600E79C3D /* tile.1.png */,
 			);
 			name = Assets;
@@ -176,6 +179,7 @@
 				03BBFAC2178A9E4E00E79C3D /* Default-568h@2x.png in Resources */,
 				03BBFAC5178A9E4E00E79C3D /* MainStoryboard.storyboard in Resources */,
 				03BBFAD0178AC8D600E79C3D /* tile.1.png in Resources */,
+				03268AE5178C1913001CE6F3 /* character.1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +319,7 @@
 				03BBFACD178A9E4E00E79C3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

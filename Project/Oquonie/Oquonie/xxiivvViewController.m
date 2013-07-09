@@ -30,26 +30,22 @@
 
 - (void) templateStart
 {
-	screen = [[UIScreen mainScreen] bounds];
-	screenMargin = screen.size.width/10;
-	int viewWidth = screen.size.width - (2*screenMargin);
-	int tileW = viewWidth/3;
-	int tileH = tileW * 0.5;
-	int centerW = (screen.size.width/2)-(tileW/2);
-	int centerH = (screen.size.height/2)-(tileH/2);
+	self.floor00.frame = [self tileLocation:0 :0 :0];
+	self.floor1e.frame = [self tileLocation:0 :-1 :1];
+	self.floore1.frame = [self tileLocation:0 :1 :-1];
 	
-	self.floor00.frame = CGRectMake(centerW, centerH, tileW, tileH);
-	self.floor1e.frame = CGRectMake(centerW-tileW, centerH, tileW, tileH);
-	self.floore1.frame = CGRectMake(centerW+tileW, centerH, tileW, tileH);
+	self.floor10.frame = [self tileLocation:0 :1 :0];
+	self.floor01.frame = [self tileLocation:0 :0 :1];
 	
-	self.floor10.frame = CGRectMake(centerW-(tileW/2), centerH-(tileH/2), tileW, tileH);
-	self.floor01.frame = CGRectMake(centerW+(tileW/2), centerH-(tileH/2), tileW, tileH);
+	self.floor0e.frame = [self tileLocation:0 :0 :-1];
+	self.floore0.frame = [self tileLocation:0 :-1 :0];
 	
-	self.floor0e.frame = CGRectMake(centerW-(tileW/2), centerH+(tileH/2), tileW, tileH);
-	self.floore0.frame = CGRectMake(centerW+(tileW/2), centerH+(tileH/2), tileW, tileH);
+	self.floor11.frame = [self tileLocation:0 :1 :1];
+	self.flooree.frame = [self tileLocation:0 :-1 :-1];
 	
-	self.floor11.frame = CGRectMake(centerW, centerH+tileH, tileW, tileH);
-	self.flooree.frame = CGRectMake(centerW, centerH-tileH, tileW, tileH);
+	// Set player sprite size at origin
+	
+	self.userPlayer.frame = [self tileLocation:1 :0 :0];
 }
 
 
@@ -59,8 +55,57 @@
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
 	
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:1.0];
+	[UIView setAnimationDelay:0];
+	self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
+	[UIView commitAnimations];
+	
 	NSLog(@"Moved: %d %d",userPositionX, userPositionY);	
 }
+
+
+
+- (CGRect) tileLocation :(int)type :(int)posX :(int)posY
+{
+	screen = [[UIScreen mainScreen] bounds];
+	screenMargin = screen.size.width/10;
+	int viewWidth = screen.size.width - (2*screenMargin);
+	int tileW = viewWidth/3;
+	int tileH = tileW * 0.5;
+	int centerW = (screen.size.width/2)-(tileW/2);
+	int centerH = (screen.size.height/2)-(tileH/2);
+	
+//	if( type == 1 ){
+//		tileW = viewWidth/3;
+//		tileH = tileW;
+//		centerH -= tileH;
+//	}
+	
+	
+	if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
+	if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW, centerH, tileW, tileH); }
+	if( posX ==-1 && posY == 1 ){ return CGRectMake(centerW+tileW, centerH, tileW, tileH); }
+	if( posX == 1 && posY == 0 ){ return CGRectMake(centerW-(tileW/2), centerH-(tileH/2), tileW, tileH); }
+	if( posX == 0 && posY == 1 ){ return CGRectMake(centerW+(tileW/2), centerH-(tileH/2), tileW, tileH); }
+	if( posX == 0 && posY ==-1 ){ return CGRectMake(centerW-(tileW/2), centerH+(tileH/2), tileW, tileH); }
+	if( posX ==-1 && posY == 0 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH/2), tileW, tileH); }
+	if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH+tileH, tileW, tileH);}
+	if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
+	
+	NSLog(@"error");
+	
+	
+	return CGRectMake(0, 0, 100, 100);
+}
+
+
+
+
+
+
+
+
 
 
 - (IBAction)moveTL:(id)sender {

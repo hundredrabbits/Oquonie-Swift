@@ -72,8 +72,8 @@
                                     <action selector="moveBR:" destination="2" eventType="touchUpInside" id="Oa5-CH-ATc"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="ixp-fE-lfr" userLabel="floorEE">
-                                <rect key="frame" x="90" y="447" width="139" height="74"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="9gx-Ca-BCQ" userLabel="floor11">
+                                <rect key="frame" x="91" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -112,10 +112,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="9gx-Ca-BCQ" userLabel="floor11">
-                                <rect key="frame" x="91" y="447" width="139" height="74"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="ixp-fE-lfr" userLabel="floorEE">
+                                <rect key="frame" x="90" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="character.1.png" id="WrE-Oy-CYa" userLabel="userPlayer">
+                                <rect key="frame" x="128" y="315" width="62" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.15236067039208157" blue="0.0" alpha="0.48999999999999999" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -134,6 +139,7 @@
                         <outlet property="moveBR" destination="hdX-gI-9Qt" id="jZG-Pv-WGO"/>
                         <outlet property="moveTL" destination="0lD-p4-yOS" id="8Gx-DJ-26X"/>
                         <outlet property="moveTR" destination="Waf-2E-WsZ" id="bh6-YL-NHQ"/>
+                        <outlet property="userPlayer" destination="WrE-Oy-CYa" id="RiC-XK-ms6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -141,6 +147,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="character.1.png" width="1280" height="1800"/>
         <image name="tile.1.png" width="1280" height="900"/>
     </resources>
     <classes>
@@ -164,6 +171,7 @@
                 <relationship kind="outlet" name="moveBR" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="moveTL" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="moveTR" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="userPlayer" candidateClass="UIImageView"/>
             </relationships>
         </class>
     </classes>

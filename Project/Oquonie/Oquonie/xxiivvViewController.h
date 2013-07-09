@@ -30,6 +30,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *floor0e;
 @property (strong, nonatomic) IBOutlet UIImageView *flooree;
 
+@property (strong, nonatomic) IBOutlet UIImageView *userPlayer;
+
 @end
 
 int userPositionX;
