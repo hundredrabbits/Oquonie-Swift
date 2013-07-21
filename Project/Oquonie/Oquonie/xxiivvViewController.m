@@ -76,11 +76,12 @@
 	int centerW = (screen.size.width/2)-(tileW/2);
 	int centerH = (screen.size.height/2)-(tileH/2);
 	
-//	if( type == 1 ){
-//		tileW = viewWidth/3;
-//		tileH = tileW;
+	if( type == 1 ){
+//		tileH = tileW+;
 //		centerH -= tileH;
-//	}
+		centerH -= tileH;
+//		tileH += tileH*0.5;
+	}
 	
 	
 	if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
