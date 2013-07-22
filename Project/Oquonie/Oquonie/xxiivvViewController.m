@@ -7,6 +7,7 @@
 //
 
 #import "xxiivvViewController.h"
+#import "xxiivvWorld.h"
 
 @interface xxiivvViewController ()
 
@@ -60,6 +61,9 @@
 	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
 	
 	self.userPlayer.frame = [self tileLocation:1 :0 :0];
+	
+	self.userPlayerChar.frame = CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height);
+	
 }
 
 
@@ -190,25 +194,27 @@
 	screen = [[UIScreen mainScreen] bounds];
 	screenMargin = screen.size.width/10;
 	viewWidth = screen.size.width - (2*screenMargin);
-
+	
+//	self.wall3r.backgroundColor = [UIColor redColor];
+	
 	if( [tile isEqual:@"R"] && [number isEqual:@"1"] ){
-		return CGRectMake( (viewWidth/2)+(viewWidth/8), viewWidth/2.5, viewWidth/3, (viewWidth/3 * 0.5)*2);
+		return CGRectMake( (screen.size.width/2), (screen.size.height/2)-(2.39*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
 	if( [tile isEqual:@"R"] && [number isEqual:@"2"] ){
-		return CGRectMake( (viewWidth/2)+(viewWidth/3.45), viewWidth/2.05, viewWidth/3, (viewWidth/3 * 0.5)*2);
+		return CGRectMake( (screen.size.width/2)+(viewWidth/6),(screen.size.height/2)-(2.14*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
 	if( [tile isEqual:@"R"] && [number isEqual:@"3"] ){
-		return CGRectMake( (viewWidth/2)+(viewWidth/2.18), viewWidth/1.74, viewWidth/3, (viewWidth/3 * 0.5)*2);
+		return CGRectMake( (screen.size.width/2)+(viewWidth/3), (screen.size.height/2)-(1.89*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
 	
 	if( [tile isEqual:@"L"] && [number isEqual:@"1"] ){
-		return CGRectMake( (viewWidth/3.4), viewWidth/2.5, viewWidth/3, (viewWidth/3 * 0.5)*2);
+		return CGRectMake( (screen.size.width/2)-((viewWidth/3)*2), (screen.size.height/2)-(1.89*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
 	if( [tile isEqual:@"L"] && [number isEqual:@"2"] ){
-		return CGRectMake( (viewWidth/7.8), viewWidth/2.05, viewWidth/3, (viewWidth/3 * 0.5)*2);
+		return CGRectMake( (screen.size.width/2)-((viewWidth/3)*1.5), (screen.size.height/2)-(2.14*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
 	if( [tile isEqual:@"L"] && [number isEqual:@"3"] ){
-		return CGRectMake( -1*(viewWidth/24), viewWidth/1.74, viewWidth/3, (viewWidth/3 * 0.5)*2);
+		return CGRectMake( (screen.size.width/2)-(viewWidth/3), (screen.size.height/2)-(2.39*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
 	
 	
