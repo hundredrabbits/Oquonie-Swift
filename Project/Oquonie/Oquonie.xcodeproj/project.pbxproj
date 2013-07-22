@@ -31,6 +31,7 @@
 		037E265C179D3E45001A1553 /* char.chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E265B179D3E45001A1553 /* char.chat.png */; };
 		037E265F179D406C001A1553 /* door.1.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E265D179D406C001A1553 /* door.1.l.png */; };
 		037E2660179D406C001A1553 /* door.1.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E265E179D406C001A1553 /* door.1.r.png */; };
+		037E2662179D4562001A1553 /* beam.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E2661179D4562001A1553 /* beam.1.png */; };
 		0385E692179CD11D006D47D6 /* char.shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0385E690179CD11D006D47D6 /* char.shadow.png */; };
 		0385E693179CD11D006D47D6 /* tile.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0385E691179CD11D006D47D6 /* tile.2.png */; };
 		03BBFAAC178A9E4E00E79C3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BBFAAB178A9E4E00E79C3D /* UIKit.framework */; };
@@ -73,6 +74,7 @@
 		037E265B179D3E45001A1553 /* char.chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char.chat.png; path = en.assets/char.chat.png; sourceTree = "<group>"; };
 		037E265D179D406C001A1553 /* door.1.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = door.1.l.png; path = en.assets/door.1.l.png; sourceTree = "<group>"; };
 		037E265E179D406C001A1553 /* door.1.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = door.1.r.png; path = en.assets/door.1.r.png; sourceTree = "<group>"; };
+		037E2661179D4562001A1553 /* beam.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beam.1.png; path = en.assets/beam.1.png; sourceTree = "<group>"; };
 		0385E690179CD11D006D47D6 /* char.shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char.shadow.png; path = en.assets/char.shadow.png; sourceTree = "<group>"; };
 		0385E691179CD11D006D47D6 /* tile.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.2.png; path = en.assets/tile.2.png; sourceTree = "<group>"; };
 		03BBFAA8178A9E4E00E79C3D /* Oquonie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oquonie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				037E2661179D4562001A1553 /* beam.1.png */,
 				037E265D179D406C001A1553 /* door.1.l.png */,
 				037E265E179D406C001A1553 /* door.1.r.png */,
 				037E2657179D3B8A001A1553 /* step.1.l.png */,
@@ -305,6 +308,7 @@
 				037E265C179D3E45001A1553 /* char.chat.png in Resources */,
 				037E265F179D406C001A1553 /* door.1.l.png in Resources */,
 				037E2660179D406C001A1553 /* door.1.r.png in Resources */,
+				037E2662179D4562001A1553 /* beam.1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

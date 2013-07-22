@@ -106,7 +106,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="8Dr-bW-Pwg" userLabel="floor01">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.3.png" id="8Dr-bW-Pwg" userLabel="floor01">
                                 <rect key="frame" x="90" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -141,6 +141,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="beam.1.png" id="cr4-gZ-HDi" userLabel="beam">
+                                <rect key="frame" x="-90" y="346" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="step.1.l.png" id="ccp-Ke-jhA" userLabel="step1">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -171,6 +175,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="beam" destination="cr4-gZ-HDi" id="Jut-rz-4En"/>
                         <outlet property="floor00" destination="JCv-bJ-j64" id="4da-uc-oBG"/>
                         <outlet property="floor01" destination="8Dr-bW-Pwg" id="SJ8-8F-vvY"/>
                         <outlet property="floor0e" destination="7S7-zo-KJe" id="N16-nY-8c6"/>
@@ -203,6 +208,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="beam.1.png" width="1280" height="2560"/>
         <image name="char.chat.png" width="640" height="640"/>
         <image name="char.shadow.png" width="200" height="141"/>
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
@@ -211,6 +217,7 @@
         <image name="step.1.r.png" width="1280" height="900"/>
         <image name="tile.1.png" width="200" height="141"/>
         <image name="tile.2.png" width="200" height="141"/>
+        <image name="tile.3.png" width="200" height="141"/>
         <image name="wall.1.l.png" width="200" height="400"/>
         <image name="wall.1.r.png" width="200" height="400"/>
     </resources>
@@ -222,6 +229,7 @@
                 <relationship kind="action" name="moveBR:"/>
                 <relationship kind="action" name="moveTL:"/>
                 <relationship kind="action" name="moveTR:"/>
+                <relationship kind="outlet" name="beam" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="floor00" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="floor01" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="floor0e" candidateClass="UIImageView"/>

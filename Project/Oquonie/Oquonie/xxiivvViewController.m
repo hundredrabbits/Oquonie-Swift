@@ -61,9 +61,10 @@
 	self.wall2l.frame = [self wallLocation:@"L" :@"2"];
 	self.wall3l.frame = [self wallLocation:@"L" :@"3"];
 	
+	self.beam.frame = [self wallLocation:@"C" :@"1"];
+	
 	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
 	self.userPlayer.frame = [self tileLocation:1 :0 :0];
-	
 	
 	self.userPlayerChar.frame = CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height);
 	
@@ -239,6 +240,11 @@
 	}
 	if( [tile isEqual:@"L"] && [number isEqual:@"3"] ){
 		return CGRectMake( (screen.size.width/2)-(viewWidth/3), (screen.size.height/2)-(2.39*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
+	}
+	
+	
+	if( [tile isEqual:@"C"] && [number isEqual:@"1"] ){
+		return CGRectMake( (screen.size.width/2)-((viewWidth/3)/2), (screen.size.height/2)-(2.39*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
 	
 	
