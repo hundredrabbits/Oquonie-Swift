@@ -50,6 +50,9 @@
 	self.floor11.frame = [self tileLocation:0 :1 :1];
 	self.flooree.frame = [self tileLocation:0 :-1 :-1];
 	
+	self.step1.frame = [self tileLocation:0 :0 :-2];
+	self.step2.frame = [self tileLocation:0 :-2 :0];	
+	
 	self.wall1r.frame = [self wallLocation:@"R" :@"1"];
 	self.wall2r.frame = [self wallLocation:@"R" :@"2"];
 	self.wall3r.frame = [self wallLocation:@"R" :@"3"];
@@ -59,8 +62,8 @@
 	self.wall3l.frame = [self wallLocation:@"L" :@"3"];
 	
 	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
-	
 	self.userPlayer.frame = [self tileLocation:1 :0 :0];
+	
 	
 	self.userPlayerChar.frame = CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height);
 	
@@ -83,6 +86,14 @@
 	[UIView setAnimationDelay:0];
 	self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
 	[UIView commitAnimations];
+	
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:0.4];
+	[UIView setAnimationDelay:0];	
+	self.userPlayerChat.frame = [self tileLocation:3:userPositionX:userPositionY];
+	[UIView commitAnimations];
+	
+	NSLog(@"%d %d",userPositionX,userPositionY);
 	
 	[self moveAnimation];
 }
@@ -173,6 +184,17 @@
 		centerW += tileW/2;
 	}
 	
+	if( type == 3 ){
+		tileH = tileH * 2;
+		if( (posX + posY) == 1 ){ centerH -= tileH*0.25; }
+		else if( (posX + posY) == 2 ){  }
+		else if( (posX + posY) == -1 ){ centerH -= tileH*0.75; }
+		else if( (posX + posY) == -2 ){ centerH -= tileH; }
+		else{ centerH -= tileH*0.5; }
+		centerH -= tileH/15;
+		centerH -= 200;
+	}
+	
 	if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
 	if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW, centerH, tileW, tileH); }
 	if( posX ==-1 && posY == 1 ){ return CGRectMake(centerW+tileW, centerH, tileW, tileH); }
@@ -182,6 +204,8 @@
 	if( posX ==-1 && posY == 0 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH/2), tileW, tileH); }
 	if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH+tileH, tileW, tileH);}
 	if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
+	if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }
+	if( posX ==-2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+tileH, tileW, tileH); }
 	
 	NSLog(@"error");
 

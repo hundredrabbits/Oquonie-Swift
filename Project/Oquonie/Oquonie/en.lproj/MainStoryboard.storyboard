@@ -141,6 +141,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="step.1.l.png" id="ccp-Ke-jhA" userLabel="step1">
+                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="step.1.r.png" id="VBQ-IO-lbI" userLabel="step2">
+                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6mA-lT-Y5D" userLabel="userPlayer">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -155,6 +163,10 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char.chat.png" id="gzI-zL-JXd" userLabel="userPlayerChat">
+                                <rect key="frame" x="100" y="242" width="120" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -172,8 +184,11 @@
                         <outlet property="moveBR" destination="hdX-gI-9Qt" id="jZG-Pv-WGO"/>
                         <outlet property="moveTL" destination="0lD-p4-yOS" id="8Gx-DJ-26X"/>
                         <outlet property="moveTR" destination="Waf-2E-WsZ" id="bh6-YL-NHQ"/>
+                        <outlet property="step1" destination="ccp-Ke-jhA" id="0BV-Hd-Cxz"/>
+                        <outlet property="step2" destination="VBQ-IO-lbI" id="z70-U0-dfN"/>
                         <outlet property="userPlayer" destination="6mA-lT-Y5D" id="ko5-8b-DCP"/>
                         <outlet property="userPlayerChar" destination="WrE-Oy-CYa" id="B0W-WK-lp5"/>
+                        <outlet property="userPlayerChat" destination="gzI-zL-JXd" id="nhL-iu-YHU"/>
                         <outlet property="userPlayerShadow" destination="lep-qp-oJt" id="tso-nO-euM"/>
                         <outlet property="wall1l" destination="Edi-gy-jH2" id="fOm-1Q-ziz"/>
                         <outlet property="wall1r" destination="2mR-4Y-reA" id="veI-EV-VRN"/>
@@ -188,8 +203,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="char.chat.png" width="640" height="640"/>
         <image name="char.shadow.png" width="200" height="141"/>
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
+        <image name="step.1.l.png" width="1280" height="900"/>
+        <image name="step.1.r.png" width="1280" height="900"/>
         <image name="tile.1.png" width="200" height="141"/>
         <image name="tile.2.png" width="200" height="141"/>
         <image name="wall.1.l.png" width="200" height="400"/>
@@ -216,8 +234,11 @@
                 <relationship kind="outlet" name="moveBR" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="moveTL" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="moveTR" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="step1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="step2" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="userPlayer" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="userPlayerChar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userPlayerChat" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="userPlayerShadow" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="wall1l" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="wall1r" candidateClass="UIImageView"/>

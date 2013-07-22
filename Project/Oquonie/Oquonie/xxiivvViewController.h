@@ -38,9 +38,13 @@
 @property (strong, nonatomic) IBOutlet UIImageView *wall2r;
 @property (strong, nonatomic) IBOutlet UIImageView *wall3r;
 
+@property (strong, nonatomic) IBOutlet UIImageView *step1;
+@property (strong, nonatomic) IBOutlet UIImageView *step2;
+
 @property (strong, nonatomic) IBOutlet UIScrollView *userPlayer;
 @property (strong, nonatomic) IBOutlet UIImageView *userPlayerChar;
 @property (strong, nonatomic) IBOutlet UIImageView *userPlayerShadow;
+@property (strong, nonatomic) IBOutlet UIImageView *userPlayerChat;
 
 @end
 
