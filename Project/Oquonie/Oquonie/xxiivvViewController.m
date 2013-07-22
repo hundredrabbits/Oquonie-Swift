@@ -66,6 +66,8 @@
 	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
 	self.userPlayer.frame = [self tileLocation:1 :0 :0];
 	
+	self.userPlayerChat.hidden = YES;
+	
 	self.userPlayerChar.frame = CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height);
 	
 }
