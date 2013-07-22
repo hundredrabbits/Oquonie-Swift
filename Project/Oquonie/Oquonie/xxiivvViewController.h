@@ -37,5 +37,10 @@
 int userPositionX;
 int userPositionY;
 
+NSString *userChar;
+NSString *userState;
+NSString *userOrientationHorizontal;
+NSString *userOrientationVertical;
+
 CGRect	screen;
 int		screenMargin;

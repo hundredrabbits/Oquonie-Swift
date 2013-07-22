@@ -22,6 +22,8 @@
 {
 	userPositionX = 0;
 	userPositionY = 0;
+	userChar = @"char1";
+	
 	
 	[self templateStart];
 	
@@ -30,6 +32,15 @@
 
 - (void) templateStart
 {
+
+	screen = [[UIScreen mainScreen] bounds];
+	screenMargin = screen.size.width/10;
+	
+	self.moveTL.frame = CGRectMake(0, 0, screen.size.width/2, screen.size.height/2);
+	self.moveTR.frame = CGRectMake(screen.size.width/2, 0, screen.size.width/2, screen.size.height/2);
+	self.moveBL.frame = CGRectMake(0, screen.size.height/2, screen.size.width/2, screen.size.height/2);
+	self.moveBR.frame = CGRectMake(screen.size.width/2, screen.size.height/2, screen.size.width/2, screen.size.height/2);
+	
 	self.floor00.frame = [self tileLocation:0 :0 :0];
 	self.floor1e.frame = [self tileLocation:0 :-1 :1];
 	self.floore1.frame = [self tileLocation:0 :1 :-1];
@@ -50,19 +61,78 @@
 
 
 
-- (void) moveRouter :(int)posX :(int)posY
+- (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
 	
+	if( (long)sender.tag == 0 ){ userOrientationHorizontal = @"l"; userOrientationVertical = @"b"; }
+	if( (long)sender.tag == 1 ){ userOrientationHorizontal = @"r"; userOrientationVertical = @"b"; }
+	if( (long)sender.tag == 2 ){ userOrientationHorizontal = @"l"; userOrientationVertical = @"f"; }
+	if( (long)sender.tag == 3 ){ userOrientationHorizontal = @"r"; userOrientationVertical = @"f"; }
+	
 	[UIView beginAnimations: @"Fade In" context:nil];
-	[UIView setAnimationDuration:1.0];
+	[UIView setAnimationDuration:0.3];
 	[UIView setAnimationDelay:0];
 	self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
 	[UIView commitAnimations];
 	
-	NSLog(@"Moved: %d %d",userPositionX, userPositionY);	
+	[self moveAnimation];
+
+	
 }
+
+- (void) moveAnimation
+{
+	userState = @"walk";
+	self.userPlayer.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"1"] ] ];
+	[NSTimer scheduledTimerWithTimeInterval:0.15 target:self selector:@selector(animator1) userInfo:nil repeats:NO];
+	[NSTimer scheduledTimerWithTimeInterval:0.30 target:self selector:@selector(animator2) userInfo:nil repeats:NO];
+}
+
+
+- (void) animator1
+{
+	userState = @"walk";
+	self.userPlayer.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"2"] ] ];
+}
+
+- (void) animator2
+{
+	userState = @"stand";
+	self.userPlayer.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"1"] ] ];
+}
+
+
+
+
+
+- (NSString *) userSpriteName :(NSString*) mod
+{
+	
+	NSString *spriteName = @"";
+	
+	if( [userState isEqual:@"walk"] ){
+		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.%@.png", userChar, userState, userOrientationHorizontal, userOrientationVertical,mod];
+	}
+	else{
+		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.png", userChar, userState, userOrientationHorizontal, userOrientationVertical];
+	}
+	
+	NSLog(@"%@",spriteName);
+
+	return spriteName;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -110,19 +180,19 @@
 
 
 - (IBAction)moveTL:(id)sender {
-	[self moveRouter:1 :0];
+	[self moveRouter:1 :0 :sender];
 }
 
 - (IBAction)moveTR:(id)sender {
-	[self moveRouter:0 :1];
+	[self moveRouter:0 :1 :sender];
 }
 
 - (IBAction)moveBL:(id)sender {
-	[self moveRouter:0 :-1];
+	[self moveRouter:0 :-1 :sender];
 }
 
 - (IBAction)moveBR:(id)sender {
-	[self moveRouter:-1 :0];
+	[self moveRouter:-1 :0 :sender];
 }
 
 

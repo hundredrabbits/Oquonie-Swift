@@ -27,7 +27,7 @@
                                     <action selector="moveTL:" destination="2" eventType="touchUpInside" id="Tlq-2K-V0q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Waf-2E-WsZ" userLabel="moveTR">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Waf-2E-WsZ" userLabel="moveTR">
                                 <rect key="frame" x="256" y="20" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -42,7 +42,7 @@
                                     <action selector="moveTR:" destination="2" eventType="touchUpInside" id="8Ra-th-AKE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ue8-e5-uKv" userLabel="moveBL">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ue8-e5-uKv" userLabel="moveBL">
                                 <rect key="frame" x="20" y="398" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -57,7 +57,7 @@
                                     <action selector="moveBL:" destination="2" eventType="touchUpInside" id="kip-bg-U6C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hdX-gI-9Qt" userLabel="moveBR">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hdX-gI-9Qt" userLabel="moveBR">
                                 <rect key="frame" x="254" y="398" width="46" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -117,7 +117,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="character.1.png" id="WrE-Oy-CYa" userLabel="userPlayer">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char1.walk.r.f.1.png" id="WrE-Oy-CYa" userLabel="userPlayer">
                                 <rect key="frame" x="128" y="315" width="62" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -146,7 +146,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="character.1.png" width="1280" height="1800"/>
+        <image name="char1.walk.r.f.1.png" width="1280" height="1800"/>
         <image name="tile.1.png" width="1280" height="900"/>
     </resources>
     <classes>
