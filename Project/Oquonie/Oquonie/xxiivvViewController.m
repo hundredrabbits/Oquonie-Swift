@@ -57,8 +57,6 @@
 	self.wall2l.frame = [self wallLocation:@"L" :@"2"];
 	self.wall3l.frame = [self wallLocation:@"L" :@"3"];
 	
-	
-	
 	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
 	
 	self.userPlayer.frame = [self tileLocation:1 :0 :0];
