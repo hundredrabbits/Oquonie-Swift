@@ -42,19 +42,30 @@
 	self.floor00.frame = [self tileLocation:0 :0 :0];
 	self.floor1e.frame = [self tileLocation:0 :-1 :1];
 	self.floore1.frame = [self tileLocation:0 :1 :-1];
-	
 	self.floor10.frame = [self tileLocation:0 :1 :0];
 	self.floor01.frame = [self tileLocation:0 :0 :1];
-	
 	self.floor0e.frame = [self tileLocation:0 :0 :-1];
 	self.floore0.frame = [self tileLocation:0 :-1 :0];
-	
 	self.floor11.frame = [self tileLocation:0 :1 :1];
 	self.flooree.frame = [self tileLocation:0 :-1 :-1];
 	
-	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
+	self.wall1r.backgroundColor = [UIColor redColor];
+	self.wall1r.frame = [self wallLocation:@"R" :@"1"];
+	self.wall2r.backgroundColor = [UIColor redColor];
+	self.wall2r.frame = [self wallLocation:@"R" :@"2"];
+	self.wall2r.backgroundColor = [UIColor redColor];
+	self.wall3r.frame = [self wallLocation:@"R" :@"3"];
 	
-	// Set player sprite size at origin
+	self.wall1l.backgroundColor = [UIColor redColor];
+	self.wall1l.frame = [self wallLocation:@"L" :@"1"];
+	self.wall2l.backgroundColor = [UIColor redColor];
+	self.wall2l.frame = [self wallLocation:@"L" :@"2"];
+	self.wall2l.backgroundColor = [UIColor redColor];
+	self.wall3l.frame = [self wallLocation:@"L" :@"3"];
+	
+	
+	
+	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
 	
 	self.userPlayer.frame = [self tileLocation:1 :0 :0];
 }
@@ -155,6 +166,17 @@
 		centerH -= tileH/15;
 	}
 	
+	if( type == 2 ){
+		tileH = tileH * 2;
+		if( (posX + posY) == 1 ){ centerH -= tileH*0.25; }
+		else if( (posX + posY) == 2 ){  }
+		else if( (posX + posY) == -1 ){ centerH -= tileH*0.75; }
+		else if( (posX + posY) == -2 ){ centerH -= tileH; }
+		else{ centerH -= tileH*0.5; }
+		centerH -= tileH/3;
+		centerW += tileW/2;
+	}
+	
 	if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
 	if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW, centerH, tileW, tileH); }
 	if( posX ==-1 && posY == 1 ){ return CGRectMake(centerW+tileW, centerH, tileW, tileH); }
@@ -171,6 +193,28 @@
 }
 
 
+- (CGRect) wallLocation :(NSString*)tile :(NSString*)number
+{
+	screen = [[UIScreen mainScreen] bounds];
+	screenMargin = screen.size.width/10;
+	viewWidth = screen.size.width - (2*screenMargin);
+
+	if( [tile isEqual:@"R"] && [number isEqual:@"1"] ){
+		return CGRectMake( (viewWidth/2)+(viewWidth/8), viewWidth/2.5, viewWidth/3, (viewWidth/3 * 0.5)*2);
+	}
+	if( [tile isEqual:@"R"] && [number isEqual:@"2"] ){
+		return CGRectMake( (viewWidth/2)+(viewWidth/3.45), viewWidth/2.05, viewWidth/3, (viewWidth/3 * 0.5)*2);
+	}
+	if( [tile isEqual:@"R"] && [number isEqual:@"3"] ){
+		return CGRectMake( (viewWidth/2)+(viewWidth/2.18), viewWidth/1.74, viewWidth/3, (viewWidth/3 * 0.5)*2);
+	}
+	
+	
+	
+	NSLog(@"error");
+	
+	return CGRectMake(0, 0, 0, 0);
+}
 
 
 

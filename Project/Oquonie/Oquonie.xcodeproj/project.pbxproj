@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		03268AE5178C1913001CE6F3 /* character.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03268AE4178C1913001CE6F3 /* character.1.png */; };
 		032D74DD179CD6840068B27E /* tile.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 032D74DC179CD6840068B27E /* tile.0.png */; };
+		032D74E1179CD7D30068B27E /* wall.0.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 032D74E0179CD7D30068B27E /* wall.0.l.png */; };
+		032D74E4179CE0130068B27E /* wall.0.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 032D74E3179CE0130068B27E /* wall.0.r.png */; };
 		037CCB52179BBAD200833EDB /* char1.stand.l.b.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB46179BBAD200833EDB /* char1.stand.l.b.png */; };
 		037CCB53179BBAD200833EDB /* char1.stand.l.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB47179BBAD200833EDB /* char1.stand.l.f.png */; };
 		037CCB54179BBAD200833EDB /* char1.stand.r.b.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB48179BBAD200833EDB /* char1.stand.r.b.png */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		03268AE4178C1913001CE6F3 /* character.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = character.1.png; path = en.assets/character.1.png; sourceTree = "<group>"; };
 		032D74DC179CD6840068B27E /* tile.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.0.png; path = en.assets/tile.0.png; sourceTree = "<group>"; };
+		032D74E0179CD7D30068B27E /* wall.0.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.0.l.png; path = en.assets/wall.0.l.png; sourceTree = "<group>"; };
+		032D74E3179CE0130068B27E /* wall.0.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.0.r.png; path = en.assets/wall.0.r.png; sourceTree = "<group>"; };
 		037CCB46179BBAD200833EDB /* char1.stand.l.b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.l.b.png; path = en.assets/char1.stand.l.b.png; sourceTree = "<group>"; };
 		037CCB47179BBAD200833EDB /* char1.stand.l.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.l.f.png; path = en.assets/char1.stand.l.f.png; sourceTree = "<group>"; };
 		037CCB48179BBAD200833EDB /* char1.stand.r.b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.r.b.png; path = en.assets/char1.stand.r.b.png; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 			name = Char1;
 			sourceTree = "<group>";
 		};
+		032D74E2179CD7D90068B27E /* Walls */ = {
+			isa = PBXGroup;
+			children = (
+				032D74E3179CE0130068B27E /* wall.0.r.png */,
+				032D74E0179CD7D30068B27E /* wall.0.l.png */,
+			);
+			name = Walls;
+			sourceTree = "<group>";
+		};
 		03BBFA9F178A9E4E00E79C3D = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +189,7 @@
 			children = (
 				03268AE4178C1913001CE6F3 /* character.1.png */,
 				0385E690179CD11D006D47D6 /* char.shadow.png */,
+				032D74E2179CD7D90068B27E /* Walls */,
 				032D74DF179CD6950068B27E /* Char1 */,
 				032D74DE179CD68A0068B27E /* Tiles */,
 			);
@@ -256,6 +270,8 @@
 				0385E692179CD11D006D47D6 /* char.shadow.png in Resources */,
 				0385E693179CD11D006D47D6 /* tile.2.png in Resources */,
 				032D74DD179CD6840068B27E /* tile.0.png in Resources */,
+				032D74E1179CD7D30068B27E /* wall.0.l.png in Resources */,
+				032D74E4179CE0130068B27E /* wall.0.r.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

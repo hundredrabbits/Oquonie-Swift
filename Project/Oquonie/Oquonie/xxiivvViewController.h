@@ -30,6 +30,13 @@
 @property (strong, nonatomic) IBOutlet UIImageView *floor0e;
 @property (strong, nonatomic) IBOutlet UIImageView *flooree;
 
+@property (strong, nonatomic) IBOutlet UIImageView *wall1l;
+@property (strong, nonatomic) IBOutlet UIImageView *wall2l;
+@property (strong, nonatomic) IBOutlet UIImageView *wall3l;
+
+@property (strong, nonatomic) IBOutlet UIImageView *wall1r;
+@property (strong, nonatomic) IBOutlet UIImageView *wall2r;
+@property (strong, nonatomic) IBOutlet UIImageView *wall3r;
 
 @property (strong, nonatomic) IBOutlet UIScrollView *userPlayer;
 @property (strong, nonatomic) IBOutlet UIImageView *userPlayerChar;
