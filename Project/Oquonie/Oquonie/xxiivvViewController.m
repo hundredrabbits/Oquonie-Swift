@@ -49,18 +49,12 @@
 	self.floor11.frame = [self tileLocation:0 :1 :1];
 	self.flooree.frame = [self tileLocation:0 :-1 :-1];
 	
-	self.wall1r.backgroundColor = [UIColor redColor];
 	self.wall1r.frame = [self wallLocation:@"R" :@"1"];
-	self.wall2r.backgroundColor = [UIColor redColor];
 	self.wall2r.frame = [self wallLocation:@"R" :@"2"];
-	self.wall2r.backgroundColor = [UIColor redColor];
 	self.wall3r.frame = [self wallLocation:@"R" :@"3"];
 	
-	self.wall1l.backgroundColor = [UIColor redColor];
 	self.wall1l.frame = [self wallLocation:@"L" :@"1"];
-	self.wall2l.backgroundColor = [UIColor redColor];
 	self.wall2l.frame = [self wallLocation:@"L" :@"2"];
-	self.wall2l.backgroundColor = [UIColor redColor];
 	self.wall3l.frame = [self wallLocation:@"L" :@"3"];
 	
 	
@@ -207,6 +201,16 @@
 	}
 	if( [tile isEqual:@"R"] && [number isEqual:@"3"] ){
 		return CGRectMake( (viewWidth/2)+(viewWidth/2.18), viewWidth/1.74, viewWidth/3, (viewWidth/3 * 0.5)*2);
+	}
+	
+	if( [tile isEqual:@"L"] && [number isEqual:@"1"] ){
+		return CGRectMake( (viewWidth/3.4), viewWidth/2.5, viewWidth/3, (viewWidth/3 * 0.5)*2);
+	}
+	if( [tile isEqual:@"L"] && [number isEqual:@"2"] ){
+		return CGRectMake( (viewWidth/7.8), viewWidth/2.05, viewWidth/3, (viewWidth/3 * 0.5)*2);
+	}
+	if( [tile isEqual:@"L"] && [number isEqual:@"3"] ){
+		return CGRectMake( -1*(viewWidth/24), viewWidth/1.74, viewWidth/3, (viewWidth/3 * 0.5)*2);
 	}
 	
 	
