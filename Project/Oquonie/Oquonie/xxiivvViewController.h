@@ -30,17 +30,20 @@
 @property (strong, nonatomic) IBOutlet UIImageView *floor0e;
 @property (strong, nonatomic) IBOutlet UIImageView *flooree;
 
-@property (strong, nonatomic) IBOutlet UIImageView *userPlayer;
+
+@property (strong, nonatomic) IBOutlet UIScrollView *userPlayer;
+@property (strong, nonatomic) IBOutlet UIImageView *userPlayerChar;
+@property (strong, nonatomic) IBOutlet UIImageView *userPlayerShadow;
 
 @end
 
 int userPositionX;
 int userPositionY;
 
-NSString *userChar;
-NSString *userState;
-NSString *userOrientationHorizontal;
-NSString *userOrientationVertical;
+NSString *userSpriteChar;
+NSString *userSpriteState;
+NSString *userSpriteOrientationHorizontal;
+NSString *userSpriteOrientationVertical;
 
 CGRect	screen;
 int		screenMargin;

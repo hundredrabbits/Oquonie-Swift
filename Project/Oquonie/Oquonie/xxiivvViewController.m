@@ -22,11 +22,9 @@
 {
 	userPositionX = 0;
 	userPositionY = 0;
-	userChar = @"char1";
-	
+	userSpriteChar = @"char1";
 	
 	[self templateStart];
-	
 	
 }
 
@@ -66,10 +64,10 @@
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
 	
-	if( (long)sender.tag == 0 ){ userOrientationHorizontal = @"l"; userOrientationVertical = @"b"; }
-	if( (long)sender.tag == 1 ){ userOrientationHorizontal = @"r"; userOrientationVertical = @"b"; }
-	if( (long)sender.tag == 2 ){ userOrientationHorizontal = @"l"; userOrientationVertical = @"f"; }
-	if( (long)sender.tag == 3 ){ userOrientationHorizontal = @"r"; userOrientationVertical = @"f"; }
+	if( (long)sender.tag == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
+	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
+	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
+	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
 	
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
@@ -78,14 +76,12 @@
 	[UIView commitAnimations];
 	
 	[self moveAnimation];
-
-	
 }
 
 - (void) moveAnimation
 {
-	userState = @"walk";
-	self.userPlayer.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"1"] ] ];
+	userSpriteState = @"walk";
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"1"] ] ];
 	[NSTimer scheduledTimerWithTimeInterval:0.15 target:self selector:@selector(animator1) userInfo:nil repeats:NO];
 	[NSTimer scheduledTimerWithTimeInterval:0.30 target:self selector:@selector(animator2) userInfo:nil repeats:NO];
 }
@@ -93,14 +89,14 @@
 
 - (void) animator1
 {
-	userState = @"walk";
-	self.userPlayer.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"2"] ] ];
+	userSpriteState = @"walk";
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"2"] ] ];
 }
 
 - (void) animator2
 {
-	userState = @"stand";
-	self.userPlayer.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"1"] ] ];
+	userSpriteState = @"stand";
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"1"] ] ];
 }
 
 
@@ -109,14 +105,13 @@
 
 - (NSString *) userSpriteName :(NSString*) mod
 {
-	
 	NSString *spriteName = @"";
 	
-	if( [userState isEqual:@"walk"] ){
-		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.%@.png", userChar, userState, userOrientationHorizontal, userOrientationVertical,mod];
+	if( [userSpriteState isEqual:@"walk"] ){
+		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
 	}
 	else{
-		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.png", userChar, userState, userOrientationHorizontal, userOrientationVertical];
+		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical];
 	}
 	
 	NSLog(@"%@",spriteName);
@@ -147,12 +142,13 @@
 	int centerH = (screen.size.height/2)-(tileH/2);
 	
 	if( type == 1 ){
-//		tileH = tileW+;
-//		centerH -= tileH;
-		centerH -= tileH;
-//		tileH += tileH*0.5;
+		tileH = tileH * 2;
+		if( (posX + posY) == 1 ){ centerH -= tileH*0.25; }
+		else if( (posX + posY) == 2 ){  }
+		else if( (posX + posY) == -1 ){ centerH -= tileH*0.75; }
+		else if( (posX + posY) == -2 ){ centerH -= tileH; }
+		else{ centerH -= tileH*0.5; }
 	}
-	
 	
 	if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
 	if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW, centerH, tileW, tileH); }
@@ -165,8 +161,7 @@
 	if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
 	
 	NSLog(@"error");
-	
-	
+
 	return CGRectMake(0, 0, 100, 100);
 }
 
