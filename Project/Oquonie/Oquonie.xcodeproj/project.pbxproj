@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03268AE5178C1913001CE6F3 /* character.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03268AE4178C1913001CE6F3 /* character.1.png */; };
+		032D74DD179CD6840068B27E /* tile.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 032D74DC179CD6840068B27E /* tile.0.png */; };
 		037CCB52179BBAD200833EDB /* char1.stand.l.b.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB46179BBAD200833EDB /* char1.stand.l.b.png */; };
 		037CCB53179BBAD200833EDB /* char1.stand.l.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB47179BBAD200833EDB /* char1.stand.l.f.png */; };
 		037CCB54179BBAD200833EDB /* char1.stand.r.b.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB48179BBAD200833EDB /* char1.stand.r.b.png */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		03268AE4178C1913001CE6F3 /* character.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = character.1.png; path = en.assets/character.1.png; sourceTree = "<group>"; };
+		032D74DC179CD6840068B27E /* tile.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.0.png; path = en.assets/tile.0.png; sourceTree = "<group>"; };
 		037CCB46179BBAD200833EDB /* char1.stand.l.b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.l.b.png; path = en.assets/char1.stand.l.b.png; sourceTree = "<group>"; };
 		037CCB47179BBAD200833EDB /* char1.stand.l.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.l.f.png; path = en.assets/char1.stand.l.f.png; sourceTree = "<group>"; };
 		037CCB48179BBAD200833EDB /* char1.stand.r.b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.r.b.png; path = en.assets/char1.stand.r.b.png; sourceTree = "<group>"; };
@@ -85,6 +87,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		032D74DE179CD68A0068B27E /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				032D74DC179CD6840068B27E /* tile.0.png */,
+				03BBFACF178AC8D600E79C3D /* tile.1.png */,
+				0385E691179CD11D006D47D6 /* tile.2.png */,
+			);
+			name = Tiles;
+			sourceTree = "<group>";
+		};
+		032D74DF179CD6950068B27E /* Char1 */ = {
+			isa = PBXGroup;
+			children = (
+				037CCB46179BBAD200833EDB /* char1.stand.l.b.png */,
+				037CCB47179BBAD200833EDB /* char1.stand.l.f.png */,
+				037CCB48179BBAD200833EDB /* char1.stand.r.b.png */,
+				037CCB49179BBAD200833EDB /* char1.stand.r.f.png */,
+				037CCB4A179BBAD200833EDB /* char1.walk.l.b.1.png */,
+				037CCB4B179BBAD200833EDB /* char1.walk.l.b.2.png */,
+				037CCB4C179BBAD200833EDB /* char1.walk.l.f.1.png */,
+				037CCB4D179BBAD200833EDB /* char1.walk.l.f.2.png */,
+				037CCB4E179BBAD200833EDB /* char1.walk.r.b.1.png */,
+				037CCB4F179BBAD200833EDB /* char1.walk.r.b.2.png */,
+				037CCB50179BBAD200833EDB /* char1.walk.r.f.1.png */,
+				037CCB51179BBAD200833EDB /* char1.walk.r.f.2.png */,
+			);
+			name = Char1;
+			sourceTree = "<group>";
+		};
 		03BBFA9F178A9E4E00E79C3D = {
 			isa = PBXGroup;
 			children = (
@@ -143,22 +174,10 @@
 		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				0385E690179CD11D006D47D6 /* char.shadow.png */,
-				037CCB46179BBAD200833EDB /* char1.stand.l.b.png */,
-				037CCB47179BBAD200833EDB /* char1.stand.l.f.png */,
-				037CCB48179BBAD200833EDB /* char1.stand.r.b.png */,
-				037CCB49179BBAD200833EDB /* char1.stand.r.f.png */,
-				037CCB4A179BBAD200833EDB /* char1.walk.l.b.1.png */,
-				037CCB4B179BBAD200833EDB /* char1.walk.l.b.2.png */,
-				037CCB4C179BBAD200833EDB /* char1.walk.l.f.1.png */,
-				037CCB4D179BBAD200833EDB /* char1.walk.l.f.2.png */,
-				037CCB4E179BBAD200833EDB /* char1.walk.r.b.1.png */,
-				037CCB4F179BBAD200833EDB /* char1.walk.r.b.2.png */,
-				037CCB50179BBAD200833EDB /* char1.walk.r.f.1.png */,
-				037CCB51179BBAD200833EDB /* char1.walk.r.f.2.png */,
 				03268AE4178C1913001CE6F3 /* character.1.png */,
-				03BBFACF178AC8D600E79C3D /* tile.1.png */,
-				0385E691179CD11D006D47D6 /* tile.2.png */,
+				0385E690179CD11D006D47D6 /* char.shadow.png */,
+				032D74DF179CD6950068B27E /* Char1 */,
+				032D74DE179CD68A0068B27E /* Tiles */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -236,6 +255,7 @@
 				037CCB5D179BBAD200833EDB /* char1.walk.r.f.2.png in Resources */,
 				0385E692179CD11D006D47D6 /* char.shadow.png in Resources */,
 				0385E693179CD11D006D47D6 /* tile.2.png in Resources */,
+				032D74DD179CD6840068B27E /* tile.0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
