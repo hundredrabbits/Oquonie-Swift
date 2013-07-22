@@ -52,6 +52,8 @@
 	self.floor11.frame = [self tileLocation:0 :1 :1];
 	self.flooree.frame = [self tileLocation:0 :-1 :-1];
 	
+	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
+	
 	// Set player sprite size at origin
 	
 	self.userPlayer.frame = [self tileLocation:1 :0 :0];
@@ -135,9 +137,11 @@
 {
 	screen = [[UIScreen mainScreen] bounds];
 	screenMargin = screen.size.width/10;
-	int viewWidth = screen.size.width - (2*screenMargin);
-	int tileW = viewWidth/3;
-	int tileH = tileW * 0.5;
+	viewWidth = screen.size.width - (2*screenMargin);
+	
+	tileW = viewWidth/3;
+	tileH = tileW * 0.5;
+	
 	int centerW = (screen.size.width/2)-(tileW/2);
 	int centerH = (screen.size.height/2)-(tileH/2);
 	
@@ -148,6 +152,7 @@
 		else if( (posX + posY) == -1 ){ centerH -= tileH*0.75; }
 		else if( (posX + posY) == -2 ){ centerH -= tileH; }
 		else{ centerH -= tileH*0.5; }
+		centerH -= tileH/15;
 	}
 	
 	if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }

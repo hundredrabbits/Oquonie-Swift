@@ -40,6 +40,10 @@
 int userPositionX;
 int userPositionY;
 
+int viewWidth;
+int tileW;
+int tileH;
+
 NSString *userSpriteChar;
 NSString *userSpriteState;
 NSString *userSpriteOrientationHorizontal;
