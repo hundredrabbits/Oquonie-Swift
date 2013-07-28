@@ -72,76 +72,76 @@
                                     <action selector="moveBR:" destination="2" eventType="touchUpInside" id="Oa5-CH-ATc"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="wall.1.r.png" id="TnT-jB-bCd" userLabel="wall3L">
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" image="wall.1.r.png" id="TnT-jB-bCd" userLabel="wall3L">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="wall.1.r.png" id="q1e-6n-zZp" userLabel="wall2L">
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" image="wall.1.r.png" id="q1e-6n-zZp" userLabel="wall2L">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="wall.1.r.png" id="Edi-gy-jH2" userLabel="wall1L">
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" image="wall.1.r.png" id="Edi-gy-jH2" userLabel="wall1L">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="wall.1.l.png" id="2mR-4Y-reA" userLabel="wall1R">
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" image="wall.1.l.png" id="2mR-4Y-reA" userLabel="wall1R">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="door.1.l.png" id="HCc-tm-45S" userLabel="wall2R">
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" image="door.1.l.png" id="HCc-tm-45S" userLabel="wall2R">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="wall.1.l.png" id="bwT-l1-obM" userLabel="wall3R">
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" image="wall.1.l.png" id="bwT-l1-obM" userLabel="wall3R">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="9gx-Ca-BCQ" userLabel="floor11">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" image="tile.1.png" id="9gx-Ca-BCQ" userLabel="floor11">
                                 <rect key="frame" x="91" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="4zb-7k-bnm" userLabel="floor10">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" image="tile.1.png" id="4zb-7k-bnm" userLabel="floor10">
                                 <rect key="frame" x="90" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.3.png" id="8Dr-bW-Pwg" userLabel="floor01">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" image="tile.3.png" id="8Dr-bW-Pwg" userLabel="floor01">
                                 <rect key="frame" x="90" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="NB5-gg-G9z" userLabel="floor1E">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" image="tile.1.png" id="NB5-gg-G9z" userLabel="floor1E">
                                 <rect key="frame" x="90" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="JCv-bJ-j64" userLabel="floor00">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" image="tile.1.png" id="JCv-bJ-j64" userLabel="floor00">
                                 <rect key="frame" x="91" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="Pap-re-eJt" userLabel="floorE1">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" image="tile.1.png" id="Pap-re-eJt" userLabel="floorE1">
                                 <rect key="frame" x="90" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="7S7-zo-KJe" userLabel="floor0E">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" image="tile.1.png" id="7S7-zo-KJe" userLabel="floor0E">
                                 <rect key="frame" x="90" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.1.png" id="gRy-sj-ySu" userLabel="floorE0">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" image="tile.1.png" id="gRy-sj-ySu" userLabel="floorE0">
                                 <rect key="frame" x="90" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="tile.2.png" id="ixp-fE-lfr" userLabel="floorEE">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" image="tile.2.png" id="ixp-fE-lfr" userLabel="floorEE">
                                 <rect key="frame" x="90" y="447" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="beam.1.png" id="cr4-gZ-HDi" userLabel="beam">
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" image="beam.1.png" id="cr4-gZ-HDi" userLabel="beam">
                                 <rect key="frame" x="-90" y="346" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -221,6 +221,43 @@
         <image name="wall.1.l.png" width="200" height="400"/>
         <image name="wall.1.r.png" width="200" height="400"/>
     </resources>
+    <classes>
+        <class className="xxiivvViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/xxiivvViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="moveBL:"/>
+                <relationship kind="action" name="moveBR:"/>
+                <relationship kind="action" name="moveTL:"/>
+                <relationship kind="action" name="moveTR:"/>
+                <relationship kind="outlet" name="beam" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor00" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor01" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor0e" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor10" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor11" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor1e" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floore0" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floore1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="flooree" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="moveBL" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="moveBR" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="moveTL" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="moveTR" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="step1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="step2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userPlayer" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="userPlayerChar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userPlayerChat" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userPlayerShadow" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall1l" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall1r" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall2l" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall2r" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall3l" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall3r" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

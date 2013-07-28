@@ -85,10 +85,34 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
-	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[userLocation][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){ [self moveDoor:[worldNode[userLocation][19] intValue]]; }
-	if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[userLocation][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){ [self moveDoor:[worldNode[userLocation][18] intValue]]; }
-	if( userPositionX ==  0 && userPositionY == -1 && [worldNode[userLocation][16] intValue] > 0 && sender.tag == 2 ){ [self moveDoor:[worldNode[userLocation][20] intValue]];  }
-	if( userPositionX == -1 && userPositionY ==  0 && [worldNode[userLocation][17] intValue] > 0 && sender.tag == 3 ){ [self moveDoor:[worldNode[userLocation][21] intValue]];  }
+	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[userLocation][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){
+		[self moveDoor:[worldNode[userLocation][19] intValue]];
+		userPositionX = 0;
+		userPositionY = -1;
+		posX = 0;
+		posY = 0;
+	}
+	if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[userLocation][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){
+		[self moveDoor:[worldNode[userLocation][18] intValue]];
+		userPositionX = -1;
+		userPositionY = 0;
+		posX = 0;
+		posY = 0;
+	}
+	if( userPositionX ==  0 && userPositionY == -1 && [worldNode[userLocation][16] intValue] > 0 && sender.tag == 2 ){
+		[self moveDoor:[worldNode[userLocation][20] intValue]];
+		userPositionX = 0;
+		userPositionY = 1;
+		posX = 0;
+		posY = 0;
+	}
+	if( userPositionX == -1 && userPositionY ==  0 && [worldNode[userLocation][17] intValue] > 0 && sender.tag == 3 ){
+		[self moveDoor:[worldNode[userLocation][21] intValue]];
+		userPositionX = 1;
+		userPositionY = 0;
+		posX = 0;
+		posY = 0;
+	}
 		
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
@@ -164,11 +188,49 @@
 
 - (void) moveDoor :(int)destination
 {
-	NSLog(@"Loading Room: %d",destination);
 	userLocation = destination;
-	
 	[self roomStart];
+	[self roomAnimation];
+	
 }
+
+
+
+
+- (void) roomAnimation
+{
+	for (UIView *subview in [self.view subviews]) {
+		float delay = (arc4random()%30)+1;
+		if (subview.tag == 100) {
+			CGRect origin = subview.frame;
+			subview.frame = CGRectOffset(subview.frame, 0, 5);
+			subview.alpha = 0;
+			[UIView beginAnimations: @"Fade In" context:nil];
+			[UIView setAnimationDuration:(delay/50)];
+			[UIView setAnimationDelay:0];
+			subview.frame = origin;
+			subview.alpha = 1;
+			[UIView commitAnimations];
+		}
+	}
+	for (UIView *subview in [self.view subviews]) {
+		float delay = (arc4random()%30)+1;
+		if (subview.tag == 200) {
+			CGRect origin = subview.frame;
+			subview.frame = CGRectOffset(subview.frame, 0, -5);
+			subview.alpha = 0;
+			[UIView beginAnimations: @"Fade In" context:nil];
+			[UIView setAnimationDuration:(delay/50)];
+			[UIView setAnimationDelay:0];
+			subview.frame = origin;
+			subview.alpha = 1;
+			[UIView commitAnimations];
+		}
+	}
+}
+
+
+
 
 
 - (NSString *) userSpriteName :(NSString*) mod
