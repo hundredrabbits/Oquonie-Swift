@@ -79,6 +79,7 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
+	
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
 	
@@ -101,6 +102,7 @@
 	
 	NSLog(@"%d %d",userPositionX,userPositionY);
 	
+	[self moveDisable];
 	[self moveAnimation];
 }
 
@@ -125,6 +127,30 @@
 	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"1"] ] ];
 }
 
+
+
+- (void) moveEnable
+{
+	
+	self.moveBL.enabled = YES;
+	self.moveBR.enabled = YES;
+	self.moveTL.enabled = YES;
+	self.moveTL.enabled = YES;
+	
+}
+
+
+
+- (void) moveDisable
+{
+
+	self.moveBL.enabled = NO;
+	self.moveBR.enabled = NO;
+	self.moveTL.enabled = NO;
+	self.moveTL.enabled = NO;
+	[NSTimer scheduledTimerWithTimeInterval:0.35 target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
+	
+}
 
 
 
