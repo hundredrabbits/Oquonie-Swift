@@ -21,16 +21,22 @@
 
 - (void) start
 {
+	[self userStart];
+	
+	[self templateStart];
+	[self worldStart];
+	[self roomStart];
+}
+
+
+- (void) userStart
+{
 	userPositionX = 0;
 	userPositionY = 0;
 	userSpriteChar = @"char1";
-	
-	[self templateStart];
-	
-	[self worldStart];
-	[self roomStart];
-	
+	userLocation = 1;
 }
+
 
 - (void) templateStart
 {
@@ -79,13 +85,10 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
-	
-	// Door Routing
-	
-	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[1][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){ [self moveDoor:[worldNode[1][19] intValue]]; }
-	if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[1][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){ [self moveDoor:[worldNode[1][18] intValue]]; }
-	if( userPositionX ==  0 && userPositionY == -1 && [worldNode[1][16] intValue] > 0 && sender.tag == 2 ){ [self moveDoor:[worldNode[1][20] intValue]];  }
-	if( userPositionX == -1 && userPositionY ==  0 && [worldNode[1][17] intValue] > 0 && sender.tag == 3 ){ [self moveDoor:[worldNode[1][21] intValue]];  }
+	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[userLocation][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){ [self moveDoor:[worldNode[userLocation][19] intValue]]; }
+	if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[userLocation][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){ [self moveDoor:[worldNode[userLocation][18] intValue]]; }
+	if( userPositionX ==  0 && userPositionY == -1 && [worldNode[userLocation][16] intValue] > 0 && sender.tag == 2 ){ [self moveDoor:[worldNode[userLocation][20] intValue]];  }
+	if( userPositionX == -1 && userPositionY ==  0 && [worldNode[userLocation][17] intValue] > 0 && sender.tag == 3 ){ [self moveDoor:[worldNode[userLocation][21] intValue]];  }
 		
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
@@ -162,6 +165,9 @@
 - (void) moveDoor :(int)destination
 {
 	NSLog(@"Loading Room: %d",destination);
+	userLocation = destination;
+	
+	[self roomStart];
 }
 
 
