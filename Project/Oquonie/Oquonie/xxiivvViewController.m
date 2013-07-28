@@ -70,7 +70,7 @@
 	self.wall2l.frame = [self wallLocation:@"L" :@"2"];
 	self.wall3l.frame = [self wallLocation:@"L" :@"3"];
 
-	self.blocker1.frame = [self tileLocation:1 :0 :-1];
+	self.blocker1.frame = [self tileLocation:1 :0 :0];
 	
 	
 	self.beam.frame = [self wallLocation:@"C" :@"1"];
@@ -142,6 +142,7 @@
 	
 	[self moveDisable];
 	[self moveAnimation];
+	[self moveOrder];
 }
 
 - (void) moveAnimation
@@ -197,6 +198,20 @@
 	
 }
 
+
+- (void) moveOrder
+{
+	userPositionZ = ( userPositionX + userPositionY );
+	
+	if( userPositionZ > 0 ){
+		[self.view bringSubviewToFront:self.blocker1];
+	}
+	else{
+		[self.view bringSubviewToFront:self.userPlayer];
+	}
+	
+	NSLog(@"Z INDEX: %d", userPositionZ );
+}
 
 
 

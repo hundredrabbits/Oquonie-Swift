@@ -51,8 +51,6 @@
 
 @end
 
-int userPositionX;
-int userPositionY;
 
 int viewWidth;
 int tileW;
@@ -64,6 +62,9 @@ NSString *userSpriteOrientationHorizontal;
 NSString *userSpriteOrientationVertical;
 
 int userLocation;
+int userPositionX;
+int userPositionY;
+int userPositionZ;
 
 NSMutableArray *worldNode;
 
