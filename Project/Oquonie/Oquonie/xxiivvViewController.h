@@ -67,6 +67,7 @@ int userPositionY;
 int userPositionZ;
 
 NSMutableArray *worldNode;
+NSMutableArray *worldEvent;
 
 CGRect	screen;
 int		screenMargin;

@@ -25,6 +25,7 @@
 	
 	[self templateStart];
 	[self worldStart];
+	[self eventStart];
 	[self roomStart];
 }
 
@@ -33,7 +34,7 @@
 {
 	userPositionX = 0;
 	userPositionY = 0;
-	userSpriteChar = @"char1";
+	userSpriteChar = @"char2";
 	userLocation = 1;
 }
 
@@ -88,6 +89,8 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
+	
+	
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
 	
@@ -95,6 +98,8 @@
 	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
 	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
 	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
+	
+	[self moveEvent];
 	
 	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[userLocation][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){
 		[self moveDoor:[worldNode[userLocation][19] intValue]];
@@ -220,6 +225,35 @@
 	}
 	
 	NSLog(@"Z INDEX: %d", userPositionZ );
+}
+
+
+
+- (void) moveEvent
+{
+	NSLog(@"> %@",worldEvent[userLocation][ [self toolArrayAssoc:userPositionX :userPositionY] ]);
+	
+	
+
+}
+
+
+
+- (int) toolArrayAssoc :(int)posX :(int)posY
+{
+	
+	if( posX == 1 && posY == -1 ){ return 0;}
+	if( posX == 1 && posY == 0 ){ return 1;}
+	if( posX == 1 && posY == 1 ){ return 2;}
+	if( posX == 0 && posY == -1 ){ return 3;}
+	if( posX == 0 && posY == 0 ){ return 4;}
+	if( posX == 0 && posY == 1 ){ return 5;}
+	if( posX == -1 && posY == -1 ){ return 6;}
+	if( posX == -1 && posY == 0 ){ return 7;}
+	if( posX == -1 && posY == 1 ){ return 8;}
+
+	return 0;
+	
 }
 
 

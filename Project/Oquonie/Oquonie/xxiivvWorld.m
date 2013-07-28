@@ -39,6 +39,27 @@
 
 - (void) worldUpdate
 {
+	
+}
+
+
+
+- (void) eventStart
+{
+	worldEvent = [NSMutableArray arrayWithObjects:@"",nil];
+	int myCount = 0;
+	while ( myCount < 150 )	{ myCount++; worldEvent[myCount] = [NSArray arrayWithObjects: @"", @"", @"", @"", @"", @"", @"", @"", @"", nil];	}
+	
+	worldEvent[1] = [NSArray arrayWithObjects:
+					 @"",@"",@"",
+					 @"",@"1",@"",
+					 @"",@"",@"",
+					 nil];
+}
+
+
+- (void) eventUpdate
+{
 
 }
 
