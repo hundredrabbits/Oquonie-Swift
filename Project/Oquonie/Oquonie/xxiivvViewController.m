@@ -201,23 +201,10 @@
 {
 	for (UIView *subview in [self.view subviews]) {
 		float delay = (arc4random()%30)+1;
-		if (subview.tag == 100) {
+
+		if (subview.tag == 100 || subview.tag == 200) {
 			CGRect origin = subview.frame;
 			subview.frame = CGRectOffset(subview.frame, 0, 5);
-			subview.alpha = 0;
-			[UIView beginAnimations: @"Fade In" context:nil];
-			[UIView setAnimationDuration:(delay/50)];
-			[UIView setAnimationDelay:0];
-			subview.frame = origin;
-			subview.alpha = 1;
-			[UIView commitAnimations];
-		}
-	}
-	for (UIView *subview in [self.view subviews]) {
-		float delay = (arc4random()%30)+1;
-		if (subview.tag == 200) {
-			CGRect origin = subview.frame;
-			subview.frame = CGRectOffset(subview.frame, 0, -5);
 			subview.alpha = 0;
 			[UIView beginAnimations: @"Fade In" context:nil];
 			[UIView setAnimationDuration:(delay/50)];
