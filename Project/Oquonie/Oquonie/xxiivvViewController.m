@@ -23,7 +23,7 @@
 {
 	userPositionX = 0;
 	userPositionY = 0;
-	userSpriteChar = @"char1";
+	userSpriteChar = @"char2";
 	
 	[self templateStart];
 	
@@ -80,6 +80,16 @@
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
 	
+	// Door Routing
+	
+	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[1][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){ NSLog(@"Found door"); }
+	if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[1][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){ NSLog(@"Found door"); }
+	if( userPositionX ==  0 && userPositionY == -1 && [worldNode[1][16] intValue] > 0 && sender.tag == 2 ){ NSLog(@"Found door"); }
+	if( userPositionX == -1 && userPositionY ==  0 && [worldNode[1][17] intValue] > 0 && sender.tag == 3 ){ NSLog(@"Found door"); }
+	
+	NSLog(@"%@",worldNode[1][19]);
+	
+	
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
 	
@@ -87,6 +97,7 @@
 	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
 	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
 	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
+	
 	
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
@@ -162,8 +173,6 @@
 		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical];
 	}
 	
-	NSLog(@"%@",spriteName);
-
 	return spriteName;
 }
 
