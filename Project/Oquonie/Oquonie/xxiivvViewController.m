@@ -23,7 +23,7 @@
 {
 	userPositionX = 0;
 	userPositionY = 0;
-	userSpriteChar = @"char2";
+	userSpriteChar = @"char1";
 	
 	[self templateStart];
 	
@@ -82,14 +82,11 @@
 	
 	// Door Routing
 	
-	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[1][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){ NSLog(@"Found door"); }
-	if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[1][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){ NSLog(@"Found door"); }
-	if( userPositionX ==  0 && userPositionY == -1 && [worldNode[1][16] intValue] > 0 && sender.tag == 2 ){ NSLog(@"Found door"); }
-	if( userPositionX == -1 && userPositionY ==  0 && [worldNode[1][17] intValue] > 0 && sender.tag == 3 ){ NSLog(@"Found door"); }
-	
-	NSLog(@"%@",worldNode[1][19]);
-	
-	
+	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[1][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){ [self moveDoor:[worldNode[1][19] intValue]]; }
+	if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[1][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){ [self moveDoor:[worldNode[1][18] intValue]]; }
+	if( userPositionX ==  0 && userPositionY == -1 && [worldNode[1][16] intValue] > 0 && sender.tag == 2 ){ [self moveDoor:[worldNode[1][20] intValue]];  }
+	if( userPositionX == -1 && userPositionY ==  0 && [worldNode[1][17] intValue] > 0 && sender.tag == 3 ){ [self moveDoor:[worldNode[1][21] intValue]];  }
+		
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
 	
@@ -160,6 +157,12 @@
 }
 
 
+
+
+- (void) moveDoor :(int)destination
+{
+	NSLog(@"Loading Room: %d",destination);
+}
 
 
 - (NSString *) userSpriteName :(NSString*) mod
