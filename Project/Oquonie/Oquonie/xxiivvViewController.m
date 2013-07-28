@@ -88,35 +88,6 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
-	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[userLocation][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){
-		[self moveDoor:[worldNode[userLocation][19] intValue]];
-		userPositionX = 0;
-		userPositionY = -1;
-		posX = 0;
-		posY = 0;
-	}
-	if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[userLocation][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){
-		[self moveDoor:[worldNode[userLocation][18] intValue]];
-		userPositionX = -1;
-		userPositionY = 0;
-		posX = 0;
-		posY = 0;
-	}
-	if( userPositionX ==  0 && userPositionY == -1 && [worldNode[userLocation][16] intValue] > 0 && sender.tag == 2 ){
-		[self moveDoor:[worldNode[userLocation][20] intValue]];
-		userPositionX = 0;
-		userPositionY = 1;
-		posX = 0;
-		posY = 0;
-	}
-	if( userPositionX == -1 && userPositionY ==  0 && [worldNode[userLocation][17] intValue] > 0 && sender.tag == 3 ){
-		[self moveDoor:[worldNode[userLocation][21] intValue]];
-		userPositionX = 1;
-		userPositionY = 0;
-		posX = 0;
-		posY = 0;
-	}
-		
 	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
 	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
 	
@@ -125,21 +96,59 @@
 	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
 	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
 	
-	
-	[UIView beginAnimations: @"Fade In" context:nil];
-	[UIView setAnimationDuration:0.3];
-	[UIView setAnimationDelay:0];
-	self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
-	[UIView commitAnimations];
-	
-	[UIView beginAnimations: @"Fade In" context:nil];
-	[UIView setAnimationDuration:0.4];
-	[UIView setAnimationDelay:0];	
-	self.userPlayerChat.frame = [self tileLocation:3:userPositionX:userPositionY];
-	[UIView commitAnimations];
-	
-	NSLog(@"%d %d",userPositionX,userPositionY);
-	
+	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[userLocation][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){
+		[self moveDoor:[worldNode[userLocation][19] intValue]];
+		userPositionX = 0;
+		userPositionY = -1;
+		posX = 0;
+		posY = 0;
+		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
+	}
+	else if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[userLocation][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){
+		[self moveDoor:[worldNode[userLocation][18] intValue]];
+		userPositionX = -1;
+		userPositionY = 0;
+		posX = 0;
+		posY = 0;
+		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
+	}
+	else if( userPositionX ==  0 && userPositionY == -1 && [worldNode[userLocation][16] intValue] > 0 && sender.tag == 2 ){
+		[self moveDoor:[worldNode[userLocation][20] intValue]];
+		userPositionX = 0;
+		userPositionY = 1;
+		posX = 0;
+		posY = 0;
+		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
+	}
+	else if( userPositionX == -1 && userPositionY ==  0 && [worldNode[userLocation][17] intValue] > 0 && sender.tag == 3 ){
+		[self moveDoor:[worldNode[userLocation][21] intValue]];
+		userPositionX = 1;
+		userPositionY = 0;
+		posX = 0;
+		posY = 0;
+		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
+	}
+	else{
+		
+				
+		[UIView beginAnimations: @"Fade In" context:nil];
+		[UIView setAnimationDuration:0.3];
+		[UIView setAnimationDelay:0];
+		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
+		[UIView commitAnimations];
+		
+		[UIView beginAnimations: @"Fade In" context:nil];
+		[UIView setAnimationDuration:0.4];
+		[UIView setAnimationDelay:0];
+		self.userPlayerChat.frame = [self tileLocation:3:userPositionX:userPositionY];
+		[UIView commitAnimations];
+		
+		NSLog(@"%d %d",userPositionX,userPositionY);
+		
+
+		
+	}
+		
 	[self moveDisable];
 	[self moveAnimation];
 	[self moveOrder];
