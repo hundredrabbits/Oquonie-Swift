@@ -171,11 +171,16 @@
                                 <rect key="frame" x="100" y="242" width="120" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="blocker.1.png" id="UtL-dN-nTc" userLabel="blocker1">
+                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="beam" destination="cr4-gZ-HDi" id="Jut-rz-4En"/>
+                        <outlet property="blocker1" destination="UtL-dN-nTc" id="u3D-da-alM"/>
                         <outlet property="floor00" destination="JCv-bJ-j64" id="4da-uc-oBG"/>
                         <outlet property="floor01" destination="8Dr-bW-Pwg" id="SJ8-8F-vvY"/>
                         <outlet property="floor0e" destination="7S7-zo-KJe" id="N16-nY-8c6"/>
@@ -209,6 +214,7 @@
     </scenes>
     <resources>
         <image name="beam.1.png" width="200" height="400"/>
+        <image name="blocker.1.png" width="200" height="281"/>
         <image name="char.chat.png" width="640" height="640"/>
         <image name="char.shadow.png" width="200" height="141"/>
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
@@ -230,6 +236,7 @@
                 <relationship kind="action" name="moveTL:"/>
                 <relationship kind="action" name="moveTR:"/>
                 <relationship kind="outlet" name="beam" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="blocker1" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="floor00" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="floor01" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="floor0e" candidateClass="UIImageView"/>

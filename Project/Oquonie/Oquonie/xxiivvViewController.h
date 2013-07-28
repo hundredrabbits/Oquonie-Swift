@@ -47,6 +47,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *userPlayerShadow;
 @property (strong, nonatomic) IBOutlet UIImageView *userPlayerChat;
 
+@property (strong, nonatomic) IBOutlet UIImageView *blocker1;
+
 @end
 
 int userPositionX;
