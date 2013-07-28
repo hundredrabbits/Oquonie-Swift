@@ -10,4 +10,9 @@
 
 @interface xxiivvViewController (Module)
 
+- (void) worldStart;
+- (void) worldUpdate;
+- (void) roomStart;
+- (void) roomUpdate;
+
 @end

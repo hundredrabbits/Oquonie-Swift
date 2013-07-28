@@ -27,6 +27,9 @@
 	
 	[self templateStart];
 	
+	[self worldStart];
+	[self roomStart];
+	
 }
 
 - (void) templateStart
@@ -222,8 +225,6 @@
 	screenMargin = screen.size.width/10;
 	viewWidth = screen.size.width - (2*screenMargin);
 	
-//	self.wall3r.backgroundColor = [UIColor redColor];
-	
 	if( [tile isEqual:@"R"] && [number isEqual:@"1"] ){
 		return CGRectMake( (screen.size.width/2), (screen.size.height/2)-(2.39*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
@@ -244,14 +245,9 @@
 		return CGRectMake( (screen.size.width/2)-(viewWidth/3), (screen.size.height/2)-(2.39*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
 	
-	
 	if( [tile isEqual:@"C"] && [number isEqual:@"1"] ){
 		return CGRectMake( (screen.size.width/2)-((viewWidth/3)/2), (screen.size.height/2)-(2.39*(viewWidth/3)), viewWidth/3, (viewWidth/3)*2);
 	}
-	
-	
-	
-	NSLog(@"error");
 	
 	return CGRectMake(0, 0, 0, 0);
 }

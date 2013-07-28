@@ -61,5 +61,7 @@ NSString *userSpriteState;
 NSString *userSpriteOrientationHorizontal;
 NSString *userSpriteOrientationVertical;
 
+NSMutableArray *worldNode;
+
 CGRect	screen;
 int		screenMargin;
