@@ -32,7 +32,7 @@
 
 - (void) userStart
 {
-	userPositionX = 0;
+	userPositionX = 1;
 	userPositionY = 0;
 	userSpriteChar = @"char2";
 	userLocation = 1;
@@ -89,17 +89,16 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
+	int event = [self moveEvent:( userPositionX+posX ) :( userPositionY+posY )];
 	
-	
-	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 ){ userPositionX += posX; }
-	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 ){ userPositionY += posY; }
+	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 && event < 1){ userPositionX += posX; }
+	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 && event < 1 ){ userPositionY += posY; }
 	
 	if( (long)sender.tag == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
 	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
 	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
 	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
 	
-	[self moveEvent];
 	
 	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[userLocation][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){
 		[self moveDoor:[worldNode[userLocation][19] intValue]];
@@ -147,10 +146,6 @@
 		[UIView setAnimationDelay:0];
 		self.userPlayerChat.frame = [self tileLocation:3:userPositionX:userPositionY];
 		[UIView commitAnimations];
-		
-		NSLog(@"%d %d",userPositionX,userPositionY);
-		
-
 		
 	}
 		
@@ -224,16 +219,20 @@
 		[self.view bringSubviewToFront:self.userPlayer];
 	}
 	
-	NSLog(@"Z INDEX: %d", userPositionZ );
+	// NSLog(@"Z INDEX: %d", userPositionZ );
 }
 
 
 
-- (void) moveEvent
+- (int) moveEvent :(int)posX :(int)posY
 {
-	NSLog(@"> %@",worldEvent[userLocation][ [self toolArrayAssoc:userPositionX :userPositionY] ]);
 	
+	if( [ worldEvent[userLocation][ [self toolArrayAssoc:posX :posY] ] intValue ] > 0 ){
+		NSLog(@"> EVENT ID: %@",worldEvent[userLocation][ [self toolArrayAssoc:posX :posY] ]);
+		return [ worldEvent[userLocation][ [self toolArrayAssoc:posX :posY] ] intValue ];
+	}
 	
+	return 0;
 
 }
 
