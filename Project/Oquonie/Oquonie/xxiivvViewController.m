@@ -131,25 +131,21 @@
 
 - (void) moveEnable
 {
-	
-	self.moveBL.enabled = YES;
-	self.moveBR.enabled = YES;
-	self.moveTL.enabled = YES;
-	self.moveTL.enabled = YES;
-	
+	self.moveBL.hidden = NO;
+	self.moveBR.hidden = NO;
+	self.moveTL.hidden = NO;
+	self.moveTL.hidden = NO;
 }
 
 
 
 - (void) moveDisable
 {
-
-	self.moveBL.enabled = NO;
-	self.moveBR.enabled = NO;
-	self.moveTL.enabled = NO;
-	self.moveTL.enabled = NO;
-	[NSTimer scheduledTimerWithTimeInterval:0.35 target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
-	
+	self.moveBL.hidden = YES;
+	self.moveBR.hidden = YES;
+	self.moveTL.hidden = YES;
+	self.moveTL.hidden = YES;
+	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
 }
 
 
