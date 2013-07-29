@@ -161,7 +161,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="char1.walk.r.f.1.png" id="WrE-Oy-CYa" userLabel="userPlayerChar">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char1.walk.r.f.1.png" id="WrE-Oy-CYa" userLabel="userPlayerChar">
                                         <rect key="frame" x="89" y="27" width="62" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>

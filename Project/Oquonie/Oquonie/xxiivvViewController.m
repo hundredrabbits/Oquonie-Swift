@@ -76,7 +76,7 @@
 	self.beam.frame = [self wallLocation:@"C" :@"1"];
 	
 	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
-	self.userPlayer.frame = [self tileLocation:1 :0 :0];
+	self.userPlayer.frame = [self tileLocation:4 :0 :0];
 	
 	self.userPlayerChat.hidden = YES;
 	
@@ -101,7 +101,7 @@
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
 	[UIView setAnimationDelay:0];
-	self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
+	self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
 	[UIView commitAnimations];
 	
 	[UIView beginAnimations: @"Fade In" context:nil];
@@ -299,6 +299,16 @@
 		else{ centerH -= tileH*0.5; }
 		centerH -= tileH/15;
 		centerH -= 200;
+	}
+	
+	// Character
+	if( type == 4 ){
+		tileH = tileH * 3;
+		centerH -= (tileH/2) + ((tileW * 0.5)/2);
+		if( (posX + posY) == 1 ){ centerH += (tileW * 0.5); }
+		else if( (posX + posY) == 2 ){ centerH += (tileW); }
+		else if( (posX + posY) == -1 ){ centerH -= (tileW * 0.5); }
+		else if( (posX + posY) == -2 ){ centerH -= (tileW); }
 	}
 	
 	if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
