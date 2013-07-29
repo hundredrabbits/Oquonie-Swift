@@ -171,7 +171,7 @@
                                 <rect key="frame" x="100" y="242" width="120" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="blocker.1.png" id="UtL-dN-nTc" userLabel="blocker1">
+                            <imageView userInteractionEnabled="NO" tag="300" contentMode="scaleAspectFill" image="blocker.1.png" id="UtL-dN-nTc" userLabel="blocker1">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -227,6 +227,44 @@
         <image name="wall.1.l.png" width="200" height="400"/>
         <image name="wall.1.r.png" width="200" height="400"/>
     </resources>
+    <classes>
+        <class className="xxiivvViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/xxiivvViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="moveBL:"/>
+                <relationship kind="action" name="moveBR:"/>
+                <relationship kind="action" name="moveTL:"/>
+                <relationship kind="action" name="moveTR:"/>
+                <relationship kind="outlet" name="beam" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="blocker1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor00" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor01" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor0e" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor10" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor11" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floor1e" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floore0" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="floore1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="flooree" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="moveBL" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="moveBR" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="moveTL" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="moveTR" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="step1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="step2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userPlayer" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="userPlayerChar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userPlayerChat" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userPlayerShadow" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall1l" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall1r" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall2l" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall2r" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall3l" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wall3r" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -199,7 +199,7 @@
 				if( posX == -2 ){ userPositionX =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
 				[self moveDoor:[test[4] intValue] ];
 			}
-			NSLog(@"Collision");
+			[self moveCollide:test];
 			return 1;
 		}
 	}
@@ -207,7 +207,25 @@
 }
 
 
+- (void) moveCollide :(NSArray*)event
+{
+	NSLog(@"Event: %@",event);
+	
+	for (UIView *subview in [self.view subviews]) {
+		
+		if( subview.tag == 300 ){
+			CGRect origin = subview.frame;
+			subview.frame = CGRectOffset(subview.frame, 0, -2);
+			[UIView beginAnimations: @"Fade In" context:nil];
+			[UIView setAnimationDuration:0.3];
+			[UIView setAnimationDelay:0];
+			subview.frame = origin;
+			[UIView commitAnimations];
+		}
+		
+	}
 
+}
 
 
 - (void) roomAnimation
