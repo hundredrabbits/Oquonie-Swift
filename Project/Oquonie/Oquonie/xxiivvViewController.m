@@ -93,9 +93,10 @@
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
 	int event = [self moveEvent:( userPositionX+posX ) :( userPositionY+posY )];
+	int wall = 0;	
 	
-	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 && event < 1){ userPositionX += posX; }
-	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 && event < 1 ){ userPositionY += posY; }
+	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 && event < 1){ userPositionX += posX; } else{ wall = 1; }
+	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 && event < 1 ){ userPositionY += posY; } else{ wall = 1; }
 	
 	if( (long)sender.tag == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
 	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
@@ -115,7 +116,7 @@
 	[UIView commitAnimations];
 		
 	[self moveDisable];
-	[self moveAnimation];
+	if( wall != 1 || event == 1 ){ [self moveAnimation]; }
 	[self moveOrder];
 }
 
@@ -215,6 +216,7 @@
 	
 	for (UIView *subview in [self.view subviews]) {
 		
+		// Event
 		if( subview.tag == 300 ){
 			CGRect origin = subview.frame;
 			subview.frame = CGRectOffset(subview.frame, 0, -2);
@@ -224,7 +226,7 @@
 			subview.frame = origin;
 			[UIView commitAnimations];
 		}
-		
+	
 	}
 
 }
