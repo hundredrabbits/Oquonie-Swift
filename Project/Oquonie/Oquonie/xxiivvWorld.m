@@ -60,6 +60,8 @@
 	worldEvent[1][1] = [NSArray arrayWithObjects: @"0",@"2",@"", @"",@"2", nil]; // Door to 2
 	
 	worldEvent[2][0] = [NSArray arrayWithObjects: @"-1",@"-1",@"blocker.1", @"",@"", nil];
+	worldEvent[2][1] = [NSArray arrayWithObjects: @"0",@"-2",@"", @"",@"1", nil]; // Door to 1
+	
 	worldEvent[3][0] = [NSArray arrayWithObjects: @"",@"",@"", @"",@"", nil];
 	
 }

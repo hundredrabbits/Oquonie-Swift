@@ -224,7 +224,9 @@
 	for (NSArray *test in worldEvent[userLocation]) {
 		
 		if( [test[0] intValue] == posX && [test[1] intValue] == posY ){
-			NSLog(@"event found");
+			if( [test[4] intValue] > 0 ){
+				[self moveDoor:[test[4] intValue] ];
+			}
 			return 1;
 		}
 	}
