@@ -50,7 +50,15 @@
 	int myCount = 0;
 	while ( myCount < 150 )	{ myCount++; worldEvent[myCount] = [NSMutableArray arrayWithObjects: @"", nil];	}
 	
-	worldEvent[1][0] = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Dialog",@"", nil];
+	// 0 posX
+	// 1 posY
+	// 2 tile image
+	// 3 dialog
+	// 4 warp
+	
+	worldEvent[1][0] = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Dialog",@"", nil]; // table
+	worldEvent[1][1] = [NSArray arrayWithObjects: @"0",@"2",@"", @"",@"2", nil]; // Door to 2
+	
 	worldEvent[2][0] = [NSArray arrayWithObjects: @"-1",@"-1",@"blocker.1", @"",@"", nil];
 	worldEvent[3][0] = [NSArray arrayWithObjects: @"",@"",@"", @"",@"", nil];
 	
@@ -90,6 +98,7 @@
 	
 	if( ![worldEvent[userLocation][0][2] isEqual:@""] ){
 		for (NSArray *test in worldEvent[userLocation]) {
+			if( [test[2] isEqual:@""] ){ continue; } // Skip if no graphic
 			int posX = [test[0] intValue];
 			int posY = [test[1] intValue];
 			self.blocker1.hidden = NO;
