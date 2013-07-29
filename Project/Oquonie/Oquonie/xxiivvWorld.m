@@ -76,8 +76,9 @@
 	worldEvent[3][2] = [NSArray arrayWithObjects: @"1",@"-2",@"step.1.l", @"",@"4", nil]; // Door to 4
 	worldEvent[3][3] = [NSArray arrayWithObjects: @"0",@"0",@"blocker.1", @"",@"", nil];
 	
-	worldEvent[4][0] = [NSArray arrayWithObjects: @"-1",@"-1",@"blocker.1", @"",@"", nil]; // init
+	worldEvent[4][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"", nil];
 	worldEvent[4][1] = [NSArray arrayWithObjects: @"1",@"2",@"none", @"",@"3", nil]; // init
+	worldEvent[4][2] = [NSArray arrayWithObjects: @"0",@"1",@"blocker.2", @"",@"", nil]; // init
 	
 }
 
@@ -124,9 +125,17 @@
 			// Steps
 			else if( [[test[2] substringToIndex:4] isEqual:@"step"] ){
 				NSLog(@"found step: %@",test);
-				self.step1.hidden = NO;
-				self.step1.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
-				self.step1.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
+				if( [test[0] intValue] == -2 ){
+					self.step2.hidden = NO;
+					self.step2.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
+					self.step2.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
+				}
+				if( [test[1] intValue] == -2 ){
+					self.step1.hidden = NO;
+					self.step1.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
+					self.step1.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
+				}
+				
 			}
 			
 			// Events
@@ -135,6 +144,7 @@
 				int posY = [test[1] intValue];
 				self.blocker1.hidden = NO;
 				self.blocker1.frame = [self tileLocation:1 :posX :posY];
+				self.blocker1.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@.png",test[2] ] ];
 			}
 			
 		}
