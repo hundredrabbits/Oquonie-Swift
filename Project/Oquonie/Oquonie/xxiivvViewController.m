@@ -224,7 +224,12 @@
 	for (NSArray *test in worldEvent[userLocation]) {
 		
 		if( [test[0] intValue] == posX && [test[1] intValue] == posY ){
+			// if warp
 			if( [test[4] intValue] > 0 ){
+				if( posY == 2  ){ userPositionY = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
+				if( posY == -2 ){ userPositionY =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
+				if( posX == 2  ){ userPositionX = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
+				if( posX == -2 ){ userPositionX =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
 				[self moveDoor:[test[4] intValue] ];
 			}
 			return 1;
