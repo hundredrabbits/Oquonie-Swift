@@ -70,12 +70,14 @@
 	self.wall1l.frame = [self wallLocation:@"L" :@"1"];
 	self.wall2l.frame = [self wallLocation:@"L" :@"2"];
 	self.wall3l.frame = [self wallLocation:@"L" :@"3"];
-
+	
 	self.blocker1.frame = [self tileLocation:1 :0 :0];
 	
 	self.beam.frame = [self wallLocation:@"C" :@"1"];
 	
 	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
+	self.userPlayerShadow.image = [UIImage imageNamed:@"char.shadow.png"];
+	
 	self.userPlayer.frame = [self tileLocation:4 :0 :0];
 	
 	self.userPlayerChat.hidden = YES;
