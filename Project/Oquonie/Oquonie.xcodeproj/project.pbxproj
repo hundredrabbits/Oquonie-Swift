@@ -20,6 +20,9 @@
 		0328126D17A54375006D5E9D /* char2.walk.r.f.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0328126117A54375006D5E9D /* char2.walk.r.f.1.png */; };
 		0328126E17A54375006D5E9D /* char2.walk.r.f.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0328126217A54375006D5E9D /* char2.walk.r.f.2.png */; };
 		0328127117A5527D006D5E9D /* blocker.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0328127017A5527D006D5E9D /* blocker.1.png */; };
+		032A5B7017A61F7500C98354 /* tile.4.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A5B6D17A61F7500C98354 /* tile.4.png */; };
+		032A5B7117A61F7500C98354 /* tile.5.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A5B6E17A61F7500C98354 /* tile.5.png */; };
+		032A5B7217A61F7500C98354 /* tile.6.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A5B6F17A61F7500C98354 /* tile.6.png */; };
 		032D74DD179CD6840068B27E /* tile.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 032D74DC179CD6840068B27E /* tile.0.png */; };
 		032D74E1179CD7D30068B27E /* wall.0.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 032D74E0179CD7D30068B27E /* wall.0.l.png */; };
 		032D74E4179CE0130068B27E /* wall.0.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 032D74E3179CE0130068B27E /* wall.0.r.png */; };
@@ -75,6 +78,9 @@
 		0328126117A54375006D5E9D /* char2.walk.r.f.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char2.walk.r.f.1.png; path = en.assets/char2.walk.r.f.1.png; sourceTree = "<group>"; };
 		0328126217A54375006D5E9D /* char2.walk.r.f.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char2.walk.r.f.2.png; path = en.assets/char2.walk.r.f.2.png; sourceTree = "<group>"; };
 		0328127017A5527D006D5E9D /* blocker.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.1.png; path = en.assets/blocker.1.png; sourceTree = "<group>"; };
+		032A5B6D17A61F7500C98354 /* tile.4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.4.png; path = en.assets/tile.4.png; sourceTree = "<group>"; };
+		032A5B6E17A61F7500C98354 /* tile.5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.5.png; path = en.assets/tile.5.png; sourceTree = "<group>"; };
+		032A5B6F17A61F7500C98354 /* tile.6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.6.png; path = en.assets/tile.6.png; sourceTree = "<group>"; };
 		032D74DC179CD6840068B27E /* tile.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.0.png; path = en.assets/tile.0.png; sourceTree = "<group>"; };
 		032D74E0179CD7D30068B27E /* wall.0.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.0.l.png; path = en.assets/wall.0.l.png; sourceTree = "<group>"; };
 		032D74E3179CE0130068B27E /* wall.0.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.0.r.png; path = en.assets/wall.0.r.png; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 		032D74DE179CD68A0068B27E /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
+				032A5B6D17A61F7500C98354 /* tile.4.png */,
+				032A5B6E17A61F7500C98354 /* tile.5.png */,
+				032A5B6F17A61F7500C98354 /* tile.6.png */,
 				032D74E5179CE0E90068B27E /* tile.3.png */,
 				032D74DC179CD6840068B27E /* tile.0.png */,
 				03BBFACF178AC8D600E79C3D /* tile.1.png */,
@@ -261,8 +270,8 @@
 				037E265D179D406C001A1553 /* door.1.l.png */,
 				037E265E179D406C001A1553 /* door.1.r.png */,
 				037E2657179D3B8A001A1553 /* step.1.l.png */,
-				0328126F17A5437C006D5E9D /* Char2 */,
 				037E2658179D3B8A001A1553 /* step.1.r.png */,
+				0328126F17A5437C006D5E9D /* Char2 */,
 				0385E690179CD11D006D47D6 /* char.shadow.png */,
 				037E265B179D3E45001A1553 /* char.chat.png */,
 				032D74E2179CD7D90068B27E /* Walls */,
@@ -369,6 +378,9 @@
 				0328126D17A54375006D5E9D /* char2.walk.r.f.1.png in Resources */,
 				0328126E17A54375006D5E9D /* char2.walk.r.f.2.png in Resources */,
 				0328127117A5527D006D5E9D /* blocker.1.png in Resources */,
+				032A5B7017A61F7500C98354 /* tile.4.png in Resources */,
+				032A5B7117A61F7500C98354 /* tile.5.png in Resources */,
+				032A5B7217A61F7500C98354 /* tile.6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,7 @@
 
 - (void) userStart
 {
-	userPositionX = 1;
+	userPositionX = 0;
 	userPositionY = 0;
 	userSpriteChar = @"char2";
 	userLocation = 1;
@@ -98,51 +98,17 @@
 	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
 	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
 	
-//	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[userLocation][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){
-//		[self moveDoor:[worldNode[userLocation][19] intValue]];
-//		userPositionX = 0;
-//		userPositionY = -1;
-//		posX = 0;
-//		posY = 0;
-//		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
-//	}
-//	else if( userPositionX ==  1 && userPositionY ==  0 && [[ worldNode[userLocation][10] substringToIndex:4] isEqual:@"door"] && sender.tag == 0 ){
-//		[self moveDoor:[worldNode[userLocation][18] intValue]];
-//		userPositionX = -1;
-//		userPositionY = 0;
-//		posX = 0;
-//		posY = 0;
-//		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
-//	}
-//	else if( userPositionX ==  0 && userPositionY == -1 && [worldNode[userLocation][16] intValue] > 0 && sender.tag == 2 ){
-//		[self moveDoor:[worldNode[userLocation][20] intValue]];
-//		userPositionX = 0;
-//		userPositionY = 1;
-//		posX = 0;
-//		posY = 0;
-//		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
-//	}
-//	else if( userPositionX == -1 && userPositionY ==  0 && [worldNode[userLocation][17] intValue] > 0 && sender.tag == 3 ){
-//		[self moveDoor:[worldNode[userLocation][21] intValue]];
-//		userPositionX = 1;
-//		userPositionY = 0;
-//		posX = 0;
-//		posY = 0;
-//		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
-//	}
-//	else{
-		[UIView beginAnimations: @"Fade In" context:nil];
-		[UIView setAnimationDuration:0.3];
-		[UIView setAnimationDelay:0];
-		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
-		[UIView commitAnimations];
-		
-		[UIView beginAnimations: @"Fade In" context:nil];
-		[UIView setAnimationDuration:0.4];
-		[UIView setAnimationDelay:0];
-		self.userPlayerChat.frame = [self tileLocation:3:userPositionX:userPositionY];
-		[UIView commitAnimations];
-//	}
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:0.3];
+	[UIView setAnimationDelay:0];
+	self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
+	[UIView commitAnimations];
+	
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:0.4];
+	[UIView setAnimationDelay:0];
+	self.userPlayerChat.frame = [self tileLocation:3:userPositionX:userPositionY];
+	[UIView commitAnimations];
 		
 	[self moveDisable];
 	[self moveAnimation];
@@ -223,8 +189,7 @@
 	
 	for (NSArray *test in worldEvent[userLocation]) {
 		
-		if( [test[0] intValue] == posX && [test[1] intValue] == posY ){
-			// if warp
+		if( ([test[0] intValue] == posX && [test[1] intValue] == posY && ![test[2] isEqual:@""]) || ([test[0] intValue] == posX && [test[1] intValue] == posY && ![test[4] isEqual:@""]) ){
 			if( [test[4] intValue] > 0 ){
 				if( posY == 2  ){ userPositionY = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
 				if( posY == -2 ){ userPositionY =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
@@ -232,6 +197,7 @@
 				if( posX == -2 ){ userPositionX =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
 				[self moveDoor:[test[4] intValue] ];
 			}
+			NSLog(@"Collision");
 			return 1;
 		}
 	}
@@ -345,7 +311,7 @@
 	if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH+tileH, tileW, tileH);}
 	if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
 	if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }
-	if( posX ==-2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+tileH, tileW, tileH); }
+	if( posX ==-2 && posY ==-1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH*1.5), tileW, tileH); }
 	
 	NSLog(@"error");
 

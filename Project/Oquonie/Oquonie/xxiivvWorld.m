@@ -23,16 +23,18 @@
 					@"3",@"2",@"3",
 					@"3",@"2",@"3",
 					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"door.1",@"wall.1",
-					@"0", @"0",
-					@"0", @"2",@"0", @"0",
 					nil];
 	worldNode[2] = [NSArray arrayWithObjects:
-					@"2",@"2",@"2",
-					@"2",@"1",@"2",
-					@"2",@"2",@"2",
+					@"2",@"2",@"4",
+					@"2",@"1",@"5",
+					@"2",@"2",@"6",
+					@"door.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"wall.1",@"wall.1",
+					nil];
+	worldNode[3] = [NSArray arrayWithObjects:
+					@"2",@"2",@"4",
+					@"2",@"1",@"5",
+					@"2",@"2",@"6",
 					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"wall.1",@"wall.1",
-					@"1",@"0",
-					@"0",@"0",@"1", @"0",
 					nil];
 }
 
@@ -57,12 +59,15 @@
 	// 4 warp
 	
 	worldEvent[1][0] = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Dialog",@"", nil]; // table
-	worldEvent[1][1] = [NSArray arrayWithObjects: @"0",@"2",@"", @"",@"2", nil]; // Door to 2
+	worldEvent[1][1] = [NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]; // Door to 2
 	
-	worldEvent[2][0] = [NSArray arrayWithObjects: @"-1",@"-1",@"blocker.1", @"",@"", nil];
-	worldEvent[2][1] = [NSArray arrayWithObjects: @"0",@"-2",@"", @"",@"1", nil]; // Door to 1
+	worldEvent[2][0] = [NSArray arrayWithObjects: @"1",@"1",@"blocker.1", @"",@"", nil];
+	worldEvent[2][1] = [NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"1", nil]; // Door to 1
+	worldEvent[2][2] = [NSArray arrayWithObjects: @"2",@"-1",@"none", @"",@"3", nil]; // Door to 2
 	
-	worldEvent[3][0] = [NSArray arrayWithObjects: @"",@"",@"", @"",@"", nil];
+	worldEvent[3][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"2", nil];
+	worldEvent[3][1] = [NSArray arrayWithObjects: @"-2",@"-1",@"step.1.r", @"",@"1", nil]; // Door to 2
+	worldEvent[3][2] = [NSArray arrayWithObjects: @"0",@"0",@"blocker.1", @"",@"", nil];
 	
 }
 
@@ -84,8 +89,6 @@
 	self.floore0.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][7]] ];
 	self.floor11.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][2]] ];
 	self.flooree.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][6]] ];
-	self.step1.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",worldNode[userLocation][16]] ];
-	self.step2.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",worldNode[userLocation][17]] ];
 	self.wall1l.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.r.png",worldNode[userLocation][9]] ];
 	self.wall2l.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.r.png",worldNode[userLocation][10]] ];
 	self.wall3l.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.r.png",worldNode[userLocation][11]] ];
@@ -97,16 +100,44 @@
 	// create events
 	
 	self.blocker1.hidden = YES;
+	self.step1.hidden = YES;
+	self.step2.hidden = YES;
 	
 	if( ![worldEvent[userLocation][0][2] isEqual:@""] ){
 		for (NSArray *test in worldEvent[userLocation]) {
-			if( [test[2] isEqual:@""] ){ continue; } // Skip if no graphic
-			int posX = [test[0] intValue];
-			int posY = [test[1] intValue];
-			self.blocker1.hidden = NO;
-			self.blocker1.frame = [self tileLocation:1 :posX :posY];
+			
+			// Exceptions
+			if( [test[2] isEqual:@""] || [[test[2] substringToIndex:4] isEqual:@"none"] ){
+				continue;
+			}
+			
+			// Steps
+			else if( [[test[2] substringToIndex:4] isEqual:@"step"] ){
+				NSLog(@"found step: %@",test);
+				self.step1.hidden = NO;
+				self.step1.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
+				self.step1.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
+			}
+			
+			// Events
+			else{
+				int posX = [test[0] intValue];
+				int posY = [test[1] intValue];
+				self.blocker1.hidden = NO;
+				self.blocker1.frame = [self tileLocation:1 :posX :posY];
+			}
+			
 		}
 	}
+	
+	// Create Steps
+	
+	
+//	self.step1.image  = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",worldNode[userLocation][16]] ];
+//	self.step2.image  = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",worldNode[userLocation][17]] ];
+	
+//	self.step1.frame = [self tileLocation:0 :0 :-2];
+//	self.step2.frame = [self tileLocation:0 :-2 :0];
 	
 	
 }
