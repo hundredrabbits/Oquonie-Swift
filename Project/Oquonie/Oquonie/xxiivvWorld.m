@@ -48,13 +48,12 @@
 {
 	worldEvent = [NSMutableArray arrayWithObjects:@"",nil];
 	int myCount = 0;
-	while ( myCount < 150 )	{ myCount++; worldEvent[myCount] = [NSArray arrayWithObjects: @"", @"", @"", @"", @"", @"", @"", @"", @"", nil];	}
+	while ( myCount < 150 )	{ myCount++; worldEvent[myCount] = [NSMutableArray arrayWithObjects: @"", nil];	}
 	
-	worldEvent[1] = [NSArray arrayWithObjects:
-					 @"",@"",@"",
-					 @"",@"1",@"",
-					 @"",@"",@"",
-					 nil];
+	worldEvent[1][0] = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Dialog",@"", nil];
+	worldEvent[2][0] = [NSArray arrayWithObjects: @"-1",@"-1",@"blocker.1", @"",@"", nil];
+	worldEvent[3][0] = [NSArray arrayWithObjects: @"",@"",@"", @"",@"", nil];
+	
 }
 
 
@@ -84,6 +83,21 @@
 	self.wall1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.l.png",worldNode[userLocation][13]] ];
 	self.wall2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.l.png",worldNode[userLocation][14]] ];
 	self.wall3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.l.png",worldNode[userLocation][15]] ];
+	
+	// create events
+	
+	self.blocker1.hidden = YES;
+	
+	if( ![worldEvent[userLocation][0][2] isEqual:@""] ){
+		for (NSArray *test in worldEvent[userLocation]) {
+			int posX = [test[0] intValue];
+			int posY = [test[1] intValue];
+			self.blocker1.hidden = NO;
+			self.blocker1.frame = [self tileLocation:1 :posX :posY];
+		}
+	}
+	
+	
 }
 
 - (void) roomUpdate

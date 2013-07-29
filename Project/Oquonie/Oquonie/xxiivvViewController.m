@@ -73,7 +73,6 @@
 
 	self.blocker1.frame = [self tileLocation:1 :0 :0];
 	
-	
 	self.beam.frame = [self wallLocation:@"C" :@"1"];
 	
 	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
@@ -98,7 +97,6 @@
 	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
 	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
 	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
-	
 	
 	if( userPositionX ==  0 && userPositionY ==  1 && [[ worldNode[userLocation][14] substringToIndex:4] isEqual:@"door"] && sender.tag == 1 ){
 		[self moveDoor:[worldNode[userLocation][19] intValue]];
@@ -133,8 +131,6 @@
 		self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];
 	}
 	else{
-		
-				
 		[UIView beginAnimations: @"Fade In" context:nil];
 		[UIView setAnimationDuration:0.3];
 		[UIView setAnimationDelay:0];
@@ -146,7 +142,6 @@
 		[UIView setAnimationDelay:0];
 		self.userPlayerChat.frame = [self tileLocation:3:userPositionX:userPositionY];
 		[UIView commitAnimations];
-		
 	}
 		
 	[self moveDisable];
@@ -193,7 +188,7 @@
 	self.moveBR.hidden = YES;
 	self.moveTL.hidden = YES;
 	self.moveTL.hidden = YES;
-	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
+	[NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
 }
 
 
@@ -218,42 +213,22 @@
 	else{
 		[self.view bringSubviewToFront:self.userPlayer];
 	}
-	
-	// NSLog(@"Z INDEX: %d", userPositionZ );
 }
 
 
 
 - (int) moveEvent :(int)posX :(int)posY
 {
-	
-	if( [ worldEvent[userLocation][ [self toolArrayAssoc:posX :posY] ] intValue ] > 0 ){
-		NSLog(@"> EVENT ID: %@",worldEvent[userLocation][ [self toolArrayAssoc:posX :posY] ]);
-		return [ worldEvent[userLocation][ [self toolArrayAssoc:posX :posY] ] intValue ];
+	for (NSArray *test in worldEvent[userLocation]) {
+		
+		if( [test[0] intValue] == posX && [test[1] intValue] == posY ){
+			return 1;
+		}
 	}
-	
 	return 0;
-
 }
 
 
-
-- (int) toolArrayAssoc :(int)posX :(int)posY
-{
-	
-	if( posX == 1 && posY == -1 ){ return 0;}
-	if( posX == 1 && posY == 0 ){ return 1;}
-	if( posX == 1 && posY == 1 ){ return 2;}
-	if( posX == 0 && posY == -1 ){ return 3;}
-	if( posX == 0 && posY == 0 ){ return 4;}
-	if( posX == 0 && posY == 1 ){ return 5;}
-	if( posX == -1 && posY == -1 ){ return 6;}
-	if( posX == -1 && posY == 0 ){ return 7;}
-	if( posX == -1 && posY == 1 ){ return 8;}
-
-	return 0;
-	
-}
 
 
 

@@ -49,6 +49,8 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *blocker1;
 
+- (CGRect) tileLocation :(int)type :(int)posX :(int)posY;
+
 @end
 
 
