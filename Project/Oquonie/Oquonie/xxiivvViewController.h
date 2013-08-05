@@ -68,6 +68,8 @@ int userPositionX;
 int userPositionY;
 int userPositionZ;
 
+NSMutableArray *userInventory;
+
 NSMutableArray *worldNode;
 NSMutableArray *worldEvent;
 

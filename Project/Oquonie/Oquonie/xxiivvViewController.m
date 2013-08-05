@@ -92,6 +92,8 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
+	NSLog(@"=====================");
+	
 	int event = [self moveEvent:( userPositionX+posX ) :( userPositionY+posY )];
 	int wall = 0;	
 	
