@@ -71,6 +71,12 @@
 		03BBFAC5178A9E4E00E79C3D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFAC3178A9E4E00E79C3D /* MainStoryboard.storyboard */; };
 		03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */; };
 		03BBFAD0178AC8D600E79C3D /* tile.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03BBFACF178AC8D600E79C3D /* tile.1.png */; };
+		03C1EE0517AFAC70001AFF21 /* blocker.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0017AFAC70001AFF21 /* blocker.3.png */; };
+		03C1EE0617AFAC70001AFF21 /* wall.2.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0117AFAC70001AFF21 /* wall.2.l.png */; };
+		03C1EE0717AFAC70001AFF21 /* wall.2.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0217AFAC70001AFF21 /* wall.2.r.png */; };
+		03C1EE0817AFAC70001AFF21 /* wall.3.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0317AFAC70001AFF21 /* wall.3.l.png */; };
+		03C1EE0917AFAC70001AFF21 /* wall.3.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0417AFAC70001AFF21 /* wall.3.r.png */; };
+		03C1EE0B17AFB90C001AFF21 /* event.chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0A17AFB90C001AFF21 /* event.chat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +150,12 @@
 		03BBFAC6178A9E4E00E79C3D /* xxiivvViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xxiivvViewController.h; sourceTree = "<group>"; };
 		03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvViewController.m; sourceTree = "<group>"; };
 		03BBFACF178AC8D600E79C3D /* tile.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.1.png; path = en.assets/tile.1.png; sourceTree = "<group>"; };
+		03C1EE0017AFAC70001AFF21 /* blocker.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.3.png; path = en.assets/blocker.3.png; sourceTree = "<group>"; };
+		03C1EE0117AFAC70001AFF21 /* wall.2.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.2.l.png; path = en.assets/wall.2.l.png; sourceTree = "<group>"; };
+		03C1EE0217AFAC70001AFF21 /* wall.2.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.2.r.png; path = en.assets/wall.2.r.png; sourceTree = "<group>"; };
+		03C1EE0317AFAC70001AFF21 /* wall.3.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.l.png; path = en.assets/wall.3.l.png; sourceTree = "<group>"; };
+		03C1EE0417AFAC70001AFF21 /* wall.3.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.r.png; path = en.assets/wall.3.r.png; sourceTree = "<group>"; };
+		03C1EE0A17AFB90C001AFF21 /* event.chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.chat.png; path = en.assets/event.chat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +299,12 @@
 		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				03C1EE0A17AFB90C001AFF21 /* event.chat.png */,
+				03C1EE0017AFAC70001AFF21 /* blocker.3.png */,
+				03C1EE0117AFAC70001AFF21 /* wall.2.l.png */,
+				03C1EE0217AFAC70001AFF21 /* wall.2.r.png */,
+				03C1EE0317AFAC70001AFF21 /* wall.3.l.png */,
+				03C1EE0417AFAC70001AFF21 /* wall.3.r.png */,
 				03B5B0B917AA1CA300B3C18D /* icon.57.png */,
 				03B5B0BA17AA1CA300B3C18D /* icon.72.png */,
 				03B5B0BB17AA1CA300B3C18D /* icon.114.png */,
@@ -417,6 +435,12 @@
 				03B5B0C417AA1CAE00B3C18D /* icon.114.png in Resources */,
 				03B5B0C617AA1CB100B3C18D /* icon.72.png in Resources */,
 				03B5B0C817AA1CB300B3C18D /* icon.144.png in Resources */,
+				03C1EE0517AFAC70001AFF21 /* blocker.3.png in Resources */,
+				03C1EE0617AFAC70001AFF21 /* wall.2.l.png in Resources */,
+				03C1EE0717AFAC70001AFF21 /* wall.2.r.png in Resources */,
+				03C1EE0817AFAC70001AFF21 /* wall.3.l.png in Resources */,
+				03C1EE0917AFAC70001AFF21 /* wall.3.r.png in Resources */,
+				03C1EE0B17AFB90C001AFF21 /* event.chat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
