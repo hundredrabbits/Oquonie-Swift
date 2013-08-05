@@ -130,7 +130,7 @@
 	
 	if( ![worldEvent[userLocation][0][2] isEqual:@""] ){
 		for (NSArray *test in worldEvent[userLocation]) {
-			
+						
 			// Exceptions
 			if( [test[2] isEqual:@""] || [[test[2] substringToIndex:4] isEqual:@"none"] ){
 				continue;
@@ -168,20 +168,29 @@
 				[event addSubview:sprite];
 				
 				if( [test[3] intValue] > 0 ){
+					
 					UIImageView *spell = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.width)];
 					[spell setContentMode:UIViewContentModeScaleAspectFill];
 					[spell setImage:[UIImage imageNamed: @"event.chat.png" ]];
-					[spell setTag:300];
+					[spell setTag:310];
 					[event addSubview:spell];
+					
+					CGRect origin = spell.frame;
+					spell.frame = CGRectOffset(spell.frame, 0, 20);
+					spell.alpha = 0;
+					[UIView beginAnimations: @"Fade In" context:nil];
+					[UIView setAnimationDuration:0.5];
+					[UIView setAnimationDelay:1];
+					spell.frame = origin;
+					spell.alpha = 1;
+					[UIView commitAnimations];
 				}
 				
-
 				[self.view addSubview:event];
 			}
 			
 		}
 	}
-	
 	
 	
 }
