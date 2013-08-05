@@ -25,9 +25,9 @@
 					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"door.1",@"wall.1",
 					nil];
 	worldNode[2] = [NSArray arrayWithObjects:
-					@"2",@"2",@"4",
-					@"2",@"1",@"1",
-					@"2",@"2",@"6",
+					@"1",@"2",@"4",
+					@"1",@"4",@"4",
+					@"1",@"2",@"4",
 					@"door.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"door.1",@"wall.1",
 					nil];
 	worldNode[3] = [NSArray arrayWithObjects:
@@ -41,6 +41,12 @@
 					@"5",@"4",@"4",
 					@"5",@"9",@"9",
 					@"wall.1",@"wall.1",@"wall.1",@"1",@"door.1",@"wall.1",@"wall.1",
+					nil];
+	worldNode[5] = [NSArray arrayWithObjects:
+					@"1",@"1",@"1",
+					@"1",@"4",@"1",
+					@"1",@"1",@"1",
+					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"wall.1",@"wall.1",
 					nil];
 }
 
@@ -64,13 +70,15 @@
 	// 3 dialog
 	// 4 warp
 	
-	worldEvent[1][0] = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Dialog",@"", nil]; // table
+	worldEvent[1][0] = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Cond ",@"", nil]; // table
 	worldEvent[1][1] = [NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]; // Door to 2
 	
-	worldEvent[2][0] = [NSArray arrayWithObjects: @"1",@"1",@"blocker.1", @"",@"", nil];
-	worldEvent[2][1] = [NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"1", nil]; // Door to 1
-	worldEvent[2][2] = [NSArray arrayWithObjects: @"2",@"-1",@"none", @"",@"3", nil]; // Door to 2
-	worldEvent[2][3] = [NSArray arrayWithObjects: @"-1",@"1",@"blocker.1", @"",@"", nil];
+	worldEvent[2][0] = [NSArray arrayWithObjects: @"1",	@"1",	@"blocker.2",	@"",		@"", nil];
+	worldEvent[2][1] = [NSArray arrayWithObjects: @"0",	@"-2",	@"step.1.l",	@"",		@"1", nil]; // Door to 1
+	worldEvent[2][2] = [NSArray arrayWithObjects: @"2",	@"-1",	@"none",		@"",		@"3", nil]; // Door to 3
+	worldEvent[2][3] = [NSArray arrayWithObjects: @"-1",@"1",	@"blocker.2",	@"",		@"", nil];
+	worldEvent[2][4] = [NSArray arrayWithObjects: @"0",	@"2",	@"none",		@"char1",	@"5", nil]; // Door to 5, must be 1
+	worldEvent[2][5] = [NSArray arrayWithObjects: @"-1",@"-1",	@"blocker.1",	@"",		@"", nil];
 	
 	worldEvent[3][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"2", nil];
 	worldEvent[3][1] = [NSArray arrayWithObjects: @"-2",@"-1",@"step.1.r", @"",@"1", nil]; // Door to 2
@@ -80,6 +88,9 @@
 	worldEvent[4][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"", nil];
 	worldEvent[4][1] = [NSArray arrayWithObjects: @"1",@"2",@"none", @"",@"3", nil]; // init
 	worldEvent[4][2] = [NSArray arrayWithObjects: @"0",@"1",@"blocker.2", @"",@"", nil]; // init
+	
+	worldEvent[5][0] = [NSArray arrayWithObjects: @"0",	@"-2",	@"step.1.l",	@"",@"2", nil]; // Door to 1
+	worldEvent[5][1] = [NSArray arrayWithObjects: @"0",	@"0",	@"none",	@"",@"4", nil]; // Teleport to 1
 	
 }
 

@@ -202,19 +202,25 @@
 
 - (int) moveEvent :(int)posX :(int)posY
 {
-//	NSLog(@"EVENT LOCATION: %d %d", posX, posY);
 	
 	for (NSArray *event in worldEvent[userLocation]) {
 		
 		if( ([event[0] intValue] == posX && [event[1] intValue] == posY && ![event[2] isEqual:@""]) || ([event[0] intValue] == posX && [event[1] intValue] == posY && ![event[4] isEqual:@""]) ){
 			if( [event[4] intValue] > 0 ){
-				if( posY == 2  ){ userPositionY = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
-				if( posY == -2 ){ userPositionY =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
-				if( posX == 2  ){ userPositionX = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
-				if( posX == -2 ){ userPositionX =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
-				[self moveDoor:[event[4] intValue] ];
+				if( [event[3] isEqual:userSpriteChar] || [event[3] isEqual:@""] ){
+					if( posY == 2  ){ userPositionY = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
+					if( posY == -2 ){ userPositionY =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
+					if( posX == 2  ){ userPositionX = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
+					if( posX == -2 ){ userPositionX =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
+					[self moveDoor:[event[4] intValue] ];
+				}
+				else{
+					NSLog(@"> DOOR | Locked, must be %@",event[3]);
+				}
+				
 			}
 			[self moveCollide:event:posX:posY];
+			NSLog(@"> EVNT | %@", event[2]);
 			return 1;
 		}
 	}
