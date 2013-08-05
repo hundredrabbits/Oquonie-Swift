@@ -26,9 +26,9 @@
 					nil];
 	worldNode[2] = [NSArray arrayWithObjects:
 					@"2",@"2",@"4",
-					@"2",@"1",@"5",
+					@"2",@"1",@"1",
 					@"2",@"2",@"6",
-					@"door.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"wall.1",@"wall.1",
+					@"door.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"door.1",@"wall.1",
 					nil];
 	worldNode[3] = [NSArray arrayWithObjects:
 					@"2",@"2",@"4",
@@ -70,6 +70,7 @@
 	worldEvent[2][0] = [NSArray arrayWithObjects: @"1",@"1",@"blocker.1", @"",@"", nil];
 	worldEvent[2][1] = [NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"1", nil]; // Door to 1
 	worldEvent[2][2] = [NSArray arrayWithObjects: @"2",@"-1",@"none", @"",@"3", nil]; // Door to 2
+	worldEvent[2][3] = [NSArray arrayWithObjects: @"-1",@"1",@"blocker.1", @"",@"", nil];
 	
 	worldEvent[3][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"2", nil];
 	worldEvent[3][1] = [NSArray arrayWithObjects: @"-2",@"-1",@"step.1.r", @"",@"1", nil]; // Door to 2
@@ -88,9 +89,11 @@
 
 }
 
-
 - (void) roomStart
 {
+	[self roomClean];
+	NSLog(@"> ROOM | Load %d",userLocation);
+	
 	self.floor00.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][4]] ];
 	self.floor1e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][8]] ];
 	self.floore1.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][0]] ];
@@ -124,7 +127,7 @@
 			
 			// Steps
 			else if( [[test[2] substringToIndex:4] isEqual:@"step"] ){
-				NSLog(@"found step: %@",test);
+				
 				if( [test[0] intValue] == -2 ){
 					self.step2.hidden = NO;
 					self.step2.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
@@ -138,28 +141,34 @@
 				
 			}
 			
-			// Events
+			// Create Events
 			else{
 				int posX = [test[0] intValue];
 				int posY = [test[1] intValue];
-				self.blocker1.hidden = NO;
-				self.blocker1.frame = [self tileLocation:1 :posX :posY];
-				self.blocker1.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@.png",test[2] ] ];
+				UIImageView *event = [[UIImageView alloc] initWithFrame:[self tileLocation:1 :posX :posY]];
+				[event setContentMode:UIViewContentModeScaleAspectFill];
+				[event setImage:[UIImage imageNamed: [NSString stringWithFormat:@"%@.png",test[2] ] ]];
+				[event setTag:300];
+				[self.view addSubview:event];
+				
 			}
 			
 		}
 	}
 	
-	// Create Steps
 	
 	
-//	self.step1.image  = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",worldNode[userLocation][16]] ];
-//	self.step2.image  = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",worldNode[userLocation][17]] ];
-	
-//	self.step1.frame = [self tileLocation:0 :0 :-2];
-//	self.step2.frame = [self tileLocation:0 :-2 :0];
-	
-	
+}
+
+
+- (void) roomClean
+{
+	NSLog(@"> ROOM | Clean ");
+	for (UIView *subview in [self.view subviews]) {
+		if(subview.tag == 300){
+			[subview removeFromSuperview];
+		}
+	}
 }
 
 - (void) roomUpdate

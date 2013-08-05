@@ -116,9 +116,21 @@
 	[UIView commitAnimations];
 		
 	[self moveDisable];
-	if( wall != 1 || event == 1 ){ [self moveAnimation]; }
+	if( wall != 1 || event == 1 ){
+		[self moveAnimation];
+	}
+	else{
+		NSMutableArray *event = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Dialog",@"", nil];
+		[self moveCollide:event:posX:posY];
+	}
 	[self moveOrder];
+	
+	NSLog(@"> USER | Position: %d %d",userPositionX, userPositionY);
 }
+
+
+
+
 
 - (void) moveAnimation
 {
@@ -190,19 +202,19 @@
 
 - (int) moveEvent :(int)posX :(int)posY
 {
-	NSLog(@"EVENT LOCATION: %d %d", posX, posY);
+//	NSLog(@"EVENT LOCATION: %d %d", posX, posY);
 	
-	for (NSArray *test in worldEvent[userLocation]) {
+	for (NSArray *event in worldEvent[userLocation]) {
 		
-		if( ([test[0] intValue] == posX && [test[1] intValue] == posY && ![test[2] isEqual:@""]) || ([test[0] intValue] == posX && [test[1] intValue] == posY && ![test[4] isEqual:@""]) ){
-			if( [test[4] intValue] > 0 ){
+		if( ([event[0] intValue] == posX && [event[1] intValue] == posY && ![event[2] isEqual:@""]) || ([event[0] intValue] == posX && [event[1] intValue] == posY && ![event[4] isEqual:@""]) ){
+			if( [event[4] intValue] > 0 ){
 				if( posY == 2  ){ userPositionY = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
 				if( posY == -2 ){ userPositionY =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
 				if( posX == 2  ){ userPositionX = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
 				if( posX == -2 ){ userPositionX =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
-				[self moveDoor:[test[4] intValue] ];
+				[self moveDoor:[event[4] intValue] ];
 			}
-			[self moveCollide:test];
+			[self moveCollide:event:posX:posY];
 			return 1;
 		}
 	}
@@ -210,13 +222,12 @@
 }
 
 
-- (void) moveCollide :(NSArray*)event
+- (void) moveCollide :(NSArray*)event :(int)posX :(int)posY
 {
-	NSLog(@"Event: %@",event);
+	//NSLog(@"Event: %d %d",posX,posY);
 	
 	for (UIView *subview in [self.view subviews]) {
 		
-		// Event
 		if( subview.tag == 300 ){
 			CGRect origin = subview.frame;
 			subview.frame = CGRectOffset(subview.frame, 0, -2);
@@ -228,6 +239,19 @@
 		}
 	
 	}
+	
+	// Animater player sprite
+	
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@""] ] ];
+	
+	CGRect userOrigin = self.userPlayer.frame;
+	if( (posX == -1 && posY == 0) || (posX == 0 && posY == 1) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 2, 0); }
+	if( (posX == 0 && posY == -1) || (posX == 1 && posY == 0) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, -2, 0); }
+	[UIView beginAnimations: @"Fade In" context:nil]; [UIView setAnimationDuration:0.3];
+	self.userPlayer.frame = userOrigin;
+	[UIView commitAnimations];
+	
+	
 
 }
 
@@ -250,6 +274,8 @@
 		}
 	}
 }
+
+
 
 
 
