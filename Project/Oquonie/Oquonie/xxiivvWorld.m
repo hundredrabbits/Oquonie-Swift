@@ -31,10 +31,10 @@
 					@"door.1",@"wall.1",@"wall.3",@"1",@"wall.3",@"door.1",@"wall.3",
 					nil];
 	worldNode[3] = [NSArray arrayWithObjects:
-					@"2",@"2",@"4",
-					@"2",@"1",@"5",
-					@"2",@"2",@"6",
-					@"wall.2",@"wall.2",@"wall.2",@"1",@"wall.3",@"wall.3",@"wall.3",
+					@"6",@"9",@"9",
+					@"6",@"5",@"5",
+					@"6",@"9",@"9",
+					@"",@"",@"",@"1",@"",@"gate.char2.1",@"",
 					nil];
 	worldNode[4] = [NSArray arrayWithObjects:
 					@"4",@"6",@"4",
@@ -83,7 +83,7 @@
 	worldEvent[3][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"2", nil];
 	worldEvent[3][1] = [NSArray arrayWithObjects: @"-2",@"-1",@"step.1.r", @"",@"1", nil]; // Door to 2
 	worldEvent[3][2] = [NSArray arrayWithObjects: @"1",@"-2",@"step.1.l", @"",@"4", nil]; // Door to 4
-	worldEvent[3][3] = [NSArray arrayWithObjects: @"0",@"0",@"blocker.1", @"",@"", nil];
+//	worldEvent[3][3] = [NSArray arrayWithObjects: @"0",@"0",@"blocker.1", @"",@"", nil];
 	
 	worldEvent[4][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"", nil];
 	worldEvent[4][1] = [NSArray arrayWithObjects: @"1",@"2",@"none", @"",@"3", nil]; // init
