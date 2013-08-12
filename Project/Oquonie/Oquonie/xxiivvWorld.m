@@ -22,24 +22,25 @@
 					@"3",@"2",@"3",
 					@"3",@"2",@"3",
 					@"3",@"2",@"3",
-					@"wall.1",@"wall.2",@"wall.3",@"1",@"wall.2",@"door.1",@"wall.1",
+					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"door.1",@"wall.1",
 					nil];
 	worldNode[2] = [NSArray arrayWithObjects:
 					@"1",@"2",@"4",
 					@"1",@"4",@"4",
 					@"1",@"2",@"4",
-					@"door.1",@"wall.1",@"wall.3",@"1",@"wall.3",@"door.1",@"wall.3",
+					@"door.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"wall.1",@"wall.1",
 					nil];
+	
 	worldNode[3] = [NSArray arrayWithObjects:
-					@"6",@"9",@"9",
-					@"6",@"5",@"5",
-					@"6",@"9",@"9",
-					@"",@"",@"",@"1",@"",@"gate.char2.1",@"",
+					@"2",@"3",@"2",
+					@"3",@"2",@"3",
+					@"2",@"3",@"2",
+					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"gate.char2.1",@"wall.1",
 					nil];
 	worldNode[4] = [NSArray arrayWithObjects:
-					@"4",@"6",@"4",
-					@"5",@"4",@"4",
-					@"5",@"9",@"9",
+					@"3",@"3",@"3",
+					@"3",@"2",@"3",
+					@"3",@"3",@"3",
 					@"wall.1",@"wall.1",@"wall.1",@"1",@"door.1",@"wall.1",@"wall.1",
 					nil];
 	worldNode[5] = [NSArray arrayWithObjects:
@@ -70,27 +71,63 @@
 	// 3 dialog
 	// 4 warp
 	
-	worldEvent[1][0] = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Cond ",@"", nil]; // table
-	worldEvent[1][1] = [NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]; // Door to 2
+	// ======================
+	// @ Room 1-1-1
+	// ======================
+	// Init
+	worldEvent[1][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Events
+//	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Cond ",@"", nil]];
+	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"0",@"blocker.0", @"Cond ",@"", nil]];
+//	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"tutorial.1", @"Cond ",@"", nil]];
+	// Doors
+	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]]; 
 	
-	worldEvent[2][0] = [NSArray arrayWithObjects: @"1",	@"1",	@"blocker.2",	@"1",		@"", nil];
-	worldEvent[2][1] = [NSArray arrayWithObjects: @"0",	@"-2",	@"step.1.l",	@"",		@"1", nil]; // Door to 1
-	worldEvent[2][2] = [NSArray arrayWithObjects: @"2",	@"-1",	@"none",		@"",		@"3", nil]; // Door to 3
-	worldEvent[2][3] = [NSArray arrayWithObjects: @"-1",@"1",	@"blocker.2",	@"1",		@"", nil];
-	worldEvent[2][4] = [NSArray arrayWithObjects: @"0",	@"2",	@"none",		@"char1",	@"5", nil]; // Door to 5, must be 1
-	worldEvent[2][5] = [NSArray arrayWithObjects: @"-1",@"-1",	@"blocker.1",	@"",		@"", nil];
+	// ======================
+	// @ Room 1-1-2
+	// ======================
+	// Init
+	worldEvent[2][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Events
+	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"0",@"1",@"blocker.0", @"",@"", nil]];
+	// Doors
+	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"1", nil]];
+	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"2",@"-1",@"none", @"",@"3", nil]];
 	
-	worldEvent[3][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"2", nil];
-	worldEvent[3][1] = [NSArray arrayWithObjects: @"-2",@"-1",@"step.1.r", @"",@"1", nil]; // Door to 2
-	worldEvent[3][2] = [NSArray arrayWithObjects: @"1",@"-2",@"step.1.l", @"",@"4", nil]; // Door to 4
-//	worldEvent[3][3] = [NSArray arrayWithObjects: @"0",@"0",@"blocker.1", @"",@"", nil];
+	// ======================
+	// @ Room 1-1-3
+	// ======================
+	// Init
+	worldEvent[3][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	[worldEvent[3] addObject:[NSArray arrayWithObjects: @"1",@"1",@"tutorial.1", @"",@"", nil]];
+	[worldEvent[3] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"tutorial.1", @"",@"", nil]];
+	// Events
+	[worldEvent[3] addObject:[NSArray arrayWithObjects: @"1",@"0",@"blocker.0", @"",@"0", nil]];
+	// Doors
+	[worldEvent[3] addObject:[NSArray arrayWithObjects: @"-2",@"-1",@"step.1.r", @"",@"2", nil]];
+	[worldEvent[3] addObject:[NSArray arrayWithObjects: @"1",@"-2",@"step.1.l", @"",@"4", nil]];
 	
-	worldEvent[4][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"", nil];
-	worldEvent[4][1] = [NSArray arrayWithObjects: @"1",@"2",@"none", @"",@"3", nil]; // init
-	worldEvent[4][2] = [NSArray arrayWithObjects: @"0",@"1",@"blocker.2", @"",@"", nil]; // init
+	// ======================
+	// @ Room 1-1-4
+	// ======================
+	// Init
+	worldEvent[4][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	[worldEvent[4] addObject:[NSArray arrayWithObjects: @"0",@"0",@"blocker.1", @"",@"0", nil]];
+	// Events
+	[worldEvent[4] addObject:[NSArray arrayWithObjects: @"0",@"1",@"blocker.0", @"",@"0", nil]];
+	// Doors
+	[worldEvent[4] addObject:[NSArray arrayWithObjects: @"1",@"2",@"none", @"",@"3", nil]];
 	
-	worldEvent[5][0] = [NSArray arrayWithObjects: @"0",	@"-2",	@"step.1.l",	@"",@"2", nil]; // Door to 1
-	worldEvent[5][1] = [NSArray arrayWithObjects: @"0",	@"0",	@"none",	@"",@"4", nil]; // Teleport to 1
+	
+	
+//	worldEvent[4][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"", nil];
+//	worldEvent[4][1] = [NSArray arrayWithObjects: @"1",@"2",@"none", @"",@"3", nil]; // init
+//	worldEvent[4][2] = [NSArray arrayWithObjects: @"0",@"1",@"blocker.2", @"",@"", nil]; // init
+//	
+//	worldEvent[5][0] = [NSArray arrayWithObjects: @"0",	@"-2",	@"step.1.l",	@"",@"2", nil]; // Door to 1
+//	worldEvent[5][1] = [NSArray arrayWithObjects: @"0",	@"0",	@"none",	@"",@"4", nil]; // Teleport to 1
 	
 }
 
@@ -128,68 +165,66 @@
 	self.step1.hidden = YES;
 	self.step2.hidden = YES;
 	
-	if( ![worldEvent[userLocation][0][2] isEqual:@""] ){
-		for (NSArray *test in worldEvent[userLocation]) {
-						
-			// Exceptions
-			if( [test[2] isEqual:@""] || [[test[2] substringToIndex:4] isEqual:@"none"] ){
-				continue;
+	for (NSArray *test in worldEvent[userLocation]) {
+		
+		// Exceptions
+		if( [test[2] isEqual:@""] || [[test[2] substringToIndex:4] isEqual:@"none"] ){
+			continue;
+		}
+		
+		// Steps
+		else if( [[test[2] substringToIndex:4] isEqual:@"step"] ){
+			
+			if( [test[0] intValue] == -2 ){
+				self.step2.hidden = NO;
+				self.step2.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
+				self.step2.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
 			}
-			
-			// Steps
-			else if( [[test[2] substringToIndex:4] isEqual:@"step"] ){
-				
-				if( [test[0] intValue] == -2 ){
-					self.step2.hidden = NO;
-					self.step2.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
-					self.step2.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
-				}
-				if( [test[1] intValue] == -2 ){
-					self.step1.hidden = NO;
-					self.step1.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
-					self.step1.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
-				}
-				
-			}
-			
-			// Create Events
-			
-			else{
-				int posX = [test[0] intValue];
-				int posY = [test[1] intValue];
-	
-				UIScrollView *event = [[UIScrollView alloc] initWithFrame:[self tileLocation:4 :posX :posY]];
-				[event setTag:300];
-
-				UIImageView *sprite = [[UIImageView alloc] initWithFrame:CGRectMake(0, event.frame.size.height-self.userPlayer.frame.size.height, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height)];
-				[sprite setContentMode:UIViewContentModeScaleAspectFill];
-				[sprite setImage:[UIImage imageNamed: [NSString stringWithFormat:@"%@.png",test[2] ] ]];
-				[sprite setTag:300];
-				[event addSubview:sprite];
-				
-				if( [test[3] intValue] > 0 ){
-					
-					UIImageView *spell = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.width)];
-					[spell setContentMode:UIViewContentModeScaleAspectFill];
-					[spell setImage:[UIImage imageNamed: @"event.chat.png" ]];
-					[spell setTag:310];
-					[event addSubview:spell];
-					
-					CGRect origin = spell.frame;
-					spell.frame = CGRectOffset(spell.frame, 0, 20);
-					spell.alpha = 0;
-					[UIView beginAnimations: @"Fade In" context:nil];
-					[UIView setAnimationDuration:0.5];
-					[UIView setAnimationDelay:1];
-					spell.frame = origin;
-					spell.alpha = 1;
-					[UIView commitAnimations];
-				}
-				
-				[self.view addSubview:event];
+			if( [test[1] intValue] == -2 ){
+				self.step1.hidden = NO;
+				self.step1.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
+				self.step1.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
 			}
 			
 		}
+		
+		// Create Events
+		
+		else{
+			int posX = [test[0] intValue];
+			int posY = [test[1] intValue];
+
+			UIScrollView *event = [[UIScrollView alloc] initWithFrame:[self tileLocation:4 :posX :posY]];
+			[event setTag:300];
+
+			UIImageView *sprite = [[UIImageView alloc] initWithFrame:CGRectMake(0, event.frame.size.height-self.userPlayer.frame.size.height, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height)];
+			[sprite setContentMode:UIViewContentModeScaleAspectFill];
+			[sprite setImage:[UIImage imageNamed: [NSString stringWithFormat:@"%@.png",test[2] ] ]];
+			[sprite setTag:300];
+			[event addSubview:sprite];
+			
+			if( [test[3] intValue] > 0 ){
+				
+				UIImageView *spell = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.width)];
+				[spell setContentMode:UIViewContentModeScaleAspectFill];
+				[spell setImage:[UIImage imageNamed: @"event.chat.png" ]];
+				[spell setTag:310];
+				[event addSubview:spell];
+				
+				CGRect origin = spell.frame;
+				spell.frame = CGRectOffset(spell.frame, 0, 20);
+				spell.alpha = 0;
+				[UIView beginAnimations: @"Fade In" context:nil];
+				[UIView setAnimationDuration:0.5];
+				[UIView setAnimationDelay:1];
+				spell.frame = origin;
+				spell.alpha = 1;
+				[UIView commitAnimations];
+			}
+			
+			[self.view addSubview:event];
+		}
+		
 	}
 	
 	
