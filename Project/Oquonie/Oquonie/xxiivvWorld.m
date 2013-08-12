@@ -44,10 +44,28 @@
 					@"wall.1",@"wall.1",@"wall.1",@"1",@"door.1",@"wall.1",@"wall.1",
 					nil];
 	worldNode[5] = [NSArray arrayWithObjects:
-					@"1",@"1",@"1",
-					@"1",@"4",@"1",
-					@"1",@"1",@"1",
-					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"wall.1",@"wall.1",
+					@"",@"4",@"",
+					@"2",@"2",@"5",
+					@"2",@"2",@"6",
+					@"wall.2",@"gate.char2.1",@"wall.2",@"1",@"",@"door.1",@"",
+					nil];
+	worldNode[6] = [NSArray arrayWithObjects:
+					@"4",@"4",@"4",
+					@"4",@"4",@"",
+					@"4",@"4",@"",
+					@"",@"gate.char2.1",@"",@"1",@"",@"",@"",
+					nil];
+	worldNode[7] = [NSArray arrayWithObjects:
+					@"4",@"4",@"4",
+					@"4",@" ",@"5",
+					@"4",@"5",@"6",
+					@"",@"door.1",@"",@"1",@"",@"",@"",
+					nil];
+	worldNode[8] = [NSArray arrayWithObjects:
+					@"5",@" ",@"4",
+					@"4",@" ",@"5",
+					@"4",@" ",@"6",
+					@"",@"",@"",@"1",@"",@"door.1",@"",
 					nil];
 }
 
@@ -72,7 +90,7 @@
 	// 4 warp
 	
 	// ======================
-	// @ Room 1-1-1
+	// @ Room 1-1-1 #1
 	// ======================
 	// Init
 	worldEvent[1][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
@@ -84,7 +102,7 @@
 	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]]; 
 	
 	// ======================
-	// @ Room 1-1-2
+	// @ Room 1-1-2 #2
 	// ======================
 	// Init
 	worldEvent[2][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
@@ -95,7 +113,7 @@
 	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"2",@"-1",@"none", @"",@"3", nil]];
 	
 	// ======================
-	// @ Room 1-1-3
+	// @ Room 1-1-3 #3
 	// ======================
 	// Init
 	worldEvent[3][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
@@ -107,9 +125,10 @@
 	// Doors
 	[worldEvent[3] addObject:[NSArray arrayWithObjects: @"-2",@"-1",@"step.1.r", @"",@"2", nil]];
 	[worldEvent[3] addObject:[NSArray arrayWithObjects: @"1",@"-2",@"step.1.l", @"",@"4", nil]];
+	[worldEvent[3] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"5", nil]];
 	
 	// ======================
-	// @ Room 1-1-4
+	// @ Room 1-1-4 #4
 	// ======================
 	// Init
 	worldEvent[4][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
@@ -120,15 +139,58 @@
 	// Doors
 	[worldEvent[4] addObject:[NSArray arrayWithObjects: @"1",@"2",@"none", @"",@"3", nil]];
 	
+	// ======================
+	// @ Room 1-2-1 #5
+	// ======================
+	// Init
+	worldEvent[5][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	// Events
+	[worldEvent[5] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"blocker.0", @"",@"0", nil]];
+	// Doors
+	[worldEvent[5] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"4", nil]];
+	[worldEvent[5] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"6", nil]];
+	[worldEvent[5] addObject:[NSArray arrayWithObjects: @"2",@"0",@"none", @"",@"12", nil]];
 	
+	// ======================
+	// @ Room 1-2-2 #6
+	// ======================
+	// Init
+	worldEvent[6][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	// Events
+	[worldEvent[6] addObject:[NSArray arrayWithObjects: @"1",@"1",@"blocker.0", @"",@"0", nil]];
+	// Doors
+	[worldEvent[6] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"5", nil]];
+	[worldEvent[6] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"6", nil]];
+	[worldEvent[6] addObject:[NSArray arrayWithObjects: @"2",@"0",@"none", @"",@"9", nil]];
+	[worldEvent[6] addObject:[NSArray arrayWithObjects: @"-2",@"0",@"step.1.r", @"",@"7", nil]];
 	
-//	worldEvent[4][0] = [NSArray arrayWithObjects: @"-2",@"-1",@"none", @"",@"", nil];
-//	worldEvent[4][1] = [NSArray arrayWithObjects: @"1",@"2",@"none", @"",@"3", nil]; // init
-//	worldEvent[4][2] = [NSArray arrayWithObjects: @"0",@"1",@"blocker.2", @"",@"", nil]; // init
-//	
-//	worldEvent[5][0] = [NSArray arrayWithObjects: @"0",	@"-2",	@"step.1.l",	@"",@"2", nil]; // Door to 1
-//	worldEvent[5][1] = [NSArray arrayWithObjects: @"0",	@"0",	@"none",	@"",@"4", nil]; // Teleport to 1
+	// ======================
+	// @ Room 1-2-3 #7
+	// ======================
+	// Init
+	worldEvent[7][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	// Events
+	[worldEvent[7] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"blocker.0", @"",@"0", nil]];
+	// Doors
+	[worldEvent[7] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"8", nil]];
+	[worldEvent[7] addObject:[NSArray arrayWithObjects: @"2",@"0",@"none", @"",@"6", nil]];
 	
+	// ======================
+	// @ Room 1-2-4 #8
+	// ======================
+	// Init
+	worldEvent[8][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	// Events
+	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"1",@"1",@"blocker.0", @"",@"8", nil]];
+	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"-1",@"blocker.0", @"",@"8", nil]];
+	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"1",@"-1",@"blocker.0", @"",@"8", nil]];
+	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"blocker.0", @"",@"8", nil]];
+	// Doors
+	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"7", nil]];
 }
 
 
