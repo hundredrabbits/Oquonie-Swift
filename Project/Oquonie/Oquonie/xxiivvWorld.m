@@ -67,6 +67,49 @@
 					@"4",@" ",@"6",
 					@"",@"",@"",@"1",@"",@"door.1",@"",
 					nil];
+	worldNode[9] = [NSArray arrayWithObjects:
+					@"3",@"3",@"3",
+					@"3",@"3",@"3",
+					@"3",@"3",@"3",
+					@"wall.2",@"wall.2",@"wall.2",@"1",@"wall.2",@"wall.2",@"wall.2",
+					nil];
+	worldNode[10] = [NSArray arrayWithObjects:
+					@"3",@"3",@"3",
+					@"3",@"3",@"3",
+					@"3",@"3",@"3",
+					@"wall.2",@"wall.2",@"wall.2",@"1",@"wall.2",@"wall.2",@"wall.2",
+					nil];
+	worldNode[11] = [NSArray arrayWithObjects:
+					@"3",@"3",@"3",
+					@"3",@"3",@"3",
+					@"3",@"3",@"3",
+					@"wall.2",@"wall.2",@"wall.2",@"1",@"wall.2",@"wall.2",@"wall.2",
+					nil];
+	worldNode[12] = [NSArray arrayWithObjects:
+					 @" ",@"4",@" ",
+					 @"6",@"5",@"5",
+					 @" ",@"4",@" ",
+					 @"",@"",@"",@"1",@"",@"gate.char2.1",@"",
+					 nil];
+	worldNode[13] = [NSArray arrayWithObjects:
+					 @" ",@"4",@" ",
+					 @"6",@"5",@"5",
+					 @" ",@"4",@" ",
+					 @"",@"",@"",@"1",@"",@"gate.char2.1",@"",
+					 nil];
+	worldNode[14] = [NSArray arrayWithObjects:
+					 @" ",@"4",@" ",
+					 @"6",@"5",@"5",
+					 @" ",@"4",@" ",
+					 @"",@"",@"",@"1",@"",@"gate.char2.1",@"",
+					 nil];
+	worldNode[15] = [NSArray arrayWithObjects:
+					 @" ",@" ",@" ",
+					 @"6",@"5",@"5",
+					 @" ",@" ",@" ",
+					 @"",@"",@"",@"1",@"",@"door.1",@"",
+					 nil];
+	
 }
 
 
@@ -95,9 +138,7 @@
 	// Init
 	worldEvent[1][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
 	// Events
-//	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Cond ",@"", nil]];
 	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"0",@"blocker.0", @"Cond ",@"", nil]];
-//	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"tutorial.1", @"Cond ",@"", nil]];
 	// Doors
 	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]]; 
 	
@@ -148,7 +189,7 @@
 	// Events
 	[worldEvent[5] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"blocker.0", @"",@"0", nil]];
 	// Doors
-	[worldEvent[5] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"4", nil]];
+	[worldEvent[5] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"3", nil]];
 	[worldEvent[5] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"6", nil]];
 	[worldEvent[5] addObject:[NSArray arrayWithObjects: @"2",@"0",@"none", @"",@"12", nil]];
 	
@@ -191,6 +232,56 @@
 	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"blocker.0", @"",@"8", nil]];
 	// Doors
 	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"7", nil]];
+	
+	// ======================
+	// @ Room 1-3-1 #9
+	// ======================
+	// Init
+	worldEvent[9][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	// Events
+	// Doors
+	[worldEvent[9] addObject:[NSArray arrayWithObjects: @"-2",@"0",@"step.1.r", @"",@"8", nil]];
+	[worldEvent[9] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"12", nil]];
+	
+	// ======================
+	// @ Room 1-3-2 #10
+	// ======================
+	// Init
+	worldEvent[10][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	// Events
+	// Doors
+	
+	// ======================
+	// @ Room 1-3-3 #11
+	// ======================
+	// Init
+	worldEvent[11][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	// Events
+	// Doors
+	
+	// ======================
+	// @ Room 1-3-4 #12
+	// ======================
+	// Init
+	worldEvent[12][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	// Events
+	// Doors
+	[worldEvent[12] addObject:[NSArray arrayWithObjects: @"-2",@"0",@"step.1.r", @"",@"5", nil]];
+	[worldEvent[12] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"13", nil]];
+	[worldEvent[12] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"9", nil]];
+	
+	// ======================
+	// @ Room 1-4-1 #12
+	// ======================
+	// Init
+	worldEvent[12][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	// Blocker
+	// Events
+	// Doors
 }
 
 
