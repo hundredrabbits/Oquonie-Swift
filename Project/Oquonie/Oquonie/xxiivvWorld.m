@@ -10,8 +10,6 @@
 
 @implementation xxiivvViewController (world)
 
-
-
 - (void) worldStart
 {
 	worldNode = [NSMutableArray arrayWithObjects:@"",nil];
