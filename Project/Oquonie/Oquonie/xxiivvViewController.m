@@ -43,8 +43,8 @@
 	
 	userPositionX = 0;
 	userPositionY = 0;
-	userSpriteChar = @"char2";
-	userSpriteCharId = 2;
+	userSpriteChar = @"char3";
+	userSpriteCharId = 3;
 	userLocation = 1;
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
@@ -252,18 +252,33 @@
 		
 		NSLog(@"> EVNT | %@", spriteName);
 		[self moveCollide:event:posX:posY];
-		[self moveDialog:spriteDialogId];
+		[self eventDialog:spriteDialogId];
 		return 1;
 	}
 	return 0;
 }
 
--(void)moveDialog:(int)dialogId {
+-(void)eventDialog:(int)dialogId {
 	
 	NSString* eventDialog = worldEventDialog[1][userSpriteCharId][1];
+	int spellId = [worldEventDialog[1][userSpriteCharId][0] intValue];
 	
-	NSLog(@"> DIAL | '%@'", eventDialog);
+	NSLog(@"> EVNT | Saying:'%@'", eventDialog);
+	
+	if(spellId > 0){
+		[self eventSpell:spellId];
+	}
+	
 }
+
+
+
+-(void)eventSpell:(int)spellId {
+	
+	NSLog(@"> EVNT | Spell #%d", spellId);
+	
+}
+
 
 - (void) moveCollide :(NSArray*)event :(int)posX :(int)posY
 {

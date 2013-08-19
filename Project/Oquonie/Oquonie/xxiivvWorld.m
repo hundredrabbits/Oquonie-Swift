@@ -295,12 +295,19 @@
 	
 	worldEventDialog[0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
 	
+	// if Necomedre
+	// if Nephtaline
+	// if Neomine
+	// if Nestorine
+	// if Nemedique
+	
 	worldEventDialog[1] = @[
-			@[@"0", @"Yes", @"ア"],
-			@[@"0", @"Maybe", @"イ"],
-			@[@"0", @"Probably not", @"ウ"],
-			@[@"1", @"No", @"ウ"],
-			@[@"0", @"Absolutely not", @"ウ"]
+		@[@"1", @"Debug"],
+	    @[@"0", @"Yes",],
+		@[@"0", @"Maybe",],
+		@[@"1", @"Sister!"],
+		@[@"0", @"No"],
+		@[@"0", @"Absolutely not"]
 	];
 	
 }
