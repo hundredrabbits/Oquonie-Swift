@@ -146,6 +146,7 @@
 	// Init
 	worldEvent[2][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
 	// Events
+	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"1",@"1",@"music.0.l", @"",@"", nil]];
 	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"0",@"1",@"blocker.0", @"",@"", nil]];
 	// Doors
 	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"1", nil]];

@@ -53,6 +53,8 @@
 	
 	self.userPlayerChat.hidden = YES;
 	
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"2"] ] ];
+	
 	self.userPlayerChar.frame = CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height);
 }
 
@@ -73,6 +75,21 @@
 			[UIView commitAnimations];
 		}
 	}
+}
+
+
+- (NSString *) templateSpriteName :(NSString*) mod
+{
+	NSString *spriteName = @"";
+	
+	if( [userSpriteState isEqual:@"walk"] ){
+		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
+	}
+	else{
+		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical];
+	}
+	
+	return spriteName;
 }
 
 @end

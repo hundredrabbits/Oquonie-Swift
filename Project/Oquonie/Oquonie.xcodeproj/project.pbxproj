@@ -59,6 +59,7 @@
 		03983BEF17C1A41800C89446 /* wizard3.l.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 03983BEB17C1A41800C89446 /* wizard3.l.f.png */; };
 		03983BF017C1A41800C89446 /* wizard3.r.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 03983BEC17C1A41800C89446 /* wizard3.r.f.png */; };
 		03983BF217C1A99A00C89446 /* teleport.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 03983BF117C1A99A00C89446 /* teleport.0.png */; };
+		03983BF917C1B19100C89446 /* music.0.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03983BF817C1B19100C89446 /* music.0.l.png */; };
 		03B5B0C217AA1CA900B3C18D /* icon.57.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0C117AA1CA900B3C18D /* icon.57.png */; };
 		03B5B0C417AA1CAE00B3C18D /* icon.114.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0C317AA1CAE00B3C18D /* icon.114.png */; };
 		03B5B0C617AA1CB100B3C18D /* icon.72.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0C517AA1CB100B3C18D /* icon.72.png */; };
@@ -141,6 +142,7 @@
 		03983BEB17C1A41800C89446 /* wizard3.l.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard3.l.f.png; path = en.assets/wizard3.l.f.png; sourceTree = "<group>"; };
 		03983BEC17C1A41800C89446 /* wizard3.r.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard3.r.f.png; path = en.assets/wizard3.r.f.png; sourceTree = "<group>"; };
 		03983BF117C1A99A00C89446 /* teleport.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teleport.0.png; path = en.assets/teleport.0.png; sourceTree = "<group>"; };
+		03983BF817C1B19100C89446 /* music.0.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = music.0.l.png; path = en.assets/music.0.l.png; sourceTree = "<group>"; };
 		03B5B0C117AA1CA900B3C18D /* icon.57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.57.png; sourceTree = "<group>"; };
 		03B5B0C317AA1CAE00B3C18D /* icon.114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.114.png; sourceTree = "<group>"; };
 		03B5B0C517AA1CB100B3C18D /* icon.72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.72.png; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				03983BF817C1B19100C89446 /* music.0.l.png */,
 				03983BF717C1AA9400C89446 /* Teleports */,
 				03983BF417C1AA5000C89446 /* Doors */,
 				03983BF617C1AA8D00C89446 /* Wizards */,
@@ -518,6 +521,7 @@
 				03983BEF17C1A41800C89446 /* wizard3.l.f.png in Resources */,
 				03983BF017C1A41800C89446 /* wizard3.r.f.png in Resources */,
 				03983BF217C1A99A00C89446 /* teleport.0.png in Resources */,
+				03983BF917C1B19100C89446 /* music.0.l.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

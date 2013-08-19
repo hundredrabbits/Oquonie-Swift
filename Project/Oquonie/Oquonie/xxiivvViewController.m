@@ -46,6 +46,9 @@
 	userSpriteChar = @"char2";
 	userSpriteCharId = 2;
 	userLocation = 1;
+	userSpriteState = @"stand";
+	userSpriteOrientationHorizontal = @"l";
+	userSpriteOrientationVertical = @"f";
 }
 
 # pragma mark Misc -
@@ -53,27 +56,13 @@
 - (void) animator1
 {
 	userSpriteState = @"walk";
-	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"2"] ] ];
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"2"] ] ];
 }
 
 - (void) animator2
 {
 	userSpriteState = @"stand";
-	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"1"] ] ];
-}
-
-- (NSString *) userSpriteName :(NSString*) mod
-{
-	NSString *spriteName = @"";
-	
-	if( [userSpriteState isEqual:@"walk"] ){
-		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
-	}
-	else{
-		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical];
-	}
-	
-	return spriteName;
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"1"] ] ];
 }
 
 - (CGRect) tileLocation :(int)type :(int)posX :(int)posY
@@ -197,7 +186,7 @@
 - (void) moveAnimation
 {
 	userSpriteState = @"walk";
-	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@"1"] ] ];
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"1"] ] ];
 	[NSTimer scheduledTimerWithTimeInterval:0.15 target:self selector:@selector(animator1) userInfo:nil repeats:NO];
 	[NSTimer scheduledTimerWithTimeInterval:0.30 target:self selector:@selector(animator2) userInfo:nil repeats:NO];
 }
@@ -289,7 +278,7 @@
 			[UIView commitAnimations];
 		}
 	}
-	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@""] ] ];
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@""] ] ];
 	[self moveCollideAnimate:posX:posY];
 }
 

@@ -12,5 +12,6 @@
 
 -(void)templateStart;
 - (void) templateRoomAnimation;
+- (NSString *) templateSpriteName :(NSString*) mod;
 
 @end
