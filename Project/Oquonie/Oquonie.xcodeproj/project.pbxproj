@@ -58,10 +58,7 @@
 		03983BEE17C1A41800C89446 /* gate.1.r.char1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03983BEA17C1A41800C89446 /* gate.1.r.char1.png */; };
 		03983BEF17C1A41800C89446 /* wizard3.l.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 03983BEB17C1A41800C89446 /* wizard3.l.f.png */; };
 		03983BF017C1A41800C89446 /* wizard3.r.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 03983BEC17C1A41800C89446 /* wizard3.r.f.png */; };
-		03B5B0BD17AA1CA300B3C18D /* icon.57.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0B917AA1CA300B3C18D /* icon.57.png */; };
-		03B5B0BE17AA1CA300B3C18D /* icon.72.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0BA17AA1CA300B3C18D /* icon.72.png */; };
-		03B5B0BF17AA1CA300B3C18D /* icon.114.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0BB17AA1CA300B3C18D /* icon.114.png */; };
-		03B5B0C017AA1CA300B3C18D /* icon.144.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0BC17AA1CA300B3C18D /* icon.144.png */; };
+		03983BF217C1A99A00C89446 /* teleport.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 03983BF117C1A99A00C89446 /* teleport.0.png */; };
 		03B5B0C217AA1CA900B3C18D /* icon.57.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0C117AA1CA900B3C18D /* icon.57.png */; };
 		03B5B0C417AA1CAE00B3C18D /* icon.114.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0C317AA1CAE00B3C18D /* icon.114.png */; };
 		03B5B0C617AA1CB100B3C18D /* icon.72.png in Resources */ = {isa = PBXBuildFile; fileRef = 03B5B0C517AA1CB100B3C18D /* icon.72.png */; };
@@ -143,10 +140,7 @@
 		03983BEA17C1A41800C89446 /* gate.1.r.char1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gate.1.r.char1.png; path = en.assets/gate.1.r.char1.png; sourceTree = "<group>"; };
 		03983BEB17C1A41800C89446 /* wizard3.l.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard3.l.f.png; path = en.assets/wizard3.l.f.png; sourceTree = "<group>"; };
 		03983BEC17C1A41800C89446 /* wizard3.r.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard3.r.f.png; path = en.assets/wizard3.r.f.png; sourceTree = "<group>"; };
-		03B5B0B917AA1CA300B3C18D /* icon.57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.57.png; sourceTree = "<group>"; };
-		03B5B0BA17AA1CA300B3C18D /* icon.72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.72.png; sourceTree = "<group>"; };
-		03B5B0BB17AA1CA300B3C18D /* icon.114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.114.png; sourceTree = "<group>"; };
-		03B5B0BC17AA1CA300B3C18D /* icon.144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.144.png; sourceTree = "<group>"; };
+		03983BF117C1A99A00C89446 /* teleport.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teleport.0.png; path = en.assets/teleport.0.png; sourceTree = "<group>"; };
 		03B5B0C117AA1CA900B3C18D /* icon.57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.57.png; sourceTree = "<group>"; };
 		03B5B0C317AA1CAE00B3C18D /* icon.114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.114.png; sourceTree = "<group>"; };
 		03B5B0C517AA1CB100B3C18D /* icon.72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.72.png; sourceTree = "<group>"; };
@@ -215,6 +209,8 @@
 		032D74DE179CD68A0068B27E /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
+				037E2657179D3B8A001A1553 /* step.1.l.png */,
+				037E2658179D3B8A001A1553 /* step.1.r.png */,
 				032A5B6D17A61F7500C98354 /* tile.4.png */,
 				032A5B6E17A61F7500C98354 /* tile.5.png */,
 				032A5B6F17A61F7500C98354 /* tile.6.png */,
@@ -248,6 +244,11 @@
 		032D74E2179CD7D90068B27E /* Walls */ = {
 			isa = PBXGroup;
 			children = (
+				037E2661179D4562001A1553 /* beam.1.png */,
+				03C1EE0117AFAC70001AFF21 /* wall.2.l.png */,
+				03C1EE0217AFAC70001AFF21 /* wall.2.r.png */,
+				03C1EE0317AFAC70001AFF21 /* wall.3.l.png */,
+				03C1EE0417AFAC70001AFF21 /* wall.3.r.png */,
 				037E2655179D061A001A1553 /* wall.1.r.png */,
 				032D74E6179CE0E90068B27E /* wall.1.l.png */,
 				032D74E3179CE0130068B27E /* wall.0.r.png */,
@@ -263,6 +264,57 @@
 				0355CF8F17C196C10069AF97 /* MainStoryboard.storyboard */,
 			);
 			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		03983BF317C1AA3800C89446 /* CharMisc */ = {
+			isa = PBXGroup;
+			children = (
+				03C1EE0A17AFB90C001AFF21 /* event.chat.png */,
+				037E265B179D3E45001A1553 /* char.chat.png */,
+				0385E690179CD11D006D47D6 /* char.shadow.png */,
+			);
+			name = CharMisc;
+			sourceTree = "<group>";
+		};
+		03983BF417C1AA5000C89446 /* Doors */ = {
+			isa = PBXGroup;
+			children = (
+				03983BE917C1A41800C89446 /* gate.1.l.char1.png */,
+				03983BEA17C1A41800C89446 /* gate.1.r.char1.png */,
+				03C16CE117B8772D00401B3D /* gate.char2.1.l.png */,
+				03C16CE217B8772D00401B3D /* gate.char2.1.r.png */,
+				037E265D179D406C001A1553 /* door.1.l.png */,
+				037E265E179D406C001A1553 /* door.1.r.png */,
+			);
+			name = Doors;
+			sourceTree = "<group>";
+		};
+		03983BF517C1AA8400C89446 /* Blockers */ = {
+			isa = PBXGroup;
+			children = (
+				03C16CE517B8848A00401B3D /* blocker.0.png */,
+				03C1EE0017AFAC70001AFF21 /* blocker.3.png */,
+				0328127017A5527D006D5E9D /* blocker.1.png */,
+			);
+			name = Blockers;
+			sourceTree = "<group>";
+		};
+		03983BF617C1AA8D00C89446 /* Wizards */ = {
+			isa = PBXGroup;
+			children = (
+				032A5B7317A63F8000C98354 /* tutorial.1.png */,
+				03983BEB17C1A41800C89446 /* wizard3.l.f.png */,
+				03983BEC17C1A41800C89446 /* wizard3.r.f.png */,
+			);
+			name = Wizards;
+			sourceTree = "<group>";
+		};
+		03983BF717C1AA9400C89446 /* Teleports */ = {
+			isa = PBXGroup;
+			children = (
+				03983BF117C1A99A00C89446 /* teleport.0.png */,
+			);
+			name = Teleports;
 			sourceTree = "<group>";
 		};
 		03BBFA9F178A9E4E00E79C3D = {
@@ -332,32 +384,11 @@
 		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				03983BE917C1A41800C89446 /* gate.1.l.char1.png */,
-				03983BEA17C1A41800C89446 /* gate.1.r.char1.png */,
-				03983BEB17C1A41800C89446 /* wizard3.l.f.png */,
-				03983BEC17C1A41800C89446 /* wizard3.r.f.png */,
-				03C16CE517B8848A00401B3D /* blocker.0.png */,
-				03C16CE117B8772D00401B3D /* gate.char2.1.l.png */,
-				03C16CE217B8772D00401B3D /* gate.char2.1.r.png */,
-				03C1EE0A17AFB90C001AFF21 /* event.chat.png */,
-				03C1EE0017AFAC70001AFF21 /* blocker.3.png */,
-				03C1EE0117AFAC70001AFF21 /* wall.2.l.png */,
-				03C1EE0217AFAC70001AFF21 /* wall.2.r.png */,
-				03C1EE0317AFAC70001AFF21 /* wall.3.l.png */,
-				03C1EE0417AFAC70001AFF21 /* wall.3.r.png */,
-				03B5B0B917AA1CA300B3C18D /* icon.57.png */,
-				03B5B0BA17AA1CA300B3C18D /* icon.72.png */,
-				03B5B0BB17AA1CA300B3C18D /* icon.114.png */,
-				03B5B0BC17AA1CA300B3C18D /* icon.144.png */,
-				032A5B7317A63F8000C98354 /* tutorial.1.png */,
-				0328127017A5527D006D5E9D /* blocker.1.png */,
-				037E2661179D4562001A1553 /* beam.1.png */,
-				037E265D179D406C001A1553 /* door.1.l.png */,
-				037E265E179D406C001A1553 /* door.1.r.png */,
-				037E2657179D3B8A001A1553 /* step.1.l.png */,
-				037E2658179D3B8A001A1553 /* step.1.r.png */,
-				0385E690179CD11D006D47D6 /* char.shadow.png */,
-				037E265B179D3E45001A1553 /* char.chat.png */,
+				03983BF717C1AA9400C89446 /* Teleports */,
+				03983BF417C1AA5000C89446 /* Doors */,
+				03983BF617C1AA8D00C89446 /* Wizards */,
+				03983BF517C1AA8400C89446 /* Blockers */,
+				03983BF317C1AA3800C89446 /* CharMisc */,
 				0328126F17A5437C006D5E9D /* Char2 */,
 				032D74E2179CD7D90068B27E /* Walls */,
 				032D74DF179CD6950068B27E /* Char1 */,
@@ -467,10 +498,6 @@
 				032A5B7117A61F7500C98354 /* tile.5.png in Resources */,
 				032A5B7217A61F7500C98354 /* tile.6.png in Resources */,
 				032A5B7417A63F8000C98354 /* tutorial.1.png in Resources */,
-				03B5B0BD17AA1CA300B3C18D /* icon.57.png in Resources */,
-				03B5B0BE17AA1CA300B3C18D /* icon.72.png in Resources */,
-				03B5B0BF17AA1CA300B3C18D /* icon.114.png in Resources */,
-				03B5B0C017AA1CA300B3C18D /* icon.144.png in Resources */,
 				03B5B0C217AA1CA900B3C18D /* icon.57.png in Resources */,
 				03B5B0C417AA1CAE00B3C18D /* icon.114.png in Resources */,
 				03B5B0C617AA1CB100B3C18D /* icon.72.png in Resources */,
@@ -490,6 +517,7 @@
 				03983BEE17C1A41800C89446 /* gate.1.r.char1.png in Resources */,
 				03983BEF17C1A41800C89446 /* wizard3.l.f.png in Resources */,
 				03983BF017C1A41800C89446 /* wizard3.r.f.png in Resources */,
+				03983BF217C1A99A00C89446 /* teleport.0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

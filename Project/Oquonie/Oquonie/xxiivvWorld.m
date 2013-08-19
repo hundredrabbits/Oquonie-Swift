@@ -225,9 +225,9 @@
 	// Blocker
 	// Events
 	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"1",@"1",@"blocker.0", @"",@"8", nil]];
-	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"-1",@"blocker.0", @"",@"8", nil]];
+	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"-1",@"teleport.0", @"",@"8", nil]];
 	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"1",@"-1",@"blocker.0", @"",@"8", nil]];
-	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"blocker.0", @"",@"8", nil]];
+	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"teleport.0", @"",@"8", nil]];
 	// Doors
 	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"7", nil]];
 	
@@ -375,26 +375,7 @@
 			[sprite setTag:300];
 			
 			[event addSubview:sprite];
-			
-//			if( [test[3] intValue] > 0 ){
-//				
-//				UIImageView *spell = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.width)];
-//				[spell setContentMode:UIViewContentModeScaleAspectFill];
-//				[spell setImage:[UIImage imageNamed: @"event.chat.png" ]];
-//				[spell setTag:310];
-//				[event addSubview:spell];
-//				
-//				CGRect origin = spell.frame;
-//				spell.frame = CGRectOffset(spell.frame, 0, 20);
-//				spell.alpha = 0;
-//				[UIView beginAnimations: @"Fade In" context:nil];
-//				[UIView setAnimationDuration:0.5];
-//				[UIView setAnimationDelay:1];
-//				spell.frame = origin;
-//				spell.alpha = 1;
-//				[UIView commitAnimations];
-//			}
-			
+
 			[self.view addSubview:event];
 		}
 		
