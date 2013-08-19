@@ -16,5 +16,6 @@
 - (void) eventUpdate;
 - (void) roomStart;
 - (void) roomUpdate;
+- (void) eventDialogStart;
 
 @end

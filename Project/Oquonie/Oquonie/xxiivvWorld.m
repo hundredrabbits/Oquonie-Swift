@@ -136,7 +136,7 @@
 	// Init
 	worldEvent[1][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
 	// Events
-	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"0",@"blocker.0", @"Cond ",@"", nil]];
+	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"0",@"blocker.0", @"1 ",@"", nil]];
 	// Doors
 	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]]; 
 	
@@ -280,8 +280,29 @@
 	// Blocker
 	// Events
 	// Doors
+	
+	[self eventDialogStart];
 }
 
+
+
+- (void) eventDialogStart
+{
+	worldEventDialog = [NSMutableArray arrayWithObjects:@"",nil];
+	int myCount = 0;
+	while ( myCount < 150 )	{ myCount++; worldEventDialog[myCount] = [NSMutableArray arrayWithObjects: @"", nil];	}
+	
+	worldEventDialog[0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
+	
+	worldEventDialog[1] = @[
+			@[@"0", @"Yes", @"ア"],
+			@[@"0", @"Maybe", @"イ"],
+			@[@"0", @"Probably not", @"ウ"],
+			@[@"1", @"No", @"ウ"],
+			@[@"0", @"Absolutely not", @"ウ"]
+	];
+	
+}
 
 - (void) eventUpdate
 {

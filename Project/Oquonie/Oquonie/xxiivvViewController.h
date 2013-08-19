@@ -67,11 +67,16 @@ int userLocation;
 int userPositionX;
 int userPositionY;
 int userPositionZ;
+int userSpriteCharId;
 
 NSMutableArray *userInventory;
 
 NSMutableArray *worldNode;
 NSMutableArray *worldEvent;
+NSMutableArray *worldEventDialog;
+
+
+
 
 CGRect	screen;
 int		screenMargin;

@@ -25,6 +25,8 @@
 	[super didReceiveMemoryWarning];
 }
 
+# pragma mark Start -
+
 -(void)start {
 	
 	[self userStart];
@@ -42,6 +44,7 @@
 	userPositionX = 0;
 	userPositionY = 0;
 	userSpriteChar = @"char2";
+	userSpriteCharId = 2;
 	userLocation = 1;
 }
 
@@ -241,7 +244,7 @@
 	for (NSArray *event in worldEvent[userLocation]) {
 		
 		NSString* spriteName = event[2];
-		NSString* spriteDialog = event[3];
+		int spriteDialogId = [event[3] intValue];
 		int spritePosX = [event[0] intValue];
 		int spritePosY = [event[1] intValue];
 		int spriteWarp = [event[4] intValue];
@@ -258,11 +261,19 @@
 			[self moveDoor:spriteWarp ];
 		}
 		
-		NSLog(@"> EVNT | %@ '%@'", spriteName, spriteDialog);
+		NSLog(@"> EVNT | %@", spriteName);
 		[self moveCollide:event:posX:posY];
+		[self moveDialog:spriteDialogId];
 		return 1;
 	}
 	return 0;
+}
+
+-(void)moveDialog:(int)dialogId {
+	
+	NSString* eventDialog = worldEventDialog[1][userSpriteCharId][1];
+	
+	NSLog(@"> DIAL | '%@'", eventDialog);
 }
 
 - (void) moveCollide :(NSArray*)event :(int)posX :(int)posY
@@ -278,7 +289,6 @@
 			[UIView commitAnimations];
 		}
 	}
-	
 	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self userSpriteName:@""] ] ];
 	[self moveCollideAnimate:posX:posY];
 }
