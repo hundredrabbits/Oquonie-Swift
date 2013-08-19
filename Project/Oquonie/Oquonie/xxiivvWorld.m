@@ -136,7 +136,7 @@
 	// Init
 	worldEvent[1][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
 	// Events
-	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"0",@"blocker.0", @"1 ",@"", nil]];
+	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"0",@"wizard3.r.f", @"1 ",@"", nil]];
 	// Doors
 	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]]; 
 	
@@ -369,30 +369,31 @@
 			UIScrollView *event = [[UIScrollView alloc] initWithFrame:[self tileLocation:4 :posX :posY]];
 			[event setTag:300];
 
-			UIImageView *sprite = [[UIImageView alloc] initWithFrame:CGRectMake(0, event.frame.size.height-self.userPlayer.frame.size.height, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height)];
+			UIImageView *sprite = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, event.frame.size.width, event.frame.size.height)];
 			[sprite setContentMode:UIViewContentModeScaleAspectFill];
 			[sprite setImage:[UIImage imageNamed: [NSString stringWithFormat:@"%@.png",test[2] ] ]];
 			[sprite setTag:300];
+			
 			[event addSubview:sprite];
 			
-			if( [test[3] intValue] > 0 ){
-				
-				UIImageView *spell = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.width)];
-				[spell setContentMode:UIViewContentModeScaleAspectFill];
-				[spell setImage:[UIImage imageNamed: @"event.chat.png" ]];
-				[spell setTag:310];
-				[event addSubview:spell];
-				
-				CGRect origin = spell.frame;
-				spell.frame = CGRectOffset(spell.frame, 0, 20);
-				spell.alpha = 0;
-				[UIView beginAnimations: @"Fade In" context:nil];
-				[UIView setAnimationDuration:0.5];
-				[UIView setAnimationDelay:1];
-				spell.frame = origin;
-				spell.alpha = 1;
-				[UIView commitAnimations];
-			}
+//			if( [test[3] intValue] > 0 ){
+//				
+//				UIImageView *spell = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.width)];
+//				[spell setContentMode:UIViewContentModeScaleAspectFill];
+//				[spell setImage:[UIImage imageNamed: @"event.chat.png" ]];
+//				[spell setTag:310];
+//				[event addSubview:spell];
+//				
+//				CGRect origin = spell.frame;
+//				spell.frame = CGRectOffset(spell.frame, 0, 20);
+//				spell.alpha = 0;
+//				[UIView beginAnimations: @"Fade In" context:nil];
+//				[UIView setAnimationDuration:0.5];
+//				[UIView setAnimationDelay:1];
+//				spell.frame = origin;
+//				spell.alpha = 1;
+//				[UIView commitAnimations];
+//			}
 			
 			[self.view addSubview:event];
 		}
