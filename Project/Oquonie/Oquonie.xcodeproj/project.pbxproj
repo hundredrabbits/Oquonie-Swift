@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03016F4317CCE9D100AB01A8 /* wizard1.l.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 03016F3F17CCE9D100AB01A8 /* wizard1.l.f.png */; };
+		03016F4417CCE9D100AB01A8 /* wizard1.r.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 03016F4017CCE9D100AB01A8 /* wizard1.r.f.png */; };
+		03016F4517CCE9D100AB01A8 /* wizard2.l.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 03016F4117CCE9D100AB01A8 /* wizard2.l.f.png */; };
+		03016F4617CCE9D100AB01A8 /* wizard2.r.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 03016F4217CCE9D100AB01A8 /* wizard2.r.f.png */; };
 		0328126317A54375006D5E9D /* char2.stand.l.b.png in Resources */ = {isa = PBXBuildFile; fileRef = 0328125717A54375006D5E9D /* char2.stand.l.b.png */; };
 		0328126417A54375006D5E9D /* char2.stand.l.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 0328125817A54375006D5E9D /* char2.stand.l.f.png */; };
 		0328126517A54375006D5E9D /* char2.stand.r.b.png in Resources */ = {isa = PBXBuildFile; fileRef = 0328125917A54375006D5E9D /* char2.stand.r.b.png */; };
@@ -99,6 +103,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03016F3F17CCE9D100AB01A8 /* wizard1.l.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard1.l.f.png; path = en.assets/wizard1.l.f.png; sourceTree = "<group>"; };
+		03016F4017CCE9D100AB01A8 /* wizard1.r.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard1.r.f.png; path = en.assets/wizard1.r.f.png; sourceTree = "<group>"; };
+		03016F4117CCE9D100AB01A8 /* wizard2.l.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard2.l.f.png; path = en.assets/wizard2.l.f.png; sourceTree = "<group>"; };
+		03016F4217CCE9D100AB01A8 /* wizard2.r.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard2.r.f.png; path = en.assets/wizard2.r.f.png; sourceTree = "<group>"; };
 		0328125717A54375006D5E9D /* char2.stand.l.b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char2.stand.l.b.png; path = en.assets/char2.stand.l.b.png; sourceTree = "<group>"; };
 		0328125817A54375006D5E9D /* char2.stand.l.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char2.stand.l.f.png; path = en.assets/char2.stand.l.f.png; sourceTree = "<group>"; };
 		0328125917A54375006D5E9D /* char2.stand.r.b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char2.stand.r.b.png; path = en.assets/char2.stand.r.b.png; sourceTree = "<group>"; };
@@ -326,6 +334,10 @@
 		03983BF617C1AA8D00C89446 /* Wizards */ = {
 			isa = PBXGroup;
 			children = (
+				03016F3F17CCE9D100AB01A8 /* wizard1.l.f.png */,
+				03016F4017CCE9D100AB01A8 /* wizard1.r.f.png */,
+				03016F4117CCE9D100AB01A8 /* wizard2.l.f.png */,
+				03016F4217CCE9D100AB01A8 /* wizard2.r.f.png */,
 				032A5B7317A63F8000C98354 /* tutorial.1.png */,
 				03983BEB17C1A41800C89446 /* wizard3.l.f.png */,
 				03983BEC17C1A41800C89446 /* wizard3.r.f.png */,
@@ -574,6 +586,10 @@
 				03983C0D17C1B7A000C89446 /* char3.walk.r.b.2.png in Resources */,
 				03983C0E17C1B7A000C89446 /* char3.walk.r.f.1.png in Resources */,
 				03983C0F17C1B7A000C89446 /* char3.walk.r.f.2.png in Resources */,
+				03016F4317CCE9D100AB01A8 /* wizard1.l.f.png in Resources */,
+				03016F4417CCE9D100AB01A8 /* wizard1.r.f.png in Resources */,
+				03016F4517CCE9D100AB01A8 /* wizard2.l.f.png in Resources */,
+				03016F4617CCE9D100AB01A8 /* wizard2.r.f.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
