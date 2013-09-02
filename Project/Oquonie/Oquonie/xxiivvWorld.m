@@ -19,8 +19,8 @@
 	worldNode[1] = [NSArray arrayWithObjects:
 					@"3",@"2",@"3",
 					@"3",@"2",@"3",
-					@"3",@"2",@"3",
-					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"door.1",@"wall.1",
+					@"3",@"2",@"7",
+					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"gate.char2.1",@"wall.1",
 					nil];
 	worldNode[2] = [NSArray arrayWithObjects:
 					@"1",@"2",@"4",
@@ -62,7 +62,7 @@
 	worldNode[8] = [NSArray arrayWithObjects:
 					@"5",@" ",@"4",
 					@"4",@" ",@"5",
-					@"4",@" ",@"6",
+					@"7",@" ",@"7",
 					@"",@"",@"",@"1",@"",@"door.1",@"",
 					nil];
 	worldNode[9] = [NSArray arrayWithObjects:
@@ -136,7 +136,7 @@
 	// Init
 	worldEvent[1][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
 	// Events
-	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"0",@"wizard3.r.f", @"1 ",@"", nil]];
+	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"0",@"npc.r.f", @"1 ",@"", nil]];
 	// Doors
 	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]]; 
 	
@@ -227,9 +227,9 @@
 	// Blocker
 	// Events
 	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"1",@"1",@"blocker.0", @"",@"8", nil]];
-	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"-1",@"teleport.0", @"",@"8", nil]];
+	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"-1",@"none", @"",@"8", nil]];
 	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"1",@"-1",@"blocker.0", @"",@"8", nil]];
-	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"teleport.0", @"",@"8", nil]];
+	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"none", @"",@"8", nil]];
 	// Doors
 	[worldEvent[8] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"7", nil]];
 	

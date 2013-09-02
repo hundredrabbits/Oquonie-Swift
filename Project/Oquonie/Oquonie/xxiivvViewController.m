@@ -43,8 +43,8 @@
 	
 	userPositionX = 0;
 	userPositionY = 0;
-	userSpriteChar = @"char3";
-	userSpriteCharId = 3;
+	userSpriteChar = @"char5";
+	userSpriteCharId = 5;
 	userLocation = 1;
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
