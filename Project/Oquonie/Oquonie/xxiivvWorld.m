@@ -146,9 +146,9 @@
 	// Init
 	worldEvent[2][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
 	// Events
-	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"1",@"1",@"wizard1.l.f", @"",@"", nil]];
-	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"0",@"1",@"wizard3.l.f", @"",@"", nil]];
-	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"wizard2.l.f", @"",@"", nil]];
+	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"1",@"1",@"wizard4.l.f", @"",@"", nil]];
+	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"0",@"1",@"wizard5.l.f", @"",@"", nil]];
+	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"npc2.l.f", @"",@"", nil]];
 	// Doors
 	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"1", nil]];
 	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"2",@"-1",@"none", @"",@"3", nil]];
