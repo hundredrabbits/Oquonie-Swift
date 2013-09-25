@@ -229,7 +229,7 @@
 }
 
 - (int) moveEvent :(int)posX :(int)posY
-{
+{	
 	for (NSArray *event in worldEvent[userLocation]) {
 		
 		NSString* spriteName = event[2];
@@ -271,14 +271,11 @@
 	
 }
 
-
-
 -(void)eventSpell:(int)spellId {
 	
 	NSLog(@"> EVNT | Spell #%d", spellId);
 	
 }
-
 
 - (void) moveCollide :(NSArray*)event :(int)posX :(int)posY
 {

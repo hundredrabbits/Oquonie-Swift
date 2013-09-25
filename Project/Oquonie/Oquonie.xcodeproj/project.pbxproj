@@ -376,6 +376,7 @@
 		0332385017D4BDCD001B1328 /* Char5 */ = {
 			isa = PBXGroup;
 			children = (
+				038E862217DDFEC300529CC0 /* char5.stand.l.b.png */,
 				0332382617D4BDB8001B1328 /* char5.stand.l.f.png */,
 				0332382717D4BDB8001B1328 /* char5.stand.r.b.png */,
 				0332382817D4BDB8001B1328 /* char5.stand.r.f.png */,
@@ -540,7 +541,6 @@
 		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				038E862217DDFEC300529CC0 /* char5.stand.l.b.png */,
 				038E862317DDFEC300529CC0 /* npc2.l.f.png */,
 				038E862417DDFEC300529CC0 /* wizard4.l.f.png */,
 				038E862517DDFEC300529CC0 /* wizard4.r.f.png */,
