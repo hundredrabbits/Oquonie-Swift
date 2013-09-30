@@ -72,7 +72,7 @@ int userSpriteCharId;
 NSMutableArray *userInventory;
 
 NSMutableArray *worldNode;
-NSMutableArray *worldEvent;
+NSArray *worldEvent;
 NSMutableArray *worldEventDialog;
 
 

@@ -120,39 +120,45 @@
 
 - (void) eventStart
 {
-	worldEvent = [NSMutableArray arrayWithObjects:@"",nil];
-	int myCount = 0;
-	while ( myCount < 150 )	{ myCount++; worldEvent[myCount] = [NSMutableArray arrayWithObjects: @"", nil];	}
-	
-	// 0 posX
-	// 1 posY
-	// 2 tile image
-	// 3 dialog
-	// 4 warp
-	
+	worldEvent = @[
+	   @[],
 	// ======================
 	// @ Room 1-1-1 #1
 	// ======================
-	// Init
-	worldEvent[1][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
-	// Events
-	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"1",@"0",@"npc.r.f", @"1 ",@"", nil]];
-	// Doors
-	[worldEvent[1] addObject:[NSArray arrayWithObjects: @"0",@"2",@"none", @"",@"2", nil]]; 
-	
+	   @[
+			@[@"1",@"0",@"npc.r.f", @"1 ",@""],
+			@[@"0",@"2",@"none", @"",@"2"],
+			@[@"0",@"2",@"none", @"",@"2"]
+		],
 	// ======================
 	// @ Room 1-1-2 #2
 	// ======================
-	// Init
-	worldEvent[2][0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
-	// Events
-	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"1",@"1",@"wizard1.l.f", @"",@"", nil]];
-	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"0",@"1",@"wizard3.l.f", @"",@"", nil]];
-	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"-1",@"1",@"wizard2.l.f", @"",@"", nil]];
-	// Doors
-	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"0",@"-2",@"step.1.l", @"",@"1", nil]];
-	[worldEvent[2] addObject:[NSArray arrayWithObjects: @"2",@"-1",@"none", @"",@"3", nil]];
-	
+		@[
+			@[@"1",@"1",@"wizard4.l.f", @"",@""],
+			@[@"0",@"1",@"wizard5.l.f", @"",@""],
+			@[@"-1",@"1",@"npc2.l.f", @"",@""],
+			@[@"0",@"-2",@"step.1.l", @"",@"1"],
+			@[@"2",@"-1",@"none", @"",@"3"]
+		],
+	// ======================
+	// @ Room 1-1-3 #3
+	// ======================
+			@[],
+	// ======================
+	// @ Room 1-1-3 #3
+	// ======================
+			@[],
+	// ======================
+	// @ Room 1-1-3 #3
+	// ======================
+			@[],
+	// ======================
+	// @ Room 1-1-3 #3
+	// ======================
+		@[]
+	];
+
+	/*
 	// ======================
 	// @ Room 1-1-3 #3
 	// ======================
@@ -282,6 +288,8 @@
 	// Blocker
 	// Events
 	// Doors
+	 
+	 */
 	
 	[self eventDialogStart];
 }
