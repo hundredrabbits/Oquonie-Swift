@@ -175,7 +175,7 @@
 		[self moveAnimation];
 	}
 	else{
-		NSMutableArray *event = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Dialog",@"", nil];
+		NSArray *event = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Dialog",@"", nil];
 		[self moveCollide:event:posX:posY];
 	}
 	[self moveOrder];
