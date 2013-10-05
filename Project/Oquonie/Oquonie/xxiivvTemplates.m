@@ -56,6 +56,19 @@
 	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"2"] ] ];
 	
 	self.userPlayerChar.frame = CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height);
+	
+	float textBlock = ( screen.size.width - (2*screenMargin) )/4;
+	
+	self.text1.backgroundColor = [UIColor redColor];
+	self.text2.backgroundColor = [UIColor redColor];
+	self.text3.backgroundColor = [UIColor redColor];
+	self.text4.backgroundColor = [UIColor redColor];
+	
+	self.text1.frame = CGRectMake(screenMargin+(0*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
+	self.text2.frame = CGRectMake(screenMargin+(1*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
+	self.text3.frame = CGRectMake(screenMargin+(2*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
+	self.text4.frame = CGRectMake(screenMargin+(3*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
+	
 }
 
 - (void) templateRoomAnimation

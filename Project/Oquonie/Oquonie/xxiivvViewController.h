@@ -47,6 +47,11 @@
 @property (strong, nonatomic) IBOutlet UIImageView *userPlayerShadow;
 @property (strong, nonatomic) IBOutlet UIImageView *userPlayerChat;
 
+@property (strong, nonatomic) IBOutlet UIImageView *text1;
+@property (strong, nonatomic) IBOutlet UIImageView *text2;
+@property (strong, nonatomic) IBOutlet UIImageView *text3;
+@property (strong, nonatomic) IBOutlet UIImageView *text4;
+
 @property (strong, nonatomic) IBOutlet UIImageView *blocker1;
 
 - (CGRect) tileLocation :(int)type :(int)posX :(int)posY;
@@ -74,9 +79,6 @@ NSMutableArray *userInventory;
 NSMutableArray *worldNode;
 NSArray *worldEvent;
 NSMutableArray *worldEventDialog;
-
-
-
 
 CGRect	screen;
 int		screenMargin;

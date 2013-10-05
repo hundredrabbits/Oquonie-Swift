@@ -132,6 +132,10 @@
 		03C1EE0817AFAC70001AFF21 /* wall.3.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0317AFAC70001AFF21 /* wall.3.l.png */; };
 		03C1EE0917AFAC70001AFF21 /* wall.3.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0417AFAC70001AFF21 /* wall.3.r.png */; };
 		03C1EE0B17AFB90C001AFF21 /* event.chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0A17AFB90C001AFF21 /* event.chat.png */; };
+		03ECBBE617FC5A1A0039B944 /* gate.char3.1.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ECBBE217FC5A1A0039B944 /* gate.char3.1.l.png */; };
+		03ECBBE717FC5A1A0039B944 /* gate.char3.1.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ECBBE317FC5A1A0039B944 /* gate.char3.1.r.png */; };
+		03ECBBE817FC5A1A0039B944 /* gate.char5.1.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ECBBE417FC5A1A0039B944 /* gate.char5.1.l.png */; };
+		03ECBBE917FC5A1A0039B944 /* gate.char5.1.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ECBBE517FC5A1A0039B944 /* gate.char5.1.r.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -267,6 +271,10 @@
 		03C1EE0317AFAC70001AFF21 /* wall.3.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.l.png; path = en.assets/wall.3.l.png; sourceTree = "<group>"; };
 		03C1EE0417AFAC70001AFF21 /* wall.3.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.r.png; path = en.assets/wall.3.r.png; sourceTree = "<group>"; };
 		03C1EE0A17AFB90C001AFF21 /* event.chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.chat.png; path = en.assets/event.chat.png; sourceTree = "<group>"; };
+		03ECBBE217FC5A1A0039B944 /* gate.char3.1.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gate.char3.1.l.png; path = en.assets/gate.char3.1.l.png; sourceTree = "<group>"; };
+		03ECBBE317FC5A1A0039B944 /* gate.char3.1.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gate.char3.1.r.png; path = en.assets/gate.char3.1.r.png; sourceTree = "<group>"; };
+		03ECBBE417FC5A1A0039B944 /* gate.char5.1.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gate.char5.1.l.png; path = en.assets/gate.char5.1.l.png; sourceTree = "<group>"; };
+		03ECBBE517FC5A1A0039B944 /* gate.char5.1.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gate.char5.1.r.png; path = en.assets/gate.char5.1.r.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -517,6 +525,7 @@
 				032D74EA179CF9670068B27E /* xxiivvWorld.m */,
 				0355CF9117C196C10069AF97 /* xxiivvTemplates.h */,
 				0355CF9217C196C10069AF97 /* xxiivvTemplates.m */,
+				03BBFAC3178A9E4E00E79C3D /* MainStoryboard.storyboard */,
 				03BBFACE178AC8C200E79C3D /* Assets */,
 				03BBFAB2178A9E4E00E79C3D /* Supporting Files */,
 			);
@@ -526,7 +535,6 @@
 		03BBFAB2178A9E4E00E79C3D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03BBFAC3178A9E4E00E79C3D /* MainStoryboard.storyboard */,
 				03BBFAB3178A9E4E00E79C3D /* Oquonie-Info.plist */,
 				03BBFAB4178A9E4E00E79C3D /* InfoPlist.strings */,
 				03BBFAB7178A9E4E00E79C3D /* main.m */,
@@ -541,6 +549,10 @@
 		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				03ECBBE217FC5A1A0039B944 /* gate.char3.1.l.png */,
+				03ECBBE317FC5A1A0039B944 /* gate.char3.1.r.png */,
+				03ECBBE417FC5A1A0039B944 /* gate.char5.1.l.png */,
+				03ECBBE517FC5A1A0039B944 /* gate.char5.1.r.png */,
 				038E862317DDFEC300529CC0 /* npc2.l.f.png */,
 				038E862417DDFEC300529CC0 /* wizard4.l.f.png */,
 				038E862517DDFEC300529CC0 /* wizard4.r.f.png */,
@@ -619,6 +631,7 @@
 			files = (
 				03BBFAB6178A9E4E00E79C3D /* InfoPlist.strings in Resources */,
 				03BBFABE178A9E4E00E79C3D /* Default.png in Resources */,
+				03ECBBE717FC5A1A0039B944 /* gate.char3.1.r.png in Resources */,
 				03BBFAC0178A9E4E00E79C3D /* Default@2x.png in Resources */,
 				03BBFAC2178A9E4E00E79C3D /* Default-568h@2x.png in Resources */,
 				03BBFAC5178A9E4E00E79C3D /* MainStoryboard.storyboard in Resources */,
@@ -648,10 +661,12 @@
 				037E265C179D3E45001A1553 /* char.chat.png in Resources */,
 				037E265F179D406C001A1553 /* door.1.l.png in Resources */,
 				037E2660179D406C001A1553 /* door.1.r.png in Resources */,
+				03ECBBE817FC5A1A0039B944 /* gate.char5.1.l.png in Resources */,
 				037E2662179D4562001A1553 /* beam.1.png in Resources */,
 				0328126317A54375006D5E9D /* char2.stand.l.b.png in Resources */,
 				0328126417A54375006D5E9D /* char2.stand.l.f.png in Resources */,
 				0328126517A54375006D5E9D /* char2.stand.r.b.png in Resources */,
+				03ECBBE917FC5A1A0039B944 /* gate.char5.1.r.png in Resources */,
 				0328126617A54375006D5E9D /* char2.stand.r.f.png in Resources */,
 				0328126717A54375006D5E9D /* char2.walk.l.b.1.png in Resources */,
 				0328126817A54375006D5E9D /* char2.walk.l.b.2.png in Resources */,
@@ -711,6 +726,7 @@
 				0332383B17D4BDB8001B1328 /* char4.walk.l.f.1.png in Resources */,
 				0332383C17D4BDB8001B1328 /* char4.walk.l.f.2.png in Resources */,
 				0332383D17D4BDB8001B1328 /* char4.walk.r.b.1.png in Resources */,
+				03ECBBE617FC5A1A0039B944 /* gate.char3.1.l.png in Resources */,
 				0332383E17D4BDB8001B1328 /* char4.walk.r.b.2.png in Resources */,
 				0332383F17D4BDB8001B1328 /* char4.walk.r.f.1.png in Resources */,
 				0332384017D4BDB8001B1328 /* char4.walk.r.f.2.png in Resources */,

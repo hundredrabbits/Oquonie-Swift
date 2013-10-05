@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Xxiivv View Controller-->
@@ -9,7 +10,7 @@
             <objects>
                 <viewController id="2" customClass="xxiivvViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0lD-p4-yOS" userLabel="MoveTL">
@@ -154,7 +155,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6mA-lT-Y5D" userLabel="userPlayer">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                                <rect key="frame" x="40" y="230" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char.shadow.png" id="lep-qp-oJt" userLabel="userPlayerShadow">
@@ -173,6 +174,22 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="300" contentMode="scaleAspectFill" image="blocker.1.png" id="UtL-dN-nTc" userLabel="blocker1">
                                 <rect key="frame" x="40" y="210" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="A4R-gY-rZ8" userLabel="text1">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="x1f-7g-7iR" userLabel="text2">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="awF-iE-nto" userLabel="text3">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sb9-ng-KMY" userLabel="text4">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -196,6 +213,10 @@
                         <outlet property="moveTR" destination="Waf-2E-WsZ" id="bh6-YL-NHQ"/>
                         <outlet property="step1" destination="ccp-Ke-jhA" id="0BV-Hd-Cxz"/>
                         <outlet property="step2" destination="VBQ-IO-lbI" id="z70-U0-dfN"/>
+                        <outlet property="text1" destination="A4R-gY-rZ8" id="Qnh-h6-NFa"/>
+                        <outlet property="text2" destination="x1f-7g-7iR" id="zwF-2v-V5I"/>
+                        <outlet property="text3" destination="awF-iE-nto" id="CwW-pQ-i4N"/>
+                        <outlet property="text4" destination="sb9-ng-KMY" id="Upm-yJ-BuG"/>
                         <outlet property="userPlayer" destination="6mA-lT-Y5D" id="ko5-8b-DCP"/>
                         <outlet property="userPlayerChar" destination="WrE-Oy-CYa" id="B0W-WK-lp5"/>
                         <outlet property="userPlayerChat" destination="gzI-zL-JXd" id="nhL-iu-YHU"/>
