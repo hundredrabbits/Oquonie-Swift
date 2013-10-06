@@ -82,3 +82,8 @@ NSMutableArray *worldEventDialog;
 
 CGRect	screen;
 int		screenMargin;
+
+CGRect textBlock1;
+CGRect textBlock2;
+CGRect textBlock3;
+CGRect textBlock4;

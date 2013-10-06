@@ -258,38 +258,6 @@
 	return 0;
 }
 
--(void)eventDialog:(int)dialogId {
-	
-	NSString* eventDialog = worldEventDialog[1][userSpriteCharId][1];
-	int eventSpell = [worldEventDialog[1][userSpriteCharId][0] intValue];
-	
-	if(eventDialog > 0){
-		[self eventSpeak:eventDialog];
-	}
-	
-	if(eventSpell > 0){
-		[self eventSpell:eventSpell];
-	}
-
-}
-
--(void)eventSpell:(int)eventSpell {
-	
-	NSLog(@"> EVNT | Spell #%d", eventSpell);
-	
-}
-
--(void)eventSpeak:(NSString*)eventDialog {
-	
-	NSString *textCharacter1 = [eventDialog substringWithRange: NSMakeRange(0, 1) ];
-	NSString *textCharacter2 = [eventDialog substringWithRange: NSMakeRange(1, 1) ];
-	NSString *textCharacter3 = [eventDialog substringWithRange: NSMakeRange(2, 1) ];
-	NSString *textCharacter4 = [eventDialog substringWithRange: NSMakeRange(3, 1) ];
-	
-	NSLog(@"> EVNT | Saying:'%@ %@ %@ %@'", textCharacter1, textCharacter2, textCharacter3, textCharacter4);
-
-}
-
 - (void) moveCollide :(NSArray*)event :(int)posX :(int)posY
 {
 	for (UIView *subview in [self.view subviews]) {
@@ -315,6 +283,63 @@
 	self.userPlayer.frame = userOrigin;
 	[UIView commitAnimations];
 }
+
+# pragma mark Event Router -
+
+-(void)eventDialog:(int)dialogId {
+	
+	NSString* eventDialog = worldEventDialog[1][userSpriteCharId][1];
+	int eventSpell = [worldEventDialog[1][userSpriteCharId][0] intValue];
+	
+	if(eventDialog > 0){
+		[self eventSpeak:eventDialog];
+	}
+	
+	if(eventSpell > 0){
+		[self eventSpell:eventSpell];
+	}
+
+}
+
+-(void)eventSpell:(int)eventSpell {
+	
+	NSLog(@"> EVNT | Spell #%d", eventSpell);
+	
+}
+
+# pragma mark Speak -
+
+-(void)eventSpeak:(NSString*)eventDialog {
+	
+	NSString *textCharacter1 = [eventDialog substringWithRange: NSMakeRange(0, 1) ];
+	NSString *textCharacter2 = [eventDialog substringWithRange: NSMakeRange(1, 1) ];
+	NSString *textCharacter3 = [eventDialog substringWithRange: NSMakeRange(2, 1) ];
+	NSString *textCharacter4 = [eventDialog substringWithRange: NSMakeRange(3, 1) ];
+	
+	[self eventSpeakShow];
+	
+	NSLog(@"> EVNT | Saying:'%@ %@ %@ %@'", textCharacter1, textCharacter2, textCharacter3, textCharacter4);
+
+}
+
+- (void)eventSpeakShow {
+	
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:1];
+	[UIView setAnimationDelay:0];
+	
+	[UIView commitAnimations];
+	
+}
+
+- (void)eventSpeakHide {
+	
+	
+	
+}
+
+
+# pragma mark IBActions -
 
 - (IBAction)moveTL:(id)sender {
 	[self moveRouter:1 :0 :sender];

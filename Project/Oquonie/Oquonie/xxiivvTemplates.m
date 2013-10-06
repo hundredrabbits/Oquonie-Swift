@@ -7,6 +7,7 @@
 //
 
 #import "xxiivvWorld.h"
+#import "xxiivvViewController.h"
 
 @implementation xxiivvViewController (Templates)
 
@@ -59,10 +60,15 @@
 	
 	float textBlock = ( screen.size.width - (2*screenMargin) )/4;
 	
-	self.text1.frame = CGRectMake(screenMargin+(0*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
-	self.text2.frame = CGRectMake(screenMargin+(1*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
-	self.text3.frame = CGRectMake(screenMargin+(2*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
-	self.text4.frame = CGRectMake(screenMargin+(3*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
+	textBlock1 = CGRectMake(screenMargin+(0*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
+	textBlock2 = CGRectMake(screenMargin+(1*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
+	textBlock3 = CGRectMake(screenMargin+(2*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
+	textBlock4 = CGRectMake(screenMargin+(3*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
+
+	self.text1.frame = textBlock1;
+	self.text2.frame = textBlock2;
+	self.text3.frame = textBlock3;
+	self.text4.frame = textBlock4;
 	
 }
 
