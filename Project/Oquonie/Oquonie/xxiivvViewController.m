@@ -33,7 +33,6 @@
 	
 	[self templateStart];
 	[self worldStart];
-	[self eventStart];
 	[self roomStart];
 }
 
@@ -123,10 +122,15 @@
 	if( posX ==-1 && posY == 0 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH/2), tileW, tileH); }
 	if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH+tileH, tileW, tileH);}
 	if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
-	if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }
-	if( posX ==-2 && posY ==-1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH*1.5), tileW, tileH); }
+	
+	if( posX ==-2 && posY == 1 ){ return CGRectMake(centerW+(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
 	if( posX ==-2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+(tileH*1.0), tileW, tileH); }
+	if( posX ==-2 && posY ==-1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH*1.5), tileW, tileH); }
+	
+	
 	if( posX == 1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
+	if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }
+	if( posX ==-1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*1.5), tileW, tileH); }
 	
 	if( posX == 2 && posY ==-1 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5)*-0.12, tileW, tileH); }
 	if( posX == 2 && posY == 0 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+(tileH*0.5)*-0.45, tileW, tileH); }
@@ -229,16 +233,9 @@
 
 - (int) moveEvent :(int)posX :(int)posY
 {
-	// No Ground
+	// No End
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
 		NSLog(@"> EVNT | Blocked: %d %d (no ground)", posX, posY);
-		[self moveCollide:posX:posY];
-		return 1;
-	}
-	
-	// Wall
-	if( abs(posX) > 1 || abs(posY) > 1 ){
-		NSLog(@"> EVNT | Blocked: %d %d (wall)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
@@ -350,6 +347,24 @@
 	if(x==-1&& y==-1){ return 6; }
 	if(x==-1&& y== 0){ return 7; }
 	if(x==-1&& y== 1){ return 8; }
+	
+	if(x== 2&& y==-1){ return 9; }
+	if(x== 2&& y== 0){ return 10; }
+	if(x== 2&& y== 1){ return 11; }
+	if(x== 1&& y== 2){ return 12; }
+	if(x== 0&& y== 2){ return 13; }
+	if(x==-1&& y== 2){ return 14; }
+	
+	if(x== 1&& y== 2){ return 12; }
+	if(x== 0&& y== 2){ return 13; }
+	if(x==-1&& y== 2){ return 14; }
+	if(x== 1&& y==-2){ return 15; }
+	if(x== 0&& y==-2){ return 16; }
+	if(x==-1&& y==-2){ return 17; }
+	
+	if(x==-2&& y==-1){ return 18; }
+	if(x==-2&& y== 0){ return 19; }
+	if(x==-2&& y== 1){ return 20; }
 	
 	return 1;
 	

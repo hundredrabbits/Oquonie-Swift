@@ -32,9 +32,6 @@
 	self.floor11.frame = [self tileLocation:0 :1 :1];
 	self.flooree.frame = [self tileLocation:0 :-1 :-1];
 	
-	self.step1.frame = [self tileLocation:0 :0 :-2];
-	self.step2.frame = [self tileLocation:0 :-2 :0];
-	
 	self.wall1l.frame = [self tileLocation:5 :2 :-1];
 	self.wall2l.frame = [self tileLocation:5 :2 : 0];
 	self.wall3l.frame = [self tileLocation:5 :2 : 1];
@@ -43,9 +40,15 @@
 	self.wall2r.frame = [self tileLocation:5 : 0 : 2];
 	self.wall3r.frame = [self tileLocation:5 : 1 : 2];
 	
-	self.blocker1.frame = [self tileLocation:1 :0 :0];
+	self.step1l.frame = [self tileLocation:0 :1 :-2];
+	self.step2l.frame = [self tileLocation:0 :0 :-2];
+	self.step3l.frame = [self tileLocation:0 :-1 :-2];
 	
-	self.beam.hidden = YES;
+	self.step1r.frame = [self tileLocation:0 :-2 : 1];
+	self.step2r.frame = [self tileLocation:0 :-2 : 0];
+	self.step3r.frame = [self tileLocation:0 :-2 : -1];
+	
+	self.blocker1.frame = [self tileLocation:1 :0 :0];
 	
 	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
 	self.userPlayerShadow.image = [UIImage imageNamed:@"char.shadow.png"];

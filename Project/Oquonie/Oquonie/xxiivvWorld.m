@@ -17,90 +17,17 @@
 	while ( myCount < 150 )	{ myCount++; worldNode[myCount] = [NSArray arrayWithObjects: @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", nil];	}
 	
 	worldNode[1] = [NSArray arrayWithObjects:
-					@"0",@"5|warp|5",@"6",
-					@"6",@"6",@"4",
-					@"5",@"4",@"5",
-					
-					@"0",@"1|warp|",@"0",@"0",@"1",@"0",
-					@"0",@"0",@"0",@"0",@"0",@"0",
-					nil];
-	worldNode[2] = [NSArray arrayWithObjects:
-					@"1",@"2",@"4",
-					@"1",@"4",@"4",
-					@"1",@"2",@"4",
-					@"door.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"wall.1",@"wall.1",
-					nil];
-	
-	worldNode[3] = [NSArray arrayWithObjects:
-					@"2",@"3",@"2",
-					@"3",@"2",@"3",
-					@"2",@"3",@"2",
-					@"wall.1",@"wall.1",@"wall.1",@"1",@"wall.1",@"gate.char5.1",@"wall.1",
-					nil];
-	worldNode[4] = [NSArray arrayWithObjects:
-					@"3",@"3",@"3",
-					@"3",@"2",@"3",
-					@"3",@"3",@"3",
-					@"wall.1",@"wall.1",@"wall.1",@"1",@"door.1",@"wall.1",@"wall.1",
-					nil];
+		// Tiles
+		@"1",@"5|char|5",@"6",
+		@"6",@"6",@"4",
+		@"5",@"4",@"5",
+		// Walls
+		@"2",@"1|warp|44",@"2",@"2",@"1|warp|25",@"2",
+		// Steps
+		@"1",@"1",@"1",@"1",@"1",@"1",
+	nil];
 	
 }
-
-
-- (void) worldUpdate
-{
-	
-}
-
-
-
-- (void) eventStart
-{
-	worldEvent = @[
-	   @[],
-	// ======================
-	// @ Room 1-1-1 #1
-	// ======================
-	   @[
-			@[@"",@"",@"",@"",@""],
-			@[@"",@"",@"",@"",@""],
-			@[@"",@"",@"",@"",@""]
-		],
-	// ======================
-	// @ Room 1-1-2 #2
-	// ======================
-		@[
-			@[@"1",@"1",@"wizard4.l.f", @"",@""],
-			@[@"0",@"1",@"wizard5.l.f", @"",@""],
-			@[@"-1",@"1",@"npc2.l.f", @"",@""],
-			@[@"0",@"-2",@"step.1.l", @"",@"1"],
-			@[@"2",@"-1",@"none", @"",@"3"]
-		],
-	// ======================
-	// @ Room 1-1-3 #3
-	// ======================
-		@[
-		   @[@"1",@"1",@"npc.l.f", @"",@""],
-		   @[@"-1",@"1",@"blocker.4", @"",@"1"]
-		],
-	// ======================
-	// @ Room 1-1-3 #3
-	// ======================
-			@[],
-	// ======================
-	// @ Room 1-1-3 #3
-	// ======================
-			@[],
-	// ======================
-	// @ Room 1-1-3 #3
-	// ======================
-		@[]
-	];
-	
-	[self eventDialogStart];
-}
-
-
 
 - (void) eventDialogStart
 {
@@ -159,12 +86,20 @@
 	self.floore0.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][7]:0]] ];
 	self.floor11.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][2]:0]] ];
 	self.flooree.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][6]:0]] ];
+	
 	self.wall1l.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self tileParser:worldNode[userLocation][9]:0]] ];
 	self.wall2l.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self tileParser:worldNode[userLocation][10]:0]] ];
 	self.wall3l.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self tileParser:worldNode[userLocation][11]:0]] ];
 	self.wall1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self tileParser:worldNode[userLocation][14]:0]] ];
 	self.wall2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self tileParser:worldNode[userLocation][13]:0]] ];
 	self.wall3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self tileParser:worldNode[userLocation][12]:0]] ];
+	
+	self.step1l.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",[self tileParser:worldNode[userLocation][15]:0]] ];
+	self.step2l.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",[self tileParser:worldNode[userLocation][16]:0]] ];
+	self.step3l.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",[self tileParser:worldNode[userLocation][17]:0]] ];
+	self.step1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][18]:0]] ];
+	self.step2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][19]:0]] ];
+	self.step3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][20]:0]] ];
 	
 	// create events
 	/*

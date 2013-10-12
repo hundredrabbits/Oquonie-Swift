@@ -12,7 +12,6 @@
 
 - (void) worldStart;
 - (void) worldUpdate;
-- (void) eventStart;
 - (void) eventUpdate;
 - (void) roomStart;
 - (void) roomUpdate;

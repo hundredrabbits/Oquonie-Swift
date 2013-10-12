@@ -142,16 +142,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" image="beam.1.png" id="cr4-gZ-HDi" userLabel="beam">
-                                <rect key="frame" x="-90" y="346" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" image="wall.1.r.png" id="gnq-SV-Hqu" userLabel="step3L">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="step.1.l.png" id="ccp-Ke-jhA" userLabel="step1">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" image="wall.1.r.png" id="nyy-ez-XVm" userLabel="step2L">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="step.1.r.png" id="VBQ-IO-lbI" userLabel="step2">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" image="wall.1.r.png" id="uAX-xD-SuN" userLabel="step1L">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" image="wall.1.l.png" id="cD1-p8-h6o" userLabel="step1R">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" image="wall.1.l.png" id="RgC-jt-GvW" userLabel="step3R">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" image="door.1.l.png" id="jgI-9r-unr" userLabel="step2R">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6mA-lT-Y5D" userLabel="userPlayer">
@@ -196,7 +208,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="beam" destination="cr4-gZ-HDi" id="Jut-rz-4En"/>
                         <outlet property="blocker1" destination="UtL-dN-nTc" id="u3D-da-alM"/>
                         <outlet property="floor00" destination="JCv-bJ-j64" id="4da-uc-oBG"/>
                         <outlet property="floor01" destination="8Dr-bW-Pwg" id="SJ8-8F-vvY"/>
@@ -211,8 +222,12 @@
                         <outlet property="moveBR" destination="hdX-gI-9Qt" id="jZG-Pv-WGO"/>
                         <outlet property="moveTL" destination="0lD-p4-yOS" id="8Gx-DJ-26X"/>
                         <outlet property="moveTR" destination="Waf-2E-WsZ" id="bh6-YL-NHQ"/>
-                        <outlet property="step1" destination="ccp-Ke-jhA" id="0BV-Hd-Cxz"/>
-                        <outlet property="step2" destination="VBQ-IO-lbI" id="z70-U0-dfN"/>
+                        <outlet property="step1l" destination="uAX-xD-SuN" id="Aun-eN-rB3"/>
+                        <outlet property="step1r" destination="cD1-p8-h6o" id="s3z-qf-sxI"/>
+                        <outlet property="step2l" destination="nyy-ez-XVm" id="XTk-dU-kdh"/>
+                        <outlet property="step2r" destination="jgI-9r-unr" id="vU6-kM-vzi"/>
+                        <outlet property="step3l" destination="gnq-SV-Hqu" id="MVj-7W-rM9"/>
+                        <outlet property="step3r" destination="RgC-jt-GvW" id="Iin-Ib-ctB"/>
                         <outlet property="text1" destination="A4R-gY-rZ8" id="Qnh-h6-NFa"/>
                         <outlet property="text2" destination="x1f-7g-7iR" id="zwF-2v-V5I"/>
                         <outlet property="text3" destination="awF-iE-nto" id="CwW-pQ-i4N"/>
@@ -234,7 +249,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="beam.1.png" width="200" height="400"/>
         <image name="blocker.1.png" width="200" height="281"/>
         <image name="char.chat.png" width="640" height="640"/>
         <image name="char.shadow.png" width="200" height="141"/>
@@ -244,12 +258,24 @@
         <image name="letter2.png" width="128" height="128"/>
         <image name="letter3.png" width="128" height="128"/>
         <image name="letter4.png" width="128" height="128"/>
-        <image name="step.1.l.png" width="200" height="141"/>
-        <image name="step.1.r.png" width="200" height="141"/>
+        <image name="tile.1.png" width="200" height="141"/>
+        <image name="tile.1.png" width="200" height="141"/>
+        <image name="tile.1.png" width="200" height="141"/>
+        <image name="tile.1.png" width="200" height="141"/>
+        <image name="tile.1.png" width="200" height="141"/>
+        <image name="tile.1.png" width="200" height="141"/>
         <image name="tile.1.png" width="200" height="141"/>
         <image name="tile.2.png" width="200" height="141"/>
         <image name="tile.3.png" width="200" height="141"/>
         <image name="wall.1.l.png" width="200" height="281"/>
+        <image name="wall.1.l.png" width="200" height="281"/>
+        <image name="wall.1.l.png" width="200" height="281"/>
+        <image name="wall.1.l.png" width="200" height="281"/>
+        <image name="wall.1.r.png" width="200" height="281"/>
+        <image name="wall.1.r.png" width="200" height="281"/>
+        <image name="wall.1.r.png" width="200" height="281"/>
+        <image name="wall.1.r.png" width="200" height="281"/>
+        <image name="wall.1.r.png" width="200" height="281"/>
         <image name="wall.1.r.png" width="200" height="281"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
