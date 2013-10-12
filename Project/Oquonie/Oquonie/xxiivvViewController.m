@@ -229,12 +229,21 @@
 
 - (int) moveEvent :(int)posX :(int)posY
 {
+	// No Ground
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
-		
-		NSLog(@"> EVNT | Blocked");
+		NSLog(@"> EVNT | Blocked: %d %d (no ground)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
+	
+	// Wall
+	if( abs(posX) > 1 || abs(posY) > 1 ){
+		NSLog(@"> EVNT | Blocked: %d %d (wall)", posX, posY);
+		[self moveCollide:posX:posY];
+		return 1;
+	}
+	
+	
 	
 	NSString *currentLocationString = worldNode[userLocation][[self flattenPosition:posX :posY]];
 	NSString *currentLocationEventKey = [self tileParser:currentLocationString :1];
