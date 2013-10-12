@@ -18,13 +18,24 @@
 	
 	worldNode[1] = [NSArray arrayWithObjects:
 		// Tiles
-		@"1",@"5|char|5",@"6",
+		@"0",@"5",@"6",
 		@"6",@"6",@"4",
 		@"5",@"4",@"5",
 		// Walls
-		@"2",@"1|warp|44",@"2",@"2",@"1|warp|25",@"2",
+		@"0",@"0",@"0",@"0",@"9|warp|2|0,-1",@"0",
 		// Steps
-		@"1",@"0",@"1",@"0",@"1",@"0",
+		@"0",@"0",@"0",@"0",@"0",@"0",
+	nil];
+	
+	worldNode[2] = [NSArray arrayWithObjects:
+		// Tiles
+		@"4",@"5|dialog|5",@"6",
+		@"6",@"6",@"4",
+		@"5",@"4",@"5",
+		// Walls
+		@"0",@"0",@"0",@"0",@"0",@"0",
+		// Steps
+		@"0",@"1|warp|1|0,1",@"0",@"0",@"0",@"0",
 	nil];
 	
 }
@@ -77,6 +88,11 @@
 	[self roomClean];
 	NSLog(@"> ROOM | Load %d",userLocation);
 	
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:0.3];
+	self.userPlayerChar.alpha = 1;
+	[UIView commitAnimations];
+	
 	self.floor00.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][4]:0]] ];
 	self.floor1e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][8]:0]] ];
 	self.floore1.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][0]:0]] ];
@@ -100,57 +116,6 @@
 	self.step1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][18]:0]] ];
 	self.step2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][19]:0]] ];
 	self.step3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][20]:0]] ];
-	
-	// create events
-	/*
-	self.blocker1.hidden = YES;
-	self.step1.hidden = YES;
-	self.step2.hidden = YES;
-	
-	for (NSArray *test in worldEvent[userLocation]) {
-		
-		// Exceptions
-		if( [test[2] isEqual:@""] || [[test[2] substringToIndex:4] isEqual:@"none"] ){
-			continue;
-		}
-		
-		// Steps
-		else if( [[test[2] substringToIndex:4] isEqual:@"step"] ){
-			
-			if( [test[0] intValue] == -2 ){
-				self.step2.hidden = NO;
-				self.step2.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
-				self.step2.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
-			}
-			if( [test[1] intValue] == -2 ){
-				self.step1.hidden = NO;
-				self.step1.frame = [self tileLocation:0 :[test[0] intValue] :[test[1] intValue]];
-				self.step1.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",test[2]] ];
-			}
-			
-		}
-		
-		// Create Events
-		
-		else{
-			int posX = [test[0] intValue];
-			int posY = [test[1] intValue];
-
-			UIScrollView *event = [[UIScrollView alloc] initWithFrame:[self tileLocation:4 :posX :posY]];
-			[event setTag:300];
-
-			UIImageView *sprite = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, event.frame.size.width, event.frame.size.height)];
-			[sprite setContentMode:UIViewContentModeScaleAspectFill];
-			[sprite setImage:[UIImage imageNamed: [NSString stringWithFormat:@"%@.png",test[2] ] ]];
-			[sprite setTag:300];
-			
-			[event addSubview:sprite];
-
-			[self.view addSubview:event];
-		}
-		
-	}
-	*/
 	
 }
 

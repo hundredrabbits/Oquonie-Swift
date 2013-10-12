@@ -151,12 +151,29 @@
 {
 	NSLog(@"=====================");
 	
-	int event = [self moveEvent:( userPositionX+posX ) :( userPositionY+posY )];
-	int wall = 0;
+	int blocker = [self moveEvent:( userPositionX+posX ) :( userPositionY+posY )];
 	
-	if( (userPositionX+posX) >= -1 && (userPositionX+posX) <= 1 && event < 1){ userPositionX += posX; } else{ wall = 1; }
-	if( (userPositionY+posY) >= -1 && (userPositionY+posY) <= 1 && event < 1 ){ userPositionY += posY; } else{ wall = 1; }
+	// Detect event
+	if(blocker == 0){
+		
+		// Update position
+		userPositionX += posX;
+		userPositionY += posY;
+		
+		NSString *currentLocationString = worldNode[userLocation][[self flattenPosition:userPositionX :userPositionY]];
+		NSString *currentLocationEventKey = [self tileParser:currentLocationString :1];
+		NSString *currentLocationEventValue = [self tileParser:currentLocationString :2];
+		NSString *currentLocationEventData = [self tileParser:currentLocationString :3];
+		if( currentLocationEventKey ){
+			[self eventRouter:currentLocationEventKey:[currentLocationEventValue intValue]:currentLocationEventData];
+		}
+		
+	}
 	
+	// Move timeout
+	[self moveDisable];
+	
+	// Sprite change
 	if( (long)sender.tag == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
 	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
 	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
@@ -168,19 +185,14 @@
 	self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
 	[UIView commitAnimations];
 	
-	[UIView beginAnimations: @"Fade In" context:nil];
-	[UIView setAnimationDuration:0.4];
-	[UIView setAnimationDelay:0];
-	self.userPlayerChat.frame = [self tileLocation:3:userPositionX:userPositionY];
-	[UIView commitAnimations];
-	
-	[self moveDisable];
-	if( wall != 1 || event == 1 ){
+	if(blocker == 0){
 		[self moveAnimation];
 	}
-	else{
+	
+	if(blocker == 1){
 		[self moveCollide:posX:posY];
 	}
+	
 	[self moveOrder];
 	
 	NSLog(@"> USER | Position: %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
@@ -211,14 +223,6 @@
 	[NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
 }
 
-- (void) moveDoor :(int)destination
-{
-	userLocation = destination;
-	[self roomStart];
-	[self templateRoomAnimation];
-	
-}
-
 - (void) moveOrder
 {
 	userPositionZ = ( userPositionX + userPositionY );
@@ -238,13 +242,6 @@
 		NSLog(@"> EVNT | Blocked: %d %d (no ground)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
-	}
-	
-	NSString *currentLocationString = worldNode[userLocation][[self flattenPosition:posX :posY]];
-	NSString *currentLocationEventKey = [self tileParser:currentLocationString :1];
-	NSString *currentLocationEventValue = [self tileParser:currentLocationString :2];
-	if( currentLocationEventKey ){
-		[self eventRouter:currentLocationEventKey:[currentLocationEventValue intValue]];
 	}
 	
 	return 0;
@@ -278,10 +275,33 @@
 
 # pragma mark Event Router -
 
--(void)eventRouter :(NSString*)eventType :(int)eventId {
+-(void)eventRouter :(NSString*)eventType :(int)eventId :(NSString*)eventData {
 	
 	NSLog(@"> USER | Event: %@ -> %d", eventType, eventId );
+	
+	if ([eventType isEqualToString:@"warp"]) {
+		[self eventWarp:eventId:eventData];
+	}
+	
 
+}
+
+- (void)eventWarp :(int)eventId :(NSString*)eventData
+{
+	
+	NSArray* array = [eventData componentsSeparatedByString: @","];
+	int x = [[array objectAtIndex: 0] intValue];
+	int y = [[array objectAtIndex: 1] intValue];
+	
+	self.userPlayerChar.alpha = 0;
+	
+	userPositionX = x;
+	userPositionY = y;
+	userLocation = eventId;
+	self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+	[self roomStart];
+	[self templateRoomAnimation];
+	
 }
 
 -(void)eventDialog:(int)dialogId {
