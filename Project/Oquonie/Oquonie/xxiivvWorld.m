@@ -16,10 +16,11 @@
 	int myCount = 0;
 	while ( myCount < 10 )	{ myCount++; worldNode[myCount] = [NSArray arrayWithObjects: @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", nil];	}
 	
+	// Entrance
 	worldNode[1] = [NSArray arrayWithObjects:
 		// Tiles
-		@"0",@"5",@"6|block|4",
-		@"6",@"6",@"5",
+		@"0",@"5|block|5",@"6",
+		@"6",@"8",@"5",
 		@"5",@"4",@"5",
 		// Walls
 		@"0",@"0",@"0",@"0",@"9|warp|2|0,-1",@"0",
@@ -27,15 +28,28 @@
 		@"0",@"0",@"0",@"0",@"0",@"0",
 	nil];
 	
+	// Fork
 	worldNode[2] = [NSArray arrayWithObjects:
 		// Tiles
-		@"4",@"5|dialog|5",@"6",
+		@"0",@"5",@"0",
 		@"6",@"6",@"4",
-		@"5",@"4",@"5",
+		@"0",@"0",@"0",
 		// Walls
-		@"0",@"0",@"0",@"0",@"0",@"0",
+		@"0",@"11|warp|3|-1,0",@"0",@"0",@"12",@"0",
 		// Steps
 		@"0",@"1|warp|1|0,1",@"0",@"0",@"0",@"0",
+	nil];
+	
+	// Options
+	worldNode[3] = [NSArray arrayWithObjects:
+		// Tiles
+		@"1",@"1",@"1|block|6",
+		@"1",@"2|block|1",@"1",
+		@"1",@"2",@"1",
+		// Walls
+		@"1",@"3",@"2",@"2",@"3",@"1",
+		// Steps
+		@"0",@"0",@"0",@"0",@"1|warp|2|1,0",@"0",
 	nil];
 	
 }
@@ -98,7 +112,7 @@
 			NSLog(@"+   BLOCKER #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
-			newView.image = [UIImage imageNamed:@"blocker.4.png"];
+			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
 			[self.view addSubview:newView];
 		}
 		tileId += 1;
