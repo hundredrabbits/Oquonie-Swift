@@ -17,5 +17,6 @@
 - (void) roomStart;
 - (void) roomUpdate;
 - (void) eventDialogStart;
+- (NSString*) tileParser :(NSString*)tileString :(int)index;
 
 @end

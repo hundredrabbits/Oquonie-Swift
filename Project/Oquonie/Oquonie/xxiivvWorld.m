@@ -17,9 +17,9 @@
 	while ( myCount < 150 )	{ myCount++; worldNode[myCount] = [NSArray arrayWithObjects: @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", nil];	}
 	
 	worldNode[1] = [NSArray arrayWithObjects:
-					@"4",@"5",@"4",
-					@"4",@"6",@"4",
-					@"5",@"6",@"6",
+					@"0",@"5|warp|5",@"6",
+					@"6",@"6",@"4",
+					@"5",@"4",@"5",
 					@"none",@"none",@"none",@"0",@"none",@"door.1",@"none",
 					nil];
 	worldNode[2] = [NSArray arrayWithObjects:
@@ -130,27 +130,40 @@
 
 }
 
+
+- (NSString*) tileParser :(NSString*)tileString :(int)index {
+		
+	NSArray* array = [tileString componentsSeparatedByString: @"|"];
+	if( [array count] < (index+1) && index > 0 ){
+		return 0;
+	}
+	NSString* value = [array objectAtIndex: index];
+	
+	return value;
+}
+
+
 - (void) roomStart
 {
 	[self roomClean];
 	NSLog(@"> ROOM | Load %d",userLocation);
 	
-	self.floor00.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][4]] ];
-	self.floor1e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][8]] ];
-	self.floore1.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][0]] ];
-	self.floor10.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][1]] ];
-	self.floor01.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][5]] ];
-	self.floor0e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][3]] ];
-	self.floore0.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][7]] ];
-	self.floor11.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][2]] ];
-	self.flooree.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",worldNode[userLocation][6]] ];
-	self.wall1l.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.r.png",worldNode[userLocation][9]] ];
-	self.wall2l.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.r.png",worldNode[userLocation][10]] ];
-	self.wall3l.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.r.png",worldNode[userLocation][11]] ];
-	self.beam.image   = [UIImage imageNamed:[NSString stringWithFormat:@"beam.%@.png",worldNode[userLocation][12]] ];
-	self.wall1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.l.png",worldNode[userLocation][15]] ];
-	self.wall2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.l.png",worldNode[userLocation][14]] ];
-	self.wall3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.l.png",worldNode[userLocation][13]] ];
+	self.floor00.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][4]:0]] ];
+	self.floor1e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][8]:0]] ];
+	self.floore1.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][0]:0]] ];
+	self.floor10.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][1]:0]] ];
+	self.floor01.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][5]:0]] ];
+	self.floor0e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][3]:0]] ];
+	self.floore0.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][7]:0]] ];
+	self.floor11.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][2]:0]] ];
+	self.flooree.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][6]:0]] ];
+	self.wall1l.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.r.png",[self tileParser:worldNode[userLocation][9]:0]] ];
+	self.wall2l.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.r.png",[self tileParser:worldNode[userLocation][10]:0]] ];
+	self.wall3l.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.r.png",[self tileParser:worldNode[userLocation][11]:0]] ];
+	self.beam.image   = [UIImage imageNamed:[NSString stringWithFormat:@"beam.%@.png",[self tileParser:worldNode[userLocation][12]:0]] ];
+	self.wall1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.l.png",[self tileParser:worldNode[userLocation][15]:0]] ];
+	self.wall2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.l.png",[self tileParser:worldNode[userLocation][14]:0]] ];
+	self.wall3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.l.png",[self tileParser:worldNode[userLocation][13]:0]] ];
 	
 	// create events
 	

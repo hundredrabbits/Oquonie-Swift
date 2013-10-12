@@ -175,12 +175,11 @@
 		[self moveAnimation];
 	}
 	else{
-		NSArray *event = [NSArray arrayWithObjects: @"1",@"-1",@"blocker.1", @"Dialog",@"", nil];
-		[self moveCollide:event:posX:posY];
+		[self moveCollide:posX:posY];
 	}
 	[self moveOrder];
 	
-	NSLog(@"> USER | Position: %d %d",userPositionX, userPositionY);
+	NSLog(@"> USER | Position: %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
 }
 
 - (void) moveAnimation
@@ -229,36 +228,25 @@
 }
 
 - (int) moveEvent :(int)posX :(int)posY
-{	
-	for (NSArray *event in worldEvent[userLocation]) {
+{
+	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
 		
-		NSString* spriteName = event[2];
-		int spriteDialogId = [event[3] intValue];
-		int spritePosX = [event[0] intValue];
-		int spritePosY = [event[1] intValue];
-		int spriteWarp = [event[4] intValue];
-		
-		if(spritePosX != posX){	continue; }
-		if(spritePosY != posY){	continue; }
-		if( [spriteName isEqual:@""] ){	continue; }
-		
-		if( spriteWarp > 0 ){
-			if( posY == 2  ){ userPositionY = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
-			if( posY == -2 ){ userPositionY =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
-			if( posX == 2  ){ userPositionX = -1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
-			if( posX == -2 ){ userPositionX =  1; self.userPlayer.frame = [self tileLocation:1:userPositionX:userPositionY];}
-			[self moveDoor:spriteWarp ];
-		}
-		
-		NSLog(@"> EVNT | %@", spriteName);
-		[self moveCollide:event:posX:posY];
-		[self eventDialog:spriteDialogId];
+		NSLog(@"> EVNT | Blocked");
+		[self moveCollide:posX:posY];
 		return 1;
 	}
+	
+	NSString *currentLocationString = worldNode[userLocation][[self flattenPosition:posX :posY]];
+	NSString *currentLocationEventKey = [self tileParser:currentLocationString :1];
+	NSString *currentLocationEventValue = [self tileParser:currentLocationString :2];
+	if( currentLocationEventKey ){
+		[self eventRouter:currentLocationEventKey:[currentLocationEventValue intValue]];
+	}
+	
 	return 0;
 }
 
-- (void) moveCollide :(NSArray*)event :(int)posX :(int)posY
+- (void) moveCollide :(int)posX :(int)posY
 {
 	for (UIView *subview in [self.view subviews]) {
 		if( subview.tag == 300 ){
@@ -285,6 +273,12 @@
 }
 
 # pragma mark Event Router -
+
+-(void)eventRouter :(NSString*)eventType :(int)eventId {
+	
+	NSLog(@"> USER | Event: %@ -> %d", eventType, eventId );
+
+}
 
 -(void)eventDialog:(int)dialogId {
 	
@@ -335,6 +329,22 @@
 - (void)eventSpeakHide {
 	
 	
+	
+}
+
+-(int)flattenPosition :(int)x :(int)y {
+	
+	if(x==1 && y==-1){ return 0; }
+	if(x==1 && y== 0){ return 1; }
+	if(x==1 && y== 1){ return 2; }
+	if(x==0 && y==-1){ return 3; }
+	if(x==0 && y== 0){ return 4; }
+	if(x==0 && y== 1){ return 5; }
+	if(x==-1&& y==-1){ return 6; }
+	if(x==-1&& y== 0){ return 7; }
+	if(x==-1&& y== 1){ return 8; }
+	
+	return 1;
 	
 }
 

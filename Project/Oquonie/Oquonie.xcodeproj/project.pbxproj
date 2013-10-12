@@ -142,6 +142,7 @@
 		03C1EE0817AFAC70001AFF21 /* wall.3.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0317AFAC70001AFF21 /* wall.3.l.png */; };
 		03C1EE0917AFAC70001AFF21 /* wall.3.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0417AFAC70001AFF21 /* wall.3.r.png */; };
 		03C1EE0B17AFB90C001AFF21 /* event.chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0A17AFB90C001AFF21 /* event.chat.png */; };
+		03CD6B071808ED0B00A18760 /* tile.8.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD6B061808ED0B00A18760 /* tile.8.png */; };
 		03ECBBE617FC5A1A0039B944 /* gate.char3.1.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ECBBE217FC5A1A0039B944 /* gate.char3.1.l.png */; };
 		03ECBBE717FC5A1A0039B944 /* gate.char3.1.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ECBBE317FC5A1A0039B944 /* gate.char3.1.r.png */; };
 		03ECBBE817FC5A1A0039B944 /* gate.char5.1.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ECBBE417FC5A1A0039B944 /* gate.char5.1.l.png */; };
@@ -291,6 +292,7 @@
 		03C1EE0317AFAC70001AFF21 /* wall.3.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.l.png; path = en.assets/wall.3.l.png; sourceTree = "<group>"; };
 		03C1EE0417AFAC70001AFF21 /* wall.3.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.r.png; path = en.assets/wall.3.r.png; sourceTree = "<group>"; };
 		03C1EE0A17AFB90C001AFF21 /* event.chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.chat.png; path = en.assets/event.chat.png; sourceTree = "<group>"; };
+		03CD6B061808ED0B00A18760 /* tile.8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.8.png; path = en.assets/tile.8.png; sourceTree = "<group>"; };
 		03ECBBE217FC5A1A0039B944 /* gate.char3.1.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gate.char3.1.l.png; path = en.assets/gate.char3.1.l.png; sourceTree = "<group>"; };
 		03ECBBE317FC5A1A0039B944 /* gate.char3.1.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gate.char3.1.r.png; path = en.assets/gate.char3.1.r.png; sourceTree = "<group>"; };
 		03ECBBE417FC5A1A0039B944 /* gate.char5.1.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gate.char5.1.l.png; path = en.assets/gate.char5.1.l.png; sourceTree = "<group>"; };
@@ -591,6 +593,7 @@
 				0332383117D4BDB8001B1328 /* npc.l.f.png */,
 				0332383217D4BDB8001B1328 /* npc.r.f.png */,
 				03983BF817C1B19100C89446 /* music.0.l.png */,
+				03CD6B061808ED0B00A18760 /* tile.8.png */,
 				03983BF717C1AA9400C89446 /* Teleports */,
 				03983BF417C1AA5000C89446 /* Doors */,
 				03983BF617C1AA8D00C89446 /* Wizards */,
@@ -664,6 +667,7 @@
 				03ECBBE717FC5A1A0039B944 /* gate.char3.1.r.png in Resources */,
 				03BBFAC0178A9E4E00E79C3D /* Default@2x.png in Resources */,
 				03BBFAC2178A9E4E00E79C3D /* Default-568h@2x.png in Resources */,
+				03CD6B071808ED0B00A18760 /* tile.8.png in Resources */,
 				03BBFAC5178A9E4E00E79C3D /* MainStoryboard.storyboard in Resources */,
 				03BBFAD0178AC8D600E79C3D /* tile.1.png in Resources */,
 				037CCB52179BBAD200833EDB /* char1.stand.l.b.png in Resources */,
