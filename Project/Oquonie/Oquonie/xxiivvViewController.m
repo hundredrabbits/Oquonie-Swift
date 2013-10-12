@@ -243,8 +243,6 @@
 		return 1;
 	}
 	
-	
-	
 	NSString *currentLocationString = worldNode[userLocation][[self flattenPosition:posX :posY]];
 	NSString *currentLocationEventKey = [self tileParser:currentLocationString :1];
 	NSString *currentLocationEventValue = [self tileParser:currentLocationString :2];
