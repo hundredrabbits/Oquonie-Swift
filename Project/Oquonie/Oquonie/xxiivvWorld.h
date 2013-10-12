@@ -12,10 +12,8 @@
 
 - (void) worldStart;
 - (void) worldUpdate;
-- (void) eventUpdate;
 - (void) roomStart;
 - (void) roomUpdate;
-- (void) eventDialogStart;
 - (NSString*) tileParser :(NSString*)tileString :(int)index;
 
 @end

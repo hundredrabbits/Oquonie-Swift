@@ -459,6 +459,9 @@
 		03983BF617C1AA8D00C89446 /* Wizards */ = {
 			isa = PBXGroup;
 			children = (
+				0332383117D4BDB8001B1328 /* npc.l.f.png */,
+				0332383217D4BDB8001B1328 /* npc.r.f.png */,
+				038E862317DDFEC300529CC0 /* npc2.l.f.png */,
 				032A5B7317A63F8000C98354 /* tutorial.1.png */,
 				03016F3F17CCE9D100AB01A8 /* wizard1.l.f.png */,
 				03016F4017CCE9D100AB01A8 /* wizard1.r.f.png */,
@@ -571,9 +574,6 @@
 				033193E218000B2D0069D8A0 /* letter3.png */,
 				033193E318000B2D0069D8A0 /* letter4.png */,
 				033193DF180009740069D8A0 /* letter1.png */,
-				038E862317DDFEC300529CC0 /* npc2.l.f.png */,
-				0332383117D4BDB8001B1328 /* npc.l.f.png */,
-				0332383217D4BDB8001B1328 /* npc.r.f.png */,
 				03983BF717C1AA9400C89446 /* Teleports */,
 				03983BF617C1AA8D00C89446 /* Wizards */,
 				03983BF517C1AA8400C89446 /* Blockers */,

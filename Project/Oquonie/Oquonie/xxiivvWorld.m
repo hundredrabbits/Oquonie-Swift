@@ -14,12 +14,12 @@
 {
 	worldNode = [NSMutableArray arrayWithObjects:@"",nil];
 	int myCount = 0;
-	while ( myCount < 150 )	{ myCount++; worldNode[myCount] = [NSArray arrayWithObjects: @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", nil];	}
+	while ( myCount < 10 )	{ myCount++; worldNode[myCount] = [NSArray arrayWithObjects: @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", nil];	}
 	
 	worldNode[1] = [NSArray arrayWithObjects:
 		// Tiles
-		@"0",@"5",@"6",
-		@"6",@"6",@"4",
+		@"0",@"5",@"6|block|4",
+		@"6",@"6",@"5",
 		@"5",@"4",@"5",
 		// Walls
 		@"0",@"0",@"0",@"0",@"9|warp|2|0,-1",@"0",
@@ -40,37 +40,6 @@
 	
 }
 
-- (void) eventDialogStart
-{
-	worldEventDialog = [NSMutableArray arrayWithObjects:@"",nil];
-	int myCount = 0;
-	while ( myCount < 150 )	{ myCount++; worldEventDialog[myCount] = [NSMutableArray arrayWithObjects: @"", nil];	}
-	
-	worldEventDialog[0] = [NSArray arrayWithObjects: @"",@"",@"", @" ",@"", nil];
-	
-	// if Necomedre
-	// if Nephtaline
-	// if Neomine
-	// if Nestorine
-	// if Nemedique
-	
-	worldEventDialog[1] = @[
-		@[@"1", @"Debug"],
-	    @[@"0", @"Yes",],
-		@[@"0", @"Maybe",],
-		@[@"1", @"Sister!"],
-		@[@"0", @"No"],
-		@[@"0", @"ABCD"] // Dialog Test
-	];
-	
-}
-
-- (void) eventUpdate
-{
-
-}
-
-
 - (NSString*) tileParser :(NSString*)tileString :(int)index {
 		
 	NSArray* array = [tileString componentsSeparatedByString: @"|"];
@@ -82,11 +51,11 @@
 	return value;
 }
 
-
 - (void) roomStart
 {
 	[self roomClean];
-	NSLog(@"> ROOM | Load %d",userLocation);
+	[self roomGenerateBlockers];
+	NSLog(@">  ROOM | Load: Node.%d",userLocation);
 	
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
@@ -117,24 +86,33 @@
 	self.step2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][19]:0]] ];
 	self.step3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][20]:0]] ];
 	
+	
+	
 }
 
+-(void)roomGenerateBlockers {
+	NSLog(@">  ROOM | Blockers");
+	int tileId = 0;
+	for (NSString *tile in worldNode[userLocation]) {
+		if( [[self tileParser:tile :1] isEqualToString:@"block"] ){
+			NSLog(@"+   BLOCKER #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
+			newView.tag = 300;
+			newView.image = [UIImage imageNamed:@"blocker.4.png"];
+			[self.view addSubview:newView];
+		}
+		tileId += 1;
+	}
+}
 
 - (void) roomClean
 {
-	NSLog(@"> ROOM | Clean ");
+	NSLog(@">  ROOM | Clean ");
 	for (UIView *subview in [self.view subviews]) {
 		if(subview.tag == 300){
 			[subview removeFromSuperview];
 		}
 	}
 }
-
-- (void) roomUpdate
-{
-
-	
-}
-
 
 @end

@@ -34,6 +34,7 @@
 	[self templateStart];
 	[self worldStart];
 	[self roomStart];
+	[self moveOrder];
 }
 
 # pragma mark User -
@@ -338,6 +339,34 @@
 	if(x==-2&& y== 1){ return 20; }
 	
 	return 1;
+}
+
+-(int)flattenTileId :(int)tileId :(NSString*)axis {
+	
+	if([axis isEqualToString:@"x"]){
+		if(tileId == 0){ return 1; }
+		if(tileId == 1){ return 1; }
+		if(tileId == 2){ return 1; }
+		if(tileId == 3){ return 0; }
+		if(tileId == 4){ return 0; }
+		if(tileId == 5){ return 0; }
+		if(tileId == 6){ return -1; }
+		if(tileId == 7){ return -1; }
+		if(tileId == 8){ return -1; }
+	}
+	if([axis isEqualToString:@"y"]){
+		if(tileId == 0){ return -1; }
+		if(tileId == 1){ return 1; }
+		if(tileId == 2){ return 1; }
+		if(tileId == 3){ return -1; }
+		if(tileId == 4){ return 0; }
+		if(tileId == 5){ return 1; }
+		if(tileId == 6){ return -1; }
+		if(tileId == 7){ return 0; }
+		if(tileId == 8){ return 1; }
+	}
+	
+	return 0;
 }
 
 

@@ -56,7 +56,8 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *blocker1;
 
-- (CGRect) tileLocation :(int)type :(int)posX :(int)posY;
+-(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
+-(int)flattenTileId :(int)tileId :(NSString*)axis;
 
 @end
 
@@ -79,8 +80,6 @@ int userSpriteCharId;
 NSMutableArray *userInventory;
 
 NSMutableArray *worldNode;
-NSArray *worldEvent;
-NSMutableArray *worldEventDialog;
 
 CGRect	screen;
 int		screenMargin;
