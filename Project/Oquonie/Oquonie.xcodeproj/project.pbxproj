@@ -333,13 +333,13 @@
 		032D74DE179CD68A0068B27E /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
+				032D74DC179CD6840068B27E /* tile.0.png */,
 				037E2657179D3B8A001A1553 /* step.1.l.png */,
 				037E2658179D3B8A001A1553 /* step.1.r.png */,
 				032A5B6D17A61F7500C98354 /* tile.4.png */,
 				032A5B6E17A61F7500C98354 /* tile.5.png */,
 				032A5B6F17A61F7500C98354 /* tile.6.png */,
 				032D74E5179CE0E90068B27E /* tile.3.png */,
-				032D74DC179CD6840068B27E /* tile.0.png */,
 				03BBFACF178AC8D600E79C3D /* tile.1.png */,
 				0385E691179CD11D006D47D6 /* tile.2.png */,
 				0332383317D4BDB8001B1328 /* tile.7.png */,

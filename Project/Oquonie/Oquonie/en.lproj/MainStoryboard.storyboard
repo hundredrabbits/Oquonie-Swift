@@ -240,10 +240,10 @@
         <image name="char.shadow.png" width="200" height="141"/>
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
         <image name="door.1.l.png" width="200" height="281"/>
-        <image name="letter1.png" width="256" height="256"/>
-        <image name="letter2.png" width="1024" height="1024"/>
-        <image name="letter3.png" width="1024" height="1024"/>
-        <image name="letter4.png" width="1024" height="1024"/>
+        <image name="letter1.png" width="128" height="128"/>
+        <image name="letter2.png" width="128" height="128"/>
+        <image name="letter3.png" width="128" height="128"/>
+        <image name="letter4.png" width="128" height="128"/>
         <image name="step.1.l.png" width="200" height="141"/>
         <image name="step.1.r.png" width="200" height="141"/>
         <image name="tile.1.png" width="200" height="141"/>

@@ -70,6 +70,11 @@
 	self.text3.frame = textBlock3;
 	self.text4.frame = textBlock4;
 	
+	self.text1.hidden = YES;
+	self.text2.hidden = YES;
+	self.text3.hidden = YES;
+	self.text4.hidden = YES;
+	
 }
 
 - (void) templateRoomAnimation
