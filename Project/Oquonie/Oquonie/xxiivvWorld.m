@@ -19,7 +19,7 @@
 	// Entrance
 	worldNode[1] = [NSArray arrayWithObjects:
 		// Tiles
-		@"0",@"5|block|5",@"6",
+		@"0",@"5",@"6|block|5",
 		@"6",@"8",@"5",
 		@"5",@"4",@"5",
 		// Walls

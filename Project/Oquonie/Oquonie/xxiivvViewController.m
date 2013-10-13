@@ -62,6 +62,12 @@
 	
 	int blocker = [self moveEvent:( userPositionX+posX ) :( userPositionY+posY )];
 	
+	// Sprite face direction
+	if( (long)sender.tag == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
+	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
+	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
+	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
+	
 	// Detect event
 	if(blocker == 0){
 		// Update position
@@ -74,18 +80,11 @@
 		if( currentLocationEventKey ){
 			[self eventRouter:currentLocationEventKey:[currentLocationEventValue intValue]:currentLocationEventData];
 		}
-		// Sprite change
-		if( (long)sender.tag == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
-		if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
-		if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
-		if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
-		
 		[UIView beginAnimations: @"Fade In" context:nil];
 		[UIView setAnimationDuration:0.3];
 		[UIView setAnimationDelay:0];
 		self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
 		[UIView commitAnimations];
-		
 		[self moveAnimation];
 	}
 	else{
@@ -135,11 +134,19 @@
 
 - (int) moveEvent :(int)posX :(int)posY
 {
+	// Look if tile is missing
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
 		NSLog(@"> EVNT | Blocked: %d %d (no ground)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
+	// Look if tile is a blocker
+	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"block"] ){
+		NSLog(@"> EVNT | Blocked: %d %d (blocker)", posX, posY);
+		[self moveCollide:posX:posY];
+		return 1;
+	}
+	
 	return 0;
 }
 
@@ -356,7 +363,7 @@
 	}
 	if([axis isEqualToString:@"y"]){
 		if(tileId == 0){ return -1; }
-		if(tileId == 1){ return 1; }
+		if(tileId == 1){ return 0; }
 		if(tileId == 2){ return 1; }
 		if(tileId == 3){ return -1; }
 		if(tileId == 4){ return 0; }
