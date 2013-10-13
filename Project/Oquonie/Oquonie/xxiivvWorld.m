@@ -35,31 +35,43 @@
 		@"6",@"6",@"4",
 		@"0",@"0",@"0",
 		// Walls
-		@"1",@"12|warp|3|-1,0",@"1",@"0",@"11",@"0",
+		@"1",@"12|warp|3|-1,0",@"1",@"0",@"11|warp|5|0,-1",@"0",
 		// Steps
 		@"0",@"1|warp|1|0,1",@"0",@"0",@"0",@"0",
 	nil];
 	
-	// Options
+	// Tamie Lobby
 	worldNode[3] = [NSArray arrayWithObjects:
 		// Tiles
 		@"1",@"1",@"1",
 		@"1",@"2",@"2",
-		@"1",@"2",@"1",
+		@"1",@"2",@"1|block|4",
 		// Walls
 		@"1",@"2",@"2",@"2",@"11|warp|4|0,-1",@"1",
 		// Steps
 		@"0",@"0",@"0",@"0",@"1|warp|2|1,0",@"0",
 	nil];
 	
-	// Options
+	// Tamie Room
 	worldNode[4] = [NSArray arrayWithObjects:
 		// Tiles
 		@"1",@"1",@"1",
-		@"2",@"2",@"1|event|1|l",
+		@"2",@"2",@"1|event|7|l",
 		@"1",@"1",@"1",
 		// Walls
-		@"1",@"2",@"2",@"2",@"2",@"1",
+		@"1",@"2",@"1",@"1",@"2",@"1",
+		// Steps
+		@"0",@"1|warp|3|0,1",@"0",@"0",@"0",@"0",
+	nil];
+	
+	// Hall Lobby
+	worldNode[5] = [NSArray arrayWithObjects:
+		// Tiles
+		@"9",@"10",@"9",
+		@"3",@"3",@"10",
+		@"9",@"10",@"9",
+		// Walls
+		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Steps
 		@"0",@"1|warp|3|0,1",@"0",@"0",@"0",@"0",
 	nil];
@@ -81,6 +93,7 @@
 {
 	[self roomClean];
 	[self roomGenerateBlockers];
+	[self roomGenerateEvents];
 	NSLog(@">  ROOM | Load: Node.%d",userLocation);
 	
 	[UIView beginAnimations: @"Fade In" context:nil];
@@ -125,6 +138,21 @@
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
+			[self.view addSubview:newView];
+		}
+		tileId += 1;
+	}
+}
+
+-(void)roomGenerateEvents {
+	NSLog(@">  ROOM | Events");
+	int tileId = 0;
+	for (NSString *tile in worldNode[userLocation]) {
+		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
+			NSLog(@"+   EVENT #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
+			newView.tag = 300;
+			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :2],[self tileParser:tile :3]]];
 			[self.view addSubview:newView];
 		}
 		tileId += 1;
