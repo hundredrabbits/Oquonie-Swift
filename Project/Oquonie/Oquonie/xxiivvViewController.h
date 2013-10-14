@@ -70,7 +70,9 @@ NSString *userSpriteChar;
 NSString *userSpriteState;
 NSString *userSpriteOrientationHorizontal;
 NSString *userSpriteOrientationVertical;
-NSString *userAudio;
+NSString *userAudioTrack;
+
+int userAudioPlaying;
 
 int userLocation;
 int userPositionX;

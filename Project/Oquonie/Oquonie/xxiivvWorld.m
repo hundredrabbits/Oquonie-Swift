@@ -148,7 +148,7 @@
 	[self roomGenerateTiles];
 	[self roomGenerateBlockers];
 	[self roomGenerateEvents];
-	[self roomGenerateAudio];
+	[self roomGenerateAudioTrack];
 	
 }
 
@@ -209,10 +209,10 @@
 	}
 }
 
--(void)roomGenerateAudio {
-	if(![userAudio isEqualToString:worldNode[userLocation][23] ]){
+-(void)roomGenerateAudioTrack {
+	if(![userAudioTrack isEqualToString:worldNode[userLocation][23] ]){
 		NSLog(@">  ROOM | Audio:%@",worldNode[userLocation][23]);
-		userAudio = worldNode[userLocation][23];
+		userAudioTrack = worldNode[userLocation][23];
 	}
 }
 
