@@ -12,5 +12,6 @@
 
 -(void)eventWarp :(int)eventId :(NSString*)eventData;
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData;
+-(int)notificationListen :(NSString*)eventId;
 
 @end

@@ -63,4 +63,13 @@
 }
 
 
+-(int)notificationListen :(NSString*)eventId {
+	
+	NSLog(@"        - #%@ (broadcasting)",eventId);
+	
+	return 1;
+	
+}
+
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "xxiivvWorld.h"
+#import "xxiivvEvents.h"
 
 @implementation xxiivvViewController (world)
 
@@ -148,6 +149,7 @@
 	[self roomGenerateTiles];
 	[self roomGenerateBlockers];
 	[self roomGenerateEvents];
+	[self roomGenerateNotifications];
 	[self roomGenerateAudioTrack];
 	
 }
@@ -209,6 +211,23 @@
 	}
 }
 
+-(void)roomGenerateNotifications {
+	NSLog(@">  ROOM + Notifications");
+	int tileId = 0;
+	for (NSString *tile in worldNode[userLocation]) {
+		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
+			// If event is broadcasting notification
+			if( [self notificationListen:[self tileParser:tile :2]] > 0 ){
+				UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
+				newView.tag = 400;
+				newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"notification.1.png"]];
+				[self.view addSubview:newView];
+			}
+		}
+		tileId += 1;
+	}
+}
+
 -(void)roomGenerateAudioTrack {
 	if(![userAudioTrack isEqualToString:worldNode[userLocation][23] ]){
 		NSLog(@">  ROOM | Audio:%@",worldNode[userLocation][23]);
@@ -220,7 +239,12 @@
 {
 	NSLog(@">  ROOM | Clean ");
 	for (UIView *subview in [self.view subviews]) {
+		// Remove Sprites
 		if(subview.tag == 300){
+			[subview removeFromSuperview];
+		}
+		// Remove Notification
+		if(subview.tag == 400){
 			[subview removeFromSuperview];
 		}
 	}
