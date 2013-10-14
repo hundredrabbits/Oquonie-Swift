@@ -27,7 +27,7 @@
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
-		@"Lobby Entrance",@"White",@"Lobby",
+		@"Lobby Entrance",@"White",@"lobby",
 	nil];
 	
 	// First Fork
@@ -41,7 +41,7 @@
 		// Steps
 		@"0",@"1|warp|1|0,1",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
-		@"Lobby Fork I",@"White",@"Lobby",
+		@"Lobby Fork I",@"White",@"lobby",
 	nil];
 	
 	// Tamie Lobby
@@ -55,7 +55,7 @@
 		// Steps
 		@"0",@"0",@"0",@"0",@"1|warp|2|1,0",@"0",
 		// Name,Background,Audio
-		@"Lobby House Options",@"White",@"Lobby",
+		@"Lobby House Options",@"White",@"lobby",
 	nil];
 	
 	// Tamie Room
@@ -69,7 +69,7 @@
 		// Steps
 		@"0",@"1|warp|3|0,1",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
-		@"Lobby House Room",@"White",@"Lobby",
+		@"Lobby House Room",@"White",@"lobby",
 	nil];
 	
 	// Hall Lobby
@@ -83,7 +83,7 @@
 		// Steps
 		@"0",@"1|warp|2|0,1",@"0",@"0",@"1|warp|6|1,0",@"0",
 		// Name,Background,Audio
-		@"Lobby Fork II",@"White",@"Lobby",
+		@"Lobby Fork II",@"White",@"lobby",
 	nil];
 	
 	// Hall Lobby
@@ -97,7 +97,7 @@
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
-		@"Lobby Turn",@"White",@"Lobby",
+		@"Lobby Turn",@"White",@"lobby",
 	nil];
 	
 	// Hall Lobby
@@ -111,7 +111,7 @@
 		// Steps
 		@"0",@"1|warp|6|0,1",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
-		@"Lobby Fork III",@"White",@"Lobby",
+		@"Lobby Fork III",@"White",@"lobby",
 	nil];
 	
 	// Hall Lobby
@@ -142,16 +142,17 @@
 
 - (void) roomStart
 {
-	[self roomClean];
-	[self roomGenerateBlockers];
-	[self roomGenerateEvents];
 	NSLog(@">  ROOM | Load: %@ - Node.%d",worldNode[userLocation][21], userLocation);
 	
-	[UIView beginAnimations: @"Fade In" context:nil];
-	[UIView setAnimationDuration:0.3];
-	self.userPlayerChar.alpha = 1;
-	[UIView commitAnimations];
+	[self roomClean];
+	[self roomGenerateTiles];
+	[self roomGenerateBlockers];
+	[self roomGenerateEvents];
+	[self roomGenerateAudio];
 	
+}
+
+-(void)roomGenerateTiles {
 	self.floor00.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][4]:0]] ];
 	self.floor1e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][8]:0]] ];
 	self.floore1.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][0]:0]] ];
@@ -175,10 +176,8 @@
 	self.step1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][18]:0]] ];
 	self.step2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][19]:0]] ];
 	self.step3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][20]:0]] ];
-	
-	
-	
 }
+
 
 -(void)roomGenerateBlockers {
 	NSLog(@">  ROOM | Blockers");
@@ -207,6 +206,13 @@
 			[self.view addSubview:newView];
 		}
 		tileId += 1;
+	}
+}
+
+-(void)roomGenerateAudio {
+	if(![userAudio isEqualToString:worldNode[userLocation][23] ]){
+		NSLog(@">  ROOM | Audio:%@",worldNode[userLocation][23]);
+		userAudio = worldNode[userLocation][23];
 	}
 }
 

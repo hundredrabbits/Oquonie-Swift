@@ -49,6 +49,7 @@
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
 	userSpriteOrientationVertical = @"f";
+	
 }
 
 # pragma mark Move -
@@ -201,6 +202,12 @@
 	userPositionY = y;
 	userLocation = eventId;
 	self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+	
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:0.3];
+	self.userPlayerChar.alpha = 1;
+	[UIView commitAnimations];
+	
 	[self roomStart];
 	[self templateRoomAnimation];
 	
