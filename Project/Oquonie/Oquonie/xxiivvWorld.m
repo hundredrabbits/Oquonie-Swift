@@ -76,11 +76,11 @@
 	// Hall Lobby
 	worldNode[5] = [NSArray arrayWithObjects:
 		// Tiles
-		@"9",@"10",@"9",
+		@"0",@"10",@"9",
 		@"4",@"5",@"14",
-		@"9",@"6",@"9",
+		@"0",@"6",@"9",
 		// Walls
-		@"0",@"4",@"0",@"0",@"4",@"0",
+		@"0",@"0",@"0",@"0",@"4",@"0",
 		// Steps
 		@"0",@"7|warp|2|0,1",@"0",@"0",@"7|warp|6|1,0",@"0",
 		// Name,Background,Audio
@@ -145,7 +145,8 @@
 {
 	NSLog(@">  ROOM | Load: %@ - Node.%d",worldNode[userLocation][21], userLocation);
 	
-	[self roomClean];
+	[self roomCleanSprites];
+	[self roomCleanNotifications];
 	[self roomGenerateTiles];
 	[self roomGenerateBlockers];
 	[self roomGenerateEvents];
@@ -235,7 +236,7 @@
 	}
 }
 
-- (void) roomClean
+- (void) roomCleanSprites
 {
 	NSLog(@">  ROOM | Clean ");
 	for (UIView *subview in [self.view subviews]) {
@@ -243,11 +244,17 @@
 		if(subview.tag == 300){
 			[subview removeFromSuperview];
 		}
+	}
+}
+
+- (void) roomCleanNotifications
+{
+	NSLog(@">  ROOM | Clean Notifications ");
+	for (UIView *subview in [self.view subviews]) {
 		// Remove Notification
 		if(subview.tag == 400){
 			[subview removeFromSuperview];
 		}
 	}
 }
-
 @end

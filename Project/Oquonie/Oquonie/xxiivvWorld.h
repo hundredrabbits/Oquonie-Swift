@@ -13,5 +13,7 @@
 - (void) worldStart;
 - (void) roomStart;
 - (NSString*) tileParser :(NSString*)tileString :(int)index;
-
+- (void) roomGenerateNotifications;
+- (void) roomCleanNotifications;
+- (void) roomCleanSprites;
 @end
