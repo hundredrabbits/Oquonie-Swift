@@ -47,7 +47,7 @@
 	// Tamie Lobby
 	worldNode[3] = [NSArray arrayWithObjects:
 		// Tiles
-		@"1|event|test|9|r",@"1",@"1",
+		@"1|event|AudioToggle|9|r",@"1",@"1",
 		@"1",@"2",@"2",
 		@"1",@"2",@"1|block|4",
 		// Walls
@@ -62,7 +62,7 @@
 	worldNode[4] = [NSArray arrayWithObjects:
 		// Tiles
 		@"1",@"1",@"1",
-		@"2",@"2",@"1|event|7|l",
+		@"2",@"2",@"1|event|test|7|l",
 		@"1",@"1",@"1",
 		// Walls
 		@"1",@"9",@"1",@"1",@"2",@"1",
@@ -91,7 +91,7 @@
 		// Tiles
 		@"9",@"3",@"9|block|5",
 		@"10",@"3",@"3",
-		@"9",@"10",@"9|event|8|l",
+		@"9",@"10",@"9|event|test|8|l",
 		// Walls
 		@"0",@"10|warp|5|-1,0",@"0",@"0",@"10|warp|7|0,-1",@"0",
 		// Steps
@@ -180,11 +180,11 @@
 
 
 -(void)roomGenerateBlockers {
-	NSLog(@">  ROOM | Blockers");
+	NSLog(@">  ROOM + Blockers");
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"block"] ){
-			NSLog(@"+   BLOCKER #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"        - #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
@@ -195,11 +195,11 @@
 }
 
 -(void)roomGenerateEvents {
-	NSLog(@">  ROOM | Events");
+	NSLog(@">  ROOM + Events");
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
-			NSLog(@"+   EVENT id:%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"        - #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :3],[self tileParser:tile :4]]];

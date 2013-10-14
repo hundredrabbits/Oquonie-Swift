@@ -89,7 +89,7 @@
 	}
 	[self moveOrder];
 	
-	NSLog(@"> USER | Position: %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
+	NSLog(@">  USER | Position: %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
 }
 
 - (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY {
@@ -144,19 +144,25 @@
 {
 	// Look if tile is missing
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
-		NSLog(@"> EVNT | Blocked: %d %d (no ground)", posX, posY);
+		NSLog(@"> EVENT | Blocked: %d %d (no ground)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
 	// Look if tile is a blocker
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"block"] ){
-		NSLog(@"> EVNT | Blocked: %d %d (blocker)", posX, posY);
+		NSLog(@"> EVENT | Blocked: %d %d (blocker)", posX, posY);
+		[self moveCollide:posX:posY];
+		return 1;
+	}
+	// Look if tile is a event
+	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"warp"] ){
+		NSLog(@"> EVENT + Blocked: %d %d (warp)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"event"] ){
-		NSLog(@"> EVNT | Blocked: %d %d (event)", posX, posY);
+		NSLog(@"> EVENT + Blocked: %d %d (event)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}

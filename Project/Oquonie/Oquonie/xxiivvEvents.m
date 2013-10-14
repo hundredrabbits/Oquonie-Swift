@@ -15,20 +15,33 @@
 
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData {
 	
-	NSLog(@"> USER | Event: %@ -> %@", eventType, eventId );
-	
 	if ([eventType isEqualToString:@"warp"]) {
+		NSLog(@"        - #%@ (%@)",eventId, eventData );
 		[self eventWarp:eventId:eventData];
 	}
 	if ([eventType isEqualToString:@"event"]) {
-		NSLog(@"> %@",eventId);
+		NSString *eventSelector = [NSString stringWithFormat:@"event%@",eventId];
+		NSLog(@"        - #%@", eventSelector );
+		[self performSelector:NSSelectorFromString(eventSelector)];
+	}
+}
+
+-(void)eventAudioToggle {
+	
+	if(userAudioPlaying == 1){
+		NSLog(@"        - #audioOff" );
+		userAudioPlaying = 0;
+	}
+	else{
+		NSLog(@"        - #audioOn" );
+		userAudioPlaying = 1;
 	}
 	
 }
 
+
 - (void)eventWarp :(NSString*)eventId :(NSString*)eventData
 {
-	
 	NSArray* array = [eventData componentsSeparatedByString: @","];
 	int x = [[array objectAtIndex: 0] intValue];
 	int y = [[array objectAtIndex: 1] intValue];
