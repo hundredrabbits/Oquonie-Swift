@@ -77,7 +77,7 @@
 		036A100718099F720074F6F1 /* event.8.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 036A0FFF18099F720074F6F1 /* event.8.r.png */; };
 		036A100818099F720074F6F1 /* tile.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 036A100018099F720074F6F1 /* tile.9.png */; };
 		036A100918099F720074F6F1 /* tile.10.png in Resources */ = {isa = PBXBuildFile; fileRef = 036A100118099F720074F6F1 /* tile.10.png */; };
-		036A100A18099F720074F6F1 /* tile.template.png in Resources */ = {isa = PBXBuildFile; fileRef = 036A100218099F720074F6F1 /* tile.template.png */; };
+		036A100A18099F720074F6F1 /* tile.E.png in Resources */ = {isa = PBXBuildFile; fileRef = 036A100218099F720074F6F1 /* tile.E.png */; };
 		037CCB52179BBAD200833EDB /* char1.stand.l.b.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB46179BBAD200833EDB /* char1.stand.l.b.png */; };
 		037CCB53179BBAD200833EDB /* char1.stand.l.f.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB47179BBAD200833EDB /* char1.stand.l.f.png */; };
 		037CCB54179BBAD200833EDB /* char1.stand.r.b.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB48179BBAD200833EDB /* char1.stand.r.b.png */; };
@@ -230,7 +230,7 @@
 		036A0FFF18099F720074F6F1 /* event.8.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.8.r.png; path = en.assets/event.8.r.png; sourceTree = "<group>"; };
 		036A100018099F720074F6F1 /* tile.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.9.png; path = en.assets/tile.9.png; sourceTree = "<group>"; };
 		036A100118099F720074F6F1 /* tile.10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.10.png; path = en.assets/tile.10.png; sourceTree = "<group>"; };
-		036A100218099F720074F6F1 /* tile.template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.template.png; path = en.assets/tile.template.png; sourceTree = "<group>"; };
+		036A100218099F720074F6F1 /* tile.E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.E.png; path = en.assets/tile.E.png; sourceTree = "<group>"; };
 		037CCB46179BBAD200833EDB /* char1.stand.l.b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.l.b.png; path = en.assets/char1.stand.l.b.png; sourceTree = "<group>"; };
 		037CCB47179BBAD200833EDB /* char1.stand.l.f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.l.f.png; path = en.assets/char1.stand.l.f.png; sourceTree = "<group>"; };
 		037CCB48179BBAD200833EDB /* char1.stand.r.b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.r.b.png; path = en.assets/char1.stand.r.b.png; sourceTree = "<group>"; };
@@ -350,9 +350,8 @@
 		032D74DE179CD68A0068B27E /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
+				036A100218099F720074F6F1 /* tile.E.png */,
 				032D74DC179CD6840068B27E /* tile.0.png */,
-				037E2657179D3B8A001A1553 /* step.1.l.png */,
-				037E2658179D3B8A001A1553 /* step.1.r.png */,
 				03BBFACF178AC8D600E79C3D /* tile.1.png */,
 				0385E691179CD11D006D47D6 /* tile.2.png */,
 				032D74E5179CE0E90068B27E /* tile.3.png */,
@@ -467,6 +466,15 @@
 			path = en.lproj;
 			sourceTree = "<group>";
 		};
+		03834E1B180B77FE00568E60 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				037E2657179D3B8A001A1553 /* step.1.l.png */,
+				037E2658179D3B8A001A1553 /* step.1.r.png */,
+			);
+			name = Steps;
+			sourceTree = "<group>";
+		};
 		03983BF317C1AA3800C89446 /* CharMisc */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,13 +518,6 @@
 				038B4FED1802F35C00C18480 /* event.9.r.png */,
 			);
 			name = Wizards;
-			sourceTree = "<group>";
-		};
-		03983BF717C1AA9400C89446 /* Teleports */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Teleports;
 			sourceTree = "<group>";
 		};
 		03983C1017C1B7A500C89446 /* Char3 */ = {
@@ -605,12 +606,10 @@
 		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				036A100218099F720074F6F1 /* tile.template.png */,
 				033193E118000B2D0069D8A0 /* letter2.png */,
 				033193E218000B2D0069D8A0 /* letter3.png */,
 				033193E318000B2D0069D8A0 /* letter4.png */,
 				033193DF180009740069D8A0 /* letter1.png */,
-				03983BF717C1AA9400C89446 /* Teleports */,
 				03983BF617C1AA8D00C89446 /* Wizards */,
 				03983BF517C1AA8400C89446 /* Blockers */,
 				03983BF317C1AA3800C89446 /* CharMisc */,
@@ -620,6 +619,7 @@
 				0332384F17D4BDC2001B1328 /* Char4 */,
 				0332385017D4BDCD001B1328 /* Char5 */,
 				032D74E2179CD7D90068B27E /* Walls */,
+				03834E1B180B77FE00568E60 /* Steps */,
 				032D74DE179CD68A0068B27E /* Tiles */,
 			);
 			name = Assets;
@@ -678,7 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03BBFAB6178A9E4E00E79C3D /* InfoPlist.strings in Resources */,
-				036A100A18099F720074F6F1 /* tile.template.png in Resources */,
+				036A100A18099F720074F6F1 /* tile.E.png in Resources */,
 				03BBFABE178A9E4E00E79C3D /* Default.png in Resources */,
 				036A100518099F720074F6F1 /* wall.11.l.png in Resources */,
 				03ECBBE717FC5A1A0039B944 /* wall.7.r.png in Resources */,
