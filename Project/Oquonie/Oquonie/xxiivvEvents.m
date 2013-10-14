@@ -67,6 +67,10 @@
 	
 	NSLog(@"        - #%@ (broadcasting)",eventId);
 	
+	if( [eventId isEqualToString:@"AudioToggle"] ){
+		return 0;
+	}
+	
 	return 1;
 	
 }

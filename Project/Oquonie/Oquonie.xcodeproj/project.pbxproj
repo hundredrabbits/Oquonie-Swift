@@ -547,6 +547,11 @@
 				03834E2A180B941500568E60 /* step.7.r.png */,
 				03834E2B180B941500568E60 /* step.8.l.png */,
 				03834E2C180B941500568E60 /* step.8.r.png */,
+				03834E4A180C229700568E60 /* tile.11.png */,
+				03834E4B180C229700568E60 /* tile.12.png */,
+				03834E4C180C229700568E60 /* tile.13.png */,
+				03834E4D180C229700568E60 /* tile.14.png */,
+				03834E4E180C229700568E60 /* tile.15.png */,
 			);
 			name = Steps;
 			sourceTree = "<group>";
@@ -689,11 +694,6 @@
 				03834E47180C229700568E60 /* letter7.png */,
 				03834E48180C229700568E60 /* letter8.png */,
 				03834E49180C229700568E60 /* letter9.png */,
-				03834E4A180C229700568E60 /* tile.11.png */,
-				03834E4B180C229700568E60 /* tile.12.png */,
-				03834E4C180C229700568E60 /* tile.13.png */,
-				03834E4D180C229700568E60 /* tile.14.png */,
-				03834E4E180C229700568E60 /* tile.15.png */,
 				03834E43180BA6FF00568E60 /* notification.1.png */,
 				033193E118000B2D0069D8A0 /* letter2.png */,
 				033193E218000B2D0069D8A0 /* letter3.png */,
