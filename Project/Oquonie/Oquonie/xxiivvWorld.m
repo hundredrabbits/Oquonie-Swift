@@ -47,7 +47,7 @@
 	// Tamie Lobby
 	worldNode[3] = [NSArray arrayWithObjects:
 		// Tiles
-		@"1|event|9|r",@"1",@"1",
+		@"1|event|test|9|r",@"1",@"1",
 		@"1",@"2",@"2",
 		@"1",@"2",@"1|block|4",
 		// Walls
@@ -199,10 +199,10 @@
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
-			NSLog(@"+   EVENT #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"+   EVENT id:%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
-			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :2],[self tileParser:tile :3]]];
+			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
 			[self.view addSubview:newView];
 		}
 		tileId += 1;

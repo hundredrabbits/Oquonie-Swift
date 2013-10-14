@@ -98,6 +98,7 @@
 		03834E17180B730B00568E60 /* wall.10.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03834E15180B730B00568E60 /* wall.10.l.png */; };
 		03834E18180B730B00568E60 /* wall.10.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03834E16180B730B00568E60 /* wall.10.r.png */; };
 		03834E1A180B770100568E60 /* wall.7.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03834E19180B770100568E60 /* wall.7.l.png */; };
+		03834E1E180B855B00568E60 /* xxiivvEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 03834E1D180B855B00568E60 /* xxiivvEvents.m */; };
 		0385E692179CD11D006D47D6 /* char.shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0385E690179CD11D006D47D6 /* char.shadow.png */; };
 		0385E693179CD11D006D47D6 /* tile.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0385E691179CD11D006D47D6 /* tile.2.png */; };
 		038B4FEF1802F35C00C18480 /* blocker.4.png in Resources */ = {isa = PBXBuildFile; fileRef = 038B4FEB1802F35C00C18480 /* blocker.4.png */; };
@@ -251,6 +252,8 @@
 		03834E15180B730B00568E60 /* wall.10.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.10.l.png; path = en.assets/wall.10.l.png; sourceTree = "<group>"; };
 		03834E16180B730B00568E60 /* wall.10.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.10.r.png; path = en.assets/wall.10.r.png; sourceTree = "<group>"; };
 		03834E19180B770100568E60 /* wall.7.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.7.l.png; path = en.assets/wall.7.l.png; sourceTree = "<group>"; };
+		03834E1C180B855B00568E60 /* xxiivvEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvEvents.h; sourceTree = "<group>"; };
+		03834E1D180B855B00568E60 /* xxiivvEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvEvents.m; sourceTree = "<group>"; };
 		0385E690179CD11D006D47D6 /* char.shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char.shadow.png; path = en.assets/char.shadow.png; sourceTree = "<group>"; };
 		0385E691179CD11D006D47D6 /* tile.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.2.png; path = en.assets/tile.2.png; sourceTree = "<group>"; };
 		038B4FEB1802F35C00C18480 /* blocker.4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.4.png; path = en.assets/blocker.4.png; sourceTree = "<group>"; };
@@ -582,6 +585,8 @@
 				032D74EA179CF9670068B27E /* xxiivvWorld.m */,
 				0355CF9117C196C10069AF97 /* xxiivvTemplates.h */,
 				0355CF9217C196C10069AF97 /* xxiivvTemplates.m */,
+				03834E1C180B855B00568E60 /* xxiivvEvents.h */,
+				03834E1D180B855B00568E60 /* xxiivvEvents.m */,
 				03D4B8ED180957B700AD9DD7 /* MainStory.storyboard */,
 				03BBFACE178AC8C200E79C3D /* Assets */,
 				03BBFAB2178A9E4E00E79C3D /* Supporting Files */,
@@ -830,6 +835,7 @@
 				03BBFABC178A9E4E00E79C3D /* xxiivvAppDelegate.m in Sources */,
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
 				032D74EB179CF9670068B27E /* xxiivvWorld.m in Sources */,
+				03834E1E180B855B00568E60 /* xxiivvEvents.m in Sources */,
 				0355CFCC17C196C10069AF97 /* xxiivvTemplates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

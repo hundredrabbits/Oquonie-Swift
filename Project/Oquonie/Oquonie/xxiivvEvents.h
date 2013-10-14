@@ -8,10 +8,9 @@
 
 #import "xxiivvViewController.h"
 
-@interface xxiivvViewController (world)
+@interface xxiivvViewController (Events)
 
-- (void) worldStart;
-- (void) roomStart;
-- (NSString*) tileParser :(NSString*)tileString :(int)index;
+-(void)eventWarp :(int)eventId :(NSString*)eventData;
+-(void)eventRouter :(NSString*)eventType :(int)eventId :(NSString*)eventData;
 
 @end

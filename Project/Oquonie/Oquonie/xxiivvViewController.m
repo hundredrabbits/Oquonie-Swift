@@ -9,6 +9,7 @@
 #import "xxiivvViewController.h"
 #import "xxiivvWorld.h"
 #import "xxiivvTemplates.h"
+#import "xxiivvEvents.h"
 
 @interface xxiivvViewController ()
 
@@ -74,13 +75,7 @@
 		// Update position
 		userPositionX += posX;
 		userPositionY += posY;
-		NSString *currentLocationString = worldNode[userLocation][[self flattenPosition:userPositionX :userPositionY]];
-		NSString *currentLocationEventKey = [self tileParser:currentLocationString :1];
-		NSString *currentLocationEventValue = [self tileParser:currentLocationString :2];
-		NSString *currentLocationEventData = [self tileParser:currentLocationString :3];
-		if( currentLocationEventKey ){
-			[self eventRouter:currentLocationEventKey:[currentLocationEventValue intValue]:currentLocationEventData];
-		}
+		[self moveEventCheck:(userPositionX) :(userPositionY)];
 		[UIView beginAnimations: @"Fade In" context:nil];
 		[UIView setAnimationDuration:0.3];
 		[UIView setAnimationDelay:0];
@@ -89,12 +84,24 @@
 		[self moveAnimation];
 	}
 	else{
+		[self moveEventCheck:(userPositionX+posX) :(userPositionY+posY)];
 		[self moveCollide:posX:posY];
 	}
 	[self moveOrder];
 	
 	NSLog(@"> USER | Position: %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
 }
+
+- (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY {
+	NSString *currentLocationString = worldNode[userLocation][[self flattenPosition:userFuturePositionX :userFuturePositionY]];
+	NSString *currentLocationEventKey = [self tileParser:currentLocationString :1];
+	NSString *currentLocationEventValue = [self tileParser:currentLocationString :2];
+	NSString *currentLocationEventData = [self tileParser:currentLocationString :3];
+	if( currentLocationEventKey ){
+		[self eventRouter:currentLocationEventKey:currentLocationEventValue:currentLocationEventData];
+	}
+}
+
 
 - (void) moveAnimation
 {
@@ -181,42 +188,6 @@
 	[UIView beginAnimations: @"Fade In" context:nil]; [UIView setAnimationDuration:0.3];
 	self.userPlayer.frame = userOrigin;
 	[UIView commitAnimations];
-}
-
-# pragma mark Event Router -
-
--(void)eventRouter :(NSString*)eventType :(int)eventId :(NSString*)eventData {
-	
-	NSLog(@"> USER | Event: %@ -> %d", eventType, eventId );
-	
-	if ([eventType isEqualToString:@"warp"]) {
-		[self eventWarp:eventId:eventData];
-	}
-	
-}
-
-- (void)eventWarp :(int)eventId :(NSString*)eventData
-{
-	
-	NSArray* array = [eventData componentsSeparatedByString: @","];
-	int x = [[array objectAtIndex: 0] intValue];
-	int y = [[array objectAtIndex: 1] intValue];
-	
-	self.userPlayerChar.alpha = 0;
-	
-	userPositionX = x;
-	userPositionY = y;
-	userLocation = eventId;
-	self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
-	
-	[UIView beginAnimations: @"Fade In" context:nil];
-	[UIView setAnimationDuration:0.3];
-	self.userPlayerChar.alpha = 1;
-	[UIView commitAnimations];
-	
-	[self roomStart];
-	[self templateRoomAnimation];
-	
 }
 
 # pragma mark Speak -
