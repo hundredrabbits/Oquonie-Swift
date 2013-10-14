@@ -26,9 +26,11 @@
 		@"0",@"0",@"0",@"0",@"9|warp|2|0,-1",@"0",
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Entrance",@"White",@"Lobby",
 	nil];
 	
-	// Fork
+	// First Fork
 	worldNode[2] = [NSArray arrayWithObjects:
 		// Tiles
 		@"0",@"5",@"0",
@@ -38,6 +40,8 @@
 		@"1",@"12|warp|3|-1,0",@"1",@"0",@"10|warp|5|0,-1",@"0",
 		// Steps
 		@"0",@"1|warp|1|0,1",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Fork I",@"White",@"Lobby",
 	nil];
 	
 	// Tamie Lobby
@@ -50,6 +54,8 @@
 		@"1",@"2",@"2",@"2",@"11|warp|4|0,-1",@"1",
 		// Steps
 		@"0",@"0",@"0",@"0",@"1|warp|2|1,0",@"0",
+		// Name,Background,Audio
+		@"Lobby House Options",@"White",@"Lobby",
 	nil];
 	
 	// Tamie Room
@@ -62,6 +68,8 @@
 		@"1",@"9",@"1",@"1",@"2",@"1",
 		// Steps
 		@"0",@"1|warp|3|0,1",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby House Room",@"White",@"Lobby",
 	nil];
 	
 	// Hall Lobby
@@ -74,6 +82,8 @@
 		@"0",@"4",@"0",@"0",@"5",@"0",
 		// Steps
 		@"0",@"1|warp|2|0,1",@"0",@"0",@"1|warp|6|1,0",@"0",
+		// Name,Background,Audio
+		@"Lobby Fork II",@"White",@"Lobby",
 	nil];
 	
 	// Hall Lobby
@@ -86,6 +96,8 @@
 		@"0",@"10|warp|5|-1,0",@"0",@"0",@"10|warp|7|0,-1",@"0",
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Turn",@"White",@"Lobby",
 	nil];
 	
 	// Hall Lobby
@@ -98,6 +110,8 @@
 		@"0",@"7|warp|8|-1,0",@"0",@"0",@"8",@"0",
 		// Steps
 		@"0",@"1|warp|6|0,1",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Fork III",@"White",@"Lobby",
 	nil];
 	
 	// Hall Lobby
@@ -131,7 +145,7 @@
 	[self roomClean];
 	[self roomGenerateBlockers];
 	[self roomGenerateEvents];
-	NSLog(@">  ROOM | Load: Node.%d",userLocation);
+	NSLog(@">  ROOM | Load: %@ - Node.%d",worldNode[userLocation][21], userLocation);
 	
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
