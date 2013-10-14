@@ -147,6 +147,12 @@
 		[self moveCollide:posX:posY];
 		return 1;
 	}
+	// Look if tile is a event
+	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"event"] ){
+		NSLog(@"> EVNT | Blocked: %d %d (event)", posX, posY);
+		[self moveCollide:posX:posY];
+		return 1;
+	}
 	
 	return 0;
 }
