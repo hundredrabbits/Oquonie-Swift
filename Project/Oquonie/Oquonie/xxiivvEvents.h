@@ -11,6 +11,6 @@
 @interface xxiivvViewController (Events)
 
 -(void)eventWarp :(int)eventId :(NSString*)eventData;
--(void)eventRouter :(NSString*)eventType :(int)eventId :(NSString*)eventData;
+-(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData;
 
 @end
