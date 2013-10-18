@@ -17,21 +17,22 @@
 	int myCount = 0;
 	while ( myCount < 10 )	{ myCount++; worldNode[myCount] = [NSArray arrayWithObjects: @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", nil];	}
 	
-	// Entrance
+	// =======================
+	// @ Hub Oquonie
+	// =======================
 	worldNode[1] = [NSArray arrayWithObjects:
 		// Tiles
 		@"0",@"5",@"6|block|5",
 		@"6",@"8",@"5",
 		@"5",@"4",@"5",
 		// Walls
-		@"0",@"0",@"0",@"0",@"11|warp|2|0,-1",@"0",
+		@"0",@"0|warp|11|0,0",@"0",@"0",@"11|warp|2|0,-1",@"0",
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
 		@"Lobby Entrance",@"White",@"lobby",
 	nil];
 	
-	// First Fork
 	worldNode[2] = [NSArray arrayWithObjects:
 		// Tiles
 		@"0",@"5",@"0",
@@ -45,7 +46,6 @@
 		@"Lobby Fork I",@"White",@"lobby",
 	nil];
 	
-	// Tamie Lobby
 	worldNode[3] = [NSArray arrayWithObjects:
 		// Tiles
 		@"1|event|AudioToggle|9|r",@"1",@"1",
@@ -59,35 +59,32 @@
 		@"Lobby House Options",@"White",@"lobby",
 	nil];
 	
-	// Tamie Room
 	worldNode[4] = [NSArray arrayWithObjects:
 		// Tiles
 		@"1",@"11",@"1",
 		@"6",@"5",@"1|event|test|7|l",
 		@"1",@"1",@"1",
 		// Walls
-		@"1",@"9",@"1",@"1",@"2",@"1",
+		@"1",@"9|warp|10|-1,0",@"1",@"1",@"2",@"1",
 		// Steps
 		@"0",@"7|warp|3|0,1",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
 		@"Lobby House Room",@"White",@"lobby",
 	nil];
 	
-	// Hall Lobby
 	worldNode[5] = [NSArray arrayWithObjects:
 		// Tiles
 		@"0",@"10",@"9",
 		@"4",@"5",@"14",
 		@"0",@"6",@"9",
 		// Walls
-		@"0",@"0",@"0",@"0",@"4",@"0",
+		@"0",@"0",@"0",@"0",@"4|warp|8|0,-1",@"0",
 		// Steps
 		@"0",@"7|warp|2|0,1",@"0",@"0",@"7|warp|6|1,0",@"0",
 		// Name,Background,Audio
 		@"Lobby Fork II",@"White",@"lobby",
 	nil];
 	
-	// Hall Lobby
 	worldNode[6] = [NSArray arrayWithObjects:
 		// Tiles
 		@"9",@"4",@"9|block|5",
@@ -101,31 +98,100 @@
 		@"Lobby Turn",@"White",@"lobby",
 	nil];
 	
-	// Hall Lobby
 	worldNode[7] = [NSArray arrayWithObjects:
 		// Tiles
 		@"9",@"10",@"0",
 		@"4",@"5",@"12",
 		@"9",@"0",@"0",
 		// Walls
-		@"0",@"0",@"0",@"0",@"8",@"0",
+		@"0",@"0",@"0",@"0",@"8|warp|9|0,-1",@"0",
 		// Steps
 		@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
 		@"Lobby Fork III",@"White",@"lobby",
 	nil];
 	
-	// Hall Lobby
 	worldNode[8] = [NSArray arrayWithObjects:
 		// Tiles
-		@"1",@"1",@"1",
-		@"1",@"2",@"2",
-		@"1",@"2",@"1",
+		@"4",@"5",@"6",
+		@"5",@"7|warp|11|0,0",@"5",
+		@"4",@"5",@"6",
 		// Walls
-		@"1",@"1",@"1",@"1",@"7|warp|6|1,1",@"1",
+		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Steps
-		@"0",@"0",@"0",@"0",@"1|warp|7|1,0",@"0",
+		@"0",@"5|warp|5|0,1",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Necomedre Lobby",@"White",@"lobby",
 	nil];
+	
+	worldNode[9] = [NSArray arrayWithObjects:
+		// Tiles
+		@"4",@"5",@"6",
+		@"6",@"7",@"5",
+		@"4",@"5",@"6",
+		// Walls
+		@"0",@"0",@"0",@"0",@"0",@"0",
+		// Steps
+		@"0",@"7|warp|7|0,1",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Nestorine Lobby",@"White",@"lobby",
+	nil];
+	
+	worldNode[10] = [NSArray arrayWithObjects:
+		// Tiles
+		@"4",@"5",@"6",
+		@"6",@"7",@"5",
+		@"4",@"5",@"6",
+		// Walls
+		@"0",@"0",@"0",@"0",@"0",@"0",
+		// Steps
+		@"0",@"0",@"0",@"0",@"7|warp|4|1,0",@"0",
+		// Name,Background,Audio
+		@"Nestorine Lobby",@"White",@"lobby",
+	nil];
+	
+	// =======================
+	// @ World Necomedre
+	// =======================
+	
+	worldNode[11] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"4",@"5",@"6",
+		 @"6",@"8",@"5",
+		 @"0",@"5",@"6",
+		 // Walls
+		 @"0",@"0",@"0",@"13|warp|12|1,-1",@"0",@"0",
+		 // Steps
+		 @"0",@"0",@"0",@"0",@"0",@"0",
+		 // Name,Background,Audio
+		 @"Necomedre Entrance",@"White",@"lobby",
+	 nil];
+	
+	worldNode[12] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"4",@"0",@"6|event|test|2|l",
+		 @"6",@"0",@"3",
+		 @"5",@"0",@"6",
+		 // Walls
+		 @"2",@"1",@"2",@"2",@"5",@"2",
+		 // Steps
+		 @"7|warp|11|1,1",@"0",@"0",@"7|warp|13|1,-1",@"0",@"7|warp|13|1,1",
+		 // Name,Background,Audio
+		 @"Necomedre Fork",@"White",@"lobby",
+	 nil];
+	
+	worldNode[13] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"4",@"5",@"6",
+		 @"6",@"3",@"5",
+		 @"5",@"4",@"5",
+		 // Walls
+		 @"13|warp|12|-1,-1",@"0",@"13|warp|12|1,-1",@"0",@"0",@"0",
+		 // Steps
+		 @"0",@"0",@"0",@"0",@"0",@"0",
+		 // Name,Background,Audio
+		 @"Necomedre Entrance",@"White",@"lobby",
+	 nil];
 
 	
 }

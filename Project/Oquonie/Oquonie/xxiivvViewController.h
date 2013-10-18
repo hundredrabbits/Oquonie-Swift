@@ -80,7 +80,7 @@ int userPositionY;
 int userPositionZ;
 int userSpriteCharId;
 
-NSMutableArray *userInventory;
+NSMutableArray *userStorageEvents;
 
 NSMutableArray *worldNode;
 

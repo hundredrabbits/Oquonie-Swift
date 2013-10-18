@@ -44,9 +44,9 @@
 	self.step2l.frame = [self tileLocation:0 :0 :-2];
 	self.step3l.frame = [self tileLocation:0 :-1 :-2];
 	
-	self.step1r.frame = [self tileLocation:0 :-2 : 1];
+	self.step1r.frame = [self tileLocation:0 :-2 : -1];
 	self.step2r.frame = [self tileLocation:0 :-2 : 0];
-	self.step3r.frame = [self tileLocation:0 :-2 : -1];
+	self.step3r.frame = [self tileLocation:0 :-2 : 1];
 	
 	self.blocker1.frame = [self tileLocation:1 :0 :0];
 	
