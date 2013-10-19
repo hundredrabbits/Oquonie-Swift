@@ -15,6 +15,10 @@
 
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData {
 	
+	if ([eventType isEqualToString:@"port"]) {
+		NSLog(@"        - #%@ (%@)",eventId, eventData );
+		[self eventPort:eventId:eventData];
+	}
 	if ([eventType isEqualToString:@"warp"]) {
 		NSLog(@"        - #%@ (%@)",eventId, eventData );
 		[self eventWarp:eventId:eventData];
@@ -24,6 +28,7 @@
 		NSLog(@"        - #%@", eventSelector );
 		[self performSelector:NSSelectorFromString(eventSelector)];
 	}
+	
 }
 
 -(void)eventAudioToggle {
@@ -36,6 +41,27 @@
 		NSLog(@"        - #audioOn" );
 		userAudioPlaying = 1;
 	}
+	
+}
+
+
+- (void)eventPort :(NSString*)eventId :(NSString*)eventData
+{
+	NSArray *eventArray;
+	eventArray = [NSArray arrayWithObjects: eventId, eventData, nil];
+	NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(eventPortWarp:) userInfo:eventArray repeats:NO];
+}
+
+- (void)eventPortWarp:(NSTimer*)theTimer {
+	
+	NSArray *eventArray;
+	eventArray = [theTimer userInfo];
+	NSString *eventId = eventArray[0];
+	NSString *eventData = eventArray[1];
+	
+	[self eventWarp:eventId :eventData];
+	
+	NSLog (@"Got the string: %@", (NSArray*)[theTimer userInfo]);
 	
 }
 
