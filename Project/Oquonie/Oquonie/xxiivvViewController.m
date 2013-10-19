@@ -69,8 +69,11 @@
 	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
 	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
 	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
+		
+	if( abs(userPositionX+posX) > 1 ){ blocker = 1; }
+	if( abs(userPositionY+posY) > 1 ){ blocker = 1; }
 	
-	// Detect event
+	// Move if okay
 	if(blocker == 0){
 		// Update position
 		userPositionX += posX;
