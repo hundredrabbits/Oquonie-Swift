@@ -26,7 +26,7 @@
 	if ([eventType isEqualToString:@"event"]) {
 		NSString *eventSelector = [NSString stringWithFormat:@"event%@",eventId];
 		NSLog(@"        - #%@", eventSelector );
-		[self performSelector:NSSelectorFromString(eventSelector)];
+//		[self performSelector:NSSelectorFromString(eventSelector)];
 	}
 	
 }

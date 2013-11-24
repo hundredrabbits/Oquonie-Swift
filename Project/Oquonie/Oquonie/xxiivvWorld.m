@@ -170,7 +170,7 @@
 	worldNode[12] = [NSArray arrayWithObjects:
 		 // Tiles
 		 @"4",@"5",@"6",
-		 @"6",@"3|event|test|2|l",@"3",
+		 @"6",@"3|event|spell_test|4|l",@"3",
 		 @"5",@"4",@"6",
 		 // Walls
 		 @"3",@"3",@"13|warp|13|-1,1",@"2",@"5",@"2",
