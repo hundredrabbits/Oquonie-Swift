@@ -291,6 +291,18 @@
 		 // Name,Background,Audio
 		 @"Necomedre Fork",@"White",@"lobby",
 		 nil];
+	worldNode[21] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"0",@"0",@"20",
+		 @"0",@"0",@"20",
+		 @"0",@"0",@"20",
+		 // Walls
+		 @"0",@"0",@"0",@"0",@"13|warp|16|0,-1",@"0",
+		 // Steps
+		 @"0",@"0",@"0",@"0",@"0",@"0",
+		 // Name,Background,Audio
+		 @"Necomedre Fork",@"White",@"lobby",
+		 nil];
 	
 }
 
