@@ -26,7 +26,7 @@
 		@"6",@"8",@"5",
 		@"5",@"4",@"5",
 		// Walls
-		@"0",@"0|warp|20|0,0",@"0",@"0",@"11|warp|2|0,-1",@"0",
+		@"0",@"0|warp|31|0,0",@"0",@"0",@"11|warp|2|0,-1",@"0",
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
@@ -282,12 +282,12 @@
 	worldNode[21] = [NSArray arrayWithObjects:
 		 // Tiles
 		 @"3|event|spell_test|4|r",@"4|block|13",@"3",
-		 @"4",@"17",@"5",
+		 @"4",@"10",@"5",
 		 @"3",@"5",@"3",
 		 // Walls
 		 @"3",@"3",@"3",@"3",@"13|warp|16|0,-1",@"3",
 		 // Steps
-		 @"0",@"7|warp|22|0,1",@"0",@"0",@"7|warp|22|1,0",@"0",
+		 @"0",@"7|warp|22|0,1",@"0",@"0",@"7|warp|23|1,0",@"0",
 		 // Name,Background,Audio
 		 @"Necomedre Fork",@"White",@"lobby",
 		 nil];
@@ -297,12 +297,55 @@
 		 @"4",@"10",@"5",
 		 @"0",@"5",@"0",
 		 // Walls
-		 @"0",@"0",@"0",@"0",@"13|warp|21|0,-1",@"0",
+		 @"0",@"0",@"0",@"3",@"13|warp|21|0,-1",@"3",
 		 // Steps
-		 @"0",@"7|warp|20|0,1",@"0",@"0",@"7|warp|17|1,0",@"0",
+		 @"0",@"7|warp|20|0,1",@"0",@"0",@"7|warp|24|1,0",@"0",
 		 // Name,Background,Audio
 		 @"Necomedre Fork",@"White",@"lobby",
 		 nil];
+	worldNode[23] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"0",@"5",@"0",
+		 @"4",@"10",@"0",
+		 @"0",@"5",@"0",
+		 // Walls
+		 @"3",@"13|warp|21|-1,0",@"3",@"0",@"0",@"0",
+		 // Steps
+		 @"0",@"7|warp|24|0,1",@"0",@"0",@"7|warp|17|-1,0",@"0",
+		 // Name,Background,Audio
+		 @"Necomedre Fork",@"White",@"lobby",
+		 nil];
+	worldNode[24] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"0",@"5",@"0",
+		 @"4",@"10",@"5",
+		 @"0",@"5",@"0",
+		 // Walls
+		 @"0",@"13|warp|22|-1,0",@"0",@"0",@"13|warp|23|0,-1",@"0",
+		 // Steps
+		 @"0",@"7|warp|20|0,1",@"0",@"0",@"7|warp|17|-1,0",@"0",
+		 // Name,Background,Audio
+		 @"Necomedre Fork",@"White",@"lobby",
+					 nil];
+	worldNode[25] = @"";
+	worldNode[26] = @"";
+	worldNode[27] = @"";
+	worldNode[28] = @"";
+	worldNode[29] = @"";
+	worldNode[30] = @"";
+	
+	worldNode[31] = [NSArray arrayWithObjects:
+		// Tiles
+		@"21|block|15",@"21",@"21",
+		@"21",@"21",@"21",
+		@"21|block|14",@"21",@"21",
+		// Walls
+		@"20",@"20",@"24",@"21",@"23",@"20",
+		// Steps
+		@"0",@"0",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Necomedre Fork",@"White",@"lobby",
+		nil];
 	
 }
 
