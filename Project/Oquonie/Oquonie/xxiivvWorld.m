@@ -281,25 +281,25 @@
 		 nil];
 	worldNode[21] = [NSArray arrayWithObjects:
 		 // Tiles
-		 @"3",@"4|block|13",@"3",
+		 @"3|event|spell_test|4|r",@"4|block|13",@"3",
 		 @"4",@"17",@"5",
 		 @"3",@"5",@"3",
 		 // Walls
 		 @"3",@"3",@"3",@"3",@"13|warp|16|0,-1",@"3",
 		 // Steps
-		 @"0",@"7|warp|20|0,1",@"0",@"0",@"7|warp|17|1,0",@"0",
+		 @"0",@"7|warp|22|0,1",@"0",@"0",@"7|warp|22|1,0",@"0",
 		 // Name,Background,Audio
 		 @"Necomedre Fork",@"White",@"lobby",
 		 nil];
-	worldNode[21] = [NSArray arrayWithObjects:
+	worldNode[22] = [NSArray arrayWithObjects:
 		 // Tiles
-		 @"0",@"0",@"4",
-		 @"0",@"0",@"20",
-		 @"0",@"0",@"20",
+		 @"0",@"0",@"0",
+		 @"4",@"10",@"5",
+		 @"0",@"5",@"0",
 		 // Walls
-		 @"0",@"0",@"0",@"3",@"3",@"3",
+		 @"0",@"0",@"0",@"0",@"13|warp|21|0,-1",@"0",
 		 // Steps
-		 @"0",@"0",@"0",@"0",@"0",@"0",
+		 @"0",@"7|warp|20|0,1",@"0",@"0",@"7|warp|17|1,0",@"0",
 		 // Name,Background,Audio
 		 @"Necomedre Fork",@"White",@"lobby",
 		 nil];
