@@ -44,7 +44,7 @@
 	
 	userPositionX = 0;
 	userPositionY = 0;
-	userSpriteChar = @"char2";
+	userSpriteChar = @"char1";
 	userSpriteCharId = 5;
 	userLocation = 1;
 	userSpriteState = @"stand";
