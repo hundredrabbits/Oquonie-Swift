@@ -354,12 +354,12 @@
 	worldNode[27] = [NSArray arrayWithObjects:
 		 // Tiles
 		 @"0",@"0",@"0",
-		 @"4",@"10",@"5",
-		 @"0",@"0",@"0",
+		 @"0",@"10",@"5",
+		 @"0",@"1",@"0",
 		 // Walls
 		 @"0",@"0",@"0",@"0",@"13|warp|25|0,-1",@"0",
 		 // Steps
-		 @"0",@"0",@"0",@"0",@"0",@"0",
+		 @"0",@"0",@"0",@"0",@"3|warp|31|1,0",@"0",
 		 // Name,Background,Audio
 		 @"Necomedre Fork",@"White",@"lobby",
 		 nil];
@@ -402,16 +402,64 @@
 	
 	worldNode[31] = [NSArray arrayWithObjects:
 		// Tiles
-		@"1",@"1",@"1",
-		@"1",@"9",@"1",
-		@"1",@"1",@"1",
+		@"0",@"1",@"1|event|spell_test|3|l",
+		@"0",@"9",@"12",
+		@"0",@"1",@"1",
 		// Walls
-		@"20",@"20",@"24",@"21",@"23",@"20",
+		@"0",@"14|warp|27|-1,0",@"25",@"19",@"8",@"19",
 		// Steps
-		@"0",@"0",@"0",@"0",@"3",@"0",
+		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
 		@"Necomedre Fork",@"White",@"lobby",
 		nil];
+	worldNode[32] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"1",@"1",@"1",
+		 @"1",@"9",@"1",
+		 @"1",@"1",@"1",
+		 // Walls
+		 @"25",@"14",@"25",@"25",@"14",@"25",
+		 // Steps
+		 @"0",@"3",@"0",@"0",@"3",@"0",
+		 // Name,Background,Audio
+		 @"Necomedre Fork",@"White",@"lobby",
+		 nil];
+	worldNode[33] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"1",@"1",@"1",
+		 @"1",@"9",@"1",
+		 @"1",@"1",@"1",
+		 // Walls
+		 @"25",@"14",@"25",@"25",@"14",@"25",
+		 // Steps
+		 @"0",@"3",@"0",@"0",@"3",@"0",
+		 // Name,Background,Audio
+		 @"Necomedre Fork",@"White",@"lobby",
+		 nil];
+	worldNode[34] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"1",@"1",@"1",
+		 @"1",@"9",@"1",
+		 @"1",@"1",@"1",
+		 // Walls
+		 @"25",@"14",@"25",@"25",@"14",@"25",
+		 // Steps
+		 @"0",@"3",@"0",@"0",@"3",@"0",
+		 // Name,Background,Audio
+		 @"Necomedre Fork",@"White",@"lobby",
+		 nil];
+	worldNode[35] = [NSArray arrayWithObjects:
+		 // Tiles
+		 @"1",@"1",@"1",
+		 @"1",@"9",@"1",
+		 @"1",@"1",@"1",
+		 // Walls
+		 @"25",@"14",@"25",@"25",@"14",@"25",
+		 // Steps
+		 @"0",@"3",@"0",@"0",@"3",@"0",
+		 // Name,Background,Audio
+		 @"Necomedre Fork",@"White",@"lobby",
+		 nil];
 	
 }
 
