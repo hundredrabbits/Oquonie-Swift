@@ -95,27 +95,66 @@
 	self.dialogCharacter2.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringWithRange:NSMakeRange(1, 1)]]];
 	self.dialogCharacter3.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringFromIndex:2]]];
 	
-	// TODO: Origin of dialog elements
+	self.dialogCharacter.frame = CGRectOffset(portraitOrigin, 0, 2);
+	self.dialogCharacter.alpha = 0;
 	
-	CGRect portraitOrigin = self.dialogCharacter.frame;
-	CGRect char1Origin = self.dialogCharacter1.frame;
-	CGRect char2Origin = self.dialogCharacter2.frame;
-	CGRect char3Origin = self.dialogCharacter3.frame;
+	self.dialogBubble.frame = CGRectOffset(portraitOrigin, 3, 0);
+	self.dialogBubble.alpha = 0;
+	
+	self.dialogCharacter1.alpha = 0;
+	self.dialogCharacter2.alpha = 0;
+	self.dialogCharacter3.alpha = 0;
 	
 	[UIView beginAnimations: @"animate dialog" context:nil];
 	[UIView setAnimationDuration:0.3];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-	
-	
-	
+	self.dialogCharacter.frame = portraitOrigin;
+	self.dialogCharacter.alpha = 1;
+	self.dialogBubble.frame = CGRectOffset(portraitOrigin, 0, 0);
+	self.dialogBubble.alpha = 1;
 	[UIView commitAnimations];
 	
+	[UIView beginAnimations: @"animate dialog" context:nil];
+	[UIView setAnimationDuration:0.3];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	[UIView setAnimationDelay:0.2];
+	self.dialogCharacter1.alpha = 1;
+	[UIView commitAnimations];
+	
+	[UIView beginAnimations: @"animate dialog" context:nil];
+	[UIView setAnimationDuration:0.3];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	[UIView setAnimationDelay:0.3];
+	self.dialogCharacter2.alpha = 1;
+	[UIView commitAnimations];
+	
+	[UIView beginAnimations: @"animate dialog" context:nil];
+	[UIView setAnimationDuration:0.4];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	[UIView setAnimationDelay:0.2];
+	self.dialogCharacter3.alpha = 1;
+	[UIView commitAnimations];
 	
 }
 
 - (void)event_test
 {
 	[self eventDialog:@"EGJ"];
+}
+
+-(void)roomCleanDialog
+{
+	[UIView beginAnimations: @"animate dialog" context:nil];
+	[UIView setAnimationDuration:0.2];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	self.dialogCharacter.frame = portraitOrigin;
+	self.dialogCharacter.alpha = 0;
+	self.dialogBubble.frame = bubbleOrigin;
+	self.dialogBubble.alpha = 0;
+	self.dialogCharacter1.alpha = 0;
+	self.dialogCharacter2.alpha = 0;
+	self.dialogCharacter3.alpha = 0;
+	[UIView commitAnimations];
 }
 
 

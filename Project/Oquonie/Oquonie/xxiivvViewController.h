@@ -98,3 +98,9 @@ CGRect textBlock1;
 CGRect textBlock2;
 CGRect textBlock3;
 CGRect textBlock4;
+
+CGRect portraitOrigin;
+CGRect bubbleOrigin;
+CGRect char1Origin;
+CGRect char2Origin;
+CGRect char3Origin;

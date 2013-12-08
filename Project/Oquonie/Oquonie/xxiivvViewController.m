@@ -58,6 +58,7 @@
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
 	NSLog(@"=====================");
+	[self roomCleanDialog];
 	
 	// Move disable timeout
 	[self moveDisable];
