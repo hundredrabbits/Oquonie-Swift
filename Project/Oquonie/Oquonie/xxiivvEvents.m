@@ -91,12 +91,31 @@
 - (void)eventDialog :(NSString*)dialog
 {
 	
+	self.dialogCharacter1.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringToIndex:1]]];
+	self.dialogCharacter2.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringWithRange:NSMakeRange(1, 1)]]];
+	self.dialogCharacter3.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringFromIndex:2]]];
+	
+	// TODO: Origin of dialog elements
+	
+	CGRect portraitOrigin = self.dialogCharacter.frame;
+	CGRect char1Origin = self.dialogCharacter1.frame;
+	CGRect char2Origin = self.dialogCharacter2.frame;
+	CGRect char3Origin = self.dialogCharacter3.frame;
+	
+	[UIView beginAnimations: @"animate dialog" context:nil];
+	[UIView setAnimationDuration:0.3];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	
+	
+	
+	[UIView commitAnimations];
+	
+	
 }
 
 - (void)event_test
 {
-	
-	[self eventDialog:@"abc"];
+	[self eventDialog:@"EGJ"];
 }
 
 
