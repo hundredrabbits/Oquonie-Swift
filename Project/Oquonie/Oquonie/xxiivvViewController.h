@@ -56,6 +56,13 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *blocker1;
 
+@property (strong, nonatomic) IBOutlet UIView *dialogView;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogBubble;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter1;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter2;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter3;
+
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;
 

@@ -24,9 +24,9 @@
 		[self eventWarp:eventId:eventData];
 	}
 	if ([eventType isEqualToString:@"event"]) {
-		NSString *eventSelector = [NSString stringWithFormat:@"event%@",eventId];
+		NSString *eventSelector = [NSString stringWithFormat:@"event_%@",eventId];
 		NSLog(@"        - #%@", eventSelector );
-//		[self performSelector:NSSelectorFromString(eventSelector)];
+		[self performSelector:NSSelectorFromString(eventSelector)];
 	}
 	
 }
@@ -88,6 +88,17 @@
 	[self templateRoomAnimation];
 }
 
+- (void)eventDialog :(NSString*)dialog
+{
+	
+}
+
+- (void)event_test
+{
+	
+	[self eventDialog:@"abc"];
+}
+
 
 -(int)notificationListen :(NSString*)eventId {
 	
@@ -98,7 +109,6 @@
 			return 0;
 		}
 	}
-	
 	return 1;
 	
 }

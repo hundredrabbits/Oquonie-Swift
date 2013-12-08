@@ -23,7 +23,7 @@
 	worldNode[1] = [NSArray arrayWithObjects:
 		// Tiles
 		@"0",@"5",@"6|block|5",
-		@"6",@"8",@"5",
+		@"6",@"8",@"5|event|test|2|l",
 		@"5",@"4",@"5",
 		// Walls
 		@"0",@"0|warp|31|0,0",@"0",@"0",@"11|warp|2|0,-1",@"0",
