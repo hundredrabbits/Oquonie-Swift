@@ -170,7 +170,7 @@
 	worldNode[12] = [NSArray arrayWithObjects:
 		 // Tiles
 		 @"4",@"5",@"6",
-		 @"6",@"3|event|test|2|l",@"3",
+		 @"6",@"3|event|1|2|l",@"3",
 		 @"5",@"4",@"6",
 		 // Walls
 		 @"3",@"3",@"13|warp|13|-1,1",@"2",@"5",@"2",
@@ -516,11 +516,11 @@
 
 
 -(void)roomGenerateBlockers {
-	NSLog(@">  ROOM + Blockers");
+	NSLog(@">  ROOM | Blockers");
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"block"] ){
-			NSLog(@"        - #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"        | #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
@@ -531,11 +531,11 @@
 }
 
 -(void)roomGenerateEvents {
-	NSLog(@">  ROOM + Events");
+	NSLog(@">  ROOM | Events");
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
-			NSLog(@"        - #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"        | #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
@@ -546,7 +546,7 @@
 }
 
 -(void)roomGenerateNotifications {
-	NSLog(@">  ROOM + Notifications");
+	NSLog(@">  ROOM | Notifications");
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){

@@ -68,7 +68,6 @@
 
 @end
 
-
 int viewWidth;
 int tileW;
 int tileH;

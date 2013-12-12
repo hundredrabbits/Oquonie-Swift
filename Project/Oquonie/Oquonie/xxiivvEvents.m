@@ -16,17 +16,18 @@
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData {
 	
 	if ([eventType isEqualToString:@"port"]) {
-		NSLog(@"        - #%@ (%@)",eventId, eventData );
+		NSLog(@"  EVENT | #%@ (%@)",eventId, eventData );
 		[self eventPort:eventId:eventData];
 	}
 	if ([eventType isEqualToString:@"warp"]) {
-		NSLog(@"        - #%@ (%@)",eventId, eventData );
+		NSLog(@"  EVENT | #%@ (%@)",eventId, eventData );
 		[self eventWarp:eventId:eventData];
 	}
 	if ([eventType isEqualToString:@"event"]) {
 		NSString *eventSelector = [NSString stringWithFormat:@"event_%@",eventId];
-		NSLog(@"        - #%@", eventSelector );
+		NSLog(@"  EVENT | #%@", eventSelector );
 		[self performSelector:NSSelectorFromString(eventSelector)];
+        [self roomGenerateNotifications];
 	}
 	
 }
@@ -88,7 +89,7 @@
 - (void)eventDialog :(NSString*)dialog
 {
 	
-	NSLog(@"        - #%@ (letters)",dialog);
+	NSLog(@"  EVENT - #%@ (letters)",dialog);
 	
 	self.dialogCharacter1.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringToIndex:1]]];
 	self.dialogCharacter2.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringWithRange:NSMakeRange(1, 1)]]];
@@ -138,10 +139,17 @@
 
 -(void)eventSpell :(int)spellId :(int)spellType
 {
-	NSLog(@"        - #%d-%d (spell)",spellId,spellType);
+    // spell already aquired
+    if([userStorageEvents[spellId] intValue]>0){
+        NSLog(@"! EVENT | Spell: Already aquired %d(%d)",spellId,spellType);
+        return;
+    }
+
+    userStorageEvents[spellId] = @"1";
+    NSLog(@"+ EVENT | Spell: Added %d(%d)",spellId,spellType);
 }
 
--(void)event_test
+-(void)event_1
 {
 	[self eventDialog:@"EGJ"];
 	[self eventSpell:1:3];
@@ -165,13 +173,16 @@
 
 -(int)notificationListen :(NSString*)eventId {
 	
-	NSLog(@"        - #%@ (broadcasting)",eventId);
+	NSLog(@"  EVENT | #%@ (broadcasting)",eventId);
 	
 	if( [eventId isEqualToString:@"AudioToggle"] ){
 		if(userAudioPlaying == 1){
 			return 0;
 		}
 	}
+    if( [userStorageEvents[[eventId intValue]] intValue] > 0){
+        return 0;
+    }
 	return 1;
 	
 }
