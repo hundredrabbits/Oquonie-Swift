@@ -159,14 +159,34 @@
     NSLog(@"+ EVENT | Spell: Added %d(%d)",spellId,spellType);
 }
 
--(void)event_1
+-(void)event_wizard1
 {
     if([userStorageEvents[1] intValue]>0){
-        [self eventDialog:@"A"];
+        [self eventDialog:@"AAA"];
     }
     else{
         [self eventDialog:@"EGJ"];
         [self eventSpell:1:3];
+    }
+}
+-(void)event_wizard2
+{
+    if([userStorageEvents[2] intValue]>0){
+        [self eventDialog:@"ABB"];
+    }
+    else{
+        [self eventDialog:@"EGJ"];
+        [self eventSpell:2:3];
+    }
+}
+-(void)event_wizard3
+{
+    if([userStorageEvents[3] intValue]>0){
+        [self eventDialog:@"ACC"];
+    }
+    else{
+        [self eventDialog:@"EGJ"];
+        [self eventSpell:3:3];
     }
 }
 
