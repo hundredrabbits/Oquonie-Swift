@@ -143,14 +143,22 @@
 
 - (void) moveOrder
 {
-	userPositionZ = ( userPositionX + userPositionY );
-	
-	if( userPositionZ > 0 ){
-		[self.view bringSubviewToFront:self.blocker1];
-	}
-	else{
-		[self.view bringSubviewToFront:self.userPlayer];
-	}
+    float userPositionOrder = self.userPlayer.frame.origin.y+self.userPlayer.frame.size.height;
+    float subviewPositionOrder = 0;
+
+    for (UIView *subview in [self.view subviews]) {
+        if(subview.tag != 300){ continue; }
+
+        subviewPositionOrder = subview.frame.origin.y+subview.frame.size.height;
+
+        if( userPositionOrder > subviewPositionOrder ){
+            [self.view bringSubviewToFront:self.userPlayer];
+        }
+        else{
+            [self.view bringSubviewToFront:self.userPlayer];
+            [self.view bringSubviewToFront:subview];
+        }
+    }
 }
 
 - (int) moveEvent :(int)posX :(int)posY

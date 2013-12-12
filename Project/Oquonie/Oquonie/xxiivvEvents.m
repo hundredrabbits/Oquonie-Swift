@@ -90,10 +90,20 @@
 {
 	
 	NSLog(@"  EVENT - #%@ (letters)",dialog);
-	
-	self.dialogCharacter1.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringToIndex:1]]];
-	self.dialogCharacter2.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringWithRange:NSMakeRange(1, 1)]]];
-	self.dialogCharacter3.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringFromIndex:2]]];
+
+    self.dialogCharacter1.image = [UIImage imageNamed:@""];
+    self.dialogCharacter2.image = [UIImage imageNamed:@""];
+    self.dialogCharacter3.image = [UIImage imageNamed:@""];
+
+    if(dialog.length > 2){
+        self.dialogCharacter3.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringFromIndex:2]]];
+    }
+    if(dialog.length > 1){
+        self.dialogCharacter2.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringWithRange:NSMakeRange(1, 1)]]];
+    }
+    if(dialog.length > 0){
+        self.dialogCharacter1.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringToIndex:1]]];
+    }
 	
 	self.dialogCharacter.frame = CGRectOffset(portraitOrigin, 0, 2);
 	self.dialogCharacter.alpha = 0;
@@ -151,8 +161,13 @@
 
 -(void)event_1
 {
-	[self eventDialog:@"EGJ"];
-	[self eventSpell:1:3];
+    if([userStorageEvents[1] intValue]>0){
+        [self eventDialog:@"A"];
+    }
+    else{
+        [self eventDialog:@"EGJ"];
+        [self eventSpell:1:3];
+    }
 }
 
 -(void)roomCleanDialog
