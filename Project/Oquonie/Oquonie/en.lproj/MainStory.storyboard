@@ -145,7 +145,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="Y7v-1Q-mTL" userLabel="dialogView">
-                                <rect key="frame" x="0.0" y="300" width="320" height="250"/>
+                                <rect key="frame" x="0.0" y="250" width="320" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.2.portrait.png" id="RcO-YQ-M4O" userLabel="dialogCharacter">

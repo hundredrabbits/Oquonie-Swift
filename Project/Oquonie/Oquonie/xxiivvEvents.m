@@ -60,9 +60,6 @@
 	NSString *eventData = eventArray[1];
 	
 	[self eventWarp:eventId :eventData];
-	
-	NSLog (@"Got the string: %@", (NSArray*)[theTimer userInfo]);
-	
 }
 
 
@@ -90,6 +87,8 @@
 
 - (void)eventDialog :(NSString*)dialog
 {
+	
+	NSLog(@"        - #%@ (letters)",dialog);
 	
 	self.dialogCharacter1.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringToIndex:1]]];
 	self.dialogCharacter2.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[dialog substringWithRange:NSMakeRange(1, 1)]]];
@@ -137,9 +136,15 @@
 	
 }
 
-- (void)event_test
+-(void)eventSpell :(int)spellId :(int)spellType
+{
+	NSLog(@"        - #%d-%d (spell)",spellId,spellType);
+}
+
+-(void)event_test
 {
 	[self eventDialog:@"EGJ"];
+	[self eventSpell:1:3];
 }
 
 -(void)roomCleanDialog

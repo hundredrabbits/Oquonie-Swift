@@ -23,10 +23,10 @@
 	worldNode[1] = [NSArray arrayWithObjects:
 		// Tiles
 		@"0",@"5",@"6|block|5",
-		@"6",@"8",@"5|event|test|2|l",
+		@"6",@"8",@"5",
 		@"5",@"4",@"5",
 		// Walls
-		@"0",@"0|warp|31|0,0",@"0",@"0",@"11|warp|2|0,-1",@"0",
+		@"0",@"0|warp|11|0,0",@"0",@"0",@"11|warp|2|0,-1",@"0",
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
@@ -170,7 +170,7 @@
 	worldNode[12] = [NSArray arrayWithObjects:
 		 // Tiles
 		 @"4",@"5",@"6",
-		 @"6",@"3|event|spell_test|4|l",@"3",
+		 @"6",@"3|event|test|2|l",@"3",
 		 @"5",@"4",@"6",
 		 // Walls
 		 @"3",@"3",@"13|warp|13|-1,1",@"2",@"5",@"2",
