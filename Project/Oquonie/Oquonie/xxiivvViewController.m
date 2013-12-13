@@ -98,10 +98,6 @@
 	}
 	[self moveOrder];
 	
-	
-	[self roomCleanNotifications];
-	[self roomGenerateNotifications];
-	
 	NSLog(@">  USER | Position: %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
 }
 

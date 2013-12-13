@@ -12,8 +12,83 @@
 
 @implementation xxiivvViewController (Events)
 
+// =======================
+// @ Hub Oquonie
+// =======================
+
+-(int)event_wizard1 :(NSString*)option
+{
+	int userStorageEventId = 1;
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[userStorageEventId] intValue]<1){
+			return 1;
+		}
+		return 0;
+	}
+	
+	// Dialog
+    if([userStorageEvents[userStorageEventId] intValue]>0){
+        [self eventDialog:@"AAA"];
+    }
+    else{
+        [self eventDialog:@"EGJ"];
+        [self eventSpell:userStorageEventId:3];
+    }
+	
+	// Return storage Id
+	return userStorageEventId;
+}
+
+-(int)event_wizard2 :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[2] intValue]<1){
+			return 1;
+		}
+		return 0;
+	}
+	
+	// Dialog
+    if([userStorageEvents[2] intValue]>0){
+        [self eventDialog:@"AAA"];
+    }
+    else{
+        [self eventDialog:@"EGJ"];
+        [self eventSpell:2:3];
+    }
+	
+	// Return storage Id
+	return 2;
+}
+
+-(int)event_wizard3 :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[3] intValue]<1){
+			return 1;
+		}
+		return 0;
+	}
+	
+	// Dialog
+    if([userStorageEvents[3] intValue]>0){
+        [self eventDialog:@"AAA"];
+    }
+    else{
+        [self eventDialog:@"EGJ"];
+        [self eventSpell:3:3];
+    }
+	
+	// Return storage Id
+	return 3;
+}
+
 
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData {
+	
 	
 	if ([eventType isEqualToString:@"port"]) {
 		NSLog(@"  EVENT | #%@ (%@)",eventId, eventData );
@@ -24,12 +99,24 @@
 		[self eventWarp:eventId:eventData];
 	}
 	if ([eventType isEqualToString:@"event"]) {
-		NSString *eventSelector = [NSString stringWithFormat:@"event_%@",eventId];
+		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self eventParser:eventId:0]];
 		NSLog(@"  EVENT | #%@", eventSelector );
-		[self performSelector:NSSelectorFromString(eventSelector)];
+		[self performSelector:NSSelectorFromString(eventSelector) withObject:@""];
+		[self roomCleanNotifications];
         [self roomGenerateNotifications];
 	}
 	
+}
+
+- (NSString*) eventParser :(NSString*)eventString :(int)index {
+	
+	NSArray* array = [eventString componentsSeparatedByString: @"_"];
+	if( [array count] < (index+1) && index > 0 ){
+		return 0;
+	}
+	NSString* value = [array objectAtIndex: index];
+	
+	return value;
 }
 
 -(void)eventAudioToggle {
@@ -159,37 +246,6 @@
     NSLog(@"+ EVENT | Spell: Added %d(%d)",spellId,spellType);
 }
 
--(void)event_wizard1
-{
-    if([userStorageEvents[1] intValue]>0){
-        [self eventDialog:@"AAA"];
-    }
-    else{
-        [self eventDialog:@"EGJ"];
-        [self eventSpell:1:3];
-    }
-}
--(void)event_wizard2
-{
-    if([userStorageEvents[2] intValue]>0){
-        [self eventDialog:@"ABB"];
-    }
-    else{
-        [self eventDialog:@"EGJ"];
-        [self eventSpell:2:3];
-    }
-}
--(void)event_wizard3
-{
-    if([userStorageEvents[3] intValue]>0){
-        [self eventDialog:@"ACC"];
-    }
-    else{
-        [self eventDialog:@"EGJ"];
-        [self eventSpell:3:3];
-    }
-}
-
 -(void)roomCleanDialog
 {
 	[UIView beginAnimations: @"animate dialog" context:nil];
@@ -208,7 +264,6 @@
 
 -(int)notificationListen :(NSString*)eventId {
 	
-	NSLog(@"  EVENT | #%@ (broadcasting)",eventId);
 	
 	if( [eventId isEqualToString:@"AudioToggle"] ){
 		if(userAudioPlaying == 1){
@@ -218,6 +273,7 @@
     if( [userStorageEvents[[eventId intValue]] intValue] > 0){
         return 0;
     }
+	NSLog(@"  EVENT | Notification: #%@ ",eventId);
 	return 1;
 	
 }

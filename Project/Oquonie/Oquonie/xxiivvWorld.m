@@ -547,18 +547,22 @@
 
 -(void)roomGenerateNotifications {
 	NSLog(@">  ROOM | Notifications");
-	int tileId = 0;
+	int tileId = -1; // ...
 	for (NSString *tile in worldNode[userLocation]) {
-		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
-			// If event is broadcasting notification
-			if( [self notificationListen:[self tileParser:tile :2]] > 0 ){
-				UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
-				newView.tag = 400;
-				newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"notification.1.png"]];
-				[self.view addSubview:newView];
-			}
-		}
 		tileId += 1;
+		// Skip if not an event
+		if( ![[self tileParser:tile :1] isEqualToString:@"event"] ){ continue; }
+		// Skip if has no notification
+		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self tileParser:tile :2]];
+		int hasNotification = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postNotification"];
+		if(hasNotification<1){ continue; }
+		// Notification
+		NSLog(@"> NOTIF | Notification for event %@", [self tileParser:tile :2]); // TODOX
+		UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
+		newView.tag = 400;
+		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"notification.1.png"]];
+		[self.view addSubview:newView];
+		
 	}
 }
 
