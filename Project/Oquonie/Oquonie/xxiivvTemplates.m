@@ -78,6 +78,20 @@
 	self.text3.hidden = YES;
 	self.text4.hidden = YES;
 	
+	portraitOrigin = self.dialogCharacter.frame;
+	bubbleOrigin = self.dialogBubble.frame;
+	char1Origin = self.dialogCharacter1.frame;
+	char2Origin = self.dialogCharacter2.frame;
+	char3Origin = self.dialogCharacter3.frame;
+	
+	self.dialogCharacter.frame = portraitOrigin;
+	self.dialogCharacter.alpha = 0;
+	self.dialogBubble.frame = bubbleOrigin;
+	self.dialogBubble.alpha = 0;
+	self.dialogCharacter1.alpha = 0;
+	self.dialogCharacter2.alpha = 0;
+	self.dialogCharacter3.alpha = 0;
+	
 }
 
 - (void) templateRoomAnimation

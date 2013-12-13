@@ -26,7 +26,7 @@
 		@"6",@"8",@"5",
 		@"5",@"4",@"5",
 		// Walls
-		@"0",@"0|warp|31|0,0",@"0",@"0",@"11|warp|2|0,-1",@"0",
+		@"0",@"0|warp|11|0,0",@"0",@"0",@"11|warp|2|0,-1",@"0",
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
@@ -170,7 +170,7 @@
 	worldNode[12] = [NSArray arrayWithObjects:
 		 // Tiles
 		 @"4",@"5",@"6",
-		 @"6",@"3|event|spell_test|4|l",@"3",
+		 @"6",@"3|event|wizard1|2|l",@"3",
 		 @"5",@"4",@"6",
 		 // Walls
 		 @"3",@"3",@"13|warp|13|-1,1",@"2",@"5",@"2",
@@ -195,7 +195,7 @@
 	
 	worldNode[14] = [NSArray arrayWithObjects:
 		// Tiles
-		@"0",@"5",@"5|event|test|2|l",
+		@"0",@"5",@"5|event|wizard2|2|l",
 		@"0",@"16",@"4",
 		@"0",@"0",@"0",
 		// Walls
@@ -281,7 +281,7 @@
 		 nil];
 	worldNode[21] = [NSArray arrayWithObjects:
 		 // Tiles
-		 @"3|event|spell_test|4|r",@"4|block|13",@"3",
+		 @"3|event|wizard3|4|r",@"4|block|13",@"3",
 		 @"4",@"10",@"5",
 		 @"3",@"5",@"3",
 		 // Walls
@@ -516,11 +516,11 @@
 
 
 -(void)roomGenerateBlockers {
-	NSLog(@">  ROOM + Blockers");
+	NSLog(@">  ROOM | Blockers");
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"block"] ){
-			NSLog(@"        - #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"        | #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
@@ -531,11 +531,11 @@
 }
 
 -(void)roomGenerateEvents {
-	NSLog(@">  ROOM + Events");
+	NSLog(@">  ROOM | Events");
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
-			NSLog(@"        - #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"        | #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
@@ -546,19 +546,23 @@
 }
 
 -(void)roomGenerateNotifications {
-	NSLog(@">  ROOM + Notifications");
-	int tileId = 0;
+	NSLog(@">  ROOM | Notifications");
+	int tileId = -1; // ...
 	for (NSString *tile in worldNode[userLocation]) {
-		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
-			// If event is broadcasting notification
-			if( [self notificationListen:[self tileParser:tile :2]] > 0 ){
-				UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
-				newView.tag = 400;
-				newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"notification.1.png"]];
-				[self.view addSubview:newView];
-			}
-		}
 		tileId += 1;
+		// Skip if not an event
+		if( ![[self tileParser:tile :1] isEqualToString:@"event"] ){ continue; }
+		// Skip if has no notification
+		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self tileParser:tile :2]];
+		int hasNotification = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postNotification"];
+		if(hasNotification<1){ continue; }
+		// Notification
+		NSLog(@"> NOTIF | Notification for event %@", [self tileParser:tile :2]); // TODOX
+		UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
+		newView.tag = 400;
+		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"notification.1.png"]];
+		[self.view addSubview:newView];
+		
 	}
 }
 

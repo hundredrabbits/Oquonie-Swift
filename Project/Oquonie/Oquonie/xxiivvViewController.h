@@ -56,11 +56,17 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *blocker1;
 
+@property (strong, nonatomic) IBOutlet UIView *dialogView;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogBubble;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter1;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter2;
+@property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter3;
+
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;
 
 @end
-
 
 int viewWidth;
 int tileW;
@@ -91,3 +97,9 @@ CGRect textBlock1;
 CGRect textBlock2;
 CGRect textBlock3;
 CGRect textBlock4;
+
+CGRect portraitOrigin;
+CGRect bubbleOrigin;
+CGRect char1Origin;
+CGRect char2Origin;
+CGRect char3Origin;

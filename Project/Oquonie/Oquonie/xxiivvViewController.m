@@ -50,6 +50,11 @@
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
 	userSpriteOrientationVertical = @"f";
+    // New event storage
+    userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
+    int myCount = 0;
+    while ( myCount < 10 )	{ myCount++; userStorageEvents[myCount] = @"";	}
+
 	
 }
 
@@ -57,7 +62,8 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
-	NSLog(@"=====================");
+	NSLog(@"========+=============");
+	[self roomCleanDialog];
 	
 	// Move disable timeout
 	[self moveDisable];
@@ -91,10 +97,6 @@
 		[self moveCollide:posX:posY];
 	}
 	[self moveOrder];
-	
-	
-	[self roomCleanNotifications];
-	[self roomGenerateNotifications];
 	
 	NSLog(@">  USER | Position: %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
 }
@@ -137,14 +139,22 @@
 
 - (void) moveOrder
 {
-	userPositionZ = ( userPositionX + userPositionY );
-	
-	if( userPositionZ > 0 ){
-		[self.view bringSubviewToFront:self.blocker1];
-	}
-	else{
-		[self.view bringSubviewToFront:self.userPlayer];
-	}
+    float userPositionOrder = self.userPlayer.frame.origin.y+self.userPlayer.frame.size.height;
+    float subviewPositionOrder = 0;
+
+    for (UIView *subview in [self.view subviews]) {
+        if(subview.tag != 300){ continue; }
+
+        subviewPositionOrder = subview.frame.origin.y+subview.frame.size.height;
+
+        if( userPositionOrder > subviewPositionOrder ){
+            [self.view bringSubviewToFront:self.userPlayer];
+        }
+        else{
+            [self.view bringSubviewToFront:self.userPlayer];
+            [self.view bringSubviewToFront:subview];
+        }
+    }
 }
 
 - (int) moveEvent :(int)posX :(int)posY
@@ -163,13 +173,13 @@
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"warp"] ){
-		NSLog(@"> EVENT + Blocked: %d %d (warp)", posX, posY);
+		NSLog(@"> EVENT | Blocked: %d %d (warp)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"event"] ){
-		NSLog(@"> EVENT + Blocked: %d %d (event)", posX, posY);
+		NSLog(@"> EVENT | Blocked: %d %d (event)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
@@ -201,19 +211,6 @@
 	[UIView beginAnimations: @"Fade In" context:nil]; [UIView setAnimationDuration:0.3];
 	self.userPlayer.frame = userOrigin;
 	[UIView commitAnimations];
-}
-
-# pragma mark Speak -
-
--(void)eventSpeak:(NSString*)eventDialog {
-	
-	NSString *textCharacter1 = [eventDialog substringWithRange: NSMakeRange(0, 1) ];
-	NSString *textCharacter2 = [eventDialog substringWithRange: NSMakeRange(1, 1) ];
-	NSString *textCharacter3 = [eventDialog substringWithRange: NSMakeRange(2, 1) ];
-	NSString *textCharacter4 = [eventDialog substringWithRange: NSMakeRange(3, 1) ];
-	
-	NSLog(@"> EVNT | Saying:'%@ %@ %@ %@'", textCharacter1, textCharacter2, textCharacter3, textCharacter4);
-
 }
 
 # pragma mark Misc -
