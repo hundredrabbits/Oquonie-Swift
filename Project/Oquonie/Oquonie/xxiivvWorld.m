@@ -40,7 +40,7 @@
 	worldNode[2] = [NSArray arrayWithObjects:
 		// Tiles
 		@"6",@"1",@"6",
-		@"1",@"1",@"5|block|5",
+		@"1",@"1",@"5|event|wizard1|10|l",
 		@"4",@"5",@"0",
 		// Walls
 		@"26",@"16",@"26",@"26",@"26",@"0",
