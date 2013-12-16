@@ -144,6 +144,25 @@
                                 <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" id="VUu-Xu-8nT" userLabel="spellsView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterE.png" id="eqt-hH-MTC" userLabel="spellCharacter1">
+                                        <rect key="frame" x="80" y="0.0" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="BZl-BC-yaS" userLabel="spellCharacter2">
+                                        <rect key="frame" x="130" y="0.0" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterJ.png" id="WND-Pa-Vmu" userLabel="spellCharacter3">
+                                        <rect key="frame" x="180" y="0.0" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="Y7v-1Q-mTL" userLabel="dialogView">
                                 <rect key="frame" x="0.0" y="250" width="320" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -156,15 +175,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letter2.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">
                                         <rect key="frame" x="26" y="150" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letter9.png" id="vkC-tP-X8t" userLabel="dialogCharacter2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterI.png" id="vkC-tP-X8t" userLabel="dialogCharacter2">
                                         <rect key="frame" x="76" y="150" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letter17.png" id="g3X-JJ-hat" userLabel="dialogCharacter3">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterM.png" id="g3X-JJ-hat" userLabel="dialogCharacter3">
                                         <rect key="frame" x="126" y="150" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -254,6 +273,10 @@
                         <outlet property="moveBR" destination="hdX-gI-9Qt" id="jZG-Pv-WGO"/>
                         <outlet property="moveTL" destination="0lD-p4-yOS" id="8Gx-DJ-26X"/>
                         <outlet property="moveTR" destination="Waf-2E-WsZ" id="bh6-YL-NHQ"/>
+                        <outlet property="spellCharacter1" destination="eqt-hH-MTC" id="TKv-rS-n3W"/>
+                        <outlet property="spellCharacter2" destination="BZl-BC-yaS" id="bqf-Dh-nGc"/>
+                        <outlet property="spellCharacter3" destination="WND-Pa-Vmu" id="UvM-d9-7Jd"/>
+                        <outlet property="spellView" destination="VUu-Xu-8nT" id="DQU-z6-ouP"/>
                         <outlet property="step1l" destination="uAX-xD-SuN" id="Aun-eN-rB3"/>
                         <outlet property="step1r" destination="cD1-p8-h6o" id="s3z-qf-sxI"/>
                         <outlet property="step2l" destination="nyy-ez-XVm" id="XTk-dU-kdh"/>
@@ -285,9 +308,11 @@
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
         <image name="event.0.textbubble.png" width="640" height="500"/>
         <image name="event.2.portrait.png" width="640" height="300"/>
-        <image name="letter17.png" width="128" height="128"/>
-        <image name="letter2.png" width="128" height="128"/>
-        <image name="letter9.png" width="128" height="128"/>
+        <image name="letterE.png" width="128" height="128"/>
+        <image name="letterF.png" width="128" height="128"/>
+        <image name="letterI.png" width="128" height="128"/>
+        <image name="letterJ.png" width="128" height="128"/>
+        <image name="letterM.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

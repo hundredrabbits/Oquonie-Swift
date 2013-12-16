@@ -63,6 +63,12 @@
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter2;
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter3;
 
+@property (strong, nonatomic) IBOutlet UIView *spellView;
+@property (strong, nonatomic) IBOutlet UIImageView *spellCharacter1;
+@property (strong, nonatomic) IBOutlet UIImageView *spellCharacter2;
+@property (strong, nonatomic) IBOutlet UIImageView *spellCharacter3;
+
+
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;
 
