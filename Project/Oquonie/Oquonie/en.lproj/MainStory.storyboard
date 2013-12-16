@@ -284,7 +284,7 @@
         <image name="char.shadow.png" width="200" height="141"/>
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
         <image name="event.0.textbubble.png" width="640" height="500"/>
-        <image name="event.2.portrait.png" width="640" height="500"/>
+        <image name="event.2.portrait.png" width="640" height="300"/>
         <image name="letter17.png" width="128" height="128"/>
         <image name="letter2.png" width="128" height="128"/>
         <image name="letter9.png" width="128" height="128"/>

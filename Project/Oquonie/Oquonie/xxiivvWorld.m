@@ -25,187 +25,141 @@
 	// @ Hub Oquonie
 	// =======================
 	worldNode[1] = [NSArray arrayWithObjects:
-	// Tiles
-	@"0",@"2",@"2|block|10",
-	@"2",@"8",@"4",
-	@"2",@"2",@"2",
-	// Walls
-	@"0",@"15|warp|5|0,0",@"2",@"2",@"12|warp|2|0,-1",@"2",
-	// Steps
-	@"0",@"0",@"0",@"0",@"0",@"0",
-	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby",
+		// Tiles
+		@"0",@"2",@"2|block|10",
+		@"2",@"8",@"4",
+		@"2",@"2",@"2",
+		// Walls
+		@"0",@"15|warp|5|0,0",@"2",@"2",@"12|warp|2|0,-1",@"2",
+		// Steps
+		@"0",@"0",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Entrance",@"White",@"lobby",
 	nil];
 
 	worldNode[2] = [NSArray arrayWithObjects:
-	// Tiles
-	@"1",@"4",@"1",
-	@"6",@"5",@"1|event|wizard1|7|l",
-	@"1",@"1",@"1",
-	// Walls
-	@"16",@"12|warp|3|-1,0",@"19",@"25",@"25",@"25",
-	// Steps
-	@"0",@"7|warp|1|0,1",@"0",@"0",@"0",@"0",
-	// Name,Background,Audio
-	@"Lobby Fork I",@"White",@"lobby",
+		// Tiles
+		@"1",@"4",@"1",
+		@"6",@"5",@"1|event|wizard1|7|l",
+		@"1",@"1",@"1",
+		// Walls
+		@"16",@"12|warp|3|-1,0",@"19",@"25",@"25",@"25",
+		// Steps
+		@"0",@"7|warp|1|0,1",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Fork I",@"White",@"lobby",
 	nil];
 
 	worldNode[3] = [NSArray arrayWithObjects:
-	// Tiles
-	@"1",@"11",@"1|event|wizard1|1|r",
-	@"6",@"5",@"1",
-	@"1|block|1",@"4",@"1",
-	// Walls
-	@"1",@"9|warp|10|-1,0",@"1",@"1",@"1",@"1",
-	// Steps
-	@"0",@"7|warp|4|0,1",@"0",@"0",@"7|warp|2|1,0",@"0",
-	// Name,Background,Audio
-	@"Lobby House Room",@"White",@"lobby",
+		// Tiles
+		@"1",@"11",@"1|event|wizard1|1|r",
+		@"6",@"5",@"1",
+		@"1|block|1",@"4",@"1",
+		// Walls
+		@"1",@"9|warp|10|-1,0",@"1",@"1",@"1",@"1",
+		// Steps
+		@"0",@"7|warp|4|0,1",@"0",@"0",@"7|warp|2|1,0",@"0",
+		// Name,Background,Audio
+		@"Lobby House Room",@"White",@"lobby",
 	nil];
 
 	worldNode[4] = [NSArray arrayWithObjects:
-	// Tiles
-	@"1|event|wizard1|9|r",@"6",@"1",
-	@"5",@"5|block|9",@"6",
-	@"1",@"6",@"1",
-	// Walls
-	@"1",@"16",@"1",@"1",@"12|warp|3|0,-1",@"1",
-	// Steps
-	@"0",@"0",@"0",@"0",@"7|warp|5|1,0",@"0",
-	// Name,Background,Audio
-	@"Lobby House Room",@"White",@"lobby",
+		// Tiles
+		@"1|event|wizard1|9|r",@"6",@"1",
+		@"5",@"5|block|9",@"6",
+		@"1",@"6",@"1",
+		// Walls
+		@"1",@"16",@"1",@"1",@"12|warp|3|0,-1",@"1",
+		// Steps
+		@"0",@"0",@"0",@"0",@"7|warp|5|1,0",@"0",
+		// Name,Background,Audio
+		@"Lobby House Room",@"White",@"lobby",
 	nil];
 
 	worldNode[5] = [NSArray arrayWithObjects:
-	// Tiles
-	@"9",@"10",@"9",
-	@"4",@"5",@"14",
-	@"9",@"6",@"9",
-	// Walls
-	@"3",@"14|warp|4|-1,0",@"3",@"3",@"4|warp|8|0,-1",@"3",
-	// Steps
-	@"0",@"7|warp|9|0,1",@"0",@"0",@"7|warp|6|1,0",@"0",
-	// Name,Background,Audio
-	@"Lobby Fork II",@"White",@"lobby",
+		// Tiles
+		@"9",@"10",@"9",
+		@"4",@"5",@"14",
+		@"9",@"6",@"9",
+		// Walls
+		@"3",@"14|warp|4|-1,0",@"3",@"3",@"4|warp|10|0,-1",@"3",
+		// Steps
+		@"0",@"7|warp|9|0,1",@"0",@"0",@"7|warp|6|1,0",@"0",
+		// Name,Background,Audio
+		@"Lobby Fork II",@"White",@"lobby",
 	nil];
 
 	worldNode[6] = [NSArray arrayWithObjects:
-	// Tiles
-	@"9",@"4",@"9|block|5",
-	@"10",@"5",@"6",
-	@"9",@"10",@"9|event|wizard1|8|l",
-	// Walls
-	@"3",@"13|warp|5|-1,0",@"3",@"26",@"13|warp|7|0,-1",@"26",
-	// Steps
-	@"0",@"0",@"0",@"0",@"0",@"0",
-	// Name,Background,Audio
-	@"Lobby Turn",@"White",@"lobby",
+		// Tiles
+		@"9",@"4",@"9|block|5",
+		@"10",@"5",@"6",
+		@"9",@"10",@"9|event|wizard1|8|l",
+		// Walls
+		@"3",@"13|warp|5|-1,0",@"3",@"26",@"13|warp|7|0,-1",@"26",
+		// Steps
+		@"0",@"0",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Turn",@"White",@"lobby",
 	nil];
 
 	worldNode[7] = [NSArray arrayWithObjects:
-	// Tiles
-	@"9",@"10|block|11",@"0",
-	@"4",@"5",@"12",
-	@"9",@"0",@"0",
-	// Walls
-	@"19",@"0",@"0",@"0",@"8|warp|9|0,-1",@"0",
-	// Steps
-	@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
-	// Name,Background,Audio
-	@"Lobby Fork III",@"White",@"lobby",
+		// Tiles
+		@"9",@"10|block|11",@"0",
+		@"4",@"5",@"12",
+		@"9",@"0",@"0",
+		// Walls
+		@"19",@"0",@"0",@"0",@"8|warp|9|0,-1",@"0",
+		// Steps
+		@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Fork III",@"White",@"lobby",
 	nil];
 	
 	worldNode[8] = [NSArray arrayWithObjects:
-					// Tiles
-					@"9",@"10",@"0",
-					@"4",@"5",@"12",
-					@"9",@"0",@"0",
-					// Walls
-					@"0",@"0",@"0",@"0",@"8|warp|9|0,-1",@"0",
-					// Steps
-					@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
-					// Name,Background,Audio
-					@"Lobby Fork III",@"White",@"lobby",
-					nil];
-	worldNode[9] = [NSArray arrayWithObjects:
-					// Tiles
-					@"10",@"15",@"10|event|wizard1|10|l",
-					@"9",@"4",@"5",
-					@"0",@"10",@"10",
-					// Walls
-					@"18",@"5",@"18",@"3",@"13|warp|5|0,-1",@"3",
-					// Steps
-					@"0",@"0",@"0",@"0",@"0",@"0",
-					// Name,Background,Audio
-					@"Lobby Fork III",@"White",@"lobby",
-					nil];
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/*
-	worldNode[8] = [NSArray arrayWithObjects:
-					// Tiles
-					@"4",@"5",@"6",
-					@"5",@"7|port|11|0,0",@"5",
-					@"4",@"5",@"6",
-					// Walls
-					@"0",@"0",@"0",@"0",@"0",@"0",
-					// Steps
-					@"0",@"5|warp|5|0,1",@"0",@"0",@"0",@"0",
-					// Name,Background,Audio
-					@"Necomedre Lobby",@"White",@"lobby",
-					nil];
+		// Tiles
+		@"9",@"10",@"0",
+		@"4",@"5",@"12",
+		@"9",@"0",@"0",
+		// Walls
+		@"0",@"0",@"0",@"0",@"8|warp|9|0,-1",@"0",
+		// Steps
+		@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Fork III",@"White",@"lobby",
+	nil];
 	
 	worldNode[9] = [NSArray arrayWithObjects:
-					// Tiles
-					@"4",@"5",@"6",
-					@"6",@"7",@"5",
-					@"4",@"5",@"6",
-					// Walls
-					@"0",@"0",@"0",@"0",@"0",@"0",
-					// Steps
-					@"0",@"7|warp|7|0,1",@"0",@"0",@"0",@"0",
-					// Name,Background,Audio
-					@"Nestorine Lobby",@"White",@"lobby",
-					nil];
+		// Tiles
+		@"10",@"15",@"10|event|wizard1|10|l",
+		@"9",@"4",@"5",
+		@"0",@"10",@"10",
+		// Walls
+		@"18",@"5",@"18",@"3",@"13|warp|5|0,-1",@"3",
+		// Steps
+		@"0",@"0",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Fork III",@"White",@"lobby",
+	nil];
+	
+	// =======================
+	// @ Hub Oquonie
+	// =======================
 	
 	worldNode[10] = [NSArray arrayWithObjects:
-					 // Tiles
-					 @"4",@"5",@"6",
-					 @"6",@"7",@"5",
-					 @"4",@"5",@"6",
-					 // Walls
-					 @"0",@"0",@"0",@"0",@"0",@"0",
-					 // Steps
-					 @"0",@"0",@"0",@"0",@"7|warp|4|1,0",@"0",
-					 // Name,Background,Audio
-					 @"Nestorine Lobby",@"White",@"lobby",
-					 nil];
-	
-	// =======================
-	// @ World Necomedre
-	// =======================
-	
+		// Tiles
+		@"3",@"3",@"6",
+		@"14",@"4",@"5",
+		@"3",@"3",@"3",
+		// Walls
+		@"3",@"3",@"3",@"13|warp|12|1,-1",@"3",@"3",
+		// Steps
+		@"0",@"7|warp|5|0,1",@"0",@"0",@"0",@"0",
+		// Name,Background,Audio
+		@"Lobby Fork III",@"White",@"lobby",
+	nil];
+
 	worldNode[11] = [NSArray arrayWithObjects:
-					 // Tiles
-					 @"4",@"5",@"6",
-					 @"6",@"8|port|8|0,0",@"5",
-					 @"0",@"5",@"6",
-					 // Walls
-					 @"0",@"0",@"0",@"13|warp|12|1,-1",@"3",@"3",
-					 // Steps
-					 @"0",@"0",@"0",@"0",@"0",@"0",
-					 // Name,Background,Audio
-					 @"Necomedre Entrance",@"White",@"lobby",
+					
 					 nil];
 	
 	worldNode[12] = [NSArray arrayWithObjects:
@@ -216,7 +170,7 @@
 					 // Walls
 					 @"3",@"3",@"13|warp|13|-1,1",@"2",@"5",@"2",
 					 // Steps
-					 @"7|warp|11|1,1",@"0",@"0",@"0",@"0",@"0",
+					 @"7|warp|10|1,1",@"0",@"0",@"0",@"0",@"0",
 					 // Name,Background,Audio
 					 @"Necomedre Fork",@"White",@"lobby",
 					 nil];
@@ -501,8 +455,7 @@
 		 // Name,Background,Audio
 		 @"Necomedre Fork",@"White",@"lobby",
 		 nil];
-	 
-	 */
+	
 	
 }
 
