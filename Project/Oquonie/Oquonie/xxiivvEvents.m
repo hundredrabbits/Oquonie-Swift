@@ -29,10 +29,10 @@
 	
 	// Dialog
     if([userStorageEvents[userStorageEventId] intValue]>0){
-        [self eventDialog:@"AAA"];
+        [self eventDialog:@"AAA":@"1"];
     }
     else{
-        [self eventDialog:@"EGJ"];
+        [self eventDialog:@"UVW":@"2"];
         [self eventSpell:userStorageEventId:3];
     }
 	
@@ -52,10 +52,10 @@
 	
 	// Dialog
     if([userStorageEvents[2] intValue]>0){
-        [self eventDialog:@"AAA"];
+        [self eventDialog:@"AAA":@"1"];
     }
     else{
-        [self eventDialog:@"EGJ"];
+        [self eventDialog:@"EGJ":@"1"];
         [self eventSpell:2:3];
     }
 	
@@ -75,10 +75,10 @@
 	
 	// Dialog
     if([userStorageEvents[3] intValue]>0){
-        [self eventDialog:@"AAA"];
+        [self eventDialog:@"AAA":@"1"];
     }
     else{
-        [self eventDialog:@"EGJ"];
+        [self eventDialog:@"EGJ":@"1"];
         [self eventSpell:3:3];
     }
 	
@@ -173,7 +173,7 @@
 	[self templateRoomAnimation];
 }
 
-- (void)eventDialog :(NSString*)dialog
+- (void)eventDialog :(NSString*)dialog :(NSString*)characterId
 {
 	
 	NSLog(@"  EVENT - #%@ (letters)",dialog);
@@ -193,6 +193,7 @@
     }
 	
 	self.dialogCharacter.frame = CGRectOffset(portraitOrigin, 0, 2);
+	self.dialogCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.portrait.png",characterId]];
 	self.dialogCharacter.alpha = 0;
 	
 	self.dialogBubble.frame = CGRectOffset(portraitOrigin, 3, 0);
