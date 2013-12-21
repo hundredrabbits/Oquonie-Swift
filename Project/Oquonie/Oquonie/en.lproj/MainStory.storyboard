@@ -10,7 +10,7 @@
             <objects>
                 <viewController id="2" customClass="xxiivvViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="TnT-jB-bCd" userLabel="wall3L">
@@ -107,7 +107,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6mA-lT-Y5D" userLabel="userPlayer">
-                                <rect key="frame" x="40" y="230" width="240" height="128"/>
+                                <rect key="frame" x="40" y="142" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char.shadow.png" id="lep-qp-oJt" userLabel="userPlayerShadow">
@@ -148,15 +148,15 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterE.png" id="eqt-hH-MTC" userLabel="spellCharacter1">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eqt-hH-MTC" userLabel="spellCharacter1">
                                         <rect key="frame" x="80" y="0.0" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="BZl-BC-yaS" userLabel="spellCharacter2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="BZl-BC-yaS" userLabel="spellCharacter2">
                                         <rect key="frame" x="130" y="0.0" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterJ.png" id="WND-Pa-Vmu" userLabel="spellCharacter3">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WND-Pa-Vmu" userLabel="spellCharacter3">
                                         <rect key="frame" x="180" y="0.0" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -164,8 +164,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="Y7v-1Q-mTL" userLabel="dialogView">
-                                <rect key="frame" x="0.0" y="250" width="320" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="200" width="320" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.10.portrait.png" id="RcO-YQ-M4O" userLabel="dialogCharacter">
                                         <rect key="frame" x="0.0" y="43" width="320" height="195"/>
@@ -252,6 +252,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="blocker1" destination="UtL-dN-nTc" id="u3D-da-alM"/>
                         <outlet property="dialogBubble" destination="Rwu-16-j3v" id="SU0-gX-adj"/>
@@ -308,10 +309,8 @@
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
         <image name="event.0.textbubble.png" width="640" height="500"/>
         <image name="event.10.portrait.png" width="640" height="390"/>
-        <image name="letterE.png" width="128" height="128"/>
         <image name="letterF.png" width="128" height="128"/>
         <image name="letterI.png" width="128" height="128"/>
-        <image name="letterJ.png" width="128" height="128"/>
         <image name="letterM.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

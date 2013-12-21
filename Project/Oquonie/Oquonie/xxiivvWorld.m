@@ -30,7 +30,7 @@
 		@"2",@"8",@"4",
 		@"2",@"2",@"2",
 		// Walls
-		@"0",@"15|warp|5|0,0",@"2",@"2",@"12|warp|2|0,-1",@"2",
+		@"0",@"15|warp|10|0,0",@"2",@"2",@"12|warp|2|0,-1",@"2",
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
@@ -40,7 +40,7 @@
 	worldNode[2] = [NSArray arrayWithObjects:
 		// Tiles
 		@"1",@"4",@"1",
-		@"6",@"5",@"1|event|wizard1|7|l",
+		@"6",@"5",@"1|event|tip1|7|l",
 		@"1",@"1",@"1",
 		// Walls
 		@"16",@"12|warp|3|-1,0",@"19",@"25",@"25",@"25",
@@ -190,7 +190,7 @@
 	
 	worldNode[14] = [NSArray arrayWithObjects:
 					 // Tiles
-					 @"0",@"5",@"5|event|wizard1|2|l",
+					 @"0",@"5",@"5|event|wizard2|2|l",
 					 @"0",@"16",@"4",
 					 @"0",@"0",@"0",
 					 // Walls
@@ -276,7 +276,7 @@
 					 nil];
 	worldNode[21] = [NSArray arrayWithObjects:
 					 // Tiles
-					 @"3|event|spell_test|4|r",@"4|block|13",@"3",
+					 @"3|event|wizard3|4|r",@"4|block|13",@"3",
 					 @"4",@"10",@"5",
 					 @"3",@"5",@"3",
 					 // Walls
@@ -542,7 +542,7 @@
 }
 
 -(void)roomGenerateNotifications {
-	NSLog(@">  ROOM | Notifications");
+	NSLog(@">  ROOM | Notification | Display");
 	int tileId = -1; // ...
 	for (NSString *tile in worldNode[userLocation]) {
 		tileId += 1;
@@ -582,7 +582,7 @@
 
 - (void) roomCleanNotifications
 {
-	NSLog(@">  ROOM | Clean Notifications ");
+	NSLog(@">  ROOM | Notification | Clean ");
 	for (UIView *subview in [self.view subviews]) {
 		// Remove Notification
 		if(subview.tag == 400){

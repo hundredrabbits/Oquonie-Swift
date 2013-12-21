@@ -13,7 +13,7 @@
 @implementation xxiivvViewController (Events)
 
 // =======================
-// @ Hub Oquonie
+// @ Wizards
 // =======================
 
 -(int)event_wizard1 :(NSString*)option
@@ -85,6 +85,36 @@
 	// Return storage Id
 	return 3;
 }
+
+// =======================
+// @ Hub Oquonie
+// =======================
+
+# pragma mark Tips -
+
+-(int)event_tip1 :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return 0;
+	}
+	// Dialog
+    [self eventDialog:@"UVW":@"7"];
+	// Return storage Id
+	return 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData {
@@ -175,8 +205,7 @@
 
 - (void)eventDialog :(NSString*)dialog :(NSString*)characterId
 {
-	
-	NSLog(@"  EVENT - #%@ (letters)",dialog);
+	NSLog(@"  EVENT | Dialog       | Letters %@",dialog);
 
     self.dialogCharacter1.image = [UIImage imageNamed:@""];
     self.dialogCharacter2.image = [UIImage imageNamed:@""];
@@ -237,14 +266,40 @@
 
 -(void)eventSpell :(int)spellId :(int)spellType
 {
-    // spell already aquired
-    if([userStorageEvents[spellId] intValue]>0){
-        NSLog(@"! EVENT | Spell: Already aquired %d(%d)",spellId,spellType);
-        return;
-    }
+    NSLog(@"+ EVENT | Spell        | Added: %d(%d)",spellId,spellType);
+	
+    userStorageEvents[spellId] = [NSString stringWithFormat:@"%d",spellType];
+	
+	[self eventSpellRefresh];
+}
 
-    userStorageEvents[spellId] = @"1";
-    NSLog(@"+ EVENT | Spell: Added %d(%d)",spellId,spellType);
+-(void)eventSpellRefresh
+{
+	NSLog(@"+ EVENT | Spell        | Update");
+	
+	// Create merge array
+	int index = 0;
+	NSMutableArray *spellTest = [NSMutableArray arrayWithObjects:@"",@"",@"",@"",@"",@"", nil];
+	
+	// Merge events counts
+	for (NSString *tile in userStorageEvents) {
+		int spellId = [tile intValue];
+		spellTest[spellId] = [NSString stringWithFormat:@"%d",[spellTest[spellId] intValue]+1];
+		index += 1;
+	}
+	
+	//
+	index = 0;
+	for (NSString *spellCountForId in spellTest) {
+		if(index>0){
+			NSLog(@"Spell %d: Count %@",index,spellCountForId);
+			if([spellCountForId intValue] > 2){
+				NSLog(@"TRANSFORM INTO %d",index);
+			}
+		}
+		index += 1;
+	}
+
 }
 
 -(void)roomCleanDialog
@@ -274,7 +329,7 @@
     if( [userStorageEvents[[eventId intValue]] intValue] > 0){
         return 0;
     }
-	NSLog(@"  EVENT | Notification: #%@ ",eventId);
+	NSLog(@"  EVENT | Notification | #%@ ",eventId);
 	return 1;
 	
 }
