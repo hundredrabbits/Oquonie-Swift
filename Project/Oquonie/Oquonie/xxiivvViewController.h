@@ -69,9 +69,12 @@
 @property (strong, nonatomic) IBOutlet UIImageView *spellCharacter3;
 
 @property (strong, nonatomic) IBOutlet UIImageView *parallaxFront;
+@property (strong, nonatomic) IBOutlet UIImageView *parallaxBack;
 
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;
+
+- (void)moveParallax;
 
 @end
 
@@ -110,3 +113,6 @@ CGRect bubbleOrigin;
 CGRect char1Origin;
 CGRect char2Origin;
 CGRect char3Origin;
+
+CGRect parallaxFrontOrigin;
+

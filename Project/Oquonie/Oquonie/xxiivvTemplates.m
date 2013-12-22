@@ -84,6 +84,8 @@
 	char2Origin = self.dialogCharacter2.frame;
 	char3Origin = self.dialogCharacter3.frame;
 	
+	parallaxFrontOrigin = self.parallaxFront.frame;
+	
 	self.dialogCharacter.frame = portraitOrigin;
 	self.dialogCharacter.alpha = 0;
 	self.dialogBubble.frame = bubbleOrigin;

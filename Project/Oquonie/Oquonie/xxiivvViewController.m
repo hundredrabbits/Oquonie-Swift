@@ -44,8 +44,8 @@
 	
 	userPositionX = 0;
 	userPositionY = 0;
-	userSpriteChar = @"char1";
-	userSpriteCharId = 1;
+	userSpriteChar = @"char4";
+	userSpriteCharId = 4;
 	userLocation = 1;
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
@@ -109,11 +109,11 @@
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
 	[UIView setAnimationDelay:0];
-	self.parallaxFront.frame = CGRectMake(0, 0, 100, 100);
+	self.parallaxFront.alpha = 1;
+	self.parallaxBack.alpha = 1;
+	self.parallaxFront.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
+	self.parallaxBack.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*1.5, (userPositionX+userPositionY)*-1.5);
 	[UIView commitAnimations];
-	
-	
-	
 	
 }
 

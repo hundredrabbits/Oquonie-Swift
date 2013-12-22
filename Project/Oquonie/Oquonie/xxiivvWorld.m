@@ -473,7 +473,7 @@
 - (void) roomStart
 {
 	NSLog(@">  ROOM | Load         * Node.%d - %@", userLocation, worldNode[userLocation][21]);
-	
+	[self cleanParallax];
 	[self roomCleanSprites];
 	[self roomCleanNotifications];
 	[self roomGenerateTiles];
@@ -588,4 +588,14 @@
 		}
 	}
 }
+
+- (void) cleanParallax
+{
+	self.parallaxFront.alpha = 0;
+	self.parallaxBack.alpha = 0;
+	self.parallaxFront.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
+	self.parallaxBack.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*1.5, (userPositionX+userPositionY)*-1.5);
+}
+
+
 @end
