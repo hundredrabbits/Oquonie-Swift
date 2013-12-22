@@ -292,7 +292,7 @@
 	index = 0;
 	for (NSString *spellCountForId in spellTest) {
 		if(index>0){
-			if([spellCountForId intValue] > 0){
+			if([spellCountForId intValue] > 2){
 				[self tranformIntoCharacter:2];
 			}
 		}
