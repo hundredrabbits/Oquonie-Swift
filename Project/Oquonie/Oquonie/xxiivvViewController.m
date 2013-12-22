@@ -55,7 +55,6 @@
     int myCount = 0;
     while ( myCount < 10 )	{ myCount++; userStorageEvents[myCount] = @"";	}
 
-	
 }
 
 # pragma mark Move -
@@ -98,7 +97,8 @@
 	}
 	[self moveOrder];
 	
-	NSLog(@">  USER | Position: %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
+	NSLog(@">  USER | Position     | Update to %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
+	
 }
 
 - (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY {

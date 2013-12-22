@@ -292,15 +292,24 @@
 	index = 0;
 	for (NSString *spellCountForId in spellTest) {
 		if(index>0){
-			NSLog(@"Spell %d: Count %@",index,spellCountForId);
-			if([spellCountForId intValue] > 2){
-				NSLog(@"TRANSFORM INTO %d",index);
+			if([spellCountForId intValue] > 0){
+				[self tranformIntoCharacter:2];
 			}
 		}
 		index += 1;
 	}
 
 }
+
+-(void)tranformIntoCharacter :(int)charId
+{
+	NSLog(@"+ EVENT | Spell        | Transform intro char%d",charId);
+	
+	userSpriteChar = [NSString stringWithFormat:@"char%d",charId];
+	userSpriteCharId = charId;
+	
+}
+
 
 -(void)roomCleanDialog
 {
