@@ -68,6 +68,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *spellCharacter2;
 @property (strong, nonatomic) IBOutlet UIImageView *spellCharacter3;
 
+@property (strong, nonatomic) IBOutlet UIImageView *parallaxFront;
 
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;

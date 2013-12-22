@@ -90,6 +90,7 @@
 		self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
 		[UIView commitAnimations];
 		[self moveAnimation];
+		[self moveParallax];
 	}
 	else{
 		[self moveEventCheck:(userPositionX+posX) :(userPositionY+posY)];
@@ -98,6 +99,21 @@
 	[self moveOrder];
 	
 	NSLog(@">  USER | Position     | Update to %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
+	
+}
+
+- (void)moveParallax
+{
+	NSLog(@">  USER | Effect       | Moving parallax");
+	
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:0.3];
+	[UIView setAnimationDelay:0];
+	self.parallaxFront.frame = CGRectMake(0, 0, 100, 100);
+	[UIView commitAnimations];
+	
+	
+	
 	
 }
 
