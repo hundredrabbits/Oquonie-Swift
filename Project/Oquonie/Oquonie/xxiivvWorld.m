@@ -56,7 +56,7 @@
 		@"6",@"5",@"1",
 		@"1|block|1",@"4",@"1",
 		// Walls
-		@"1",@"9|warp|10|-1,0",@"1",@"1",@"1",@"1",
+		@"1",@"9|port|10|-1,0,5",@"1",@"1",@"1",@"1",
 		// Steps
 		@"0",@"7|warp|4|0,1",@"0",@"0",@"7|warp|2|1,0",@"0",
 		// Name,Background,Audio
@@ -108,7 +108,7 @@
 		@"4",@"5",@"12",
 		@"9",@"0",@"0",
 		// Walls
-		@"19",@"0",@"0",@"0",@"8|warp|9|0,-1",@"0",
+		@"19",@"0",@"0",@"0",@"8|port|9|0,-1,3",@"0",
 		// Steps
 		@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
@@ -134,7 +134,7 @@
 		@"9",@"4",@"5",
 		@"0",@"10",@"10",
 		// Walls
-		@"18",@"5",@"18",@"3",@"13|warp|5|0,-1",@"3",
+		@"18",@"5|port|9|0,-1,4",@"18",@"3",@"13|warp|5|0,-1",@"3",
 		// Steps
 		@"0",@"0",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
@@ -168,7 +168,7 @@
 					 @"6",@"3|event|wizard1|2|l",@"3",
 					 @"5",@"4",@"6",
 					 // Walls
-					 @"3",@"3",@"13|warp|13|-1,1",@"2",@"5",@"2",
+					 @"3",@"3",@"13|warp|13|-1,1",@"2",@"5|port|13|-1,1,2",@"2",
 					 // Steps
 					 @"7|warp|10|1,1",@"0",@"0",@"0",@"0",@"0",
 					 // Name,Background,Audio
@@ -472,7 +472,7 @@
 
 - (void) roomStart
 {
-	NSLog(@">  ROOM | Load: %@ - Node.%d",worldNode[userLocation][21], userLocation);
+	NSLog(@">  ROOM | Load         * Node.%d - %@", userLocation, worldNode[userLocation][21]);
 	
 	[self roomCleanSprites];
 	[self roomCleanNotifications];
@@ -512,11 +512,10 @@
 
 
 -(void)roomGenerateBlockers {
-	NSLog(@">  ROOM | Blockers");
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"block"] ){
-			NSLog(@"        | #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@">  ROOM | Blockers     | Generate: #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
@@ -527,11 +526,10 @@
 }
 
 -(void)roomGenerateEvents {
-	NSLog(@">  ROOM | Events");
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
-			NSLog(@"        | #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@">  ROOM | Blockers     | Generate: #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
@@ -571,7 +569,7 @@
 
 - (void) roomCleanSprites
 {
-	NSLog(@">  ROOM | Clean ");
+	NSLog(@">  ROOM | Blockers     | Clean");
 	for (UIView *subview in [self.view subviews]) {
 		// Remove Sprites
 		if(subview.tag == 300){

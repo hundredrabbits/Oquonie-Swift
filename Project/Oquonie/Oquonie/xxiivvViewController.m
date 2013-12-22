@@ -125,7 +125,7 @@
 	self.moveBL.hidden = NO;
 	self.moveBR.hidden = NO;
 	self.moveTL.hidden = NO;
-	self.moveTL.hidden = NO;
+	self.moveTR.hidden = NO;
 }
 
 - (void) moveDisable
@@ -133,7 +133,7 @@
 	self.moveBL.hidden = YES;
 	self.moveBR.hidden = YES;
 	self.moveTL.hidden = YES;
-	self.moveTL.hidden = YES;
+	self.moveTR.hidden = YES;
 	[NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
 }
 
@@ -143,6 +143,7 @@
     float subviewPositionOrder = 0;
 
     for (UIView *subview in [self.view subviews]) {
+		
         if(subview.tag != 300){ continue; }
 
         subviewPositionOrder = subview.frame.origin.y+subview.frame.size.height;
@@ -161,25 +162,25 @@
 {
 	// Look if tile is missing
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
-		NSLog(@"> EVENT | Blocked: %d %d (no ground)", posX, posY);
+		NSLog(@"> EVENT | Blocked      | x%d y%d (no ground)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
 	// Look if tile is a blocker
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"block"] ){
-		NSLog(@"> EVENT | Blocked: %d %d (blocker)", posX, posY);
+		NSLog(@"> EVENT | Blocked      | x%d y%d (blocker)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"warp"] ){
-		NSLog(@"> EVENT | Blocked: %d %d (warp)", posX, posY);
+		NSLog(@"> EVENT | Blocked      | x%d y%d (warp)", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"event"] ){
-		NSLog(@"> EVENT | Blocked: %d %d (event)", posX, posY);
+		NSLog(@"> EVENT | Blocked      | x%d y%d", posX, posY);
 		[self moveCollide:posX:posY];
 		return 1;
 	}

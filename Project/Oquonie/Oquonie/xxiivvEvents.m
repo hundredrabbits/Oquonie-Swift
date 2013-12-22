@@ -175,7 +175,7 @@
 	}
 	if ([eventType isEqualToString:@"event"]) {
 		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self eventParser:eventId:0]];
-		NSLog(@"  EVENT | #%@", eventSelector );
+		NSLog(@"  EVENT | Selector     | %@", eventSelector );
 		[self performSelector:NSSelectorFromString(eventSelector) withObject:@""];
 		[self roomCleanNotifications];
         [self roomGenerateNotifications];
@@ -208,13 +208,14 @@
 	// Check if character is the right one
 	if( userSpriteCharId != [charRequirement intValue] ){
 		NSLog(@"WRONG CHARACTER: %d - %d", userSpriteCharId, [charRequirement intValue] );
+		[self eventDialog:@"UVW":@"7"];
 		return;
 	}
 	
 	// Warp
 	NSArray *eventArray;
 	eventArray = [NSArray arrayWithObjects: eventId, eventData, nil];
-	NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(eventPortWarp:) userInfo:eventArray repeats:NO];
+	NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(eventPortWarp:) userInfo:eventArray repeats:NO];
 }
 
 - (void)eventPortWarp:(NSTimer*)theTimer {
