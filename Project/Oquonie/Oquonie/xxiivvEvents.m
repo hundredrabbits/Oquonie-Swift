@@ -13,8 +13,10 @@
 @implementation xxiivvViewController (Events)
 
 // =======================
-// @ Wizards
+// @ Events: Wizards
 // =======================
+
+# pragma mark Wizards -
 
 -(int)event_wizard1 :(NSString*)option
 {
@@ -86,8 +88,9 @@
 	return 3;
 }
 
+
 // =======================
-// @ Hub Oquonie
+// @ Events: Tips
 // =======================
 
 # pragma mark Tips -
@@ -104,6 +107,48 @@
 	return 2;
 }
 
+-(int)event_tip2 :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return 0;
+	}
+	// Dialog
+    [self eventDialog:@"UVW":@"1"];
+	// Return storage Id
+	return 2;
+}
+
+-(int)event_tip3 :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return 0;
+	}
+	// Dialog
+    [self eventDialog:@"UVW":@"8"];
+	// Return storage Id
+	return 2;
+}
+
+
+// =======================
+// @ Events: Misc
+// =======================
+
+# pragma mark Misc -
+
+-(int)event_colours1 :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return 0;
+	}
+	// Dialog
+    [self eventDialog:@"UVW":@"10"];
+	// Return storage Id
+	return 2;
+}
 
 
 
@@ -112,13 +157,13 @@
 
 
 
+// =======================
+// @ Events: Routers
+// =======================
 
-
-
-
+# pragma mark Routers -
 
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData {
-	
 	
 	if ([eventType isEqualToString:@"port"]) {
 		NSLog(@"  EVENT | #%@ (%@)",eventId, eventData );
@@ -149,22 +194,24 @@
 	return value;
 }
 
--(void)eventAudioToggle {
-	
-	if(userAudioPlaying == 1){
-		NSLog(@"        - #audioOff" );
-		userAudioPlaying = 0;
-	}
-	else{
-		NSLog(@"        - #audioOn" );
-		userAudioPlaying = 1;
-	}
-	
-}
+// =======================
+// @ Events: Generic Events
+// =======================
 
+# pragma mark Generic Events -
 
 - (void)eventPort :(NSString*)eventId :(NSString*)eventData
 {
+	NSArray* array = [eventData componentsSeparatedByString: @","];
+	NSString* charRequirement = [array objectAtIndex: 2];
+	
+	// Check if character is the right one
+	if( userSpriteCharId != [charRequirement intValue] ){
+		NSLog(@"WRONG CHARACTER: %d - %d", userSpriteCharId, [charRequirement intValue] );
+		return;
+	}
+	
+	// Warp
 	NSArray *eventArray;
 	eventArray = [NSArray arrayWithObjects: eventId, eventData, nil];
 	NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(eventPortWarp:) userInfo:eventArray repeats:NO];
@@ -179,7 +226,6 @@
 	
 	[self eventWarp:eventId :eventData];
 }
-
 
 - (void)eventWarp :(NSString*)eventId :(NSString*)eventData
 {
@@ -307,9 +353,13 @@
 	
 	userSpriteChar = [NSString stringWithFormat:@"char%d",charId];
 	userSpriteCharId = charId;
-	
 }
 
+// =======================
+// @ Events: Clean Events
+// =======================
+
+# pragma mark Clean Events -
 
 -(void)roomCleanDialog
 {
