@@ -48,18 +48,14 @@
 	self.step2r.frame = [self tileLocation:0 :-2 : 0];
 	self.step3r.frame = [self tileLocation:0 :-2 : 1];
 	
-	self.blocker1.frame = [self tileLocation:1 :0 :0];
-	
-	self.userPlayerShadow.frame = CGRectMake(0, tileH, tileW, tileH);
-	self.userPlayerShadow.image = [UIImage imageNamed:@"char.shadow.png"];
-	
 	self.userPlayer.frame = [self tileLocation:4 :0 :0];
-	
-	self.userPlayerChat.hidden = YES;
 	
 	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"2"] ] ];
 	
 	self.userPlayerChar.frame = CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height);
+	
+	self.userPlayerShadow.frame = self.userPlayerChar.frame;
+	self.userPlayerShadow.image = [UIImage imageNamed:@"char.shadow.png"];
 	
 	float textBlock = ( screen.size.width - (2*screenMargin) )/4;
 	
@@ -67,16 +63,6 @@
 	textBlock2 = CGRectMake(screenMargin+(1*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
 	textBlock3 = CGRectMake(screenMargin+(2*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
 	textBlock4 = CGRectMake(screenMargin+(3*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
-
-	self.text1.frame = textBlock1;
-	self.text2.frame = textBlock2;
-	self.text3.frame = textBlock3;
-	self.text4.frame = textBlock4;
-	
-	self.text1.hidden = YES;
-	self.text2.hidden = YES;
-	self.text3.hidden = YES;
-	self.text4.hidden = YES;
 	
 	portraitOrigin = self.dialogCharacter.frame;
 	bubbleOrigin = self.dialogBubble.frame;
@@ -98,7 +84,7 @@
 
 - (void) templateRoomAnimation
 {
-	for (UIView *subview in [self.view subviews]) {
+	for (UIView *subview in [self.roomContainer subviews]) {
 		float delay = (arc4random()%30)+1;
 		
 		if (subview.tag == 100 || subview.tag == 200) {

@@ -17,252 +17,251 @@
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" id="Ags-af-M9v" userLabel="roomContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="TnT-jB-bCd" userLabel="wall3L">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="q1e-6n-zZp" userLabel="wall2L">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="Edi-gy-jH2" userLabel="wall1L">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="bwT-l1-obM" userLabel="wall3R">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="HCc-tm-45S" userLabel="wall2R">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="2mR-4Y-reA" userLabel="wall1R">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="9gx-Ca-BCQ" userLabel="floor11">
+                                        <rect key="frame" x="10" y="83" width="139" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="4zb-7k-bnm" userLabel="floor10">
+                                        <rect key="frame" x="10" y="83" width="139" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="8Dr-bW-Pwg" userLabel="floor01">
+                                        <rect key="frame" x="10" y="83" width="139" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="NB5-gg-G9z" userLabel="floor1E">
+                                        <rect key="frame" x="10" y="83" width="139" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="JCv-bJ-j64" userLabel="floor00">
+                                        <rect key="frame" x="10" y="83" width="139" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="Pap-re-eJt" userLabel="floorE1">
+                                        <rect key="frame" x="10" y="83" width="139" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="7S7-zo-KJe" userLabel="floor0E">
+                                        <rect key="frame" x="10" y="83" width="139" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="gRy-sj-ySu" userLabel="floorE0">
+                                        <rect key="frame" x="10" y="83" width="139" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="ixp-fE-lfr" userLabel="floorEE">
+                                        <rect key="frame" x="10" y="83" width="139" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="uAX-xD-SuN" userLabel="step1L">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="nyy-ez-XVm" userLabel="step2L">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="gnq-SV-Hqu" userLabel="step3L">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="cD1-p8-h6o" userLabel="step1R">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="jgI-9r-unr" userLabel="step2R">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="RgC-jt-GvW" userLabel="step3R">
+                                        <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" id="sOO-80-Ha5" userLabel="spritesContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6mA-lT-Y5D" userLabel="userPlayer">
+                                        <rect key="frame" x="-40" y="296" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char.shadow.png" id="lep-qp-oJt" userLabel="userPlayerShadow">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char1.walk.r.f.1.png" id="WrE-Oy-CYa" userLabel="userPlayerChar">
+                                                <rect key="frame" x="89" y="27" width="62" height="75"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </scrollView>
+                                </subviews>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="effect.parallax.2.png" id="wOF-9h-gMa" userLabel="paralaxFront">
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="TnT-jB-bCd" userLabel="wall3L">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="q1e-6n-zZp" userLabel="wall2L">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="Edi-gy-jH2" userLabel="wall1L">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="bwT-l1-obM" userLabel="wall3R">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="HCc-tm-45S" userLabel="wall2R">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="2mR-4Y-reA" userLabel="wall1R">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="9gx-Ca-BCQ" userLabel="floor11">
-                                <rect key="frame" x="91" y="447" width="139" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="4zb-7k-bnm" userLabel="floor10">
-                                <rect key="frame" x="90" y="447" width="139" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="8Dr-bW-Pwg" userLabel="floor01">
-                                <rect key="frame" x="90" y="447" width="139" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="NB5-gg-G9z" userLabel="floor1E">
-                                <rect key="frame" x="90" y="447" width="139" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="JCv-bJ-j64" userLabel="floor00">
-                                <rect key="frame" x="91" y="447" width="139" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="Pap-re-eJt" userLabel="floorE1">
-                                <rect key="frame" x="90" y="447" width="139" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="7S7-zo-KJe" userLabel="floor0E">
-                                <rect key="frame" x="90" y="447" width="139" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="gRy-sj-ySu" userLabel="floorE0">
-                                <rect key="frame" x="90" y="447" width="139" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" id="ixp-fE-lfr" userLabel="floorEE">
-                                <rect key="frame" x="90" y="447" width="139" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="uAX-xD-SuN" userLabel="step1L">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="nyy-ez-XVm" userLabel="step2L">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="gnq-SV-Hqu" userLabel="step3L">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="cD1-p8-h6o" userLabel="step1R">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="jgI-9r-unr" userLabel="step2R">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="RgC-jt-GvW" userLabel="step3R">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6mA-lT-Y5D" userLabel="userPlayer">
-                                <rect key="frame" x="40" y="142" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char.shadow.png" id="lep-qp-oJt" userLabel="userPlayerShadow">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char1.walk.r.f.1.png" id="WrE-Oy-CYa" userLabel="userPlayerChar">
-                                        <rect key="frame" x="89" y="27" width="62" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                            </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="gzI-zL-JXd" userLabel="userPlayerChat">
-                                <rect key="frame" x="100" y="242" width="120" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" tag="300" contentMode="scaleAspectFill" id="UtL-dN-nTc" userLabel="blocker1">
-                                <rect key="frame" x="40" y="210" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="A4R-gY-rZ8" userLabel="text1">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="x1f-7g-7iR" userLabel="text2">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="awF-iE-nto" userLabel="text3">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sb9-ng-KMY" userLabel="text4">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" id="VUu-Xu-8nT" userLabel="spellsView">
-                                <rect key="frame" x="0.0" y="20" width="320" height="60"/>
+                            <view contentMode="scaleToFill" id="1jQ-cs-ghe" userLabel="interfaceContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eqt-hH-MTC" userLabel="spellCharacter1">
-                                        <rect key="frame" x="80" y="0.0" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="BZl-BC-yaS" userLabel="spellCharacter2">
-                                        <rect key="frame" x="130" y="0.0" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WND-Pa-Vmu" userLabel="spellCharacter3">
-                                        <rect key="frame" x="180" y="0.0" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="Y7v-1Q-mTL" userLabel="dialogView">
-                                <rect key="frame" x="0.0" y="240" width="320" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.10.portrait.png" id="RcO-YQ-M4O" userLabel="dialogCharacter">
-                                        <rect key="frame" x="0.0" y="43" width="320" height="195"/>
+                                    <view contentMode="scaleToFill" id="VUu-Xu-8nT" userLabel="spellsView">
+                                        <rect key="frame" x="-80" y="90" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.0.textbubble.png" id="Rwu-16-j3v" userLabel="dialogBubble">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">
-                                        <rect key="frame" x="26" y="150" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterI.png" id="vkC-tP-X8t" userLabel="dialogCharacter2">
-                                        <rect key="frame" x="76" y="150" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterM.png" id="g3X-JJ-hat" userLabel="dialogCharacter3">
-                                        <rect key="frame" x="126" y="150" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eqt-hH-MTC" userLabel="spellCharacter1">
+                                                <rect key="frame" x="80" y="0.0" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="BZl-BC-yaS" userLabel="spellCharacter2">
+                                                <rect key="frame" x="130" y="0.0" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WND-Pa-Vmu" userLabel="spellCharacter3">
+                                                <rect key="frame" x="180" y="0.0" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="Y7v-1Q-mTL" userLabel="dialogView">
+                                        <rect key="frame" x="0.0" y="235" width="320" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.10.portrait.png" id="RcO-YQ-M4O" userLabel="dialogCharacter">
+                                                <rect key="frame" x="0.0" y="43" width="320" height="195"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.0.textbubble.png" id="Rwu-16-j3v" userLabel="dialogBubble">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">
+                                                <rect key="frame" x="26" y="150" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterI.png" id="vkC-tP-X8t" userLabel="dialogCharacter2">
+                                                <rect key="frame" x="76" y="150" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterM.png" id="g3X-JJ-hat" userLabel="dialogCharacter3">
+                                                <rect key="frame" x="126" y="150" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
                                 </subviews>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0lD-p4-yOS" userLabel="MoveTL">
-                                <rect key="frame" x="20" y="20" width="43" height="44"/>
+                            <view contentMode="scaleToFill" id="jr0-n9-oMG" userLabel="controlsContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title=" ">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTL:" destination="2" eventType="touchUpInside" id="Tlq-2K-V0q"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Waf-2E-WsZ" userLabel="moveTR">
-                                <rect key="frame" x="256" y="20" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title=" ">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTR:" destination="2" eventType="touchUpInside" id="8Ra-th-AKE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ue8-e5-uKv" userLabel="moveBL">
-                                <rect key="frame" x="20" y="398" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title=" ">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveBL:" destination="2" eventType="touchUpInside" id="kip-bg-U6C"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hdX-gI-9Qt" userLabel="moveBR">
-                                <rect key="frame" x="254" y="398" width="46" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title=" ">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveBR:" destination="2" eventType="touchUpInside" id="Oa5-CH-ATc"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0lD-p4-yOS" userLabel="MoveTL">
+                                        <rect key="frame" x="58" y="98" width="43" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title=" ">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="moveTL:" destination="2" eventType="touchUpInside" id="Tlq-2K-V0q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Waf-2E-WsZ" userLabel="moveTR">
+                                        <rect key="frame" x="58" y="98" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title=" ">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="moveTR:" destination="2" eventType="touchUpInside" id="8Ra-th-AKE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ue8-e5-uKv" userLabel="moveBL">
+                                        <rect key="frame" x="58" y="98" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title=" ">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="moveBL:" destination="2" eventType="touchUpInside" id="kip-bg-U6C"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hdX-gI-9Qt" userLabel="moveBR">
+                                        <rect key="frame" x="57" y="98" width="46" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title=" ">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="moveBR:" destination="2" eventType="touchUpInside" id="Oa5-CH-ATc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="blocker1" destination="UtL-dN-nTc" id="u3D-da-alM"/>
+                        <outlet property="controlsContainer" destination="jr0-n9-oMG" id="XM0-jQ-Loe"/>
                         <outlet property="dialogBubble" destination="Rwu-16-j3v" id="SU0-gX-adj"/>
                         <outlet property="dialogCharacter" destination="RcO-YQ-M4O" id="Gf8-nK-s4F"/>
                         <outlet property="dialogCharacter1" destination="5pe-i9-9LA" id="ua9-Uw-Qu1"/>
@@ -278,29 +277,27 @@
                         <outlet property="floore0" destination="gRy-sj-ySu" id="zbo-9Z-Ru8"/>
                         <outlet property="floore1" destination="Pap-re-eJt" id="QGi-CL-I2q"/>
                         <outlet property="flooree" destination="ixp-fE-lfr" id="ltB-2i-Fi7"/>
+                        <outlet property="interfaceContainer" destination="1jQ-cs-ghe" id="UdJ-2e-kT5"/>
                         <outlet property="moveBL" destination="ue8-e5-uKv" id="IQc-yF-75T"/>
                         <outlet property="moveBR" destination="hdX-gI-9Qt" id="jZG-Pv-WGO"/>
                         <outlet property="moveTL" destination="0lD-p4-yOS" id="8Gx-DJ-26X"/>
                         <outlet property="moveTR" destination="Waf-2E-WsZ" id="bh6-YL-NHQ"/>
                         <outlet property="parallaxBack" destination="YNJ-uy-Qeg" id="Wrn-1V-Z7j"/>
                         <outlet property="parallaxFront" destination="wOF-9h-gMa" id="nXB-t3-Nod"/>
+                        <outlet property="roomContainer" destination="Ags-af-M9v" id="4qg-ij-XvR"/>
                         <outlet property="spellCharacter1" destination="eqt-hH-MTC" id="TKv-rS-n3W"/>
                         <outlet property="spellCharacter2" destination="BZl-BC-yaS" id="bqf-Dh-nGc"/>
                         <outlet property="spellCharacter3" destination="WND-Pa-Vmu" id="UvM-d9-7Jd"/>
                         <outlet property="spellView" destination="VUu-Xu-8nT" id="DQU-z6-ouP"/>
+                        <outlet property="spritesContainer" destination="sOO-80-Ha5" id="UQI-NU-KWE"/>
                         <outlet property="step1l" destination="uAX-xD-SuN" id="Aun-eN-rB3"/>
                         <outlet property="step1r" destination="cD1-p8-h6o" id="s3z-qf-sxI"/>
                         <outlet property="step2l" destination="nyy-ez-XVm" id="XTk-dU-kdh"/>
                         <outlet property="step2r" destination="jgI-9r-unr" id="vU6-kM-vzi"/>
                         <outlet property="step3l" destination="gnq-SV-Hqu" id="MVj-7W-rM9"/>
                         <outlet property="step3r" destination="RgC-jt-GvW" id="Iin-Ib-ctB"/>
-                        <outlet property="text1" destination="A4R-gY-rZ8" id="Qnh-h6-NFa"/>
-                        <outlet property="text2" destination="x1f-7g-7iR" id="zwF-2v-V5I"/>
-                        <outlet property="text3" destination="awF-iE-nto" id="CwW-pQ-i4N"/>
-                        <outlet property="text4" destination="sb9-ng-KMY" id="Upm-yJ-BuG"/>
                         <outlet property="userPlayer" destination="6mA-lT-Y5D" id="ko5-8b-DCP"/>
                         <outlet property="userPlayerChar" destination="WrE-Oy-CYa" id="B0W-WK-lp5"/>
-                        <outlet property="userPlayerChat" destination="gzI-zL-JXd" id="nhL-iu-YHU"/>
                         <outlet property="userPlayerShadow" destination="lep-qp-oJt" id="tso-nO-euM"/>
                         <outlet property="wall1l" destination="Edi-gy-jH2" id="fOm-1Q-ziz"/>
                         <outlet property="wall1r" destination="2mR-4Y-reA" id="veI-EV-VRN"/>

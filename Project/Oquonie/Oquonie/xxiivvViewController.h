@@ -10,6 +10,12 @@
 
 @interface xxiivvViewController : UIViewController
 
+// =================
+// Controls
+// =================
+
+@property (strong, nonatomic) IBOutlet UIView *controlsContainer;
+
 @property (strong, nonatomic) IBOutlet UIButton *moveTL;
 @property (strong, nonatomic) IBOutlet UIButton *moveTR;
 @property (strong, nonatomic) IBOutlet UIButton *moveBL;
@@ -19,6 +25,12 @@
 - (IBAction)moveTR:(id)sender;
 - (IBAction)moveBL:(id)sender;
 - (IBAction)moveBR:(id)sender;
+
+// =================
+// Room
+// =================
+
+@property (strong, nonatomic) IBOutlet UIView *roomContainer;
 
 @property (strong, nonatomic) IBOutlet UIImageView *floor11;
 @property (strong, nonatomic) IBOutlet UIImageView *floor01;
@@ -44,17 +56,21 @@
 @property (strong, nonatomic) IBOutlet UIImageView *step2r;
 @property (strong, nonatomic) IBOutlet UIImageView *step3r;
 
+// =================
+// Sprites
+// =================
+
+@property (strong, nonatomic) IBOutlet UIView *spritesContainer;
+
 @property (strong, nonatomic) IBOutlet UIScrollView *userPlayer;
 @property (strong, nonatomic) IBOutlet UIImageView *userPlayerChar;
 @property (strong, nonatomic) IBOutlet UIImageView *userPlayerShadow;
-@property (strong, nonatomic) IBOutlet UIImageView *userPlayerChat;
 
-@property (strong, nonatomic) IBOutlet UIImageView *text1;
-@property (strong, nonatomic) IBOutlet UIImageView *text2;
-@property (strong, nonatomic) IBOutlet UIImageView *text3;
-@property (strong, nonatomic) IBOutlet UIImageView *text4;
+// =================
+// Interface
+// =================
 
-@property (strong, nonatomic) IBOutlet UIImageView *blocker1;
+@property (strong, nonatomic) IBOutlet UIView *interfaceContainer;
 
 @property (strong, nonatomic) IBOutlet UIView *dialogView;
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter;
@@ -70,6 +86,10 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *parallaxFront;
 @property (strong, nonatomic) IBOutlet UIImageView *parallaxBack;
+
+// =================
+// Misc
+// =================
 
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;

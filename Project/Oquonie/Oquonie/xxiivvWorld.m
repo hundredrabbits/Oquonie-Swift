@@ -519,7 +519,7 @@
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
-			[self.view addSubview:newView];
+			[self.spritesContainer addSubview:newView];
 		}
 		tileId += 1;
 	}
@@ -533,7 +533,7 @@
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 300;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
-			[self.view addSubview:newView];
+			[self.spritesContainer addSubview:newView];
 		}
 		tileId += 1;
 	}
@@ -555,7 +555,7 @@
 		UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 		newView.tag = 400;
 		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"notification.1.png"]];
-		[self.view addSubview:newView];
+		[self.spritesContainer addSubview:newView];
 		
 	}
 }
@@ -570,7 +570,7 @@
 - (void) roomCleanSprites
 {
 	NSLog(@">  ROOM | Blockers     | Clean");
-	for (UIView *subview in [self.view subviews]) {
+	for (UIView *subview in [self.spritesContainer subviews]) {
 		// Remove Sprites
 		if(subview.tag == 300){
 			[subview removeFromSuperview];
@@ -581,7 +581,7 @@
 - (void) roomCleanNotifications
 {
 	NSLog(@">  ROOM | Notification | Clean ");
-	for (UIView *subview in [self.view subviews]) {
+	for (UIView *subview in [self.spritesContainer subviews]) {
 		// Remove Notification
 		if(subview.tag == 400){
 			[subview removeFromSuperview];

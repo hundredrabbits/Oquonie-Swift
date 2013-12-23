@@ -112,7 +112,10 @@
 	self.parallaxFront.alpha = 1;
 	self.parallaxBack.alpha = 1;
 	self.parallaxFront.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
-	self.parallaxBack.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*1.5, (userPositionX+userPositionY)*-1.5);
+	self.parallaxBack.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*2, (userPositionX+userPositionY)*-2);
+	
+	self.roomContainer.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
+	self.spritesContainer.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
 	[UIView commitAnimations];
 	
 }
@@ -158,18 +161,18 @@
     float userPositionOrder = self.userPlayer.frame.origin.y+self.userPlayer.frame.size.height;
     float subviewPositionOrder = 0;
 
-    for (UIView *subview in [self.view subviews]) {
+    for (UIView *subview in [self.spritesContainer subviews]) {
 		
         if(subview.tag != 300){ continue; }
 
         subviewPositionOrder = subview.frame.origin.y+subview.frame.size.height;
 
         if( userPositionOrder > subviewPositionOrder ){
-            [self.view bringSubviewToFront:self.userPlayer];
+            [self.spritesContainer bringSubviewToFront:self.userPlayer];
         }
         else{
-            [self.view bringSubviewToFront:self.userPlayer];
-            [self.view bringSubviewToFront:subview];
+            [self.spritesContainer bringSubviewToFront:self.userPlayer];
+            [self.spritesContainer bringSubviewToFront:subview];
         }
     }
 }
@@ -206,7 +209,7 @@
 
 - (void) moveCollide :(int)posX :(int)posY
 {
-	for (UIView *subview in [self.view subviews]) {
+	for (UIView *subview in [self.spritesContainer subviews]) {
 		if( subview.tag == 300 ){
 			CGRect origin = subview.frame;
 			subview.frame = CGRectOffset(subview.frame, 0, -2);
