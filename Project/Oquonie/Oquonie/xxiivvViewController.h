@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface xxiivvViewController : UIViewController
+@interface xxiivvViewController : UIViewController{
+	CGPoint interactionMap;
+}
 
 // =================
 // Controls
@@ -86,6 +88,12 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *parallaxFront;
 @property (strong, nonatomic) IBOutlet UIImageView *parallaxBack;
+
+// =================
+// Controls
+// =================
+
+@property CGPoint interactionMap;
 
 // =================
 // Misc

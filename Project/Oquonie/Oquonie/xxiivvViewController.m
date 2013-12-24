@@ -17,6 +17,8 @@
 
 @implementation xxiivvViewController
 
+@synthesize interactionMap;
+
 -(void)viewDidLoad {
 	[super viewDidLoad];
 	[self start];
@@ -59,7 +61,7 @@
 
 # pragma mark Move -
 
-- (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
+- (void) moveRouter :(int)posX :(int)posY :(int)direction
 {
 	NSLog(@"========+==============+====================");
 	[self roomCleanDialog];
@@ -70,10 +72,10 @@
 	int blocker = [self moveEvent:( userPositionX+posX ) :( userPositionY+posY )];
 	
 	// Sprite face direction
-	if( (long)sender.tag == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
-	if( (long)sender.tag == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
-	if( (long)sender.tag == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
-	if( (long)sender.tag == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
+	if( direction == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
+	if( direction == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
+	if( direction == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
+	if( direction == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
 		
 	if( abs(userPositionX+posX) > 1 ){ blocker = 1; }
 	if( abs(userPositionY+posY) > 1 ){ blocker = 1; }
@@ -396,19 +398,63 @@
 # pragma mark IBActions -
 
 - (IBAction)moveTL:(id)sender {
-	[self moveRouter:1 :0 :sender];
 }
 
 - (IBAction)moveTR:(id)sender {
-	[self moveRouter:0 :1 :sender];
 }
 
 - (IBAction)moveBL:(id)sender {
-	[self moveRouter:0 :-1 :sender];
 }
 
 - (IBAction)moveBR:(id)sender {
-	[self moveRouter:-1 :0 :sender];
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+	UITouch *theTouch = [touches anyObject];
+	
+	interactionMap = [theTouch locationInView:self.view];
+	
+	CGFloat x = interactionMap.x;
+	CGFloat y = interactionMap.y;
+	
+//	NSLog(@"x = %f", x);
+//	NSLog(@"y = %f", y);
+}
+
+- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+	UITouch *theTouch = [touches anyObject];
+	
+	CGPoint touchLocation = [theTouch locationInView:self.view];
+	
+	CGFloat x = touchLocation.x;
+	CGFloat y = touchLocation.y;
+	
+}
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+	UITouch *theTouch = [touches anyObject];
+	
+	CGPoint endPoint = [theTouch locationInView:self.view];
+	
+	int xDifference = abs(interactionMap.x-endPoint.x);
+	int yDifference = abs(interactionMap.y-endPoint.y);
+	
+	if(xDifference < 20 && yDifference < 20){
+		if( endPoint.x < (screen.size.width/2) && endPoint.y < (screen.size.height/2) ){ [self moveRouter:1 :0 :0]; }
+		else if( endPoint.x > (screen.size.width/2) && endPoint.y > (screen.size.height/2) ){ [self moveRouter:-1 :0 :3]; }
+		else if( endPoint.x < (screen.size.width/2) && endPoint.y > (screen.size.height/2) ){ [self moveRouter:0 :-1 :2]; }
+		else if( endPoint.x > (screen.size.width/2) && endPoint.y < (screen.size.height/2) ){ [self moveRouter:0 :1 :1]; }
+	}
+	else{
+		if(interactionMap.x < endPoint.x && interactionMap.y < endPoint.y)		{ [self moveRouter:-1 :0 :3]; }
+		else if(interactionMap.x > endPoint.x && interactionMap.y < endPoint.y)	{ [self moveRouter:0 :-1 :2]; }
+		else if(interactionMap.x > endPoint.x && interactionMap.y > endPoint.y)	{ [self moveRouter:1 :0 :0];  }
+		else if(interactionMap.x < endPoint.x && interactionMap.y > endPoint.y)	{ [self moveRouter:0 :1 :1];  }
+	}
+	
 }
 
 @end

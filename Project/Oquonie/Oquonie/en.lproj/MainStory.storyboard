@@ -190,7 +190,7 @@
                                     </view>
                                 </subviews>
                             </view>
-                            <view contentMode="scaleToFill" id="jr0-n9-oMG" userLabel="controlsContainer">
+                            <view hidden="YES" contentMode="scaleToFill" id="jr0-n9-oMG" userLabel="controlsContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
