@@ -1005,6 +1005,11 @@
 				CLASSPREFIX = xxiivv;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = XXIIVV;
+				TargetAttributes = {
+					03BBFAA7178A9E4E00E79C3D = {
+						DevelopmentTeam = B948MFAE5C;
+					};
+				};
 			};
 			buildConfigurationList = 03BBFAA3178A9E4E00E79C3D /* Build configuration list for PBXProject "Oquonie" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1383,11 +1388,14 @@
 		03BBFACC178A9E4E00E79C3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oquonie/Oquonie-Prefix.pch";
 				INFOPLIST_FILE = "Oquonie/Oquonie-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1396,11 +1404,14 @@
 		03BBFACD178A9E4E00E79C3D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oquonie/Oquonie-Prefix.pch";
 				INFOPLIST_FILE = "Oquonie/Oquonie-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

@@ -61,7 +61,7 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(UIButton *)sender
 {
-	NSLog(@"========+=============");
+	NSLog(@"========+==============+====================");
 	[self roomCleanDialog];
 	
 	// Move disable timeout
@@ -77,6 +77,8 @@
 		
 	if( abs(userPositionX+posX) > 1 ){ blocker = 1; }
 	if( abs(userPositionY+posY) > 1 ){ blocker = 1; }
+	
+	NSLog(@">  USER | Position     | Update to %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
 	
 	// Move if okay
 	if(blocker == 0){
@@ -97,8 +99,6 @@
 		[self moveCollide:posX:posY];
 	}
 	[self moveOrder];
-	
-	NSLog(@">  USER | Position     | Update to %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
 	
 }
 
@@ -130,7 +130,6 @@
 	}
 }
 
-
 - (void) moveAnimation
 {
 	userSpriteState = @"walk";
@@ -158,20 +157,23 @@
 
 - (void) moveOrder
 {
+	NSLog(@">  ROOM | Blockers     | Updating z order");
+	
     float userPositionOrder = self.userPlayer.frame.origin.y+self.userPlayer.frame.size.height;
     float subviewPositionOrder = 0;
 
     for (UIView *subview in [self.spritesContainer subviews]) {
 		
-        if(subview.tag != 300){ continue; }
-
+		if(subview.tag == 404){ continue; }
+		
         subviewPositionOrder = subview.frame.origin.y+subview.frame.size.height;
-
+		
         if( userPositionOrder > subviewPositionOrder ){
-            [self.spritesContainer bringSubviewToFront:self.userPlayer];
+			NSLog(@"> move player to front: %f %f",subviewPositionOrder,userPositionOrder);
+			[self.spritesContainer bringSubviewToFront:self.userPlayer];
         }
         else{
-            [self.spritesContainer bringSubviewToFront:self.userPlayer];
+			NSLog(@"> move player to back: %f %f",subviewPositionOrder,userPositionOrder);
             [self.spritesContainer bringSubviewToFront:subview];
         }
     }

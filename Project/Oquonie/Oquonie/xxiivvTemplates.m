@@ -48,6 +48,7 @@
 	self.step2r.frame = [self tileLocation:0 :-2 : 0];
 	self.step3r.frame = [self tileLocation:0 :-2 : 1];
 	
+	self.userPlayer.tag = 404;
 	self.userPlayer.frame = [self tileLocation:4 :0 :0];
 	
 	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"2"] ] ];

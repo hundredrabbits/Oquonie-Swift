@@ -312,7 +312,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="char.shadow.png" width="200" height="141"/>
+        <image name="char.shadow.png" width="200" height="281"/>
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
         <image name="effect.parallax.1.png" width="640" height="640"/>
         <image name="effect.parallax.2.png" width="640" height="640"/>
