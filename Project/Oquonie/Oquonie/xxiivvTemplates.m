@@ -17,11 +17,6 @@
 	screen = [[UIScreen mainScreen] bounds];
 	screenMargin = screen.size.width/10;
 	
-	self.moveTL.frame = CGRectMake(0, 0, screen.size.width/2, screen.size.height/2);
-	self.moveTR.frame = CGRectMake(screen.size.width/2, 0, screen.size.width/2, screen.size.height/2);
-	self.moveBL.frame = CGRectMake(0, screen.size.height/2, screen.size.width/2, screen.size.height/2);
-	self.moveBR.frame = CGRectMake(screen.size.width/2, screen.size.height/2, screen.size.width/2, screen.size.height/2);
-	
 	self.floor00.frame = [self tileLocation:0 :0 :0];
 	self.floor1e.frame = [self tileLocation:0 :-1 :1];
 	self.floore1.frame = [self tileLocation:0 :1 :-1];

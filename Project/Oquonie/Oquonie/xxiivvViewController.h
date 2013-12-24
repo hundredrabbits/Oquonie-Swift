@@ -13,22 +13,6 @@
 }
 
 // =================
-// Controls
-// =================
-
-@property (strong, nonatomic) IBOutlet UIView *controlsContainer;
-
-@property (strong, nonatomic) IBOutlet UIButton *moveTL;
-@property (strong, nonatomic) IBOutlet UIButton *moveTR;
-@property (strong, nonatomic) IBOutlet UIButton *moveBL;
-@property (strong, nonatomic) IBOutlet UIButton *moveBR;
-
-- (IBAction)moveTL:(id)sender;
-- (IBAction)moveTR:(id)sender;
-- (IBAction)moveBL:(id)sender;
-- (IBAction)moveBR:(id)sender;
-
-// =================
 // Room
 // =================
 
@@ -117,6 +101,7 @@ NSString *userSpriteOrientationVertical;
 NSString *userAudioTrack;
 
 int userAudioPlaying;
+int userMoveEnabled;
 
 int userLocation;
 int userPositionX;

@@ -52,6 +52,7 @@
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
 	userSpriteOrientationVertical = @"f";
+	userMoveEnabled = 1;
     // New event storage
     userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
     int myCount = 0;
@@ -142,18 +143,12 @@
 
 - (void) moveEnable
 {
-	self.moveBL.hidden = NO;
-	self.moveBR.hidden = NO;
-	self.moveTL.hidden = NO;
-	self.moveTR.hidden = NO;
+	userMoveEnabled = 1;
 }
 
 - (void) moveDisable
 {
-	self.moveBL.hidden = YES;
-	self.moveBR.hidden = YES;
-	self.moveTL.hidden = YES;
-	self.moveTR.hidden = YES;
+	userMoveEnabled = 0;
 	[NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
 }
 
@@ -394,49 +389,21 @@
 	return 0;
 }
 
+# pragma mark Interaction Map -
 
-# pragma mark IBActions -
-
-- (IBAction)moveTL:(id)sender {
-}
-
-- (IBAction)moveTR:(id)sender {
-}
-
-- (IBAction)moveBL:(id)sender {
-}
-
-- (IBAction)moveBR:(id)sender {
-}
-
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
 	UITouch *theTouch = [touches anyObject];
-	
 	interactionMap = [theTouch locationInView:self.view];
-	
-	CGFloat x = interactionMap.x;
-	CGFloat y = interactionMap.y;
-	
-//	NSLog(@"x = %f", x);
-//	NSLog(@"y = %f", y);
 }
 
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	
-	UITouch *theTouch = [touches anyObject];
-	
-	CGPoint touchLocation = [theTouch locationInView:self.view];
-	
-	CGFloat x = touchLocation.x;
-	CGFloat y = touchLocation.y;
-	
-}
+- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{}
 
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	if(userMoveEnabled == 0){ return; }
 	
 	UITouch *theTouch = [touches anyObject];
-	
 	CGPoint endPoint = [theTouch locationInView:self.view];
 	
 	int xDifference = abs(interactionMap.x-endPoint.x);
@@ -454,7 +421,6 @@
 		else if(interactionMap.x > endPoint.x && interactionMap.y > endPoint.y)	{ [self moveRouter:1 :0 :0];  }
 		else if(interactionMap.x < endPoint.x && interactionMap.y > endPoint.y)	{ [self moveRouter:0 :1 :1];  }
 	}
-	
 }
 
 @end

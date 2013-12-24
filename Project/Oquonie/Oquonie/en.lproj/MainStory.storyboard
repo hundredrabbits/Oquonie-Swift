@@ -190,78 +190,11 @@
                                     </view>
                                 </subviews>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" id="jr0-n9-oMG" userLabel="controlsContainer">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0lD-p4-yOS" userLabel="MoveTL">
-                                        <rect key="frame" x="58" y="98" width="43" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title=" ">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="moveTL:" destination="2" eventType="touchUpInside" id="Tlq-2K-V0q"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Waf-2E-WsZ" userLabel="moveTR">
-                                        <rect key="frame" x="58" y="98" width="44" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title=" ">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="moveTR:" destination="2" eventType="touchUpInside" id="8Ra-th-AKE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ue8-e5-uKv" userLabel="moveBL">
-                                        <rect key="frame" x="58" y="98" width="44" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title=" ">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="moveBL:" destination="2" eventType="touchUpInside" id="kip-bg-U6C"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hdX-gI-9Qt" userLabel="moveBR">
-                                        <rect key="frame" x="57" y="98" width="46" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title=" ">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="moveBR:" destination="2" eventType="touchUpInside" id="Oa5-CH-ATc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="controlsContainer" destination="jr0-n9-oMG" id="XM0-jQ-Loe"/>
                         <outlet property="dialogBubble" destination="Rwu-16-j3v" id="SU0-gX-adj"/>
                         <outlet property="dialogCharacter" destination="RcO-YQ-M4O" id="Gf8-nK-s4F"/>
                         <outlet property="dialogCharacter1" destination="5pe-i9-9LA" id="ua9-Uw-Qu1"/>
@@ -278,10 +211,6 @@
                         <outlet property="floore1" destination="Pap-re-eJt" id="QGi-CL-I2q"/>
                         <outlet property="flooree" destination="ixp-fE-lfr" id="ltB-2i-Fi7"/>
                         <outlet property="interfaceContainer" destination="1jQ-cs-ghe" id="UdJ-2e-kT5"/>
-                        <outlet property="moveBL" destination="ue8-e5-uKv" id="IQc-yF-75T"/>
-                        <outlet property="moveBR" destination="hdX-gI-9Qt" id="jZG-Pv-WGO"/>
-                        <outlet property="moveTL" destination="0lD-p4-yOS" id="8Gx-DJ-26X"/>
-                        <outlet property="moveTR" destination="Waf-2E-WsZ" id="bh6-YL-NHQ"/>
                         <outlet property="parallaxBack" destination="YNJ-uy-Qeg" id="Wrn-1V-Z7j"/>
                         <outlet property="parallaxFront" destination="wOF-9h-gMa" id="nXB-t3-Nod"/>
                         <outlet property="roomContainer" destination="Ags-af-M9v" id="4qg-ij-XvR"/>
