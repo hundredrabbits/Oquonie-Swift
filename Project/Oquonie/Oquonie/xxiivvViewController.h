@@ -102,6 +102,7 @@ NSString *userAudioTrack;
 
 int userAudioPlaying;
 int userMoveEnabled;
+int userDialogActive;
 
 int userLocation;
 int userPositionX;

@@ -254,7 +254,9 @@
 - (void)eventDialog :(NSString*)dialog :(NSString*)characterId
 {
 	NSLog(@"  EVENT | Dialog       | Letters %@",dialog);
-
+	
+	userDialogActive = 1;
+	
     self.dialogCharacter1.image = [UIImage imageNamed:@""];
     self.dialogCharacter2.image = [UIImage imageNamed:@""];
     self.dialogCharacter3.image = [UIImage imageNamed:@""];

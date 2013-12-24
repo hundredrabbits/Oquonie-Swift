@@ -53,6 +53,7 @@
 	userSpriteOrientationHorizontal = @"l";
 	userSpriteOrientationVertical = @"f";
 	userMoveEnabled = 1;
+	userDialogActive = 0;
     // New event storage
     userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
     int myCount = 0;
@@ -65,7 +66,12 @@
 - (void) moveRouter :(int)posX :(int)posY :(int)direction
 {
 	NSLog(@"========+==============+====================");
-	[self roomCleanDialog];
+	
+	if(userDialogActive == 1){
+		[self roomCleanDialog];
+		userDialogActive = 0;
+		return;
+	}
 	
 	// Move disable timeout
 	[self moveDisable];
