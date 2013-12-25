@@ -38,6 +38,7 @@
 	[self worldStart];
 	[self roomStart];
 	[self moveOrder];
+	[self timerStart];
 }
 
 # pragma mark User -
@@ -404,6 +405,12 @@
 	return 0;
 }
 
+# pragma mark Timer -
+
+-(void)timerStart
+{
+
+}
 # pragma mark Interaction Map -
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
