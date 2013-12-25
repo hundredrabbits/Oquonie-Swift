@@ -113,6 +113,8 @@ int userSpriteCharId;
 NSMutableArray *userStorageEvents;
 
 int worldTimer;
+int worldTimerSprites;
+
 int worldTimerSpriteCount;
 int worldTimerSpriteDirection;
 int worldTimerSpriteCycle;

@@ -415,30 +415,52 @@
 -(void)timerTic
 {
 	worldTimer += 1;
+	worldTimerSprites = [self worldTimerSprites];
+	
 	[self timerAnimateEvents];
+}
+
+-(int)worldTimerSprites
+{
+	if(worldTimerSpriteCount == 1 && worldTimerSpriteCycle < 10){
+		worldTimerSpriteCycle += 1;
+	}
+	else if(worldTimerSpriteCycle < 13){
+		worldTimerSpriteCycle = 0;
+		
+		if(worldTimerSpriteCount>2)		{ worldTimerSpriteDirection = 0; }
+		else if(worldTimerSpriteCount<2){ worldTimerSpriteDirection = 1; }
+		
+		if(worldTimerSpriteDirection == 1){	worldTimerSpriteCount += 1; }
+		else{ worldTimerSpriteCount -= 1; }
+	}
+	
+	return worldTimerSpriteCount;
 }
 
 -(void)timerAnimateEvents
 {
-	if(worldTimerSpriteCount == 1 && worldTimerSpriteCycle < 10){
-		worldTimerSpriteCycle += 1;
-		return;
-	}
-	else if(worldTimerSpriteCycle < 13){
-		worldTimerSpriteCycle = 0;
-	}
-	
-	// Cycle
-	if(worldTimerSpriteCount>2)		{ worldTimerSpriteDirection = 0; }
-	else if(worldTimerSpriteCount<2){ worldTimerSpriteDirection = 1; }
-	
-	if(worldTimerSpriteDirection == 1){	worldTimerSpriteCount += 1; }
-	else{ worldTimerSpriteCount -= 1; }
-	
 	// Update Image TODO
 	for (UIImageView *subview in [self.spritesContainer subviews]) {
 		if(subview.tag != 20){ continue; }
-		subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.6.l.%d.png",worldTimerSpriteCount]];
+		
+		int tileId = 0;
+		while (tileId <10) {
+			if([[self tileParser:worldNode[userLocation][tileId] :1] isEqualToString:@"event"]){
+				
+				NSLog(@"%@",[self tileParser:worldNode[userLocation][tileId] :3]);
+				subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[self tileParser:worldNode[userLocation][tileId] :3] intValue], [self tileParser:worldNode[userLocation][tileId] :4], worldTimerSpriteCount]];
+			
+			}
+////			[[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"event"]
+////			NSLog(@"%d %d",[self flattenTileId:tileId :@"x"],[self flattenTileId:tileId :@"y"]);
+//			NSLog(@"%@",[self tileParser:worldNode[userLocation][tileId] :2]);
+//			
+			tileId += 1;
+		}
+		
+		
+		
 	}
 }
 
