@@ -517,7 +517,7 @@
 		if( [[self tileParser:tile :1] isEqualToString:@"block"] ){
 			NSLog(@">  ROOM | Blockers     | Generate: #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
-			newView.tag = 300;
+			newView.tag = 10;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
 			[self.spritesContainer addSubview:newView];
 		}
@@ -531,7 +531,7 @@
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
 			NSLog(@">  ROOM | Blockers     | Generate: #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
-			newView.tag = 300;
+			newView.tag = 20;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
 			[self.spritesContainer addSubview:newView];
 		}
@@ -553,7 +553,7 @@
 		// Notification
 		NSLog(@"> NOTIF | Notification for event %@", [self tileParser:tile :2]); // TODOX
 		UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
-		newView.tag = 400;
+		newView.tag = 30;
 		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"notification.1.png"]];
 		[self.spritesContainer addSubview:newView];
 		
@@ -571,8 +571,12 @@
 {
 	NSLog(@">  ROOM | Blockers     | Clean");
 	for (UIView *subview in [self.spritesContainer subviews]) {
-		// Remove Sprites
-		if(subview.tag == 300){
+		// Remove Blockers
+		if(subview.tag == 10){
+			[subview removeFromSuperview];
+		}
+		// Remove Events
+		if(subview.tag == 20){
 			[subview removeFromSuperview];
 		}
 	}
@@ -583,7 +587,7 @@
 	NSLog(@">  ROOM | Notification | Clean ");
 	for (UIView *subview in [self.spritesContainer subviews]) {
 		// Remove Notification
-		if(subview.tag == 400){
+		if(subview.tag == 30){
 			[subview removeFromSuperview];
 		}
 	}

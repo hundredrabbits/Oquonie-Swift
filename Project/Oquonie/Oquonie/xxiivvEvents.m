@@ -367,6 +367,8 @@
 
 -(void)roomCleanDialog
 {
+	NSLog(@"> EVENT | Dialog       | Closed");
+	
 	[UIView beginAnimations: @"animate dialog" context:nil];
 	[UIView setAnimationDuration:0.2];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
@@ -382,7 +384,6 @@
 
 
 -(int)notificationListen :(NSString*)eventId {
-	
 	
 	if( [eventId isEqualToString:@"AudioToggle"] ){
 		if(userAudioPlaying == 1){

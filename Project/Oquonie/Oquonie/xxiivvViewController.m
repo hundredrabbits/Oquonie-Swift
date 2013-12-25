@@ -30,8 +30,8 @@
 
 # pragma mark Start -
 
--(void)start {
-	
+-(void)start
+{
 	[self userStart];
 	
 	[self templateStart];
@@ -42,8 +42,8 @@
 
 # pragma mark User -
 
--(void)userStart {
-	
+-(void)userStart
+{
 	userPositionX = 0;
 	userPositionY = 0;
 	userSpriteChar = @"char4";
@@ -58,7 +58,6 @@
     userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
     int myCount = 0;
     while ( myCount < 10 )	{ myCount++; userStorageEvents[myCount] = @"";	}
-
 }
 
 # pragma mark Move -
@@ -67,6 +66,7 @@
 {
 	NSLog(@"========+==============+====================");
 	
+	// Move is disabled if dialog is active
 	if(userDialogActive == 1){
 		[self roomCleanDialog];
 		userDialogActive = 0;
@@ -104,8 +104,9 @@
 		[self moveParallax];
 	}
 	else{
-		[self moveEventCheck:(userPositionX+posX) :(userPositionY+posY)];
-		[self moveCollide:posX:posY];
+		[self moveEventCheck:(userPositionX+posX):(userPositionY+posY)];
+		[self moveCollideAnimateEvent:(userPositionX+posX):(userPositionY+posY)];
+		[self moveCollideAnimateChar:posX:posY];
 	}
 	[self moveOrder];
 	
@@ -129,7 +130,8 @@
 	
 }
 
-- (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY {
+- (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY
+{
 	NSString *currentLocationString = worldNode[userLocation][[self flattenPosition:userFuturePositionX :userFuturePositionY]];
 	NSString *currentLocationEventKey = [self tileParser:currentLocationString :1];
 	NSString *currentLocationEventValue = [self tileParser:currentLocationString :2];
@@ -172,11 +174,9 @@
         subviewPositionOrder = subview.frame.origin.y+subview.frame.size.height;
 		
         if( userPositionOrder > subviewPositionOrder ){
-			NSLog(@"> move player to front: %f %f",subviewPositionOrder,userPositionOrder);
 			[self.spritesContainer bringSubviewToFront:self.userPlayer];
         }
         else{
-			NSLog(@"> move player to back: %f %f",subviewPositionOrder,userPositionOrder);
             [self.spritesContainer bringSubviewToFront:subview];
         }
     }
@@ -187,35 +187,55 @@
 	// Look if tile is missing
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
 		NSLog(@"> EVENT | Blocked      | x%d y%d (no ground)", posX, posY);
-		[self moveCollide:posX:posY];
+		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a blocker
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"block"] ){
 		NSLog(@"> EVENT | Blocked      | x%d y%d (blocker)", posX, posY);
-		[self moveCollide:posX:posY];
+		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"warp"] ){
 		NSLog(@"> EVENT | Blocked      | x%d y%d (warp)", posX, posY);
-		[self moveCollide:posX:posY];
+		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"event"] ){
 		NSLog(@"> EVENT | Blocked      | x%d y%d", posX, posY);
-		[self moveCollide:posX:posY];
+		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	
 	return 0;
 }
 
-- (void) moveCollide :(int)posX :(int)posY
+# pragma mark Move Animate -
+
+-(void)moveCollideAnimateChar :(int)posX :(int)posY
+{
+	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@""] ] ];
+	CGRect userOrigin = self.userPlayer.frame;
+	if( (posX == -1 && posY == 0) || (posX == 0 && posY == 1) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 2, 0); }
+	if( (posX == 0 && posY == -1) || (posX == 1 && posY == 0) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, -2, 0); }
+	
+	[UIView beginAnimations: @"Fade In" context:nil]; [UIView setAnimationDuration:0.3];
+	self.userPlayer.frame = userOrigin;
+	[UIView commitAnimations];
+}
+
+-(void)moveCollideAnimateEvent:(int)posX :(int)posY
 {
 	for (UIView *subview in [self.spritesContainer subviews]) {
-		if( subview.tag == 300 ){
+		
+		if(subview.tag == 10){ continue; }
+		
+		CGPoint targetPosition = subview.frame.origin;
+		CGPoint subviewPosition = [self tileLocation:4:posX:posY].origin;
+		
+		if( targetPosition.x == subviewPosition.x && targetPosition.y == subviewPosition.y){
 			CGRect origin = subview.frame;
 			subview.frame = CGRectOffset(subview.frame, 0, -2);
 			[UIView beginAnimations: @"Fade In" context:nil];
@@ -225,17 +245,6 @@
 			[UIView commitAnimations];
 		}
 	}
-	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@""] ] ];
-	[self moveCollideAnimate:posX:posY];
-}
-
--(void)moveCollideAnimate :(int)posX :(int)posY {
-	CGRect userOrigin = self.userPlayer.frame;
-	if( (posX == -1 && posY == 0) || (posX == 0 && posY == 1) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 2, 0); }
-	if( (posX == 0 && posY == -1) || (posX == 1 && posY == 0) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, -2, 0); }
-	[UIView beginAnimations: @"Fade In" context:nil]; [UIView setAnimationDuration:0.3];
-	self.userPlayer.frame = userOrigin;
-	[UIView commitAnimations];
 }
 
 # pragma mark Misc -
@@ -334,8 +343,8 @@
 }
 
 
--(int)flattenPosition :(int)x :(int)y {
-	
+-(int)flattenPosition :(int)x :(int)y
+{
 	if(x==1 && y==-1){ return 0; }
 	if(x==1 && y== 0){ return 1; }
 	if(x==1 && y== 1){ return 2; }
@@ -367,8 +376,8 @@
 	return 1;
 }
 
--(int)flattenTileId :(int)tileId :(NSString*)axis {
-	
+-(int)flattenTileId :(int)tileId :(NSString*)axis
+{
 	if([axis isEqualToString:@"x"]){
 		if(tileId == 0){ return 1; }
 		if(tileId == 1){ return 1; }
