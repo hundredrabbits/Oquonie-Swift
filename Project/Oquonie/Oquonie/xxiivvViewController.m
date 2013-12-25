@@ -409,8 +409,31 @@
 
 -(void)timerStart
 {
+	[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerTic) userInfo:nil repeats:YES];
 
 }
+
+-(void)timerTic
+{
+	if(worldTimerSpriteCount>2)		{ worldTimerSpriteDirection = 0; }
+	else if(worldTimerSpriteCount<2){ worldTimerSpriteDirection = 1; }
+	
+	if(worldTimerSpriteDirection == 1){	worldTimerSpriteCount += 1; }
+	else{ worldTimerSpriteCount -= 1; }
+	
+	//
+	
+	
+	for (UIImageView *subview in [self.spritesContainer subviews]) {
+		if(subview.tag != 20){ continue; }
+		subview.image = [UIImage imageNamed:@"event.8.l.png"];
+		
+	}
+	
+	NSLog(@"%d",worldTimerSpriteCount);
+	
+}
+
 # pragma mark Interaction Map -
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

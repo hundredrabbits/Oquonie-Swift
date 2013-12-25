@@ -112,6 +112,9 @@ int userSpriteCharId;
 
 NSMutableArray *userStorageEvents;
 
+int worldTimerSpriteCount;
+int worldTimerSpriteDirection;
+
 NSMutableArray *worldNode;
 
 CGRect	screen;
