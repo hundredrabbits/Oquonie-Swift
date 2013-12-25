@@ -409,29 +409,37 @@
 
 -(void)timerStart
 {
-	[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerTic) userInfo:nil repeats:YES];
-
+	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(timerTic) userInfo:nil repeats:YES];
 }
 
 -(void)timerTic
 {
+	worldTimer += 1;
+	[self timerAnimateEvents];
+}
+
+-(void)timerAnimateEvents
+{
+	if(worldTimerSpriteCount == 1 && worldTimerSpriteCycle < 10){
+		worldTimerSpriteCycle += 1;
+		return;
+	}
+	else if(worldTimerSpriteCycle < 13){
+		worldTimerSpriteCycle = 0;
+	}
+	
+	// Cycle
 	if(worldTimerSpriteCount>2)		{ worldTimerSpriteDirection = 0; }
 	else if(worldTimerSpriteCount<2){ worldTimerSpriteDirection = 1; }
 	
 	if(worldTimerSpriteDirection == 1){	worldTimerSpriteCount += 1; }
 	else{ worldTimerSpriteCount -= 1; }
 	
-	//
-	
-	
+	// Update Image TODO
 	for (UIImageView *subview in [self.spritesContainer subviews]) {
 		if(subview.tag != 20){ continue; }
-		subview.image = [UIImage imageNamed:@"event.8.l.png"];
-		
+		subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.6.l.%d.png",worldTimerSpriteCount]];
 	}
-	
-	NSLog(@"%d",worldTimerSpriteCount);
-	
 }
 
 # pragma mark Interaction Map -
