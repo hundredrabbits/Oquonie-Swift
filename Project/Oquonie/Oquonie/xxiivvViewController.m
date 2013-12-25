@@ -417,7 +417,10 @@
 	worldTimer += 1;
 	worldTimerSprites = [self worldTimerSprites];
 	
-	[self timerAnimateEvents];
+	// Animate only in the cyle
+	if(worldTimerSpriteCycle < 1){
+		[self timerAnimateEvents];
+	}
 }
 
 -(int)worldTimerSprites
@@ -447,15 +450,11 @@
 		int tileId = 0;
 		while (tileId <10) {
 			if([[self tileParser:worldNode[userLocation][tileId] :1] isEqualToString:@"event"]){
-				
-				NSLog(@"%@",[self tileParser:worldNode[userLocation][tileId] :3]);
+		
+				NSLog(@"%d %d %d %d",worldTimerSpriteCount,worldTimerSpriteCycle,worldTimerSpriteDirection,worldTimerSprites);
 				subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[self tileParser:worldNode[userLocation][tileId] :3] intValue], [self tileParser:worldNode[userLocation][tileId] :4], worldTimerSpriteCount]];
 			
 			}
-////			[[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"event"]
-////			NSLog(@"%d %d",[self flattenTileId:tileId :@"x"],[self flattenTileId:tileId :@"y"]);
-//			NSLog(@"%@",[self tileParser:worldNode[userLocation][tileId] :2]);
-//			
 			tileId += 1;
 		}
 		
