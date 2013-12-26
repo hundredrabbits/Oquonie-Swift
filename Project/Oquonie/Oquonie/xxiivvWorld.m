@@ -37,7 +37,7 @@
 		@"Lobby Entrance",@"White",@"lobby",
 	nil];
 
-	worldNode[2] = [NSArray arrayWithObjects:
+	worldNode[2] = @[
 		// Tiles
 		@"1",@"4",@"1",
 		@"6",@"5",@"1|event|tip1|7|l",
@@ -47,8 +47,8 @@
 		// Steps
 		@"0",@"7|warp|1|0,1",@"0",@"0",@"0",@"0",
 		// Name,Background,Audio
-		@"Lobby Fork I",@"White",@"lobby",
-	nil];
+		@"Lobby Fork I",@"White",@"lobby"
+	];
 
 	worldNode[3] = [NSArray arrayWithObjects:
 		// Tiles
