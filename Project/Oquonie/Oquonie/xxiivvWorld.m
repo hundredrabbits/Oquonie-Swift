@@ -554,7 +554,7 @@
 		NSLog(@"> NOTIF | Notification for event %@", [self tileParser:tile :2]); // TODOX
 		UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 		newView.tag = 30;
-		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"notification.1.png"]];
+		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
 		[self.spritesContainer addSubview:newView];
 		
 	}

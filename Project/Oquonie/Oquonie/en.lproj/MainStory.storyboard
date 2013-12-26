@@ -13,7 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="effect.parallax.1.png" id="YNJ-uy-Qeg" userLabel="paralaxBack">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.parallax.1.png" id="YNJ-uy-Qeg" userLabel="paralaxBack">
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -136,7 +136,7 @@
                                     </scrollView>
                                 </subviews>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="effect.parallax.2.png" id="wOF-9h-gMa" userLabel="paralaxFront">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.parallax.2.png" id="wOF-9h-gMa" userLabel="paralaxFront">
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -243,10 +243,10 @@
     <resources>
         <image name="char.shadow.png" width="200" height="281"/>
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
-        <image name="effect.parallax.1.png" width="640" height="640"/>
-        <image name="effect.parallax.2.png" width="640" height="640"/>
         <image name="event.0.textbubble.png" width="640" height="500"/>
         <image name="event.10.portrait.png" width="640" height="390"/>
+        <image name="fx.parallax.1.png" width="640" height="640"/>
+        <image name="fx.parallax.2.png" width="640" height="640"/>
         <image name="letterF.png" width="128" height="128"/>
         <image name="letterI.png" width="128" height="128"/>
         <image name="letterM.png" width="128" height="128"/>
