@@ -221,10 +221,12 @@
 	CGRect userOrigin = self.userPlayer.frame;
 	if( (posX == -1 && posY == 0) || (posX == 0 && posY == 1) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 2, 0); }
 	if( (posX == 0 && posY == -1) || (posX == 1 && posY == 0) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, -2, 0); }
-	
-	[UIView beginAnimations: @"Fade In" context:nil]; [UIView setAnimationDuration:0.3];
-	self.userPlayer.frame = userOrigin;
-	[UIView commitAnimations];
+
+    [UIView animateWithDuration:0.3 animations:^(void){
+        self.userPlayer.frame = userOrigin;
+    } completion:^(BOOL finished){
+        NSLog(@"DONE!");
+    }];
 }
 
 -(void)moveCollideAnimateEvent:(int)posX :(int)posY
