@@ -47,8 +47,8 @@
 {
 	userPositionX = 0;
 	userPositionY = 0;
-	userSpriteChar = @"char4";
-	userSpriteCharId = 4;
+	userSpriteChar = @"char5";
+	userSpriteCharId = 5;
 	userLocation = 1;
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
@@ -417,51 +417,72 @@
 -(void)timerTic
 {
 	worldTimer += 1;
-	worldTimerSprites = [self worldTimerSprites];
+	worldTimerEvents = [self worldTimerEvents];
+	worldTimerUser = [self worldTimerUser];
 	
 	// Animate only in the cyle
-	if(worldTimerSpriteCycle < 1){
+	if(worldTimerEventCycle < 1){
 		[self timerAnimateEvents];
+	}
+	// Animate only in the cyle
+	if(worldTimerUserCycle < 1){
+		[self timerAnimateUser];
 	}
 }
 
--(int)worldTimerSprites
+-(int)worldTimerEvents
 {
-	if(worldTimerSpriteCount == 1 && worldTimerSpriteCycle < 10){
-		worldTimerSpriteCycle += 1;
+	if(worldTimerEventCount == 1 && worldTimerEventCycle < 10){
+		worldTimerEventCycle += 1;
 	}
-	else if(worldTimerSpriteCycle < 13){
-		worldTimerSpriteCycle = 0;
+	else if(worldTimerEventCycle < 13){
+		worldTimerEventCycle = 0;
 		
-		if(worldTimerSpriteCount>2)		{ worldTimerSpriteDirection = 0; }
-		else if(worldTimerSpriteCount<2){ worldTimerSpriteDirection = 1; }
+		if(worldTimerEventCount>2)		{ worldTimerEventDirection = 0; }
+		else if(worldTimerEventCount<2){ worldTimerEventDirection = 1; }
 		
-		if(worldTimerSpriteDirection == 1){	worldTimerSpriteCount += 1; }
-		else{ worldTimerSpriteCount -= 1; }
+		if(worldTimerEventDirection == 1){	worldTimerEventCount += 1; }
+		else{ worldTimerEventCount -= 1; }
 	}
-	
-	return worldTimerSpriteCount;
+	return worldTimerEventCount;
+}
+-(int)worldTimerUser
+{
+	if(worldTimerUserCount == 1 && worldTimerUserCycle < 6){
+		worldTimerUserCycle += 1;
+	}
+	else if(worldTimerUserCycle < 8){
+		worldTimerUserCycle = 0;
+		
+		if(worldTimerUserCount>2)		{ worldTimerUserDirection = 0; }
+		else if(worldTimerUserCount<2){ worldTimerUserDirection = 1; }
+		
+		if(worldTimerUserDirection == 1){	worldTimerUserCount += 1; }
+		else{ worldTimerUserCount -= 1; }
+	}
+	return worldTimerUserCount;
 }
 
 -(void)timerAnimateEvents
 {
-	// Update Image TODO
 	for (UIImageView *subview in [self.spritesContainer subviews]) {
 		if(subview.tag != 20){ continue; }
-		
 		int tileId = 0;
 		while (tileId <10) {
 			if([[self tileParser:worldNode[userLocation][tileId] :1] isEqualToString:@"event"]){
-		
-				NSLog(@"%d %d %d %d",worldTimerSpriteCount,worldTimerSpriteCycle,worldTimerSpriteDirection,worldTimerSprites);
-				subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[self tileParser:worldNode[userLocation][tileId] :3] intValue], [self tileParser:worldNode[userLocation][tileId] :4], worldTimerSpriteCount]];
-			
+				subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[self tileParser:worldNode[userLocation][tileId] :3] intValue], [self tileParser:worldNode[userLocation][tileId] :4], worldTimerEventCount]];
 			}
 			tileId += 1;
 		}
-		
-		
-		
+	}
+}
+
+
+-(void)timerAnimateUser
+{
+	// Only animate if still
+	if([userSpriteState isEqual:@"stand"]){
+		self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:[NSString stringWithFormat:@"%d",worldTimerUserCount]] ] ];
 	}
 }
 

@@ -102,12 +102,18 @@
 {
 	NSString *spriteName = @"";
 	
-	if( [userSpriteState isEqual:@"walk"] ){
-		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
+	// Remove mod if looking back
+	if( [userSpriteState isEqual:@"stand"] && [userSpriteOrientationVertical isEqualToString:@"b"]){
+		mod = @"1";
 	}
-	else{
-		spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical];
+	// If there is no mod
+	if([mod isEqualToString:@""]){
+		mod = @"1";
 	}
+	
+	spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
+	
+	NSLog(@"%@", spriteName);
 	
 	return spriteName;
 }
