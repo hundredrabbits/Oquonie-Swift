@@ -170,7 +170,7 @@
                                                 <rect key="frame" x="0.0" y="43" width="320" height="195"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.0.textbubble.png" id="Rwu-16-j3v" userLabel="dialogBubble">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.textbubble.png" id="Rwu-16-j3v" userLabel="dialogBubble">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -243,10 +243,10 @@
     <resources>
         <image name="char.shadow.png" width="200" height="281"/>
         <image name="char1.walk.r.f.1.png" width="200" height="281"/>
-        <image name="event.0.textbubble.png" width="640" height="500"/>
         <image name="event.10.portrait.png" width="640" height="390"/>
         <image name="fx.parallax.1.png" width="640" height="640"/>
         <image name="fx.parallax.2.png" width="640" height="640"/>
+        <image name="fx.textbubble.png" width="640" height="500"/>
         <image name="letterF.png" width="128" height="128"/>
         <image name="letterI.png" width="128" height="128"/>
         <image name="letterM.png" width="128" height="128"/>

@@ -51,7 +51,7 @@
 	self.userPlayerChar.frame = CGRectMake(0, 0, self.userPlayer.frame.size.width, self.userPlayer.frame.size.height);
 	
 	self.userPlayerShadow.frame = self.userPlayerChar.frame;
-	self.userPlayerShadow.image = [UIImage imageNamed:@"char.shadow.png"];
+	self.userPlayerShadow.image = [UIImage imageNamed:@"fx.shadow.png"];
 	
 	float textBlock = ( screen.size.width - (2*screenMargin) )/4;
 	
@@ -112,9 +112,6 @@
 	}
 	
 	spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
-	
-	NSLog(@"%@", spriteName);
-	
 	return spriteName;
 }
 
