@@ -13,6 +13,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="xOc-7y-FYA" userLabel="roomBackground">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.32160224788538061" blue="0.00090433453030602795" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.parallax.1.png" id="YNJ-uy-Qeg" userLabel="paralaxBack">
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -213,6 +218,7 @@
                         <outlet property="interfaceContainer" destination="1jQ-cs-ghe" id="UdJ-2e-kT5"/>
                         <outlet property="parallaxBack" destination="YNJ-uy-Qeg" id="Wrn-1V-Z7j"/>
                         <outlet property="parallaxFront" destination="wOF-9h-gMa" id="nXB-t3-Nod"/>
+                        <outlet property="roomBackground" destination="xOc-7y-FYA" id="0oc-76-siq"/>
                         <outlet property="roomContainer" destination="Ags-af-M9v" id="4qg-ij-XvR"/>
                         <outlet property="spellCharacter1" destination="eqt-hH-MTC" id="TKv-rS-n3W"/>
                         <outlet property="spellCharacter2" destination="BZl-BC-yaS" id="bqf-Dh-nGc"/>

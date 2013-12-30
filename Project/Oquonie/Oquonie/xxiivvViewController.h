@@ -17,6 +17,7 @@
 // =================
 
 @property (strong, nonatomic) IBOutlet UIView *roomContainer;
+@property (strong, nonatomic) IBOutlet UIView *roomBackground;
 
 @property (strong, nonatomic) IBOutlet UIImageView *floor11;
 @property (strong, nonatomic) IBOutlet UIImageView *floor01;
@@ -94,11 +95,12 @@ int viewWidth;
 int tileW;
 int tileH;
 
+// User
+
 NSString *userSpriteChar;
 NSString *userSpriteState;
 NSString *userSpriteOrientationHorizontal;
 NSString *userSpriteOrientationVertical;
-NSString *userAudioTrack;
 
 int userAudioPlaying;
 int userMoveEnabled;
@@ -112,6 +114,11 @@ int userSpriteCharId;
 
 NSMutableArray *userStorageEvents;
 
+// World
+
+NSString *worldAudio;
+NSString *worldBackground;
+
 int worldTimer;
 
 int worldTimerEvents;
@@ -123,6 +130,8 @@ int worldTimerUser;
 int worldTimerUserCount;
 int worldTimerUserDirection;
 int worldTimerUserCycle;
+
+
 
 NSMutableArray *worldNode;
 

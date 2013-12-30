@@ -18,21 +18,12 @@
 	worldNode = [NSMutableArray arrayWithObjects:@"",nil];
 	int myCount = 0;
 	while ( myCount < 10 )	{ myCount++; worldNode[myCount] = [NSArray arrayWithObjects: @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", nil];	}
-	
-	// Event : @"1|event|test|7|l"
-	// Block : @"6|block|5"
-	// Warp  : @"11|warp|2|0,-1"
-	
+
 	// 0 - 10
-	
 	[self createWorldLobby];
 	
 	// 11 - 20
-	
 	[self createWorldNecomedre];
-		
-	
-	
 }
 
 - (NSString*) tileParser :(NSString*)tileString :(int)index {
@@ -49,14 +40,18 @@
 - (void) roomStart
 {
 	NSLog(@">  ROOM | Load         * Node.%d - %@", userLocation, worldNode[userLocation][21]);
-	[self cleanParallax];
+	
+	[self roomCleanParallax];
 	[self roomCleanSprites];
 	[self roomCleanNotifications];
+	
 	[self roomGenerateTiles];
 	[self roomGenerateBlockers];
 	[self roomGenerateEvents];
 	[self roomGenerateNotifications];
+	[self roomGenerateBackground];
 	[self roomGenerateAudioTrack];
+	
 	
 }
 
@@ -136,12 +131,30 @@
 	}
 }
 
--(void)roomGenerateAudioTrack {
-	if(![userAudioTrack isEqualToString:worldNode[userLocation][23] ]){
-		NSLog(@">  ROOM | Audio:%@",worldNode[userLocation][23]);
-		userAudioTrack = worldNode[userLocation][23];
+-(void)roomGenerateAudioTrack
+{
+	if(![worldAudio isEqualToString:worldNode[userLocation][23] ]){
+		NSLog(@">  ROOM | Audio        | Playing Track: %@",worldNode[userLocation][23]);
+		worldAudio = worldNode[userLocation][23];
+		// Play Audio
 	}
 }
+
+-(void)roomGenerateBackground
+{
+	if(![worldBackground isEqualToString:worldNode[userLocation][22] ]){
+		NSLog(@">  ROOM | Background   | Changed Background: %@",worldNode[userLocation][22]);
+		worldBackground = worldNode[userLocation][22];
+		// Update Background
+		if([worldBackground isEqualToString:@"Black"]){
+			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+		}
+		if([worldBackground isEqualToString:@"White"]){
+			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+		}
+	}
+}
+
 
 - (void) roomCleanSprites
 {
@@ -169,7 +182,7 @@
 	}
 }
 
-- (void) cleanParallax
+- (void) roomCleanParallax
 {
 	self.parallaxFront.alpha = 0;
 	self.parallaxBack.alpha = 0;

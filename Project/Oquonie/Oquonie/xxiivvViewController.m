@@ -55,6 +55,7 @@
 	userSpriteOrientationVertical = @"f";
 	userMoveEnabled = 1;
 	userDialogActive = 0;
+	
     // New event storage
     userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
     int myCount = 0;
