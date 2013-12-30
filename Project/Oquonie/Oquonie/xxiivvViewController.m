@@ -224,9 +224,7 @@
 
     [UIView animateWithDuration:0.3 animations:^(void){
         self.userPlayer.frame = userOrigin;
-    } completion:^(BOOL finished){
-        NSLog(@"DONE!");
-    }];
+    } completion:^(BOOL finished){}];
 }
 
 -(void)moveCollideAnimateEvent:(int)posX :(int)posY
