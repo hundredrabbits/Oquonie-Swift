@@ -81,10 +81,13 @@
 -(int)event_photocopierDoor :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
+		if(userSpriteCharId == 6){
+			// Display a text if the right character
+			[self eventDialog:@"UVW":@"2"];
+		}
 		return 0;
 	}
 	[self eventDialog:@"AAA":@"1"];
-	
 	return false;
 }
 

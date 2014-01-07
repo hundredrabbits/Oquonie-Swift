@@ -13,7 +13,7 @@
 -(void)eventWarp :(int)eventId :(NSString*)eventData;
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData;
 -(int)notificationListen :(NSString*)eventId;
--(void)roomCleanDialog;
+-(void)roomClearDialog;
 -(NSString*) eventParser :(NSString*)eventString :(int)index;
 
 -(void)eventDialog :(NSString*)dialog :(NSString*)characterId;

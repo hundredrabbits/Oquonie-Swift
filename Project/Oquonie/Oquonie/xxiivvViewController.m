@@ -66,11 +66,11 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(int)direction
 {
-	NSLog(@"========+==============+====================");
+	NSLog(@"======= + ============ + ===================");
 	
 	// Move is disabled if dialog is active
 	if(userDialogActive == 1){
-		[self roomCleanDialog];
+		[self roomClearDialog];
 		userDialogActive = 0;
 		return;
 	}
@@ -89,7 +89,7 @@
 	if( abs(userPositionX+posX) > 1 ){ blocker = 1; }
 	if( abs(userPositionY+posY) > 1 ){ blocker = 1; }
 	
-	NSLog(@">  USER | Position     | Update to %d %d (%d)",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
+	NSLog(@"•  USER | Position     | Update   -> X:%d Y:%d TILE:%d",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
 	
 	// Move if okay
 	if(blocker == 0){
@@ -116,7 +116,7 @@
 
 - (void)moveParallax
 {
-	NSLog(@">  USER | Effect       | Moving parallax");
+	NSLog(@"•  USER | Effect       | Update   -> parallax");
 	
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
@@ -164,7 +164,7 @@
 
 - (void) moveOrder
 {
-	NSLog(@">  ROOM | Blockers     | Updating z order");
+	NSLog(@"•  ROOM | Blockers     | Update   -> z order");
 	
     float userPositionOrder = self.userPlayer.frame.origin.y+self.userPlayer.frame.size.height;
     float subviewPositionOrder = 0;
@@ -188,19 +188,19 @@
 {
 	// Look if tile is missing
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
-		NSLog(@"> EVENT | Blocked      | x%d y%d (no ground)", posX, posY);
+		NSLog(@"> EVENT | Blocked      | No Ground");
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a blocker
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"block"] ){
-		NSLog(@"> EVENT | Blocked      | x%d y%d (blocker)", posX, posY);
+		NSLog(@"> EVENT | Blocked      | Blocker");
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"warp"] ){
-		NSLog(@"> EVENT | Blocked      | x%d y%d (warp)", posX, posY);
+		NSLog(@"> EVENT | Blocked      | Warp");
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}

@@ -40,11 +40,13 @@
 
 - (void) roomStart
 {
-	NSLog(@">  ROOM | Load         * Node.%d - %@", userLocation, worldNode[userLocation][21]);
+	NSLog(@"------- - ------------ - -------------------");
+	NSLog(@">  ROOM | Load..       * %d:%@", userLocation, worldNode[userLocation][21]);
+	NSLog(@"------- - ------------ - -------------------");
 	
-	[self roomCleanParallax];
-	[self roomCleanSprites];
-	[self roomCleanNotifications];
+	[self roomClearParallax];
+	[self roomClearSprites];
+	[self roomClearNotifications];
 	
 	[self roomGenerateTiles];
 	[self roomGenerateBlockers];
@@ -87,7 +89,7 @@
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"block"] ){
-			NSLog(@">  ROOM | Blockers     | Generate: #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"+  ROOM | Blockers     | Generate -> #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 10;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
@@ -101,7 +103,7 @@
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
-			NSLog(@">  ROOM | Blockers     | Generate: #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"+  ROOM | Blockers     | Generate -> %@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 20;
 			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
@@ -112,7 +114,6 @@
 }
 
 -(void)roomGenerateNotifications {
-	NSLog(@">  ROOM | Notification | Display");
 	int tileId = -1; // ...
 	for (NSString *tile in worldNode[userLocation]) {
 		tileId += 1;
@@ -123,7 +124,7 @@
 		int hasNotification = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postNotification"];
 		if(hasNotification<1){ continue; }
 		// Notification
-		NSLog(@"> NOTIF | Notification | Event: %@", [self tileParser:tile :2]);
+		NSLog(@"+ NOTIF | Notification | Generate -> %@", [self tileParser:tile :2]);
 		UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 		newView.tag = 30;
 		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
@@ -135,7 +136,7 @@
 -(void)roomGenerateAudioTrack
 {
 	if(![worldAudio isEqualToString:worldNode[userLocation][23] ]){
-		NSLog(@">  ROOM | Audio        | Playing Track: %@",worldNode[userLocation][23]);
+		NSLog(@"•  ROOM | Audio        | Update   -> %@",worldNode[userLocation][23]);
 		worldAudio = worldNode[userLocation][23];
 		// Play Audio
 	}
@@ -144,7 +145,7 @@
 -(void)roomGenerateBackground
 {
 	if(![worldBackground isEqualToString:worldNode[userLocation][22] ]){
-		NSLog(@">  ROOM | Background   | Changed Background: %@",worldNode[userLocation][22]);
+		NSLog(@"•  ROOM | Background   | Update   -> %@",worldNode[userLocation][22]);
 		worldBackground = worldNode[userLocation][22];
 		// Update Background
 		if([worldBackground isEqualToString:@"Black"]){
@@ -157,9 +158,9 @@
 }
 
 
-- (void) roomCleanSprites
+- (void) roomClearSprites
 {
-	NSLog(@">  ROOM | Blockers     | Clean");
+	NSLog(@"-  ROOM | Blockers     | Clear");
 	for (UIView *subview in [self.spritesContainer subviews]) {
 		// Remove Blockers
 		if(subview.tag == 10){
@@ -172,9 +173,9 @@
 	}
 }
 
-- (void) roomCleanNotifications
+- (void) roomClearNotifications
 {
-	NSLog(@">  ROOM | Notification | Clean ");
+	NSLog(@"-  ROOM | Notification | Clear");
 	for (UIView *subview in [self.spritesContainer subviews]) {
 		// Remove Notification
 		if(subview.tag == 30){
@@ -183,7 +184,7 @@
 	}
 }
 
-- (void) roomCleanParallax
+- (void) roomClearParallax
 {
 	self.parallaxFront.alpha = 0;
 	self.parallaxBack.alpha = 0;

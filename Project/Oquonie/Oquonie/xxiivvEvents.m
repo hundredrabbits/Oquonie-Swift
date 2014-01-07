@@ -168,19 +168,14 @@
 
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData {
 	
-	if ([eventType isEqualToString:@"port"]) {
-		NSLog(@"  EVENT | #%@ (%@)",eventId, eventData );
-		[self eventPort:eventId:eventData];
-	}
 	if ([eventType isEqualToString:@"warp"]) {
-		NSLog(@"  EVENT | #%@ (%@)",eventId, eventData );
 		[self eventWarp:eventId:eventData];
 	}
 	if ([eventType isEqualToString:@"event"]) {
 		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self eventParser:eventId:0]];
 		NSLog(@"  EVENT | Selector     | %@", eventSelector );
 		[self performSelector:NSSelectorFromString(eventSelector) withObject:@""];
-		[self roomCleanNotifications];
+		[self roomClearNotifications];
         [self roomGenerateNotifications];
 	}
 	
@@ -203,36 +198,10 @@
 
 # pragma mark Generic Events -
 
-- (void)eventPort :(NSString*)warpLocationId :(NSString*)eventData
-{	// warpLocationId(room to warp to) eventData[x,y,char required]
-	NSArray* array = [eventData componentsSeparatedByString: @","];
-	NSString* charRequirement = [array objectAtIndex: 2];
-	
-	// Check if character is the right one
-	if( userSpriteCharId != [charRequirement intValue] ){
-		NSLog(@"WRONG CHARACTER: %d - %d", userSpriteCharId, [charRequirement intValue] );
-		[self eventDialog:@"UVW":@"7"];
-		return;
-	}
-	
-	// Warp
-	NSArray *eventArray;
-	eventArray = [NSArray arrayWithObjects: warpLocationId, eventData, nil];
-	NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(eventPortWarp:) userInfo:eventArray repeats:NO];
-}
-
-- (void)eventPortWarp:(NSTimer*)theTimer {
-	
-	NSArray *eventArray;
-	eventArray = [theTimer userInfo];
-	NSString *eventId = eventArray[0];
-	NSString *eventData = eventArray[1];
-	
-	[self eventWarp:eventId :eventData];
-}
-
 - (void)eventWarp :(NSString*)eventId :(NSString*)eventData
 {
+	NSLog(@"> EVENT | Warp         | Node.%@",eventId, eventData );
+	
 	NSArray* array = [eventData componentsSeparatedByString: @","];
 	int x = [[array objectAtIndex: 0] intValue];
 	int y = [[array objectAtIndex: 1] intValue];
@@ -319,7 +288,7 @@
 
 -(void)eventSpell :(int)spellId :(int)spellType
 {
-    NSLog(@"+ EVENT | Spell        | Added: %d(%d)",spellId,spellType);
+    NSLog(@"> EVENT | Spell        | Added: %d(%d)",spellId,spellType);
 	
     userStorageEvents[spellId] = [NSString stringWithFormat:@"%d",spellType];
 	
@@ -328,7 +297,7 @@
 
 -(void)eventSpellRefresh
 {
-	NSLog(@"+ EVENT | Spell        | Update");
+	NSLog(@"> EVENT | Spell        | Refresh");
 	
 	// Create merge array
 	int index = 0;
@@ -340,17 +309,17 @@
 		spellTest[spellId] = [NSString stringWithFormat:@"%d",[spellTest[spellId] intValue]+1];
 		index += 1;
 	}
-	
-	// TODO: transform into the right character
+	// Transform in the right character
 	index = 0;
 	for (NSString *spellCountForId in spellTest) {
 		if(index>0){
 			if([spellCountForId intValue] > 2){
-				[self tranformIntoCharacter:2];
+				[self tranformIntoCharacter:index];
 			}
 		}
 		index += 1;
 	}
+	// TODO: Display the spell icons
 
 }
 
@@ -363,12 +332,12 @@
 }
 
 // =======================
-// @ Events: Clean Events
+// @ Events: Clear Events
 // =======================
 
-# pragma mark Clean Events -
+# pragma mark Clear Events -
 
--(void)roomCleanDialog
+-(void)roomClearDialog
 {
 	NSLog(@"> EVENT | Dialog       | Closed");
 	

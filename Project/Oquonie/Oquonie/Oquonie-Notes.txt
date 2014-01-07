@@ -1,14 +1,8 @@
 
-
-# User Storage
-
-
-
-
-
-
 # Event IDs
-
+== + =========== + ================== + ============================
+id | Location    | Event Name         | Notes
+== + =========== + ================== + ============================
 1  | Settings    | audioToggle
 2  | Settings    |
 3  | Settings    |
@@ -18,6 +12,8 @@
 7  | Settings    |
 8  | Settings    |
 9  | Settings    |
-10 | Necomedre   | photocopier1
-11 | Necomedre   | photocopier2
-12 | Necomedre   | photocopier3
+== + =========== + ================== + ============================
+10 | Necomedre   | photocopier1       |
+11 | Necomedre   | photocopier2       |
+12 | Necomedre   | photocopier3       |
+12 | Necomedre   | photocopierDoor    | Remember not to display message every time you enter the room 
