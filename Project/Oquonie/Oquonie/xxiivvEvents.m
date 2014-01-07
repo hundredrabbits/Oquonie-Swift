@@ -173,7 +173,9 @@
 	}
 	if ([eventType isEqualToString:@"event"]) {
 		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self eventParser:eventId:0]];
-		NSLog(@"  EVENT | Selector     | %@", eventSelector );
+		NSLog(@"------- - ------------ - -------------------");
+		NSLog(@"! EVENT | Load..       * %@", eventId );
+		NSLog(@"------- - ------------ - -------------------");
 		[self performSelector:NSSelectorFromString(eventSelector) withObject:@""];
 		[self roomClearNotifications];
         [self roomGenerateNotifications];
@@ -288,7 +290,7 @@
 
 -(void)eventSpell :(int)spellId :(int)spellType
 {
-    NSLog(@"> EVENT | Spell        | Added: %d(%d)",spellId,spellType);
+    NSLog(@"> EVENT | Spell        | Added    -> id:%d type:%d",spellId,spellType);
 	
     userStorageEvents[spellId] = [NSString stringWithFormat:@"%d",spellType];
 	

@@ -41,7 +41,7 @@
 - (void) roomStart
 {
 	NSLog(@"------- - ------------ - -------------------");
-	NSLog(@">  ROOM | Load..       * %d:%@", userLocation, worldNode[userLocation][21]);
+	NSLog(@"!  ROOM | Load..       * %d:%@", userLocation, worldNode[userLocation][21]);
 	NSLog(@"------- - ------------ - -------------------");
 	
 	[self roomClearParallax];
