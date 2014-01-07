@@ -59,7 +59,7 @@
     // New event storage
     userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
     int myCount = 0;
-    while ( myCount < 10 )	{ myCount++; userStorageEvents[myCount] = @"";	}
+    while ( myCount < 40 )	{ myCount++; userStorageEvents[myCount] = @"";	}
 }
 
 # pragma mark Move -

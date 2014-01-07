@@ -123,7 +123,7 @@
 		int hasNotification = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postNotification"];
 		if(hasNotification<1){ continue; }
 		// Notification
-		NSLog(@"> NOTIF | Notification for event %@", [self tileParser:tile :2]); // TODOX
+		NSLog(@"> NOTIF | Notification | Event: %@", [self tileParser:tile :2]);
 		UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 		newView.tag = 30;
 		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];

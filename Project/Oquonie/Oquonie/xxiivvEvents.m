@@ -203,8 +203,8 @@
 
 # pragma mark Generic Events -
 
-- (void)eventPort :(NSString*)eventId :(NSString*)eventData
-{
+- (void)eventPort :(NSString*)warpLocationId :(NSString*)eventData
+{	// warpLocationId(room to warp to) eventData[x,y,char required]
 	NSArray* array = [eventData componentsSeparatedByString: @","];
 	NSString* charRequirement = [array objectAtIndex: 2];
 	
@@ -217,7 +217,7 @@
 	
 	// Warp
 	NSArray *eventArray;
-	eventArray = [NSArray arrayWithObjects: eventId, eventData, nil];
+	eventArray = [NSArray arrayWithObjects: warpLocationId, eventData, nil];
 	NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(eventPortWarp:) userInfo:eventArray repeats:NO];
 }
 
@@ -332,7 +332,7 @@
 	
 	// Create merge array
 	int index = 0;
-	NSMutableArray *spellTest = [NSMutableArray arrayWithObjects:@"",@"",@"",@"",@"",@"", nil];
+	NSMutableArray *spellTest = [NSMutableArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
 	
 	// Merge events counts
 	for (NSString *tile in userStorageEvents) {
@@ -341,7 +341,7 @@
 		index += 1;
 	}
 	
-	//
+	// TODO: transform into the right character
 	index = 0;
 	for (NSString *spellCountForId in spellTest) {
 		if(index>0){

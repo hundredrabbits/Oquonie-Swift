@@ -14,7 +14,7 @@
 
 -(int)event_photocopier1 :(NSString*)option
 {
-	int userStorageEventId = 1;
+	int userStorageEventId = 10;
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if([userStorageEvents[userStorageEventId] intValue]<1){
@@ -22,18 +22,70 @@
 		}
 		return 0;
 	}
-	
 	// Dialog
     if([userStorageEvents[userStorageEventId] intValue]>0){
         [self eventDialog:@"AAA":@"1"];
     }
     else{
         [self eventDialog:@"UVW":@"2"];
-        [self eventSpell:userStorageEventId:3];
+        [self eventSpell:userStorageEventId:6];
     }
-	
 	// Return storage Id
 	return userStorageEventId;
+}
+
+-(int)event_photocopier2 :(NSString*)option
+{
+	int userStorageEventId = 11;
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[userStorageEventId] intValue]<1){
+			return 1;
+		}
+		return 0;
+	}
+	// Dialog
+    if([userStorageEvents[userStorageEventId] intValue]>0){
+        [self eventDialog:@"AAA":@"1"];
+    }
+    else{
+        [self eventDialog:@"UVW":@"2"];
+        [self eventSpell:userStorageEventId:6];
+    }
+	// Return storage Id
+	return userStorageEventId;
+}
+
+-(int)event_photocopier3 :(NSString*)option
+{
+	int userStorageEventId = 12;
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[userStorageEventId] intValue]<1){
+			return 1;
+		}
+		return 0;
+	}
+	// Dialog
+    if([userStorageEvents[userStorageEventId] intValue]>0){
+        [self eventDialog:@"AAA":@"1"];
+    }
+    else{
+        [self eventDialog:@"UVW":@"2"];
+        [self eventSpell:userStorageEventId:6];
+    }
+	// Return storage Id
+	return userStorageEventId;
+}
+
+-(int)event_photocopierDoor :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){
+		return 0;
+	}
+	[self eventDialog:@"AAA":@"1"];
+	
+	return false;
 }
 
 @end
