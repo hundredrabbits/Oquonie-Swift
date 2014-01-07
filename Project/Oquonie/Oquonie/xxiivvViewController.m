@@ -49,7 +49,7 @@
 	userPositionY = 0;
 	userSpriteChar = @"char1";
 	userSpriteCharId = 1;
-	userLocation = 1;
+	userLocation = 19;
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
 	userSpriteOrientationVertical = @"f";

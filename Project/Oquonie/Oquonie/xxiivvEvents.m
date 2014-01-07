@@ -10,6 +10,9 @@
 #import "xxiivvViewController.h"
 #import "xxiivvTemplates.h"
 
+#import "eventsLobby.h"
+#import "eventsNecomedre.h"
+
 @implementation xxiivvViewController (Events)
 
 // =======================
