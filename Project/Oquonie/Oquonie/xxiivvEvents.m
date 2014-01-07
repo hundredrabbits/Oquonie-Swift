@@ -200,9 +200,9 @@
 
 # pragma mark Generic Events -
 
-- (void)eventWarp :(NSString*)eventId :(NSString*)eventData
+- (void)eventWarp :(NSString*)nodeId :(NSString*)eventData
 {
-	NSLog(@"> EVENT | Warp         | Node.%@",eventId, eventData );
+	NSLog(@"> EVENT | Warp         | Node.%@",nodeId );
 	
 	NSArray* array = [eventData componentsSeparatedByString: @","];
 	int x = [[array objectAtIndex: 0] intValue];
@@ -212,7 +212,7 @@
 	
 	userPositionX = x;
 	userPositionY = y;
-	userLocation = [eventId intValue];
+	userLocation = [nodeId intValue];
 	self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
 	
 	[UIView beginAnimations: @"Fade In" context:nil];

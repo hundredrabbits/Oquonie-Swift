@@ -10,7 +10,7 @@
 
 @interface xxiivvViewController (Events)
 
--(void)eventWarp :(int)eventId :(NSString*)eventData;
+-(void)eventWarp :(NSString*)nodeId :(NSString*)eventData;
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData;
 -(int)notificationListen :(NSString*)eventId;
 -(void)roomClearDialog;

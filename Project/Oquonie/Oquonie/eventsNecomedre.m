@@ -82,12 +82,22 @@
 {
 	if([option isEqualToString:@"postNotification"]){
 		if(userSpriteCharId == 6){
-			// Display a text if the right character
-			[self eventDialog:@"UVW":@"2"];
 		}
 		return 0;
 	}
-	[self eventDialog:@"AAA":@"1"];
+	if(userSpriteCharId == 6){
+		// Door from side A
+		if( userLocation == 19 ){
+			[self eventWarp:@"20":@"0,-1"];
+		}
+		// Door from side B
+		else if ( userLocation == 20 ){
+			[self eventWarp:@"19":@"0,1"];
+		}
+	}
+	else{
+		[self eventDialog:@"UVW":@"1"];
+	}
 	return false;
 }
 

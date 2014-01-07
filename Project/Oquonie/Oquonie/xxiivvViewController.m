@@ -47,8 +47,8 @@
 {
 	userPositionX = 0;
 	userPositionY = 0;
-	userSpriteChar = @"char1";
-	userSpriteCharId = 1;
+	userSpriteChar = @"char6";
+	userSpriteCharId = 6;
 	userLocation = 19;
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
@@ -89,19 +89,18 @@
 	if( abs(userPositionX+posX) > 1 ){ blocker = 1; }
 	if( abs(userPositionY+posY) > 1 ){ blocker = 1; }
 	
-	NSLog(@"•  USER | Position     | Update   -> X:%d Y:%d TILE:%d",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
-	
 	// Move if okay
 	if(blocker == 0){
 		// Update position
 		userPositionX += posX;
 		userPositionY += posY;
+		NSLog(@"•  USER | Position     | Update   -> X:%d Y:%d TILE:%d",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
 		[self moveEventCheck:(userPositionX) :(userPositionY)];
-		[UIView beginAnimations: @"Fade In" context:nil];
-		[UIView setAnimationDuration:0.3];
-		[UIView setAnimationDelay:0];
-		self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
-		[UIView commitAnimations];
+		
+		[UIView animateWithDuration:0.3 animations:^(void){
+			self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+		} completion:^(BOOL finished){}];
+
 		[self moveAnimation];
 		[self moveParallax];
 	}
