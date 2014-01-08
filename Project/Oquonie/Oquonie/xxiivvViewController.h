@@ -131,8 +131,6 @@ int worldTimerUserCount;
 int worldTimerUserDirection;
 int worldTimerUserCycle;
 
-
-
 NSMutableArray *worldNode;
 
 CGRect	screen;

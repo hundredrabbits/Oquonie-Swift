@@ -311,6 +311,7 @@
 		spellTest[spellId] = [NSString stringWithFormat:@"%d",[spellTest[spellId] intValue]+1];
 		index += 1;
 	}
+	
 	// Transform in the right character
 	index = 0;
 	for (NSString *spellCountForId in spellTest) {
@@ -321,7 +322,12 @@
 		}
 		index += 1;
 	}
+	
+
 	// TODO: Display the spell icons
+	self.spellCharacter1.backgroundColor = [UIColor redColor];
+	self.spellCharacter2.backgroundColor = [UIColor redColor];
+	self.spellCharacter3.backgroundColor = [UIColor redColor];
 	
 
 }
