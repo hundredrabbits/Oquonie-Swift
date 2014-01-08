@@ -316,16 +316,17 @@
 	for (NSString *spellCountForId in spellTest) {
 		if(index>0){
 			if([spellCountForId intValue] > 2){
-				[self tranformIntoCharacter:index];
+				[self eventTranform:index];
 			}
 		}
 		index += 1;
 	}
 	// TODO: Display the spell icons
+	
 
 }
 
--(void)tranformIntoCharacter :(int)charId
+-(void)eventTranform :(int)charId
 {
 	NSLog(@"+ EVENT | Spell        | Transform intro char%d",charId);
 	
@@ -343,17 +344,15 @@
 {
 	NSLog(@"> EVENT | Dialog       | Closed");
 	
-	[UIView beginAnimations: @"animate dialog" context:nil];
-	[UIView setAnimationDuration:0.2];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-	self.dialogCharacter.frame = portraitOrigin;
-	self.dialogCharacter.alpha = 0;
-	self.dialogBubble.frame = bubbleOrigin;
-	self.dialogBubble.alpha = 0;
-	self.dialogCharacter1.alpha = 0;
-	self.dialogCharacter2.alpha = 0;
-	self.dialogCharacter3.alpha = 0;
-	[UIView commitAnimations];
+	[UIView animateWithDuration:0.2 animations:^(void){
+		self.dialogCharacter.frame = portraitOrigin;
+		self.dialogCharacter.alpha = 0;
+		self.dialogBubble.frame = bubbleOrigin;
+		self.dialogBubble.alpha = 0;
+		self.dialogCharacter1.alpha = 0;
+		self.dialogCharacter2.alpha = 0;
+		self.dialogCharacter3.alpha = 0;
+	} completion:^(BOOL finished){}];
 }
 
 

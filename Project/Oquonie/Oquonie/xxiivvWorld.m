@@ -106,7 +106,7 @@
 			NSLog(@"+  ROOM | Blockers     | Generate -> %@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 			newView.tag = 20;
-			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
+			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
 			[self.spritesContainer addSubview:newView];
 		}
 		tileId += 1;

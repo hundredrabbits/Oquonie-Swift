@@ -17,3 +17,6 @@ id | Location    | Event Name         | Notes
 11 | Necomedre   | photocopier2       |
 12 | Necomedre   | photocopier3       |
 12 | Necomedre   | photocopierDoor    | Remember not to display message every time you enter the room 
+
+
+# Event Values
