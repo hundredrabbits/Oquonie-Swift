@@ -42,7 +42,8 @@ id | Location    | Event Name         | Notes
 
 -(NSString*)util_CharIdToLetter :(int)charId
 {
-	return @"B";
+	if(charId == 6){ return @"X"; }
+	return @"A";
 }
 
 @end

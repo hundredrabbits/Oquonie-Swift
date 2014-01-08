@@ -250,7 +250,7 @@
 	self.dialogCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.portrait.png",characterId]];
 	self.dialogCharacter.alpha = 0;
 	
-	self.dialogBubble.frame = CGRectOffset(portraitOrigin, 3, 0);
+	self.dialogBubble.frame = CGRectOffset(bubbleOrigin, 3, 0);
 	self.dialogBubble.alpha = 0;
 	
 	self.dialogCharacter1.alpha = 0;
@@ -262,7 +262,7 @@
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
 	self.dialogCharacter.frame = portraitOrigin;
 	self.dialogCharacter.alpha = 1;
-	self.dialogBubble.frame = CGRectOffset(portraitOrigin, 0, 0);
+	self.dialogBubble.frame = CGRectOffset(bubbleOrigin, 0, 0);
 	self.dialogBubble.alpha = 1;
 	[UIView commitAnimations];
 	
@@ -324,12 +324,7 @@
 		index += 1;
 	}
 	
-	// TODO: Clean Up !
 	// Display the spells in spellview
-	
-	self.spellCharacter1.backgroundColor = [UIColor redColor];
-	self.spellCharacter2.backgroundColor = [UIColor redColor];
-	self.spellCharacter3.backgroundColor = [UIColor redColor];
 	
 	index = 0;
 	int spellIndex = 0;
@@ -341,16 +336,11 @@
 			
 			NSLog(@"     UI | Spell        | StorageId: %d SpellId:%@",index,spellValue);
 			
-			if(spellIndex == 0){
-				self.spellCharacter1.backgroundColor = [UIColor blueColor];
-				self.spellCharacter1.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_CharIdToLetter:[spellValue intValue]]]];
-			}
-			if(spellIndex == 1){
-				self.spellCharacter2.backgroundColor = [UIColor blueColor];
-			}
-			if(spellIndex == 2){
-				self.spellCharacter3.backgroundColor = [UIColor blueColor];
-			}
+			UIImage *letterImage = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_CharIdToLetter:[spellValue intValue]]]];
+			
+			if(spellIndex == 0){ self.spellCharacter1.image = letterImage; }
+			if(spellIndex == 1){ self.spellCharacter2.image = letterImage; }
+			if(spellIndex == 2){ self.spellCharacter3.image = letterImage; }
 			spellIndex += 1;
 			
 		}
@@ -377,7 +367,6 @@
 -(void)roomClearDialog
 {
 	NSLog(@"> EVENT | Dialog       | Closed");
-	
 	[UIView animateWithDuration:0.2 animations:^(void){
 		self.dialogCharacter.frame = portraitOrigin;
 		self.dialogCharacter.alpha = 0;

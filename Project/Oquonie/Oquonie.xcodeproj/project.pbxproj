@@ -175,6 +175,7 @@
 		036A100A18099F720074F6F1 /* tile.E.png in Resources */ = {isa = PBXBuildFile; fileRef = 036A100218099F720074F6F1 /* tile.E.png */; };
 		036D5BF4187D0DC50042378D /* event.11.r.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 036D5BF3187D0DC50042378D /* event.11.r.1.png */; };
 		036D5BF7187D1DA00042378D /* xxiivvUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D5BF6187D1DA00042378D /* xxiivvUtils.m */; };
+		036D5BF9187D21A70042378D /* letterX.png in Resources */ = {isa = PBXBuildFile; fileRef = 036D5BF8187D21A70042378D /* letterX.png */; };
 		0373477A186BA790000A5ED7 /* event.1.r.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03734778186BA790000A5ED7 /* event.1.r.2.png */; };
 		0373477B186BA790000A5ED7 /* event.1.r.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03734779186BA790000A5ED7 /* event.1.r.3.png */; };
 		037CCB52179BBAD200833EDB /* char1.stand.l.b.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 037CCB46179BBAD200833EDB /* char1.stand.l.b.1.png */; };
@@ -523,6 +524,7 @@
 		036D5BF3187D0DC50042378D /* event.11.r.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.11.r.1.png; path = en.assets/event.11.r.1.png; sourceTree = "<group>"; };
 		036D5BF5187D1DA00042378D /* xxiivvUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvUtils.h; sourceTree = "<group>"; };
 		036D5BF6187D1DA00042378D /* xxiivvUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvUtils.m; sourceTree = "<group>"; };
+		036D5BF8187D21A70042378D /* letterX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterX.png; path = en.assets/letterX.png; sourceTree = "<group>"; };
 		03734778186BA790000A5ED7 /* event.1.r.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.1.r.2.png; path = en.assets/event.1.r.2.png; sourceTree = "<group>"; };
 		03734779186BA790000A5ED7 /* event.1.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.1.r.3.png; path = en.assets/event.1.r.3.png; sourceTree = "<group>"; };
 		037CCB46179BBAD200833EDB /* char1.stand.l.b.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.stand.l.b.1.png; path = en.assets/char1.stand.l.b.1.png; sourceTree = "<group>"; };
@@ -1119,6 +1121,7 @@
 		038C5926185146AC005D6D35 /* Letters */ = {
 			isa = PBXGroup;
 			children = (
+				036D5BF8187D21A70042378D /* letterX.png */,
 				03C0E65E186265B3006AA0E6 /* letterU.png */,
 				03C0E65F186265B3006AA0E6 /* letterV.png */,
 				03C0E660186265B3006AA0E6 /* letterW.png */,
@@ -1728,6 +1731,7 @@
 				0332384C17D4BDB8001B1328 /* event.1.l.1.png in Resources */,
 				0304D7A2186CEE0200ED6E94 /* event.6.r.1.png in Resources */,
 				0304D79E186CEE0200ED6E94 /* event.5.l.1.png in Resources */,
+				036D5BF9187D21A70042378D /* letterX.png in Resources */,
 				0332384D17D4BDB8001B1328 /* event.1.r.1.png in Resources */,
 				0332384E17D4BDB8001B1328 /* tile.7.png in Resources */,
 				03F5C4AD187BBD8D00352B8E /* Oquonie-Notes.txt in Resources */,

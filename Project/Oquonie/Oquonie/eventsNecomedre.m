@@ -25,9 +25,10 @@
 	// Dialog
     if([userStorageEvents[userStorageEventId] intValue]>0){
         [self eventDialog:@"AAA":@"11"];
+        [self eventSpell:userStorageEventId:0];
     }
     else{
-        [self eventDialog:@"UVW":@"11"];
+        [self eventDialog:@"IPX":@"11"];
         [self eventSpell:userStorageEventId:6];
     }
 	// Return storage Id
@@ -47,6 +48,7 @@
 	// Dialog
     if([userStorageEvents[userStorageEventId] intValue]>0){
         [self eventDialog:@"AAA":@"11"];
+        [self eventSpell:userStorageEventId:0];
     }
     else{
         [self eventDialog:@"UVW":@"11"];
@@ -69,6 +71,7 @@
 	// Dialog
     if([userStorageEvents[userStorageEventId] intValue]>0){
         [self eventDialog:@"AAA":@"11"];
+        [self eventSpell:userStorageEventId:0];
     }
     else{
         [self eventDialog:@"UVW":@"11"];

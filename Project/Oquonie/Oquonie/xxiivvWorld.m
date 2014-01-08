@@ -123,12 +123,21 @@
 		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self tileParser:tile :2]];
 		int hasNotification = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postNotification"];
 		if(hasNotification<1){ continue; }
+		
 		// Notification
+		
 		NSLog(@"+ NOTIF | Notification | Generate -> %@", [self tileParser:tile :2]);
 		UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
 		newView.tag = 30;
 		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
+		
+			UIImageView *letterView = [[UIImageView alloc] initWithFrame:CGRectMake( (newView.frame.size.width/2)-20, 2.5, 40, 40)];
+			letterView.tag = 30;
+			letterView.image = [UIImage imageNamed:[NSString stringWithFormat:@"letterX.png"]];
+			[newView addSubview:letterView];
+		
 		[self.spritesContainer addSubview:newView];
+		
 		
 	}
 }
