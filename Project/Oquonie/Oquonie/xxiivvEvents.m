@@ -9,6 +9,7 @@
 #import "xxiivvWorld.h"
 #import "xxiivvViewController.h"
 #import "xxiivvTemplates.h"
+#import "xxiivvUtils.h"
 
 #import "eventsLobby.h"
 #import "eventsNecomedre.h"
@@ -323,13 +324,40 @@
 		index += 1;
 	}
 	
-
-	// TODO: Display the spell icons
+	// TODO: Clean Up !
+	// Display the spells in spellview
+	
 	self.spellCharacter1.backgroundColor = [UIColor redColor];
 	self.spellCharacter2.backgroundColor = [UIColor redColor];
 	self.spellCharacter3.backgroundColor = [UIColor redColor];
 	
-
+	index = 0;
+	int spellIndex = 0;
+	for (NSString *spellValue in userStorageEvents) {
+		
+		if( [self util_IsSpell:index] == TRUE ){
+			
+			if([spellValue isEqualToString:@""]){ continue; }
+			
+			NSLog(@"     UI | Spell        | StorageId: %d SpellId:%@",index,spellValue);
+			
+			if(spellIndex == 0){
+				self.spellCharacter1.backgroundColor = [UIColor blueColor];
+				self.spellCharacter1.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_CharIdToLetter:[spellValue intValue]]]];
+			}
+			if(spellIndex == 1){
+				self.spellCharacter2.backgroundColor = [UIColor blueColor];
+			}
+			if(spellIndex == 2){
+				self.spellCharacter3.backgroundColor = [UIColor blueColor];
+			}
+			spellIndex += 1;
+			
+		}
+		
+		index += 1;
+	}
+	
 }
 
 -(void)eventTranform :(int)charId
