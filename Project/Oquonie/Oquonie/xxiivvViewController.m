@@ -19,13 +19,10 @@
 
 @synthesize interactionMap;
 
--(void)viewDidLoad {
+-(void)viewDidLoad
+{	
 	[super viewDidLoad];
 	[self start];
-}
-
--(void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
 }
 
 # pragma mark Start -
@@ -486,15 +483,15 @@
 
 # pragma mark Interaction Map -
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	UITouch *theTouch = [touches anyObject];
 	interactionMap = [theTouch locationInView:self.view];
 }
 
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{}
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{}
 
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	if(userMoveEnabled == 0){ return; }
 	

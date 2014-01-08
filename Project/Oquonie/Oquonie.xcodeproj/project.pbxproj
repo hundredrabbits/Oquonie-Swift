@@ -193,6 +193,10 @@
 		037E265A179D3B8A001A1553 /* step.1.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E2658179D3B8A001A1553 /* step.1.r.png */; };
 		037E265F179D406C001A1553 /* wall.E.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E265D179D406C001A1553 /* wall.E.l.png */; };
 		037E2660179D406C001A1553 /* wall.E.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E265E179D406C001A1553 /* wall.E.r.png */; };
+		037F025F187D81DC00747E8D /* splash.xxiivv.png in Resources */ = {isa = PBXBuildFile; fileRef = 037F025E187D81DC00747E8D /* splash.xxiivv.png */; };
+		037F0262187D845300747E8D /* segueFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 037F0261187D845300747E8D /* segueFade.m */; };
+		037F0264187D8AD000747E8D /* splash.oquonie.png in Resources */ = {isa = PBXBuildFile; fileRef = 037F0263187D8AD000747E8D /* splash.oquonie.png */; };
+		037F0269187D8DBC00747E8D /* splashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037F0268187D8DBC00747E8D /* splashViewController.m */; };
 		0381CC7418456236003FB458 /* blocker.8.png in Resources */ = {isa = PBXBuildFile; fileRef = 0381CC6418456236003FB458 /* blocker.8.png */; };
 		0381CC7518456236003FB458 /* blocker.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 0381CC6518456236003FB458 /* blocker.9.png */; };
 		0381CC7618456236003FB458 /* blocker.10.png in Resources */ = {isa = PBXBuildFile; fileRef = 0381CC6618456236003FB458 /* blocker.10.png */; };
@@ -346,7 +350,6 @@
 		03F5C4A2187BBB3200352B8E /* event.11.r.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5C49B187BBB3200352B8E /* event.11.r.2.png */; };
 		03F5C4A3187BBB3200352B8E /* event.11.r.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F5C49C187BBB3200352B8E /* event.11.r.3.png */; };
 		03F5C4A8187BBB7F00352B8E /* eventsNecomedre.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F5C4A7187BBB7F00352B8E /* eventsNecomedre.m */; };
-		03F5C4AD187BBD8D00352B8E /* Oquonie-Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03F5C4AC187BBD8D00352B8E /* Oquonie-Notes.txt */; };
 		03F5C4B0187BBF3500352B8E /* eventsLobby.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F5C4AF187BBF3500352B8E /* eventsLobby.m */; };
 /* End PBXBuildFile section */
 
@@ -542,6 +545,12 @@
 		037E2658179D3B8A001A1553 /* step.1.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step.1.r.png; path = en.assets/step.1.r.png; sourceTree = "<group>"; };
 		037E265D179D406C001A1553 /* wall.E.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.E.l.png; path = en.assets/wall.E.l.png; sourceTree = "<group>"; };
 		037E265E179D406C001A1553 /* wall.E.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.E.r.png; path = en.assets/wall.E.r.png; sourceTree = "<group>"; };
+		037F025E187D81DC00747E8D /* splash.xxiivv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.xxiivv.png; path = en.assets/splash.xxiivv.png; sourceTree = "<group>"; };
+		037F0260187D845300747E8D /* segueFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segueFade.h; sourceTree = "<group>"; };
+		037F0261187D845300747E8D /* segueFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segueFade.m; sourceTree = "<group>"; };
+		037F0263187D8AD000747E8D /* splash.oquonie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.oquonie.png; path = en.assets/splash.oquonie.png; sourceTree = "<group>"; };
+		037F0267187D8DBC00747E8D /* splashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splashViewController.h; sourceTree = "<group>"; };
+		037F0268187D8DBC00747E8D /* splashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splashViewController.m; sourceTree = "<group>"; };
 		0381CC6418456236003FB458 /* blocker.8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.8.png; path = en.assets/blocker.8.png; sourceTree = "<group>"; };
 		0381CC6518456236003FB458 /* blocker.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.9.png; path = en.assets/blocker.9.png; sourceTree = "<group>"; };
 		0381CC6618456236003FB458 /* blocker.10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.10.png; path = en.assets/blocker.10.png; sourceTree = "<group>"; };
@@ -702,7 +711,6 @@
 		03F5C49C187BBB3200352B8E /* event.11.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.11.r.3.png; path = en.assets/event.11.r.3.png; sourceTree = "<group>"; };
 		03F5C4A6187BBB7F00352B8E /* eventsNecomedre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNecomedre.h; sourceTree = "<group>"; };
 		03F5C4A7187BBB7F00352B8E /* eventsNecomedre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNecomedre.m; sourceTree = "<group>"; };
-		03F5C4AC187BBD8D00352B8E /* Oquonie-Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Oquonie-Notes.txt"; sourceTree = "<group>"; };
 		03F5C4AE187BBF3500352B8E /* eventsLobby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsLobby.h; sourceTree = "<group>"; };
 		03F5C4AF187BBF3500352B8E /* eventsLobby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsLobby.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1091,6 +1099,33 @@
 			path = en.lproj;
 			sourceTree = "<group>";
 		};
+		037F0265187D8BC400747E8D /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				037F0263187D8AD000747E8D /* splash.oquonie.png */,
+				037F025E187D81DC00747E8D /* splash.xxiivv.png */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
+		037F0266187D8C2D00747E8D /* Splash Systems */ = {
+			isa = PBXGroup;
+			children = (
+				037F0267187D8DBC00747E8D /* splashViewController.h */,
+				037F0268187D8DBC00747E8D /* splashViewController.m */,
+			);
+			name = "Splash Systems";
+			sourceTree = "<group>";
+		};
+		037F026A187D8DC400747E8D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				037F0260187D845300747E8D /* segueFade.h */,
+				037F0261187D845300747E8D /* segueFade.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		03834E1B180B77FE00568E60 /* Steps */ = {
 			isa = PBXGroup;
 			children = (
@@ -1152,21 +1187,22 @@
 		038C59271851472D005D6D35 /* en.sources */ = {
 			isa = PBXGroup;
 			children = (
-				03F5C4AC187BBD8D00352B8E /* Oquonie-Notes.txt */,
 				03F5C4AB187BBD4000352B8E /* Basic Systems */,
 				03F5C4AA187BBD2500352B8E /* Core Systems */,
 				03F5C4B1187BBF4600352B8E /* Lobby Universe */,
 				03F5C4A9187BBBD500352B8E /* Necomedre Universe */,
+				037F0266187D8C2D00747E8D /* Splash Systems */,
+				037F026A187D8DC400747E8D /* Tools */,
 			);
 			name = en.sources;
 			sourceTree = "<group>";
 		};
-		038C592818514739005D6D35 /* Layouts */ = {
+		038C592818514739005D6D35 /* en.layouts */ = {
 			isa = PBXGroup;
 			children = (
 				03D4B8ED180957B700AD9DD7 /* MainStory.storyboard */,
 			);
-			name = Layouts;
+			name = en.layouts;
 			sourceTree = "<group>";
 		};
 		03983BF517C1AA8400C89446 /* Blockers */ = {
@@ -1269,10 +1305,10 @@
 		03BBFAB1178A9E4E00E79C3D /* Oquonie */ = {
 			isa = PBXGroup;
 			children = (
-				0355CF8C17C196C10069AF97 /* en.lproj */,
 				038C59271851472D005D6D35 /* en.sources */,
-				038C592818514739005D6D35 /* Layouts */,
-				03BBFACE178AC8C200E79C3D /* Assets */,
+				038C592818514739005D6D35 /* en.layouts */,
+				03BBFACE178AC8C200E79C3D /* en.assets */,
+				0355CF8C17C196C10069AF97 /* en.lproj */,
 				03BBFAB2178A9E4E00E79C3D /* Supporting Files */,
 			);
 			path = Oquonie;
@@ -1292,7 +1328,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		03BBFACE178AC8C200E79C3D /* Assets */ = {
+		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
 				0304D7B5186CF18000ED6E94 /* Fx */,
@@ -1303,8 +1339,9 @@
 				032D74E2179CD7D90068B27E /* Walls */,
 				03834E1B180B77FE00568E60 /* Steps */,
 				032D74DE179CD68A0068B27E /* Tiles */,
+				037F0265187D8BC400747E8D /* Splash */,
 			);
-			name = Assets;
+			name = en.assets;
 			sourceTree = "<group>";
 		};
 		03F5C4A5187BBB3900352B8E /* Event11 - Photocopier */ = {
@@ -1589,9 +1626,11 @@
 				03C1EE0617AFAC70001AFF21 /* wall.2.l.png in Resources */,
 				03C1EE0717AFAC70001AFF21 /* wall.2.r.png in Resources */,
 				035A6DAF186B0E610032710C /* event.1.l.2.png in Resources */,
+				037F025F187D81DC00747E8D /* splash.xxiivv.png in Resources */,
 				03C1EE0817AFAC70001AFF21 /* wall.3.l.png in Resources */,
 				03C1EE0917AFAC70001AFF21 /* wall.3.r.png in Resources */,
 				03C0E66F186265B3006AA0E6 /* letterU.png in Resources */,
+				037F0264187D8AD000747E8D /* splash.oquonie.png in Resources */,
 				03C16CE317B8772D00401B3D /* wall.5.l.png in Resources */,
 				0373477A186BA790000A5ED7 /* event.1.r.2.png in Resources */,
 				035A6DAB186B0E610032710C /* char3.stand.l.f.2.png in Resources */,
@@ -1734,7 +1773,6 @@
 				036D5BF9187D21A70042378D /* letterX.png in Resources */,
 				0332384D17D4BDB8001B1328 /* event.1.r.1.png in Resources */,
 				0332384E17D4BDB8001B1328 /* tile.7.png in Resources */,
-				03F5C4AD187BBD8D00352B8E /* Oquonie-Notes.txt in Resources */,
 				035A6DB8186B0E610032710C /* event.5.l.3.png in Resources */,
 				03C0E668186265B3006AA0E6 /* event.4.portrait.png in Resources */,
 				038E862817DDFEC300529CC0 /* char5.stand.l.b.1.png in Resources */,
@@ -1768,8 +1806,10 @@
 				03BBFABC178A9E4E00E79C3D /* xxiivvAppDelegate.m in Sources */,
 				036D5BF7187D1DA00042378D /* xxiivvUtils.m in Sources */,
 				0337732418710A2800C70C50 /* worldNecomedre.m in Sources */,
+				037F0269187D8DBC00747E8D /* splashViewController.m in Sources */,
 				03F5C4B0187BBF3500352B8E /* eventsLobby.m in Sources */,
 				03377321187105ED00C70C50 /* worldLobby.m in Sources */,
+				037F0262187D845300747E8D /* segueFade.m in Sources */,
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
 				032D74EB179CF9670068B27E /* xxiivvWorld.m in Sources */,
 				03834E1E180B855B00568E60 /* xxiivvEvents.m in Sources */,
