@@ -17,151 +17,6 @@
 @implementation xxiivvViewController (Events)
 
 // =======================
-// @ Events: Wizards
-// =======================
-
-# pragma mark Wizards -
-
--(int)event_wizard1 :(NSString*)option
-{
-	int userStorageEventId = 1;
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return 1;
-		}
-		return 0;
-	}
-	
-	// Dialog
-    if([userStorageEvents[userStorageEventId] intValue]>0){
-        [self eventDialog:@"AAA":@"1"];
-    }
-    else{
-        [self eventDialog:@"UVW":@"2"];
-        [self eventSpell:userStorageEventId:3];
-    }
-	
-	// Return storage Id
-	return userStorageEventId;
-}
-
--(int)event_wizard2 :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[2] intValue]<1){
-			return 1;
-		}
-		return 0;
-	}
-	
-	// Dialog
-    if([userStorageEvents[2] intValue]>0){
-        [self eventDialog:@"AAA":@"1"];
-    }
-    else{
-        [self eventDialog:@"EGJ":@"1"];
-        [self eventSpell:2:3];
-    }
-	
-	// Return storage Id
-	return 2;
-}
-
--(int)event_wizard3 :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[3] intValue]<1){
-			return 1;
-		}
-		return 0;
-	}
-	
-	// Dialog
-    if([userStorageEvents[3] intValue]>0){
-        [self eventDialog:@"AAA":@"1"];
-    }
-    else{
-        [self eventDialog:@"EGJ":@"1"];
-        [self eventSpell:3:3];
-    }
-	
-	// Return storage Id
-	return 3;
-}
-
-
-// =======================
-// @ Events: Tips
-// =======================
-
-# pragma mark Tips -
-
--(int)event_tip1 :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return 0;
-	}
-	// Dialog
-    [self eventDialog:@"UVW":@"7"];
-	// Return storage Id
-	return 2;
-}
-
--(int)event_tip2 :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return 0;
-	}
-	// Dialog
-    [self eventDialog:@"UVW":@"1"];
-	// Return storage Id
-	return 2;
-}
-
--(int)event_tip3 :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return 0;
-	}
-	// Dialog
-    [self eventDialog:@"UVW":@"8"];
-	// Return storage Id
-	return 2;
-}
-
-
-// =======================
-// @ Events: Misc
-// =======================
-
-# pragma mark Misc -
-
--(int)event_colours1 :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return 0;
-	}
-	// Dialog
-    [self eventDialog:@"UVW":@"10"];
-	// Return storage Id
-	return 2;
-}
-
-
-
-
-
-
-
-
-// =======================
 // @ Events: Routers
 // =======================
 
@@ -264,6 +119,7 @@
 	self.dialogCharacter.alpha = 1;
 	self.dialogBubble.frame = CGRectOffset(bubbleOrigin, 0, 0);
 	self.dialogBubble.alpha = 1;
+	self.dialogCharacter2.alpha = 1;
 	[UIView commitAnimations];
 	
 	[UIView beginAnimations: @"animate dialog" context:nil];
@@ -271,19 +127,6 @@
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
 	[UIView setAnimationDelay:0.2];
 	self.dialogCharacter1.alpha = 1;
-	[UIView commitAnimations];
-	
-	[UIView beginAnimations: @"animate dialog" context:nil];
-	[UIView setAnimationDuration:0.3];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-	[UIView setAnimationDelay:0.3];
-	self.dialogCharacter2.alpha = 1;
-	[UIView commitAnimations];
-	
-	[UIView beginAnimations: @"animate dialog" context:nil];
-	[UIView setAnimationDuration:0.4];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-	[UIView setAnimationDelay:0.2];
 	self.dialogCharacter3.alpha = 1;
 	[UIView commitAnimations];
 	
@@ -353,8 +196,6 @@
 -(void)eventTranform :(int)charId
 {
 	NSLog(@"+ EVENT | Spell        | Transform intro char%d",charId);
-	
-	userSpriteChar = [NSString stringWithFormat:@"char%d",charId];
 	userSpriteCharId = charId;
 }
 

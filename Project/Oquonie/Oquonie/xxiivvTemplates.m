@@ -111,7 +111,7 @@
 		mod = @"1";
 	}
 	
-	spriteName = [NSString stringWithFormat:@"%@.%@.%@.%@.%@.png", userSpriteChar, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
+	spriteName = [NSString stringWithFormat:@"char%d.%@.%@.%@.%@.png", userSpriteCharId, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
 	return spriteName;
 }
 

@@ -98,6 +98,9 @@
                     <navigationItem key="navigationItem" id="4qt-wJ-knt"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="splashLogoOquonie" destination="h5e-rW-0ku" id="HXA-b8-ZGu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pl-hF-ni5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

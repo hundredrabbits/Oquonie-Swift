@@ -19,12 +19,12 @@
 {
 	worldNode = [NSMutableArray arrayWithObjects:@"",nil];
 	int myCount = 0;
-	while ( myCount < 10 )	{ myCount++; worldNode[myCount] = [NSArray arrayWithObjects: @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", nil];	}
+	while ( myCount < 100 )	{ myCount++; worldNode[myCount] = @[];	}
 
-	// 0 - 10
+	// 0 - 19
 	[self createWorldLobby];
 	
-	// 11 - 20
+	// 20 - 39
 	[self createWorldNecomedre];
 }
 

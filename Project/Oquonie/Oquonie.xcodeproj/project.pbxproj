@@ -690,6 +690,7 @@
 		03C1EE0217AFAC70001AFF21 /* wall.2.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.2.r.png; path = en.assets/wall.2.r.png; sourceTree = "<group>"; };
 		03C1EE0317AFAC70001AFF21 /* wall.3.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.l.png; path = en.assets/wall.3.l.png; sourceTree = "<group>"; };
 		03C1EE0417AFAC70001AFF21 /* wall.3.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.r.png; path = en.assets/wall.3.r.png; sourceTree = "<group>"; };
+		03C488DF187E751E00375E86 /* xxiivvSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvSettings.h; sourceTree = "<group>"; };
 		03CD6B061808ED0B00A18760 /* tile.8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.8.png; path = en.assets/tile.8.png; sourceTree = "<group>"; };
 		03D4B8EE180957B700AD9DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStory.storyboard; sourceTree = "<group>"; };
 		03ECBBE317FC5A1A0039B944 /* wall.7.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.7.r.png; path = en.assets/wall.7.r.png; sourceTree = "<group>"; };
@@ -1387,6 +1388,7 @@
 		03F5C4AB187BBD4000352B8E /* II: - Basic Systems */ = {
 			isa = PBXGroup;
 			children = (
+				03C488DF187E751E00375E86 /* xxiivvSettings.h */,
 				03BBFABA178A9E4E00E79C3D /* xxiivvAppDelegate.h */,
 				03BBFABB178A9E4E00E79C3D /* xxiivvAppDelegate.m */,
 				03BBFAC6178A9E4E00E79C3D /* xxiivvViewController.h */,

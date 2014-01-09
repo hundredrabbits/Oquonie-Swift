@@ -10,6 +10,7 @@
 #import "xxiivvWorld.h"
 #import "xxiivvTemplates.h"
 #import "xxiivvEvents.h"
+#import "xxiivvSettings.h"
 
 @interface xxiivvViewController ()
 
@@ -42,11 +43,11 @@
 
 -(void)userStart
 {
-	userPositionX = 0;
-	userPositionY = 0;
-	userSpriteChar = @"char1";
-	userSpriteCharId = 1;
-	userLocation = 19;
+	userPositionX = userCharacterX;
+	userPositionY = userCharacterY;
+	userSpriteCharId = userCharacterId;
+	userLocation = userCharacterLocation;
+	
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
 	userSpriteOrientationVertical = @"f";

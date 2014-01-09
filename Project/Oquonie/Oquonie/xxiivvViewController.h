@@ -97,7 +97,6 @@ int tileH;
 
 // User
 
-NSString *userSpriteChar;
 NSString *userSpriteState;
 NSString *userSpriteOrientationHorizontal;
 NSString *userSpriteOrientationVertical;

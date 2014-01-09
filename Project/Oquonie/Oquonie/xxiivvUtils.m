@@ -51,7 +51,6 @@ id | Location    | Event Name         | Notes
 	return @"A";
 }
 
-
 -(NSString*)util_StorageIdToLetter :(int)storageId
 {
 	if(storageId == 1 ){ return @"N"; }
@@ -60,7 +59,5 @@ id | Location    | Event Name         | Notes
 	if(storageId == 12){ return @"X"; }
 	return @"";
 }
-
-
 
 @end

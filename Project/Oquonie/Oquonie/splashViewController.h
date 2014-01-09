@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface splashViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *splashLogoOquonie;
 
 @end
 
