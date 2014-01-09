@@ -11,7 +11,14 @@
 #import "xxiivvUtils.h"
 
 #import "worldLobby.h"
-#import "worldNecomedre.h"
+#import "worldNecomedre.h"		// Chapter I
+#import "worldNephtaline.h"		// Chapter II
+#import "worldNemedique.h"		// Chapter III
+#import "worldNestorine.h"		// Chapter IV
+#import "worldNeophine.h"		// Chapter V
+
+//#import "worldNecostrate.h"		// Chapter: Bonus
+//#import "worldNelorianne.h"		// Chapter: Bonus
 
 @implementation xxiivvViewController (world)
 
@@ -23,9 +30,16 @@
 
 	// 0 - 19
 	[self createWorldLobby];
-	
 	// 20 - 39
 	[self createWorldNecomedre];
+	// 40 - 59
+	[self createWorldNephtaline];
+	// 60 - 79
+	[self createWorldNemedique];
+	// 80 - 99
+	[self createWorldNestorine];
+	// 100 - 110
+	[self createWorldNeophine];
 }
 
 - (NSString*) tileParser :(NSString*)tileString :(int)index {

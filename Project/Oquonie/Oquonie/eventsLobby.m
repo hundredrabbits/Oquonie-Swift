@@ -95,11 +95,11 @@
 
 # pragma mark Tips -
 
--(int)event_tip1 :(NSString*)option
+-(int)event_spellgiver :(NSString*)option
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		return 0;
+		return 50;
 	}
 	// Dialog
     [self eventDialog:@"UVW":@"7"];

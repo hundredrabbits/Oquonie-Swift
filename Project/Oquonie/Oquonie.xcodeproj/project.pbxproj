@@ -330,6 +330,14 @@
 		03C1EE0717AFAC70001AFF21 /* wall.2.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0217AFAC70001AFF21 /* wall.2.r.png */; };
 		03C1EE0817AFAC70001AFF21 /* wall.3.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0317AFAC70001AFF21 /* wall.3.l.png */; };
 		03C1EE0917AFAC70001AFF21 /* wall.3.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0417AFAC70001AFF21 /* wall.3.r.png */; };
+		03C488E4187E8A5500375E86 /* worldNephtaline.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488E3187E8A5500375E86 /* worldNephtaline.m */; };
+		03C488E7187E8A6300375E86 /* eventsNephtaline.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488E6187E8A6300375E86 /* eventsNephtaline.m */; };
+		03C488EB187E8BED00375E86 /* worldNemedique.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488EA187E8BED00375E86 /* worldNemedique.m */; };
+		03C488EE187E8BFB00375E86 /* eventsNemedique.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488ED187E8BFB00375E86 /* eventsNemedique.m */; };
+		03C488F2187E8C5300375E86 /* worldNestorine.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488F1187E8C5300375E86 /* worldNestorine.m */; };
+		03C488F5187E8C5E00375E86 /* eventsNestorine.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488F4187E8C5E00375E86 /* eventsNestorine.m */; };
+		03C488F8187E8C6E00375E86 /* worldNeophine.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488F7187E8C6E00375E86 /* worldNeophine.m */; };
+		03C488FB187E8C7500375E86 /* eventsNeophine.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488FA187E8C7500375E86 /* eventsNeophine.m */; };
 		03CD6B071808ED0B00A18760 /* tile.8.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CD6B061808ED0B00A18760 /* tile.8.png */; };
 		03D4B8EF180957B700AD9DD7 /* MainStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D4B8ED180957B700AD9DD7 /* MainStory.storyboard */; };
 		03ECBBE717FC5A1A0039B944 /* wall.7.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03ECBBE317FC5A1A0039B944 /* wall.7.r.png */; };
@@ -691,6 +699,22 @@
 		03C1EE0317AFAC70001AFF21 /* wall.3.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.l.png; path = en.assets/wall.3.l.png; sourceTree = "<group>"; };
 		03C1EE0417AFAC70001AFF21 /* wall.3.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.r.png; path = en.assets/wall.3.r.png; sourceTree = "<group>"; };
 		03C488DF187E751E00375E86 /* xxiivvSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvSettings.h; sourceTree = "<group>"; };
+		03C488E2187E8A5500375E86 /* worldNephtaline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldNephtaline.h; sourceTree = "<group>"; };
+		03C488E3187E8A5500375E86 /* worldNephtaline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = worldNephtaline.m; sourceTree = "<group>"; };
+		03C488E5187E8A6300375E86 /* eventsNephtaline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNephtaline.h; sourceTree = "<group>"; };
+		03C488E6187E8A6300375E86 /* eventsNephtaline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNephtaline.m; sourceTree = "<group>"; };
+		03C488E9187E8BED00375E86 /* worldNemedique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldNemedique.h; sourceTree = "<group>"; };
+		03C488EA187E8BED00375E86 /* worldNemedique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = worldNemedique.m; sourceTree = "<group>"; };
+		03C488EC187E8BFB00375E86 /* eventsNemedique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNemedique.h; sourceTree = "<group>"; };
+		03C488ED187E8BFB00375E86 /* eventsNemedique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNemedique.m; sourceTree = "<group>"; };
+		03C488F0187E8C5300375E86 /* worldNestorine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldNestorine.h; sourceTree = "<group>"; };
+		03C488F1187E8C5300375E86 /* worldNestorine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = worldNestorine.m; sourceTree = "<group>"; };
+		03C488F3187E8C5E00375E86 /* eventsNestorine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNestorine.h; sourceTree = "<group>"; };
+		03C488F4187E8C5E00375E86 /* eventsNestorine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNestorine.m; sourceTree = "<group>"; };
+		03C488F6187E8C6E00375E86 /* worldNeophine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldNeophine.h; sourceTree = "<group>"; };
+		03C488F7187E8C6E00375E86 /* worldNeophine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = worldNeophine.m; sourceTree = "<group>"; };
+		03C488F9187E8C7500375E86 /* eventsNeophine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNeophine.h; sourceTree = "<group>"; };
+		03C488FA187E8C7500375E86 /* eventsNeophine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNeophine.m; sourceTree = "<group>"; };
 		03CD6B061808ED0B00A18760 /* tile.8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.8.png; path = en.assets/tile.8.png; sourceTree = "<group>"; };
 		03D4B8EE180957B700AD9DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStory.storyboard; sourceTree = "<group>"; };
 		03ECBBE317FC5A1A0039B944 /* wall.7.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.7.r.png; path = en.assets/wall.7.r.png; sourceTree = "<group>"; };
@@ -1193,6 +1217,10 @@
 				03F5C4AA187BBD2500352B8E /* II: - Core Systems */,
 				03F5C4B1187BBF4600352B8E /* III - Lobby Universe */,
 				03F5C4A9187BBBD500352B8E /* III - Necomedre Universe */,
+				03C488E8187E8A6A00375E86 /* III - Nephtaline Universe */,
+				03C488EF187E8C1700375E86 /* III - Nemedique Universe */,
+				03C488FD187E8C9E00375E86 /* III - Nestorine Universe */,
+				03C488FC187E8C9200375E86 /* III - Neophine Universe */,
 				037F026A187D8DC400747E8D /* :II - Tools */,
 			);
 			name = en.sources;
@@ -1343,6 +1371,50 @@
 				032D74DE179CD68A0068B27E /* Tiles */,
 			);
 			name = en.assets;
+			sourceTree = "<group>";
+		};
+		03C488E8187E8A6A00375E86 /* III - Nephtaline Universe */ = {
+			isa = PBXGroup;
+			children = (
+				03C488E2187E8A5500375E86 /* worldNephtaline.h */,
+				03C488E3187E8A5500375E86 /* worldNephtaline.m */,
+				03C488E5187E8A6300375E86 /* eventsNephtaline.h */,
+				03C488E6187E8A6300375E86 /* eventsNephtaline.m */,
+			);
+			name = "III - Nephtaline Universe";
+			sourceTree = "<group>";
+		};
+		03C488EF187E8C1700375E86 /* III - Nemedique Universe */ = {
+			isa = PBXGroup;
+			children = (
+				03C488E9187E8BED00375E86 /* worldNemedique.h */,
+				03C488EA187E8BED00375E86 /* worldNemedique.m */,
+				03C488EC187E8BFB00375E86 /* eventsNemedique.h */,
+				03C488ED187E8BFB00375E86 /* eventsNemedique.m */,
+			);
+			name = "III - Nemedique Universe";
+			sourceTree = "<group>";
+		};
+		03C488FC187E8C9200375E86 /* III - Neophine Universe */ = {
+			isa = PBXGroup;
+			children = (
+				03C488F6187E8C6E00375E86 /* worldNeophine.h */,
+				03C488F7187E8C6E00375E86 /* worldNeophine.m */,
+				03C488F9187E8C7500375E86 /* eventsNeophine.h */,
+				03C488FA187E8C7500375E86 /* eventsNeophine.m */,
+			);
+			name = "III - Neophine Universe";
+			sourceTree = "<group>";
+		};
+		03C488FD187E8C9E00375E86 /* III - Nestorine Universe */ = {
+			isa = PBXGroup;
+			children = (
+				03C488F0187E8C5300375E86 /* worldNestorine.h */,
+				03C488F1187E8C5300375E86 /* worldNestorine.m */,
+				03C488F3187E8C5E00375E86 /* eventsNestorine.h */,
+				03C488F4187E8C5E00375E86 /* eventsNestorine.m */,
+			);
+			name = "III - Nestorine Universe";
 			sourceTree = "<group>";
 		};
 		03F5C4A5187BBB3900352B8E /* Event11 - Photocopier */ = {
@@ -1804,16 +1876,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				03BBFAB8178A9E4E00E79C3D /* main.m in Sources */,
+				03C488E7187E8A6300375E86 /* eventsNephtaline.m in Sources */,
+				03C488EE187E8BFB00375E86 /* eventsNemedique.m in Sources */,
 				03F5C4A8187BBB7F00352B8E /* eventsNecomedre.m in Sources */,
 				03BBFABC178A9E4E00E79C3D /* xxiivvAppDelegate.m in Sources */,
+				03C488F2187E8C5300375E86 /* worldNestorine.m in Sources */,
+				03C488E4187E8A5500375E86 /* worldNephtaline.m in Sources */,
+				03C488F5187E8C5E00375E86 /* eventsNestorine.m in Sources */,
 				036D5BF7187D1DA00042378D /* xxiivvUtils.m in Sources */,
+				03C488F8187E8C6E00375E86 /* worldNeophine.m in Sources */,
 				0337732418710A2800C70C50 /* worldNecomedre.m in Sources */,
 				037F0269187D8DBC00747E8D /* splashViewController.m in Sources */,
 				03F5C4B0187BBF3500352B8E /* eventsLobby.m in Sources */,
 				03377321187105ED00C70C50 /* worldLobby.m in Sources */,
 				037F0262187D845300747E8D /* segueFade.m in Sources */,
+				03C488FB187E8C7500375E86 /* eventsNeophine.m in Sources */,
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
 				032D74EB179CF9670068B27E /* xxiivvWorld.m in Sources */,
+				03C488EB187E8BED00375E86 /* worldNemedique.m in Sources */,
 				03834E1E180B855B00568E60 /* xxiivvEvents.m in Sources */,
 				0355CFCC17C196C10069AF97 /* xxiivvTemplates.m in Sources */,
 			);

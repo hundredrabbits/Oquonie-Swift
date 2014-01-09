@@ -24,10 +24,14 @@ id | Location    | Event Name         | Notes
 10 | Necomedre   | photocopier1       |
 11 | Necomedre   | photocopier2       |
 12 | Necomedre   | photocopier3       |
-12 | Necomedre   | photocopierDoor    | Remember not to display message every time you enter the room
+13 | Necomedre   | photocopierDoor    | Remember not to display message every time you enter the room
+
+50 | spellgiver  | nephtaline
+
  
  # Alphabet
 == + =========== + ================== + ============================
+ C | Nephtaline
  N | Audio
  X | Document
 */
@@ -57,6 +61,7 @@ id | Location    | Event Name         | Notes
 	if(storageId == 10){ return @"X"; }
 	if(storageId == 11){ return @"X"; }
 	if(storageId == 12){ return @"X"; }
+	if(storageId == 50){ return @"C"; }
 	return @"";
 }
 
