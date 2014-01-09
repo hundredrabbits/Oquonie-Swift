@@ -7,6 +7,7 @@
 //
 
 #import "splashViewController.h"
+#import "xxiivvSettings.h"
 
 @interface splashViewController ()
 
@@ -16,7 +17,10 @@
 
 -(void)viewDidLoad
 {
-    [super viewDidLoad];	
+    [super viewDidLoad];
+	
+	if(systemDebug>0){ [self splashSkip]; }
+	
 	[self splashStart];
 }
 

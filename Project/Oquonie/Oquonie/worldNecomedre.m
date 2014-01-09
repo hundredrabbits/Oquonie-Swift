@@ -120,17 +120,29 @@
 	// Name,Background,Audio
 	@"Lobby Entrance",@"White",@"lobby"];
 	
-	worldNode[20] = @[
+	worldNode[30] = @[
 	// Tiles
-	@"21",@"14",@"21",
+	@"21",@"21",@"21",
 	@"21",@"21",@"21",
 	@"21",@"21",@"21",
 	// Walls
-	@"20",@"4|warp|21|0,-1",@"20",@"20",@"21",@"20",
+	@"20",@"24|warp|31|-1,0",@"20",@"20",@"21",@"20",
 	// Steps
 	@"0",@"10|event|photocopierDoor",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Office",@"White",@"lobby"];
+
+	worldNode[31] = @[
+	// Tiles
+	@"21",@"21",@"21",
+	@"14",@"21",@"21",
+	@"21",@"21",@"21",
+	// Walls
+	@"20",@"20",@"20",@"20",@"21",@"20",
+	// Steps
+	@"0",@"10|warp|5|0,1",@"0",@"0",@"10|warp|30|1,0",@"0",
+	// Name,Background,Audio
+	@"Office Lobby",@"White",@"lobby"];
 }
 
 @end

@@ -18,7 +18,7 @@
 	@"2",@"8",@"4",
 	@"2",@"2",@"2",
 	// Walls
-	@"0",@"15|warp|15|0,0",@"2",@"2",@"12|warp|2|0,-1",@"2",
+	@"0",@"15",@"2",@"2",@"12|warp|2|0,-1",@"2",
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
@@ -66,7 +66,7 @@
 	@"4",@"5",@"14",
 	@"9",@"6",@"9",
 	// Walls
-	@"3",@"14|warp|4|-1,0",@"3",@"3",@"4|port|10|0,-1,1",@"3",
+	@"3",@"14|warp|4|-1,0",@"3",@"3",@"4|warp|31|0,-1",@"3",
 	// Steps
 	@"0",@"7|warp|9|0,1",@"0",@"0",@"7|warp|6|1,0",@"0",
 	// Name,Background,Audio
@@ -96,7 +96,7 @@
 	// Name,Background,Audio
 	@"Lobby Fork III",@"White",@"lobby"];
 
-	worldNode[8] = [NSArray arrayWithObjects: @"9",nil];
+	worldNode[8] = @[];
 
 	worldNode[9] = @[
 	// Tiles

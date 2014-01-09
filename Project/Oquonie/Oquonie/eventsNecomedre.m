@@ -114,12 +114,12 @@
 	}
 	if(userSpriteCharId == 6){
 		// Door from side A
-		if( userLocation == 19 ){
-			[self eventWarp:@"20":@"0,-1"];
+		if( userLocation == 29 ){
+			[self eventWarp:@"30":@"0,-1"];
 		}
 		// Door from side B
-		else if ( userLocation == 20 ){
-			[self eventWarp:@"19":@"0,1"];
+		else if ( userLocation == 30 ){
+			[self eventWarp:@"29":@"0,1"];
 		}
 	}
 	else{
