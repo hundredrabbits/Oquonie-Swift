@@ -26,7 +26,7 @@
 	
 	worldNode[12] = @[
 	// Tiles
-	@"21",@"21|block|15",@"21|block|15",
+	@"21",@"21|event|speakerphone|9|r",@"21|block|15",
 	@"21",@"21",@"21",
 	@"21",@"21",@"21|block|16",
 	// Walls

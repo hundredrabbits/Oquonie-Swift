@@ -358,6 +358,16 @@
 	userSpriteCharId = charId;
 }
 
+-(void)eventAudioToggle :(int)toggle
+{
+	if(toggle == 1){
+		NSLog(@"•  ROOM | Audio        | Turned On");
+	}
+	else{
+		NSLog(@"•  ROOM | Audio        | Turned Off");
+	}
+}
+
 // =======================
 // @ Events: Clear Events
 // =======================
@@ -377,22 +387,5 @@
 		self.dialogCharacter3.alpha = 0;
 	} completion:^(BOOL finished){}];
 }
-
-
--(int)notificationListen :(NSString*)eventId {
-	
-	if( [eventId isEqualToString:@"AudioToggle"] ){
-		if(userAudioPlaying == 1){
-			return 0;
-		}
-	}
-    if( [userStorageEvents[[eventId intValue]] intValue] > 0){
-        return 0;
-    }
-	NSLog(@"  EVENT | Notification | #%@ ",eventId);
-	return 1;
-	
-}
-
 
 @end

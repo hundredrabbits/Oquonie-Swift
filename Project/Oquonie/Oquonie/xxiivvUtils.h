@@ -12,5 +12,6 @@
 
 -(BOOL)util_IsSpell :(int)storageId;
 -(NSString*)util_CharIdToLetter :(int)charId;
+-(NSString*)util_StorageIdToLetter :(int)storageId;
 
 @end

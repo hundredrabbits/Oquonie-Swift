@@ -841,7 +841,7 @@
 			name = Event8;
 			sourceTree = "<group>";
 		};
-		0304D7BC186CFCEA00ED6E94 /* Event9 */ = {
+		0304D7BC186CFCEA00ED6E94 /* Event9 - ambient */ = {
 			isa = PBXGroup;
 			children = (
 				0304D771186CEE0200ED6E94 /* event.9.l.1.png */,
@@ -851,10 +851,10 @@
 				0304D775186CEE0200ED6E94 /* event.9.r.2.png */,
 				0304D776186CEE0200ED6E94 /* event.9.r.3.png */,
 			);
-			name = Event9;
+			name = "Event9 - ambient";
 			sourceTree = "<group>";
 		};
-		0304D7BD186CFCF000ED6E94 /* Event10 */ = {
+		0304D7BD186CFCF000ED6E94 /* Event10 - Red */ = {
 			isa = PBXGroup;
 			children = (
 				03C0E65C186265B3006AA0E6 /* event.10.portrait.png */,
@@ -865,7 +865,7 @@
 				0304D779186CEE0200ED6E94 /* event.10.r.2.png */,
 				0304D77A186CEE0200ED6E94 /* event.10.r.3.png */,
 			);
-			name = Event10;
+			name = "Event10 - Red";
 			sourceTree = "<group>";
 		};
 		0304D7BE186CFD0000ED6E94 /* Event1 */ = {
@@ -1108,22 +1108,22 @@
 			name = Splash;
 			sourceTree = "<group>";
 		};
-		037F0266187D8C2D00747E8D /* Splash Systems */ = {
+		037F0266187D8C2D00747E8D /* I:: - Splash Systems */ = {
 			isa = PBXGroup;
 			children = (
 				037F0267187D8DBC00747E8D /* splashViewController.h */,
 				037F0268187D8DBC00747E8D /* splashViewController.m */,
 			);
-			name = "Splash Systems";
+			name = "I:: - Splash Systems";
 			sourceTree = "<group>";
 		};
-		037F026A187D8DC400747E8D /* Tools */ = {
+		037F026A187D8DC400747E8D /* :II - Tools */ = {
 			isa = PBXGroup;
 			children = (
 				037F0260187D845300747E8D /* segueFade.h */,
 				037F0261187D845300747E8D /* segueFade.m */,
 			);
-			name = Tools;
+			name = ":II - Tools";
 			sourceTree = "<group>";
 		};
 		03834E1B180B77FE00568E60 /* Steps */ = {
@@ -1187,12 +1187,12 @@
 		038C59271851472D005D6D35 /* en.sources */ = {
 			isa = PBXGroup;
 			children = (
-				03F5C4AB187BBD4000352B8E /* Basic Systems */,
-				03F5C4AA187BBD2500352B8E /* Core Systems */,
-				03F5C4B1187BBF4600352B8E /* Lobby Universe */,
-				03F5C4A9187BBBD500352B8E /* Necomedre Universe */,
-				037F0266187D8C2D00747E8D /* Splash Systems */,
-				037F026A187D8DC400747E8D /* Tools */,
+				037F0266187D8C2D00747E8D /* I:: - Splash Systems */,
+				03F5C4AB187BBD4000352B8E /* II: - Basic Systems */,
+				03F5C4AA187BBD2500352B8E /* II: - Core Systems */,
+				03F5C4B1187BBF4600352B8E /* III - Lobby Universe */,
+				03F5C4A9187BBBD500352B8E /* III - Necomedre Universe */,
+				037F026A187D8DC400747E8D /* :II - Tools */,
 			);
 			name = en.sources;
 			sourceTree = "<group>";
@@ -1241,8 +1241,8 @@
 				0304D7BA186CFCDA00ED6E94 /* Event6 */,
 				0304D7B4186CF09500ED6E94 /* Event7 */,
 				0304D7BB186CFCE100ED6E94 /* Event8 */,
-				0304D7BC186CFCEA00ED6E94 /* Event9 */,
-				0304D7BD186CFCF000ED6E94 /* Event10 */,
+				0304D7BC186CFCEA00ED6E94 /* Event9 - ambient */,
+				0304D7BD186CFCF000ED6E94 /* Event10 - Red */,
 				03F5C4A5187BBB3900352B8E /* Event11 - Photocopier */,
 			);
 			name = Events;
@@ -1331,6 +1331,7 @@
 		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
+				037F0265187D8BC400747E8D /* Splash */,
 				0304D7B5186CF18000ED6E94 /* Fx */,
 				038C5926185146AC005D6D35 /* Letters */,
 				03983BF617C1AA8D00C89446 /* Events */,
@@ -1339,7 +1340,6 @@
 				032D74E2179CD7D90068B27E /* Walls */,
 				03834E1B180B77FE00568E60 /* Steps */,
 				032D74DE179CD68A0068B27E /* Tiles */,
-				037F0265187D8BC400747E8D /* Splash */,
 			);
 			name = en.assets;
 			sourceTree = "<group>";
@@ -1358,7 +1358,7 @@
 			name = "Event11 - Photocopier";
 			sourceTree = "<group>";
 		};
-		03F5C4A9187BBBD500352B8E /* Necomedre Universe */ = {
+		03F5C4A9187BBBD500352B8E /* III - Necomedre Universe */ = {
 			isa = PBXGroup;
 			children = (
 				0337732218710A2800C70C50 /* worldNecomedre.h */,
@@ -1366,10 +1366,10 @@
 				03F5C4A6187BBB7F00352B8E /* eventsNecomedre.h */,
 				03F5C4A7187BBB7F00352B8E /* eventsNecomedre.m */,
 			);
-			name = "Necomedre Universe";
+			name = "III - Necomedre Universe";
 			sourceTree = "<group>";
 		};
-		03F5C4AA187BBD2500352B8E /* Core Systems */ = {
+		03F5C4AA187BBD2500352B8E /* II: - Core Systems */ = {
 			isa = PBXGroup;
 			children = (
 				032D74E9179CF9670068B27E /* xxiivvWorld.h */,
@@ -1381,10 +1381,10 @@
 				036D5BF5187D1DA00042378D /* xxiivvUtils.h */,
 				036D5BF6187D1DA00042378D /* xxiivvUtils.m */,
 			);
-			name = "Core Systems";
+			name = "II: - Core Systems";
 			sourceTree = "<group>";
 		};
-		03F5C4AB187BBD4000352B8E /* Basic Systems */ = {
+		03F5C4AB187BBD4000352B8E /* II: - Basic Systems */ = {
 			isa = PBXGroup;
 			children = (
 				03BBFABA178A9E4E00E79C3D /* xxiivvAppDelegate.h */,
@@ -1392,10 +1392,10 @@
 				03BBFAC6178A9E4E00E79C3D /* xxiivvViewController.h */,
 				03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */,
 			);
-			name = "Basic Systems";
+			name = "II: - Basic Systems";
 			sourceTree = "<group>";
 		};
-		03F5C4B1187BBF4600352B8E /* Lobby Universe */ = {
+		03F5C4B1187BBF4600352B8E /* III - Lobby Universe */ = {
 			isa = PBXGroup;
 			children = (
 				0337731F187105ED00C70C50 /* worldLobby.h */,
@@ -1403,7 +1403,7 @@
 				03F5C4AE187BBF3500352B8E /* eventsLobby.h */,
 				03F5C4AF187BBF3500352B8E /* eventsLobby.m */,
 			);
-			name = "Lobby Universe";
+			name = "III - Lobby Universe";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

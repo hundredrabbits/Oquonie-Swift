@@ -18,7 +18,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return 1;
+			return userStorageEventId;
 		}
 		return 0;
 	}
@@ -41,7 +41,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return 1;
+			return userStorageEventId;
 		}
 		return 0;
 	}
@@ -64,7 +64,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return 1;
+			return userStorageEventId;
 		}
 		return 0;
 	}
@@ -78,6 +78,30 @@
         [self eventSpell:userStorageEventId:6];
     }
 	// Return storage Id
+	return userStorageEventId;
+}
+
+-(int)event_speakerphone :(NSString*)option
+{
+	int userStorageEventId = 1;
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[userStorageEventId] intValue]<1){
+			return 0;
+		}
+		return userStorageEventId;
+	}
+	// Dialog
+    if([userStorageEvents[userStorageEventId] intValue]>0){
+        [self eventDialog:@"AAA":@"11"];
+        [self eventSpell:userStorageEventId:0];
+		[self eventAudioToggle:1];
+    }
+    else{
+        [self eventDialog:@"AAA":@"11"];
+        [self eventSpell:userStorageEventId:1];
+		[self eventAudioToggle:0];
+    }
 	return userStorageEventId;
 }
 

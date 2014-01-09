@@ -11,7 +11,7 @@
 == + =========== + ================== + ============================
 id | Location    | Event Name         | Notes
 == + =========== + ================== + ============================
-1  | Settings    | audioToggle
+1  | Settings    | audioToggle        | 1 = on
 2  | Settings    |
 3  | Settings    |
 4  | Settings    |
@@ -25,6 +25,11 @@ id | Location    | Event Name         | Notes
 11 | Necomedre   | photocopier2       |
 12 | Necomedre   | photocopier3       |
 12 | Necomedre   | photocopierDoor    | Remember not to display message every time you enter the room
+ 
+ # Alphabet
+== + =========== + ================== + ============================
+ N | Audio
+ X | Document
 */
 
 
@@ -45,5 +50,17 @@ id | Location    | Event Name         | Notes
 	if(charId == 6){ return @"X"; }
 	return @"A";
 }
+
+
+-(NSString*)util_StorageIdToLetter :(int)storageId
+{
+	if(storageId == 1 ){ return @"N"; }
+	if(storageId == 10){ return @"X"; }
+	if(storageId == 11){ return @"X"; }
+	if(storageId == 12){ return @"X"; }
+	return @"";
+}
+
+
 
 @end

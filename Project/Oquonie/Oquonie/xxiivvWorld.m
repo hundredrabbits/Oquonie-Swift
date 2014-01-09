@@ -8,6 +8,7 @@
 
 #import "xxiivvWorld.h"
 #import "xxiivvEvents.h"
+#import "xxiivvUtils.h"
 
 #import "worldLobby.h"
 #import "worldNecomedre.h"
@@ -133,11 +134,10 @@
 		
 			UIImageView *letterView = [[UIImageView alloc] initWithFrame:CGRectMake( (newView.frame.size.width/2)-20, 2.5, 40, 40)];
 			letterView.tag = 30;
-			letterView.image = [UIImage imageNamed:[NSString stringWithFormat:@"letterX.png"]];
+			letterView.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_StorageIdToLetter:hasNotification]]];
 			[newView addSubview:letterView];
 		
 		[self.spritesContainer addSubview:newView];
-		
 		
 	}
 }
