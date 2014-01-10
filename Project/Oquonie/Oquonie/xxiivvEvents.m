@@ -79,6 +79,7 @@
 	[self roomStart];
 	[self templateRoomAnimation];
 	[self moveParallax];
+	[self moveOrder];
 }
 
 - (void)eventDialog :(NSString*)dialog :(NSString*)characterId

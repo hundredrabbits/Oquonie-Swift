@@ -89,9 +89,10 @@
 
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;
-- (void) moveDisable :(float)disableTime;
 
-- (void)moveParallax;
+-(void)moveDisable :(float)disableTime;
+-(void)moveOrder;
+-(void)moveParallax;
 
 @end
 

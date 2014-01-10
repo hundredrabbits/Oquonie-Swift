@@ -34,11 +34,11 @@
 	// Steps
 	@"0",@"7|warp|1|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Fork I",@"White",@"lobby"];
+	@"Lobby Deck",@"White",@"lobby"];
 
 	worldNode[3] = @[
 	// Tiles
-	@"1",@"23",@"1|event|tip2|1|r",
+	@"1",@"23",@"1|event|owlSave|1|r",
 	@"6",@"5",@"1",
 	@"1|block|1",@"4",@"1",
 	// Walls
@@ -46,7 +46,7 @@
 	// Steps
 	@"0",@"7|warp|4|0,1",@"0",@"0",@"7|warp|2|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby House Room",@"White",@"lobby"];
+	@"Lobby Neomine",@"White",@"lobby"];
 
 	worldNode[4] = @[
 	// Tiles
@@ -70,7 +70,7 @@
 	// Steps
 	@"0",@"7|warp|9|0,1",@"0",@"0",@"7|warp|6|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Fork II",@"White",@"lobby"];
+	@"Lobby Fork",@"White",@"lobby"];
 
 	worldNode[6] = @[
 	// Tiles
@@ -94,7 +94,7 @@
 	// Steps
 	@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Fork III",@"White",@"lobby"];
+	@"Lobby Nepomucene",@"White",@"lobby"];
 
 	worldNode[8] = @[];
 
@@ -108,7 +108,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Fork III",@"White",@"lobby"];
+	@"Lobby Nemedique",@"White",@"lobby"];
 
 	worldNode[10] = @[
 	// Tiles

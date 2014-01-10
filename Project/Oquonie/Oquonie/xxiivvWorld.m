@@ -22,7 +22,7 @@
 
 @implementation xxiivvViewController (world)
 
-- (void) worldStart
+-(void)worldStart
 {
 	worldNode = [NSMutableArray arrayWithObjects:@"",nil];
 	int myCount = 0;
@@ -42,8 +42,8 @@
 	[self createWorldNeophine];
 }
 
-- (NSString*) tileParser :(NSString*)tileString :(int)index {
-		
+- (NSString*) tileParser :(NSString*)tileString :(int)index
+{
 	NSArray* array = [tileString componentsSeparatedByString: @"|"];
 	if( [array count] < (index+1) && index > 0 ){
 		return 0;
@@ -53,7 +53,7 @@
 	return value;
 }
 
-- (void) roomStart
+-(void)roomStart
 {
 	NSLog(@"------- - ------------ - -------------------");
 	NSLog(@"!  ROOM | Load..       * %d:%@", userLocation, worldNode[userLocation][21]);
@@ -69,11 +69,10 @@
 	[self roomGenerateNotifications];
 	[self roomGenerateBackground];
 	[self roomGenerateAudioTrack];
-	
-	
 }
 
--(void)roomGenerateTiles {
+-(void)roomGenerateTiles
+{
 	self.floor00.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][4]:0]] ];
 	self.floor1e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][8]:0]] ];
 	self.floore1.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][0]:0]] ];
@@ -100,7 +99,8 @@
 }
 
 
--(void)roomGenerateBlockers {
+-(void)roomGenerateBlockers
+{
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"block"] ){
@@ -114,33 +114,27 @@
 	}
 }
 
--(void)roomGenerateEvents {
+-(void)roomGenerateEvents
+{
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
 			NSLog(@"+  ROOM | Events       | Generate -> %@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
 			
-			NSLog(@"Tile Id:%d",tileId);
-			NSLog(@"Tile x:%d",[self flattenTileId:tileId :@"x"]);
-			NSLog(@"Tile y:%d",[self flattenTileId:tileId :@"y"]);
-			NSLog(@"Tile sprite:%@",[self tileParser:tile :3]);
-			NSLog(@"Tile sprite orientation:%@",[self tileParser:tile :4]);
-			
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
-			
 			newView.tag = 20;
 			
 			if([self tileParser:tile :3]){
 				newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
 			}
-			
 			[self.spritesContainer addSubview:newView];
 		}
 		tileId += 1;
 	}
 }
 
--(void)roomGenerateNotifications {
+-(void)roomGenerateNotifications
+{
 	int tileId = -1; // ...
 	for (NSString *tile in worldNode[userLocation]) {
 		tileId += 1;

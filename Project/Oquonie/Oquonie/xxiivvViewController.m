@@ -11,6 +11,7 @@
 #import "xxiivvTemplates.h"
 #import "xxiivvEvents.h"
 #import "xxiivvSettings.h"
+#import "xxiivvUser.h"
 
 @interface xxiivvViewController ()
 
@@ -37,27 +38,6 @@
 	[self roomStart];
 	[self moveOrder];
 	[self timerStart];
-}
-
-# pragma mark User -
-
--(void)userStart
-{
-	userPositionX = userCharacterX;
-	userPositionY = userCharacterY;
-	userSpriteCharId = userCharacterId;
-	userLocation = userCharacterLocation;
-	
-	userSpriteState = @"stand";
-	userSpriteOrientationHorizontal = @"l";
-	userSpriteOrientationVertical = @"f";
-	userMoveEnabled = 1;
-	userDialogActive = 0;
-	
-    // New event storage
-    userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
-    int myCount = 0;
-    while ( myCount < 40 )	{ myCount++; userStorageEvents[myCount] = @"";	}
 }
 
 # pragma mark Move -
@@ -149,14 +129,14 @@
 
 - (void) moveEnable
 {
-	NSLog(@"•  GAME | Move         | Enabled");
+	NSLog(@"•  USER | Move         | Enabled");
 	
 	userMoveEnabled = 1;
 }
 
 - (void) moveDisable :(float)disableTime
 {
-	NSLog(@"•  GAME | Move         | Disabled");
+	NSLog(@"•  USER | Move         | Disabled");
 	
 	[worldMoveTimer invalidate];
 	

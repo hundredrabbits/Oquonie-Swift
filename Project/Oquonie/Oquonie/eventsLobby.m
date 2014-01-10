@@ -8,6 +8,7 @@
 
 #import "eventsLobby.h"
 #import "xxiivvEvents.h"
+#import "xxiivvUser.h"
 
 @implementation xxiivvViewController (eventsLobby)
 
@@ -107,7 +108,7 @@
 	return 2;
 }
 
--(int)event_tip2 :(NSString*)option
+-(int)event_owlSave :(NSString*)option
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -115,6 +116,8 @@
 	}
 	// Dialog
     [self eventDialog:@"UVW":@"1"];
+	[self userSave];
+	
 	// Return storage Id
 	return 2;
 }
