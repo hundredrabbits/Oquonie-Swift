@@ -119,19 +119,28 @@
 -(int)event_tutorialCharacter :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
+		if(userSpriteCharId == 1){
+			return 1;
+		}
 		return 0;
 	}
-	[self eventWarp:@"31" :@"0,0"];
+	if(userSpriteCharId == 1){
+		[self eventWarp:@"31" :@"0,0"];
+	}
+	if(userSpriteCharId == 6){
+		[self eventTranform:1];
+	}
 	
 	return 0;
 }
 
--(int)event_tutorialRedCharacter :(NSString*)option
+-(int)event_tutorialCharacterTransformed :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
 		return 0;
 	}
 	[self eventWarp:@"31" :@"0,0"];
+	[self eventTranform:1];
 	
 	return 0;
 }

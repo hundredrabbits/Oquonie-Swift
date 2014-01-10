@@ -15,6 +15,7 @@
 -(void)eventDialog :(NSString*)dialog :(NSString*)characterId;
 -(void)eventSpell :(int)spellId :(int)spellType;
 -(void)eventAudioToggle :(int)toggle;
+-(void)eventTranform :(int)charId;
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates;
 
