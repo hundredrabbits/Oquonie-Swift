@@ -108,7 +108,6 @@
 		[self moveCollideAnimateChar:posX:posY];
 	}
 	[self moveOrder];
-	
 }
 
 - (void)moveParallax
@@ -169,22 +168,19 @@
 {
 	NSLog(@"•  ROOM | Blockers     | Update   -> z order");
 	
-    float userPositionOrder = self.userPlayer.frame.origin.y+self.userPlayer.frame.size.height;
     float subviewPositionOrder = 0;
-
+	
     for (UIView *subview in [self.spritesContainer subviews]) {
-		
-		if(subview.tag == 404){ continue; }
 		
         subviewPositionOrder = subview.frame.origin.y+subview.frame.size.height;
 		
-        if( userPositionOrder > subviewPositionOrder ){
-			[self.spritesContainer bringSubviewToFront:self.userPlayer];
-        }
-        else{
-            [self.spritesContainer bringSubviewToFront:subview];
-        }
-    }
+		if(subviewPositionOrder > ((self.flooree.frame.origin.y+self.flooree.frame.size.height)-10) ){
+			[self.spritesContainer bringSubviewToFront:subview];
+		}
+		if(subviewPositionOrder < ((self.floor11.frame.origin.y+self.floor11.frame.size.height)+10) ){
+			[self.spritesContainer sendSubviewToBack:subview];
+		}
+	}
 }
 
 - (int) moveEvent :(int)posX :(int)posY

@@ -13,5 +13,16 @@
 -(void)createWorldNephtaline
 {
 	
+	worldNode[40] = @[
+	// Tiles
+	@"21",@"21",@"21",
+	@"21",@"21|block|12",@"21",
+	@"21",@"21",@"21",
+	// Walls
+	@"20",@"20",@"20",@"20",@"20",@"20",
+	// Steps
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Lobby Entrance",@"White",@"lobby"];
 }
 @end

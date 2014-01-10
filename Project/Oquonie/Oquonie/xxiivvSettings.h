@@ -8,7 +8,7 @@
 
 #define systemDebug				1
 
-#define userCharacterId			6
+#define userCharacterId			1
 #define userCharacterLocation	1
 #define userCharacterX			0
 #define userCharacterY			0

@@ -143,7 +143,6 @@
 	@"0",@"10|event|photocopierDoor",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Office",@"White",@"lobby"];
-	
 
 }
 
