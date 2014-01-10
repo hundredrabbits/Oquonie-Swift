@@ -118,10 +118,22 @@
 	int tileId = 0;
 	for (NSString *tile in worldNode[userLocation]) {
 		if( [[self tileParser:tile :1] isEqualToString:@"event"] ){
-			NSLog(@"+  ROOM | Blockers     | Generate -> %@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			NSLog(@"+  ROOM | Events       | Generate -> %@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+			
+			NSLog(@"Tile Id:%d",tileId);
+			NSLog(@"Tile x:%d",[self flattenTileId:tileId :@"x"]);
+			NSLog(@"Tile y:%d",[self flattenTileId:tileId :@"y"]);
+			NSLog(@"Tile sprite:%@",[self tileParser:tile :3]);
+			NSLog(@"Tile sprite orientation:%@",[self tileParser:tile :4]);
+			
 			UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
+			
 			newView.tag = 20;
-			newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
+			
+			if([self tileParser:tile :3]){
+				newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1.png",[self tileParser:tile :3],[self tileParser:tile :4]]];
+			}
+			
 			[self.spritesContainer addSubview:newView];
 		}
 		tileId += 1;

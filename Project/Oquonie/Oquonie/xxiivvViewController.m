@@ -336,9 +336,7 @@
 	if( posX == 0 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-2, centerH+(tileH*0.5)*-0.45, tileW, tileH); }
 	if( posX == 1 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-1, centerH+(tileH*0.5)*-0.79, tileW, tileH); }
 	
-	NSLog(@"error");
-	
-	return CGRectMake(0, 0, 100, 100);
+	return CGRectMake(0, 0, 0, 0);
 }
 
 
@@ -378,17 +376,33 @@
 -(int)flattenTileId :(int)tileId :(NSString*)axis
 {
 	if([axis isEqualToString:@"x"]){
-		if(tileId == 0){ return 1; }
-		if(tileId == 1){ return 1; }
-		if(tileId == 2){ return 1; }
-		if(tileId == 3){ return 0; }
-		if(tileId == 4){ return 0; }
-		if(tileId == 5){ return 0; }
+		// Tiles
+		if(tileId == 0){ return 1;  }
+		if(tileId == 1){ return 1;  }
+		if(tileId == 2){ return 1;  }
+		if(tileId == 3){ return 0;  }
+		if(tileId == 4){ return 0;  }
+		if(tileId == 5){ return 0;  }
 		if(tileId == 6){ return -1; }
 		if(tileId == 7){ return -1; }
 		if(tileId == 8){ return -1; }
+		// Walls
+		if(tileId == 9 ){ return 2; }
+		if(tileId == 10){ return 2; }
+		if(tileId == 11){ return 2; }
+		if(tileId == 12){ return 2; }
+		if(tileId == 13){ return 1; }
+		if(tileId == 14){ return 0; }
+		// Steps
+		if(tileId == 15){ return -1;}
+		if(tileId == 16){ return  0;}
+		if(tileId == 17){ return -1;}
+		if(tileId == 18){ return -1;}
+		if(tileId == 19){ return -1;}
+		if(tileId == 20){ return -1;}
 	}
 	if([axis isEqualToString:@"y"]){
+		// Tiles
 		if(tileId == 0){ return -1; }
 		if(tileId == 1){ return 0; }
 		if(tileId == 2){ return 1; }
@@ -398,6 +412,20 @@
 		if(tileId == 6){ return -1; }
 		if(tileId == 7){ return 0; }
 		if(tileId == 8){ return 1; }
+		// Walls
+		if(tileId == 9 ){ return 0; }
+		if(tileId == 10){ return 1; }
+		if(tileId == 11){ return 2; }
+		if(tileId == 12){ return 2; }
+		if(tileId == 13){ return 2; }
+		if(tileId == 14){ return 2; }
+		// Steps
+		if(tileId == 15){ return -1;}
+		if(tileId == 16){ return -2;}
+		if(tileId == 17){ return -1;}
+		if(tileId == 18){ return -1;}
+		if(tileId == 19){ return -1;}
+		if(tileId == 20){ return -1;}
 	}
 	
 	return 0;
@@ -463,12 +491,19 @@
 {
 	for (UIImageView *subview in [self.spritesContainer subviews]) {
 		if(subview.tag != 20){ continue; }
-		int tileId = 0;
-		while (tileId <10) {
-			if([[self tileParser:worldNode[userLocation][tileId] :1] isEqualToString:@"event"]){
-				subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[self tileParser:worldNode[userLocation][tileId] :3] intValue], [self tileParser:worldNode[userLocation][tileId] :4], worldTimerEventCount]];
-			}
+		
+		int tileId = -1;
+		while (tileId < 21) {
+			
 			tileId += 1;
+			
+			// Lets identify the current subview
+			if(![[self tileParser:worldNode[userLocation][tileId] :1] isEqualToString:@"event"]){ continue; }
+			if( subview.frame.origin.x != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
+			if( subview.frame.origin.y != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
+			
+			subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[self tileParser:worldNode[userLocation][tileId] :3] intValue], [self tileParser:worldNode[userLocation][tileId] :4], worldTimerEventCount]];
+		
 		}
 	}
 }

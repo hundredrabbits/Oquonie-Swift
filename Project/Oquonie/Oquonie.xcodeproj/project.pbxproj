@@ -313,7 +313,7 @@
 		03C0E66B186265B3006AA0E6 /* event.7.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C0E65A186265B3006AA0E6 /* event.7.portrait.png */; };
 		03C0E66C186265B3006AA0E6 /* event.8.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C0E65B186265B3006AA0E6 /* event.8.portrait.png */; };
 		03C0E66D186265B3006AA0E6 /* event.10.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C0E65C186265B3006AA0E6 /* event.10.portrait.png */; };
-		03C0E66E186265B3006AA0E6 /* event.10.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C0E65D186265B3006AA0E6 /* event.10.r.png */; };
+		03C0E66E186265B3006AA0E6 /* event.10.r.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C0E65D186265B3006AA0E6 /* event.10.r.1.png */; };
 		03C0E66F186265B3006AA0E6 /* letterU.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C0E65E186265B3006AA0E6 /* letterU.png */; };
 		03C0E670186265B3006AA0E6 /* letterV.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C0E65F186265B3006AA0E6 /* letterV.png */; };
 		03C0E671186265B3006AA0E6 /* letterW.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C0E660186265B3006AA0E6 /* letterW.png */; };
@@ -681,7 +681,7 @@
 		03C0E65A186265B3006AA0E6 /* event.7.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.7.portrait.png; path = en.assets/event.7.portrait.png; sourceTree = "<group>"; };
 		03C0E65B186265B3006AA0E6 /* event.8.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.8.portrait.png; path = en.assets/event.8.portrait.png; sourceTree = "<group>"; };
 		03C0E65C186265B3006AA0E6 /* event.10.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.10.portrait.png; path = en.assets/event.10.portrait.png; sourceTree = "<group>"; };
-		03C0E65D186265B3006AA0E6 /* event.10.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.10.r.png; path = en.assets/event.10.r.png; sourceTree = "<group>"; };
+		03C0E65D186265B3006AA0E6 /* event.10.r.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.10.r.1.png; path = en.assets/event.10.r.1.png; sourceTree = "<group>"; };
 		03C0E65E186265B3006AA0E6 /* letterU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterU.png; path = en.assets/letterU.png; sourceTree = "<group>"; };
 		03C0E65F186265B3006AA0E6 /* letterV.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterV.png; path = en.assets/letterV.png; sourceTree = "<group>"; };
 		03C0E660186265B3006AA0E6 /* letterW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterW.png; path = en.assets/letterW.png; sourceTree = "<group>"; };
@@ -883,7 +883,7 @@
 			isa = PBXGroup;
 			children = (
 				03C0E65C186265B3006AA0E6 /* event.10.portrait.png */,
-				03C0E65D186265B3006AA0E6 /* event.10.r.png */,
+				03C0E65D186265B3006AA0E6 /* event.10.r.1.png */,
 				0325D982185D5B5100C8134C /* event.10.l.1.png */,
 				0304D777186CEE0200ED6E94 /* event.10.l.2.png */,
 				0304D778186CEE0200ED6E94 /* event.10.l.3.png */,
@@ -893,7 +893,7 @@
 			name = "Event10 - Red";
 			sourceTree = "<group>";
 		};
-		0304D7BE186CFD0000ED6E94 /* Event1 */ = {
+		0304D7BE186CFD0000ED6E94 /* Event1 - Owl */ = {
 			isa = PBXGroup;
 			children = (
 				03C0E655186265B3006AA0E6 /* event.1.portrait.png */,
@@ -904,7 +904,7 @@
 				03734778186BA790000A5ED7 /* event.1.r.2.png */,
 				03734779186BA790000A5ED7 /* event.1.r.3.png */,
 			);
-			name = Event1;
+			name = "Event1 - Owl";
 			sourceTree = "<group>";
 		};
 		0304D7BF186CFE2900ED6E94 /* Characters */ = {
@@ -1262,7 +1262,7 @@
 		03983BF617C1AA8D00C89446 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				0304D7BE186CFD0000ED6E94 /* Event1 */,
+				0304D7BE186CFD0000ED6E94 /* Event1 - Owl */,
 				0304D7B6186CFCB200ED6E94 /* Event2 */,
 				0304D7B7186CFCBB00ED6E94 /* Event3 */,
 				0304D7B8186CFCC200ED6E94 /* Event4 */,
@@ -1776,7 +1776,7 @@
 				0332383A17D4BDB8001B1328 /* char4.walk.l.b.2.png in Resources */,
 				0332383B17D4BDB8001B1328 /* char4.walk.l.f.1.png in Resources */,
 				03834E3A180B941500568E60 /* step.6.r.png in Resources */,
-				03C0E66E186265B3006AA0E6 /* event.10.r.png in Resources */,
+				03C0E66E186265B3006AA0E6 /* event.10.r.1.png in Resources */,
 				0332383C17D4BDB8001B1328 /* char4.walk.l.f.2.png in Resources */,
 				03834E4F180C229700568E60 /* letterD.png in Resources */,
 				0304D78A186CEE0200ED6E94 /* char4.stand.r.f.2.png in Resources */,

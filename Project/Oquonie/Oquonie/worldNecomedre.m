@@ -122,11 +122,11 @@
 	
 	worldNode[30] = @[
 	// Tiles
-	@"21",@"21",@"21",
-	@"21",@"21",@"21",
-	@"21",@"21",@"21",
+	@"21|block|16",@"2|event|photocopier1|1|r",@"2",
+	@"21",@"2",@"2",
+	@"21",@"2|event|photocopier2|1|r",@"2",
 	// Walls
-	@"20",@"24|warp|31|-1,0",@"20",@"20",@"21",@"20",
+	@"20",@"19|warp|31|-1,0",@"19",@"17",@"27|event|photocopierDoor",@"17",
 	// Steps
 	@"0",@"10|event|photocopierDoor",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
