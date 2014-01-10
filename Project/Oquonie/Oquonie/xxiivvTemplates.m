@@ -66,7 +66,10 @@
 	char2Origin = self.dialogCharacter2.frame;
 	char3Origin = self.dialogCharacter3.frame;
 	
+	spriteContainerOrigin = self.spritesContainer.frame;
+	roomContainerOrigin = self.roomContainer.frame;
 	parallaxFrontOrigin = self.parallaxFront.frame;
+	parallaxBackOrigin = self.parallaxBack.frame;
 	
 	self.dialogCharacter.frame = portraitOrigin;
 	self.dialogCharacter.alpha = 0;

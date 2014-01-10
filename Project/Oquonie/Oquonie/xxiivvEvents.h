@@ -16,6 +16,8 @@
 -(void)eventSpell :(int)spellId :(int)spellType;
 -(void)eventAudioToggle :(int)toggle;
 
+-(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates;
+
 -(NSString*) eventParser :(NSString*)eventString :(int)index;
 
 -(void)roomClearDialog;

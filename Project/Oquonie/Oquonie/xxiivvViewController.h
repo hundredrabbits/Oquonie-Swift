@@ -147,4 +147,7 @@ CGRect char2Origin;
 CGRect char3Origin;
 
 CGRect parallaxFrontOrigin;
+CGRect parallaxBackOrigin;
+CGRect roomContainerOrigin;
+CGRect spriteContainerOrigin;
 

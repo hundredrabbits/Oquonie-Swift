@@ -209,6 +209,36 @@
 	}
 }
 
+-(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates
+{
+	[UIView animateWithDuration:3 animations:^(void){
+		NSLog(@"  EVENT | Pan          | Panning Out");
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		[UIView setAnimationDelay:0.2];
+		self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, screen.size.height);
+		self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, screen.size.height-30);
+		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, screen.size.height-10);
+		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, screen.size.height+20);
+	} completion:^(BOOL finished){
+		NSLog(@"  EVENT | Pan          | Panning In");
+		
+		[self eventWarp:destinationId:destinationCoordinates];
+		
+		self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, -1*screen.size.height);
+		self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, -1*screen.size.height-100);
+		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+10);
+		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height-50);
+		
+		[UIView animateWithDuration:2.5 animations:^(void){
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+			self.roomContainer.frame = roomContainerOrigin;
+			self.spritesContainer.frame = spriteContainerOrigin;
+			self.parallaxBack.frame = parallaxBackOrigin;
+			self.parallaxFront.frame = parallaxFrontOrigin;
+		} completion:^(BOOL finished){}];
+	}];
+}
+
 // =======================
 // @ Events: Clear Events
 // =======================

@@ -105,6 +105,37 @@
 	return userStorageEventId;
 }
 
+
+-(int)event_tutorialRedDoor :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){
+		return 0;
+	}
+	[self eventTransitionPan:@"1":@"0,0"];
+	
+	return 0;
+}
+
+-(int)event_tutorialCharacter :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){
+		return 0;
+	}
+	[self eventWarp:@"31" :@"0,0"];
+	
+	return 0;
+}
+
+-(int)event_tutorialRedCharacter :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){
+		return 0;
+	}
+	[self eventWarp:@"31" :@"0,0"];
+	
+	return 0;
+}
+
 -(int)event_photocopierDoor :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
