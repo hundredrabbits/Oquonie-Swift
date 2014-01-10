@@ -147,13 +147,21 @@
 - (void) moveOrder
 {
 	NSLog(@"•  ROOM | Blockers     | Update   -> z order");
-	
     float subviewPositionOrder = 0;
-	
+	// +Z1 & -Z1
     for (UIView *subview in [self.spritesContainer subviews]) {
-		
         subviewPositionOrder = subview.frame.origin.y+subview.frame.size.height;
-		
+		if(subviewPositionOrder > ((self.floor0e.frame.origin.y+self.floor0e.frame.size.height)-10) ){
+			[self.spritesContainer bringSubviewToFront:subview];
+		}
+		if(subviewPositionOrder < ((self.floor10.frame.origin.y+self.floor10.frame.size.height)+10) ){
+			[self.spritesContainer sendSubviewToBack:subview];
+		}
+	}
+	
+	// +Z2 & -Z2
+    for (UIView *subview in [self.spritesContainer subviews]) {
+        subviewPositionOrder = subview.frame.origin.y+subview.frame.size.height;
 		if(subviewPositionOrder > ((self.flooree.frame.origin.y+self.flooree.frame.size.height)-10) ){
 			[self.spritesContainer bringSubviewToFront:subview];
 		}

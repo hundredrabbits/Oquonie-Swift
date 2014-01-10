@@ -122,7 +122,7 @@
 	
 	worldNode[30] = @[
 	// Tiles
-	@"21|block|16",@"21|event|tutorialCharacter|4|r",@"21",
+	@"21|block|16",@"21|event|tutorialCharacter|12|r",@"21",
 	@"21",@"21",@"21",
 	@"21",@"21",@"21",
 	// Walls

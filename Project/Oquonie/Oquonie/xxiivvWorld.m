@@ -148,16 +148,25 @@
 		// Notification
 		
 		NSLog(@"+ NOTIF | Notification | Generate -> %@", [self tileParser:tile :2]);
-		UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
-		newView.tag = 30;
-		newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
 		
-			UIImageView *letterView = [[UIImageView alloc] initWithFrame:CGRectMake( (newView.frame.size.width/2)-20, 2.5, 40, 40)];
+		CGRect bubbleViewFrame = [self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]];
+		UIImageView *bubbleView = [[UIImageView alloc] initWithFrame:CGRectOffset(bubbleViewFrame, 0, 5)];
+		bubbleView.tag = 30;
+		bubbleView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
+		
+			UIImageView *letterView = [[UIImageView alloc] initWithFrame:CGRectMake( (bubbleView.frame.size.width/2)-20, 2.5, 40, 40)];
 			letterView.tag = 30;
 			letterView.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_StorageIdToLetter:hasNotification]]];
-			[newView addSubview:letterView];
+			[bubbleView addSubview:letterView];
 		
-		[self.spritesContainer addSubview:newView];
+		bubbleView.alpha = 0;
+		
+		[UIView animateWithDuration:0.5 animations:^(void){
+			bubbleView.frame = bubbleViewFrame;
+			bubbleView.alpha = 1;
+		} completion:^(BOOL finished){}];
+		
+		[self.spritesContainer addSubview:bubbleView];
 		
 	}
 }
