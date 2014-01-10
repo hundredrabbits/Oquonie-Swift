@@ -211,6 +211,7 @@
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates
 {
+	[self moveDisable:4];
 	[UIView animateWithDuration:3 animations:^(void){
 		NSLog(@"  EVENT | Pan          | Panning Out");
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];

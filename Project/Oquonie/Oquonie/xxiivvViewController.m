@@ -74,7 +74,7 @@
 	}
 	
 	// Move disable timeout
-	[self moveDisable];
+	[self moveDisable:0.2];
 	
 	int blocker = [self moveEvent:( userPositionX+posX ) :( userPositionY+posY )];
 	
@@ -150,13 +150,19 @@
 
 - (void) moveEnable
 {
+	NSLog(@"•  GAME | Move         | Enabled");
+	
 	userMoveEnabled = 1;
 }
 
-- (void) moveDisable
+- (void) moveDisable :(float)disableTime
 {
+	NSLog(@"•  GAME | Move         | Disabled");
+	
+	[worldMoveTimer invalidate];
+	
 	userMoveEnabled = 0;
-	[NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
+	worldMoveTimer = [NSTimer scheduledTimerWithTimeInterval:disableTime target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
 }
 
 - (void) moveOrder

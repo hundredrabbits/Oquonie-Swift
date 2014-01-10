@@ -112,6 +112,7 @@
 		return 0;
 	}
 	[self eventTransitionPan:@"1":@"0,0"];
+	[self eventDialog:@"UVW":@"10"];		
 	
 	return 0;
 }
@@ -126,6 +127,7 @@
 	}
 	if(userSpriteCharId == 1){
 		[self eventWarp:@"31" :@"0,0"];
+		[self eventDialog:@"UVW":@"10"];
 	}
 	if(userSpriteCharId == 6){
 		[self eventTranform:1];
