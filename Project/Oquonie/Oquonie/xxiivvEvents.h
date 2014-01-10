@@ -16,6 +16,7 @@
 -(void)eventSpell :(int)spellId :(int)spellType;
 -(void)eventAudioToggle :(int)toggle;
 -(void)eventTranform :(int)charId;
+-(void)eventVignette :(NSString*) vignetteType;
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates;
 

@@ -136,7 +136,7 @@
 	// Tiles
 	@"21|block|16",@"2|event|tutorialCharacterTransformed|10|r",@"2",
 	@"21",@"2",@"2",
-	@"21",@"2",@"2",
+	@"21",@"21",@"2",
 	// Walls
 	@"20",@"19|warp|31|-1,0",@"19",@"17",@"27|event|tutorialRedDoor",@"17",
 	// Steps

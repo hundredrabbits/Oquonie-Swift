@@ -128,9 +128,11 @@
 	if(userSpriteCharId == 1){
 		[self eventWarp:@"31" :@"0,0"];
 		[self eventDialog:@"UVW":@"10"];
+		[self eventVignette:@"1"];
 	}
 	if(userSpriteCharId == 6){
 		[self eventTranform:1];
+		[self eventDialog:@"UVW":@"4"];
 	}
 	
 	return 0;

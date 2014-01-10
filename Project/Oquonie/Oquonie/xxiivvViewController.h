@@ -74,6 +74,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *parallaxFront;
 @property (strong, nonatomic) IBOutlet UIImageView *parallaxBack;
 
+@property (strong, nonatomic) IBOutlet UIImageView *vignette;
+
+
 // =================
 // Controls
 // =================

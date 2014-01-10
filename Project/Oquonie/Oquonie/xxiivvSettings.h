@@ -9,7 +9,7 @@
 #define systemDebug				1
 
 #define userCharacterId			6
-#define userCharacterLocation	29
+#define userCharacterLocation	1
 #define userCharacterX			0
 #define userCharacterY			0
 

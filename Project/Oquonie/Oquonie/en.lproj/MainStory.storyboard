@@ -246,6 +246,10 @@
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.parallax.2.png" id="Jec-CD-TYf" userLabel="vignette">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" id="1jQ-cs-ghe" userLabel="interfaceContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -338,6 +342,7 @@
                         <outlet property="userPlayer" destination="6mA-lT-Y5D" id="ko5-8b-DCP"/>
                         <outlet property="userPlayerChar" destination="WrE-Oy-CYa" id="B0W-WK-lp5"/>
                         <outlet property="userPlayerShadow" destination="lep-qp-oJt" id="tso-nO-euM"/>
+                        <outlet property="vignette" destination="Jec-CD-TYf" id="SXO-rP-0tT"/>
                         <outlet property="wall1l" destination="Edi-gy-jH2" id="fOm-1Q-ziz"/>
                         <outlet property="wall1r" destination="2mR-4Y-reA" id="veI-EV-VRN"/>
                         <outlet property="wall2l" destination="q1e-6n-zZp" id="wpI-KA-VLm"/>

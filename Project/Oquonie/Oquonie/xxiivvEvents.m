@@ -240,6 +240,16 @@
 	}];
 }
 
+-(void)eventVignette :(NSString*) vignetteType
+{
+	self.vignette.image = [UIImage imageNamed:@"fx.vignette.1.png"];
+	[UIView animateWithDuration:1.5 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		self.vignette.alpha = 0;
+	} completion:^(BOOL finished){}];
+	
+}
+
 // =======================
 // @ Events: Clear Events
 // =======================
