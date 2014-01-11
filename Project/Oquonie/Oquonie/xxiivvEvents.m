@@ -148,14 +148,21 @@
 		index += 1;
 	}
 	
-    NSLog(@"> EVENT | Spell        | Added    -> id:%@ type:%d",spellId,spellType);
+    NSLog(@"> EVENT | Spell        | Looking for free slot");
 
 	int spellSlot = -1;
 	if( [userSpellbook[0][0] isEqualToString:@""] ){ spellSlot = 0; }
 	else if( [userSpellbook[1][0] isEqualToString:@""] ){ spellSlot = 1; }
 	else if( [userSpellbook[2][0] isEqualToString:@""] ){ spellSlot = 2; }
-	userSpellbook[spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
-	[self eventSpellRefresh];
+	
+	if(spellSlot > -1){
+		NSLog(@"> EVENT | Spell        | Added    -> id:%@ type:%d",spellId,spellType);
+		userSpellbook[spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
+		[self eventSpellRefresh];
+	}
+	else{
+		NSLog(@"> EVENT | Spell        | No available slot");
+	}
 }
 
 -(void)eventSpellRefresh
@@ -163,17 +170,38 @@
 	NSLog(@"> EVENT | Spell        | Refresh");
 	
 	int index = 0;
+	
+	int indexTransform = 0;
+	int indexTransformPrevious = 0;
+	
 	for (NSArray *spellbookItem in userSpellbook) {
-		NSLog(@"• EVENT | Spell %d      | Type:%@ Id:%@",index, spellbookItem[1], spellbookItem[0]);
+		
+		NSLog(@"  EVENT | Spell %d      | Type:%@ Id:%@",index, spellbookItem[1], spellbookItem[0]);
 		
 		UIImage *letterImage = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_CharIdToLetter:[spellbookItem[1] intValue]]]];
 		
 		if(index == 0){ self.spellCharacter1.image = letterImage; }
 		if(index == 1){ self.spellCharacter2.image = letterImage; }
 		if(index == 2){ self.spellCharacter3.image = letterImage; }
-
+		
 		index += 1;
+		
+		// Look for a sequence of 3
+		if( indexTransformPrevious == [spellbookItem[1] intValue] ){
+			indexTransform += 1;
+		}
+		else{
+			indexTransform = 1;
+		}
+		indexTransformPrevious = [spellbookItem[1] intValue];
 	}
+	
+	if( indexTransform == 3 ){
+		if( [userSpellbook[0][1] intValue] > 0 ){
+			[self eventTranform:[userSpellbook[0][1] intValue]];
+		}
+	}
+	
 }
 
 -(bool)eventSpellCheck :(NSString*)spellId
@@ -189,8 +217,19 @@
 
 -(void)eventTranform :(int)charId
 {
-	NSLog(@"+ EVENT | Spell        | Transform intro char%d",charId);
+	NSLog(@"------- - ------------ - -------------------");
+	NSLog(@"! EVENT | Transform..  * %d", charId );
+	NSLog(@"------- - ------------ - -------------------");
+	
+	NSLog(@"  EVENT | Spell        | Clear Spellbook" );
+	
+	userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+	
+	NSLog(@"  EVENT | Spell        | Change Sprite" );
+	
 	userSpriteCharId = charId;
+	
+	[self eventSpellRefresh];
 }
 
 -(void)eventAudioToggle :(int)toggle

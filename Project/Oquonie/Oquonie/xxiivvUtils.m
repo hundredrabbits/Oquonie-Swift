@@ -52,7 +52,7 @@ id | Location    | Event Name         | Notes
 -(NSString*)util_CharIdToLetter :(int)charId
 {
 	if(charId == 6){ return @"X"; }
-	return @"A";
+	return @"";
 }
 
 -(NSString*)util_StorageIdToLetter :(int)storageId

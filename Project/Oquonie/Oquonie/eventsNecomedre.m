@@ -17,7 +17,7 @@
 	NSString *eventSpellId = @"photocopier1";
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] ){	return @"X"; }
+		if( ![self eventSpellCheck:eventSpellId] && userSpriteCharId == 1 ){ return @"X"; }
 		return @"";
 	}
 	// Dialog
@@ -37,7 +37,7 @@
 	NSString *eventSpellId = @"photocopier2";
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] ){
+		if( ![self eventSpellCheck:eventSpellId] && userSpriteCharId == 1 ){
 			return @"X";
 		}
 		return @"";
@@ -59,7 +59,7 @@
 	NSString *eventSpellId = @"photocopier3";
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] ){
+		if( ![self eventSpellCheck:eventSpellId] && userSpriteCharId == 1 ){
 			return @"X";
 		}
 		return @"";
@@ -137,8 +137,9 @@
 {
 	if([option isEqualToString:@"postNotification"]){
 		if(userSpriteCharId == 6){
+			return @"X";
 		}
-		return 0;
+		return @"";
 	}
 	if(userSpriteCharId == 6){
 		// Door from side A
