@@ -142,8 +142,8 @@
 		if( ![[self tileParser:tile :1] isEqualToString:@"event"] ){ continue; }
 		// Skip if has no notification
 		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self tileParser:tile :2]];
-		int hasNotification = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postNotification"];
-		if(hasNotification<1){ continue; }
+		NSString *notificationLetter = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postNotification"];
+		if([notificationLetter isEqualToString:@""]){ continue; }
 		
 		// Notification
 		
@@ -156,7 +156,7 @@
 		
 			UIImageView *letterView = [[UIImageView alloc] initWithFrame:CGRectMake( (bubbleView.frame.size.width/2)-20, 2.5, 40, 40)];
 			letterView.tag = 30;
-			letterView.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_StorageIdToLetter:hasNotification]]];
+			letterView.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",notificationLetter]];
 			[bubbleView addSubview:letterView];
 		
 		bubbleView.alpha = 0;

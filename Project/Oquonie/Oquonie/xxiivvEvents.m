@@ -133,12 +133,28 @@
 	
 }
 
--(void)eventSpell :(int)spellId :(int)spellType
+-(void)eventSpellAdd :(NSString*)spellId :(int)spellType
 {
-    NSLog(@"> EVENT | Spell        | Added    -> id:%d type:%d",spellId,spellType);
+    NSLog(@"  EVENT | Spell        | Updating..");
 	
-    userStorageEvents[spellId] = [NSString stringWithFormat:@"%d",spellType];
+	int index = 0;
+	for (NSArray *spellbookItem in userSpellbook) {
+		if( [spellbookItem[0] isEqualToString:spellId] && [spellbookItem[1] intValue] == spellType){
+			NSLog(@"- EVENT | Spell        | Removed  -> id:%@ type:%d",spellId,spellType);
+			userSpellbook[index] = @[@"",@""];
+			[self eventSpellRefresh];
+			return;
+		}
+		index += 1;
+	}
 	
+    NSLog(@"> EVENT | Spell        | Added    -> id:%@ type:%d",spellId,spellType);
+
+	int spellSlot = -1;
+	if( [userSpellbook[0][0] isEqualToString:@""] ){ spellSlot = 0; }
+	else if( [userSpellbook[1][0] isEqualToString:@""] ){ spellSlot = 1; }
+	else if( [userSpellbook[2][0] isEqualToString:@""] ){ spellSlot = 2; }
+	userSpellbook[spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
 	[self eventSpellRefresh];
 }
 
@@ -146,52 +162,29 @@
 {
 	NSLog(@"> EVENT | Spell        | Refresh");
 	
-	// Create merge array
 	int index = 0;
-	NSMutableArray *spellTest = [NSMutableArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
-	
-	// Merge events counts
-	for (NSString *tile in userStorageEvents) {
-		int spellId = [tile intValue];
-		spellTest[spellId] = [NSString stringWithFormat:@"%d",[spellTest[spellId] intValue]+1];
-		index += 1;
-	}
-	
-	// Transform in the right character
-	index = 0;
-	for (NSString *spellCountForId in spellTest) {
-		if(index>0){
-			if([spellCountForId intValue] > 2){
-				[self eventTranform:index];
-			}
-		}
-		index += 1;
-	}
-	
-	// Display the spells in spellview
-	
-	index = 0;
-	int spellIndex = 0;
-	for (NSString *spellValue in userStorageEvents) {
+	for (NSArray *spellbookItem in userSpellbook) {
+		NSLog(@"• EVENT | Spell %d      | Type:%@ Id:%@",index, spellbookItem[1], spellbookItem[0]);
 		
-		if( [self util_IsSpell:index] == TRUE ){
-			
-			if([spellValue isEqualToString:@""]){ continue; }
-			
-			NSLog(@"     UI | Spell        | StorageId: %d SpellId:%@",index,spellValue);
-			
-			UIImage *letterImage = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_CharIdToLetter:[spellValue intValue]]]];
-			
-			if(spellIndex == 0){ self.spellCharacter1.image = letterImage; }
-			if(spellIndex == 1){ self.spellCharacter2.image = letterImage; }
-			if(spellIndex == 2){ self.spellCharacter3.image = letterImage; }
-			spellIndex += 1;
-			
-		}
+		UIImage *letterImage = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_CharIdToLetter:[spellbookItem[1] intValue]]]];
 		
+		if(index == 0){ self.spellCharacter1.image = letterImage; }
+		if(index == 1){ self.spellCharacter2.image = letterImage; }
+		if(index == 2){ self.spellCharacter3.image = letterImage; }
+
 		index += 1;
 	}
-	
+}
+
+-(bool)eventSpellCheck :(NSString*)spellId
+{
+	NSLog(@"  EVENT | Spell        | Looking for: %@",spellId);
+	for (NSArray *spellbookItem in userSpellbook) {
+		if( [spellbookItem[0] isEqualToString:spellId] ){
+			return TRUE;
+		}
+	}
+	return FALSE;
 }
 
 -(void)eventTranform :(int)charId

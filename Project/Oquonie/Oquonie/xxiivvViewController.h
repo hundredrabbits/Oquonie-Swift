@@ -116,6 +116,7 @@ int userPositionY;
 int userPositionZ;
 int userSpriteCharId;
 
+NSMutableArray *userSpellbook;
 NSMutableArray *userStorageEvents;
 
 // World

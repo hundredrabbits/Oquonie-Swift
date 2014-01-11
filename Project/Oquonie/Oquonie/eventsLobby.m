@@ -12,7 +12,6 @@
 
 @implementation xxiivvViewController (eventsLobby)
 
-
 // =======================
 // @ Events: Wizards
 // =======================
@@ -36,7 +35,6 @@
     }
     else{
         [self eventDialog:@"UVW":@"2"];
-        [self eventSpell:userStorageEventId:3];
     }
 	
 	// Return storage Id
@@ -59,7 +57,6 @@
     }
     else{
         [self eventDialog:@"EGJ":@"1"];
-        [self eventSpell:2:3];
     }
 	
 	// Return storage Id
@@ -82,7 +79,6 @@
     }
     else{
         [self eventDialog:@"EGJ":@"1"];
-        [self eventSpell:3:3];
     }
 	
 	// Return storage Id

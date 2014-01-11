@@ -12,112 +12,96 @@
 
 @implementation xxiivvViewController (eventsNecomedre)
 
--(int)event_photocopier1 :(NSString*)option
+-(NSString*)event_photocopier1 :(NSString*)option
 {
-	int userStorageEventId = 10;
+	NSString *eventSpellId = @"photocopier1";
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return userStorageEventId;
-		}
-		return 0;
+		if( ![self eventSpellCheck:eventSpellId] ){	return @"X"; }
+		return @"";
 	}
 	// Dialog
-    if([userStorageEvents[userStorageEventId] intValue]>0){
+    if( [self eventSpellCheck:eventSpellId] ){
         [self eventDialog:@"AAA":@"11"];
-        [self eventSpell:userStorageEventId:0];
-    }
-    else{
-        [self eventDialog:@"IPX":@"11"];
-        [self eventSpell:userStorageEventId:6];
-    }
-	// Return storage Id
-	return userStorageEventId;
-}
-
--(int)event_photocopier2 :(NSString*)option
-{
-	int userStorageEventId = 11;
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return userStorageEventId;
-		}
-		return 0;
-	}
-	// Dialog
-    if([userStorageEvents[userStorageEventId] intValue]>0){
-        [self eventDialog:@"AAA":@"11"];
-        [self eventSpell:userStorageEventId:0];
     }
     else{
         [self eventDialog:@"UVW":@"11"];
-        [self eventSpell:userStorageEventId:6];
     }
-	// Return storage Id
-	return userStorageEventId;
+	[self eventSpellAdd:eventSpellId:6];
+	
+	return @"HEY";
 }
 
--(int)event_photocopier3 :(NSString*)option
+-(NSString*)event_photocopier2 :(NSString*)option
 {
-	int userStorageEventId = 12;
+	NSString *eventSpellId = @"photocopier2";
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return userStorageEventId;
+		if( ![self eventSpellCheck:eventSpellId] ){
+			return @"X";
 		}
-		return 0;
+		return @"";
 	}
 	// Dialog
-    if([userStorageEvents[userStorageEventId] intValue]>0){
+    if( [self eventSpellCheck:eventSpellId] ){
         [self eventDialog:@"AAA":@"11"];
-        [self eventSpell:userStorageEventId:0];
     }
     else{
         [self eventDialog:@"UVW":@"11"];
-        [self eventSpell:userStorageEventId:6];
     }
-	// Return storage Id
-	return userStorageEventId;
+	[self eventSpellAdd:eventSpellId:6];
+	
+	return @"HEY";
 }
 
--(int)event_speakerphone :(NSString*)option
+-(NSString*)event_photocopier3 :(NSString*)option
+{
+	NSString *eventSpellId = @"photocopier3";
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] ){
+			return @"X";
+		}
+		return @"";
+	}
+	// Dialog
+    if( [self eventSpellCheck:eventSpellId] ){
+        [self eventDialog:@"AAA":@"11"];
+    }
+    else{
+        [self eventDialog:@"UVW":@"11"];
+    }
+	[self eventSpellAdd:eventSpellId:6];
+	
+	return @"HEY";
+}
+
+-(NSString*)event_speakerphone :(NSString*)option
 {
 	int userStorageEventId = 1;
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return 0;
+			return @"N";
 		}
-		return userStorageEventId;
+		return @"";
 	}
-	// Dialog
-    if([userStorageEvents[userStorageEventId] intValue]>0){
-        [self eventDialog:@"AAA":@"11"];
-        [self eventSpell:userStorageEventId:0];
-		[self eventAudioToggle:1];
-    }
-    else{
-        [self eventDialog:@"AAA":@"11"];
-        [self eventSpell:userStorageEventId:1];
-		[self eventAudioToggle:0];
-    }
-	return userStorageEventId;
+	return @"HEY";
 }
 
 
--(int)event_tutorialRedDoor :(NSString*)option
+-(NSString*)event_tutorialRedDoor :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
-		return 0;
+		return @"";
 	}
 	[self eventTransitionPan:@"1":@"0,0"];
 	[self eventDialog:@"UVW":@"10"];		
 	
-	return 0;
+	return @"";
 }
 
--(int)event_tutorialCharacter :(NSString*)option
+-(NSString*)event_tutorialCharacter :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
 		if(userSpriteCharId == 1){
@@ -138,7 +122,7 @@
 	return 0;
 }
 
--(int)event_tutorialCharacterTransformed :(NSString*)option
+-(NSString*)event_tutorialCharacterTransformed :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
 		return 0;
@@ -149,7 +133,7 @@
 	return 0;
 }
 
--(int)event_photocopierDoor :(NSString*)option
+-(NSString*)event_photocopierDoor :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
 		if(userSpriteCharId == 6){

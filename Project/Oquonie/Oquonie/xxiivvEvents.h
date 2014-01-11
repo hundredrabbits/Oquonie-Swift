@@ -13,10 +13,12 @@
 -(void)eventWarp :(NSString*)nodeId :(NSString*)eventData;
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData;
 -(void)eventDialog :(NSString*)dialog :(NSString*)characterId;
--(void)eventSpell :(int)spellId :(int)spellType;
+-(void)eventSpellAdd :(NSString*)spellId :(int)spellType;
 -(void)eventAudioToggle :(int)toggle;
 -(void)eventTranform :(int)charId;
 -(void)eventVignette :(NSString*) vignetteType;
+
+-(bool)eventSpellCheck :(NSString*)spellId;
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates;
 

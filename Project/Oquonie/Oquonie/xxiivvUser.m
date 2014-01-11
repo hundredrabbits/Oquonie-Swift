@@ -28,6 +28,9 @@
     userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
     int myCount = 0;
     while ( myCount < 40 )	{ myCount++; userStorageEvents[myCount] = @"";	}
+	
+	// User Spellbook
+	userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
 }
 
 -(void)userSave
