@@ -32,6 +32,9 @@ id | Location    | Event Name         | Notes
  # Alphabet
 == + =========== + ================== + ============================
  C | Nephtaline
+ K | Unlocked
+ L | Locked
+ F | Door
  N | Audio
  X | Document
 */

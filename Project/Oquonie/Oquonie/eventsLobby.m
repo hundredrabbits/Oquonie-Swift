@@ -91,16 +91,16 @@
 
 # pragma mark Tips -
 
--(int)event_spellgiver :(NSString*)option
+-(NSString*)event_spellgiver :(NSString*)option
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		return 50;
+		return @"F";
 	}
 	// Dialog
     [self eventDialog:@"UVW":@"7"];
 	// Return storage Id
-	return 2;
+	return @"YO";
 }
 
 -(int)event_owlSave :(NSString*)option

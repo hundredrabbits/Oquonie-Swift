@@ -25,7 +25,7 @@
         [self eventDialog:@"AAA":@"11"];
     }
     else{
-        [self eventDialog:@"UVW":@"11"];
+        [self eventDialog:@"FRX":@"11"];
     }
 	[self eventSpellAdd:eventSpellId:6];
 	
@@ -136,23 +136,28 @@
 -(NSString*)event_photocopierDoor :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
-		if(userSpriteCharId == 6){
-			return @"X";
+		if(userSpriteCharId == 6 && userLocation == 29){
+			return @"K";
 		}
-		return @"";
+		else if(userSpriteCharId == 6){
+			return @"";
+		}
+		return @"L";
 	}
 	if(userSpriteCharId == 6){
 		// Door from side A
 		if( userLocation == 29 ){
 			[self eventWarp:@"30":@"0,-1"];
+			[self eventDialog:@"PIS":@"12"]; // Inside correct friend
 		}
 		// Door from side B
 		else if ( userLocation == 30 ){
 			[self eventWarp:@"29":@"0,1"];
 		}
+		
 	}
 	else{
-		[self eventDialog:@"UVW":@"12"];
+		[self eventDialog:@"FLX":@"12"];
 	}
 	return false;
 }

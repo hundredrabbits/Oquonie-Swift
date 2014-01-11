@@ -285,15 +285,15 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">
-                                                <rect key="frame" x="26" y="150" width="60" height="60"/>
+                                                <rect key="frame" x="21" y="150" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterI.png" id="vkC-tP-X8t" userLabel="dialogCharacter2">
-                                                <rect key="frame" x="76" y="150" width="60" height="60"/>
+                                                <rect key="frame" x="71" y="150" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterM.png" id="g3X-JJ-hat" userLabel="dialogCharacter3">
-                                                <rect key="frame" x="126" y="150" width="60" height="60"/>
+                                                <rect key="frame" x="121" y="150" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             </imageView>
                                         </subviews>
