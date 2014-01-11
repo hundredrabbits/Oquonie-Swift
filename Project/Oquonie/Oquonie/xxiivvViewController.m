@@ -122,10 +122,29 @@
 - (void) moveAnimation
 {
 	userSpriteState = @"walk";
-	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"1"] ] ];
+	[self userSpriteUpdate:[self templateSpriteName:@"1"]];
 	[NSTimer scheduledTimerWithTimeInterval:0.15 target:self selector:@selector(animator1) userInfo:nil repeats:NO];
 	[NSTimer scheduledTimerWithTimeInterval:0.30 target:self selector:@selector(animator2) userInfo:nil repeats:NO];
 }
+
+- (void) animator1
+{
+	userSpriteState = @"walk";
+	[self userSpriteUpdate:[self templateSpriteName:@"2"]];
+}
+
+- (void) animator2
+{
+	userSpriteState = @"stand";
+	[self userSpriteUpdate:[self templateSpriteName:@"1"]];
+}
+
+-(void)userSpriteUpdate :(NSString*)imageName
+{
+	NSLog(@" (%@)", imageName);
+	self.userPlayerChar.image = [UIImage imageNamed: imageName];
+}
+
 
 - (void) moveEnable
 {
@@ -205,7 +224,7 @@
 
 -(void)moveCollideAnimateChar :(int)posX :(int)posY
 {
-	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@""] ] ];
+	[self userSpriteUpdate:[NSString stringWithFormat:@"%@", [self templateSpriteName:@""]]];
 	CGRect userOrigin = self.userPlayer.frame;
 	if( (posX == -1 && posY == 0) || (posX == 0 && posY == 1) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 2, 0); }
 	if( (posX == 0 && posY == -1) || (posX == 1 && posY == 0) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, -2, 0); }
@@ -237,18 +256,6 @@
 }
 
 # pragma mark Misc -
-
-- (void) animator1
-{
-	userSpriteState = @"walk";
-	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"2"] ] ];
-}
-
-- (void) animator2
-{
-	userSpriteState = @"stand";
-	self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"1"] ] ];
-}
 
 - (CGRect) tileLocation :(int)type :(int)posX :(int)posY
 {
@@ -501,9 +508,8 @@
 
 -(void)timerAnimateUser
 {
-	// Only animate if still
 	if([userSpriteState isEqual:@"stand"]){
-		self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:[NSString stringWithFormat:@"%d",worldTimerUserCount]] ] ];
+		[self userSpriteUpdate:[NSString stringWithFormat:@"%@", [self templateSpriteName:[NSString stringWithFormat:@"%d",worldTimerUserCount]]] ];
 	}
 }
 

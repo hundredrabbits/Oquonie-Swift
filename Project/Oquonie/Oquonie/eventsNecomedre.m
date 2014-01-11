@@ -25,7 +25,7 @@
         [self eventDialog:@"AAA":@"11"];
     }
     else{
-        [self eventDialog:@"FRX":@"11"];
+        [self eventDialog:@"RIX":@"11"]; // Key Yes Document
     }
 	[self eventSpellAdd:eventSpellId:6];
 	
@@ -154,7 +154,6 @@
 		else if ( userLocation == 30 ){
 			[self eventWarp:@"29":@"0,1"];
 		}
-		
 	}
 	else{
 		[self eventDialog:@"FLX":@"12"];

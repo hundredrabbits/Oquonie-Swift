@@ -227,8 +227,9 @@
 	
 	NSLog(@"  EVENT | Spell        | Change Sprite" );
 	
-	userSpriteCharId = charId;
+	// TODO: Create the FX sprites
 	
+	userSpriteCharId = charId;
 	[self eventSpellRefresh];
 }
 

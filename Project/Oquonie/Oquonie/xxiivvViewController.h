@@ -89,6 +89,7 @@
 
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;
+-(void)userSpriteUpdate :(NSString*)imageName;
 
 -(void)moveDisable :(float)disableTime;
 -(void)moveOrder;
