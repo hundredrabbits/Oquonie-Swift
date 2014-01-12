@@ -88,6 +88,12 @@
 		else if(userLocation == 71){
 			[self eventWarp:@"62" :@"0,1"];
 		}
+		else if(userLocation == 5){
+			[self eventWarp:@"32" :@"0,-1"];
+		}
+		else if(userLocation == 32){
+			[self eventWarp:@"5" :@"0,1"];
+		}
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];

@@ -12,6 +12,12 @@
 
 -(void)createWorldNecomedre
 {
+	// =======================
+	// @ Events: Segment 1
+	// =======================
+	
+	# pragma mark Segment 1 -
+	
 	worldNode[21] = @[
 	// Tiles
 	@"21",@"21",@"21",
@@ -141,6 +147,24 @@
 	@"20",@"19|warp|31|-1,0",@"19",@"17",@"27|event|tutorialRedDoor",@"17",
 	// Steps
 	@"0",@"10|event|photocopierDoor",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Office",@"White",@"lobby"];
+	
+	// =======================
+	// @ Events: Segment 2
+	// =======================
+	
+	# pragma mark Segment 2 -
+	
+	worldNode[32] = @[
+	// Tiles
+	@"0",@"0",@"0",
+	@"0",@"4",@"0",
+	@"0",@"0",@"0",
+	// Walls
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Steps
+	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Office",@"White",@"lobby"];
 
