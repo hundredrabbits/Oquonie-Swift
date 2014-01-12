@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
 #import "xxiivvEvents.h"
 #import "eventsNemedique.h"
 
 @implementation xxiivvViewController (eventsNemedique)
-
 
 // =======================
 // @ Events: Gates

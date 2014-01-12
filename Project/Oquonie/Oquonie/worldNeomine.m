@@ -60,7 +60,6 @@
 	// Name,Background,Audio
 	@"Neomine Entrance",@"Black",@"lobby"];
 
-
 	worldNode[64] = @[
 	// Tiles
 	@"1",@"1",@"1",
@@ -148,12 +147,12 @@
 	worldNode[71] = @[
 	// Tiles
 	@"1",@"1",@"1",
-	@"1",@"1",@"1",
+	@"1",@"1|event|pillarTest|14|l",@"1",
 	@"1",@"1",@"1",
 	// Walls
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Steps
-	@"0",@"3|event|gateNecomedre",@"0",@"0",@"0",@"0",
+	@"0",@"3|event|gateNecomedre",@"0",@"0",@"0",@"3|event|gateNeomine",
 	// Name,Background,Audio
 	@"Necomedre Warp",@"White",@"lobby"];
 	

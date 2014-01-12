@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
 #import "xxiivvEvents.h"
 #import "eventsNecomedre.h"
 
 @implementation xxiivvViewController (eventsNecomedre)
-
 
 // =======================
 // @ Events: Gates
@@ -23,25 +23,6 @@
 // =======================
 
 # pragma mark Wizards -
-
-
-// =======================
-// @ Events: Wizards
-// =======================
-
-# pragma mark Wizards -
-
-// =======================
-// @ Events: NPCs
-// =======================
-
-# pragma mark NPCs -
-
-// =======================
-// @ Events: Misc
-// =======================
-
-# pragma mark Misc -
 
 -(NSString*)event_photocopier1 :(NSString*)option
 {
@@ -106,6 +87,118 @@
 	
 	return @"HEY";
 }
+
+-(NSString*)event_necomedreNephtaline1 :(NSString*)option
+{
+	// Event Identifier
+	NSString *eventSpellId = @"necomedreNephtaline1";
+	NSString*	eventSpriteId = @"3";
+	int			eventSpell = 2;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return @"C";
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNecomedre:eventSpriteId]; }
+	
+	// Spell
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	
+	return @"";
+}
+
+-(NSString*)event_necomedreNephtaline2 :(NSString*)option
+{
+	// Event Identifier
+	NSString *eventSpellId = @"necomedreNephtaline2";
+	NSString*	eventSpriteId = @"3";
+	int			eventSpell = 2;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return @"C";
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNecomedre:eventSpriteId]; }
+	
+	// Spell
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	
+	return @"";
+}
+
+-(NSString*)event_necomedreNephtaline3 :(NSString*)option
+{
+	// Event Identifier
+	NSString *eventSpellId = @"necomedreNephtaline3";
+	NSString*	eventSpriteId = @"3";
+	int			eventSpell = 2;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return @"C";
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNecomedre:eventSpriteId]; }
+	
+	// Spell
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	
+	return @"";
+}
+
+// =======================
+// @ Events: Wizards
+// =======================
+
+# pragma mark Wizards -
+
+// =======================
+// @ Events: NPCs
+// =======================
+
+# pragma mark NPCs -
+
+// =======================
+// @ Events: Misc
+// =======================
+
+# pragma mark Misc -
+
 
 -(NSString*)event_speakerphone :(NSString*)option
 {
