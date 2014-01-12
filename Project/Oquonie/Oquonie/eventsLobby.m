@@ -32,10 +32,10 @@
 	// Warp
 	if(userCharacter == 2){
 		if(userLocation == 38){
-			[self eventWarp:@"39" :@"0,0"];
+			[self eventWarp:@"39" :@"0,-1"];
 		}
 		else if(userLocation == 39){
-			[self eventWarp:@"38" :@"0,0"];
+			[self eventWarp:@"38" :@"0,1"];
 		}
 	}
 	else{

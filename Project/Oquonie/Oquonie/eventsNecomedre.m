@@ -199,7 +199,6 @@
 
 # pragma mark Misc -
 
-
 -(NSString*)event_speakerphone :(NSString*)option
 {
 	int userStorageEventId = 1;
@@ -215,7 +214,6 @@
 
 	return @"";
 }
-
 
 -(NSString*)event_tutorialRedDoor :(NSString*)option
 {
