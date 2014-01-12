@@ -38,6 +38,9 @@
 			[self eventWarp:@"60" :@"-1,0"];
 		}
 	}
+	else{
+		[self eventDialog:dialogDoorLocked:@"1"];
+	}
 	return @"";
 }
 
@@ -60,6 +63,10 @@
 			[self eventWarp:@"69" :@"0,1"];
 		}
 	}
+	else{
+		[self eventDialog:dialogDoorLocked:@"1"];
+	}
+	
 	return @"";
 }
 
@@ -81,6 +88,9 @@
 		else if(userLocation == 71){
 			[self eventWarp:@"62" :@"0,1"];
 		}
+	}
+	else{
+		[self eventDialog:dialogDoorLocked:@"1"];
 	}
 	return @"";
 }

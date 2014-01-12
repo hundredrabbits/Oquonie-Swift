@@ -17,6 +17,7 @@
 #define dialogHaveSpell				@"SIO"
 #define dialogGiveSpellNecomedre	@"MDK"
 #define dialogGiveSpellNeomine		@"MEK"
+#define dialogDoorLocked			@"FLT"
 
 #define userLocationString		[NSString stringWithFormat:@"%d",userLocation]
 #define userPositionString		[NSString stringWithFormat:@"%d,%d",userPositionX,userPositionY]
