@@ -26,10 +26,10 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"0";
+		return @"";
 	}
 	// Warp
-	if(userSpriteCharId == 3){
+	if(userCharacter == 3){
 		if(userLocation == 60){
 			[self eventWarp:@"3" :@"1,0"];
 		}

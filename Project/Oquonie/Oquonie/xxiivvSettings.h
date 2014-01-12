@@ -9,10 +9,14 @@
 #define systemDebug				1
 
 #define userCharacterId			3
-#define userCharacterLocation	1
+#define userCharacterLocation	60
 #define userCharacterX			0
 #define userCharacterY			0
 
+#define dialogHaveCharacter			@"SIO"
+#define dialogHaveSpell				@"SIO"
+#define dialogGiveSpellNecomedre	@"MDK"
+#define dialogGiveSpellNeomine		@"MEK"
 
 /*
  # Event IDs
@@ -39,7 +43,10 @@
  
  # Alphabet
  == + =========== + ================== + ============================
+ A | Nemedique
+ B | Nepomucene
  C | Nephtaline
+ D | Necomedre
  K | Unlocked
  L | Locked
  F | Door

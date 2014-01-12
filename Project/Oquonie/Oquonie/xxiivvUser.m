@@ -15,7 +15,7 @@
 {
 	userPositionX = userCharacterX;
 	userPositionY = userCharacterY;
-	userSpriteCharId = userCharacterId;
+	userCharacter = userCharacterId;
 	userLocation = userCharacterLocation;
 	
 	userSpriteState = @"stand";

@@ -115,7 +115,7 @@ int userLocation;
 int userPositionX;
 int userPositionY;
 int userPositionZ;
-int userSpriteCharId;
+int userCharacter;
 
 NSMutableArray *userSpellbook;
 NSMutableArray *userStorageEvents;

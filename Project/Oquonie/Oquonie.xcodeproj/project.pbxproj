@@ -822,7 +822,7 @@
 			name = Fx;
 			sourceTree = "<group>";
 		};
-		0304D7B6186CFCB200ED6E94 /* Event2 */ = {
+		0304D7B6186CFCB200ED6E94 /* Event2 - Necomedre */ = {
 			isa = PBXGroup;
 			children = (
 				038C592A185147B4005D6D35 /* event.2.portrait.png */,
@@ -833,10 +833,10 @@
 				035A6D9F186B0E610032710C /* event.2.l.2.png */,
 				035A6DA0186B0E610032710C /* event.2.l.3.png */,
 			);
-			name = Event2;
+			name = "Event2 - Necomedre";
 			sourceTree = "<group>";
 		};
-		0304D7B7186CFCBB00ED6E94 /* Event3 */ = {
+		0304D7B7186CFCBB00ED6E94 /* Event3 - Nephtaline */ = {
 			isa = PBXGroup;
 			children = (
 				035A6DA1186B0E610032710C /* event.3.l.2.png */,
@@ -847,10 +847,10 @@
 				0304D75F186CEE0200ED6E94 /* event.3.r.2.png */,
 				0304D760186CEE0200ED6E94 /* event.3.r.3.png */,
 			);
-			name = Event3;
+			name = "Event3 - Nephtaline";
 			sourceTree = "<group>";
 		};
-		0304D7B8186CFCC200ED6E94 /* Event4 */ = {
+		0304D7B8186CFCC200ED6E94 /* Event4 - Neomine */ = {
 			isa = PBXGroup;
 			children = (
 				035A6DA3186B0E610032710C /* event.4.r.2.png */,
@@ -861,10 +861,10 @@
 				0304D763186CEE0200ED6E94 /* event.4.l.3.png */,
 				0304D764186CEE0200ED6E94 /* event.4.r.1.png */,
 			);
-			name = Event4;
+			name = "Event4 - Neomine";
 			sourceTree = "<group>";
 		};
-		0304D7B9186CFCCD00ED6E94 /* Event5 */ = {
+		0304D7B9186CFCCD00ED6E94 /* Event5 - Nepomucene */ = {
 			isa = PBXGroup;
 			children = (
 				035A6DA5186B0E610032710C /* event.5.l.2.png */,
@@ -875,10 +875,10 @@
 				0304D767186CEE0200ED6E94 /* event.5.r.2.png */,
 				0304D768186CEE0200ED6E94 /* event.5.r.3.png */,
 			);
-			name = Event5;
+			name = "Event5 - Nepomucene";
 			sourceTree = "<group>";
 		};
-		0304D7BA186CFCDA00ED6E94 /* Event6 */ = {
+		0304D7BA186CFCDA00ED6E94 /* Event6 - Nemedique */ = {
 			isa = PBXGroup;
 			children = (
 				038E862617DDFEC300529CC0 /* event.6.l.1.png */,
@@ -889,7 +889,7 @@
 				0304D76A186CEE0200ED6E94 /* event.6.r.2.png */,
 				0304D76B186CEE0200ED6E94 /* event.6.r.3.png */,
 			);
-			name = Event6;
+			name = "Event6 - Nemedique";
 			sourceTree = "<group>";
 		};
 		0304D7BB186CFCE100ED6E94 /* Event8 */ = {
@@ -1298,11 +1298,11 @@
 			isa = PBXGroup;
 			children = (
 				0304D7BE186CFD0000ED6E94 /* Event1 - Owl */,
-				0304D7B6186CFCB200ED6E94 /* Event2 */,
-				0304D7B7186CFCBB00ED6E94 /* Event3 */,
-				0304D7B8186CFCC200ED6E94 /* Event4 */,
-				0304D7B9186CFCCD00ED6E94 /* Event5 */,
-				0304D7BA186CFCDA00ED6E94 /* Event6 */,
+				0304D7B6186CFCB200ED6E94 /* Event2 - Necomedre */,
+				0304D7B7186CFCBB00ED6E94 /* Event3 - Nephtaline */,
+				0304D7B8186CFCC200ED6E94 /* Event4 - Neomine */,
+				0304D7B9186CFCCD00ED6E94 /* Event5 - Nepomucene */,
+				0304D7BA186CFCDA00ED6E94 /* Event6 - Nemedique */,
 				0304D7B4186CF09500ED6E94 /* Event7 */,
 				0304D7BB186CFCE100ED6E94 /* Event8 */,
 				0304D7BC186CFCEA00ED6E94 /* Event9 - ambient */,

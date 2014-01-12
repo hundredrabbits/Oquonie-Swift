@@ -6,8 +6,41 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvEvents.h"
 #import "eventsNephtaline.h"
 
 @implementation xxiivvViewController (eventsNephtaline)
+
+
+// =======================
+// @ Events: Gates
+// =======================
+
+# pragma mark Gates -
+
+// =======================
+// @ Events: Pillars
+// =======================
+
+# pragma mark Wizards -
+
+
+// =======================
+// @ Events: Wizards
+// =======================
+
+# pragma mark Wizards -
+
+// =======================
+// @ Events: NPCs
+// =======================
+
+# pragma mark NPCs -
+
+// =======================
+// @ Events: Misc
+// =======================
+
+# pragma mark Misc -
 
 @end

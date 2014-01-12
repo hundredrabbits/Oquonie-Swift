@@ -7,17 +7,48 @@
 //
 
 #import "xxiivvEvents.h"
-
 #import "eventsNecomedre.h"
 
 @implementation xxiivvViewController (eventsNecomedre)
+
+
+// =======================
+// @ Events: Gates
+// =======================
+
+# pragma mark Gates -
+
+// =======================
+// @ Events: Pillars
+// =======================
+
+# pragma mark Wizards -
+
+
+// =======================
+// @ Events: Wizards
+// =======================
+
+# pragma mark Wizards -
+
+// =======================
+// @ Events: NPCs
+// =======================
+
+# pragma mark NPCs -
+
+// =======================
+// @ Events: Misc
+// =======================
+
+# pragma mark Misc -
 
 -(NSString*)event_photocopier1 :(NSString*)option
 {
 	NSString *eventSpellId = @"photocopier1";
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userSpriteCharId == 1 ){ return @"X"; }
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter == 1 ){ return @"X"; }
 		return @"";
 	}
 	// Dialog
@@ -29,7 +60,7 @@
     }
 	[self eventSpellAdd:eventSpellId:6];
 	
-	return @"HEY";
+	return @"";
 }
 
 -(NSString*)event_photocopier2 :(NSString*)option
@@ -37,7 +68,7 @@
 	NSString *eventSpellId = @"photocopier2";
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userSpriteCharId == 1 ){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter == 1 ){
 			return @"X";
 		}
 		return @"";
@@ -59,7 +90,7 @@
 	NSString *eventSpellId = @"photocopier3";
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userSpriteCharId == 1 ){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter == 1 ){
 			return @"X";
 		}
 		return @"";
@@ -107,17 +138,17 @@
 -(NSString*)event_tutorialCharacter :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
-		if(userSpriteCharId == 1){
+		if(userCharacter == 1){
 			return 0;
 		}
 		return 0;
 	}
-	if(userSpriteCharId == 1){
+	if(userCharacter == 1){
 		[self eventWarp:@"31" :@"0,0"];
 		[self eventDialog:@"UVW":@"10"];
 		[self eventVignette:@"12"];
 	}
-	if(userSpriteCharId == 6){
+	if(userCharacter == 6){
 		[self eventTranform:1];
 		[self eventDialog:@"UVW":@"12"];
 	}
@@ -139,15 +170,15 @@
 -(NSString*)event_photocopierDoor :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
-		if(userSpriteCharId == 6 && userLocation == 29){
+		if(userCharacter == 6 && userLocation == 29){
 			return @"K";
 		}
-		else if(userSpriteCharId == 6){
+		else if(userCharacter == 6){
 			return @"";
 		}
 		return @"L";
 	}
-	if(userSpriteCharId == 6){
+	if(userCharacter == 6){
 		// Door from side A
 		if( userLocation == 29 ){
 			[self eventWarp:@"30":@"0,-1"];

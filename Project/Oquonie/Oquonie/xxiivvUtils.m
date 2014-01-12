@@ -13,6 +13,11 @@
 
 -(NSString*)util_CharIdToLetter :(int)charId
 {
+	if(charId == 1){ return @"D"; }
+	if(charId == 2){ return @"C"; }
+	if(charId == 3){ return @"E"; }
+	if(charId == 4){ return @"B"; }
+	if(charId == 5){ return @"A"; }
 	if(charId == 6){ return @"X"; }
 	return @"";
 }

@@ -137,6 +137,13 @@
 {
     NSLog(@"  EVENT | Spell        | Updating..");
 	
+	// If already the character
+	if(spellType == userCharacter){
+		NSLog(@"- EVENT | Spell        | Already type:%d",spellType);
+		[self eventSpellRefresh];
+		return;
+	}
+	
 	int index = 0;
 	for (NSArray *spellbookItem in userSpellbook) {
 		if( [spellbookItem[0] isEqualToString:spellId] && [spellbookItem[1] intValue] == spellType){
@@ -178,7 +185,7 @@
 		
 		NSLog(@"  EVENT | Spell %d      | Type:%@ Id:%@",index, spellbookItem[1], spellbookItem[0]);
 		
-		UIImage *letterImage = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",[self util_CharIdToLetter:[spellbookItem[1] intValue]]]];
+		UIImage *letterImage = [UIImage imageNamed:[NSString stringWithFormat:@"letterSpell%@.png",[self util_CharIdToLetter:[spellbookItem[1] intValue]]]];
 		
 		if(index == 0){ self.spellCharacter1.image = letterImage; }
 		if(index == 1){ self.spellCharacter2.image = letterImage; }
@@ -229,7 +236,7 @@
 	
 	// TODO: Create the FX sprites
 	
-	userSpriteCharId = charId;
+	userCharacter = charId;
 	[self eventSpellRefresh];
 }
 
