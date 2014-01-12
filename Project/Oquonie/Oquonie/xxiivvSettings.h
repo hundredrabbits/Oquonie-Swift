@@ -12,6 +12,8 @@
 #define userCharacterLocation	60
 #define userCharacterX			0
 #define userCharacterY			0
+#define userLocationString		[NSString stringWithFormat:@"%d",userLocation]
+#define userPositionString		[NSString stringWithFormat:@"%d,%d",userPositionX,userPositionY]
 
 #define dialogHaveCharacter			@"SIO"
 #define dialogHaveSpell				@"SIO"
@@ -27,16 +29,12 @@
  2  | Settings    |
  3  | Settings    |
  4  | Settings    |
- 5  | Settings    |
+ 5  | Pillar      | Neomine			   | 1 = on
  6  | Settings    |
  7  | Settings    |
  8  | Settings    |
  9  | Settings    |
  == + =========== + ================== + ============================
- 10 | Necomedre   | photocopier1       |
- 11 | Necomedre   | photocopier2       |
- 12 | Necomedre   | photocopier3       |
- 13 | Necomedre   | photocopierDoor    | Remember not to display message every time you enter the room
  
  50 | spellgiver  | nephtaline
  

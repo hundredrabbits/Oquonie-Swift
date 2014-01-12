@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
 #import "eventsLobby.h"
 #import "xxiivvEvents.h"
 #import "xxiivvUser.h"
@@ -54,6 +55,48 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Default
+	return @"";
+}
+
+# pragma mark Wizards -
+
+-(NSString*)event_pillarNeomine :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if([userStorageEvents[5] isEqualToString:@"1"]){
+			return @"17";
+		}
+		return @"";
+	}
+	
+	userStorageEvents[5] = @"1";
+	[self eventWarp:userLocationString :userPositionString];
+	
+	
+	
+	// Default
+	return @"";
+}
+
+-(NSString*)event_pillarNeomineSocket :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if([userStorageEvents[5] isEqualToString:@"1"]){
+			return @"16";
+		}
 		return @"";
 	}
 	// Default
