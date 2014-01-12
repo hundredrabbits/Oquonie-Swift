@@ -1,5 +1,5 @@
 //
-//  xxiivvViewController+eventsNeophine.h
+//  xxiivvViewController+worldNeophine.h
 //  Oquonie
 //
 //  Created by Devine Lu Linvega on 1/9/2014.
@@ -8,6 +8,8 @@
 
 #import "xxiivvViewController.h"
 
-@interface xxiivvViewController (eventsNeophine)
+@interface xxiivvViewController (worldNeomine)
+
+-(void)createWorldNeomine;
 
 @end

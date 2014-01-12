@@ -15,7 +15,7 @@
 #import "worldNephtaline.h"		// Chapter II
 #import "worldNemedique.h"		// Chapter III
 #import "worldNestorine.h"		// Chapter IV
-#import "worldNeophine.h"		// Chapter V
+#import "worldNeomine.h"		// Chapter V
 
 //#import "worldNecostrate.h"		// Chapter: Bonus
 //#import "worldNelorianne.h"		// Chapter: Bonus
@@ -35,11 +35,11 @@
 	// 40 - 59
 	[self createWorldNephtaline];
 	// 60 - 79
-	[self createWorldNemedique];
+	[self createWorldNeomine];
 	// 80 - 99
 	[self createWorldNestorine];
-	// 100 - 110
-	[self createWorldNeophine];
+	// 100 - 99
+	[self createWorldNemedique];
 }
 
 - (NSString*) tileParser :(NSString*)tileString :(int)index
@@ -48,9 +48,28 @@
 	if( [array count] < (index+1) && index > 0 ){
 		return 0;
 	}
-	NSString* value = [array objectAtIndex: index];
 	
-	return value;
+	// Catch if event is broadcasting an update
+	if( [array count] > 2){
+		if( [[array objectAtIndex: 1] isEqualToString:@"event"] && index == 3 ){
+			return [self tileParserUpdate:array:index];
+		}
+	}
+	
+	return [array objectAtIndex:index];
+}
+
+-(NSString*)tileParserUpdate :(NSArray*)eventArray :(int)index
+{
+	// Contact event
+	NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[eventArray objectAtIndex:2]];
+	NSString *eventUpdate = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postUpdate"];
+	
+	if(![eventUpdate isEqualToString:@""]){
+		return eventUpdate;
+	}
+	
+	return [eventArray objectAtIndex:index];
 }
 
 -(void)roomStart
@@ -188,9 +207,13 @@
 		// Update Background
 		if([worldBackground isEqualToString:@"Black"]){
 			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.3.png"];
+			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
 		}
 		if([worldBackground isEqualToString:@"White"]){
 			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1"];
+			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2"];
 		}
 	}
 }

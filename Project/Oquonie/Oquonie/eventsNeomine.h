@@ -1,13 +1,13 @@
 //
-//  xxiivvViewController+eventsNeophine.m
+//  xxiivvViewController+eventsNeophine.h
 //  Oquonie
 //
 //  Created by Devine Lu Linvega on 1/9/2014.
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#import "eventsNeophine.h"
+#import "xxiivvViewController.h"
 
-@implementation xxiivvViewController (eventsNeophine)
+@interface xxiivvViewController (eventsNeomine)
 
 @end

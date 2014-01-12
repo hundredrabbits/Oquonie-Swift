@@ -13,120 +13,76 @@
 @implementation xxiivvViewController (eventsLobby)
 
 // =======================
+// @ Events: Gates
+// =======================
+
+# pragma mark Gates -
+
+-(NSString*)event_gateNeomine :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"0";
+	}
+	// Warp
+	if(userSpriteCharId == 3){
+		if(userLocation == 60){
+			[self eventWarp:@"3" :@"1,0"];
+		}
+		else if(userLocation == 3){
+			[self eventWarp:@"60" :@"-1,0"];
+		}
+	}
+	return @"";
+}
+
+// =======================
+// @ Events: Pillars
+// =======================
+
+# pragma mark Wizards -
+
+-(NSString*)event_pillarTest :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Default
+	return @"";
+}
+
+// =======================
 // @ Events: Wizards
 // =======================
 
 # pragma mark Wizards -
 
--(int)event_wizard1 :(NSString*)option
-{
-	int userStorageEventId = 1;
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return 1;
-		}
-		return 0;
-	}
-	
-	// Dialog
-    if([userStorageEvents[userStorageEventId] intValue]>0){
-        [self eventDialog:@"AAA":@"1"];
-    }
-    else{
-        [self eventDialog:@"UVW":@"2"];
-    }
-	
-	// Return storage Id
-	return userStorageEventId;
-}
-
--(int)event_wizard2 :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[2] intValue]<1){
-			return 1;
-		}
-		return 0;
-	}
-	
-	// Dialog
-    if([userStorageEvents[2] intValue]>0){
-        [self eventDialog:@"AAA":@"1"];
-    }
-    else{
-        [self eventDialog:@"EGJ":@"1"];
-    }
-	
-	// Return storage Id
-	return 2;
-}
-
--(int)event_wizard3 :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[3] intValue]<1){
-			return 1;
-		}
-		return 0;
-	}
-	
-	// Dialog
-    if([userStorageEvents[3] intValue]>0){
-        [self eventDialog:@"AAA":@"1"];
-    }
-    else{
-        [self eventDialog:@"EGJ":@"1"];
-    }
-	
-	// Return storage Id
-	return 3;
-}
-
 // =======================
-// @ Events: Tips
+// @ Events: NPCs
 // =======================
 
-# pragma mark Tips -
+# pragma mark NPCs -
 
--(NSString*)event_spellgiver :(NSString*)option
+-(NSString*)event_owlSave :(NSString*)option
 {
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return @"F";
-	}
-	// Dialog
-    [self eventDialog:@"UVW":@"7"];
-	// Return storage Id
-	return @"YO";
-}
-
--(int)event_owlSave :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return 0;
-	}
+	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
+	
 	// Dialog
     [self eventDialog:@"UVW":@"1"];
 	[self userSave];
 	
 	// Return storage Id
-	return 2;
-}
-
--(int)event_tip3 :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return 0;
-	}
-	// Dialog
-    [self eventDialog:@"UVW":@"8"];
-	// Return storage Id
-	return 2;
+	return @"";
 }
 
 // =======================
@@ -135,16 +91,18 @@
 
 # pragma mark Misc -
 
--(int)event_colours1 :(NSString*)option
+-(NSString*)event_null :(NSString*)option
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		return 0;
+		return @"";
 	}
-	// Dialog
-    [self eventDialog:@"UVW":@"10"];
-	// Return storage Id
-	return 2;
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Default
+	return @"";
 }
 
 @end

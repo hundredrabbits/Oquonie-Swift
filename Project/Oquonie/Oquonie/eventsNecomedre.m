@@ -79,14 +79,17 @@
 -(NSString*)event_speakerphone :(NSString*)option
 {
 	int userStorageEventId = 1;
-	// Broadcast Notification
+	// Notifications
 	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[userStorageEventId] intValue]<1){
-			return @"N";
-		}
+		if([userStorageEvents[userStorageEventId] intValue]<1){	return @"N"; }
+		else{ return @""; }
+	}
+	// Sprite Update
+	if([option isEqualToString:@"postUpdate"]){
 		return @"";
 	}
-	return @"HEY";
+
+	return @"";
 }
 
 

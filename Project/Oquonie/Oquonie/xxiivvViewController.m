@@ -141,10 +141,8 @@
 
 -(void)userSpriteUpdate :(NSString*)imageName
 {
-	NSLog(@" (%@)", imageName);
 	self.userPlayerChar.image = [UIImage imageNamed: imageName];
 }
-
 
 - (void) moveEnable
 {
