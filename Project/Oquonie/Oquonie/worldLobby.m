@@ -16,7 +16,7 @@
 	// Tiles
 	@"0",@"13",@"2|block|10",
 	@"2",@"8",@"4",
-	@"2",@"2",@"2|event|pillarTest|13|l",
+	@"2",@"2",@"2|event|pillarTest|14|l",
 	// Walls
 	@"0",@"5|event|null",@"2",@"2",@"12|warp|2|0,-1",@"15",
 	// Steps
@@ -62,7 +62,7 @@
 
 	worldNode[5] = @[
 	// Tiles
-	@"9",@"10",@"9|event|pillarTest|13|l",
+	@"9",@"10",@"9|event|pillarTest|14|l",
 	@"4",@"5",@"14",
 	@"9",@"6",@"9",
 	// Walls
@@ -88,7 +88,7 @@
 	// Tiles
 	@"9",@"10|block|11",@"0",
 	@"4",@"5",@"12",
-	@"9|event|pillarTest|13|l",@"0",@"0",
+	@"9|event|pillarTest|14|l",@"0",@"0",
 	// Walls
 	@"19",@"0",@"0",@"0",@"8|event|null",@"0",
 	// Steps
@@ -100,7 +100,7 @@
 
 	worldNode[9] = @[
 	// Tiles
-	@"10|event|pillarTest|13|l",@"27",@"10|event|null|10|l",
+	@"10|event|pillarTest|14|l",@"27",@"10|event|null|10|l",
 	@"9",@"4",@"5",
 	@"0",@"10",@"10",
 	// Walls

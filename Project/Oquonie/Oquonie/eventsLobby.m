@@ -41,6 +41,50 @@
 	return @"";
 }
 
+-(NSString*)event_gateNepomucene :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Warp
+	if(userCharacter == 4){
+		if(userLocation == 69){
+			[self eventWarp:@"70" :@"0,-1"];
+		}
+		else if(userLocation == 70){
+			[self eventWarp:@"69" :@"0,1"];
+		}
+	}
+	return @"";
+}
+
+-(NSString*)event_gateNecomedre :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Warp
+	if(userCharacter == 1){
+		if(userLocation == 62){
+			[self eventWarp:@"71" :@"0,-1"];
+		}
+		else if(userLocation == 71){
+			[self eventWarp:@"62" :@"0,1"];
+		}
+	}
+	return @"";
+}
+
 // =======================
 // @ Events: Pillars
 // =======================

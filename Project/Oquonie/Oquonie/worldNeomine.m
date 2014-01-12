@@ -42,7 +42,7 @@
 	@"1",@"1",@"1",
 	@"1",@"1",@"1",
 	// Walls
-	@"0",@"0",@"0",@"0",@"4",@"0",
+	@"0",@"0",@"0",@"0",@"4|event|gateNecomedre",@"0",
 	// Steps
 	@"3|warp|60|1,1",@"0",@"3|warp|63|-1,1",@"0",@"0",@"0",
 	// Name,Background,Audio
@@ -127,11 +127,35 @@
 	@"1",@"1",@"1",
 	@"1",@"1",@"1",
 	// Walls
-	@"0",@"0",@"0",@"0",@"8",@"0",
+	@"0",@"0",@"0",@"0",@"8|event|gateNepomucene",@"0",
 	// Steps
 	@"0",@"3|warp|68|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Entrance",@"Black",@"lobby"];
+	@"Nestorine Exit",@"White",@"lobby"];
+	
+	worldNode[70] = @[
+	// Tiles
+	@"1",@"1",@"1",
+	@"1",@"1",@"1",
+	@"1",@"1",@"1",
+	// Walls
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Steps
+	@"0",@"3|event|gateNepomucene",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Nestorine Warp",@"White",@"lobby"];
+	
+	worldNode[71] = @[
+	// Tiles
+	@"1",@"1",@"1",
+	@"1",@"1",@"1",
+	@"1",@"1",@"1",
+	// Walls
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Steps
+	@"0",@"3|event|gateNecomedre",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Necomedre Warp",@"White",@"lobby"];
 	
 }
 @end

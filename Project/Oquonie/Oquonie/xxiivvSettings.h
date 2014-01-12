@@ -8,17 +8,18 @@
 
 #define systemDebug				1
 
-#define userCharacterId			3
-#define userCharacterLocation	60
+#define userCharacterId			1
+#define userCharacterLocation	62
 #define userCharacterX			0
 #define userCharacterY			0
-#define userLocationString		[NSString stringWithFormat:@"%d",userLocation]
-#define userPositionString		[NSString stringWithFormat:@"%d,%d",userPositionX,userPositionY]
 
 #define dialogHaveCharacter			@"SIO"
 #define dialogHaveSpell				@"SIO"
 #define dialogGiveSpellNecomedre	@"MDK"
 #define dialogGiveSpellNeomine		@"MEK"
+
+#define userLocationString		[NSString stringWithFormat:@"%d",userLocation]
+#define userPositionString		[NSString stringWithFormat:@"%d,%d",userPositionX,userPositionY]
 
 /*
  # Event IDs
