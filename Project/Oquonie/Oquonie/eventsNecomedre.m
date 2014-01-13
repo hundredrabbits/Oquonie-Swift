@@ -26,19 +26,29 @@
 
 -(NSString*)event_photocopier1 :(NSString*)option
 {
-	NSString *eventSpellId = @"photocopier1";
+	// Event Identifier
+	NSString*	eventSpellId	= @"photocopier1";
+	NSString*	eventSpriteId	= eventPhotocopier;
+	int			eventSpell		= spellDocument;
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter == 1 ){ return @"X"; }
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return letterDocument;
+		}
 		return @"";
 	}
-	// Dialog
-    if( [self eventSpellCheck:eventSpellId] ){
-        [self eventDialog:@"AAA":@"11"];
-    }
-    else{
-        [self eventDialog:@"RIX":@"11"]; // Key Yes Document
-    }
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellDocument:eventSpriteId]; }
+	
 	[self eventSpellAdd:eventSpellId:6];
 	
 	return @"";
@@ -46,59 +56,75 @@
 
 -(NSString*)event_photocopier2 :(NSString*)option
 {
-	NSString *eventSpellId = @"photocopier2";
+	// Event Identifier
+	NSString*	eventSpellId	= @"photocopier2";
+	NSString*	eventSpriteId	= eventPhotocopier;
+	int			eventSpell		= spellDocument;
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter == 1 ){
-			return @"X";
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return letterDocument;
 		}
 		return @"";
 	}
-	// Dialog
-    if( [self eventSpellCheck:eventSpellId] ){
-        [self eventDialog:@"AAA":@"11"];
-    }
-    else{
-        [self eventDialog:@"UVW":@"11"];
-    }
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellDocument:eventSpriteId]; }
+	
 	[self eventSpellAdd:eventSpellId:6];
 	
-	return @"HEY";
+	return @"";
 }
 
 -(NSString*)event_photocopier3 :(NSString*)option
 {
-	NSString *eventSpellId = @"photocopier3";
+	// Event Identifier
+	NSString*	eventSpellId	= @"photocopier3";
+	NSString*	eventSpriteId	= eventPhotocopier;
+	int			eventSpell		= spellDocument;
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter == 1 ){
-			return @"X";
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return letterDocument;
 		}
 		return @"";
 	}
-	// Dialog
-    if( [self eventSpellCheck:eventSpellId] ){
-        [self eventDialog:@"AAA":@"11"];
-    }
-    else{
-        [self eventDialog:@"UVW":@"11"];
-    }
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellDocument:eventSpriteId]; }
+	
 	[self eventSpellAdd:eventSpellId:6];
 	
-	return @"HEY";
+	return @"";
 }
 
 -(NSString*)event_necomedreNephtaline1 :(NSString*)option
 {
 	// Event Identifier
-	NSString *eventSpellId = @"necomedreNephtaline1";
-	NSString*	eventSpriteId = @"3";
-	int			eventSpell = 2;
+	NSString*	eventSpellId	= @"necomedreNephtaline1";
+	NSString*	eventSpriteId	= eventNephtaline;
+	int			eventSpell		= spellNephtaline;
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
-			return @"C";
+			return letterNephtaline;
 		}
 		return @"";
 	}
@@ -121,15 +147,16 @@
 
 -(NSString*)event_necomedreNephtaline2 :(NSString*)option
 {
+	
 	// Event Identifier
-	NSString *eventSpellId = @"necomedreNephtaline2";
-	NSString*	eventSpriteId = @"3";
-	int			eventSpell = 2;
+	NSString*	eventSpellId	= @"necomedreNephtaline2";
+	NSString*	eventSpriteId	= eventNephtaline;
+	int			eventSpell		= spellNephtaline;
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
-			return @"C";
+			return letterNephtaline;
 		}
 		return @"";
 	}
@@ -153,14 +180,14 @@
 -(NSString*)event_necomedreNephtaline3 :(NSString*)option
 {
 	// Event Identifier
-	NSString *eventSpellId = @"necomedreNephtaline3";
-	NSString*	eventSpriteId = @"3";
-	int			eventSpell = 2;
+	NSString*	eventSpellId	= @"necomedreNephtaline3";
+	NSString*	eventSpriteId	= eventNephtaline;
+	int			eventSpell		= spellNephtaline;
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
-			return @"C";
+			return letterNephtaline;
 		}
 		return @"";
 	}
@@ -182,16 +209,34 @@
 }
 
 // =======================
-// @ Events: Wizards
-// =======================
-
-# pragma mark Wizards -
-
-// =======================
 // @ Events: NPCs
 // =======================
 
 # pragma mark NPCs -
+
+-(NSString*)event_speakerphone :(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[storageAudio] intValue]<1){ return letterAudio; }
+		else{ return @""; }
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if([userStorageEvents[storageAudio] intValue]<1){
+		[self eventAudioToggle:1];
+	}
+	else{
+		[self eventAudioToggle:0];
+	}
+	
+	return @"";
+}
 
 // =======================
 // @ Events: Misc
@@ -199,91 +244,46 @@
 
 # pragma mark Misc -
 
--(NSString*)event_speakerphone :(NSString*)option
-{
-	int userStorageEventId = 1;
-	// Notifications
-	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[userStorageEventId] intValue]<1){	return @"N"; }
-		else{ return @""; }
-	}
-	// Sprite Update
-	if([option isEqualToString:@"postUpdate"]){
-		return @"";
-	}
-
-	return @"";
-}
-
 -(NSString*)event_tutorialRedDoor :(NSString*)option
 {
-	if([option isEqualToString:@"postNotification"]){
-		return @"";
-	}
-	[self eventTransitionPan:@"1":@"0,0"];
-	[self eventDialog:@"UVW":@"10"];		
-	
+//	if([option isEqualToString:@"postNotification"]){
+//		return @"";
+//	}
+//	[self eventTransitionPan:@"1":@"0,0"];
+//	[self eventDialog:@"UVW":@"10"];		
+//	
 	return @"";
 }
 
 -(NSString*)event_tutorialCharacter :(NSString*)option
 {
-	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == 1){
-			return 0;
-		}
-		return 0;
-	}
-	if(userCharacter == 1){
-		[self eventWarp:@"31" :@"0,0"];
-		[self eventDialog:@"UVW":@"10"];
-		[self eventVignette:@"12"];
-	}
-	if(userCharacter == 6){
-		[self eventTranform:1];
-		[self eventDialog:@"UVW":@"12"];
-	}
+//	if([option isEqualToString:@"postNotification"]){
+//		if(userCharacter == 1){
+//			return 0;
+//		}
+//		return 0;
+//	}
+//	if(userCharacter == 1){
+//		[self eventWarp:@"31" :@"0,0"];
+//		[self eventDialog:@"UVW":@"10"];
+//		[self eventVignette:@"12"];
+//	}
+//	if(userCharacter == 6){
+//		[self eventTranform:1];
+//		[self eventDialog:@"UVW":@"12"];
+//	}
 	
-	return 0;
+	return @"";
 }
 
 -(NSString*)event_tutorialCharacterTransformed :(NSString*)option
 {
-	if([option isEqualToString:@"postNotification"]){
-		return 0;
-	}
-	[self eventWarp:@"31" :@"0,0"];
-	[self eventTranform:1];
-	
-	return 0;
-}
-
--(NSString*)event_photocopierDoor :(NSString*)option
-{
-	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == 6 && userLocation == 29){
-			return @"K";
-		}
-		else if(userCharacter == 6){
-			return @"";
-		}
-		return @"L";
-	}
-	if(userCharacter == 6){
-		// Door from side A
-		if( userLocation == 29 ){
-			[self eventWarp:@"30":@"0,-1"];
-			[self eventDialog:@"PIS":@"12"]; // Inside correct friend
-		}
-		// Door from side B
-		else if ( userLocation == 30 ){
-			[self eventWarp:@"29":@"0,1"];
-		}
-	}
-	else{
-		[self eventDialog:@"FLX":@"12"];
-	}
-	return false;
+//	if([option isEqualToString:@"postNotification"]){
+//		return 0;
+//	}
+//	[self eventWarp:@"31" :@"0,0"];
+//	[self eventTranform:1];
+	return @"";
 }
 
 @end

@@ -120,7 +120,7 @@
 	@"21",@"8",@"21",
 	@"21",@"21|block|14",@"21",
 	// Walls
-	@"20",@"24|warp|28|-1,0",@"20",@"20",@"28|event|photocopierDoor",@"21",
+	@"20",@"24|warp|28|-1,0",@"20",@"20",@"28|event|gateDocument",@"21",
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
@@ -134,7 +134,7 @@
 	// Walls
 	@"20",@"20|warp|31|-1,0",@"20",@"20",@"21",@"20",
 	// Steps
-	@"0",@"10|event|photocopierDoor",@"0",@"0",@"0",@"0",
+	@"0",@"10|event|gateDocument",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Office",@"White",@"lobby"];
 

@@ -849,7 +849,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0304D7B4186CF09500ED6E94 /* Event7 - Lost */ = {
+		0304D7B4186CF09500ED6E94 /* Event7 - Ramen */ = {
 			isa = PBXGroup;
 			children = (
 				030B2A23180AA425008C55A3 /* event.7.r.1.png */,
@@ -858,7 +858,7 @@
 				0304D76D186CEE0200ED6E94 /* event.7.l.3.png */,
 				03C0E65A186265B3006AA0E6 /* event.7.portrait.png */,
 			);
-			name = "Event7 - Lost";
+			name = "Event7 - Ramen";
 			sourceTree = "<group>";
 		};
 		0304D7B5186CF18000ED6E94 /* Fx */ = {
@@ -1435,7 +1435,7 @@
 				0304D7B8186CFCC200ED6E94 /* Event4 - Neomine */,
 				0304D7B9186CFCCD00ED6E94 /* Event5 - Nepomucene */,
 				0304D7BA186CFCDA00ED6E94 /* Event6 - Nemedique */,
-				0304D7B4186CF09500ED6E94 /* Event7 - Lost */,
+				0304D7B4186CF09500ED6E94 /* Event7 - Ramen */,
 				0304D7BB186CFCE100ED6E94 /* Event8 */,
 				0304D7BC186CFCEA00ED6E94 /* Event9 - ambient */,
 				0304D7BD186CFCF000ED6E94 /* Event10 - Red */,

@@ -8,16 +8,56 @@
 
 #define systemDebug				1
 
-#define userCharacterId			3
-#define userCharacterLocation	60
+#define userCharacterId			6
+#define userCharacterLocation	29
 #define userCharacterX			0
 #define userCharacterY			0
+
+#define storageAudio			1
 
 #define dialogHaveCharacter			@"SIO"
 #define dialogHaveSpell				@"SIO"
 #define dialogGiveSpellNecomedre	@"MDK"
 #define dialogGiveSpellNeomine		@"MEK"
+#define dialogGiveSpellDocument		@"MXK"
 #define dialogDoorLocked			@"FLT"
+#define dialogAudioOn				@"XXX"
+#define dialogAudioOff				@"XXX"
+
+#define characterNecomedre		1
+#define characterNephtaline		2
+#define characterNeomine		3
+#define characterNestorine		4
+#define characterNemedique		5
+#define characterDocument		6
+
+#define eventNecomedre			@"2"
+#define eventNephtaline			@"3"
+#define eventNeomine			@"4"
+#define eventNestorine			@"5"
+#define eventNemedique			@"6"
+#define eventOwl				@"1"
+#define eventRamen				@"7"
+#define eventShark				@"8"
+#define eventPhotocopier		@"11"
+#define eventAudio				@"9"
+
+#define spellNecomedre			1
+#define spellNephtaline			2
+#define spellNeomine			3
+#define spellNestorine			4
+#define spellNemedique			5
+#define spellDocument			6
+
+#define letterNecomedre			@"D"
+#define letterNephtaline		@"C"
+#define letterNeomine			@"E"
+#define letterNestorine			@"B"
+#define letterNemedique			@"A"
+#define letterDocument			@"X"
+#define letterAudio				@"N"
+
+#define intStr() [NSString stringWithFormat:@"%d",int]
 
 #define userLocationString		[NSString stringWithFormat:@"%d",userLocation]
 #define userPositionString		[NSString stringWithFormat:@"%d,%d",userPositionX,userPositionY]
@@ -31,9 +71,15 @@
  == + =========== + ================== + ============================
  
  1  | Lobby
- 20 | Necomedre
+ 
+ 20 | Necomedre 29/32
+	-> Game Start: 29
+	-> Necomedre World: 32
+ 
  40 | Nephtaline
+ 
  60 | Neomine
+ 
  80 | Nestorine
  
  # Event IDs
@@ -51,23 +97,4 @@
  8  | Settings    |
  9  | Settings    |
  == + =========== + ================== + ============================
- 
- 50 | spellgiver  | nephtaline
- 
- 
- # Alphabet
- 
- == + =========== + ================== + ============================
- id | Location    | Event Name         | Notes
- == + =========== + ================== + ============================
- A | Nemedique
- B | Nepomucene
- C | Nephtaline
- D | Necomedre
- E | Neomine
- K | Unlocked
- L | Locked
- F | Door
- N | Audio
- X | Document
  */

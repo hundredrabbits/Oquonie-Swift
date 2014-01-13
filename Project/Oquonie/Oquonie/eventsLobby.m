@@ -19,6 +19,32 @@
 
 # pragma mark Gates -
 
+-(NSString*)event_gateDocument :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Warp
+	if(userCharacter == characterDocument){
+		if(userLocation == 29){
+			[self eventWarp:@"30" :@"0,-1"];
+		}
+		else if(userLocation == 30){
+			[self eventWarp:@"29" :@"0,1"];
+		}
+	}
+	else{
+		[self eventDialog:dialogDoorLocked:@"1"];
+	}
+	
+	return @"";
+}
+
 -(NSString*)event_gateNephtaline :(NSString*)option
 {
 	// Broadcast Notification
