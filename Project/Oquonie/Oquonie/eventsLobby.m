@@ -37,6 +37,12 @@
 		else if(userLocation == 39){
 			[self eventWarp:@"38" :@"0,1"];
 		}
+		else if(userLocation == 1){
+			[self eventWarp:@"40" :@"-1,0"];
+		}
+		else if(userLocation == 40){
+			[self eventWarp:@"1" :@"1,0"];
+		}
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];

@@ -18,7 +18,7 @@
 	@"2",@"8",@"4",
 	@"2",@"2",@"2|event|pillarTest|14|l",
 	// Walls
-	@"0",@"5|event|null",@"2",@"2",@"12|warp|2|0,-1",@"15",
+	@"0",@"5|event|gateNephtaline",@"2",@"2",@"12|warp|2|0,-1",@"15",
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
