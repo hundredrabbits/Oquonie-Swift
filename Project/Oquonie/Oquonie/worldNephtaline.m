@@ -71,7 +71,7 @@
 	// Tiles
 	@"0",@"0",@"0",
 	@"0",@"18",@"4",
-	@"0",@"5",@"5|event|null|4|l",
+	@"0",@"5",@"5|event|nephtalineNeomine2|4|l",
 	// Walls
 	@"0",@"0",@"0",@"0",@"12|warp|45|0,-1",@"3",
 	// Steps
@@ -93,7 +93,7 @@
 	
 	worldNode[46] = @[
 	// Tiles
-	@"3|event|null|4|r",@"4|block|13",@"3",
+	@"3|event|nephtalineNeomine1|4|r",@"4|block|13",@"3",
 	@"17",@"10",@"5",
 	@"3",@"5",@"3",
 	// Walls
@@ -256,12 +256,25 @@
 	worldNode[58] = @[
 	// Tiles
 	@"3",@"4",@"3",
-	@"4",@"10",@"2|event|null|4|l",
+	@"4",@"10",@"2|event|nephtalineNeomine3|4|l",
 	@"3",@"3",@"3",
 	// Walls
-	@"3",@"7|gateNestorine",@"3",@"3",@"3",@"3",
+	@"3",@"7|event|gateNeomine",@"3",@"3",@"3",@"3",
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Nephtaline Lobby 2",@"White",@"lobby"];
+	
+	
+	worldNode[59] = @[
+	// Tiles
+	@"2",@"2",@"2",
+	@"2",@"2",@"2",
+	@"2",@"2",@"2",
+	// Walls
+	@"3",@"3",@"3",@"3",@"3",@"3",
+	// Steps
+	@"0",@"0",@"0",@"0",@"4|event|gateNeomine",@"0",
 	// Name,Background,Audio
 	@"Nephtaline Lobby 2",@"White",@"lobby"];
 	

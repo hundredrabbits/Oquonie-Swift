@@ -8,8 +8,8 @@
 
 #define systemDebug				1
 
-#define userCharacterId			2
-#define userCharacterLocation	40
+#define userCharacterId			3
+#define userCharacterLocation	58
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -47,6 +47,7 @@
  B | Nepomucene
  C | Nephtaline
  D | Necomedre
+ E | Neomine
  K | Unlocked
  L | Locked
  F | Door
