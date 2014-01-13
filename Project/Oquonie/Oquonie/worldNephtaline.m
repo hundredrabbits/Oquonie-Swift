@@ -101,7 +101,7 @@
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|51|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Nephtaline Lobby 1",@"White",@"lobby"];
 
 	// =======================
 	// @ Events: Segment 2
@@ -152,7 +152,7 @@
 					  // Steps
 					  @"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|23|1,0",@"0",
 					  // Name,Background,Audio
-					  @"Necomedre Fork",@"White",@"lobby"];
+					  @"Nephtaline Lobby 2",@"White",@"lobby"];
 
 	// =======================
 	// @ Events: Segment 3
@@ -193,7 +193,17 @@
 					  @"0",@"0",@"0",@"0",@"7|warp|48|1,0",@"0",
 					  // Name,Background,Audio
 					  @"Necomedre Fork",@"White",@"lobby"];
-	worldNode[54] = @[];
+	worldNode[54] = @[
+					  // Tiles
+					  @"3",@"4",@"3|event|null|1|r",
+					  @"4",@"10",@"3",
+					  @"3",@"5",@"3",
+					  // Walls
+					  @"3",@"8|gateNestorine",@"3",@"3",@"16",@"3",
+					  // Steps
+					  @"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|51|1,0",@"0",
+					  // Name,Background,Audio
+					  @"Nephtaline Lobby 3",@"White",@"lobby"];
 	
 	// =======================
 	// @ Events: Segment 4
