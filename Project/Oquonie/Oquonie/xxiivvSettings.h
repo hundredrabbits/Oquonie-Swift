@@ -9,7 +9,7 @@
 #define systemDebug				1
 
 #define userCharacterId			3
-#define userCharacterLocation	58
+#define userCharacterLocation	60
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -23,7 +23,21 @@
 #define userPositionString		[NSString stringWithFormat:@"%d,%d",userPositionX,userPositionY]
 
 /*
+ 
+ # World IDs
+ 
+ == + =========== + ================== + ============================
+ id | Location    | Event Name         | Notes
+ == + =========== + ================== + ============================
+ 
+ 1  | Lobby
+ 20 | Necomedre
+ 40 | Nephtaline
+ 60 | Neomine
+ 80 | Nestorine
+ 
  # Event IDs
+ 
  == + =========== + ================== + ============================
  id | Location    | Event Name         | Notes
  == + =========== + ================== + ============================
@@ -42,6 +56,9 @@
  
  
  # Alphabet
+ 
+ == + =========== + ================== + ============================
+ id | Location    | Event Name         | Notes
  == + =========== + ================== + ============================
  A | Nemedique
  B | Nepomucene
