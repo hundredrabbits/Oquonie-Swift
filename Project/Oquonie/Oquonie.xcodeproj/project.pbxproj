@@ -1046,6 +1046,10 @@
 		032D74DE179CD68A0068B27E /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
+				03A999671883BA510051DF93 /* tile.28.png */,
+				03A999681883BA510051DF93 /* tile.29.png */,
+				03A999691883BA510051DF93 /* tile.30.png */,
+				03A9996A1883BA510051DF93 /* tile.31.png */,
 				03C0E661186265B3006AA0E6 /* tile.27.png */,
 				03C0E662186265B3006AA0E6 /* tile.26.png */,
 				03C0E663186265B3006AA0E6 /* tile.25.png */,
@@ -1528,10 +1532,6 @@
 		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
-				03A999671883BA510051DF93 /* tile.28.png */,
-				03A999681883BA510051DF93 /* tile.29.png */,
-				03A999691883BA510051DF93 /* tile.30.png */,
-				03A9996A1883BA510051DF93 /* tile.31.png */,
 				03A9995B1883B02E0051DF93 /* wall.30.l.png */,
 				03A9995C1883B02E0051DF93 /* wall.30.r.png */,
 				03A9995D1883B02E0051DF93 /* wall.31.l.png */,
