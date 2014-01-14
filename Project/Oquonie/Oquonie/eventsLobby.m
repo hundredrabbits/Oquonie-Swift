@@ -214,6 +214,12 @@
 		else if(userLocation == 121){
 			[self eventWarp:@"50" :@"1,0"];
 		}
+		else if(userLocation == 9){
+			[self eventWarp:locationNemediqueEnter :@"1,0"];
+		}
+		else if(userLocation == 100){
+			[self eventWarp:locationNemediqueLobby :@"1,0"];
+		}
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];

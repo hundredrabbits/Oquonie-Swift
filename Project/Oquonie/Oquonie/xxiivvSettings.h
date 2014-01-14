@@ -95,6 +95,7 @@
 #define locationNephtalineLobby		@"1"
 #define locationNephtalinePillar	@"121"
 #define locationNemediqueLobby		@"9"
+#define locationNemediqueEnter		@"100"
 
 #define roomCenter				@"0,0"
 
