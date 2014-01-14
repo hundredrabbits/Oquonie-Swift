@@ -8,10 +8,12 @@
 
 #define systemDebug				1
 
-#define userCharacterId			2
-#define userCharacterLocation	1
+#define userCharacterId			3
+#define userCharacterLocation	63
 #define userCharacterX			0
 #define userCharacterY			0
+
+#define userQuestRamen			0
 
 #define storageAudio					1
 #define storageQuestRamen				5

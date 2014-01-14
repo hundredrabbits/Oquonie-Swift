@@ -358,12 +358,24 @@
 {
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[storageQuestRamen] intValue] == 1 && userLocation != 63){
+			if(userCharacter == characterNeomine && userLocation == 2 && ![self eventSpellCheck:@"lobbyNecomedre"]){
+				return letterNecomedre;
+			}
+		}
+		else if( userLocation == 63 && [userStorageEvents[storageQuestRamen] intValue] == 0 ){
+			return letterHelp;
+		}
 		return @"";
 	}
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if([userStorageEvents[storageQuestRamen] intValue] == 1){
+		// Quest: At his location
+		if(userLocation == 63 && [userStorageEvents[storageQuestRamen] intValue] == 0){
+			return eventRamen;
+		}
+		else if(userLocation != 63 && [userStorageEvents[storageQuestRamen] intValue] == 1){
 			return eventRamen;
 		}
 		else{
@@ -372,6 +384,16 @@
 	}
 	
 	// Dialogs
+	if( userLocation == 63 && [userStorageEvents[storageQuestRamen] intValue] == 0){
+		userStorageEvents[storageQuestRamen] = @"1";
+		[self eventWarp:userLocationString:userPositionString];
+		[self eventDialog:dialogSeeYou:eventRamen];
+	}
+	else if([userStorageEvents[storageQuestRamen] intValue] == 1){
+		if(userCharacter == characterNeomine && userLocation == 2){
+			[self eventSpellAdd:@"lobbyNecomedre":spellNecomedre];
+		}
+	}
 	
 	return @"";
 }
