@@ -8,8 +8,8 @@
 
 #define systemDebug				1
 
-#define userCharacterId			3
-#define userCharacterLocation	64
+#define userCharacterId			2
+#define userCharacterLocation	1
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -35,6 +35,7 @@
 #define dialogWarpLobby				@"UUU"
 #define dialogTakePillar			@"UUU"
 #define dialogInfoPillar			@"UUU"
+#define dialogLookMap				@"UUU"
 
 #define characterNecomedre		1
 #define characterNephtaline		2

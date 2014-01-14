@@ -312,6 +312,23 @@
 	return @"";
 }
 
+-(NSString*)event_map :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Dialogs
+	[self eventDialog:dialogLookMap:eventOwl];
+	
+	// Default
+	return @"";
+}
+
 // =======================
 // @ Events: Wizards
 // =======================

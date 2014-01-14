@@ -91,6 +91,7 @@
 	
 	return @"";
 }
+
 -(NSString*)event_nephtalineNeomine3 :(NSString*)option
 {
 	// Event Identifier
@@ -102,6 +103,38 @@
 	if([option isEqualToString:@"postNotification"]){
 		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
 			return @"E";
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNeomine:eventSpriteId]; }
+	
+	// Spell
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	
+	return @"";
+}
+
+
+-(NSString*)event_nephtalineNecomedre1 :(NSString*)option
+{
+	// Event Identifier
+	NSString *eventSpellId = @"nephtalineNecomedre1";
+	NSString*	eventSpriteId = eventNecomedre;
+	int			eventSpell = spellNecomedre;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return letterNecomedre;
 		}
 		return @"";
 	}

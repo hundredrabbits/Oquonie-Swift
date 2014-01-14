@@ -44,7 +44,7 @@
 
 	worldNode[42] = @[
 	// Tiles
-	@"5|event|null|5|r",@"5",@"0",
+	@"5|event|nephtalineNecomedre1|2|r",@"5",@"0",
 	@"4",@"17",@"0",
 	@"0",@"0",@"0",
 	// Walls
@@ -150,7 +150,7 @@
 	@"4",@"10",@"3",
 	@"3",@"19",@"3",
 	// Walls
-	@"3",@"8|gateNestorine",@"3",@"3",@"16",@"3",
+	@"3",@"8|gateNestorine",@"3",@"3",@"16|event|map",@"3",
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|55|1,0",@"0",
 	// Name,Background,Audio
@@ -204,7 +204,7 @@
 	@"4",@"10",@"3",
 	@"3",@"5",@"3",
 	// Walls
-	@"3",@"8|gateNestorine",@"3",@"3",@"16",@"3",
+	@"3",@"8|gateNestorine",@"3",@"3",@"3",@"3",
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|51|1,0",@"0",
 	// Name,Background,Audio
