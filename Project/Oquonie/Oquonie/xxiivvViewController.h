@@ -59,6 +59,8 @@
 
 @property (strong, nonatomic) IBOutlet UIView *interfaceContainer;
 
+@property (strong, nonatomic) IBOutlet UIView *dialogVignette;
+
 @property (strong, nonatomic) IBOutlet UIView *dialogView;
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter;
 @property (strong, nonatomic) IBOutlet UIImageView *dialogBubble;

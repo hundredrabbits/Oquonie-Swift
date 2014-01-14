@@ -21,8 +21,11 @@
 #define dialogGiveSpellNeomine		@"MEK"
 #define dialogGiveSpellDocument		@"MXK"
 #define dialogDoorLocked			@"FLT"
-#define dialogAudioOn				@"XXX"
-#define dialogAudioOff				@"XXX"
+#define dialogAudioOn				@"UUU"
+#define dialogAudioOff				@"UUU"
+#define dialogThankYou				@"UUU"
+#define dialogConfusion				@"UUU"
+#define dialogSeeYou				@"UUU"
 
 #define characterNecomedre		1
 #define characterNephtaline		2
@@ -41,6 +44,8 @@
 #define eventShark				@"8"
 #define eventPhotocopier		@"11"
 #define eventAudio				@"9"
+#define eventTutorial			@"12"
+#define eventRed				@"10"
 
 #define spellNecomedre			1
 #define spellNephtaline			2
@@ -56,6 +61,8 @@
 #define letterNemedique			@"A"
 #define letterDocument			@"X"
 #define letterAudio				@"N"
+#define letterHelp				@"M"
+#define letterConfused			@"U"
 
 #define intStr() [NSString stringWithFormat:@"%d",int]
 

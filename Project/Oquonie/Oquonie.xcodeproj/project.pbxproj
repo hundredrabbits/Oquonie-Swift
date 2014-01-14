@@ -1440,7 +1440,7 @@
 				0304D7BC186CFCEA00ED6E94 /* Event9 - ambient */,
 				0304D7BD186CFCF000ED6E94 /* Event10 - Red */,
 				03F5C4A5187BBB3900352B8E /* Event11 - Photocopier */,
-				03DBEECE1880434100CE6FBC /* Event12 - TutorialChar */,
+				03DBEECE1880434100CE6FBC /* Event12 - Tutorial */,
 				03798BF61882868E00C31389 /* Event 14 - Pillar Base */,
 				03798BF8188286B400C31389 /* Event 15 - Pillar Found */,
 				03798BF7188286A300C31389 /* Event 16 - Pillar Combined */,
@@ -1595,7 +1595,7 @@
 			name = "III - Nestorine Universe";
 			sourceTree = "<group>";
 		};
-		03DBEECE1880434100CE6FBC /* Event12 - TutorialChar */ = {
+		03DBEECE1880434100CE6FBC /* Event12 - Tutorial */ = {
 			isa = PBXGroup;
 			children = (
 				03DBEEC61880433D00CE6FBC /* event.12.portrait.png */,
@@ -1603,7 +1603,7 @@
 				03DBEEC81880433D00CE6FBC /* event.12.r.2.png */,
 				03DBEEC91880433D00CE6FBC /* event.12.r.3.png */,
 			);
-			name = "Event12 - TutorialChar";
+			name = "Event12 - Tutorial";
 			sourceTree = "<group>";
 		};
 		03F5C4A5187BBB3900352B8E /* Event11 - Photocopier */ = {

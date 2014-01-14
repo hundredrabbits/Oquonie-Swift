@@ -272,6 +272,11 @@
                                             </imageView>
                                         </subviews>
                                     </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" id="3W6-s1-0d2" userLabel="dialogVignette">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <view contentMode="scaleAspectFit" id="Y7v-1Q-mTL" userLabel="dialogView">
                                         <rect key="frame" x="0.0" y="230" width="320" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -314,6 +319,7 @@
                         <outlet property="dialogCharacter2" destination="vkC-tP-X8t" id="fEB-qj-e0Y"/>
                         <outlet property="dialogCharacter3" destination="g3X-JJ-hat" id="KCW-mf-qNE"/>
                         <outlet property="dialogView" destination="Y7v-1Q-mTL" id="hiW-Y7-REe"/>
+                        <outlet property="dialogVignette" destination="3W6-s1-0d2" id="3VB-a5-48r"/>
                         <outlet property="floor00" destination="JCv-bJ-j64" id="4da-uc-oBG"/>
                         <outlet property="floor01" destination="8Dr-bW-Pwg" id="SJ8-8F-vvY"/>
                         <outlet property="floor0e" destination="7S7-zo-KJe" id="N16-nY-8c6"/>

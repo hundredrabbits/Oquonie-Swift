@@ -121,6 +121,7 @@
 	self.dialogBubble.frame = CGRectOffset(bubbleOrigin, 0, 0);
 	self.dialogBubble.alpha = 1;
 	self.dialogCharacter2.alpha = 1;
+	self.dialogVignette.alpha = 1;
 	[UIView commitAnimations];
 	
 	[UIView beginAnimations: @"animate dialog" context:nil];
@@ -308,6 +309,7 @@
 		self.dialogCharacter1.alpha = 0;
 		self.dialogCharacter2.alpha = 0;
 		self.dialogCharacter3.alpha = 0;
+		self.dialogVignette.alpha = 0;
 	} completion:^(BOOL finished){}];
 }
 

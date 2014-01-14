@@ -246,43 +246,58 @@
 
 -(NSString*)event_tutorialRedDoor :(NSString*)option
 {
-//	if([option isEqualToString:@"postNotification"]){
-//		return @"";
-//	}
-//	[self eventTransitionPan:@"1":@"0,0"];
-//	[self eventDialog:@"UVW":@"10"];		
-//	
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	[self eventTransitionPan:@"1":@"0,0"];
+	[self eventDialog:dialogSeeYou:eventRed];
+	
 	return @"";
 }
 
 -(NSString*)event_tutorialCharacter :(NSString*)option
 {
-//	if([option isEqualToString:@"postNotification"]){
-//		if(userCharacter == 1){
-//			return 0;
-//		}
-//		return 0;
-//	}
-//	if(userCharacter == 1){
-//		[self eventWarp:@"31" :@"0,0"];
-//		[self eventDialog:@"UVW":@"10"];
-//		[self eventVignette:@"12"];
-//	}
-//	if(userCharacter == 6){
-//		[self eventTranform:1];
-//		[self eventDialog:@"UVW":@"12"];
-//	}
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		if(userLocation == 30){
+			if(userCharacter == 6){ return letterHelp; }
+			if(userCharacter == 1){ return letterConfused; }
+			else{ return @""; }
+		}
+		return @"";
+	}
 	
-	return @"";
-}
-
--(NSString*)event_tutorialCharacterTransformed :(NSString*)option
-{
-//	if([option isEqualToString:@"postNotification"]){
-//		return 0;
-//	}
-//	[self eventWarp:@"31" :@"0,0"];
-//	[self eventTranform:1];
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if(userLocation == 31){
+			return eventRed;
+		}
+		return @"";
+	}
+	
+	// Dialogs
+	if(userLocation==30){
+		if(userCharacter == 6){
+			[self eventTranform:1];
+			[self eventDialog:dialogThankYou:eventTutorial];
+		}
+		else if(userCharacter == 1){
+			[self eventDialog:dialogConfusion:eventRed];
+			[self eventWarp:@"31" :@"0,0"];
+			[self eventVignette:@"12"];
+		}
+		else{
+			[self eventDialog:dialogConfusion:eventTutorial];
+		}
+	}
+	
 	return @"";
 }
 

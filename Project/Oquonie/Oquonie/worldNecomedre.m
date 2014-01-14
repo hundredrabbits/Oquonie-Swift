@@ -140,13 +140,13 @@
 
 	worldNode[31] = @[
 	// Tiles
-	@"21|block|16",@"2|event|tutorialCharacterTransformed|10|r",@"2",
+	@"21|block|16",@"2|event|tutorialCharacter|12|r",@"2",
 	@"21",@"2",@"2",
 	@"21",@"21",@"2",
 	// Walls
 	@"20",@"19|warp|31|-1,0",@"19",@"17",@"27|event|tutorialRedDoor",@"17",
 	// Steps
-	@"0",@"10|event|photocopierDoor",@"0",@"0",@"0",@"0",
+	@"0",@"10|event|gateDocument",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Office",@"White",@"lobby"];
 	
