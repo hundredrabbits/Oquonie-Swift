@@ -8,8 +8,8 @@
 
 #define systemDebug				1
 
-#define userCharacterId			3
-#define userCharacterLocation	63
+#define userCharacterId			1
+#define userCharacterLocation	29
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -85,8 +85,11 @@
 #define letterPillar			@"Y"
 
 #define locationLobbyLanding	@"1"
-#define locationNeominePillar	@"64"
+#define locationNeominePillar	@"71"
 #define locationNeomineLobby	@"3"
+#define locationGameStart		@"29"
+#define locationNestorineLobby	@"7"
+#define locationNestorineEnter	@"80"
 
 #define roomCenter				@"0,0"
 

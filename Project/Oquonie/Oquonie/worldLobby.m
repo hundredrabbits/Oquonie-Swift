@@ -90,7 +90,7 @@
 	@"4",@"5",@"12",
 	@"9|event|pillarTest|14|l",@"0",@"0",
 	// Walls
-	@"19",@"0",@"0",@"0",@"8|event|null",@"0",
+	@"19",@"0",@"0",@"0",@"8|event|gateNestorine",@"0",
 	// Steps
 	@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio

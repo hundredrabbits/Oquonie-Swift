@@ -139,11 +139,11 @@
 	}
 	// Warp
 	if(userCharacter == 4){
-		if(userLocation == 69){
-			[self eventWarp:@"70" :@"0,-1"];
+		if(userLocation == 7){
+			[self eventWarp:locationNestorineEnter :@"0,-1"];
 		}
-		else if(userLocation == 70){
-			[self eventWarp:@"69" :@"0,1"];
+		else if(userLocation == 80){
+			[self eventWarp:locationNestorineLobby:@"0,1"];
 		}
 	}
 	else{
@@ -198,12 +198,18 @@
 	if([option isEqualToString:@"postUpdate"]){
 		return @"0"; // try with 17 ?
 	}
-	// Warp
+	// Necomedre
 	if(userCharacter == characterNephtaline && userLocation == 39){
 		[self eventDialog:dialogWarpLobby:@"1"];
 		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
 	}
+	// Nephtaline
 	else if(userCharacter == characterNeomine && userLocation == 59){
+		[self eventDialog:dialogWarpLobby:@"1"];
+		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
+	}
+	// Neomine
+	else if(userCharacter == characterNestorine && userLocation == 70){
 		[self eventDialog:dialogWarpLobby:@"1"];
 		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
 	}
@@ -272,6 +278,7 @@
 	if([userStorageEvents[pillarInstanceStorageId] intValue] != 1){
 		userStorageEvents[pillarInstanceStorageId] = @"1";
 		[self eventDialog:dialogTakePillar:eventOwl];
+		[self eventTransitionPan:locationNeomineLobby:roomCenter];
 	}
 	else{
 		userStorageEvents[pillarInstanceStorageId] = @"0";
