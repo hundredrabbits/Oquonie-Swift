@@ -258,7 +258,7 @@
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates
 {
 	[self moveDisable:4];
-	[UIView animateWithDuration:3 animations:^(void){
+	[UIView animateWithDuration:2.5 animations:^(void){
 		NSLog(@"  EVENT | Pan          | Panning Out");
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		[UIView setAnimationDelay:0.2];
@@ -282,7 +282,9 @@
 			self.spritesContainer.frame = spriteContainerOrigin;
 			self.parallaxBack.frame = parallaxBackOrigin;
 			self.parallaxFront.frame = parallaxFrontOrigin;
-		} completion:^(BOOL finished){}];
+		} completion:^(BOOL finished){
+			[self roomClearDialog];
+		}];
 	}];
 }
 

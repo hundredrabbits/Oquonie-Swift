@@ -147,7 +147,7 @@
 	// Dialogs
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNeomine:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNemedique:eventSpriteId]; }
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];

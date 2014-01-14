@@ -28,6 +28,7 @@
 #define dialogGiveSpellNecomedre	@"MDK"
 #define dialogGiveSpellNeomine		@"MEK"
 #define dialogGiveSpellDocument		@"MXK"
+#define dialogGiveSpellNemedique	@"MAK"
 #define dialogDoorLocked			@"FLT"
 #define dialogAudioOn				@"UUU"
 #define dialogAudioOff				@"UUU"

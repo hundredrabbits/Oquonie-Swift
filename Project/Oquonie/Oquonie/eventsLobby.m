@@ -44,7 +44,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventDialog:dialogDoorLocked:eventTutorial];
 	}
 	
 	return @"";
@@ -55,7 +55,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNephtaline){
-			return letterUnlocked;
+			return @""; // letterUnlocked
 		}
 		return @"";
 	}
@@ -89,7 +89,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNeomine){
-			return letterUnlocked;
+			return @""; // letterUnlocked
 		}
 		return @"";
 	}
@@ -129,7 +129,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNestorine){
-			return letterUnlocked;
+			return @""; // letterUnlocked
 		}
 		return @"";
 	}
@@ -164,7 +164,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNecomedre){
-			return letterUnlocked;
+			return @""; // letterUnlocked
 		}
 		return @"";
 	}
@@ -198,7 +198,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNemedique){
-			return letterUnlocked;
+			return @""; // letterUnlocked
 		}
 		return @"";
 	}
