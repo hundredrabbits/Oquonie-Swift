@@ -8,13 +8,18 @@
 
 #define systemDebug				1
 
-#define userCharacterId			2
-#define userCharacterLocation	39
+#define userCharacterId			3
+#define userCharacterLocation	64
 #define userCharacterX			0
 #define userCharacterY			0
 
-#define storageAudio			1
-#define storageQuestRamen		5
+#define storageAudio					1
+#define storageQuestRamen				5
+#define storageQuestPillarNecomedre		11
+#define storageQuestPillarNephtaline	12
+#define storageQuestPillarNeomine		13
+#define storageQuestPillarNestorine		14
+#define storageQuestPillarNemedique		15
 
 #define dialogHaveCharacter			@"SIO"
 #define dialogHaveSpell				@"SIO"
@@ -28,6 +33,8 @@
 #define dialogConfusion				@"UUU"
 #define dialogSeeYou				@"UUU"
 #define dialogWarpLobby				@"UUU"
+#define dialogTakePillar			@"UUU"
+#define dialogInfoPillar			@"UUU"
 
 #define characterNecomedre		1
 #define characterNephtaline		2
@@ -50,6 +57,11 @@
 #define eventRed				@"10"
 #define eventRamenSeat			@"18"
 
+#define eventPillarCollectible	@"15"
+#define eventPillarSocket		@"14"
+#define eventPillarAssembled	@"16"
+#define eventPillarRemains		@"17"
+
 #define spellNecomedre			1
 #define spellNephtaline			2
 #define spellNeomine			3
@@ -67,8 +79,11 @@
 #define letterHelp				@"M"
 #define letterConfused			@"U"
 #define letterUnlocked			@"K"
+#define letterPillar			@"Y"
 
 #define locationLobbyLanding	@"1"
+#define locationNeominePillar	@"64"
+#define locationNeomineLobby	@"3"
 
 #define roomCenter				@"0,0"
 

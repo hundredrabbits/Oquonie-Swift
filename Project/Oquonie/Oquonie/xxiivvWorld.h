@@ -16,4 +16,5 @@
 - (void) roomGenerateNotifications;
 - (void) roomClearNotifications;
 - (void) roomClearSprites;
+-(void)roomGenerateEvents;
 @end

@@ -11,6 +11,7 @@
 #import "eventsLobby.h"
 #import "xxiivvEvents.h"
 #import "xxiivvUser.h"
+#import "xxiivvWorld.h"
 
 @implementation xxiivvViewController (eventsLobby)
 
@@ -202,6 +203,10 @@
 		[self eventDialog:dialogWarpLobby:@"1"];
 		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
 	}
+	else if(userCharacter == characterNeomine && userLocation == 59){
+		[self eventDialog:dialogWarpLobby:@"1"];
+		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
+	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];
 	}
@@ -240,42 +245,69 @@
 
 # pragma mark Wizards -
 
--(NSString*)event_pillarNeomine :(NSString*)option
+-(NSString*)event_pillar:(NSString*)option
 {
+	int pillarInstanceStorageId;
+	
+	if(userLocation == [locationNeominePillar intValue]){
+		pillarInstanceStorageId = storageQuestPillarNeomine;
+	}
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if( [userStorageEvents[pillarInstanceStorageId] intValue] != 1){
+			return letterPillar;
+		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if([userStorageEvents[5] isEqualToString:@"1"]){
-			return @"17";
+		if( [userStorageEvents[pillarInstanceStorageId] intValue] == 1){
+			return eventPillarRemains;
 		}
 		return @"";
 	}
 	
-	userStorageEvents[5] = @"1";
-	[self eventWarp:userLocationString :userPositionString];
+	// Dialog
+	if([userStorageEvents[pillarInstanceStorageId] intValue] != 1){
+		userStorageEvents[pillarInstanceStorageId] = @"1";
+		[self eventDialog:dialogTakePillar:eventOwl];
+	}
+	else{
+		userStorageEvents[pillarInstanceStorageId] = @"0";
+	}
 	
-	
+	[self roomClearSprites];
+	[self roomGenerateEvents];
 	
 	// Default
 	return @"";
 }
 
--(NSString*)event_pillarNeomineSocket :(NSString*)option
+-(NSString*)event_socket :(NSString*)option
 {
+	int socketInstanceStorageId;
+	
+	if(userLocation == [locationNeomineLobby intValue]){
+		socketInstanceStorageId = storageQuestPillarNeomine;
+	}
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		return @"";
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if([userStorageEvents[5] isEqualToString:@"1"]){
-			return @"16";
+		if([userStorageEvents[socketInstanceStorageId] intValue] == 1){
+			return eventPillarAssembled;
 		}
 		return @"";
 	}
+	// Dialogs
+	if([userStorageEvents[socketInstanceStorageId] intValue] == 1){
+		[self eventDialog:dialogInfoPillar:eventOwl];
+	}	
+	
 	// Default
 	return @"";
 }

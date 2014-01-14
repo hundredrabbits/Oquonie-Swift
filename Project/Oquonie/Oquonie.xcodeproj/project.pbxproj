@@ -1298,14 +1298,14 @@
 			name = "Event 16 - Pillar Combined";
 			sourceTree = "<group>";
 		};
-		03798BF8188286B400C31389 /* Event 15 - Pillar Found */ = {
+		03798BF8188286B400C31389 /* Event 15 - Pillar Collectible */ = {
 			isa = PBXGroup;
 			children = (
 				03798BD5188272ED00C31389 /* event.15.l.2.png */,
 				03798BD6188272ED00C31389 /* event.15.l.3.png */,
 				03798BCB1882721600C31389 /* event.15.l.1.png */,
 			);
-			name = "Event 15 - Pillar Found";
+			name = "Event 15 - Pillar Collectible";
 			sourceTree = "<group>";
 		};
 		03798BF9188286BE00C31389 /* Event 17 - Pillar Remains */ = {
@@ -1475,7 +1475,7 @@
 				03F5C4A5187BBB3900352B8E /* Event11 - Photocopier */,
 				03DBEECE1880434100CE6FBC /* Event12 - Tutorial */,
 				03798BF61882868E00C31389 /* Event 14 - Pillar Base */,
-				03798BF8188286B400C31389 /* Event 15 - Pillar Found */,
+				03798BF8188286B400C31389 /* Event 15 - Pillar Collectible */,
 				03798BF7188286A300C31389 /* Event 16 - Pillar Combined */,
 				03798BF9188286BE00C31389 /* Event 17 - Pillar Remains */,
 				03B9435C1884FB37008E834A /* Event18 - Ramen Seat */,

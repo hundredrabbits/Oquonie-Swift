@@ -38,7 +38,7 @@
 
 	worldNode[3] = @[
 	// Tiles
-	@"1|event|pillarNeomineSocket|14|l",@"23",@"1|event|owlSave|1|r",
+	@"1|event|socket|14|l",@"23",@"1|event|owlSave|1|r",
 	@"6",@"5",@"1",
 	@"1|block|1",@"4",@"1",
 	// Walls
