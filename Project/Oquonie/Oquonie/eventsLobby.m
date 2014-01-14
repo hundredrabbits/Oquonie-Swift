@@ -292,6 +292,18 @@
 		pillarInstanceWarp = locationNephtalineLobby;
 	}
 	
+	// Initial Animation
+	if(![option isEqualToString:@"postUpdate"] && ![option isEqualToString:@""] && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 0){
+	
+		self.userPlayer.alpha = 0;
+		[UIView animateWithDuration:2 animations:^(void){
+			self.userPlayer.alpha = 1;
+		} completion:^(BOOL finished){}];
+		
+		[self moveDisable:2];
+		[self eventDialog:dialogFoundPillar:eventOwl];
+	}
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if( [userStorageEvents[pillarInstanceStorageId] intValue] != 1){

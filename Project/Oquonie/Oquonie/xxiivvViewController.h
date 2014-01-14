@@ -132,6 +132,8 @@ NSString *worldAudio;
 NSString *worldBackground;
 
 NSTimer *worldMoveTimer;
+NSTimer *worldWalkTimer;
+
 
 int worldTimer;
 

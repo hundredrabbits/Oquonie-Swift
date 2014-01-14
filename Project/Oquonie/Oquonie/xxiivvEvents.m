@@ -264,8 +264,8 @@
 		[UIView setAnimationDelay:0.2];
 		self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, screen.size.height);
 		self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, screen.size.height-30);
-		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, screen.size.height-10);
-		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, screen.size.height+20);
+		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, screen.size.height-100);
+		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, screen.size.height-200);
 	} completion:^(BOOL finished){
 		NSLog(@"  EVENT | Pan          | Panning In");
 		
@@ -273,8 +273,8 @@
 		
 		self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, -1*screen.size.height);
 		self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, -1*screen.size.height-100);
-		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+10);
-		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height-50);
+		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
+		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
 		
 		[UIView animateWithDuration:2.5 animations:^(void){
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
