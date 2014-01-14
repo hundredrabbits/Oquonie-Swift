@@ -145,6 +145,12 @@
 		else if(userLocation == 80){
 			[self eventWarp:locationNestorineLobby:@"0,1"];
 		}
+		else if(userLocation == 34){
+			[self eventWarp:@"120" :@"-1,0"];
+		}
+		else if(userLocation == 120){
+			[self eventWarp:@"34":@"1,0"];
+		}
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];
@@ -233,30 +239,20 @@
 // @ Events: Pillars
 // =======================
 
-# pragma mark Wizards -
-
--(NSString*)event_pillarTest :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return @"";
-	}
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		return @"";
-	}
-	// Default
-	return @"";
-}
-
-# pragma mark Wizards -
+# pragma mark Pillars -
 
 -(NSString*)event_pillar:(NSString*)option
 {
 	int pillarInstanceStorageId;
+	NSString* pillarInstanceWarp;
 	
 	if(userLocation == [locationNeominePillar intValue]){
 		pillarInstanceStorageId = storageQuestPillarNeomine;
+		pillarInstanceWarp = locationNeomineLobby;
+	}
+	else if (userLocation == [locationNecomedrePillar intValue]){
+		pillarInstanceStorageId = storageQuestPillarNecomedre;
+		pillarInstanceWarp = locationNecomedreLobby;
 	}
 	
 	// Broadcast Notification
@@ -278,7 +274,7 @@
 	if([userStorageEvents[pillarInstanceStorageId] intValue] != 1){
 		userStorageEvents[pillarInstanceStorageId] = @"1";
 		[self eventDialog:dialogTakePillar:eventOwl];
-		[self eventTransitionPan:locationNeomineLobby:roomCenter];
+		[self eventTransitionPan:pillarInstanceWarp:roomCenter];
 	}
 	else{
 		userStorageEvents[pillarInstanceStorageId] = @"0";
@@ -297,6 +293,15 @@
 	
 	if(userLocation == [locationNeomineLobby intValue]){
 		socketInstanceStorageId = storageQuestPillarNeomine;
+	}
+	else if(userLocation == [locationNestorineLobby intValue]){
+		socketInstanceStorageId = storageQuestPillarNestorine;
+	}
+	else if(userLocation == [locationNecomedreLobby intValue]){
+		socketInstanceStorageId = storageQuestPillarNecomedre;
+	}
+	else if(userLocation == [locationNephtalineLobby intValue]){
+		socketInstanceStorageId = storageQuestPillarNephtaline;
 	}
 	
 	// Broadcast Notification

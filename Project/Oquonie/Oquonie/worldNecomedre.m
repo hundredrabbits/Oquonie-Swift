@@ -146,9 +146,9 @@
 	// Walls
 	@"20",@"19|warp|31|-1,0",@"19",@"17",@"27|event|tutorialRedDoor",@"17",
 	// Steps
-	@"0",@"10|event|gateDocument",@"0",@"0",@"0",@"0",
+	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office Red",@"White",@"lobby"];
 	
 	// =======================
 	// @ Events: Segment 2
@@ -182,11 +182,11 @@
 
 	worldNode[34] = @[
 	// Tiles
-	@"4",@"4|event|null|4|r",@"4",
+	@"4|event|necomedreNestorine1|5|r",@"4",@"26",
 	@"4",@"4",@"4",
-	@"4",@"4",@"4",
+	@"4",@"4",@"4|block|11",
 	// Walls
-	@"26",@"26",@"7|event|gateNeomine",@"19",@"12|warp|35|0,-1",@"19",
+	@"26",@"26",@"8|event|gateNestorine",@"19",@"12|warp|35|0,-1",@"19",
 	// Steps
 	@"0",@"6|warp|33|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
@@ -251,6 +251,18 @@
 	@"0",@"6|warp|38|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Office",@"White",@"lobby"];
+	
+	worldNode[120] = @[
+	// Tiles
+	@"4",@"4",@"4",
+	@"4",@"4|event|pillar|15|l",@"4",
+	@"4",@"26",@"4",
+	// Walls
+	@"26",@"26",@"26",@"19",@"19",@"19",
+	// Steps
+	@"0",@"0",@"0",@"0",@"6|warp|34|0,1",@"0",
+	// Name,Background,Audio
+	@"Necomedre Pillar Room",@"White",@"lobby"];
 
 }
 

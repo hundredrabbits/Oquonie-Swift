@@ -208,6 +208,38 @@
 	return @"";
 }
 
+
+-(NSString*)event_necomedreNestorine1 :(NSString*)option
+{
+	// Event Identifier
+	NSString*	eventSpellId	= @"necomedreNestorine1";
+	NSString*	eventSpriteId	= eventNestorine;
+	int			eventSpell		= spellNestorine;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return letterNestorine;
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNecomedre:eventSpriteId]; }
+	
+	// Spell
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	
+	return @"";
+}
+
 // =======================
 // @ Events: NPCs
 // =======================

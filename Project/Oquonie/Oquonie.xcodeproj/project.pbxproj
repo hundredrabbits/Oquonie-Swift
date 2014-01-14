@@ -956,7 +956,7 @@
 			name = "Event4 - Neomine";
 			sourceTree = "<group>";
 		};
-		0304D7B9186CFCCD00ED6E94 /* Event5 - Nepomucene */ = {
+		0304D7B9186CFCCD00ED6E94 /* Event5 - Nestorine */ = {
 			isa = PBXGroup;
 			children = (
 				035A6DA5186B0E610032710C /* event.5.l.2.png */,
@@ -967,7 +967,7 @@
 				0304D767186CEE0200ED6E94 /* event.5.r.2.png */,
 				0304D768186CEE0200ED6E94 /* event.5.r.3.png */,
 			);
-			name = "Event5 - Nepomucene";
+			name = "Event5 - Nestorine";
 			sourceTree = "<group>";
 		};
 		0304D7BA186CFCDA00ED6E94 /* Event6 - Nemedique */ = {
@@ -1466,7 +1466,7 @@
 				0304D7B6186CFCB200ED6E94 /* Event2 - Necomedre */,
 				0304D7B7186CFCBB00ED6E94 /* Event3 - Nephtaline */,
 				0304D7B8186CFCC200ED6E94 /* Event4 - Neomine */,
-				0304D7B9186CFCCD00ED6E94 /* Event5 - Nepomucene */,
+				0304D7B9186CFCCD00ED6E94 /* Event5 - Nestorine */,
 				0304D7BA186CFCDA00ED6E94 /* Event6 - Nemedique */,
 				0304D7B4186CF09500ED6E94 /* Event7 - Ramen */,
 				0304D7BB186CFCE100ED6E94 /* Event8 */,
