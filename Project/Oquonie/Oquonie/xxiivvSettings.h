@@ -8,12 +8,13 @@
 
 #define systemDebug				1
 
-#define userCharacterId			1
-#define userCharacterLocation	32
+#define userCharacterId			2
+#define userCharacterLocation	39
 #define userCharacterX			0
 #define userCharacterY			0
 
 #define storageAudio			1
+#define storageQuestRamen		5
 
 #define dialogHaveCharacter			@"SIO"
 #define dialogHaveSpell				@"SIO"
@@ -26,6 +27,7 @@
 #define dialogThankYou				@"UUU"
 #define dialogConfusion				@"UUU"
 #define dialogSeeYou				@"UUU"
+#define dialogWarpLobby				@"UUU"
 
 #define characterNecomedre		1
 #define characterNephtaline		2
@@ -46,6 +48,7 @@
 #define eventAudio				@"9"
 #define eventTutorial			@"12"
 #define eventRed				@"10"
+#define eventRamenSeat			@"18"
 
 #define spellNecomedre			1
 #define spellNephtaline			2
@@ -64,6 +67,10 @@
 #define letterHelp				@"M"
 #define letterConfused			@"U"
 #define letterUnlocked			@"K"
+
+#define locationLobbyLanding	@"1"
+
+#define roomCenter				@"0,0"
 
 #define intStr() [NSString stringWithFormat:@"%d",int]
 

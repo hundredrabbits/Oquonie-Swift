@@ -93,6 +93,9 @@
 -(int)flattenTileId :(int)tileId :(NSString*)axis;
 -(void)userSpriteUpdate :(NSString*)imageName;
 
+- (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY;
+- (void) moveAnimation;
+
 -(void)moveDisable :(float)disableTime;
 -(void)moveOrder;
 -(void)moveParallax;

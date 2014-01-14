@@ -7,6 +7,7 @@
 //
 
 #import "xxiivvSettings.h"
+#import "xxiivvViewController.h"
 #import "eventsLobby.h"
 #import "xxiivvEvents.h"
 #import "xxiivvUser.h"
@@ -185,6 +186,38 @@
 	return @"";
 }
 
+
+-(NSString*)event_warpLobby:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"0"; // try with 17 ?
+	}
+	// Warp
+	if(userCharacter == characterNephtaline && userLocation == 39){
+		[self eventDialog:dialogWarpLobby:@"1"];
+		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
+	}
+	else{
+		[self eventDialog:dialogDoorLocked:@"1"];
+	}
+	return @"";
+}
+
+-(void)warpLobbyAnimation
+{
+	[self moveAnimation];
+	[UIView animateWithDuration:0.5 animations:^(void){
+		self.userPlayer.frame = [self tileLocation:4:0:0];
+	} completion:^(BOOL finished){
+		[self eventTransitionPan:locationLobbyLanding:roomCenter];
+	}];
+}
+
 // =======================
 // @ Events: Pillars
 // =======================
@@ -281,7 +314,12 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+		if([userStorageEvents[storageQuestRamen] intValue] == 1){
+			return eventRamen;
+		}
+		else{
+			return eventRamenSeat;
+		}
 	}
 	
 	// Dialogs
