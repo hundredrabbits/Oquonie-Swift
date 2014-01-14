@@ -214,30 +214,6 @@
 
 # pragma mark NPCs -
 
--(NSString*)event_speakerphone :(NSString*)option
-{
-	// Broadcast Notifications
-	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[storageAudio] intValue]<1){ return letterAudio; }
-		else{ return @""; }
-	}
-	
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		return @"";
-	}
-	
-	// Dialogs
-	if([userStorageEvents[storageAudio] intValue]<1){
-		[self eventAudioToggle:1];
-	}
-	else{
-		[self eventAudioToggle:0];
-	}
-	
-	return @"";
-}
-
 // =======================
 // @ Events: Misc
 // =======================

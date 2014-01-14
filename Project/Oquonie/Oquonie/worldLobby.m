@@ -94,7 +94,7 @@
 	// Steps
 	@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Nepomucene",@"White",@"lobby"];
+	@"Lobby Nestorine",@"White",@"lobby"];
 
 	worldNode[8] = @[];
 

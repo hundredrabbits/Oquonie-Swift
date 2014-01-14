@@ -23,6 +23,9 @@
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if(userCharacter == characterDocument){
+			return letterUnlocked;
+		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
@@ -49,6 +52,9 @@
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if(userCharacter == characterNephtaline){
+			return letterUnlocked;
+		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
@@ -80,6 +86,9 @@
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if(userCharacter == characterNeomine){
+			return letterUnlocked;
+		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
@@ -113,10 +122,13 @@
 	return @"";
 }
 
--(NSString*)event_gateNepomucene :(NSString*)option
+-(NSString*)event_gateNestorine :(NSString*)option
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if(userCharacter == characterNestorine){
+			return letterUnlocked;
+		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
@@ -143,6 +155,9 @@
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if(userCharacter == characterNecomedre){
+			return letterUnlocked;
+		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
@@ -254,6 +269,32 @@
 	[self userSave];
 	
 	// Return storage Id
+	return @"";
+}
+
+-(NSString*)event_speakerphone :(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[storageAudio] intValue]<1){ return letterAudio; }
+		else{ return @""; }
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if([userStorageEvents[storageAudio] intValue]<1){
+		[self eventAudioToggle:1];
+		[self eventDialog:dialogAudioOn:eventAudio];
+	}
+	else{
+		[self eventAudioToggle:0];
+		[self eventDialog:dialogAudioOff:eventAudio];
+	}
+	
 	return @"";
 }
 

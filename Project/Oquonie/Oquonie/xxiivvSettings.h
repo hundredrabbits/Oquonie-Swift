@@ -63,6 +63,7 @@
 #define letterAudio				@"N"
 #define letterHelp				@"M"
 #define letterConfused			@"U"
+#define letterUnlocked			@"K"
 
 #define intStr() [NSString stringWithFormat:@"%d",int]
 

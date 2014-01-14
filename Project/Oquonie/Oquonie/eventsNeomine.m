@@ -30,10 +30,10 @@
 
 # pragma mark Wizards -
 
--(NSString*)event_neomineNepomucene1 :(NSString*)option
+-(NSString*)event_neomineNestorine1 :(NSString*)option
 {
 	// Event Identifier
-	NSString *eventSpellId = @"neomineNepomucene1";
+	NSString *eventSpellId = @"neomineNestorine1";
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
 	
@@ -61,10 +61,10 @@
 	return @"";
 }
 
--(NSString*)event_neomineNepomucene2 :(NSString*)option
+-(NSString*)event_neomineNestorine2 :(NSString*)option
 {
 	// Event Identifier
-	NSString *eventSpellId = @"neomineNepomucene2";
+	NSString *eventSpellId = @"neomineNestorine2";
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
 	
@@ -92,10 +92,10 @@
 	return @"";
 }
 
--(NSString*)event_neomineNepomucene3 :(NSString*)option
+-(NSString*)event_neomineNestorine3 :(NSString*)option
 {
 	// Event Identifier
-	NSString *eventSpellId = @"neomineNepomucene3";
+	NSString *eventSpellId = @"neomineNestorine3";
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
 	

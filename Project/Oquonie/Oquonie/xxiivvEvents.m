@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
+
 #import "xxiivvWorld.h"
 #import "xxiivvViewController.h"
 #import "xxiivvTemplates.h"
@@ -245,9 +247,11 @@
 {
 	if(toggle == 1){
 		NSLog(@"•  ROOM | Audio        | Turned On");
+		userStorageEvents[storageAudio] = @"1";
 	}
 	else{
 		NSLog(@"•  ROOM | Audio        | Turned Off");
+		userStorageEvents[storageAudio] = @"0";
 	}
 }
 

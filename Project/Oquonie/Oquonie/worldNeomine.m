@@ -27,7 +27,7 @@
 	worldNode[61] = @[
 	// Tiles
 	@"1",@"1",@"1",
-	@"1",@"1",@"1|event|neomineNepomucene1|5|l",
+	@"1",@"1",@"1|event|neomineNestorine1|5|l",
 	@"1",@"1",@"1",
 	// Walls
 	@"32",@"32",@"32",@"32",@"32",@"32",
@@ -75,7 +75,7 @@
 	worldNode[65] = @[
 	// Tiles
 	@"1",@"1",@"1",
-	@"1|event|neomineNepomucene3|5|r",@"0",@"1",
+	@"1|event|neomineNestorine3|5|r",@"0",@"1",
 	@"1",@"1",@"1",
 	// Walls
 	@"0",@"0",@"0",@"0",@"0",@"14|warp|64|-1,-1",
@@ -98,7 +98,7 @@
 
 	worldNode[67] = @[
 	// Tiles
-	@"1",@"1|event|neomineNepomucene2|5|r",@"1",
+	@"1",@"1|event|neomineNestorine2|5|r",@"1",
 	@"1",@"29",@"1",
 	@"1",@"1",@"1",
 	// Walls
@@ -126,7 +126,7 @@
 	@"1",@"1",@"1",
 	@"1",@"1",@"1",
 	// Walls
-	@"0",@"0",@"0",@"0",@"8|event|gateNepomucene",@"0",
+	@"0",@"0",@"0",@"0",@"8|event|gateNestorine",@"0",
 	// Steps
 	@"0",@"3|warp|68|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
@@ -140,7 +140,7 @@
 	// Walls
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Steps
-	@"0",@"3|event|gateNepomucene",@"0",@"0",@"0",@"0",
+	@"0",@"3|event|gateNestorine",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Nestorine Warp",@"White",@"lobby"];
 	
