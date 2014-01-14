@@ -272,6 +272,23 @@
 	return @"";
 }
 
+-(NSString*)event_ramen :(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	
+	return @"";
+}
+
 -(NSString*)event_speakerphone :(NSString*)option
 {
 	// Broadcast Notifications
