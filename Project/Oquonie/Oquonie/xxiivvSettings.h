@@ -8,8 +8,8 @@
 
 #define systemDebug				1
 
-#define userCharacterId			4
-#define userCharacterLocation	32
+#define userCharacterId			5
+#define userCharacterLocation	50
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -84,15 +84,17 @@
 #define letterUnlocked			@"K"
 #define letterPillar			@"Y"
 
-#define locationLobbyLanding	@"1"
-#define locationGameStart		@"29"
-#define locationNeomineLobby	@"3"
-#define locationNestorineLobby	@"7"
-#define locationNestorineEnter	@"80"
-#define locationNecomedrePillar @"120"
-#define locationNeominePillar	@"71"
-#define locationNecomedreLobby  @"5"
-#define locationNephtalineLobby @"1"
+#define locationLobbyLanding		@"1"
+#define locationGameStart			@"29"
+#define locationNeomineLobby		@"3"
+#define locationNestorineLobby		@"7"
+#define locationNestorineEnter		@"80"
+#define locationNecomedrePillar		@"120"
+#define locationNeominePillar		@"71"
+#define locationNecomedreLobby		@"5"
+#define locationNephtalineLobby		@"1"
+#define locationNephtalinePillar	@"121"
+#define locationNemediqueLobby		@"9"
 
 #define roomCenter				@"0,0"
 

@@ -44,7 +44,7 @@
 
 	worldNode[42] = @[
 	// Tiles
-	@"5|event|nephtalineNecomedre1|2|r",@"5",@"0",
+	@"5|event|nephtalineNemedique1|6|r",@"5",@"0",
 	@"4",@"17",@"0",
 	@"0",@"0",@"0",
 	// Walls
@@ -146,11 +146,11 @@
 	
 	worldNode[50] = @[
 	// Tiles
-	@"3",@"4",@"3|event|null|1|r",
+	@"3",@"27",@"3|event|owlSave|1|r",
 	@"4",@"10",@"3",
 	@"3",@"19",@"3",
 	// Walls
-	@"3",@"8|gateNestorine",@"3",@"3",@"16|event|map",@"3",
+	@"3",@"9|event|gateNemedique",@"3",@"3",@"16|event|map",@"3",
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|55|1,0",@"0",
 	// Name,Background,Audio
@@ -275,6 +275,18 @@
 	@"0",@"0",@"0",@"0",@"4|event|gateNeomine",@"0",
 	// Name,Background,Audio
 	@"Nephtaline Lobby 2",@"White",@"lobby"];
+	
+	worldNode[121] = @[
+	// Tiles
+	@"1",@"29",@"1",
+	@"29",@"4|event|pillar|15|l",@"29",
+	@"1",@"29",@"1",
+	// Walls
+	@"1",@"1",@"1",@"1",@"1",@"1",
+	// Steps
+	@"0",@"0",@"0",@"0",@"3|event|gateNemedique",@"0",
+	// Name,Background,Audio
+	@"Necomedre Warp",@"White",@"lobby"];
 	
 }
 @end

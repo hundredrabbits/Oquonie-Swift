@@ -124,17 +124,17 @@
 }
 
 
--(NSString*)event_nephtalineNecomedre1 :(NSString*)option
+-(NSString*)event_nephtalineNemedique1 :(NSString*)option
 {
 	// Event Identifier
-	NSString *eventSpellId = @"nephtalineNecomedre1";
-	NSString*	eventSpriteId = eventNecomedre;
-	int			eventSpell = spellNecomedre;
+	NSString *eventSpellId = @"nephtalineNemedique1";
+	NSString*	eventSpriteId = eventNemedique;
+	int			eventSpell = spellNemedique;
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
-			return letterNecomedre;
+			return letterNemedique;
 		}
 		return @"";
 	}

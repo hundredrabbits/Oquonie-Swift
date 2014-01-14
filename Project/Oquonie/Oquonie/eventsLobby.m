@@ -64,7 +64,7 @@
 		return @"";
 	}
 	// Warp
-	if(userCharacter == 2){
+	if(userCharacter == characterNephtaline){
 		if(userLocation == 38){
 			[self eventWarp:@"39" :@"0,-1"];
 		}
@@ -98,7 +98,7 @@
 		return @"";
 	}
 	// Warp
-	if(userCharacter == 3){
+	if(userCharacter == characterNeomine){
 		if(userLocation == 60){
 			[self eventWarp:@"3" :@"1,0"];
 		}
@@ -138,7 +138,7 @@
 		return @"";
 	}
 	// Warp
-	if(userCharacter == 4){
+	if(userCharacter == characterNestorine){
 		if(userLocation == 7){
 			[self eventWarp:locationNestorineEnter :@"0,-1"];
 		}
@@ -173,7 +173,7 @@
 		return @"";
 	}
 	// Warp
-	if(userCharacter == 1){
+	if(userCharacter == characterNecomedre){
 		if(userLocation == 62){
 			[self eventWarp:@"71" :@"0,-1"];
 		}
@@ -193,6 +193,33 @@
 	return @"";
 }
 
+-(NSString*)event_gateNemedique :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if(userCharacter == characterNemedique){
+			return letterUnlocked;
+		}
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Warp
+	if(userCharacter == characterNemedique){
+		if(userLocation == 50){
+			[self eventWarp:locationNephtalinePillar :@"-1,0"];
+		}
+		else if(userLocation == 121){
+			[self eventWarp:@"50" :@"1,0"];
+		}
+	}
+	else{
+		[self eventDialog:dialogDoorLocked:@"1"];
+	}
+	return @"";
+}
 
 -(NSString*)event_warpLobby:(NSString*)option
 {
@@ -254,6 +281,10 @@
 		pillarInstanceStorageId = storageQuestPillarNecomedre;
 		pillarInstanceWarp = locationNecomedreLobby;
 	}
+	else if (userLocation == [locationNephtalinePillar intValue]){
+		pillarInstanceStorageId = storageQuestPillarNephtaline;
+		pillarInstanceWarp = locationNephtalineLobby;
+	}
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -302,6 +333,9 @@
 	}
 	else if(userLocation == [locationNephtalineLobby intValue]){
 		socketInstanceStorageId = storageQuestPillarNephtaline;
+	}
+	else if(userLocation == [locationNemediqueLobby intValue]){
+		socketInstanceStorageId = storageQuestPillarNemedique;
 	}
 	
 	// Broadcast Notification
