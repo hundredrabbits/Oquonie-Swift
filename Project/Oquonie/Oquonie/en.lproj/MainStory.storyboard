@@ -119,7 +119,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.96356067518248179" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.parallax.1.png" id="YNJ-uy-Qeg" userLabel="paralaxBack">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pka-T6-5M2" userLabel="debugLocation">
+                                <rect key="frame" x="0.0" y="460" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.parallax.1.png" id="YNJ-uy-Qeg" userLabel="paralaxBack">
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -242,11 +249,11 @@
                                     </scrollView>
                                 </subviews>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.parallax.2.png" id="wOF-9h-gMa" userLabel="paralaxFront">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.parallax.2.png" id="wOF-9h-gMa" userLabel="paralaxFront">
                                 <rect key="frame" x="0.0" y="80" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.parallax.2.png" id="Jec-CD-TYf" userLabel="vignette">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Jec-CD-TYf" userLabel="vignette">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -313,6 +320,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="debugLocation" destination="pka-T6-5M2" id="DJ6-tu-6oV"/>
                         <outlet property="dialogBubble" destination="Rwu-16-j3v" id="SU0-gX-adj"/>
                         <outlet property="dialogCharacter" destination="RcO-YQ-M4O" id="Gf8-nK-s4F"/>
                         <outlet property="dialogCharacter1" destination="5pe-i9-9LA" id="ua9-Uw-Qu1"/>

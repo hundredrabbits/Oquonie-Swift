@@ -78,6 +78,8 @@
 	NSLog(@"!  ROOM | Load..       * %d:%@", userLocation, worldNode[userLocation][21]);
 	NSLog(@"------- - ------------ - -------------------");
 	
+	self.debugLocation.text = [NSString stringWithFormat:@"%@(node:%d)",worldNode[userLocation][21],userLocation];
+	
 	[self roomClearParallax];
 	[self roomClearSprites];
 	[self roomClearNotifications];
@@ -212,8 +214,8 @@
 		}
 		if([worldBackground isEqualToString:@"White"]){
 			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
-			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1"];
-			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2"];
+			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];
+			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2.png"];
 		}
 	}
 }

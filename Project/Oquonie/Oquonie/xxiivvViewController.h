@@ -78,6 +78,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *vignette;
 
+@property (strong, nonatomic) IBOutlet UILabel *debugLocation;
 
 // =================
 // Controls

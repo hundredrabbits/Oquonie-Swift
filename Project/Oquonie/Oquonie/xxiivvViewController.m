@@ -97,8 +97,10 @@
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
 	[UIView setAnimationDelay:0];
+	
 	self.parallaxFront.alpha = 1;
 	self.parallaxBack.alpha = 1;
+	
 	self.parallaxFront.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
 	self.parallaxBack.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*2, (userPositionX+userPositionY)*-2);
 	
