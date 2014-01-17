@@ -235,7 +235,7 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"0"; // try with 17 ?
+		return @""; // try with 17 ?
 	}
 	// Necomedre
 	if(userCharacter == characterNephtaline && userLocation == 39){

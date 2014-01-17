@@ -125,11 +125,7 @@
 	self.step1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][18]:0]] ];
 	self.step2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][19]:0]] ];
 	self.step3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][20]:0]] ];
-	
-	NSLog(@"!!! > %@", [self tileParser:worldNode[userLocation][13]:0] );
-	
 }
-
 
 -(void)roomGenerateBlockers
 {

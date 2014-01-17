@@ -163,6 +163,10 @@ CGRect char1Origin;
 CGRect char2Origin;
 CGRect char3Origin;
 
+CGRect spellCharacter1Origin;
+CGRect spellCharacter2Origin;
+CGRect spellCharacter3Origin;
+
 CGRect parallaxFrontOrigin;
 CGRect parallaxBackOrigin;
 CGRect roomContainerOrigin;

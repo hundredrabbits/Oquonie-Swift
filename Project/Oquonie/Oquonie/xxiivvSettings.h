@@ -10,7 +10,7 @@
 #define systemBuild				1
 
 #define userCharacterId			1
-#define userCharacterLocation	5
+#define userCharacterLocation	32
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -36,7 +36,7 @@
 #define dialogThankYou				@"UUU"
 #define dialogConfusion				@"UUU"
 #define dialogSeeYou				@"UUU"
-#define dialogWarpLobby				@"UUU"
+#define dialogWarpLobby				@"FLT"
 #define dialogTakePillar			@"UUU"
 #define dialogInfoPillar			@"UUU"
 #define dialogLookMap				@"UUU"

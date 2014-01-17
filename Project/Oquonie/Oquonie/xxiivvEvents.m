@@ -134,6 +134,10 @@
 	self.dialogCharacter3.alpha = 1;
 	[UIView commitAnimations];
 	
+	// Hide spellbook if unecessary
+	
+	[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(eventSpellHide) userInfo:nil repeats:NO];
+	
 }
 
 -(void)eventSpellAdd :(NSString*)spellId :(int)spellType
@@ -142,7 +146,7 @@
 	
 	// If already the character
 	if(spellType == userCharacter){
-		NSLog(@"- EVENT | Spell        | Already type:%d",spellType);
+		NSLog(@"  EVENT | Spell        | Already type:%d",spellType);
 		[self eventSpellRefresh];
 		return;
 	}
@@ -188,11 +192,54 @@
 		
 		NSLog(@"  EVENT | Spell %d      | Type:%@ Id:%@",index, spellbookItem[1], spellbookItem[0]);
 		
-		UIImage *letterImage = [UIImage imageNamed:[NSString stringWithFormat:@"letterSpell%@.png",[self util_CharIdToLetter:[spellbookItem[1] intValue]]]];
+		NSString* letterName = [self util_CharIdToLetter:[spellbookItem[1] intValue]];
+		UIImage* letterImage;
 		
-		if(index == 0){ self.spellCharacter1.image = letterImage; }
-		if(index == 1){ self.spellCharacter2.image = letterImage; }
-		if(index == 2){ self.spellCharacter3.image = letterImage; }
+		if([letterName isEqualToString:@""]){
+			letterImage = [UIImage imageNamed:@"letterSpell0.png"];
+		}
+		else{
+			letterImage = [UIImage imageNamed:[NSString stringWithFormat:@"letterSpell%@.png",letterName]];
+		}
+		
+		NSLog(@"> %d -> %@",index, letterName);
+		
+		[UIView animateWithDuration:0.2 animations:^(void){
+			[UIView setAnimationDelay:index*0.1];
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+			if(index == 0){
+				self.spellCharacter1.frame = CGRectOffset(self.spellCharacter1.frame, 0, 5);
+				self.spellCharacter1.alpha = 0;
+			}
+			else if(index == 1){
+				self.spellCharacter2.frame = CGRectOffset(self.spellCharacter2.frame, 0, 5);
+				self.spellCharacter2.alpha = 0;
+			}
+			else if(index == 2){
+				self.spellCharacter3.frame = CGRectOffset(self.spellCharacter3.frame, 0, 5);
+				self.spellCharacter3.alpha = 0;
+			}
+		} completion:^(BOOL finished){
+			[UIView animateWithDuration:0.2 animations:^(void){
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+				if(index == 0){
+					self.spellCharacter1.image = letterImage;
+					self.spellCharacter1.frame = spellCharacter1Origin;
+					self.spellCharacter1.alpha = 1;
+				}
+				else if(index == 1){
+					self.spellCharacter2.image = letterImage;
+					self.spellCharacter2.frame = spellCharacter2Origin;
+					self.spellCharacter2.alpha = 1;
+				}
+				else if(index == 2){
+					self.spellCharacter3.image = letterImage;
+					self.spellCharacter3.frame = spellCharacter3Origin;
+					self.spellCharacter3.alpha = 1;
+				}
+			} completion:^(BOOL finished){
+			}];
+		}];
 		
 		index += 1;
 		
@@ -211,7 +258,44 @@
 			[self eventTranform:[userSpellbook[0][1] intValue]];
 		}
 	}
+}
+
+-(void)eventSpellMistake
+{
+
+}
+
+-(void)eventSpellHide
+{
+	int emptySpell = 0;
+	for (NSArray *spellbookItem in userSpellbook) {
+		if([spellbookItem[1] intValue] == 0){
+			emptySpell += 1;
+		}
+	}
 	
+	if(emptySpell==3){
+		int index = 0;
+		while(index < 3){
+			[UIView animateWithDuration:0.2 animations:^(void){
+				[UIView setAnimationDelay:index*0.1];
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+				if(index == 0){
+					self.spellCharacter1.frame = CGRectOffset(self.spellCharacter1.frame, 0, 5);
+					self.spellCharacter1.alpha = 0;
+				}
+				else if(index == 1){
+					self.spellCharacter2.frame = CGRectOffset(self.spellCharacter2.frame, 0, 5);
+					self.spellCharacter2.alpha = 0;
+				}
+				else if(index == 2){
+					self.spellCharacter3.frame = CGRectOffset(self.spellCharacter3.frame, 0, 5);
+					self.spellCharacter3.alpha = 0;
+				}
+			} completion:^(BOOL finished){}];
+			index += 1;
+		}
+	}
 }
 
 -(bool)eventSpellCheck :(NSString*)spellId
@@ -240,7 +324,7 @@
 	// TODO: Create the FX sprites
 	
 	userCharacter = charId;
-	[self eventSpellRefresh];
+	[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(eventSpellRefresh) userInfo:nil repeats:NO];
 }
 
 -(void)eventAudioToggle :(int)toggle

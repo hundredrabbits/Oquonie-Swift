@@ -60,11 +60,17 @@
 	textBlock3 = CGRectMake(screenMargin+(2*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
 	textBlock4 = CGRectMake(screenMargin+(3*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
 	
+	// Dialog
 	portraitOrigin = self.dialogCharacter.frame;
 	bubbleOrigin = self.dialogBubble.frame;
 	char1Origin = self.dialogCharacter1.frame;
 	char2Origin = self.dialogCharacter2.frame;
 	char3Origin = self.dialogCharacter3.frame;
+	
+	// Spellbook
+	spellCharacter1Origin = self.spellCharacter1.frame;
+	spellCharacter2Origin = self.spellCharacter2.frame;
+	spellCharacter3Origin = self.spellCharacter3.frame;
 	
 	spriteContainerOrigin = self.spritesContainer.frame;
 	roomContainerOrigin = self.roomContainer.frame;
