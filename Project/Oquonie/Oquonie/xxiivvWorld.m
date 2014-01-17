@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
+
 #import "xxiivvWorld.h"
 #import "xxiivvEvents.h"
 #import "xxiivvUtils.h"
@@ -51,7 +53,13 @@
 	
 	// Catch if event is broadcasting an update
 	if( [array count] > 2){
+		// Update event
 		if( [[array objectAtIndex: 1] isEqualToString:@"event"] && index == 3 ){
+			return [self tileParserUpdate:array:index];
+		}
+		// Update tile
+		else
+		if( [[array objectAtIndex: 1] isEqualToString:@"event"] && index == 0 ){
 			return [self tileParserUpdate:array:index];
 		}
 	}
@@ -78,7 +86,7 @@
 	NSLog(@"!  ROOM | Load..       * %d:%@", userLocation, worldNode[userLocation][21]);
 	NSLog(@"------- - ------------ - -------------------");
 	
-	self.debugLocation.text = [NSString stringWithFormat:@"%@(node:%d)",worldNode[userLocation][21],userLocation];
+	self.debugLocation.text = [NSString stringWithFormat:@"Node:v%d_n%d - %@",systemBuild,userLocation,worldNode[userLocation][21]];
 	
 	[self roomClearParallax];
 	[self roomClearSprites];
@@ -117,6 +125,9 @@
 	self.step1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][18]:0]] ];
 	self.step2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][19]:0]] ];
 	self.step3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][20]:0]] ];
+	
+	NSLog(@"!!! > %@", [self tileParser:worldNode[userLocation][13]:0] );
+	
 }
 
 
