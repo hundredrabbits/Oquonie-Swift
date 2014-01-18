@@ -45,6 +45,7 @@
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:eventTutorial];
+		[self eventSpellRefresh];
 	}
 	
 	return @"";
@@ -80,6 +81,7 @@
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventSpellRefresh];
 	}
 	return @"";
 }
@@ -120,6 +122,7 @@
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventSpellRefresh];
 	}
 	return @"";
 }
@@ -154,6 +157,7 @@
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventSpellRefresh];
 	}
 	
 	return @"";
@@ -189,6 +193,7 @@
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventSpellRefresh];
 	}
 	return @"";
 }
@@ -223,6 +228,7 @@
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventSpellRefresh];
 	}
 	return @"";
 }
@@ -254,6 +260,7 @@
 	}
 	else{
 		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventSpellRefresh];
 	}
 	return @"";
 }

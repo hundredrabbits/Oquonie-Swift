@@ -19,6 +19,7 @@
 -(void)eventVignette :(NSString*) vignetteType;
 
 -(bool)eventSpellCheck :(NSString*)spellId;
+-(void)eventSpellRefresh;
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates;
 

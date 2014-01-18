@@ -137,7 +137,7 @@
 	// Dialogs
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNecomedre:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNephtaline:eventSpriteId]; }
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
@@ -169,7 +169,7 @@
 	// Dialogs
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNecomedre:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNephtaline:eventSpriteId]; }
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
@@ -200,7 +200,7 @@
 	// Dialogs
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNecomedre:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNephtaline:eventSpriteId]; }
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
@@ -232,7 +232,7 @@
 	// Dialogs
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNecomedre:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNestorine:eventSpriteId]; }
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];

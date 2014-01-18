@@ -10,7 +10,7 @@
 #define systemBuild				1
 
 #define userCharacterId			1
-#define userCharacterLocation	33
+#define userCharacterLocation	5
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -30,6 +30,8 @@
 #define dialogGiveSpellNeomine		@"MEK"
 #define dialogGiveSpellDocument		@"MXK"
 #define dialogGiveSpellNemedique	@"MAK"
+#define dialogGiveSpellNephtaline	@"MCK"
+#define dialogGiveSpellNestorine	@"MBK"
 #define dialogDoorLocked			@"FLT"
 #define dialogAudioOn				@"UUU"
 #define dialogAudioOff				@"UUU"
