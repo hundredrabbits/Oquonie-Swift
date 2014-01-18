@@ -188,6 +188,15 @@
 			[self.spritesContainer sendSubviewToBack:subview];
 		}
 	}
+	
+	// Find notifications
+    for (UIView *subview in [self.spritesContainer subviews]) {
+		if(subview.tag == 30){
+			[self.spritesContainer bringSubviewToFront:subview];
+		}
+	}
+	
+	
 }
 
 - (int) moveEvent :(int)posX :(int)posY

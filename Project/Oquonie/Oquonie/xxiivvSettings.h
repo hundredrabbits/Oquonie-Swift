@@ -10,7 +10,7 @@
 #define systemBuild				1
 
 #define userCharacterId			1
-#define userCharacterLocation	32
+#define userCharacterLocation	33
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -108,6 +108,10 @@
 #define userPositionString		[NSString stringWithFormat:@"%d,%d",userPositionX,userPositionY]
 
 /*
+ 
+ # tags
+ 
+ 30 notifications
  
  # World IDs
  

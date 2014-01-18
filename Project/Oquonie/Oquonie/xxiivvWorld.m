@@ -183,7 +183,6 @@
 		bubbleView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
 		
 			UIImageView *letterView = [[UIImageView alloc] initWithFrame:CGRectMake( (bubbleView.frame.size.width/2)-20, 2.5, 40, 40)];
-			letterView.tag = 30;
 			letterView.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",notificationLetter]];
 			[bubbleView addSubview:letterView];
 		
