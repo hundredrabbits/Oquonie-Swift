@@ -5,7 +5,7 @@
 //  Created by Devine Lu Linvega on 12/30/2013.
 //  Copyright (c) 2013 XXIIVV. All rights reserved.
 //
-
+#import "xxiivvSettings.h"
 #import "worldLobby.h"
 
 @implementation xxiivvViewController (worldLobby)
@@ -22,7 +22,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Lobby Entrance",@"White",audioLobby];
 
 	worldNode[2] = @[
 	// Tiles
@@ -34,7 +34,7 @@
 	// Steps
 	@"0",@"7|warp|1|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Deck",@"White",@"lobby"];
+	@"Lobby Deck",@"White",audioLobby];
 
 	worldNode[3] = @[
 	// Tiles
@@ -46,7 +46,7 @@
 	// Steps
 	@"0",@"7|warp|4|0,1",@"0",@"0",@"7|warp|2|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Neomine",@"White",@"lobby"];
+	@"Lobby Neomine",@"White",audioLobby];
 
 	worldNode[4] = @[
 	// Tiles
@@ -58,7 +58,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"7|warp|5|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby House Room",@"White",@"lobby"];
+	@"Lobby House Room",@"White",audioLobby];
 
 	worldNode[5] = @[
 	// Tiles
@@ -70,7 +70,7 @@
 	// Steps
 	@"0",@"7|warp|9|0,1",@"0",@"0",@"7|warp|6|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Fork",@"White",@"lobby"];
+	@"Lobby Fork",@"White",audioLobby];
 
 	worldNode[6] = @[
 	// Tiles
@@ -82,7 +82,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Turn",@"White",@"lobby"];
+	@"Lobby Turn",@"White",audioLobby];
 
 	worldNode[7] = @[
 	// Tiles
@@ -94,7 +94,7 @@
 	// Steps
 	@"0",@"7|warp|6|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Nestorine",@"White",@"lobby"];
+	@"Lobby Nestorine",@"White",audioLobby];
 
 	worldNode[8] = @[];
 
@@ -108,7 +108,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Nemedique",@"White",@"lobby"];
+	@"Lobby Nemedique",@"White",audioLobby];
 
 	worldNode[10] = @[
 	// Tiles
@@ -120,7 +120,7 @@
 	// Steps
 	@"0",@"7|warp|5|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Fork III",@"White",@"lobby"];
+	@"Lobby Fork III",@"White",audioLobby];
 }
 
 @end

@@ -82,6 +82,8 @@
 	[self templateRoomAnimation];
 	[self moveParallax];
 	[self moveOrder];
+	
+	[self audioEffectPlayer:@"warp"];
 }
 
 - (void)eventDialog :(NSString*)dialog :(NSString*)characterId
@@ -138,6 +140,8 @@
 	
 	[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(eventSpellHide) userInfo:nil repeats:NO];
 	
+	[self audioEffectPlayer:@"dialog"];
+	
 }
 
 -(void)eventSpellAdd :(NSString*)spellId :(int)spellType
@@ -156,6 +160,7 @@
 		if( [spellbookItem[0] isEqualToString:spellId] && [spellbookItem[1] intValue] == spellType){
 			NSLog(@"- EVENT | Spell        | Removed  -> id:%@ type:%d",spellId,spellType);
 			userSpellbook[index] = @[@"",@""];
+			[self audioEffectPlayer:@"spellRemoved"];
 			[self eventSpellRefresh];
 			return;
 		}
@@ -172,10 +177,12 @@
 	if(spellSlot > -1){
 		NSLog(@"> EVENT | Spell        | Added    -> id:%@ type:%d",spellId,spellType);
 		userSpellbook[spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
+		[self audioEffectPlayer:@"spellAdded"];
 		[self eventSpellRefresh];
 	}
 	else{
 		NSLog(@"> EVENT | Spell        | No available slot");
+		[self audioEffectPlayer:@"error"];
 	}
 }
 
@@ -201,8 +208,6 @@
 		else{
 			letterImage = [UIImage imageNamed:[NSString stringWithFormat:@"letterSpell%@.png",letterName]];
 		}
-		
-		NSLog(@"> %d -> %@",index, letterName);
 		
 		[UIView animateWithDuration:0.2 animations:^(void){
 			[UIView setAnimationDelay:index*0.1];
@@ -325,10 +330,13 @@
 	
 	userCharacter = charId;
 	[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(eventSpellRefresh) userInfo:nil repeats:NO];
+	
+	[self audioEffectPlayer:@"transform"];
 }
 
 -(void)eventAudioToggle :(int)toggle
 {
+	[self audioEffectPlayer:@"tic"];
 	if(toggle == 1){
 		NSLog(@"•  ROOM | Audio        | Turned On");
 		self.audioAmbientPlayer.volume = 1;
@@ -401,6 +409,7 @@
 		self.dialogCharacter3.alpha = 0;
 		self.dialogVignette.alpha = 0;
 	} completion:^(BOOL finished){}];
+	[self audioEffectPlayer:@"tic"];
 }
 
 @end

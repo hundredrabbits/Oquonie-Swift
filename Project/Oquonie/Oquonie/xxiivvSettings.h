@@ -10,7 +10,7 @@
 #define systemBuild				1
 
 #define userCharacterId			1
-#define userCharacterLocation	29
+#define userCharacterLocation	32
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -58,6 +58,7 @@
 #define audioNemedique			@"Nemedique"
 #define audioQuiet				@"Quiet"
 #define audioPillar				@"Pillar"
+#define audioLobby				@"Town"
 
 #define characterNecomedre		1
 #define characterNephtaline		2

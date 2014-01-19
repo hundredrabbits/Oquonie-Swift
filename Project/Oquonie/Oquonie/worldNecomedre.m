@@ -29,7 +29,7 @@
 	// Steps
 	@"0",@"0",@"0",@"10|warp|22|1,-1",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",audioQuiet];
+	@"Cubicle",@"White",audioQuiet];
 	
 	worldNode[22] = @[
 	// Tiles
@@ -41,7 +41,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"10|warp|23|1,0",@"0",
 	// Name,Background,Audio
-	@"Office Audio Room",@"White",audioQuiet];
+	@"Cubicle Audio Room",@"White",audioQuiet];
 	
 	worldNode[23] = @[
 	// Tiles
@@ -53,7 +53,7 @@
 	// Steps
 	@"0",@"10|warp|28|0,1",@"0",@"0",@"10|warp|24|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",audioQuiet];
+	@"Cubicle 2",@"White",audioQuiet];
 	
 	worldNode[24] = @[
 	// Tiles
@@ -65,7 +65,7 @@
 	// Steps
 	@"10|warp|21|1,1",@"0",@"0",@"0",@"10|warp|25|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",audioQuiet];
+	@"Cubicle",@"White",audioQuiet];
 	
 	worldNode[25] = @[
 	// Tiles
@@ -77,7 +77,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"10|warp|26|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",audioQuiet];
+	@"Cubicle 3",@"White",audioQuiet];
 	
 	worldNode[26] = @[
 	// Tiles
@@ -89,7 +89,7 @@
 	// Steps
 	@"0",@"10|warp|23|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",audioQuiet];
+	@"Cubicle",@"White",audioQuiet];
 
 	worldNode[27] = @[
 	// Tiles
@@ -101,7 +101,7 @@
 	// Steps
 	@"0",@"10|warp|24|0,1",@"0",@"0",@"10|warp|28|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Storage Room",@"Black",audioQuiet];
+	@"Cubicle Storage Room",@"Black",audioQuiet];
 
 	worldNode[28] = @[
 	// Tiles
@@ -113,7 +113,7 @@
 	// Steps
 	@"0",@"10|warp|25|0,1",@"0",@"0",@"10|warp|29|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",audioQuiet];
+	@"Cubicle 1",@"White",audioQuiet];
 
 	worldNode[29] = @[
 	// Tiles
@@ -125,7 +125,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",audioQuiet];
+	@"Office Landing",@"White",audioQuiet];
 	
 	worldNode[30] = @[
 	// Tiles
@@ -167,7 +167,7 @@
 	// Steps
 	@"0",@"5|event|gateNecomedre",@"0",@"0",@"6|warp|35|1,0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",audioNecomedre];
+	@"Street Entrance",@"White",audioNecomedre];
 
 	worldNode[33] = @[
 	// Tiles
@@ -179,7 +179,7 @@
 	// Steps
 	@"0",@"7|warp|32|0,1",@"0",@"0",@"0",@"6|warp|36|1,1",
 	// Name,Background,Audio
-	@"Office",@"White",audioNecomedre];
+	@"Street 1",@"White",audioNecomedre];
 
 	worldNode[34] = @[
 	// Tiles
@@ -191,7 +191,7 @@
 	// Steps
 	@"0",@"6|warp|33|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",audioNecomedre];
+	@"Street Nestorine Gate",@"White",audioNecomedre];
 
 	worldNode[35] = @[
 	// Tiles
@@ -203,7 +203,7 @@
 	// Steps
 	@"0",@"6|warp|34|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",audioNecomedre];
+	@"Street Fork",@"White",audioNecomedre];
 
 	worldNode[36] = @[
 	// Tiles
@@ -215,7 +215,7 @@
 	// Steps
 	@"0",@"6|warp|35|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",audioNecomedre];
+	@"Street 2",@"White",audioNecomedre];
 
 	worldNode[37] = @[
 	// Tiles
@@ -227,7 +227,7 @@
 	// Steps
 	@"0",@"6|warp|36|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",audioNecomedre];
+	@"Street Owl",@"White",audioNecomedre];
 
 	worldNode[38] = @[
 	// Tiles
@@ -239,7 +239,7 @@
 	// Steps
 	@"0",@"6|warp|37|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",audioNecomedre];
+	@"Street 3",@"White",audioNecomedre];
 
 	worldNode[39] = @[
 	// Tiles
@@ -251,7 +251,7 @@
 	// Steps
 	@"0",@"6|warp|38|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",audioNecomedre];
+	@"Street End",@"White",audioNecomedre];
 	
 	worldNode[120] = @[
 	// Tiles

@@ -83,11 +83,13 @@
 
 		[self moveAnimation];
 		[self moveParallax];
+		[self audioEffectPlayer:@"footstep"];
 	}
 	else{
 		[self moveEventCheck:(userPositionX+posX):(userPositionY+posY)];
 		[self moveCollideAnimateEvent:(userPositionX+posX):(userPositionY+posY)];
 		[self moveCollideAnimateChar:posX:posY];
+		[self audioEffectPlayer:@"blocked"];
 	}
 	[self moveOrder];
 }
@@ -540,15 +542,21 @@
 	self.audioAmbientPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
 	
 	if (error){
-		NSLog(@"# ERROR | Audio        | Error    -> %@",[error localizedDescription]);
+		NSLog(@"$ ERROR | Audio        | Error    -> %@",[error localizedDescription]);
 	}
 	else {
+		NSLog(@"$ AUDIO | Ambient      | File     -> %@",filename);
 		self.audioAmbientPlayer.volume = currentVolume;
 		self.audioAmbientPlayer.numberOfLoops = -1;
 		[self.audioAmbientPlayer prepareToPlay];
 	}
 	
 	[self.audioAmbientPlayer play];
+}
+
+-(void)audioEffectPlayer:(NSString*)filename
+{
+	NSLog(@"$ AUDIO | Effect       | File     -> %@",filename);
 }
 
 # pragma mark Interaction Map -

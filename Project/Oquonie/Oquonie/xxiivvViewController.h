@@ -98,6 +98,7 @@
 -(void)userSpriteUpdate :(NSString*)imageName;
 
 -(void)audioAmbientPlayer:(NSString*)filename;
+-(void)audioEffectPlayer:(NSString*)filename;
 
 - (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY;
 - (void) moveAnimation;

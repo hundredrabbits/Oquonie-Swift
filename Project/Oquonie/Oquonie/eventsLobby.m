@@ -497,10 +497,12 @@
 	if(self.audioAmbientPlayer.volume<1){
 		[self eventAudioToggle:1];
 		[self eventDialog:dialogAudioOn:eventAudio];
+		[self audioEffectPlayer:@"tic"];
 	}
 	else{
 		[self eventAudioToggle:0];
 		[self eventDialog:dialogAudioOff:eventAudio];
+		[self audioEffectPlayer:@"tic"];
 	}
 	
 	return @"";
