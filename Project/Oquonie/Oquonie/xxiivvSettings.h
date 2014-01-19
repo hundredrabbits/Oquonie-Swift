@@ -10,13 +10,12 @@
 #define systemBuild				1
 
 #define userCharacterId			1
-#define userCharacterLocation	29
+#define userCharacterLocation	22
 #define userCharacterX			0
 #define userCharacterY			0
 
 #define userQuestRamen			0
 
-#define storageAudio					1
 #define storageQuestRamen				5
 #define storageQuestPillarNecomedre		11
 #define storageQuestPillarNephtaline	12

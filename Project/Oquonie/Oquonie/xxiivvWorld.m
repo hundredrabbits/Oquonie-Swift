@@ -86,18 +86,18 @@
 	NSLog(@"!  ROOM | Load..       * %d:%@", userLocation, worldNode[userLocation][21]);
 	NSLog(@"------- - ------------ - -------------------");
 	
-	self.debugLocation.text = [NSString stringWithFormat:@"Node:v%d_n%d - %@",systemBuild,userLocation,worldNode[userLocation][21]];
+	self.debugLocation.text = [NSString stringWithFormat:@"Node:v%d_n%d - %@(%@)",systemBuild,userLocation,worldNode[userLocation][21],worldNode[userLocation][23]];
 	
 	[self roomClearParallax];
 	[self roomClearSprites];
 	[self roomClearNotifications];
 	
+	[self roomGenerateAudioTrack];
 	[self roomGenerateTiles];
 	[self roomGenerateBlockers];
 	[self roomGenerateEvents];
 	[self roomGenerateNotifications];
 	[self roomGenerateBackground];
-	[self roomGenerateAudioTrack];
 }
 
 -(void)roomGenerateTiles
@@ -202,8 +202,8 @@
 {
 	if(![worldAudio isEqualToString:worldNode[userLocation][23] ]){
 		NSLog(@"•  ROOM | Audio        | Update   -> %@",worldNode[userLocation][23]);
+		[self audioAmbientPlayer:[NSString stringWithFormat:@"%@.mp3",worldNode[userLocation][23]]];
 		worldAudio = worldNode[userLocation][23];
-		// Play Audio
 	}
 }
 

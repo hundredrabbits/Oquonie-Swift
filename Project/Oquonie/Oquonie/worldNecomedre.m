@@ -40,7 +40,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"10|warp|23|1,0",@"0",
 	// Name,Background,Audio
-	@"Office Audio Room",@"White",@"lobby"];
+	@"Office Audio Room",@"White",@"Quiet"];
 	
 	worldNode[23] = @[
 	// Tiles
@@ -52,7 +52,7 @@
 	// Steps
 	@"0",@"10|warp|28|0,1",@"0",@"0",@"10|warp|24|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Lobby Entrance",@"White",@"Necomedre"];
 	
 	worldNode[24] = @[
 	// Tiles
@@ -124,7 +124,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Lobby Entrance",@"White",@"Quiet"];
 	
 	worldNode[30] = @[
 	// Tiles

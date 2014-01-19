@@ -44,7 +44,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *step2r;
 @property (strong, nonatomic) IBOutlet UIImageView *step3r;
 
-@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) AVAudioPlayer *audioAmbientPlayer;
+
 // =================
 // Sprites
 // =================
@@ -95,6 +96,8 @@
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;
 -(void)userSpriteUpdate :(NSString*)imageName;
+
+-(void)audioAmbientPlayer:(NSString*)filename;
 
 - (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY;
 - (void) moveAnimation;

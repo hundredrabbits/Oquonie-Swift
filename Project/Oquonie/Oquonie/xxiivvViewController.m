@@ -39,68 +39,7 @@
 	[self moveOrder];
 	[self timerStart];
 	
-	[self audioTest];
-}
-
-# pragma mark Audio Stuff -
-
-//-(void)audioPlayerSplash: (NSString *)filename;
-//{
-//	NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-//	resourcePath = [resourcePath stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
-//	NSError* err;
-//	audioPlayerSplash = [[AVAudioPlayer alloc] initWithContentsOfURL: [NSURL fileURLWithPath:resourcePath] error:&err];
-//	
-//	audioPlayerSplash.volume = 0.5;
-//	audioPlayerSplash.numberOfLoops = 0;
-//	audioPlayerSplash.currentTime = 0;
-//	
-//	if(err)        { NSLog(@"%@",err); }
-//	else        {
-//		[audioPlayerSplash prepareToPlay];
-//		[audioPlayerSplash play];
-//	}
-//}
-
-
--(void)audioTest
-{
-	NSString* filename = @"Necomedre.mp3";
-	
-//	NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"/Necomedre.mp3" ofType:@"mp3"]];
-	NSError *error;
-	
-	NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-	resourcePath = [resourcePath stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
-	
-	self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
-	
-	if (error)
-	{
-		NSLog(@"Error in audioPlayer: %@", [error localizedDescription]);
-	} else {
-//		_audioPlayer.delegate = self;
-		[self.audioPlayer prepareToPlay];
-	}
-	[self.audioPlayer play];
-}
-
--(void)audioPlayerDidFinishPlaying:
-(AVAudioPlayer *)player successfully:(BOOL)flag
-{
-}
-
--(void)audioPlayerDecodeErrorDidOccur:
-(AVAudioPlayer *)player error:(NSError *)error
-{
-}
-
--(void)audioPlayerBeginInterruption:(AVAudioPlayer *)player
-{
-}
-
--(void)audioPlayerEndInterruption:(AVAudioPlayer *)player
-{
+	[self audioAmbientPlayer:@"start"];
 }
 
 # pragma mark Move -
@@ -577,12 +516,41 @@
 	}
 }
 
-
 -(void)timerAnimateUser
 {
 	if([userSpriteState isEqual:@"stand"]){
 		[self userSpriteUpdate:[NSString stringWithFormat:@"%@", [self templateSpriteName:[NSString stringWithFormat:@"%d",worldTimerUserCount]]] ];
 	}
+}
+
+# pragma mark Audio Stuff -
+
+-(void)audioAmbientPlayer:(NSString*)filename
+{
+	// Initiate the player
+	if([filename isEqualToString:@"start"]){
+		self.audioAmbientPlayer.volume = 1.0;
+		return;
+	}
+	
+	NSLog(@"First: %f",self.audioAmbientPlayer.volume);
+	float currentVolume = self.audioAmbientPlayer.volume;
+	NSError *error;
+	NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
+	
+	self.audioAmbientPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
+	
+	if (error){
+		NSLog(@"# ERROR | Audio        | Error    -> %@",[error localizedDescription]);
+	}
+	else {
+		self.audioAmbientPlayer.volume = currentVolume;
+		self.audioAmbientPlayer.numberOfLoops = -1;
+		[self.audioAmbientPlayer prepareToPlay];
+	}
+	
+	[self.audioAmbientPlayer play];
+	NSLog(@"Second: %f",self.audioAmbientPlayer.volume);
 }
 
 # pragma mark Interaction Map -

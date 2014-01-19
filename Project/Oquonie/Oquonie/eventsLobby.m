@@ -483,7 +483,8 @@
 {
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[storageAudio] intValue]<1){ return letterAudio; }
+		NSLog(@"%f",self.audioAmbientPlayer.volume);
+		if(self.audioAmbientPlayer.volume<1.0){ return letterAudio; }
 		else{ return @""; }
 	}
 	
@@ -493,7 +494,7 @@
 	}
 	
 	// Dialogs
-	if([userStorageEvents[storageAudio] intValue]<1){
+	if(self.audioAmbientPlayer.volume<1){
 		[self eventAudioToggle:1];
 		[self eventDialog:dialogAudioOn:eventAudio];
 	}

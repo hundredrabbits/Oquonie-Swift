@@ -331,11 +331,11 @@
 {
 	if(toggle == 1){
 		NSLog(@"•  ROOM | Audio        | Turned On");
-		userStorageEvents[storageAudio] = @"1";
+		self.audioAmbientPlayer.volume = 1;
 	}
 	else{
 		NSLog(@"•  ROOM | Audio        | Turned Off");
-		userStorageEvents[storageAudio] = @"0";
+		self.audioAmbientPlayer.volume = 0;
 	}
 }
 

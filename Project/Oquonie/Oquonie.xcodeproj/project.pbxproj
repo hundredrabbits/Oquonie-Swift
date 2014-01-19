@@ -287,8 +287,8 @@
 		038BA0E3188B849100A3ED4B /* Necomedre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 038BA0DC188B849100A3ED4B /* Necomedre.mp3 */; };
 		038BA0E4188B849100A3ED4B /* Neomine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 038BA0DD188B849100A3ED4B /* Neomine.mp3 */; };
 		038BA0E5188B849100A3ED4B /* Nephtaline.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 038BA0DE188B849100A3ED4B /* Nephtaline.mp3 */; };
-		038BA0E6188B849100A3ED4B /* Pillar Cellar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 038BA0DF188B849100A3ED4B /* Pillar Cellar.mp3 */; };
-		038BA0E7188B849100A3ED4B /* Quiet Time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 038BA0E0188B849100A3ED4B /* Quiet Time.mp3 */; };
+		038BA0E6188B849100A3ED4B /* Pillar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 038BA0DF188B849100A3ED4B /* Pillar.mp3 */; };
+		038BA0E7188B849100A3ED4B /* Quiet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 038BA0E0188B849100A3ED4B /* Quiet.mp3 */; };
 		038BA0E8188B849100A3ED4B /* Town.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 038BA0E1188B849100A3ED4B /* Town.mp3 */; };
 		038C592B185147B4005D6D35 /* fx.textbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 038C5929185147B4005D6D35 /* fx.textbubble.png */; };
 		038C592C185147B4005D6D35 /* event.2.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 038C592A185147B4005D6D35 /* event.2.portrait.png */; };
@@ -725,8 +725,8 @@
 		038BA0DC188B849100A3ED4B /* Necomedre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Necomedre.mp3; path = en.assets/Necomedre.mp3; sourceTree = "<group>"; };
 		038BA0DD188B849100A3ED4B /* Neomine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Neomine.mp3; path = en.assets/Neomine.mp3; sourceTree = "<group>"; };
 		038BA0DE188B849100A3ED4B /* Nephtaline.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Nephtaline.mp3; path = en.assets/Nephtaline.mp3; sourceTree = "<group>"; };
-		038BA0DF188B849100A3ED4B /* Pillar Cellar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Pillar Cellar.mp3"; path = "en.assets/Pillar Cellar.mp3"; sourceTree = "<group>"; };
-		038BA0E0188B849100A3ED4B /* Quiet Time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Quiet Time.mp3"; path = "en.assets/Quiet Time.mp3"; sourceTree = "<group>"; };
+		038BA0DF188B849100A3ED4B /* Pillar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Pillar.mp3; path = en.assets/Pillar.mp3; sourceTree = "<group>"; };
+		038BA0E0188B849100A3ED4B /* Quiet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Quiet.mp3; path = en.assets/Quiet.mp3; sourceTree = "<group>"; };
 		038BA0E1188B849100A3ED4B /* Town.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Town.mp3; path = en.assets/Town.mp3; sourceTree = "<group>"; };
 		038C5929185147B4005D6D35 /* fx.textbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.textbubble.png; path = en.assets/fx.textbubble.png; sourceTree = "<group>"; };
 		038C592A185147B4005D6D35 /* event.2.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.2.portrait.png; path = en.assets/event.2.portrait.png; sourceTree = "<group>"; };
@@ -1409,8 +1409,8 @@
 				038BA0DC188B849100A3ED4B /* Necomedre.mp3 */,
 				038BA0DD188B849100A3ED4B /* Neomine.mp3 */,
 				038BA0DE188B849100A3ED4B /* Nephtaline.mp3 */,
-				038BA0DF188B849100A3ED4B /* Pillar Cellar.mp3 */,
-				038BA0E0188B849100A3ED4B /* Quiet Time.mp3 */,
+				038BA0DF188B849100A3ED4B /* Pillar.mp3 */,
+				038BA0E0188B849100A3ED4B /* Quiet.mp3 */,
 				038BA0E1188B849100A3ED4B /* Town.mp3 */,
 			);
 			name = Soundtrack;
@@ -1878,7 +1878,7 @@
 				03834E18180B730B00568E60 /* wall.10.r.png in Resources */,
 				036A100718099F720074F6F1 /* event.8.r.png in Resources */,
 				035A6D93186B08000032710C /* event.8.l.3.png in Resources */,
-				038BA0E6188B849100A3ED4B /* Pillar Cellar.mp3 in Resources */,
+				038BA0E6188B849100A3ED4B /* Pillar.mp3 in Resources */,
 				03CD6B071808ED0B00A18760 /* tile.8.png in Resources */,
 				0304D78E186CEE0200ED6E94 /* char5.stand.l.f.3.png in Resources */,
 				03798BD01882721600C31389 /* event.15.l.1.png in Resources */,
@@ -2161,7 +2161,7 @@
 				03A20F4E184D4F2C00CCED80 /* wall.21.l.png in Resources */,
 				0332384217D4BDB8001B1328 /* char5.stand.r.b.1.png in Resources */,
 				0304D781186CEE0200ED6E94 /* char2.stand.r.f.1.png in Resources */,
-				038BA0E7188B849100A3ED4B /* Quiet Time.mp3 in Resources */,
+				038BA0E7188B849100A3ED4B /* Quiet.mp3 in Resources */,
 				0304D787186CEE0200ED6E94 /* char3.stand.r.f.3.png in Resources */,
 				0304D7A7186CEE0200ED6E94 /* event.8.r.1.png in Resources */,
 				0365921218540C9A00F7ABA3 /* letterP.png in Resources */,
