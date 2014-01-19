@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface xxiivvViewController : UIViewController{
 	CGPoint interactionMap;
@@ -43,6 +44,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *step2r;
 @property (strong, nonatomic) IBOutlet UIImageView *step3r;
 
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 // =================
 // Sprites
 // =================
@@ -134,7 +136,6 @@ NSString *worldBackground;
 NSTimer *worldMoveTimer;
 NSTimer *worldWalkTimer;
 
-
 int worldTimer;
 
 int worldTimerEvents;
@@ -148,6 +149,8 @@ int worldTimerUserDirection;
 int worldTimerUserCycle;
 
 NSMutableArray *worldNode;
+
+int roomDoorState;
 
 CGRect	screen;
 int		screenMargin;

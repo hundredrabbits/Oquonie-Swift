@@ -25,15 +25,25 @@
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == characterDocument){
-			return letterUnlocked;
-		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		if(roomDoorState==1){
+			return @"gateDocument.open";
+		}
+		else{
+			return @"gateDocument.shut";
+		}
+	}
+	
+	if(userCharacter == 6 && roomDoorState != 1){
+		roomDoorState = 1;
+		[self roomGenerateTiles];
 		return @"";
 	}
+	
+	
 	// Warp
 	if(userCharacter == characterDocument){
 		if(userLocation == 29){

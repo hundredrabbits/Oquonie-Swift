@@ -40,7 +40,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"10|warp|23|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Office Audio Room",@"White",@"lobby"];
 	
 	worldNode[23] = @[
 	// Tiles
@@ -118,7 +118,7 @@
 	// Tiles
 	@"21|block|15",@"21",@"21",
 	@"21",@"8",@"21",
-	@"21",@"21|block|14",@"21",
+	@"21",@"21|block|16",@"21",
 	// Walls
 	@"20",@"24|warp|28|-1,0",@"20",@"20",@"28|event|gateDocument",@"21",
 	// Steps
