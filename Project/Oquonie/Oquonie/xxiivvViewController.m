@@ -529,11 +529,10 @@
 {
 	// Initiate the player
 	if([filename isEqualToString:@"start"]){
-		self.audioAmbientPlayer.volume = 1.0;
+		self.audioAmbientPlayer.volume = 0.2;
 		return;
 	}
 	
-	NSLog(@"First: %f",self.audioAmbientPlayer.volume);
 	float currentVolume = self.audioAmbientPlayer.volume;
 	NSError *error;
 	NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
@@ -550,7 +549,6 @@
 	}
 	
 	[self.audioAmbientPlayer play];
-	NSLog(@"Second: %f",self.audioAmbientPlayer.volume);
 }
 
 # pragma mark Interaction Map -

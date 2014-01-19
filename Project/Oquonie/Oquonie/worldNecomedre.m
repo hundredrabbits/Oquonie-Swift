@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
 #import "worldNecomedre.h"
 
 @implementation xxiivvViewController (worldNecomedre)
@@ -28,7 +29,7 @@
 	// Steps
 	@"0",@"0",@"0",@"10|warp|22|1,-1",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Lobby Entrance",@"White",audioQuiet];
 	
 	worldNode[22] = @[
 	// Tiles
@@ -40,7 +41,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"10|warp|23|1,0",@"0",
 	// Name,Background,Audio
-	@"Office Audio Room",@"White",@"Quiet"];
+	@"Office Audio Room",@"White",audioQuiet];
 	
 	worldNode[23] = @[
 	// Tiles
@@ -52,7 +53,7 @@
 	// Steps
 	@"0",@"10|warp|28|0,1",@"0",@"0",@"10|warp|24|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"Necomedre"];
+	@"Lobby Entrance",@"White",audioQuiet];
 	
 	worldNode[24] = @[
 	// Tiles
@@ -64,7 +65,7 @@
 	// Steps
 	@"10|warp|21|1,1",@"0",@"0",@"0",@"10|warp|25|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Lobby Entrance",@"White",audioQuiet];
 	
 	worldNode[25] = @[
 	// Tiles
@@ -76,7 +77,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"10|warp|26|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Lobby Entrance",@"White",audioQuiet];
 	
 	worldNode[26] = @[
 	// Tiles
@@ -88,7 +89,7 @@
 	// Steps
 	@"0",@"10|warp|23|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Lobby Entrance",@"White",audioQuiet];
 
 	worldNode[27] = @[
 	// Tiles
@@ -100,7 +101,7 @@
 	// Steps
 	@"0",@"10|warp|24|0,1",@"0",@"0",@"10|warp|28|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Storage Room",@"Black",@"quiet"];
+	@"Necomedre Storage Room",@"Black",audioQuiet];
 
 	worldNode[28] = @[
 	// Tiles
@@ -112,7 +113,7 @@
 	// Steps
 	@"0",@"10|warp|25|0,1",@"0",@"0",@"10|warp|29|1,0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"lobby"];
+	@"Lobby Entrance",@"White",audioQuiet];
 
 	worldNode[29] = @[
 	// Tiles
@@ -124,7 +125,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Lobby Entrance",@"White",@"Quiet"];
+	@"Lobby Entrance",@"White",audioQuiet];
 	
 	worldNode[30] = @[
 	// Tiles
@@ -136,7 +137,7 @@
 	// Steps
 	@"0",@"10|event|gateDocument",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office",@"White",audioQuiet];
 
 	worldNode[31] = @[
 	// Tiles
@@ -148,7 +149,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office Red",@"White",@"lobby"];
+	@"Office Red",@"White",audioQuiet];
 	
 	// =======================
 	// @ Events: Segment 2
@@ -166,7 +167,7 @@
 	// Steps
 	@"0",@"5|event|gateNecomedre",@"0",@"0",@"6|warp|35|1,0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office",@"White",audioNecomedre];
 
 	worldNode[33] = @[
 	// Tiles
@@ -178,7 +179,7 @@
 	// Steps
 	@"0",@"7|warp|32|0,1",@"0",@"0",@"0",@"6|warp|36|1,1",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office",@"White",audioNecomedre];
 
 	worldNode[34] = @[
 	// Tiles
@@ -190,7 +191,7 @@
 	// Steps
 	@"0",@"6|warp|33|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office",@"White",audioNecomedre];
 
 	worldNode[35] = @[
 	// Tiles
@@ -202,7 +203,7 @@
 	// Steps
 	@"0",@"6|warp|34|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office",@"White",audioNecomedre];
 
 	worldNode[36] = @[
 	// Tiles
@@ -214,7 +215,7 @@
 	// Steps
 	@"0",@"6|warp|35|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office",@"White",audioNecomedre];
 
 	worldNode[37] = @[
 	// Tiles
@@ -226,7 +227,7 @@
 	// Steps
 	@"0",@"6|warp|36|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office",@"White",audioNecomedre];
 
 	worldNode[38] = @[
 	// Tiles
@@ -238,7 +239,7 @@
 	// Steps
 	@"0",@"6|warp|37|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office",@"White",audioNecomedre];
 
 	worldNode[39] = @[
 	// Tiles
@@ -250,7 +251,7 @@
 	// Steps
 	@"0",@"6|warp|38|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office",@"White",@"lobby"];
+	@"Office",@"White",audioNecomedre];
 	
 	worldNode[120] = @[
 	// Tiles
@@ -262,7 +263,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"6|warp|34|0,1",@"0",
 	// Name,Background,Audio
-	@"Necomedre Pillar Room",@"White",@"lobby"];
+	@"Necomedre Pillar Room",@"White",audioNecomedre];
 
 }
 

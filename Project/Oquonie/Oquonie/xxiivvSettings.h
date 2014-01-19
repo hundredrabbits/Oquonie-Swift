@@ -10,7 +10,7 @@
 #define systemBuild				1
 
 #define userCharacterId			1
-#define userCharacterLocation	22
+#define userCharacterLocation	29
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -31,7 +31,14 @@
 #define dialogGiveSpellNemedique	@"MAK"
 #define dialogGiveSpellNephtaline	@"MCK"
 #define dialogGiveSpellNestorine	@"MBK"
-#define dialogDoorLocked			@"FLT"
+
+#define dialogDoorLockedNecomedre	@"UUU"
+#define dialogDoorLockedNephtaline	@"UUU"
+#define dialogDoorLockedNeomine		@"UUU"
+#define dialogDoorLockedNemedique	@"UUU"
+#define dialogDoorLockedNestorine	@"UUU"
+#define dialogDoorLockedDocument	@"UUU"
+
 #define dialogAudioOn				@"UUU"
 #define dialogAudioOff				@"UUU"
 #define dialogThankYou				@"UUU"
@@ -42,6 +49,15 @@
 #define dialogInfoPillar			@"UUU"
 #define dialogLookMap				@"UUU"
 #define dialogFoundPillar			@"UUU"
+
+#define audioQuiet				@"Quiet"
+#define audioNecomedre			@"Necomedre"
+#define audioNephtaline			@"Nephtaline"
+#define audioNeomine			@"Neomine"
+#define audioNestorine			@"Nestorine"
+#define audioNemedique			@"Nemedique"
+#define audioQuiet				@"Quiet"
+#define audioPillar				@"Pillar"
 
 #define characterNecomedre		1
 #define characterNephtaline		2

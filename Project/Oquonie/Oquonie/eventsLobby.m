@@ -54,7 +54,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLocked:eventTutorial];
+		[self eventDialog:dialogDoorLockedDocument:eventTutorial];
 		[self eventSpellRefresh];
 	}
 	
@@ -90,7 +90,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventDialog:dialogDoorLockedNephtaline:@"1"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -131,7 +131,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventDialog:dialogDoorLockedNeomine:@"1"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -166,7 +166,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventDialog:dialogDoorLockedNestorine:@"1"];
 		[self eventSpellRefresh];
 	}
 	
@@ -202,7 +202,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventDialog:dialogDoorLockedNecomedre:@"1"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -237,7 +237,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLocked:@"1"];
+		[self eventDialog:dialogDoorLockedNemedique:@"1"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -269,7 +269,7 @@
 		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
 	}
 	else{
-		[self eventDialog:dialogDoorLocked:@"1"];
+//		[self eventDialog:dialogDoorLocked:@"1"];
 		[self eventSpellRefresh];
 	}
 	return @"";
