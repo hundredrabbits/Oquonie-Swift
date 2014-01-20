@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
 #import "worldNeomine.h"
 
 @implementation xxiivvViewController (worldNeomine)
@@ -22,7 +23,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"4|event|gateNeomine",@"0",
 	// Name,Background,Audio
-	@"Neomine Entrance",@"Black",@"lobby"];
+	@"Neomine Entrance",@"Black",audioNeomine];
 	
 	worldNode[61] = @[
 	// Tiles
@@ -34,7 +35,7 @@
 	// Steps
 	@"0",@"0",@"3|warp|60|-1,1",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Side Room",@"Black",@"lobby"];
+	@"Neomine Side Room",@"Black",audioNeomine];
 	
 	worldNode[62] = @[
 	// Tiles
@@ -46,7 +47,7 @@
 	// Steps
 	@"3|warp|60|1,1",@"0",@"3|warp|63|-1,1",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Entrance",@"Black",@"lobby"];
+	@"Neomine Entrance",@"Black",audioNeomine];
 	
 	worldNode[63] = @[
 	// Tiles
@@ -58,7 +59,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Entrance",@"Black",@"lobby"];
+	@"Neomine Entrance",@"Black",audioNeomine];
 
 	worldNode[64] = @[
 	// Tiles
@@ -70,7 +71,7 @@
 	// Steps
 	@"3|warp|68|1,1",@"3|warp|63|0,1",@"3|warp|65|-1,1",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Entrance",@"Black",@"lobby"];
+	@"Neomine Entrance",@"Black",audioNeomine];
 
 	worldNode[65] = @[
 	// Tiles
@@ -82,7 +83,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Entrance",@"Black",@"lobby"];
+	@"Neomine Entrance",@"Black",audioNeomine];
 
 	worldNode[66] = @[
 	// Tiles
@@ -94,7 +95,7 @@
 	// Steps
 	@"3|warp|63|1,1",@"3|warp|67|0,1",@"3|warp|68|-1,1",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Entrance",@"Black",@"lobby"];
+	@"Neomine Entrance",@"Black",audioNeomine];
 
 	worldNode[67] = @[
 	// Tiles
@@ -106,7 +107,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Entrance",@"Black",@"lobby"];
+	@"Neomine Entrance",@"Black",audioNeomine];
 
 	worldNode[68] = @[
 	// Tiles
@@ -118,7 +119,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Entrance",@"Black",@"lobby"];
+	@"Neomine Entrance",@"Black",audioNeomine];
 
 	worldNode[69] = @[
 	// Tiles
@@ -130,19 +131,19 @@
 	// Steps
 	@"0",@"3|warp|68|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Nestorine Exit",@"White",@"lobby"];
+	@"Nestorine Exit",@"White",audioNeomine];
 	
 	worldNode[70] = @[
 	// Tiles
 	@"1",@"1",@"1",
-	@"1",@"7|event|warpLobby|7|l",@"1",
+	@"1",@"7|event|warpLobby",@"1",
 	@"1",@"1",@"1",
 	// Walls
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Steps
 	@"0",@"3|event|gateNestorine",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Nestorine Warp",@"White",@"lobby"];
+	@"Nestorine Warp",@"White",audioNeomine];
 	
 	worldNode[71] = @[
 	// Tiles
@@ -154,7 +155,7 @@
 	// Steps
 	@"0",@"3|event|gateNecomedre",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Warp",@"White",@"lobby"];
+	@"Necomedre Warp",@"White",audioNeomine];
 	
 }
 @end

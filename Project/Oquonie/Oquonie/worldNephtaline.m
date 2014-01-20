@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
 #import "worldNephtaline.h"
 
 @implementation xxiivvViewController (worldNephtaline)
@@ -28,7 +29,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"6|event|gateNephtaline",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 
 	worldNode[41] = @[
 	// Tiles
@@ -40,7 +41,7 @@
 	// Steps
 	@"0",@"7|warp|40|0,1",@"0",@"0",@"7|warp|42|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 
 	worldNode[42] = @[
 	// Tiles
@@ -52,7 +53,7 @@
 	// Steps
 	@"0",@"7|warp|43|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[43] = @[
 	// Tiles
@@ -64,7 +65,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[44] = @[
 	// Tiles
@@ -76,7 +77,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"7|warp|43|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[45] = @[
 	// Tiles
@@ -88,7 +89,7 @@
 	// Steps
 	@"0",@"7|warp|46|0,1",@"0",@"0",@"7|warp|42|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[46] = @[
 	// Tiles
@@ -100,7 +101,7 @@
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|51|1,0",@"0",
 	// Name,Background,Audio
-	@"Nephtaline Lobby 1",@"White",@"lobby"];
+	@"Nephtaline Lobby 1",@"White",audioNephtaline];
 
 	// =======================
 	// @ Events: Segment 2
@@ -118,7 +119,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"7|warp|48|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[48] = @[
 	// Tiles
@@ -130,7 +131,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[49] = @[
 	// Tiles
@@ -142,7 +143,7 @@
 	// Steps
 	@"0",@"7|warp|48|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[50] = @[
 	// Tiles
@@ -154,7 +155,7 @@
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|55|1,0",@"0",
 	// Name,Background,Audio
-	@"Nephtaline Lobby 2",@"White",@"lobby"];
+	@"Nephtaline Lobby 2",@"White",audioNephtaline];
 
 	// =======================
 	// @ Events: Segment 3
@@ -172,7 +173,7 @@
 	// Steps
 	@"0",@"7|warp|48|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[52] = @[
 	// Tiles
@@ -184,7 +185,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[53] = @[
 	// Tiles
@@ -196,7 +197,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"7|warp|48|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[54] = @[
 	// Tiles
@@ -208,7 +209,7 @@
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|51|1,0",@"0",
 	// Name,Background,Audio
-	@"Nephtaline Lobby 3",@"White",@"lobby"];
+	@"Nephtaline Lobby 3",@"White",audioNephtaline];
 
 	// =======================
 	// @ Events: Segment 4
@@ -226,7 +227,7 @@
 	// Steps
 	@"0",@"7|warp|56|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 
 	worldNode[56] = @[
 	// Tiles
@@ -238,7 +239,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 
 	worldNode[57] = @[
 	// Tiles
@@ -250,7 +251,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"7|warp|56|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",@"lobby"];
+	@"Necomedre Fork",@"White",audioNephtaline];
 
 	worldNode[58] = @[
 	// Tiles
@@ -262,19 +263,19 @@
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Nephtaline Lobby 2",@"White",@"lobby"];
+	@"Nephtaline Lobby 2",@"White",audioNephtaline];
 	
 	worldNode[59] = @[
 	// Tiles
 	@"2",@"2",@"2",
-	@"2",@"7|event|warpLobby|7|l",@"2",
+	@"2",@"7|event|warpLobby",@"2",
 	@"2",@"2",@"2",
 	// Walls
 	@"3",@"3",@"3",@"3",@"3",@"3",
 	// Steps
 	@"0",@"0",@"0",@"0",@"4|event|gateNeomine",@"0",
 	// Name,Background,Audio
-	@"Nephtaline Lobby 2",@"White",@"lobby"];
+	@"Nephtaline Lobby 2",@"White",audioNephtaline];
 	
 	worldNode[121] = @[
 	// Tiles
@@ -286,7 +287,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"3|event|gateNemedique",@"0",
 	// Name,Background,Audio
-	@"Necomedre Warp",@"White",@"lobby"];
+	@"Necomedre Warp",@"White",audioNephtaline];
 	
 }
 @end

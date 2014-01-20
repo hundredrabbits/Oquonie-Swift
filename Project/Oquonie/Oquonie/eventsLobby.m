@@ -164,6 +164,9 @@
 		else if(userLocation == 120){
 			[self eventWarp:@"34":@"1,0"];
 		}
+		else if(userLocation == 69){
+			[self eventWarp:@"70":@"0,-1"];
+		}
 	}
 	else{
 		[self eventDialog:dialogDoorLockedNestorine:@"1"];
