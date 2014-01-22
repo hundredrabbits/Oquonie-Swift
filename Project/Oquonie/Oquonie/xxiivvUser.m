@@ -29,10 +29,6 @@
     int myCount = 0;
     while ( myCount < 40 )	{ myCount++; userStorageEvents[myCount] = @"";	}
 	
-	if(userQuestRamen == 1){
-		userStorageEvents[storageQuestRamen] = @"1";
-	}
-	
 	// User Spellbook
 	userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
 }

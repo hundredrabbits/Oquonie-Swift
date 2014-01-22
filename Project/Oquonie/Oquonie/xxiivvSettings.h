@@ -10,18 +10,25 @@
 #define systemBuild				1
 
 #define userCharacterId			4
-#define userCharacterLocation	80
+#define userCharacterLocation	2
 #define userCharacterX			0
 #define userCharacterY			0
 
 #define userQuestRamen			0
 
-#define storageQuestRamen				5
+#define storageQuestRamenNecomedre		1
+#define storageQuestRamenNephtaline		2
+#define storageQuestRamenNeomine		3
+#define storageQuestRamenNestorine		4
+#define storageQuestRamenNemedique		5
+
 #define storageQuestPillarNecomedre		11
 #define storageQuestPillarNephtaline	12
 #define storageQuestPillarNeomine		13
 #define storageQuestPillarNestorine		14
 #define storageQuestPillarNemedique		15
+
+#define dialogRamenFound			@"UUU"
 
 #define dialogHaveCharacter			@"SIO"
 #define dialogHaveSpell				@"SIO"
@@ -107,14 +114,21 @@
 
 #define locationLobbyLanding		@"1"
 #define locationGameStart			@"29"
+
 #define locationNeomineLobby		@"3"
+#define locationNeominePillar		@"71"
+
 #define locationNestorineLobby		@"7"
 #define locationNestorineEnter		@"80"
+#define locationNestorinePillar		@"90"
+#define locationNestorineRamen		@"88"
+
 #define locationNecomedrePillar		@"120"
-#define locationNeominePillar		@"71"
 #define locationNecomedreLobby		@"5"
+
 #define locationNephtalineLobby		@"1"
 #define locationNephtalinePillar	@"121"
+
 #define locationNemediqueLobby		@"9"
 #define locationNemediqueEnter		@"100"
 

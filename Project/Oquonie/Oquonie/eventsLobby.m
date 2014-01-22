@@ -88,6 +88,13 @@
 		else if(userLocation == 40){
 			[self eventWarp:@"1" :@"1,0"];
 		}
+		// Nestorine
+		else if(userLocation == 93){
+			[self eventWarp:@"90" :@"-1,0"];
+		}
+		else if(userLocation == 90){
+			[self eventWarp:@"93" :@"1,0"];
+		}
 	}
 	else{
 		[self eventDialog:dialogDoorLockedNephtaline:@"1"];
@@ -238,6 +245,13 @@
 		else if(userLocation == 100){
 			[self eventWarp:locationNemediqueLobby :@"1,0"];
 		}
+		// Nestorine
+		else if(userLocation == 94){
+			[self eventWarp:@"92":@"0,-1"];
+		}
+		else if(userLocation == 92){
+			[self eventWarp:@"94" :@"1,0"];
+		}
 	}
 	else{
 		[self eventDialog:dialogDoorLockedNemedique:@"1"];
@@ -256,25 +270,10 @@
 	if([option isEqualToString:@"postUpdate"]){
 		return @""; // try with 17 ?
 	}
-	// Necomedre
-	if(userCharacter == characterNephtaline && userLocation == 39){
-		[self eventDialog:dialogWarpLobby:@"1"];
-		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
-	}
-	// Nephtaline
-	else if(userCharacter == characterNeomine && userLocation == 59){
-		[self eventDialog:dialogWarpLobby:@"1"];
-		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
-	}
-	// Neomine
-	else if(userCharacter == characterNestorine && userLocation == 70){
-		[self eventDialog:dialogWarpLobby:@"1"];
-		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
-	}
-	else{
-//		[self eventDialog:dialogDoorLocked:@"1"];
-		[self eventSpellRefresh];
-	}
+	
+	[self eventDialog:dialogWarpLobby:@"1"];
+	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
+	
 	return @"";
 }
 
@@ -311,10 +310,13 @@
 		pillarInstanceStorageId = storageQuestPillarNephtaline;
 		pillarInstanceWarp = locationNephtalineLobby;
 	}
+	else if (userLocation == [locationNestorinePillar intValue]){
+		pillarInstanceStorageId = storageQuestPillarNestorine;
+		pillarInstanceWarp = locationNestorineLobby;
+	}
 	
 	// Initial Animation
-	if(![option isEqualToString:@"postUpdate"] && ![option isEqualToString:@""] && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 0){
-	
+	if(![option isEqualToString:@"postUpdate"] && ![option isEqualToString:@""] && [userStorageEvents[pillarInstanceStorageId] intValue] == 0){
 		self.userPlayer.alpha = 0;
 		[UIView animateWithDuration:2 animations:^(void){
 			self.userPlayer.alpha = 1;
@@ -322,6 +324,7 @@
 		
 		[self moveDisable:2];
 		[self eventDialog:dialogFoundPillar:eventOwl];
+		return @"";
 	}
 	
 	// Broadcast Notification
@@ -440,14 +443,14 @@
 
 -(NSString*)event_ramen :(NSString*)option
 {
+	int ramenStorage;
+	
+	if( userLocation == [locationNestorineRamen intValue]){
+		ramenStorage = storageQuestRamenNestorine;
+	}
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[storageQuestRamen] intValue] == 1 && userLocation != 63){
-			if(userCharacter == characterNeomine && userLocation == 2 && ![self eventSpellCheck:@"lobbyNecomedre"]){
-				return letterNecomedre;
-			}
-		}
-		else if( userLocation == 63 && [userStorageEvents[storageQuestRamen] intValue] == 0 ){
+		if([userStorageEvents[ramenStorage] intValue] == 0){
 			return letterHelp;
 		}
 		return @"";
@@ -455,29 +458,57 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		// Quest: At his location
-		if(userLocation == 63 && [userStorageEvents[storageQuestRamen] intValue] == 0){
+		// Completed
+		if([userStorageEvents[ramenStorage] intValue] == 1){
+			return eventRamenSeat;
+		}
+		else{
 			return eventRamen;
 		}
-		else if(userLocation != 63 && [userStorageEvents[storageQuestRamen] intValue] == 1){
+	}
+	
+	// Dialogs
+	if([userStorageEvents[ramenStorage] intValue] == 0){
+		userStorageEvents[ramenStorage] = @"1";
+		[self eventWarp:userLocationString:userPositionString];
+		[self eventDialog:dialogRamenFound:eventRamen];
+	}
+	
+	return @"";
+}
+
+-(NSString*)event_ramenLobby :(NSString*)option
+{
+	// Debug
+	userStorageEvents[storageQuestRamenNestorine] = @"1";
+	
+	int ramenStorage;
+	NSString* saySpell;
+	int giveSpell;
+	
+	if(userCharacter == characterNestorine){
+		ramenStorage = storageQuestRamenNestorine;
+		saySpell = letterNephtaline;
+		giveSpell = spellNephtaline;
+	}
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[ramenStorage] intValue] == 1 && ![self eventSpellCheck:@"ramenQuestSpell"] ){
+			return saySpell;
+		}
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		// Completed
+		if([userStorageEvents[ramenStorage] intValue] == 1){
 			return eventRamen;
 		}
 		else{
 			return eventRamenSeat;
 		}
 	}
-	
-	// Dialogs
-	if( userLocation == 63 && [userStorageEvents[storageQuestRamen] intValue] == 0){
-		userStorageEvents[storageQuestRamen] = @"1";
-		[self eventWarp:userLocationString:userPositionString];
-		[self eventDialog:dialogSeeYou:eventRamen];
-	}
-	else if([userStorageEvents[storageQuestRamen] intValue] == 1){
-		if(userCharacter == characterNeomine && userLocation == 2){
-			[self eventSpellAdd:@"lobbyNecomedre":spellNecomedre];
-		}
-	}
+	[self eventSpellAdd:@"ramenQuestSpell":giveSpell];
 	
 	return @"";
 }
