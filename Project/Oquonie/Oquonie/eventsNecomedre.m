@@ -218,7 +218,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && [userStorageEvents[storageQuestPillarNephtaline] intValue]>0){
 			return letterNestorine;
 		}
 		return @"";
@@ -229,14 +229,24 @@
 		return @"";
 	}
 	
-	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNestorine:eventSpriteId]; }
-	
-	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
-	
+	// Dialog: Already character
+	if( eventSpell == userCharacter){
+		[self eventDialog:dialogHaveCharacter:eventSpriteId];
+	}
+	// Have spell
+    else if( [self eventSpellCheck:eventSpellId] ){
+		[self eventDialog:dialogHaveSpell:eventSpriteId];
+	}
+	// Have not completed ramen quest
+	else if([userStorageEvents[storageQuestPillarNephtaline] intValue]>0){
+		[self eventDialog:dialogGiveSpellNestorine:eventSpriteId];
+		[self eventSpellAdd:eventSpellId:eventSpell];
+	}
+	// Give spell
+    else{
+		[self eventDialog:dialogRamenNotFound:eventSpriteId];
+	}
+		
 	return @"";
 }
 

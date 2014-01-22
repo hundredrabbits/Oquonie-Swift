@@ -29,6 +29,7 @@
 #define storageQuestPillarNemedique		15
 
 #define dialogRamenFound			@"UUU"
+#define dialogRamenNotFound			@"UUU"
 
 #define dialogHaveCharacter			@"SIO"
 #define dialogHaveSpell				@"SIO"
