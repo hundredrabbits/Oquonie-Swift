@@ -19,47 +19,44 @@
 # pragma mark Gates -
 
 // =======================
-// @ Events: Pillars
-// =======================
-
-# pragma mark Wizards -
-
--(NSString*)event_nemediqueNeomine1 :(NSString*)option
-{
-	// Event Identifier
-	NSString*	eventSpellId	= @"nemediqueNeomine1";
-	NSString*	eventSpriteId	= eventNeomine;
-	int			eventSpell		= spellNeomine;
-	
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
-			return letterNeomine;
-		}
-		return @"";
-	}
-	
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		return @"";
-	}
-	
-	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNemedique:eventSpriteId]; }
-	
-	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
-	
-	return @"";
-}
-
-// =======================
 // @ Events: Wizards
 // =======================
 
 # pragma mark Wizards -
+
+-(NSString*)event_nemediqueNestorine1 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"nemediqueNestorine1";
+	NSString*	eventDialogSpell	= dialogGiveSpellNestorine;
+	NSString*	eventLetter			= letterNestorine;
+	NSString*	eventSpriteId		= eventNestorine;
+	int			eventSpell			= spellNestorine;
+	
+	int			eventRequirement	= characterNecomedre;
+	int eventRamenRequirement		= storageQuestRamenNecomedre;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	// Dialog
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }			// Have spell
+	else if(userCharacter != eventRequirement)		{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// If the right character
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+    else{
+		[self eventSpellAdd:eventSpellId:eventSpell];
+		[self eventDialog:eventDialogSpell:eventSpriteId];
+	}
+	
+	return @"";
+}
 
 // =======================
 // @ Events: NPCs

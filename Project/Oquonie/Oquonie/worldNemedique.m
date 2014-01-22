@@ -15,7 +15,7 @@
 {
 	worldNode[100] = @[
 	// Tiles
-	@"10|event|nemediqueNeomine1|4|r",@"10",@"10",
+	@"10|event|nemediqueNestorine1|5|r",@"10",@"10",
 	@"10",@"4",@"6",
 	@"10",@"5",@"10",
 	// Walls

@@ -40,6 +40,13 @@
 	[self timerStart];
 	
 	[self audioAmbientPlayer:@"start"];
+	
+	// Debug: remove
+	userStorageEvents[storageQuestRamenNecomedre] = @"1";
+	userStorageEvents[storageQuestRamenNephtaline] = @"1";
+	userStorageEvents[storageQuestRamenNeomine] = @"1";
+	userStorageEvents[storageQuestRamenNestorine] = @"1";
+	userStorageEvents[storageQuestRamenNemedique] = @"1";
 }
 
 # pragma mark Move -

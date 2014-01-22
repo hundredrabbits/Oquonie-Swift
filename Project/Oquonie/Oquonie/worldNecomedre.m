@@ -219,7 +219,7 @@
 
 	worldNode[37] = @[
 	// Tiles
-	@"4",@"4|event|owlSave|1|r",@"4",
+	@"4",@"4|event|necomedreNemedique1|6|r",@"4",
 	@"4",@"4",@"4",
 	@"4",@"4",@"4",
 	// Walls

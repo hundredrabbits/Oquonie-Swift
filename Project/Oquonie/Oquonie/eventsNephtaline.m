@@ -123,34 +123,36 @@
 	return @"";
 }
 
-
 -(NSString*)event_nephtalineNemedique1 :(NSString*)option
 {
-	// Event Identifier
-	NSString *eventSpellId = @"nephtalineNemedique1";
-	NSString*	eventSpriteId = eventNemedique;
-	int			eventSpell = spellNemedique;
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"nephtalineNemedique1";
+	NSString*	eventDialogSpell	= dialogGiveSpellNemedique;
+	NSString*	eventLetter			= letterNemedique;
+	NSString*	eventSpriteId		= eventNemedique;
+	int			eventSpell			= spellNemedique;
+	
+	NSString*	eventWrongCharacter	= dialogWrongCharacterNephtaline;
+	int			eventRequirement	= characterNephtaline;
+	int eventRamenRequirement		= storageQuestRamenNephtaline;
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
-			return letterNemedique;
-		}
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
 		return @"";
 	}
 	
 	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	// Dialog
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
+	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+    else{
+		[self eventSpellAdd:eventSpellId:eventSpell];
+		[self eventDialog:eventDialogSpell:eventSpriteId];
 	}
-	
-	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNemedique:eventSpriteId]; }
-	
-	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
 	
 	return @"";
 }

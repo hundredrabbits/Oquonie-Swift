@@ -10,11 +10,9 @@
 #define systemBuild				1
 
 #define userCharacterId			1
-#define userCharacterLocation	2
+#define userCharacterLocation	5
 #define userCharacterX			0
 #define userCharacterY			0
-
-#define userQuestRamen			0
 
 #define storageQuestRamenNecomedre		1
 #define storageQuestRamenNephtaline		2
@@ -30,6 +28,7 @@
 
 #define dialogRamenFound			@"UUU"
 #define dialogRamenNotFound			@"UUU"
+#define dialogWrongCharacter		@"UUU"
 
 #define dialogHaveCharacter			@"SIO"
 #define dialogHaveSpell				@"SIO"
@@ -40,6 +39,12 @@
 #define dialogGiveSpellNephtaline	@"MCK"
 #define dialogGiveSpellNestorine	@"MBK"
 #define dialogTransform				@"UUU"
+
+#define dialogWrongCharacterNephtaline	@"UUU"
+#define dialogWrongCharacterNecomedre	@"UUU"
+#define dialogWrongCharacterNemedique	@"UUU"
+#define dialogWrongCharacterNeomine		@"UUU"
+#define dialogWrongCharacterNestorine	@"UUU"
 
 #define dialogDoorLockedNecomedre	@"UUU"
 #define dialogDoorLockedNephtaline	@"UUU"

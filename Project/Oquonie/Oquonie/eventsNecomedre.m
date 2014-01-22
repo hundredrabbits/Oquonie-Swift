@@ -208,45 +208,71 @@
 	return @"";
 }
 
-
 -(NSString*)event_necomedreNestorine1 :(NSString*)option
 {
-	// Event Identifier
-	NSString*	eventSpellId	= @"necomedreNestorine1";
-	NSString*	eventSpriteId	= eventNestorine;
-	int			eventSpell		= spellNestorine;
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"necomedreNestorine1";
+	NSString*	eventDialogSpell	= dialogGiveSpellNestorine;
+	NSString*	eventLetter			= letterNestorine;
+	NSString*	eventSpriteId		= eventNestorine;
+	int			eventSpell			= spellNestorine;
+	
+	NSString*	eventWrongCharacter	= dialogWrongCharacterNecomedre;
+	int			eventRequirement	= characterNecomedre;
+	int eventRamenRequirement		= storageQuestRamenNecomedre;
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && [userStorageEvents[storageQuestPillarNephtaline] intValue]>0){
-			return letterNestorine;
-		}
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
 		return @"";
 	}
 	
 	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	// Dialog
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
+	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+    else{
+		[self eventSpellAdd:eventSpellId:eventSpell];
+		[self eventDialog:eventDialogSpell:eventSpriteId];
+	}
+	
+	return @"";
+}
+
+-(NSString*)event_necomedreNemedique1 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"necomedreNemedique1";
+	NSString*	eventDialogSpell	= dialogGiveSpellNemedique;
+	NSString*	eventLetter			= letterNemedique;
+	NSString*	eventSpriteId		= eventNemedique;
+	int			eventSpell			= spellNemedique;
+	
+	NSString*	eventWrongCharacter	= dialogWrongCharacterNephtaline;
+	int			eventRequirement	= characterNephtaline;
+	int eventRamenRequirement		= storageQuestRamenNephtaline;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
 		return @"";
 	}
 	
-	// Dialog: Already character
-	if( eventSpell == userCharacter){
-		[self eventDialog:dialogHaveCharacter:eventSpriteId];
-	}
-	// Have spell
-    else if( [self eventSpellCheck:eventSpellId] ){
-		[self eventDialog:dialogHaveSpell:eventSpriteId];
-	}
-	// Have not completed ramen quest
-	else if([userStorageEvents[storageQuestPillarNephtaline] intValue]>0){
-		[self eventDialog:dialogGiveSpellNestorine:eventSpriteId];
-		[self eventSpellAdd:eventSpellId:eventSpell];
-	}
-	// Give spell
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	// Dialog
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
+	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
     else{
-		[self eventDialog:dialogRamenNotFound:eventSpriteId];
+		[self eventSpellAdd:eventSpellId:eventSpell];
+		[self eventDialog:eventDialogSpell:eventSpriteId];
 	}
-		
+	
 	return @"";
 }
 
