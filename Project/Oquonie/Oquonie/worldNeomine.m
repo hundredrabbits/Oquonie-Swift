@@ -155,7 +155,7 @@
 	// Steps
 	@"0",@"3|event|gateNecomedre",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Warp",@"White",audioNeomine];
+	@"Necomedre Pillar Room",@"White",audioNeomine];
 	
 }
 @end

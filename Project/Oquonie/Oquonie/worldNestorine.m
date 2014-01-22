@@ -204,6 +204,18 @@
 	@"0",@"1|warp|80|0,1",@"0",@"0",@"1|warp|80|1,0",@"0",
 	// Name,Background,Audio
 	@"Fork Start",@"White",audioNestorine];
+	
+	worldNode[96] = @[
+	// Tiles
+	@"21",@"21",@"21",
+	@"21",@"7|event|warpNestorine",@"21",
+	@"21",@"21",@"21",
+	// Walls
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Steps
+	@"0",@"1|event|gateNestorine",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Entrance Warp",@"White",audioNestorine];
 
 }
 

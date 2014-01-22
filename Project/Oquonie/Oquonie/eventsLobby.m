@@ -159,10 +159,10 @@
 	}
 	// Warp
 	if(userCharacter == characterNestorine){
-		if(userLocation == 7){
+		if(userLocation == [locationNestorineLobby intValue]){
 			[self eventWarp:locationNestorineEnter :@"0,-1"];
 		}
-		else if(userLocation == 80){
+		else if(userLocation == [locationNestorineEnter intValue]){
 			[self eventWarp:locationNestorineLobby:@"0,1"];
 		}
 		else if(userLocation == 34){
@@ -451,6 +451,15 @@
 	else if( userLocation == [locationNeomineRamen intValue]){
 		ramenStorage = storageQuestRamenNeomine;
 	}
+	else if( userLocation == [locationNecomedreRamen intValue]){
+		ramenStorage = storageQuestRamenNecomedre;
+	}
+	else if( userLocation == [locationNephtalineRamen intValue]){
+		ramenStorage = storageQuestRamenNephtaline;
+	}
+	else if( userLocation == [locationNemediqueRamen intValue]){
+		ramenStorage = storageQuestRamenNemedique;
+	}
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
 		if([userStorageEvents[ramenStorage] intValue] == 0){
@@ -482,9 +491,6 @@
 
 -(NSString*)event_ramenLobby :(NSString*)option
 {
-	// Debug
-	userStorageEvents[storageQuestRamenNestorine] = @"1";
-	
 	int ramenStorage;
 	NSString* saySpell;
 	int giveSpell;
@@ -494,6 +500,26 @@
 		ramenStorage = storageQuestRamenNestorine;
 		saySpell = letterNephtaline;
 		giveSpell = spellNephtaline;
+	}
+	else if(userCharacter == characterNephtaline){
+		ramenStorage = storageQuestRamenNephtaline;
+		saySpell = letterNemedique;
+		giveSpell = spellNemedique;
+	}
+	else if(userCharacter == characterNecomedre){
+		ramenStorage = storageQuestRamenNecomedre;
+		saySpell = letterNestorine;
+		giveSpell = spellNestorine;
+	}
+	else if(userCharacter == characterNemedique){
+		ramenStorage = storageQuestRamenNemedique;
+		saySpell = letterNeomine;
+		giveSpell = spellNeomine;
+	}
+	else if(userCharacter == characterNeomine){
+		ramenStorage = storageQuestRamenNeomine;
+		saySpell = letterNecomedre;
+		giveSpell = spellNecomedre;
 	}
 	
 	// Broadcast Notifications

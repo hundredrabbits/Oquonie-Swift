@@ -18,6 +18,33 @@
 
 # pragma mark Gates -
 
+-(NSString*)event_warpNestorine:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @""; // try with 17 ?
+	}
+	
+	[self eventDialog:dialogWarpNestorine:@"1"];
+	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpNestorineAnimation) userInfo:nil repeats:NO];
+	
+	return @"";
+}
+
+-(void)warpNestorineAnimation
+{
+	[self moveAnimation];
+	[UIView animateWithDuration:0.5 animations:^(void){
+		self.userPlayer.frame = [self tileLocation:4:0:0];
+	} completion:^(BOOL finished){
+		[self eventTransitionPan:@"80":roomCenter];
+	}];
+}
+
 // =======================
 // @ Events: Pillars
 // =======================

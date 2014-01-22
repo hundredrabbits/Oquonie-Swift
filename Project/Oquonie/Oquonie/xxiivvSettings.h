@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			3
-#define userCharacterLocation	60
+#define userCharacterId			4
+#define userCharacterLocation	7
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -45,6 +45,8 @@
 #define dialogDoorLockedNemedique	@"UUU"
 #define dialogDoorLockedNestorine	@"UUU"
 #define dialogDoorLockedDocument	@"UUU"
+
+#define dialogWarpNestorine			@"UUU"
 
 #define dialogAudioOn				@"UUU"
 #define dialogAudioOff				@"UUU"
@@ -120,15 +122,18 @@
 #define locationNeomineRamen		@"63"
 
 #define locationNestorineLobby		@"7"
-#define locationNestorineEnter		@"80"
+#define locationNestorineEnter		@"96"
 #define locationNestorinePillar		@"90"
 #define locationNestorineRamen		@"88"
 
 #define locationNecomedrePillar		@"120"
 #define locationNecomedreLobby		@"5"
+#define locationNecomedreRamen		@"35"
+#define locationNemediqueRamen		@"1" // TODO
 
 #define locationNephtalineLobby		@"1"
 #define locationNephtalinePillar	@"121"
+#define locationNephtalineRamen		@"57" // TODO
 
 #define locationNemediqueLobby		@"9"
 #define locationNemediqueEnter		@"100"
