@@ -15,21 +15,21 @@
 {
 	worldNode[100] = @[
 	// Tiles
-	@"5|event|nemediqueNeomine1|4|r",@"5",@"4",
-	@"6",@"8",@"6",
-	@"4",@"5",@"5",
+	@"10|event|nemediqueNeomine1|4|r",@"10",@"10",
+	@"10",@"4",@"6",
+	@"10",@"5",@"10",
 	// Walls
 	@"18",@"29",@"18",@"18",@"12|warp|101|0,-1",@"18",
 	// Steps
-	@"0",@"0",@"0",@"0",@"7|warp|9|1,0",@"0",
+	@"0",@"0",@"0",@"0",@"7|event|gateNemedique",@"0",
 	// Name,Background,Audio
 	@"Nemedique Entrance",@"White",audioNemedique];
 	
 	worldNode[101] = @[
 	// Tiles
-	@"5",@"5",@"4|event|ramen|7|l",
+	@"10",@"5",@"10|event|ramen|7|l",
 	@"6",@"6",@"6",
-	@"4",@"5",@"5",
+	@"10",@"10",@"10",
 	// Walls
 	@"18",@"13|warp|102|-1,0",@"18",@"18",@"4|event|gateNecomedre",@"18",
 	// Steps
@@ -39,9 +39,9 @@
 	
 	worldNode[102] = @[
 	// Tiles
-	@"5",@"5|event|shark|8|r",@"4",
-	@"6",@"5",@"6",
-	@"4",@"5",@"5",
+	@"10",@"5|event|shark|8|r",@"10",
+	@"10",@"5",@"10",
+	@"10",@"5",@"10",
 	// Walls
 	@"18",@"18",@"18",@"18",@"18",@"18",
 	// Steps

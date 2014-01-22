@@ -10,7 +10,7 @@
 #define systemBuild				1
 
 #define userCharacterId			1
-#define userCharacterLocation	101
+#define userCharacterLocation	2
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -38,6 +38,7 @@
 #define dialogGiveSpellNemedique	@"MAK"
 #define dialogGiveSpellNephtaline	@"MCK"
 #define dialogGiveSpellNestorine	@"MBK"
+#define dialogTransform				@"UUU"
 
 #define dialogDoorLockedNecomedre	@"UUU"
 #define dialogDoorLockedNephtaline	@"UUU"

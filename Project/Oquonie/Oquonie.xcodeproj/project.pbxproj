@@ -1506,6 +1506,9 @@
 		03983BF617C1AA8D00C89446 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				038BA0DB188B849100A3ED4B /* event.19.r.1.png */,
+				035DAABA188A9650007127F5 /* event.19.r.2.png */,
+				035DAABB188A9650007127F5 /* event.19.r.3.png */,
 				0304D7BE186CFD0000ED6E94 /* Event1 - Owl */,
 				0304D7B6186CFCB200ED6E94 /* Event2 - Necomedre */,
 				0304D7B7186CFCBB00ED6E94 /* Event3 - Nephtaline */,
@@ -1625,9 +1628,6 @@
 			isa = PBXGroup;
 			children = (
 				038BA0E9188B849B00A3ED4B /* Audio */,
-				038BA0DB188B849100A3ED4B /* event.19.r.1.png */,
-				035DAABA188A9650007127F5 /* event.19.r.2.png */,
-				035DAABB188A9650007127F5 /* event.19.r.3.png */,
 				035DAABC188A9650007127F5 /* wall.gateDocument.shut.l.png */,
 				035DAABD188A9650007127F5 /* wall.gateDocument.shut.r.png */,
 				035DAABE188A9650007127F5 /* wall.gateDocument.open.l.png */,

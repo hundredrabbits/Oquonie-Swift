@@ -325,19 +325,7 @@
 		pillarInstanceStorageId = storageQuestPillarNemedique;
 		pillarInstanceWarp = locationNemediqueLobby;
 	}
-	
-	// Initial Animation
-	if(![option isEqualToString:@"postUpdate"] && ![option isEqualToString:@""] && [userStorageEvents[pillarInstanceStorageId] intValue] == 0){
-		self.userPlayer.alpha = 0;
-		[UIView animateWithDuration:2 animations:^(void){
-			self.userPlayer.alpha = 1;
-		} completion:^(BOOL finished){}];
 		
-		[self moveDisable:2];
-		[self eventDialog:dialogFoundPillar:eventOwl];
-		return @"";
-	}
-	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if( [userStorageEvents[pillarInstanceStorageId] intValue] != 1){
@@ -445,7 +433,7 @@
 	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
 	
 	// Dialog
-    [self eventDialog:@"UVW":@"1"];
+    [self eventDialog:@"UVW":eventOwl];
 	[self userSave];
 	
 	// Return storage Id
@@ -454,15 +442,40 @@
 
 -(NSString*)event_shark :(NSString*)option
 {
-	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([userStorageEvents[storageQuestPillarNemedique] intValue] > 0 && userCharacter != 1){ return letterConfused;}
+		return @"";
+	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
 	
-	// Dialog
-    [self eventDialog:@"UVW":@"1"];
-	[self userSave];
+	
+	if([userStorageEvents[storageQuestPillarNemedique] intValue] > 0 || userLocation == 102){
+		// Dialog
+		if(userCharacter == 1){
+			[self eventDialog:dialogHaveCharacter:eventShark];
+		}
+		else{
+			[self eventDialog:dialogTransform:eventShark];
+			[self moveDisable:4];
+			[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
+			[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(event_sharkDialog) userInfo:nil repeats:NO];
+			[NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(event_sharkTransform) userInfo:nil repeats:NO];
+			[NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
+		}
+	}
 	
 	// Return storage Id
 	return @"";
+}
+
+-(void)event_sharkDialog
+{
+	[self eventDialog:dialogTransform:eventShark];
+}
+
+-(void)event_sharkTransform
+{
+	[self eventTranform:1];
 }
 
 -(NSString*)event_ramen :(NSString*)option
@@ -486,6 +499,8 @@
 	}
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
+		
+		NSLog(@"notif");
 		if([userStorageEvents[ramenStorage] intValue] == 0){
 			return letterHelp;
 		}
@@ -563,7 +578,10 @@
 			return eventRamenSeat;
 		}
 	}
-	[self eventSpellAdd:@"ramenQuestSpell":giveSpell];
+	
+	if([userStorageEvents[ramenStorage] intValue] == 1){
+		[self eventSpellAdd:@"ramenQuestSpell":giveSpell];
+	}
 	
 	return @"";
 }

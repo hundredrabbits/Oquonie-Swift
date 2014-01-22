@@ -263,6 +263,7 @@
 			[self eventTranform:[userSpellbook[0][1] intValue]];
 		}
 	}
+	NSLog(@"%@",userStorageEvents);
 }
 
 -(void)eventSpellMistake
