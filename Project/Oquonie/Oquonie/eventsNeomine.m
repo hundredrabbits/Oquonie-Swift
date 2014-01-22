@@ -37,6 +37,8 @@
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
 	
+	NSString* eventDialogSpell = dialogGiveSpell(letterNeomine);
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
@@ -53,7 +55,7 @@
 	// Dialogs
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNeomine:eventSpriteId]; }
+    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:4];
@@ -67,6 +69,7 @@
 	NSString *eventSpellId = @"neomineNestorine2";
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
+	NSString* eventDialogSpell = dialogGiveSpell(letterNeomine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -84,7 +87,7 @@
 	// Dialogs
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNeomine:eventSpriteId]; }
+    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:4];
@@ -98,6 +101,7 @@
 	NSString *eventSpellId = @"neomineNestorine3";
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
+	NSString* eventDialogSpell = dialogGiveSpell(letterNeomine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -115,7 +119,7 @@
 	// Dialogs
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNeomine:eventSpriteId]; }
+    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	
 	// Spell
@@ -128,12 +132,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"neomineNecomedre1";
-	NSString*	eventDialogSpell	= dialogGiveSpellNecomedre;
+	NSString*	eventDialogSpell	= dialogGiveSpell(letterNecomedre);
 	NSString*	eventLetter			= letterNecomedre;
 	NSString*	eventSpriteId		= eventNecomedre;
 	int			eventSpell			= spellNecomedre;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacterNeomine;
+	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNeomine);
 	int			eventRequirement	= characterNeomine;
 	int eventRamenRequirement		= storageQuestRamenNeomine;
 	
@@ -149,7 +153,7 @@
 	// Dialog
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
 	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
-	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
     else{
 		[self eventSpellAdd:eventSpellId:eventSpell];
 		[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -162,12 +166,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"neomineNephtaline1";
-	NSString*	eventDialogSpell	= dialogGiveSpellNephtaline;
+	NSString*	eventDialogSpell	= dialogGiveSpell(letterNephtaline);
 	NSString*	eventLetter			= letterNephtaline;
 	NSString*	eventSpriteId		= eventNephtaline;
 	int			eventSpell			= spellNephtaline;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacterNestorine;
+	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNestorine);
 	int			eventRequirement	= characterNestorine;
 	int eventRamenRequirement		= storageQuestRamenNestorine;
 	
@@ -183,7 +187,7 @@
 	// Dialog
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
 	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
-	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
     else{
 		[self eventSpellAdd:eventSpellId:eventSpell];
 		[self eventDialog:eventDialogSpell:eventSpriteId];

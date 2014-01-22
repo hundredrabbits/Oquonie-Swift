@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			3
-#define userCharacterLocation	60
+#define userCharacterId			1
+#define userCharacterLocation	37
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -26,32 +26,16 @@
 #define storageQuestPillarNestorine		14
 #define storageQuestPillarNemedique		15
 
+#define dialogWrongCharacter(x)		[NSString stringWithFormat:@"UU%@",x];
+#define dialogDoorLocked(x)			[NSString stringWithFormat:@"UU%@",x];
+#define dialogGiveSpell(x)			[NSString stringWithFormat:@"UU%@",x];
+
 #define dialogRamenFound			@"UUU"
 #define dialogRamenNotFound			@"UUU"
-#define dialogWrongCharacter		@"UUU"
 
 #define dialogHaveCharacter			@"SIO"
 #define dialogHaveSpell				@"SIO"
-#define dialogGiveSpellNecomedre	@"MDK"
-#define dialogGiveSpellNeomine		@"MEK"
-#define dialogGiveSpellDocument		@"MXK"
-#define dialogGiveSpellNemedique	@"MAK"
-#define dialogGiveSpellNephtaline	@"MCK"
-#define dialogGiveSpellNestorine	@"MBK"
 #define dialogTransform				@"UUU"
-
-#define dialogWrongCharacterNephtaline	@"UUU"
-#define dialogWrongCharacterNecomedre	@"UUU"
-#define dialogWrongCharacterNemedique	@"UUU"
-#define dialogWrongCharacterNeomine		@"UUU"
-#define dialogWrongCharacterNestorine	@"UUU"
-
-#define dialogDoorLockedNecomedre	@"UUU"
-#define dialogDoorLockedNephtaline	@"UUU"
-#define dialogDoorLockedNeomine		@"UUU"
-#define dialogDoorLockedNemedique	@"UUU"
-#define dialogDoorLockedNestorine	@"UUU"
-#define dialogDoorLockedDocument	@"UUU"
 
 #define dialogWarpNestorine			@"UUU"
 
@@ -152,6 +136,13 @@
 
 #define userLocationString		[NSString stringWithFormat:@"%d",userLocation]
 #define userPositionString		[NSString stringWithFormat:@"%d,%d",userPositionX,userPositionY]
+
+#define MARK	CMLog(@"%s", __PRETTY_FUNCTION__);
+#define CMLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
+
+#define test(x) NSLog(@"%@",x);
+//#define dialogString(x) [NSString stringWithFormat:@"%@",x];
+
 
 /*
  

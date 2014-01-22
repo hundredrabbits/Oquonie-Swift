@@ -34,7 +34,12 @@
 		NSLog(@"------- - ------------ - -------------------");
 		NSLog(@"! EVENT | Load..       * %@", eventId );
 		NSLog(@"------- - ------------ - -------------------");
+		
+		#pragma clang diagnostic push
+		#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 		[self performSelector:NSSelectorFromString(eventSelector) withObject:@""];
+		#pragma clang diagnostic pop
+
 		[self roomClearNotifications];
         [self roomGenerateNotifications];
 	}

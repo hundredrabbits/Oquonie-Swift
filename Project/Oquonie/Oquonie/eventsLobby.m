@@ -23,6 +23,8 @@
 
 -(NSString*)event_gateDocument :(NSString*)option
 {
+	NSString* eventDialogLocked = dialogDoorLocked(letterDocument);
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		return @"";
@@ -54,7 +56,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLockedDocument:eventTutorial];
+		[self eventDialog:eventDialogLocked:eventTutorial];
 		[self eventSpellRefresh];
 	}
 	
@@ -63,6 +65,7 @@
 
 -(NSString*)event_gateNephtaline :(NSString*)option
 {
+	NSString* eventDialogLocked = dialogDoorLocked(letterNephtaline);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNephtaline){
@@ -97,7 +100,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLockedNephtaline:@"1"];
+		[self eventDialog:eventDialogLocked:@"1"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -105,6 +108,8 @@
 
 -(NSString*)event_gateNeomine :(NSString*)option
 {
+	NSString* eventDialogLocked = dialogDoorLocked(letterNeomine);
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNeomine){
@@ -138,7 +143,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLockedNeomine:@"1"];
+		[self eventDialog:eventDialogLocked:@"1"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -146,6 +151,8 @@
 
 -(NSString*)event_gateNestorine :(NSString*)option
 {
+	NSString* eventDialogLocked = dialogDoorLocked(letterNestorine);
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNestorine){
@@ -176,7 +183,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLockedNestorine:@"1"];
+		[self eventDialog:eventDialogLocked:@"1"];
 		[self eventSpellRefresh];
 	}
 	
@@ -185,6 +192,8 @@
 
 -(NSString*)event_gateNecomedre :(NSString*)option
 {
+	NSString* eventDialogLocked = dialogDoorLocked(letterNecomedre);
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNecomedre){
@@ -219,7 +228,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLockedNecomedre:@"1"];
+		[self eventDialog:eventDialogLocked:@"1"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -227,6 +236,8 @@
 
 -(NSString*)event_gateNemedique :(NSString*)option
 {
+	NSString* eventDialogLocked = dialogDoorLocked(letterNemedique);
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNemedique){
@@ -261,7 +272,7 @@
 		}
 	}
 	else{
-		[self eventDialog:dialogDoorLockedNemedique:@"1"];
+		[self eventDialog:eventDialogLocked:@"1"];
 		[self eventSpellRefresh];
 	}
 	return @"";

@@ -24,15 +24,17 @@
 
 # pragma mark Wizards -
 
+
 -(NSString*)event_nemediqueNestorine1 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"nemediqueNestorine1";
-	NSString*	eventDialogSpell	= dialogGiveSpellNestorine;
+	NSString*	eventDialogSpell	= dialogGiveSpell(letterNestorine);
 	NSString*	eventLetter			= letterNestorine;
 	NSString*	eventSpriteId		= eventNestorine;
 	int			eventSpell			= spellNestorine;
 	
+	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNecomedre);
 	int			eventRequirement	= characterNecomedre;
 	int eventRamenRequirement		= storageQuestRamenNecomedre;
 	
@@ -47,9 +49,8 @@
 	
 	// Dialog
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }			// Have spell
-	else if(userCharacter != eventRequirement)		{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// If the right character
-	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
     else{
 		[self eventSpellAdd:eventSpellId:eventSpell];
 		[self eventDialog:eventDialogSpell:eventSpriteId];

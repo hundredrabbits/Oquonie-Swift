@@ -70,8 +70,11 @@
 -(NSString*)tileParserUpdate :(NSArray*)eventArray :(int)index
 {
 	// Contact event
+	#pragma clang diagnostic push
+	#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 	NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[eventArray objectAtIndex:2]];
 	NSString *eventUpdate = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postUpdate"];
+	#pragma clang diagnostic pop
 	
 	if(![eventUpdate isEqualToString:@""]){
 		return eventUpdate;
@@ -170,7 +173,12 @@
 		if( ![[self tileParser:tile :1] isEqualToString:@"event"] ){ continue; }
 		// Skip if has no notification
 		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self tileParser:tile :2]];
+		
+		#pragma clang diagnostic push
+		#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 		NSString *notificationLetter = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postNotification"];
+		#pragma clang diagnostic pop
+		
 		if([notificationLetter isEqualToString:@""]){ continue; }
 		
 		// Notification
