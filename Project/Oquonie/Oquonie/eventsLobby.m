@@ -448,6 +448,9 @@
 	if( userLocation == [locationNestorineRamen intValue]){
 		ramenStorage = storageQuestRamenNestorine;
 	}
+	else if( userLocation == [locationNeomineRamen intValue]){
+		ramenStorage = storageQuestRamenNeomine;
+	}
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
 		if([userStorageEvents[ramenStorage] intValue] == 0){
@@ -486,11 +489,13 @@
 	NSString* saySpell;
 	int giveSpell;
 	
+	// Characters Settings
 	if(userCharacter == characterNestorine){
 		ramenStorage = storageQuestRamenNestorine;
 		saySpell = letterNephtaline;
 		giveSpell = spellNephtaline;
 	}
+	
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
 		if([userStorageEvents[ramenStorage] intValue] == 1 && ![self eventSpellCheck:@"ramenQuestSpell"] ){

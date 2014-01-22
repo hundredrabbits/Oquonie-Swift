@@ -156,6 +156,37 @@
 	return @"";
 }
 
+-(NSString*)event_neomineNephtaline1 :(NSString*)option
+{
+	// Event Identifier
+	NSString*	eventSpellId = @"neomineNephtaline1";
+	NSString*	eventSpriteId = eventNephtaline;
+	int			eventSpell = spellNephtaline;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return letterNephtaline;
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNecomedre:eventSpriteId]; }
+	
+	// Spell
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	
+	return @"";
+}
+
 // =======================
 // @ Events: NPCs
 // =======================

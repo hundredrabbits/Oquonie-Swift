@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			4
-#define userCharacterLocation	2
+#define userCharacterId			3
+#define userCharacterLocation	60
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -117,6 +117,7 @@
 
 #define locationNeomineLobby		@"3"
 #define locationNeominePillar		@"71"
+#define locationNeomineRamen		@"63"
 
 #define locationNestorineLobby		@"7"
 #define locationNestorineEnter		@"80"
