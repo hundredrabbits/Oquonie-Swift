@@ -1009,7 +1009,7 @@
 			name = "Event6 - Nemedique";
 			sourceTree = "<group>";
 		};
-		0304D7BB186CFCE100ED6E94 /* Event8 */ = {
+		0304D7BB186CFCE100ED6E94 /* Event8 - Shark */ = {
 			isa = PBXGroup;
 			children = (
 				03C0E65B186265B3006AA0E6 /* event.8.portrait.png */,
@@ -1021,7 +1021,7 @@
 				0304D76F186CEE0200ED6E94 /* event.8.r.2.png */,
 				0304D770186CEE0200ED6E94 /* event.8.r.3.png */,
 			);
-			name = Event8;
+			name = "Event8 - Shark";
 			sourceTree = "<group>";
 		};
 		0304D7BC186CFCEA00ED6E94 /* Event9 - Speakerphone */ = {
@@ -1513,7 +1513,7 @@
 				0304D7B9186CFCCD00ED6E94 /* Event5 - Nestorine */,
 				0304D7BA186CFCDA00ED6E94 /* Event6 - Nemedique */,
 				0304D7B4186CF09500ED6E94 /* Event7 - Ramen */,
-				0304D7BB186CFCE100ED6E94 /* Event8 */,
+				0304D7BB186CFCE100ED6E94 /* Event8 - Shark */,
 				0304D7BC186CFCEA00ED6E94 /* Event9 - Speakerphone */,
 				0304D7BD186CFCF000ED6E94 /* Event10 - Red */,
 				03F5C4A5187BBB3900352B8E /* Event11 - Photocopier */,

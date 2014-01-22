@@ -176,6 +176,37 @@
 	return @"";
 }
 
+-(NSString*)event_nestorineNeomine1 :(NSString*)option
+{
+	// Event Identifier
+	NSString*	eventSpellId	= @"nestorineNeomine1";
+	NSString*	eventSpriteId	= eventNeomine;
+	int			eventSpell		= spellNeomine;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+			return letterNeomine;
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [self eventDialog:dialogGiveSpellNemedique:eventSpriteId]; }
+	
+	// Spell
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	
+	return @"";
+}
+
 // =======================
 // @ Events: Wizards
 // =======================

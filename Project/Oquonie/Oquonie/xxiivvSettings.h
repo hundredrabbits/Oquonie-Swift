@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			4
-#define userCharacterLocation	7
+#define userCharacterId			1
+#define userCharacterLocation	101
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -129,7 +129,6 @@
 #define locationNecomedrePillar		@"120"
 #define locationNecomedreLobby		@"5"
 #define locationNecomedreRamen		@"35"
-#define locationNemediqueRamen		@"1" // TODO
 
 #define locationNephtalineLobby		@"1"
 #define locationNephtalinePillar	@"121"
@@ -137,6 +136,8 @@
 
 #define locationNemediqueLobby		@"9"
 #define locationNemediqueEnter		@"100"
+#define locationNemediqueRamen		@"101"
+#define locationNemediquePillar		@"103"
 
 #define roomCenter				@"0,0"
 

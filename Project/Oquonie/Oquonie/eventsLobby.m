@@ -210,6 +210,13 @@
 		else if(userLocation == 32){
 			[self eventWarp:@"5" :@"0,1"];
 		}
+		// Nemedique Pillar
+		else if(userLocation == 101){
+			[self eventWarp:locationNemediquePillar :@"0,-1"];
+		}
+		else if(userLocation == [locationNemediquePillar intValue]){
+			[self eventWarp:@"101" :@"0,1"];
+		}
 	}
 	else{
 		[self eventDialog:dialogDoorLockedNecomedre:@"1"];
@@ -313,6 +320,10 @@
 	else if (userLocation == [locationNestorinePillar intValue]){
 		pillarInstanceStorageId = storageQuestPillarNestorine;
 		pillarInstanceWarp = locationNestorineLobby;
+	}
+	else if (userLocation == [locationNemediquePillar intValue]){
+		pillarInstanceStorageId = storageQuestPillarNemedique;
+		pillarInstanceWarp = locationNemediqueLobby;
 	}
 	
 	// Initial Animation
@@ -429,6 +440,19 @@
 # pragma mark NPCs -
 
 -(NSString*)event_owlSave :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
+	
+	// Dialog
+    [self eventDialog:@"UVW":@"1"];
+	[self userSave];
+	
+	// Return storage Id
+	return @"";
+}
+
+-(NSString*)event_shark :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change

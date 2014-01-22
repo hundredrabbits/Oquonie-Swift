@@ -189,7 +189,7 @@
 	// Walls
 	@"25",@"15|warp|80|-1,0",@"25",@"3",@"9|event|gateNemedique",@"3",
 	// Steps
-	@"0",@"3|warp|95|0,1",@"0",@"0",@"8|warp|80|1,0",@"0",
+	@"0",@"3|warp|95|0,1",@"0",@"0",@"8|warp|97|1,0",@"0",
 	// Name,Background,Audio
 	@"Fork Start",@"White",audioNestorine];
 	
@@ -214,6 +214,18 @@
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Steps
 	@"0",@"1|event|gateNestorine",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Entrance Warp",@"White",audioNestorine];
+	
+	worldNode[97] = @[
+	// Tiles
+	@"21",@"21",@"21",
+	@"21",@"7|event|nestorineNeomine1|4|l",@"21",
+	@"21",@"21",@"21",
+	// Walls
+	@"0",@"15|warp|94|-1,0",@"0",@"0",@"0",@"0",
+	// Steps
+	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Entrance Warp",@"White",audioNestorine];
 
