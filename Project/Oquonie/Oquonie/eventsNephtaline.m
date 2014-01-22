@@ -157,6 +157,40 @@
 	return @"";
 }
 
+-(NSString*)event_nephtalineNecomedre1 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"necomedreNecomedre1";
+	NSString*	eventDialogSpell	= dialogGiveSpellNecomedre;
+	NSString*	eventLetter			= letterNecomedre;
+	NSString*	eventSpriteId		= eventNecomedre;
+	int			eventSpell			= spellNecomedre;
+	
+	NSString*	eventWrongCharacter	= dialogWrongCharacterNeomine;
+	int			eventRequirement	= characterNeomine;
+	int eventRamenRequirement		= storageQuestRamenNeomine;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	// Dialog
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
+	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+    else{
+		[self eventSpellAdd:eventSpellId:eventSpell];
+		[self eventDialog:eventDialogSpell:eventSpriteId];
+	}
+	
+	return @"";
+}
+
 // =======================
 // @ Events: NPCs
 // =======================

@@ -147,62 +147,34 @@
 
 -(NSString*)event_nestorineNephtaline1 :(NSString*)option
 {
-	// Event Identifier
-	NSString*	eventSpellId	= @"nestorineNephtaline1";
-	NSString*	eventSpriteId	= eventNephtaline;
-	int			eventSpell		= spellNephtaline;
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"nestorineNephtaline1";
+	NSString*	eventDialogSpell	= dialogGiveSpellNephtaline;
+	NSString*	eventLetter			= letterNephtaline;
+	NSString*	eventSpriteId		= eventNephtaline;
+	int			eventSpell			= spellNephtaline;
+	
+	NSString*	eventWrongCharacter	= dialogWrongCharacterNestorine;
+	int			eventRequirement	= characterNestorine;
+	int eventRamenRequirement		= storageQuestRamenNestorine;
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
-			return letterNephtaline;
-		}
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
 		return @"";
 	}
 	
 	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	// Dialog
+	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
+	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+    else{
+		[self eventSpellAdd:eventSpellId:eventSpell];
+		[self eventDialog:eventDialogSpell:eventSpriteId];
 	}
-	
-	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNephtaline:eventSpriteId]; }
-	
-	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
-	
-	return @"";
-}
-
--(NSString*)event_nestorineNeomine1 :(NSString*)option
-{
-	// Event Identifier
-	NSString*	eventSpellId	= @"nestorineNeomine1";
-	NSString*	eventSpriteId	= eventNeomine;
-	int			eventSpell		= spellNeomine;
-	
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
-			return letterNeomine;
-		}
-		return @"";
-	}
-	
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		return @"";
-	}
-	
-	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:dialogGiveSpellNemedique:eventSpriteId]; }
-	
-	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
 	
 	return @"";
 }
