@@ -40,7 +40,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
+		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement && [userStorageEvents[eventRamenRequirement] intValue] > 0){ return eventLetter; }
 		return @"";
 	}
 	
@@ -50,7 +50,7 @@
 	// Dialog
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
 	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
-	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; }		// The ramen spell is unaccessible
     else{
 		[self eventSpellAdd:eventSpellId:eventSpell];
 		[self eventDialog:eventDialogSpell:eventSpriteId];

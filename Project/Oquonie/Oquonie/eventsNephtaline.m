@@ -151,7 +151,7 @@
 	// Dialog
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
 	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
-	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; }		// The ramen spell is unaccessible
     else{
 		[self eventSpellAdd:eventSpellId:eventSpell];
 		[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -185,7 +185,7 @@
 	// Dialog
 	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
 	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
-	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// The ramen spell is unaccessible
+	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; }		// The ramen spell is unaccessible
     else{
 		[self eventSpellAdd:eventSpellId:eventSpell];
 		[self eventDialog:eventDialogSpell:eventSpriteId];

@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			1
-#define userCharacterLocation	37
+#define userCharacterId			5
+#define userCharacterLocation	100
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -26,20 +26,26 @@
 #define storageQuestPillarNestorine		14
 #define storageQuestPillarNemedique		15
 
-#define dialogHaveCharacterNot(x)	[NSString stringWithFormat:@"UU%@",x];
+#define dialogHaveCharacter			@"SIO" // already are the character from that wizard
+#define dialogHaveSpell				@"SIO" // already have the spell from that wizard
+#define dialogHaveCharacterNot(x)	[NSString stringWithFormat:@"GL%@",x];
 
-#define dialogGainSpell(x)			[NSString stringWithFormat:@"UU%@",x];
-#define dialogGainPillar			@"UUU"
+#define dialogGainSpell(x)			[NSString stringWithFormat:@"RP%@",x];
+#define dialogGainPillar			@"RQY"
+#define dialogGainRamen				@"RQO"
+#define dialogHaveRamenNot			@"OQT"
 
-#define dialogRamenFound			@"UUU"
-#define dialogRamenNotFound			@"UUU"
+#define dialogSharkHelp				@"QJT"
+#define dialogSharkTransform		@"SID"
 
-#define dialogSharkHelp				@"UUU"
-#define dialogSharkTransform		@"UUU"
+#define dialogMapHelp				@"MKQ"
 
-#define dialogMapHelp				@"UUU"
+#define dialogWarpLobby				@"MHS"
 
-#define dialogWarpLobby				@"FLT"
+#define dialogInfoPillar			@"YIS"
+
+#define dialogAudioOn				@"NQI"
+#define dialogAudioOff				@"NQJ"
 
 #define dialogTutorialTalk1			@"UUU"
 #define dialogTutorialTalk2			@"UUU"
@@ -49,14 +55,6 @@
 #define dialogConfusion2			@"UUU"
 #define dialogConfusion3			@"UUU"
 #define dialogConfusion4			@"UUU"
-
-#define dialogHaveCharacter			@"SIO" // already are the character from that wizard
-#define dialogHaveSpell				@"SIO" // already have the spell from that wizard
-
-#define dialogInfoPillar			@"UUU"
-
-#define dialogAudioOn				@"UUU"
-#define dialogAudioOff				@"UUU"
 
 #define audioQuiet				@"Quiet"
 #define audioNecomedre			@"Necomedre"
@@ -112,6 +110,7 @@
 #define letterConfused			@"U"
 #define letterUnlocked			@"K"
 #define letterPillar			@"Y"
+#define letterGuide				@"O"
 
 #define locationLobbyLanding		@"1"
 #define locationGameStart			@"29"

@@ -49,6 +49,8 @@
 //	userStorageEvents[storageQuestRamenNemedique] = @"1";
 }
 
+- (BOOL)prefersStatusBarHidden {return YES;}
+
 # pragma mark Move -
 
 - (void) moveRouter :(int)posX :(int)posY :(int)direction

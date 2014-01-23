@@ -463,7 +463,7 @@
 	if([userStorageEvents[storageQuestPillarNemedique] intValue] > 0 || userLocation == 102){
 		// Dialog
 		if(userCharacter == 1){
-			[self eventDialog:dialogHaveCharacter:eventShark];
+			[self eventDialog:dialogSharkTransform:eventShark];
 		}
 		else{
 			[self eventDialog:dialogSharkHelp:eventShark];
@@ -513,7 +513,7 @@
 		
 		NSLog(@"notif");
 		if([userStorageEvents[ramenStorage] intValue] == 0){
-			return letterHelp;
+			return letterGuide;
 		}
 		return @"";
 	}
@@ -533,7 +533,7 @@
 	if([userStorageEvents[ramenStorage] intValue] == 0){
 		userStorageEvents[ramenStorage] = @"1";
 		[self eventWarp:userLocationString:userPositionString];
-		[self eventDialog:dialogRamenFound:eventRamen];
+		[self eventDialog:dialogGainRamen:eventRamen];
 	}
 	
 	return @"";
