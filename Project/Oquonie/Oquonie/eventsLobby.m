@@ -23,7 +23,7 @@
 
 -(NSString*)event_gateDocument :(NSString*)option
 {
-	NSString* eventDialogLocked = dialogDoorLocked(letterDocument);
+	NSString* eventDialogLocked = dialogHaveCharacterNot(letterDocument);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -65,7 +65,7 @@
 
 -(NSString*)event_gateNephtaline :(NSString*)option
 {
-	NSString* eventDialogLocked = dialogDoorLocked(letterNephtaline);
+	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNephtaline);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		if(userCharacter == characterNephtaline){
@@ -108,7 +108,7 @@
 
 -(NSString*)event_gateNeomine :(NSString*)option
 {
-	NSString* eventDialogLocked = dialogDoorLocked(letterNeomine);
+	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNeomine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -151,7 +151,7 @@
 
 -(NSString*)event_gateNestorine :(NSString*)option
 {
-	NSString* eventDialogLocked = dialogDoorLocked(letterNestorine);
+	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNestorine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -192,7 +192,7 @@
 
 -(NSString*)event_gateNecomedre :(NSString*)option
 {
-	NSString* eventDialogLocked = dialogDoorLocked(letterNecomedre);
+	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNecomedre);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -236,7 +236,7 @@
 
 -(NSString*)event_gateNemedique :(NSString*)option
 {
-	NSString* eventDialogLocked = dialogDoorLocked(letterNemedique);
+	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNemedique);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -355,7 +355,7 @@
 	// Dialog
 	if([userStorageEvents[pillarInstanceStorageId] intValue] != 1){
 		userStorageEvents[pillarInstanceStorageId] = @"1";
-		[self eventDialog:dialogTakePillar:eventOwl];
+		[self eventDialog:dialogGainPillar:eventOwl];
 		[self eventTransitionPan:pillarInstanceWarp:roomCenter];
 	}
 	else{
@@ -420,7 +420,7 @@
 		return @"";
 	}
 	// Dialogs
-	[self eventDialog:dialogLookMap:eventOwl];
+	[self eventDialog:dialogMapHelp:eventOwl];
 	
 	// Default
 	return @"";
@@ -466,7 +466,7 @@
 			[self eventDialog:dialogHaveCharacter:eventShark];
 		}
 		else{
-			[self eventDialog:dialogTransform:eventShark];
+			[self eventDialog:dialogSharkHelp:eventShark];
 			[self moveDisable:4];
 			[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
 			[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(event_sharkDialog) userInfo:nil repeats:NO];
@@ -481,7 +481,7 @@
 
 -(void)event_sharkDialog
 {
-	[self eventDialog:dialogTransform:eventShark];
+	[self eventDialog:dialogSharkTransform:eventShark];
 }
 
 -(void)event_sharkTransform

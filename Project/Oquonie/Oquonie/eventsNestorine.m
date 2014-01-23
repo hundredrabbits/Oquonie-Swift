@@ -29,7 +29,6 @@
 		return @""; // try with 17 ?
 	}
 	
-	[self eventDialog:dialogWarpNestorine:@"1"];
 	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpNestorineAnimation) userInfo:nil repeats:NO];
 	
 	return @"";
@@ -58,7 +57,7 @@
 	NSString*	eventSpellId	= @"nestorineNemedique1";
 	NSString*	eventSpriteId	= eventNemedique;
 	int			eventSpell		= spellNemedique;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNemedique);
+	NSString* eventDialogSpell = dialogGainSpell(letterNemedique);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -90,7 +89,7 @@
 	NSString*	eventSpellId	= @"nestorineNemedique2";
 	NSString*	eventSpriteId	= eventNemedique;
 	int			eventSpell		= spellNemedique;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNemedique);
+	NSString* eventDialogSpell = dialogGainSpell(letterNemedique);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -122,7 +121,7 @@
 	NSString*	eventSpellId	= @"nestorineNemedique3";
 	NSString*	eventSpriteId	= eventNemedique;
 	int			eventSpell		= spellNemedique;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNemedique);
+	NSString* eventDialogSpell = dialogGainSpell(letterNemedique);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -152,12 +151,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"nestorineNephtaline1";
-	NSString*	eventDialogSpell	= dialogGiveSpell(letterNephtaline);
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNephtaline);
 	NSString*	eventLetter			= letterNephtaline;
 	NSString*	eventSpriteId		= eventNephtaline;
 	int			eventSpell			= spellNephtaline;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNestorine);
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNestorine);
 	int			eventRequirement	= characterNestorine;
 	int eventRamenRequirement		= storageQuestRamenNestorine;
 	

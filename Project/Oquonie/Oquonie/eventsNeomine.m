@@ -37,7 +37,7 @@
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
 	
-	NSString* eventDialogSpell = dialogGiveSpell(letterNeomine);
+	NSString* eventDialogSpell = dialogGainSpell(letterNeomine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -69,7 +69,7 @@
 	NSString *eventSpellId = @"neomineNestorine2";
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNeomine);
+	NSString* eventDialogSpell = dialogGainSpell(letterNeomine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -101,7 +101,7 @@
 	NSString *eventSpellId = @"neomineNestorine3";
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNeomine);
+	NSString* eventDialogSpell = dialogGainSpell(letterNeomine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -132,12 +132,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"neomineNecomedre1";
-	NSString*	eventDialogSpell	= dialogGiveSpell(letterNecomedre);
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNecomedre);
 	NSString*	eventLetter			= letterNecomedre;
 	NSString*	eventSpriteId		= eventNecomedre;
 	int			eventSpell			= spellNecomedre;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNeomine);
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNeomine);
 	int			eventRequirement	= characterNeomine;
 	int eventRamenRequirement		= storageQuestRamenNeomine;
 	
@@ -166,12 +166,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"neomineNephtaline1";
-	NSString*	eventDialogSpell	= dialogGiveSpell(letterNephtaline);
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNephtaline);
 	NSString*	eventLetter			= letterNephtaline;
 	NSString*	eventSpriteId		= eventNephtaline;
 	int			eventSpell			= spellNephtaline;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNestorine);
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNestorine);
 	int			eventRequirement	= characterNestorine;
 	int eventRamenRequirement		= storageQuestRamenNestorine;
 	

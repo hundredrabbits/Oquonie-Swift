@@ -30,7 +30,7 @@
 	NSString*	eventSpellId	= @"photocopier1";
 	NSString*	eventSpriteId	= eventPhotocopier;
 	int			eventSpell		= spellDocument;
-	NSString* eventDialogSpell = dialogGiveSpell(letterDocument);
+	NSString* eventDialogSpell = dialogGainSpell(letterDocument);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -61,7 +61,7 @@
 	NSString*	eventSpellId	= @"photocopier2";
 	NSString*	eventSpriteId	= eventPhotocopier;
 	int			eventSpell		= spellDocument;
-	NSString* eventDialogSpell = dialogGiveSpell(letterDocument);
+	NSString* eventDialogSpell = dialogGainSpell(letterDocument);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -92,7 +92,7 @@
 	NSString*	eventSpellId	= @"photocopier3";
 	NSString*	eventSpriteId	= eventPhotocopier;
 	int			eventSpell		= spellDocument;
-	NSString* eventDialogSpell = dialogGiveSpell(letterDocument);
+	NSString* eventDialogSpell = dialogGainSpell(letterDocument);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -123,7 +123,7 @@
 	NSString*	eventSpellId	= @"necomedreNephtaline1";
 	NSString*	eventSpriteId	= eventNephtaline;
 	int			eventSpell		= spellNephtaline;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNephtaline);
+	NSString* eventDialogSpell = dialogGainSpell(letterNephtaline);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -156,7 +156,7 @@
 	NSString*	eventSpellId	= @"necomedreNephtaline2";
 	NSString*	eventSpriteId	= eventNephtaline;
 	int			eventSpell		= spellNephtaline;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNephtaline);
+	NSString* eventDialogSpell = dialogGainSpell(letterNephtaline);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -188,7 +188,7 @@
 	NSString*	eventSpellId	= @"necomedreNephtaline3";
 	NSString*	eventSpriteId	= eventNephtaline;
 	int			eventSpell		= spellNephtaline;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNephtaline);
+	NSString* eventDialogSpell = dialogGainSpell(letterNephtaline);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -218,12 +218,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"necomedreNestorine1";
-	NSString*	eventDialogSpell	= dialogGiveSpell(letterNestorine);
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNestorine);
 	NSString*	eventLetter			= letterNestorine;
 	NSString*	eventSpriteId		= eventNestorine;
 	int			eventSpell			= spellNestorine;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNecomedre);
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNecomedre);
 	int			eventRequirement	= characterNecomedre;
 	int eventRamenRequirement		= storageQuestRamenNecomedre;
 	
@@ -252,12 +252,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"necomedreNemedique1";
-	NSString*	eventDialogSpell	= dialogGiveSpell(letterNemedique);
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNemedique);
 	NSString*	eventLetter			= letterNemedique;
 	NSString*	eventSpriteId		= eventNemedique;
 	int			eventSpell			= spellNemedique;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNephtaline);
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNephtaline);
 	int			eventRequirement	= characterNephtaline;
 	int eventRamenRequirement		= storageQuestRamenNephtaline;
 	
@@ -307,7 +307,7 @@
 	}
 	
 	[self eventTransitionPan:@"1":@"0,0"];
-	[self eventDialog:dialogSeeYou:eventRed];
+	[self eventDialog:dialogTutorialTalk3:eventRed];
 	
 	return @"";
 }
@@ -336,15 +336,15 @@
 	if(userLocation==30){
 		if(userCharacter == 6){
 			[self eventTranform:1];
-			[self eventDialog:dialogThankYou:eventTutorial];
+			[self eventDialog:dialogTutorialTalk1:eventTutorial];
 		}
 		else if(userCharacter == 1){
-			[self eventDialog:dialogConfusion:eventRed];
+			[self eventDialog:dialogConfusion1:eventRed];
 			[self eventWarp:@"31" :@"0,0"];
 			[self eventVignette:@"12"];
 		}
 		else{
-			[self eventDialog:dialogConfusion:eventTutorial];
+			[self eventDialog:dialogConfusion2:eventTutorial];
 		}
 	}
 	

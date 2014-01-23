@@ -37,7 +37,7 @@
 	NSString *eventSpellId = @"nephtalineNeomine1";
 	NSString*	eventSpriteId = @"4";
 	int			eventSpell = 3;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNeomine);
+	NSString* eventDialogSpell = dialogGainSpell(letterNeomine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -68,7 +68,7 @@
 	NSString *eventSpellId = @"nephtalineNeomine2";
 	NSString*	eventSpriteId = @"4";
 	int			eventSpell = 3;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNeomine);
+	NSString* eventDialogSpell = dialogGainSpell(letterNeomine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -100,7 +100,7 @@
 	NSString *eventSpellId = @"nephtalineNeomine3";
 	NSString*	eventSpriteId = @"4";
 	int			eventSpell = 3;
-	NSString* eventDialogSpell = dialogGiveSpell(letterNeomine);
+	NSString* eventDialogSpell = dialogGainSpell(letterNeomine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -130,12 +130,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"nephtalineNemedique1";
-	NSString*	eventDialogSpell	= dialogGiveSpell(letterNemedique);
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNemedique);
 	NSString*	eventLetter			= letterNemedique;
 	NSString*	eventSpriteId		= eventNemedique;
 	int			eventSpell			= spellNemedique;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNephtaline);
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNephtaline);
 	int			eventRequirement	= characterNephtaline;
 	int eventRamenRequirement		= storageQuestRamenNephtaline;
 	
@@ -164,12 +164,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"necomedreNecomedre1";
-	NSString*	eventDialogSpell	= dialogGiveSpell(letterNecomedre);
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNecomedre);
 	NSString*	eventLetter			= letterNecomedre;
 	NSString*	eventSpriteId		= eventNecomedre;
 	int			eventSpell			= spellNecomedre;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNeomine);
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNeomine);
 	int			eventRequirement	= characterNeomine;
 	int eventRamenRequirement		= storageQuestRamenNeomine;
 	

@@ -26,29 +26,37 @@
 #define storageQuestPillarNestorine		14
 #define storageQuestPillarNemedique		15
 
-#define dialogWrongCharacter(x)		[NSString stringWithFormat:@"UU%@",x];
-#define dialogDoorLocked(x)			[NSString stringWithFormat:@"UU%@",x];
-#define dialogGiveSpell(x)			[NSString stringWithFormat:@"UU%@",x];
+#define dialogHaveCharacterNot(x)	[NSString stringWithFormat:@"UU%@",x];
+
+#define dialogGainSpell(x)			[NSString stringWithFormat:@"UU%@",x];
+#define dialogGainPillar			@"UUU"
 
 #define dialogRamenFound			@"UUU"
 #define dialogRamenNotFound			@"UUU"
 
-#define dialogHaveCharacter			@"SIO"
-#define dialogHaveSpell				@"SIO"
-#define dialogTransform				@"UUU"
+#define dialogSharkHelp				@"UUU"
+#define dialogSharkTransform		@"UUU"
 
-#define dialogWarpNestorine			@"UUU"
+#define dialogMapHelp				@"UUU"
+
+#define dialogWarpLobby				@"FLT"
+
+#define dialogTutorialTalk1			@"UUU"
+#define dialogTutorialTalk2			@"UUU"
+#define dialogTutorialTalk3			@"UUU"
+
+#define dialogConfusion1			@"UUU"
+#define dialogConfusion2			@"UUU"
+#define dialogConfusion3			@"UUU"
+#define dialogConfusion4			@"UUU"
+
+#define dialogHaveCharacter			@"SIO" // already are the character from that wizard
+#define dialogHaveSpell				@"SIO" // already have the spell from that wizard
+
+#define dialogInfoPillar			@"UUU"
 
 #define dialogAudioOn				@"UUU"
 #define dialogAudioOff				@"UUU"
-#define dialogThankYou				@"UUU"
-#define dialogConfusion				@"UUU"
-#define dialogSeeYou				@"UUU"
-#define dialogWarpLobby				@"FLT"
-#define dialogTakePillar			@"UUU"
-#define dialogInfoPillar			@"UUU"
-#define dialogLookMap				@"UUU"
-#define dialogFoundPillar			@"UUU"
 
 #define audioQuiet				@"Quiet"
 #define audioNecomedre			@"Necomedre"

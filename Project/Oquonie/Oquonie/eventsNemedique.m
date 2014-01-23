@@ -29,12 +29,12 @@
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"nemediqueNestorine1";
-	NSString*	eventDialogSpell	= dialogGiveSpell(letterNestorine);
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNestorine);
 	NSString*	eventLetter			= letterNestorine;
 	NSString*	eventSpriteId		= eventNestorine;
 	int			eventSpell			= spellNestorine;
 	
-	NSString*	eventWrongCharacter	= dialogWrongCharacter(letterNecomedre);
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNecomedre);
 	int			eventRequirement	= characterNecomedre;
 	int eventRamenRequirement		= storageQuestRamenNecomedre;
 	
