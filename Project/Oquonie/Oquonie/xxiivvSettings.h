@@ -26,8 +26,8 @@
 #define storageQuestPillarNestorine		14
 #define storageQuestPillarNemedique		15
 
-#define dialogHaveCharacter			@"SIO" // already are the character from that wizard
-#define dialogHaveSpell				@"SIO" // already have the spell from that wizard
+#define dialogHaveCharacter			@"QIS" // already are the character from that wizard
+#define dialogHaveSpell				@"PIR" // already have the spell from that wizard
 #define dialogHaveCharacterNot(x)	[NSString stringWithFormat:@"GL%@",x];
 
 #define dialogGainSpell(x)			[NSString stringWithFormat:@"RP%@",x];
