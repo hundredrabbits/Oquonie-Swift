@@ -171,9 +171,9 @@
 
 	worldNode[93] = @[
 	// Tiles
-	@"35",@"34",@"21|event|nestorineNemedique2|6|r",
-	@"35",@"35",@"35",
-	@"34",@"35",@"35|block|11",
+	@"35",@"34",@"35|event|nestorineNemedique2|6|r",
+	@"35",@"32",@"35",
+	@"35",@"35",@"35|block|11",
 	// Walls
 	@"1",@"5|event|gateNephtaline",@"1",@"25",@"15",@"25",
 	// Steps
