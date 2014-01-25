@@ -319,8 +319,17 @@
 	[UIView animateWithDuration:0.5 animations:^(void){
 		self.userPlayer.frame = [self tileLocation:4:0:0];
 	} completion:^(BOOL finished){
+		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(warpLobbyAnimationSpriteUpdate) userInfo:nil repeats:NO];
 		[self eventTransitionPan:locationLobbyLanding:roomCenter];
 	}];
+}
+
+-(void)warpLobbyAnimationSpriteUpdate
+{
+	[self userSpriteUpdate:[NSString stringWithFormat:@"char2.warp.l.f.1.png"]];
+	userSpriteState = @"warp";
+	userSpriteOrientationHorizontal = @"l";
+	userSpriteOrientationVertical = @"f";
 }
 
 // =======================

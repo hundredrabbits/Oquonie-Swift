@@ -44,6 +44,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *step2r;
 @property (strong, nonatomic) IBOutlet UIImageView *step3r;
 
+@property (strong, nonatomic) IBOutlet UIImageView *indicatorFront;
+@property (strong, nonatomic) IBOutlet UIImageView *indicatorBack;
+
 @property (strong, nonatomic) AVAudioPlayer *audioAmbientPlayer;
 
 // =================

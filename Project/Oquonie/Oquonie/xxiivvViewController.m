@@ -47,9 +47,15 @@
 //	userStorageEvents[storageQuestRamenNeomine] = @"1";
 //	userStorageEvents[storageQuestRamenNestorine] = @"1";
 //	userStorageEvents[storageQuestRamenNemedique] = @"1";
+//	
+//	userSpellbook[0] = @[@"test1",@"2"];
+//	userSpellbook[1] = @[@"test2",@"2"];
+	
 }
 
-- (BOOL)prefersStatusBarHidden {return YES;}
+- (BOOL)prefersStatusBarHidden {
+	return YES;
+}
 
 # pragma mark Move -
 
@@ -93,6 +99,7 @@
 		[self moveAnimation];
 		[self moveParallax];
 		[self audioEffectPlayer:@"footstep"];
+		[self moveIndicator:posX:posY];
 	}
 	else{
 		[self moveEventCheck:(userPositionX+posX):(userPositionY+posY)];
@@ -101,6 +108,34 @@
 		[self audioEffectPlayer:@"blocked"];
 	}
 	[self moveOrder];
+}
+
+-(void)moveIndicator :(int)posX :(int)posY
+{
+	if(posY == -1){
+		self.indicatorFront.alpha = 1;
+		self.indicatorFront.image = [UIImage imageNamed:@"fx.indicator.f.l.png"];
+		self.indicatorFront.frame = [self tileLocation:0 :userPositionX :-2];
+	}
+	else if (posX == -1){
+		self.indicatorFront.alpha = 1;
+		self.indicatorFront.image = [UIImage imageNamed:@"fx.indicator.f.r.png"];
+		self.indicatorFront.frame = [self tileLocation:0 :-2 :userPositionY];
+	}
+	else if(posY == 1){
+		self.indicatorBack.alpha = 1;
+		self.indicatorBack.image = [UIImage imageNamed:@"fx.indicator.b.r.png"];
+		self.indicatorBack.frame = [self tileLocation:0 :userPositionX :2];
+	}
+	else if (posX == 1){
+		self.indicatorBack.alpha = 1;
+		self.indicatorBack.image = [UIImage imageNamed:@"fx.indicator.b.l.png"];
+		self.indicatorBack.frame = [self tileLocation:0 :2 :userPositionY];
+	}
+	[UIView animateWithDuration:0.5 animations:^(void){
+		self.indicatorBack.alpha = 0;
+		self.indicatorFront.alpha = 0;
+	} completion:^(BOOL finished){}];
 }
 
 - (void)moveParallax
@@ -279,7 +314,7 @@
 
 # pragma mark Misc -
 
-- (CGRect) tileLocation :(int)type :(int)posX :(int)posY
+- (CGRect)tileLocation :(int)type :(int)posX :(int)posY
 {
 	screen = [[UIScreen mainScreen] bounds];
 	screenMargin = screen.size.width/10;
@@ -290,6 +325,16 @@
 	
 	int centerW = (screen.size.width/2)-(tileW/2);
 	int centerH = (screen.size.height/2)-(tileH/2);
+	
+	if( type == 0 ){		
+		if( posX == 2 && posY == -1 ){ return CGRectMake(centerW+(tileW/2)*-3, centerH+(tileH*-0.5), tileW, tileH); }
+		if( posX == 2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*-2, centerH+(tileH*-1), tileW, tileH); }
+		if( posX == 2 && posY == 1 ){ return CGRectMake(centerW+(tileW/2)*-1, centerH+(tileH*-1.5), tileW, tileH); }
+		
+		if( posX == 1 && posY == 2 ){ return CGRectMake(centerW+(tileW/2)*1, centerH+(tileH*-1.5), tileW, tileH); }
+		if( posX == 0 && posY == 2 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+(tileH*-1), tileW, tileH); }
+		if( posX == -1 && posY == 2 ){ return CGRectMake(centerW+(tileW/2)*3, centerH+(tileH*-0.5), tileW, tileH); }
+	}
 	
 	if( type == 1 ){
 		tileH = tileH * 2;
@@ -341,7 +386,6 @@
 	if( posX ==-2 && posY == 1 ){ return CGRectMake(centerW+(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
 	if( posX ==-2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+(tileH*1.0), tileW, tileH); }
 	if( posX ==-2 && posY ==-1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH*1.5), tileW, tileH); }
-	
 	
 	if( posX == 1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
 	if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }

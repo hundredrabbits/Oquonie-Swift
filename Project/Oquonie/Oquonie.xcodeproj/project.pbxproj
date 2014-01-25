@@ -424,6 +424,15 @@
 		03CE07A718937C31009D7003 /* wall.gateNestorineClosed.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE079318937C31009D7003 /* wall.gateNestorineClosed.r.png */; };
 		03CE07A818937C31009D7003 /* wall.gateNestorineOpen.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE079418937C31009D7003 /* wall.gateNestorineOpen.l.png */; };
 		03CE07A918937C31009D7003 /* wall.gateNestorineOpen.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE079518937C31009D7003 /* wall.gateNestorineOpen.r.png */; };
+		03CE07AF1893EF8A009D7003 /* char1.warp.l.f.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE07AA1893EF8A009D7003 /* char1.warp.l.f.1.png */; };
+		03CE07B01893EF8A009D7003 /* char2.warp.l.f.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE07AB1893EF8A009D7003 /* char2.warp.l.f.1.png */; };
+		03CE07B11893EF8A009D7003 /* char3.warp.l.f.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE07AC1893EF8A009D7003 /* char3.warp.l.f.1.png */; };
+		03CE07B21893EF8A009D7003 /* char4.warp.l.f.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE07AD1893EF8A009D7003 /* char4.warp.l.f.1.png */; };
+		03CE07B31893EF8A009D7003 /* char5.warp.l.f.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE07AE1893EF8A009D7003 /* char5.warp.l.f.1.png */; };
+		03CE07B618943ADE009D7003 /* fx.indicator.f.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE07B418943ADE009D7003 /* fx.indicator.f.l.png */; };
+		03CE07B718943ADE009D7003 /* fx.indicator.f.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE07B518943ADE009D7003 /* fx.indicator.f.r.png */; };
+		03CE07BA18943D52009D7003 /* fx.indicator.b.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE07B818943D52009D7003 /* fx.indicator.b.l.png */; };
+		03CE07BB18943D52009D7003 /* fx.indicator.b.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03CE07B918943D52009D7003 /* fx.indicator.b.r.png */; };
 		03D4B8EF180957B700AD9DD7 /* MainStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D4B8ED180957B700AD9DD7 /* MainStory.storyboard */; };
 		03DBEEC518802DA400CE6FBC /* xxiivvUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DBEEC418802DA400CE6FBC /* xxiivvUser.m */; };
 		03DBEECA1880433D00CE6FBC /* event.12.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DBEEC61880433D00CE6FBC /* event.12.portrait.png */; };
@@ -896,6 +905,15 @@
 		03CE079318937C31009D7003 /* wall.gateNestorineClosed.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateNestorineClosed.r.png; path = en.assets/wall.gateNestorineClosed.r.png; sourceTree = "<group>"; };
 		03CE079418937C31009D7003 /* wall.gateNestorineOpen.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateNestorineOpen.l.png; path = en.assets/wall.gateNestorineOpen.l.png; sourceTree = "<group>"; };
 		03CE079518937C31009D7003 /* wall.gateNestorineOpen.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateNestorineOpen.r.png; path = en.assets/wall.gateNestorineOpen.r.png; sourceTree = "<group>"; };
+		03CE07AA1893EF8A009D7003 /* char1.warp.l.f.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.warp.l.f.1.png; path = en.assets/char1.warp.l.f.1.png; sourceTree = "<group>"; };
+		03CE07AB1893EF8A009D7003 /* char2.warp.l.f.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char2.warp.l.f.1.png; path = en.assets/char2.warp.l.f.1.png; sourceTree = "<group>"; };
+		03CE07AC1893EF8A009D7003 /* char3.warp.l.f.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char3.warp.l.f.1.png; path = en.assets/char3.warp.l.f.1.png; sourceTree = "<group>"; };
+		03CE07AD1893EF8A009D7003 /* char4.warp.l.f.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char4.warp.l.f.1.png; path = en.assets/char4.warp.l.f.1.png; sourceTree = "<group>"; };
+		03CE07AE1893EF8A009D7003 /* char5.warp.l.f.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char5.warp.l.f.1.png; path = en.assets/char5.warp.l.f.1.png; sourceTree = "<group>"; };
+		03CE07B418943ADE009D7003 /* fx.indicator.f.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.indicator.f.l.png; path = en.assets/fx.indicator.f.l.png; sourceTree = "<group>"; };
+		03CE07B518943ADE009D7003 /* fx.indicator.f.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.indicator.f.r.png; path = en.assets/fx.indicator.f.r.png; sourceTree = "<group>"; };
+		03CE07B818943D52009D7003 /* fx.indicator.b.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.indicator.b.l.png; path = en.assets/fx.indicator.b.l.png; sourceTree = "<group>"; };
+		03CE07B918943D52009D7003 /* fx.indicator.b.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.indicator.b.r.png; path = en.assets/fx.indicator.b.r.png; sourceTree = "<group>"; };
 		03D4B8EE180957B700AD9DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStory.storyboard; sourceTree = "<group>"; };
 		03DBEEC318802DA400CE6FBC /* xxiivvUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvUser.h; sourceTree = "<group>"; };
 		03DBEEC418802DA400CE6FBC /* xxiivvUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvUser.m; sourceTree = "<group>"; };
@@ -1667,6 +1685,15 @@
 		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
+				03CE07B818943D52009D7003 /* fx.indicator.b.l.png */,
+				03CE07B918943D52009D7003 /* fx.indicator.b.r.png */,
+				03CE07B418943ADE009D7003 /* fx.indicator.f.l.png */,
+				03CE07B518943ADE009D7003 /* fx.indicator.f.r.png */,
+				03CE07AA1893EF8A009D7003 /* char1.warp.l.f.1.png */,
+				03CE07AB1893EF8A009D7003 /* char2.warp.l.f.1.png */,
+				03CE07AC1893EF8A009D7003 /* char3.warp.l.f.1.png */,
+				03CE07AD1893EF8A009D7003 /* char4.warp.l.f.1.png */,
+				03CE07AE1893EF8A009D7003 /* char5.warp.l.f.1.png */,
 				03CE078218937C31009D7003 /* wall.gateNecomedreClosed.l.png */,
 				03CE078318937C31009D7003 /* wall.gateNecomedreClosed.r.png */,
 				03CE078418937C31009D7003 /* wall.gateNecomedreOpen.l.png */,
@@ -1904,6 +1931,7 @@
 				0304D785186CEE0200ED6E94 /* char3.stand.r.f.1.png in Resources */,
 				0381CC7B18456236003FB458 /* wall.16.r.png in Resources */,
 				035E6C16184B34AC00265870 /* wall.18.r.png in Resources */,
+				03CE07AF1893EF8A009D7003 /* char1.warp.l.f.1.png in Resources */,
 				036A100A18099F720074F6F1 /* tile.E.png in Resources */,
 				0304D7A5186CEE0200ED6E94 /* event.7.l.2.png in Resources */,
 				03CE079F18937C31009D7003 /* wall.gateNeomineClosed.r.png in Resources */,
@@ -1940,10 +1968,12 @@
 				03A20F51184D4F2C00CCED80 /* step.10.r.png in Resources */,
 				03834E18180B730B00568E60 /* wall.10.r.png in Resources */,
 				03CE07A518937C31009D7003 /* wall.gateNephtalineOpen.r.png in Resources */,
+				03CE07BB18943D52009D7003 /* fx.indicator.b.r.png in Resources */,
 				036A100718099F720074F6F1 /* event.8.r.png in Resources */,
 				035A6D93186B08000032710C /* event.8.l.3.png in Resources */,
 				038BA0E6188B849100A3ED4B /* Pillar.mp3 in Resources */,
 				03CD6B071808ED0B00A18760 /* tile.8.png in Resources */,
+				03CE07B718943ADE009D7003 /* fx.indicator.f.r.png in Resources */,
 				0304D78E186CEE0200ED6E94 /* char5.stand.l.f.3.png in Resources */,
 				03798BD01882721600C31389 /* event.15.l.1.png in Resources */,
 				03BBFAD0178AC8D600E79C3D /* tile.1.png in Resources */,
@@ -2039,6 +2069,7 @@
 				0304D799186CEE0200ED6E94 /* event.3.r.3.png in Resources */,
 				03B9434F1884FA88008E834A /* letterY.png in Resources */,
 				03798BD21882721600C31389 /* event.16.l.2.png in Resources */,
+				03CE07BA18943D52009D7003 /* fx.indicator.b.l.png in Resources */,
 				0304D79F186CEE0200ED6E94 /* event.5.r.1.png in Resources */,
 				0304D7AB186CEE0200ED6E94 /* event.9.l.2.png in Resources */,
 				038BA0E3188B849100A3ED4B /* Necomedre.mp3 in Resources */,
@@ -2057,10 +2088,12 @@
 				0328126D17A54375006D5E9D /* char2.walk.r.f.1.png in Resources */,
 				036A100418099F720074F6F1 /* wall.12.r.png in Resources */,
 				03F5C4A1187BBB3200352B8E /* event.11.portrait.png in Resources */,
+				03CE07B21893EF8A009D7003 /* char4.warp.l.f.1.png in Resources */,
 				0365921118540C9A00F7ABA3 /* letterQ.png in Resources */,
 				03A20F57184D4F2C00CCED80 /* wall.25.r.png in Resources */,
 				035A6DB7186B0E610032710C /* event.5.l.2.png in Resources */,
 				035E6C18184B34AC00265870 /* wall.19.r.png in Resources */,
+				03CE07B01893EF8A009D7003 /* char2.warp.l.f.1.png in Resources */,
 				0304D78C186CEE0200ED6E94 /* char5.stand.l.f.1.png in Resources */,
 				03798BED1882829400C31389 /* char6.walk.l.b.1.png in Resources */,
 				03CE07A118937C31009D7003 /* wall.gateNeomineOpen.r.png in Resources */,
@@ -2068,6 +2101,7 @@
 				0328126E17A54375006D5E9D /* char2.walk.r.f.2.png in Resources */,
 				0328127117A5527D006D5E9D /* blocker.1.png in Resources */,
 				032A5B7017A61F7500C98354 /* tile.4.png in Resources */,
+				03CE07B11893EF8A009D7003 /* char3.warp.l.f.1.png in Resources */,
 				032A5B7117A61F7500C98354 /* tile.5.png in Resources */,
 				03D4B8EF180957B700AD9DD7 /* MainStory.storyboard in Resources */,
 				03CE079A18937C31009D7003 /* wall.gateNemediqueClosed.l.png in Resources */,
@@ -2109,6 +2143,7 @@
 				03798BD41882721600C31389 /* event.17.l.1.png in Resources */,
 				0304D795186CEE0200ED6E94 /* event.2.r.3.png in Resources */,
 				03C1EE0617AFAC70001AFF21 /* wall.2.l.png in Resources */,
+				03CE07B618943ADE009D7003 /* fx.indicator.f.l.png in Resources */,
 				03C1EE0717AFAC70001AFF21 /* wall.2.r.png in Resources */,
 				035A6DAF186B0E610032710C /* event.1.l.2.png in Resources */,
 				037F025F187D81DC00747E8D /* splash.xxiivv.png in Resources */,
@@ -2262,6 +2297,7 @@
 				03DBEECD1880433D00CE6FBC /* event.12.r.3.png in Resources */,
 				0332384517D4BDB8001B1328 /* char5.walk.l.b.2.png in Resources */,
 				03834E3C180B941500568E60 /* step.7.r.png in Resources */,
+				03CE07B31893EF8A009D7003 /* char5.warp.l.f.1.png in Resources */,
 				0332384617D4BDB8001B1328 /* char5.walk.l.f.1.png in Resources */,
 				0332384717D4BDB8001B1328 /* char5.walk.l.f.2.png in Resources */,
 				03B29A3518672F48007A63BA /* fx.parallax.2.png in Resources */,

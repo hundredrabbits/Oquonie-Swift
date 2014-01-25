@@ -134,6 +134,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cfB-Tb-dho" userLabel="indicatorBack">
+                                        <rect key="frame" x="110" y="190" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" id="TnT-jB-bCd" userLabel="wall3L">
                                         <rect key="frame" x="-40" y="56" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -225,6 +229,10 @@
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" id="RgC-jt-GvW" userLabel="step3R">
                                         <rect key="frame" x="-40" y="56" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ARR-hZ-Pfx" userLabel="indicatorFront">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -339,6 +347,8 @@
                         <outlet property="floore0" destination="gRy-sj-ySu" id="zbo-9Z-Ru8"/>
                         <outlet property="floore1" destination="Pap-re-eJt" id="QGi-CL-I2q"/>
                         <outlet property="flooree" destination="ixp-fE-lfr" id="ltB-2i-Fi7"/>
+                        <outlet property="indicatorBack" destination="cfB-Tb-dho" id="4Hm-fx-H39"/>
+                        <outlet property="indicatorFront" destination="ARR-hZ-Pfx" id="8MK-MS-tza"/>
                         <outlet property="interfaceContainer" destination="1jQ-cs-ghe" id="UdJ-2e-kT5"/>
                         <outlet property="parallaxBack" destination="YNJ-uy-Qeg" id="Wrn-1V-Z7j"/>
                         <outlet property="parallaxFront" destination="wOF-9h-gMa" id="nXB-t3-Nod"/>

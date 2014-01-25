@@ -331,18 +331,57 @@
 	
 	NSLog(@"  EVENT | Spell        | Change Sprite" );
 	
-	
 	// TODO: Create the FX sprites
 	
-	userCharacter = charId;
-	
-	// Refresh room
-	[self roomGenerateTiles];
-	[self roomGenerateEvents];
-	
-	[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(eventSpellRefresh) userInfo:nil repeats:NO];
-	
-	[self audioEffectPlayer:@"transform"];
+	[self moveDisable:7];
+	[UIView animateWithDuration:2.0 animations:^(void){
+		// Start
+		userSpriteOrientationHorizontal = @"l";
+		userSpriteOrientationVertical = @"f";
+	} completion:^(BOOL finished){
+		// First stop
+		[UIView animateWithDuration:1.0 animations:^(void){
+			// Part 1
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+			self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -20);
+			[self userSpriteUpdate:[NSString stringWithFormat:@"char1.warp.l.f.1.png"]];
+			userSpriteState = @"warp";
+			self.userPlayerShadow.alpha = 0;
+			[self audioEffectPlayer:@"transform"];
+		} completion:^(BOOL finished){
+			[UIView animateWithDuration:1.0 animations:^(void){
+				self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -10);
+			} completion:^(BOOL finished){
+				[UIView animateWithDuration:1.0 animations:^(void){
+					self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -15);
+				} completion:^(BOOL finished){
+					[self eventVignette:@"1"];
+					userCharacter = charId;
+					[self eventSpellRefresh];
+					[self userSpriteUpdate:[NSString stringWithFormat:@"char2.warp.l.f.1.png"]];
+					[UIView animateWithDuration:1.0 animations:^(void){
+						self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -10);
+					} completion:^(BOOL finished){
+						[UIView animateWithDuration:1.0 animations:^(void){
+							self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -15);
+						} completion:^(BOOL finished){
+							[UIView animateWithDuration:1.0 animations:^(void){
+								self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, 0);
+							} completion:^(BOOL finished){
+								[self userSpriteUpdate:[NSString stringWithFormat:@"char2.stand.l.f.1.png"]];
+								self.userPlayerShadow.alpha = 1;
+								[self roomClearDialog];
+								[self roomGenerateTiles];
+								[self roomGenerateEvents];
+								[self roomClearNotifications];
+								userDialogActive = 0;
+							}];
+						}];
+					}];
+				}];
+			}];
+		}];
+	}];
 }
 
 -(void)eventAudioToggle :(int)toggle
@@ -360,7 +399,7 @@
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates
 {
-	[self moveDisable:4];
+	[self moveDisable:5.5];
 	[UIView animateWithDuration:2.5 animations:^(void){
 		NSLog(@"  EVENT | Pan          | Panning Out");
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -375,9 +414,11 @@
 		[self eventWarp:destinationId:destinationCoordinates];
 		
 		self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, -1*screen.size.height);
-		self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, -1*screen.size.height-100);
+		self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, -1*screen.size.height);
 		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
 		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
+		
+		self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 0, -1*screen.size.height+200);
 		
 		[UIView animateWithDuration:2.5 animations:^(void){
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -385,9 +426,16 @@
 			self.spritesContainer.frame = spriteContainerOrigin;
 			self.parallaxBack.frame = parallaxBackOrigin;
 			self.parallaxFront.frame = parallaxFrontOrigin;
+			self.userPlayer.frame = [self tileLocation:4 :0 :0];
 		} completion:^(BOOL finished){
 			[self roomClearDialog];
+			[self userSpriteUpdate:[NSString stringWithFormat:@"char2.stand.l.f.1.png"]];
+			userSpriteState = @"stand";
+			userSpriteOrientationHorizontal = @"l";
+			userSpriteOrientationVertical = @"f";
+			userDialogActive = 0;
 		}];
+		
 	}];
 }
 
