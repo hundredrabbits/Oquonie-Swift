@@ -331,9 +331,15 @@
 	
 	NSLog(@"  EVENT | Spell        | Change Sprite" );
 	
+	
 	// TODO: Create the FX sprites
 	
 	userCharacter = charId;
+	
+	// Refresh room
+	[self roomGenerateTiles];
+	[self roomGenerateEvents];
+	
 	[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(eventSpellRefresh) userInfo:nil repeats:NO];
 	
 	[self audioEffectPlayer:@"transform"];

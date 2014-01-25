@@ -211,7 +211,7 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(roomDoorState==1){
+		if(userCharacter==1){
 			return @"gateNecomedreOpen";
 		}
 		else{
