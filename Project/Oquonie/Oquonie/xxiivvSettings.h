@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			1
-#define userCharacterLocation	32
+#define userCharacterId			4
+#define userCharacterLocation	80
 #define userCharacterX			0
 #define userCharacterY			0
 

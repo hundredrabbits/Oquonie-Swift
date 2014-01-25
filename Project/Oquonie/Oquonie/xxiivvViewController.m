@@ -112,29 +112,28 @@
 
 -(void)moveIndicator :(int)posX :(int)posY
 {
-	if(posY == -1){
-		self.indicatorFront.alpha = 1;
-		self.indicatorFront.image = [UIImage imageNamed:@"fx.indicator.f.l.png"];
-		self.indicatorFront.frame = [self tileLocation:0 :userPositionX :-2];
+	if(posY == -1){ // F L
+		self.moveIndicator.frame = CGRectMake(0, screen.size.height-100, 100, 100);
+		self.moveIndicator.alpha = 0.15;
+		self.moveIndicator.image = [UIImage imageNamed:@"fx.indicator.f.l.png"];
 	}
-	else if (posX == -1){
-		self.indicatorFront.alpha = 1;
-		self.indicatorFront.image = [UIImage imageNamed:@"fx.indicator.f.r.png"];
-		self.indicatorFront.frame = [self tileLocation:0 :-2 :userPositionY];
+	else if (posX == -1){ // F R
+		self.moveIndicator.frame = CGRectMake(screen.size.width-100, screen.size.height-100, 100, 100);
+		self.moveIndicator.alpha = 0.15;
+		self.moveIndicator.image = [UIImage imageNamed:@"fx.indicator.f.r.png"];
 	}
-	else if(posY == 1){
-		self.indicatorBack.alpha = 1;
-		self.indicatorBack.image = [UIImage imageNamed:@"fx.indicator.b.r.png"];
-		self.indicatorBack.frame = [self tileLocation:0 :userPositionX :2];
+	else if(posY == 1){ // B R
+		self.moveIndicator.frame = CGRectMake(screen.size.width-100, 0, 100, 100);
+		self.moveIndicator.alpha = 0.15;
+		self.moveIndicator.image = [UIImage imageNamed:@"fx.indicator.b.r.png"];
 	}
-	else if (posX == 1){
-		self.indicatorBack.alpha = 1;
-		self.indicatorBack.image = [UIImage imageNamed:@"fx.indicator.b.l.png"];
-		self.indicatorBack.frame = [self tileLocation:0 :2 :userPositionY];
+	else if (posX == 1){ // B L
+		self.moveIndicator.frame = CGRectMake(0, 0, 100, 100);
+		self.moveIndicator.alpha = 0.15;
+		self.moveIndicator.image = [UIImage imageNamed:@"fx.indicator.b.l.png"];
 	}
 	[UIView animateWithDuration:0.5 animations:^(void){
-		self.indicatorBack.alpha = 0;
-		self.indicatorFront.alpha = 0;
+		self.moveIndicator.alpha = 0;
 	} completion:^(BOOL finished){}];
 }
 

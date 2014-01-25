@@ -44,9 +44,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *step2r;
 @property (strong, nonatomic) IBOutlet UIImageView *step3r;
 
-@property (strong, nonatomic) IBOutlet UIImageView *indicatorFront;
-@property (strong, nonatomic) IBOutlet UIImageView *indicatorBack;
-
 @property (strong, nonatomic) AVAudioPlayer *audioAmbientPlayer;
 
 // =================
@@ -85,6 +82,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *vignette;
 
 @property (strong, nonatomic) IBOutlet UILabel *debugLocation;
+
+@property (strong, nonatomic) IBOutlet UIImageView *moveIndicator;
 
 // =================
 // Controls

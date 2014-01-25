@@ -40,7 +40,7 @@
 	worldNode[62] = @[
 	// Tiles
 	@"1",@"1",@"1|event|neomineNecomedre1|2|l",
-	@"1",@"1",@"14",
+	@"1",@"1",@"1",
 	@"1",@"1",@"1",
 	// Walls
 	@"32",@"32",@"32",@"32",@"4|event|gateNecomedre",@"32",
