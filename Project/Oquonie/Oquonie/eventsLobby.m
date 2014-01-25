@@ -31,20 +31,13 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(roomDoorState==1){
+		if(userCharacter==6){
 			return @"gateDocument.open";
 		}
 		else{
 			return @"gateDocument.shut";
 		}
 	}
-	
-	if(userCharacter == 6 && roomDoorState != 1){
-		roomDoorState = 1;
-		[self roomGenerateTiles];
-		return @"";
-	}
-	
 	
 	// Warp
 	if(userCharacter == characterDocument){
@@ -165,14 +158,14 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == characterNestorine){
+		if(userCharacter==4){
 			return @""; // letterUnlocked
 		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(userCharacter==4){
+		if(roomDoorState==1){
 			return @"gateNestorineOpen";
 		}
 		else{
@@ -211,14 +204,14 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == characterNecomedre){
+		if(userCharacter==1){
 			return @""; // letterUnlocked
 		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(userCharacter==1){
+		if(roomDoorState==1){
 			return @"gateNecomedreOpen";
 		}
 		else{
