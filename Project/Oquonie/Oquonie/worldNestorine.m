@@ -171,7 +171,7 @@
 
 	worldNode[93] = @[
 	// Tiles
-	@"35",@"25",@"21|event|nestorineNemedique2|6|r",
+	@"35",@"34",@"21|event|nestorineNemedique2|6|r",
 	@"35",@"35",@"35",
 	@"34",@"35",@"35|block|11",
 	// Walls
