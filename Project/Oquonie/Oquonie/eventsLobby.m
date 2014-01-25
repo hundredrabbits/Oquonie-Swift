@@ -75,7 +75,12 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+		if(userCharacter==2){
+			return @"gateNephtalineOpen";
+		}
+		else{
+			return @"gateNephtalineClosed";
+		}
 	}
 	// Warp
 	if(userCharacter == characterNephtaline){
@@ -119,7 +124,12 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+		if(userCharacter==3){
+			return @"gateNeomineOpen";
+		}
+		else{
+			return @"gateNeomineClosed";
+		}
 	}
 	// Warp
 	if(userCharacter == characterNeomine){
@@ -162,7 +172,12 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+		if(userCharacter==4){
+			return @"gateNestorineOpen";
+		}
+		else{
+			return @"gateNestorineClosed";
+		}
 	}
 	// Warp
 	if(userCharacter == characterNestorine){
@@ -203,7 +218,12 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+		if(userCharacter==1){
+			return @"gateNecomedreOpen";
+		}
+		else{
+			return @"gateNecomedreClosed";
+		}
 	}
 	// Warp
 	if(userCharacter == characterNecomedre){
@@ -247,7 +267,12 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+		if(userCharacter==5){
+			return @"gateNemediqueOpen";
+		}
+		else{
+			return @"gateNemediqueClosed";
+		}
 	}
 	// Warp
 	if(userCharacter == characterNemedique){
