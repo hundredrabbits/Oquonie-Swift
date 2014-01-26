@@ -343,32 +343,32 @@
 		[UIView animateWithDuration:1.0 animations:^(void){
 			// Part 1
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -20);
-			[self userSpriteUpdate:[NSString stringWithFormat:@"char1.warp.l.f.1.png"]];
+			self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -20);
+			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
 			userSpriteState = @"warp";
 			self.userPlayerShadow.alpha = 0;
 			[self audioEffectPlayer:@"transform"];
 		} completion:^(BOOL finished){
 			[UIView animateWithDuration:1.0 animations:^(void){
-				self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -10);
+				self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -10);
 			} completion:^(BOOL finished){
 				[UIView animateWithDuration:1.0 animations:^(void){
-					self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -15);
+					self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -15);
 				} completion:^(BOOL finished){
 					[self eventVignette:@"1"];
 					userCharacter = charId;
 					[self eventSpellRefresh];
-					[self userSpriteUpdate:[NSString stringWithFormat:@"char2.warp.l.f.1.png"]];
+					[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
 					[UIView animateWithDuration:1.0 animations:^(void){
-						self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -10);
+						self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -10);
 					} completion:^(BOOL finished){
 						[UIView animateWithDuration:1.0 animations:^(void){
-							self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -15);
+							self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -15);
 						} completion:^(BOOL finished){
 							[UIView animateWithDuration:1.0 animations:^(void){
-								self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, 0);
+								self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, 0);
 							} completion:^(BOOL finished){
-								[self userSpriteUpdate:[NSString stringWithFormat:@"char2.stand.l.f.1.png"]];
+								[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",userCharacter]];
 								self.userPlayerShadow.alpha = 1;
 								[self roomClearDialog];
 								[self roomGenerateTiles];

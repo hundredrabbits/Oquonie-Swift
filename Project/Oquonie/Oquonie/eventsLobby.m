@@ -84,7 +84,7 @@
 			[self eventWarp:@"38" :@"0,1"];
 		}
 		else if(userLocation == 1){
-			[self eventWarp:@"40" :@"-1,0"];
+			[self eventWarp:@"40" :@"-1,-1"];
 		}
 		else if(userLocation == 40){
 			[self eventWarp:@"1" :@"1,0"];
@@ -326,7 +326,7 @@
 
 -(void)warpLobbyAnimationSpriteUpdate
 {
-	[self userSpriteUpdate:[NSString stringWithFormat:@"char2.warp.l.f.1.png"]];
+	[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
 	userSpriteState = @"warp";
 	userSpriteOrientationHorizontal = @"l";
 	userSpriteOrientationVertical = @"f";

@@ -85,6 +85,8 @@
 	self.dialogCharacter2.alpha = 0;
 	self.dialogCharacter3.alpha = 0;
 	
+	self.debugLocation.hidden = YES;
+	
 }
 
 - (void) templateRoomAnimation
