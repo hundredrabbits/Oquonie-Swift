@@ -231,11 +231,11 @@
 
 	worldNode[38] = @[
 	// Tiles
-	@"4",@"4|event|necomedreNephtaline3|3|r",@"4",
-	@"4",@"4",@"13",
-	@"4",@"4",@"4|block|5",
+	@"9",@"33|event|necomedreNephtaline3|3|r",@"33",
+	@"4",@"33",@"13",
+	@"9|block|5",@"33",@"33",
 	// Walls
-	@"26",@"26",@"26",@"19",@"5|event|gateNephtaline",@"19",
+	@"26",@"26",@"26",@"18",@"5|event|gateNephtaline",@"18",
 	// Steps
 	@"0",@"6|warp|37|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio

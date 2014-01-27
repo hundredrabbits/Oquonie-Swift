@@ -39,7 +39,7 @@
 	// Walls
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Steps
-	@"7|warp|40|0,1",@"0",@"0",@"0",@"0",@"7|warp|42|1,1",
+	@"7|warp|40|1,1",@"0",@"0",@"0",@"0",@"7|warp|42|1,1",
 	// Name,Background,Audio
 	@"Necomedre Fork",@"White",audioNephtaline];
 
@@ -57,11 +57,11 @@
 	
 	worldNode[43] = @[
 	// Tiles
-	@"4",@"30",@"32",
+	@"4",@"30",@"32|block|10",
 	@"4",@"0",@"0",
 	@"16",@"4",@"4",
 	// Walls
-	@"13|warp|44|-1,-1",@"0",@"3",@"3",@"0",@"13|warp|40|-1,0",
+	@"13|warp|44|-1,-1",@"0",@"3",@"3",@"0",@"13|warp|42|-1,-1",
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
@@ -75,7 +75,7 @@
 	// Walls
 	@"0",@"0",@"0",@"12|warp|45|1,-1",@"0",@"0",
 	// Steps
-	@"0",@"0",@"0",@"7|warp|43|1,0",@"0",@"0",
+	@"0",@"0",@"0",@"7|warp|43|1,-1",@"0",@"0",
 	// Name,Background,Audio
 	@"Necomedre Fork",@"White",audioNephtaline];
 	
@@ -83,21 +83,21 @@
 	// Tiles
 	@"4",@"4",@"17",
 	@"30",@"0",@"4",
-	@"32",@"0",@"4",
+	@"32|block|7",@"0",@"4",
 	// Walls
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Steps
-	@"7|warp|46|0,1",@"0",@"0",@"0",@"0",@"7|warp|42|1,0",
+	@"7|warp|46|1,1",@"0",@"0",@"0",@"0",@"7|warp|42|1,0",
 	// Name,Background,Audio
 	@"Necomedre Fork",@"White",audioNephtaline];
 	
 	worldNode[46] = @[
 	// Tiles
-	@"3",@"4",@"3",
-	@"17",@"10|block|13",@"5",
-	@"3",@"5",@"3|event|nephtalineNeomine1|4|l",
+	@"3|block|13",@"5",@"6",
+	@"17",@"4",@"3",
+	@"3",@"3",@"3|event|nephtalineNeomine1|4|l",
 	// Walls
-	@"3",@"3",@"3",@"13|warp|41|0,-1",@"3",@"3",
+	@"18",@"18",@"18",@"13|warp|41|1,-1",@"18",@"18",
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|51|1,0",@"0",
 	// Name,Background,Audio
@@ -147,11 +147,11 @@
 	
 	worldNode[50] = @[
 	// Tiles
-	@"3",@"27",@"3|event|owlSave|1|r",
-	@"4",@"10",@"3",
-	@"3",@"19",@"3",
+	@"3",@"32",@"3|event|owlSave|1|r",
+	@"32",@"31",@"32",
+	@"3",@"32",@"3|block|21",
 	// Walls
-	@"3",@"9|event|gateNemedique",@"3",@"3",@"16|event|map",@"3",
+	@"3",@"9|event|gateNemedique",@"3",@"2",@"16|event|map",@"2",
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|55|1,0",@"0",
 	// Name,Background,Audio
@@ -255,11 +255,11 @@
 
 	worldNode[58] = @[
 	// Tiles
-	@"3",@"4",@"3",
-	@"4",@"10",@"2|event|nephtalineNeomine3|4|l",
-	@"3",@"3",@"3",
+	@"31",@"4",@"31",
+	@"4",@"5",@"31|event|nephtalineNeomine3|4|l",
+	@"31",@"31",@"31",
 	// Walls
-	@"3",@"7|event|gateNeomine",@"3",@"3",@"3",@"3",
+	@"18",@"7|event|gateNeomine",@"18",@"18",@"18",@"18",
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio

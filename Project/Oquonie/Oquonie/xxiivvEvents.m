@@ -429,7 +429,7 @@
 			self.userPlayer.frame = [self tileLocation:4 :0 :0];
 		} completion:^(BOOL finished){
 			[self roomClearDialog];
-			[self userSpriteUpdate:[NSString stringWithFormat:@"char2.stand.l.f.1.png"]];
+			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",userCharacter]];
 			userSpriteState = @"stand";
 			userSpriteOrientationHorizontal = @"l";
 			userSpriteOrientationVertical = @"f";
