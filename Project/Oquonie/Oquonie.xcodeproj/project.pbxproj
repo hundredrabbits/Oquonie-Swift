@@ -64,6 +64,8 @@
 		0304D7B1186CEE0200ED6E94 /* event.10.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0304D778186CEE0200ED6E94 /* event.10.l.3.png */; };
 		0304D7B2186CEE0200ED6E94 /* event.10.r.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0304D779186CEE0200ED6E94 /* event.10.r.2.png */; };
 		0304D7B3186CEE0200ED6E94 /* event.10.r.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0304D77A186CEE0200ED6E94 /* event.10.r.3.png */; };
+		0309B344189695B600C1983E /* Nestorine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0309B343189695B600C1983E /* Nestorine.mp3 */; };
+		0309B346189695CE00C1983E /* nemedique.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0309B345189695CE00C1983E /* nemedique.mp3 */; };
 		030B2A24180AA425008C55A3 /* event.7.r.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 030B2A23180AA425008C55A3 /* event.7.r.1.png */; };
 		0314775618804C5600AA99B0 /* event.9.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 0314775518804C5600AA99B0 /* event.9.portrait.png */; };
 		031EDC14185BF4F60037ACEA /* blocker.17.png in Resources */ = {isa = PBXBuildFile; fileRef = 031EDC11185BF4F60037ACEA /* blocker.17.png */; };
@@ -539,6 +541,8 @@
 		0304D778186CEE0200ED6E94 /* event.10.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.10.l.3.png; path = en.assets/event.10.l.3.png; sourceTree = "<group>"; };
 		0304D779186CEE0200ED6E94 /* event.10.r.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.10.r.2.png; path = en.assets/event.10.r.2.png; sourceTree = "<group>"; };
 		0304D77A186CEE0200ED6E94 /* event.10.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.10.r.3.png; path = en.assets/event.10.r.3.png; sourceTree = "<group>"; };
+		0309B343189695B600C1983E /* Nestorine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Nestorine.mp3; sourceTree = "<group>"; };
+		0309B345189695CE00C1983E /* nemedique.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nemedique.mp3; sourceTree = "<group>"; };
 		030B2A23180AA425008C55A3 /* event.7.r.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.7.r.1.png; path = en.assets/event.7.r.1.png; sourceTree = "<group>"; };
 		0314775518804C5600AA99B0 /* event.9.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.9.portrait.png; path = en.assets/event.9.portrait.png; sourceTree = "<group>"; };
 		031EDC11185BF4F60037ACEA /* blocker.17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.17.png; path = en.assets/blocker.17.png; sourceTree = "<group>"; };
@@ -1534,17 +1538,19 @@
 			name = Steps;
 			sourceTree = "<group>";
 		};
-		038BA0E9188B849B00A3ED4B /* Audio */ = {
+		038BA0E9188B849B00A3ED4B /* en.sounds */ = {
 			isa = PBXGroup;
 			children = (
 				038BA0EA188B84A600A3ED4B /* Soundtrack */,
 			);
-			name = Audio;
+			name = en.sounds;
 			sourceTree = "<group>";
 		};
 		038BA0EA188B84A600A3ED4B /* Soundtrack */ = {
 			isa = PBXGroup;
 			children = (
+				0309B345189695CE00C1983E /* nemedique.mp3 */,
+				0309B343189695B600C1983E /* Nestorine.mp3 */,
 				038BA0DC188B849100A3ED4B /* Necomedre.mp3 */,
 				038BA0DD188B849100A3ED4B /* Neomine.mp3 */,
 				038BA0DE188B849100A3ED4B /* Nephtaline.mp3 */,
@@ -1558,6 +1564,8 @@
 		038C5926185146AC005D6D35 /* Letters */ = {
 			isa = PBXGroup;
 			children = (
+				03B9434D1884FA88008E834A /* letterY.png */,
+				03B9434C1884FA88008E834A /* letterSpellY.png */,
 				03B943401884F863008E834A /* letterSpellX.png */,
 				03F5C487187BB8C700352B8E /* letterSpell0.png */,
 				03F5C488187BB8C700352B8E /* letterSpellA.png */,
@@ -1746,6 +1754,7 @@
 			children = (
 				038C59271851472D005D6D35 /* en.sources */,
 				038C592818514739005D6D35 /* en.layouts */,
+				038BA0E9188B849B00A3ED4B /* en.sounds */,
 				03BBFACE178AC8C200E79C3D /* en.assets */,
 				0355CF8C17C196C10069AF97 /* en.lproj */,
 				03BBFAB2178A9E4E00E79C3D /* Supporting Files */,
@@ -1775,9 +1784,6 @@
 				03CE07AC1893EF8A009D7003 /* char3.warp.l.f.1.png */,
 				03CE07AD1893EF8A009D7003 /* char4.warp.l.f.1.png */,
 				03CE07AE1893EF8A009D7003 /* char5.warp.l.f.1.png */,
-				038BA0E9188B849B00A3ED4B /* Audio */,
-				03B9434C1884FA88008E834A /* letterSpellY.png */,
-				03B9434D1884FA88008E834A /* letterY.png */,
 				03B9433A1884F863008E834A /* char6.stand.l.f.2.png */,
 				03B9433B1884F863008E834A /* char6.stand.l.f.3.png */,
 				03B9433C1884F863008E834A /* char6.stand.r.f.2.png */,
@@ -2236,6 +2242,7 @@
 				035A6DBA186B0E610032710C /* event.6.l.3.png in Resources */,
 				0304D79B186CEE0200ED6E94 /* event.4.l.2.png in Resources */,
 				035A6DB2186B0E610032710C /* event.2.l.3.png in Resources */,
+				0309B346189695CE00C1983E /* nemedique.mp3 in Resources */,
 				0381CC7718456236003FB458 /* blocker.11.png in Resources */,
 				03A20F55184D4F2C00CCED80 /* wall.24.r.png in Resources */,
 				03983C0517C1B7A000C89446 /* char3.stand.l.b.1.png in Resources */,
@@ -2357,6 +2364,7 @@
 				0332384417D4BDB8001B1328 /* char5.walk.l.b.1.png in Resources */,
 				03DBEECD1880433D00CE6FBC /* event.12.r.3.png in Resources */,
 				0332384517D4BDB8001B1328 /* char5.walk.l.b.2.png in Resources */,
+				0309B344189695B600C1983E /* Nestorine.mp3 in Resources */,
 				03834E3C180B941500568E60 /* step.7.r.png in Resources */,
 				03CE07B31893EF8A009D7003 /* char5.warp.l.f.1.png in Resources */,
 				0332384617D4BDB8001B1328 /* char5.walk.l.f.1.png in Resources */,

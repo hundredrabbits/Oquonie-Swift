@@ -37,7 +37,7 @@
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
 	
-	NSString* eventDialogSpell = dialogGainSpell(letterNeomine);
+	NSString* eventDialogSpell = dialogGainSpell(letterNestorine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -69,7 +69,7 @@
 	NSString *eventSpellId = @"neomineNestorine2";
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
-	NSString* eventDialogSpell = dialogGainSpell(letterNeomine);
+	NSString* eventDialogSpell = dialogGainSpell(letterNestorine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -101,7 +101,7 @@
 	NSString *eventSpellId = @"neomineNestorine3";
 	NSString*	eventSpriteId = @"5";
 	int			eventSpell = 4;
-	NSString* eventDialogSpell = dialogGainSpell(letterNeomine);
+	NSString* eventDialogSpell = dialogGainSpell(letterNestorine);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
