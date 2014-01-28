@@ -627,14 +627,13 @@
 {
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
-		NSLog(@"%f",self.audioAmbientPlayer.volume);
-		if(self.audioAmbientPlayer.volume<1.0){ return letterAudio; }
-		else{ return @""; }
+		return @"";
 	}
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+		if(self.audioAmbientPlayer.volume<1.0){ return @"22"; }
+		else{ return @"9"; }
 	}
 	
 	// Dialogs
@@ -648,6 +647,8 @@
 		[self eventDialog:dialogAudioOff:eventAudio];
 		[self audioEffectPlayer:@"tic"];
 	}
+	
+	[self roomStart];
 	
 	return @"";
 }
