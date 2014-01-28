@@ -9,6 +9,7 @@
 #import "xxiivvSettings.h"
 #import "xxiivvEvents.h"
 #import "eventsNecomedre.h"
+#import "xxiivvWorld.h"
 
 @implementation xxiivvViewController (eventsNecomedre)
 
@@ -347,6 +348,36 @@
 			[self eventDialog:dialogConfusion2:eventTutorial];
 		}
 	}
+	
+	return @"";
+}
+
+-(NSString*)event_intercom:(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if(self.audioAmbientPlayer.volume<1.0){ return @"21"; }
+		else{ return @"20"; }
+	}
+	
+	// Dialogs
+	if(self.audioAmbientPlayer.volume<1){
+		[self eventAudioToggle:1];
+		[self eventDialog:dialogAudioOn:eventAudio];
+		[self audioEffectPlayer:@"tic"];
+	}
+	else{
+		[self eventAudioToggle:0];
+		[self eventDialog:dialogAudioOff:eventAudio];
+		[self audioEffectPlayer:@"tic"];
+	}
+	
+	[self roomStart];
 	
 	return @"";
 }

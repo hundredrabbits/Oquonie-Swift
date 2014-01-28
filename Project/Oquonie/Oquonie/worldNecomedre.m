@@ -33,7 +33,7 @@
 	
 	worldNode[22] = @[
 	// Tiles
-	@"21",@"21|event|speakerphone|9|r",@"21|block|15",
+	@"21",@"21|event|intercom|20|r",@"21|block|15",
 	@"21",@"21",@"21",
 	@"21",@"21",@"21|block|16",
 	// Walls

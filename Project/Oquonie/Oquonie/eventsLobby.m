@@ -389,8 +389,7 @@
 		userStorageEvents[pillarInstanceStorageId] = @"0";
 	}
 	
-	[self roomClearSprites];
-	[self roomGenerateEvents];
+	[self roomStart];
 	
 	// Default
 	return @"";
