@@ -536,8 +536,6 @@
 	}
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
-		
-		NSLog(@"notif");
 		if([userStorageEvents[ramenStorage] intValue] == 0){
 			return letterGuide;
 		}

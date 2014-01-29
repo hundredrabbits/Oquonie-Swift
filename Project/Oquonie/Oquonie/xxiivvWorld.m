@@ -53,7 +53,6 @@
 		exception = 1;
 	}
 	
-	
 	NSArray* array = [tileString componentsSeparatedByString: @"|"];
 	if( [array count] < (index+1) && index > 0 ){
 		return 0;
@@ -66,8 +65,7 @@
 			return [self tileParserUpdate:array:index];
 		}
 		// Update tile
-		else
-		if( [[array objectAtIndex: 1] isEqualToString:@"event"] && index == 0 ){
+		else if( [[array objectAtIndex: 1] isEqualToString:@"event"] && index == 0 && [array count] < 4){
 			return [self tileParserUpdate:array:index];
 		}
 	}
