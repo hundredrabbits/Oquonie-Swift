@@ -31,7 +31,7 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(userCharacter==6){
+		if(userCharacter==characterDocument){
 			return @"gateDocument.open";
 		}
 		else{
@@ -68,7 +68,7 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(userCharacter==2){
+		if(userCharacter==characterNephtaline){
 			return @"gateNephtalineOpen";
 		}
 		else{
@@ -117,7 +117,7 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(userCharacter==3){
+		if(userCharacter==characterNeomine){
 			return @"gateNeomineOpen";
 		}
 		else{
@@ -165,7 +165,7 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(roomDoorState==1){
+		if(userCharacter==characterNestorine){
 			return @"gateNestorineOpen";
 		}
 		else{
@@ -211,7 +211,7 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(userCharacter==1){
+		if(userCharacter==characterNecomedre){
 			return @"gateNecomedreOpen";
 		}
 		else{

@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.xxiivv.png" id="SbG-JZ-vnN">
-                                <rect key="frame" x="95" y="0.0" width="130" height="480"/>
+                                <rect key="frame" x="70" y="0.0" width="180" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mt8-Q7-imf">
@@ -47,6 +47,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.kokorobot.png" id="U8W-bQ-n86">
+                                <rect key="frame" x="70" y="0.0" width="180" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A6t-6B-UWZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -410,6 +414,7 @@
         <image name="letterF.png" width="128" height="128"/>
         <image name="letterI.png" width="128" height="128"/>
         <image name="letterM.png" width="128" height="128"/>
+        <image name="splash.kokorobot.png" width="550" height="529"/>
         <image name="splash.oquonie.png" width="970" height="1923"/>
         <image name="splash.xxiivv.png" width="1024" height="276"/>
     </resources>

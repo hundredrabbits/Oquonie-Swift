@@ -122,6 +122,7 @@
 		0332384C17D4BDB8001B1328 /* event.1.l.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0332383117D4BDB8001B1328 /* event.1.l.1.png */; };
 		0332384D17D4BDB8001B1328 /* event.1.r.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0332383217D4BDB8001B1328 /* event.1.r.1.png */; };
 		0332384E17D4BDB8001B1328 /* tile.7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0332383317D4BDB8001B1328 /* tile.7.png */; };
+		033726E01899D24400EE273B /* splash.kokorobot.png in Resources */ = {isa = PBXBuildFile; fileRef = 033726DF1899D24400EE273B /* splash.kokorobot.png */; };
 		03377321187105ED00C70C50 /* worldLobby.m in Sources */ = {isa = PBXBuildFile; fileRef = 03377320187105ED00C70C50 /* worldLobby.m */; };
 		0337732418710A2800C70C50 /* worldNecomedre.m in Sources */ = {isa = PBXBuildFile; fileRef = 0337732318710A2800C70C50 /* worldNecomedre.m */; };
 		033D9D54188B91ED00B36C93 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033D9D53188B91ED00B36C93 /* AVFoundation.framework */; };
@@ -624,6 +625,7 @@
 		0332383117D4BDB8001B1328 /* event.1.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.1.l.1.png; path = en.assets/event.1.l.1.png; sourceTree = "<group>"; };
 		0332383217D4BDB8001B1328 /* event.1.r.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.1.r.1.png; path = en.assets/event.1.r.1.png; sourceTree = "<group>"; };
 		0332383317D4BDB8001B1328 /* tile.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.7.png; path = en.assets/tile.7.png; sourceTree = "<group>"; };
+		033726DF1899D24400EE273B /* splash.kokorobot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.kokorobot.png; sourceTree = "<group>"; };
 		0337731F187105ED00C70C50 /* worldLobby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldLobby.h; sourceTree = "<group>"; };
 		03377320187105ED00C70C50 /* worldLobby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = worldLobby.m; sourceTree = "<group>"; };
 		0337732218710A2800C70C50 /* worldNecomedre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldNecomedre.h; sourceTree = "<group>"; };
@@ -1535,6 +1537,7 @@
 		037F0265187D8BC400747E8D /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				033726DF1899D24400EE273B /* splash.kokorobot.png */,
 				037F0263187D8AD000747E8D /* splash.oquonie.png */,
 				037F025E187D81DC00747E8D /* splash.xxiivv.png */,
 			);
@@ -2509,6 +2512,7 @@
 				035A6DB1186B0E610032710C /* event.2.l.2.png in Resources */,
 				033193DE1800075C0069D8A0 /* wall.8.r.png in Resources */,
 				03A999611883B02E0051DF93 /* wall.30.l.png in Resources */,
+				033726E01899D24400EE273B /* splash.kokorobot.png in Resources */,
 				031EDC15185BF4F60037ACEA /* blocker.18.png in Resources */,
 				03CE0B3518944F90009D7003 /* wall.36.l.png in Resources */,
 				0304D78B186CEE0200ED6E94 /* char4.stand.r.f.3.png in Resources */,
