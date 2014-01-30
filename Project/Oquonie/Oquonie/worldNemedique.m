@@ -19,7 +19,7 @@
 	@"10",@"4",@"6",
 	@"10",@"5",@"10",
 	// Walls
-	@"18",@"29",@"18",@"18",@"12|warp|101|0,-1",@"18",
+	@"18",@"29|warp|104|-1,0",@"18",@"18",@"12|warp|101|0,-1",@"18",
 	// Steps
 	@"0",@"0",@"0",@"0",@"7|event|gateNemedique",@"0",
 	// Name,Background,Audio
@@ -60,6 +60,18 @@
 	@"0",@"6|event|gateNecomedre",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Nemedique Pillar Room",@"White",audioPillar];
+	
+	worldNode[104] = @[
+	// Tiles
+	@"41",@"42",@"43",
+	@"44",@"45",@"46",
+	@"47",@"48",@"49",
+	// Walls
+	@"39",@"0",@"39",@"39",@"0",@"39",
+	// Steps
+	@"0",@"11|event|gateNecomedre",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Nemedique Pillar Room",@"Dark",audioPillar];
 }
 	
 @end

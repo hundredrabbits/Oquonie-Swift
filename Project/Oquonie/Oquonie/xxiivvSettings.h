@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#define systemDebug				0
+#define systemDebug				1
 #define systemBuild				1
 
 #define userCharacterId			3
-#define userCharacterLocation	60
+#define userCharacterLocation	68
 #define userCharacterX			0
 #define userCharacterY			0
 

@@ -233,6 +233,12 @@
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
 			self.debugLocation.textColor = [UIColor whiteColor];
 		}
+		if([worldBackground isEqualToString:@"Dark"]){
+			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.0 alpha:1];
+			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.3.png"];
+			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
+			self.debugLocation.textColor = [UIColor whiteColor];
+		}
 		if([worldBackground isEqualToString:@"White"]){
 			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];

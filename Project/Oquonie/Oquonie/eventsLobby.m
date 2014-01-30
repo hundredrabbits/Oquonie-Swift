@@ -296,6 +296,22 @@
 	return @"";
 }
 
+-(NSString*)event_gateHiversaires :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @""; // try with 17 ?
+	}
+	
+	[self eventDialog:@"abc":eventOwl];
+	
+	return @"";
+}
+
 -(NSString*)event_warpLobby:(NSString*)option
 {
 	// Broadcast Notification
