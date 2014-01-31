@@ -265,6 +265,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" id="2qr-wz-CAW" userLabel="joystick">
+                                        <rect key="frame" x="80" y="120" width="160" height="240"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ARR-hZ-Pfx" userLabel="moveIndicator">
                                         <rect key="frame" x="110" y="190" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -348,6 +353,7 @@
                         <outlet property="floore1" destination="Pap-re-eJt" id="QGi-CL-I2q"/>
                         <outlet property="flooree" destination="ixp-fE-lfr" id="ltB-2i-Fi7"/>
                         <outlet property="interfaceContainer" destination="1jQ-cs-ghe" id="UdJ-2e-kT5"/>
+                        <outlet property="joystick" destination="2qr-wz-CAW" id="C3k-C9-1vs"/>
                         <outlet property="moveIndicator" destination="ARR-hZ-Pfx" id="KPb-Ea-fi0"/>
                         <outlet property="parallaxBack" destination="YNJ-uy-Qeg" id="Wrn-1V-Z7j"/>
                         <outlet property="parallaxFront" destination="wOF-9h-gMa" id="nXB-t3-Nod"/>

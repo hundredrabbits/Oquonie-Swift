@@ -11,6 +11,7 @@
 
 @interface xxiivvViewController : UIViewController{
 	CGPoint interactionMap;
+    CGPoint interactionMapHold;
 }
 
 // =================
@@ -61,6 +62,8 @@
 // =================
 
 @property (strong, nonatomic) IBOutlet UIView *interfaceContainer;
+
+@property (weak, nonatomic) IBOutlet UIView *joystick;
 
 @property (strong, nonatomic) IBOutlet UIView *dialogVignette;
 
@@ -139,6 +142,7 @@ NSMutableArray *userStorageEvents;
 NSString *worldAudio;
 NSString *worldBackground;
 
+NSTimer *worldMoveHold;
 NSTimer *worldMoveTimer;
 NSTimer *worldWalkTimer;
 

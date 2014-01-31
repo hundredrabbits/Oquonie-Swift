@@ -623,14 +623,51 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	UITouch *theTouch = [touches anyObject];
-	interactionMap = [theTouch locationInView:self.view];
+	interactionMap = [[touches anyObject] locationInView:self.view];
+
+    worldMoveHold = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(touchTest) userInfo:nil repeats:YES];
+
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{}
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+
+	interactionMapHold = [[touches anyObject] locationInView:self.view];
+}
+
+-(void)touchTest
+{
+    if(interactionMap.y > interactionMapHold.y){
+        if(interactionMap.x > interactionMapHold.x){
+            NSLog(@"high left");
+            [self moveRouter:1 :0 :0];
+        }
+        else{
+            NSLog(@"high right");
+            [self moveRouter:0 :1 :1];
+        }
+    }
+    else{
+        if(interactionMap.x > interactionMapHold.x){
+            NSLog(@"low left");
+            [self moveRouter:0 :-1 :2];
+        }
+        else{
+            NSLog(@"low right");
+            [self moveRouter:-1 :0 :3];
+        }
+    }
+    interactionMap = interactionMapHold;
+
+    // display tip
+    self.joystick.frame = CGRectMake(interactionMap.x, interactionMap.y, 10, 10);
+    self.joystick.alpha = 1;
+}
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [worldMoveHold invalidate];
+    self.joystick.alpha = 0;
+
 	if(userMoveEnabled == 0){ return; }
 	
 	UITouch *theTouch = [touches anyObject];
