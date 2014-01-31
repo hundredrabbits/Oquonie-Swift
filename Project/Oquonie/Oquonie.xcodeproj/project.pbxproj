@@ -1372,6 +1372,10 @@
 		032D74E2179CD7D90068B27E /* Walls */ = {
 			isa = PBXGroup;
 			children = (
+				037E7F04189A87E700024C8E /* wall.38.l.png */,
+				037E7F05189A87E700024C8E /* wall.38.r.png */,
+				037E7F06189A87E700024C8E /* wall.39.l.png */,
+				037E7F07189A87E700024C8E /* wall.39.r.png */,
 				03CE0B2A18944F90009D7003 /* wall.34.l.png */,
 				03CE0B2B18944F90009D7003 /* wall.34.r.png */,
 				03CE0B2C18944F90009D7003 /* wall.35.l.png */,
@@ -1883,10 +1887,6 @@
 			isa = PBXGroup;
 			children = (
 				037E7EF8189A87E700024C8E /* step.11.l.png */,
-				037E7F04189A87E700024C8E /* wall.38.l.png */,
-				037E7F05189A87E700024C8E /* wall.38.r.png */,
-				037E7F06189A87E700024C8E /* wall.39.l.png */,
-				037E7F07189A87E700024C8E /* wall.39.r.png */,
 				0377410018987687001FDB71 /* event.22.l.1.png */,
 				0377410118987687001FDB71 /* event.22.l.2.png */,
 				0377410218987687001FDB71 /* event.22.l.3.png */,
