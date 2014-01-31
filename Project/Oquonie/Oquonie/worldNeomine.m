@@ -67,7 +67,7 @@
 	@"36",@"32",@"36|event|neomineNephtaline1|3|l",
 	@"39",@"36",@"1",
 	// Walls
-	@"31",@"20",@"31",@"31",@"31",@"15",
+	@"33",@"33",@"33",@"31",@"31",@"15",
 	// Steps
 	@"3|warp|68|1,1",@"3|warp|63|0,1",@"3|warp|65|-1,1",@"0",@"0",@"0",
 	// Name,Background,Audio
@@ -79,7 +79,7 @@
 	@"1",@"33",@"1|block|1",
 	@"1",@"33",@"33",
 	// Walls
-	@"0",@"3",@"3",@"3",@"3",@"14|warp|64|-1,-1",
+	@"0",@"3",@"3",@"3",@"15",@"14|warp|64|-1,-1",
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
@@ -99,11 +99,11 @@
 
 	worldNode[67] = @[
 	// Tiles
-	@"1",@"1|event|neomineNestorine2|5|r",@"1",
-	@"1",@"29",@"1",
+	@"1",@"36|event|neomineNestorine2|5|r",@"1",
+	@"1",@"39",@"36",
 	@"1",@"1",@"1",
 	// Walls
-	@"32",@"32",@"32",@"32",@"30|warp|66|0,-1",@"32",
+	@"25",@"25",@"25",@"31",@"30|warp|66|0,-1",@"31",
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
@@ -131,7 +131,7 @@
 	// Steps
 	@"0",@"3|warp|68|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Nestorine Exit",@"White",audioNeomine];
+	@"Nestorine Exit",@"Black",audioNeomine];
 	
 	worldNode[70] = @[
 	// Tiles
@@ -143,7 +143,7 @@
 	// Steps
 	@"0",@"3|event|gateNestorine",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Nestorine Warp",@"White",audioNeomine];
+	@"Nestorine Warp",@"Black",audioNeomine];
 	
 	worldNode[71] = @[
 	// Tiles

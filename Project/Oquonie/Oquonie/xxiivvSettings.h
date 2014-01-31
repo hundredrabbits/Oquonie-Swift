@@ -10,7 +10,7 @@
 #define systemBuild				1
 
 #define userCharacterId			3
-#define userCharacterLocation	68
+#define userCharacterLocation	80
 #define userCharacterX			0
 #define userCharacterY			0
 
