@@ -636,6 +636,9 @@
 
 -(void)touchTest
 {
+	NSString* userSpriteOrientationOriginHorizontal = userSpriteOrientationHorizontal;
+	NSString* userSpriteOrientationOriginVertical = userSpriteOrientationHorizontal;
+	
     if(interactionMap.y > interactionMapHold.y){
         if(interactionMap.x > interactionMapHold.x){
             NSLog(@"high left");
@@ -656,17 +659,16 @@
             [self moveRouter:-1 :0 :3];
         }
     }
-    interactionMap = interactionMapHold;
-
-    // display tip
-    self.joystick.frame = CGRectMake(interactionMap.x, interactionMap.y, 10, 10);
-    self.joystick.alpha = 1;
+	
+	if(userSpriteOrientationHorizontal != userSpriteOrientationOriginHorizontal && userSpriteOrientationVertical != userSpriteOrientationOriginVertical){
+		interactionMap = interactionMapHold;
+	}
+    
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [worldMoveHold invalidate];
-    self.joystick.alpha = 0;
 
 	if(userMoveEnabled == 0){ return; }
 	

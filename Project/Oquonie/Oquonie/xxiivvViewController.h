@@ -63,8 +63,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *interfaceContainer;
 
-@property (weak, nonatomic) IBOutlet UIView *joystick;
-
 @property (strong, nonatomic) IBOutlet UIView *dialogVignette;
 
 @property (strong, nonatomic) IBOutlet UIView *dialogView;

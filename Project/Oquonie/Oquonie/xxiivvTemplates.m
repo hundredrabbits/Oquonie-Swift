@@ -86,9 +86,6 @@
 	self.dialogCharacter3.alpha = 0;
 	
 	self.debugLocation.hidden = YES;
-
-    self.joystick.backgroundColor = [UIColor redColor];
-    self.joystick.frame = CGRectMake(0, 0, 10, 10);
 	
 }
 
