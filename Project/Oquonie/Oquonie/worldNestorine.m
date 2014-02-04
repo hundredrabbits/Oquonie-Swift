@@ -189,7 +189,7 @@
 	// Walls
 	@"25",@"15",@"25",@"3",@"9|event|gateNemedique",@"3",
 	// Steps
-	@"0",@"3|warp|95|0,1",@"0",@"0",@"8|warp|97|1,0",@"0",
+	@"0",@"3|warp|95|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Fork Start",@"White",audioNestorine];
 	
@@ -227,7 +227,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Entrance Warp",@"White",audioNestorine];
+	@"Unused",@"White",audioNestorine];
 
 }
 

@@ -68,6 +68,10 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		// Nemedique pillar
+		if(userLocation == 93 && [userStorageEvents[storageQuestPillarNestorine] intValue] == 1){
+			return @"19";
+		}
 		if(userCharacter==characterNephtaline){
 			return @"gateNephtalineOpen";
 		}
@@ -75,6 +79,12 @@
 			return @"gateNephtalineClosed";
 		}
 	}
+	
+	// Nemedique pillar
+	if(userLocation == 93 && [userStorageEvents[storageQuestPillarNestorine] intValue] == 1){
+		return @"";
+	}
+	
 	// Warp
 	if(userCharacter == characterNephtaline){
 		if(userLocation == 38){
@@ -165,6 +175,10 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		// Condemned pillar doors: Neomine
+		if(userLocation == 34 && [userStorageEvents[storageQuestPillarNecomedre] intValue] == 1){
+			return @"25";
+		}
 		if(userCharacter==characterNestorine){
 			return @"gateNestorineOpen";
 		}
@@ -172,6 +186,12 @@
 			return @"gateNestorineClosed";
 		}
 	}
+	
+	// Condemned pillar doors: Neomine
+	if(userLocation == 34 && [userStorageEvents[storageQuestPillarNecomedre] intValue] == 1){
+		return @"";
+	}
+	
 	// Warp
 	if(userCharacter == characterNestorine){
 		if(userLocation == 7){
@@ -217,7 +237,7 @@
 		
 		// Nemedique pillar
 		if(userLocation == 101 && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
-			return @"17";
+			return @"13";
 		}
 		// Neomine pillar
 		if(userLocation == 62 && [userStorageEvents[storageQuestPillarNeomine] intValue] == 1){
@@ -234,6 +254,7 @@
 	
 	// Condemned pillar doors: Nemedique
 	if(userLocation == 101 && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+		[self eventWarp:@"105":@"0,-1"];
 		return @"";
 	}
 	// Condemned pillar doors: Neomine
@@ -733,7 +754,7 @@
 		if(count == 1){ return @"24";}
 		if(count == 2){ return @"25";}
 		if(count == 3){ return @"26";}
-		if(count == 5){ return @"26";}
+		if(count >  3){ return @"27";}
 		
 		return @"";
 	}

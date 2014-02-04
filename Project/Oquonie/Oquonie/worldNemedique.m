@@ -71,7 +71,19 @@
 	// Steps
 	@"0",@"11|event|gateNecomedre",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Nemedique Pillar Room",@"Dark",audioPillar];
+	@"unused",@"Dark",audioPillar];
+	
+	worldNode[105] = @[
+	// Tiles
+	@"3",@"3",@"3",
+	@"3",@"7|event|warpLobby",@"3",
+	@"3",@"3",@"3",
+	// Walls
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Steps
+	@"0",@"6|warp|101|0,1",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Nemedique warp",@"White",audioPillar];
 }
 	
 @end
