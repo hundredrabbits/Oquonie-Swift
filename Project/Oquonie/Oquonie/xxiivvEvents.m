@@ -370,6 +370,7 @@
 							} completion:^(BOOL finished){
 								[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",userCharacter]];
 								self.userPlayerShadow.alpha = 1;
+								userSpriteState = @"stand";
 								[self roomClearDialog];
 								[self roomGenerateTiles];
 								[self roomGenerateEvents];
@@ -395,6 +396,37 @@
 		NSLog(@"•  ROOM | Audio        | Turned Off");
 		self.audioAmbientPlayer.volume = 0;
 	}
+}
+
+-(void)eventIntroduction
+{
+	NSLog(@"  EVENT | Pan          | Panning In");
+	self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, -1*screen.size.height);
+	self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, -1*screen.size.height);
+	self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
+	self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
+	self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 0, -1*screen.size.height+200);
+	
+	[UIView animateWithDuration:2.5 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		self.roomContainer.frame = roomContainerOrigin;
+		self.spritesContainer.frame = spriteContainerOrigin;
+		self.parallaxBack.frame = parallaxBackOrigin;
+		self.parallaxFront.frame = parallaxFrontOrigin;
+		self.userPlayer.frame = [self tileLocation:4 :0 :0];
+	} completion:^(BOOL finished){
+		[self roomClearDialog];
+		[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",userCharacter]];
+		userSpriteState = @"stand";
+		userSpriteOrientationHorizontal = @"l";
+		userSpriteOrientationVertical = @"f";
+		userDialogActive = 0;
+		
+		[self eventDialog:dialogIntroduction:eventOwl];
+	}];
+	
+	
+
 }
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates

@@ -44,17 +44,19 @@
 	// Debug: remove
 	if(systemDebug == 1){
 		
-		userStorageEvents[storageQuestRamenNecomedre] = @"1";
-		userStorageEvents[storageQuestRamenNephtaline] = @"1";
-		userStorageEvents[storageQuestRamenNeomine] = @"1";
-		userStorageEvents[storageQuestRamenNestorine] = @"1";
-		userStorageEvents[storageQuestRamenNemedique] = @"1";
+//		userStorageEvents[storageQuestRamenNecomedre] = @"1";
+//		userStorageEvents[storageQuestRamenNephtaline] = @"1";
+//		userStorageEvents[storageQuestRamenNeomine] = @"1";
+//		userStorageEvents[storageQuestRamenNestorine] = @"1";
+//		userStorageEvents[storageQuestRamenNemedique] = @"1";
 		
 //		userSpellbook[0] = @[@"test1",@"2"];
 //		userSpellbook[1] = @[@"test2",@"2"];
 		
 		self.debugLocation.hidden = NO;
 	}
+	
+	[self eventIntroduction];
 	
 }
 
@@ -624,40 +626,26 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	interactionMap = [[touches anyObject] locationInView:self.view];
-
-    worldMoveHold = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(touchTest) userInfo:nil repeats:YES];
-
+    worldMoveHold = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(touchHeld) userInfo:nil repeats:YES];
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
 	interactionMapHold = [[touches anyObject] locationInView:self.view];
 }
 
--(void)touchTest
+-(void)touchHeld
 {
 	NSString* userSpriteOrientationOriginHorizontal = userSpriteOrientationHorizontal;
 	NSString* userSpriteOrientationOriginVertical = userSpriteOrientationHorizontal;
 	
     if(interactionMap.y > interactionMapHold.y){
-        if(interactionMap.x > interactionMapHold.x){
-            NSLog(@"high left");
-            [self moveRouter:1 :0 :0];
-        }
-        else{
-            NSLog(@"high right");
-            [self moveRouter:0 :1 :1];
-        }
+        if(interactionMap.x > interactionMapHold.x){ [self moveRouter:1 :0 :0]; }
+        else{ [self moveRouter:0 :1 :1]; }
     }
     else{
-        if(interactionMap.x > interactionMapHold.x){
-            NSLog(@"low left");
-            [self moveRouter:0 :-1 :2];
-        }
-        else{
-            NSLog(@"low right");
-            [self moveRouter:-1 :0 :3];
-        }
+        if(interactionMap.x > interactionMapHold.x){ [self moveRouter:0 :-1 :2]; }
+        else{ [self moveRouter:-1 :0 :3]; }
     }
 	
 	if(userSpriteOrientationHorizontal != userSpriteOrientationOriginHorizontal && userSpriteOrientationVertical != userSpriteOrientationOriginVertical){

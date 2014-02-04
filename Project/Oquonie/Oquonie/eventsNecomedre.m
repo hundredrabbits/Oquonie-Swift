@@ -304,7 +304,7 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+		return @"29";
 	}
 	
 	[self eventTransitionPan:@"1":@"0,0"];
@@ -318,7 +318,6 @@
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
 		if(userLocation == 30){
-			if(userCharacter == 6){ return letterHelp; }
 			if(userCharacter == 1){ return letterConfused; }
 			else{ return @""; }
 		}

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#define systemDebug				1
+#define systemDebug				0
 #define systemBuild				1
 
-#define userCharacterId			4
-#define userCharacterLocation	80
+#define userCharacterId			1
+#define userCharacterLocation	29
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -26,6 +26,7 @@
 #define storageQuestPillarNestorine		14
 #define storageQuestPillarNemedique		15
 
+#define dialogIntroduction			@"AAA"
 #define dialogHaveCharacter			@"QIS" // already are the character from that wizard
 #define dialogHaveSpell				@"PIR" // already have the spell from that wizard
 #define dialogHaveCharacterNot(x)	[NSString stringWithFormat:@"GL%@",x];

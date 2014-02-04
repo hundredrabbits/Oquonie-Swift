@@ -17,6 +17,7 @@
 -(void)eventAudioToggle :(int)toggle;
 -(void)eventTranform :(int)charId;
 -(void)eventVignette :(NSString*) vignetteType;
+-(void)eventIntroduction;
 
 -(bool)eventSpellCheck :(NSString*)spellId;
 -(void)eventSpellRefresh;
