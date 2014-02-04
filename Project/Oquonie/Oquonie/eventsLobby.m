@@ -673,6 +673,20 @@
 
 # pragma mark Misc -
 
+-(NSString*)event_tree :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Default
+	return @"";
+}
+
 -(NSString*)event_null :(NSString*)option
 {
 	// Broadcast Notification

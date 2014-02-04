@@ -121,6 +121,20 @@
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Test Level",@"White",audioLobby];
+	
+	
+	worldNode[11] = @[
+	// Tiles
+	@"33",@"33",@"33",
+	@"33",@"33|block|99",@"33",
+	@"33",@"33",@"33",
+	// Walls
+	@"3",@"3",@"3",@"3",@"3",@"3",
+	// Steps
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Test Level",@"White",audioLobby];
+
 }
 
 @end
