@@ -840,8 +840,6 @@
 		if([userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){ count += 1; }
 		if([userStorageEvents[storageQuestPillarNestorine] intValue] == 1){ count += 1; }
 		
-		NSLog(@"HEY!! %d", count)
-		;
 		if(count == 0){ return @"23";}
 		if(count == 1){ return @"24";}
 		if(count == 2){ return @"25";}

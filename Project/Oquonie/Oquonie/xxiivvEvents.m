@@ -363,8 +363,6 @@
 	
 	NSLog(@"  EVENT | Spell        | Change Sprite" );
 	
-	// TODO: Create the FX sprites
-	
 	[self moveDisable:7];
 	[UIView animateWithDuration:2.0 animations:^(void){
 		// Start
@@ -407,6 +405,7 @@
 								[self roomGenerateTiles];
 								[self roomGenerateEvents];
 								[self roomClearNotifications];
+								[self moveOrder];
 								userDialogActive = 0;
 							}];
 						}];

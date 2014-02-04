@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			3
-#define userCharacterLocation	60
+#define userCharacterId			5
+#define userCharacterLocation	9
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -155,6 +155,8 @@
 
 #define MARK	CMLog(@"%s", __PRETTY_FUNCTION__);
 #define CMLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
+
+#define console(x) NSLog(x);
 
 #define test(x) NSLog(@"%@",x);
 //#define dialogString(x) [NSString stringWithFormat:@"%@",x];

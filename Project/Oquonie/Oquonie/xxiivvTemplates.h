@@ -11,7 +11,7 @@
 @interface xxiivvViewController (Templates)
 
 -(void)templateStart;
-- (void) templateRoomAnimation;
-- (NSString *) templateSpriteName :(NSString*) mod;
+-(void)templateRoomAnimation;
+-(NSString *)templateSpriteName:(NSString*)mod;
 
 @end

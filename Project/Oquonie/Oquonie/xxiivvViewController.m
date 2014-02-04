@@ -44,7 +44,7 @@
 	// Debug: remove
 	if(systemDebug == 1){
 		
-//		userStorageEvents[storageQuestRamenNecomedre] = @"1";
+		userStorageEvents[storageQuestRamenNecomedre] = @"1";
 //		userStorageEvents[storageQuestRamenNephtaline] = @"1";
 //		userStorageEvents[storageQuestRamenNeomine] = @"1";
 //		userStorageEvents[storageQuestRamenNestorine] = @"1";
