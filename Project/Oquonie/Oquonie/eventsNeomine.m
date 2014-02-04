@@ -143,21 +143,32 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
-		return @"";
+		// Must be Nephtaline
+		if(userCharacter != eventRequirement){ return @""; }
+		// Must have ramen guy
+		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
+		// If doesn't have spell already
+		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		// Have the first pillar
+		if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ return @""; }
+		// Else
+		return eventLetter;
 	}
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	// Dialog
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
-	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
-	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; }		// The ramen spell is unaccessible
-    else{
-		[self eventSpellAdd:eventSpellId:eventSpell];
-		[self eventDialog:eventDialogSpell:eventSpriteId];
-	}
+	// If the wrong character
+	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	// If without the ramen guy
+	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	// If have spell already
+	if([self eventSpellCheck:eventSpellId]){ [self eventDialog:dialogHaveCharacter:eventSpriteId]; return @""; }
+	// If doesn't have the first pillar
+	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self eventDialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
 }
@@ -177,21 +188,32 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
-		return @"";
+		// Must be Nephtaline
+		if(userCharacter != eventRequirement){ return @""; }
+		// Must have ramen guy
+		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
+		// If doesn't have spell already
+		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		// Have the first pillar
+		if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ return @""; }
+		// Else
+		return eventLetter;
 	}
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	// Dialog
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }		// Dialog: Already character
-	else if(userCharacter != eventRequirement)		{ [self eventDialog:eventWrongCharacter:eventSpriteId]; }		// If the right character
-	else if([userStorageEvents[eventRamenRequirement] intValue] < 1)	{ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; }		// The ramen spell is unaccessible
-    else{
-		[self eventSpellAdd:eventSpellId:eventSpell];
-		[self eventDialog:eventDialogSpell:eventSpriteId];
-	}
+	// If the wrong character
+	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	// If without the ramen guy
+	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	// If have spell already
+	if([self eventSpellCheck:eventSpellId]){ [self eventDialog:dialogHaveCharacter:eventSpriteId]; return @""; }
+	// If doesn't have the first pillar
+	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self eventDialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
 }
