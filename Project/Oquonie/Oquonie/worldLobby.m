@@ -100,7 +100,7 @@
 
 	worldNode[9] = @[
 	// Tiles
-	@"10|event|socket|14|l",@"27",@"10|event|null|10|l",
+	@"10|event|socket|14|l",@"27",@"10",
 	@"9",@"4",@"5",
 	@"0",@"6",@"10",
 	// Walls

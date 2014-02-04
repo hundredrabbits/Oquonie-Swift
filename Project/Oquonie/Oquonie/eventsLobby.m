@@ -214,6 +214,16 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		
+		// Nemedique pillar
+		if(userLocation == 101 && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+			return @"17";
+		}
+		// Neomine pillar
+		if(userLocation == 62 && [userStorageEvents[storageQuestPillarNeomine] intValue] == 1){
+			return @"36";
+		}
+		
 		if(userCharacter==characterNecomedre){
 			return @"gateNecomedreOpen";
 		}
@@ -221,6 +231,16 @@
 			return @"gateNecomedreClosed";
 		}
 	}
+	
+	// Condemned pillar doors: Nemedique
+	if(userLocation == 101 && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+		return @"";
+	}
+	// Condemned pillar doors: Neomine
+	if(userLocation == 62 && [userStorageEvents[storageQuestPillarNeomine] intValue] == 1){
+		return @"";
+	}
+	
 	// Warp
 	if(userCharacter == characterNecomedre){
 		if(userLocation == 62){
@@ -261,8 +281,13 @@
 		}
 		return @"";
 	}
+	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		// Nemedique pillar
+		if(userLocation == 50 && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){
+			return @"3";
+		}
 		if(userCharacter==5){
 			return @"gateNemediqueOpen";
 		}
@@ -270,16 +295,23 @@
 			return @"gateNemediqueClosed";
 		}
 	}
+	
+	// Condemned pillar doors
+	if(userLocation == 50 && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){
+		return @"";
+	}
+	
 	// Warp
 	if(userCharacter == characterNemedique){
 		if(userLocation == 50){
-			[self eventWarp:locationNephtalinePillar :@"-1,0"];
+			[self eventWarpDramatic:@"121" :@"-1,0"];
+			[self eventDialog:dialogInfoPillar:eventOwl];
 		}
 		else if(userLocation == 121){
 			[self eventWarp:@"50" :@"1,0"];
 		}
 		else if(userLocation == 9){
-			[self eventWarp:locationNemediqueEnter :@"1,0"];
+			[self eventWarp:locationNemediqueEnter :@"-1,0"];
 		}
 		else if(userLocation == 100){
 			[self eventWarp:locationNemediqueLobby :@"1,0"];
@@ -403,6 +435,8 @@
 		userStorageEvents[pillarInstanceStorageId] = @"1";
 		[self eventDialog:dialogGainPillar:eventOwl];
 		[self eventTransitionPan:pillarInstanceWarp:roomCenter];
+		// Clear Spellbook
+		userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
 	}
 	else{
 		userStorageEvents[pillarInstanceStorageId] = @"0";

@@ -264,8 +264,14 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell && userCharacter == eventRequirement){ return eventLetter; }
-		return @"";
+		// Must be Nephtaline
+		if(userCharacter != eventRequirement){ return @""; }
+		// Must have ramen guy
+		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
+		// If doesn't have spell already
+		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		// Else
+		return eventLetter;
 	}
 	
 	// Broadcast Event Sprite Change
