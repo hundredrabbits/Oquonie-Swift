@@ -167,7 +167,7 @@
 	// Steps
 	@"0",@"1|warp|94|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Warp Zone IV",@"Dark",audioNestorine];
+	@"Warp Zone IV",@"White",audioNestorine];
 
 	worldNode[93] = @[
 	// Tiles

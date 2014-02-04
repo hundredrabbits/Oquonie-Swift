@@ -368,6 +368,43 @@
 	return @"";
 }
 
+-(NSString*)event_gateEnd:(NSString*)option
+{
+	// count pillars
+	int count = 0;
+	if([userStorageEvents[storageQuestPillarNecomedre] intValue] == 1){ count += 1; }
+	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 1){ count += 1; }
+	if([userStorageEvents[storageQuestPillarNeomine] intValue] == 1){ count += 1; }
+	if([userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){ count += 1; }
+	if([userStorageEvents[storageQuestPillarNestorine] intValue] == 1){ count += 1; }
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		
+		if(count == 5){
+			return @"gateRedOpen";
+		}
+		else{
+			return @"gateRedClosed";
+		}
+	}
+	
+	if(count == 5){
+//		[self eventDialog:dialogHavePillars:eventRed];
+		[self eventWarpDramatic:@"104":@"-1,0"];
+	}
+	else{
+		[self eventDialog:dialogHavePillarsNot:eventRed];
+	}
+	
+	
+	return @"";
+}
+
 -(NSString*)event_warpLobby:(NSString*)option
 {
 	// Broadcast Notification
@@ -537,6 +574,61 @@
 // =======================
 
 # pragma mark NPCs -
+
+-(NSString*)event_redEnd :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"])		{
+		if(eventEndTimer == 1){
+			return @"1";
+		}
+		return @"";
+	}		// Broadcast Event Sprite Change
+	
+	eventEndTimer = 0;
+	
+	// Dialog
+	
+	[UIView animateWithDuration:5.0 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		self.roomContainer.alpha = 0;
+	} completion:^(BOOL finished){
+		[self eventDialog:dialogEnd1:eventRed];
+	}];
+	
+	[UIView animateWithDuration:10.5 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
+		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
+		self.parallaxBack.alpha = 0;
+		self.parallaxFront.alpha = 0;
+	} completion:^(BOOL finished){
+		[self roomClearDialog];
+		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, 1*screen.size.height+100);
+		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, 1*screen.size.height+200);
+		[UIView animateWithDuration:2.5 animations:^(void){
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+			self.parallaxBack.frame = parallaxBackOrigin;
+			self.parallaxFront.frame = parallaxFrontOrigin;
+			self.parallaxBack.alpha = 1;
+			self.parallaxFront.alpha = 1;
+		} completion:^(BOOL finished){
+			[self eventVignette:@"1"];
+			eventEndTimer = 1;
+			[self roomGenerateEvents];
+		}];
+		
+	}];
+	
+	
+	[UIView animateWithDuration:2.5 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	} completion:^(BOOL finished){
+	}];
+	
+	// Return storage Id
+	return @"";
+}
 
 -(NSString*)event_owlSave :(NSString*)option
 {

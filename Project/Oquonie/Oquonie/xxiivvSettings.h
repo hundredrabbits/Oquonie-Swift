@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			4
-#define userCharacterLocation	5
+#define userCharacterId			5
+#define userCharacterLocation	100
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -35,6 +35,12 @@
 #define dialogGainPillar			@"RQY"
 #define dialogGainRamen				@"RQO"
 #define dialogHaveRamenNot			@"OQT"
+#define dialogHavePillars			@"UUU"
+#define dialogHavePillarsNot		@"UUU"
+
+#define dialogEnd1					@"UUU"
+#define dialogEnd2					@"UUU"
+#define dialogEnd3					@"UUU"
 
 #define dialogSharkHelp				@"QJT"
 #define dialogSharkTransform		@"SID"
@@ -67,6 +73,7 @@
 #define audioPillar				@"Pillar"
 #define audioLobby				@"Town"
 #define audioWarp				@"Warp"
+#define audioRed				@"Red"
 
 #define characterNecomedre		1
 #define characterNephtaline		2
