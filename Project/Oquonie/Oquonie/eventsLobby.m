@@ -681,6 +681,21 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		
+		// count pillars
+		int count = 0;
+		if(userStorageEvents[storageQuestPillarNecomedre]){ count += 1; }
+		if(userStorageEvents[storageQuestPillarNemedique]){ count += 1; }
+		if(userStorageEvents[storageQuestPillarNeomine]){ count += 1; }
+		if(userStorageEvents[storageQuestPillarNephtaline]){ count += 1; }
+		if(userStorageEvents[storageQuestPillarNestorine]){ count += 1; }
+		
+		if(count == 0){ return @"23";}
+		if(count == 1){ return @"24";}
+		if(count == 2){ return @"25";}
+		if(count == 3){ return @"26";}
+		if(count == 4){ return @"27";}
+		
 		return @"";
 	}
 	// Default

@@ -55,8 +55,10 @@
 		
 		self.debugLocation.hidden = NO;
 	}
+	else{
+		[self eventIntroduction];
+	}
 	
-	[self eventIntroduction];
 	
 }
 

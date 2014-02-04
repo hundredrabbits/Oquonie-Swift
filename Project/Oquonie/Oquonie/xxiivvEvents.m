@@ -401,6 +401,8 @@
 -(void)eventIntroduction
 {
 	NSLog(@"  EVENT | Pan          | Panning In");
+	[self moveDisable:2.5];
+	
 	self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, -1*screen.size.height);
 	self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, -1*screen.size.height);
 	self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);

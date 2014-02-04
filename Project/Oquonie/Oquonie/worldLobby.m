@@ -28,7 +28,7 @@
 	// Tiles
 	@"1",@"4",@"1",
 	@"6",@"5",@"1|event|ramenLobby|7|l",
-	@"1",@"1",@"1",
+	@"1",@"1",@"1|block|24",
 	// Walls
 	@"16|event|map",@"12|warp|3|-1,0",@"19",@"25",@"25",@"25",
 	// Steps
@@ -102,11 +102,11 @@
 	// Tiles
 	@"10|event|socket|14|l",@"27",@"10|event|null|10|l",
 	@"9",@"4",@"5",
-	@"0",@"10",@"10",
+	@"0",@"6",@"10",
 	// Walls
 	@"18",@"9|event|gateNemedique",@"18",@"3",@"13|warp|5|0,-1",@"3",
 	// Steps
-	@"0",@"0",@"0",@"0",@"0",@"0",
+	@"0",@"0",@"0",@"0",@"7|warp|11|1,0",@"0",
 	// Name,Background,Audio
 	@"Lobby Nemedique",@"White",audioLobby];
 
@@ -122,18 +122,17 @@
 	// Name,Background,Audio
 	@"Test Level",@"White",audioLobby];
 	
-	
 	worldNode[11] = @[
 	// Tiles
-	@"33",@"33",@"33",
-	@"33",@"33|block|99",@"33",
-	@"33",@"33",@"33",
+	@"4",@"5",@"6",
+	@"5",@"33|event|tree|23|l",@"4",
+	@"4",@"6",@"5",
 	// Walls
-	@"3",@"3",@"3",@"3",@"3",@"3",
+	@"36",@"13|warp|9|-1,0",@"36",@"3",@"37",@"3",
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Test Level",@"White",audioLobby];
+	@"Test Level",@"White",audioPillar];
 
 }
 
