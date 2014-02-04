@@ -91,6 +91,38 @@
 	[self audioEffectPlayer:@"warp"];
 }
 
+- (void)eventWarpDramatic :(NSString*)nodeId :(NSString*)eventData
+{
+	NSLog(@"> EVENT | Warp Drama   | Node.%@",nodeId );
+	
+	NSArray* array = [eventData componentsSeparatedByString: @","];
+	int x = [[array objectAtIndex: 0] intValue];
+	int y = [[array objectAtIndex: 1] intValue];
+	
+	self.userPlayerChar.alpha = 0;
+	
+	userPositionX = x;
+	userPositionY = y;
+	userLocation = [nodeId intValue];
+	self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+	
+	[self moveDisable:1.3];
+	
+	[UIView beginAnimations: @"Fade In" context:nil];
+	[UIView setAnimationDuration:1];
+	self.userPlayerChar.alpha = 1;
+	[UIView commitAnimations];
+	
+	[self moveAnimation];
+	
+	[self roomStart];
+	[self templateRoomAnimation];
+	[self moveParallax];
+	[self moveOrder];
+	
+	[self audioEffectPlayer:@"warp"];
+}
+
 - (void)eventDialog :(NSString*)dialog :(NSString*)characterId
 {
 	NSLog(@"  EVENT | Dialog       | Letters %@",dialog);

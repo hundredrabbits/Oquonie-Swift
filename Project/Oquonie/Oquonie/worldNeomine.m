@@ -135,15 +135,15 @@
 	
 	worldNode[70] = @[
 	// Tiles
-	@"1",@"1",@"1",
-	@"1",@"7|event|warpLobby",@"1",
-	@"1",@"1",@"1",
+	@"39",@"40",@"39",
+	@"40",@"7|event|warpLobby",@"40",
+	@"39",@"40",@"39",
 	// Walls
-	@"0",@"0",@"0",@"0",@"0",@"0",
+	@"29|warp|70|1,0",@"29|warp|70|1,1",@"29|warp|70|1,-1",@"29|warp|70|0,1",@"29|warp|70|-1,1",@"29|warp|70|1,1",
 	// Steps
-	@"0",@"3|event|gateNestorine",@"0",@"0",@"0",@"0",
+	@"0",@"7|event|gateNestorine",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Nestorine Warp",@"Black",audioNeomine];
+	@"Warp Zone III",@"Black",audioWarp];
 	
 	worldNode[71] = @[
 	// Tiles

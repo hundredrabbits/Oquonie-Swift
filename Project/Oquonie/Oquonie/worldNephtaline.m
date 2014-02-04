@@ -267,15 +267,15 @@
 	
 	worldNode[59] = @[
 	// Tiles
-	@"2",@"2",@"2",
-	@"2",@"7|event|warpLobby",@"2",
-	@"2",@"2",@"2",
+	@"32",@"29",@"32",
+	@"29",@"7|event|warpLobby",@"29",
+	@"32",@"5",@"32",
 	// Walls
-	@"3",@"3",@"3",@"3",@"3",@"3",
+	@"3",@"2",@"3",@"3",@"2",@"3",
 	// Steps
 	@"0",@"0",@"0",@"0",@"4|event|gateNeomine",@"0",
 	// Name,Background,Audio
-	@"Nephtaline Lobby 2",@"White",audioNephtaline];
+	@"Warp Zone II",@"White",audioWarp];
 	
 	worldNode[121] = @[
 	// Tiles

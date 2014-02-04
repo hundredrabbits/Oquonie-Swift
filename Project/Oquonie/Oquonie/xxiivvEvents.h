@@ -11,6 +11,7 @@
 @interface xxiivvViewController (Events)
 
 -(void)eventWarp :(NSString*)nodeId :(NSString*)eventData;
+- (void)eventWarpDramatic :(NSString*)nodeId :(NSString*)eventData;
 -(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData;
 -(void)eventDialog :(NSString*)dialog :(NSString*)characterId;
 -(void)eventSpellAdd :(NSString*)spellId :(int)spellType;

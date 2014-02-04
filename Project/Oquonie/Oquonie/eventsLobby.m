@@ -78,7 +78,7 @@
 	// Warp
 	if(userCharacter == characterNephtaline){
 		if(userLocation == 38){
-			[self eventWarp:@"39" :@"0,-1"];
+			[self eventWarpDramatic:@"39" :@"0,-1"];
 		}
 		else if(userLocation == 39){
 			[self eventWarp:@"38" :@"0,1"];
@@ -139,7 +139,7 @@
 			[self eventWarp:@"34" :@"1,1"];
 		}
 		else if(userLocation == 58){
-			[self eventWarp:@"59" :@"-1,0"];
+			[self eventWarpDramatic:@"59" :@"-1,0"];
 		}
 		else if(userLocation == 59){
 			[self eventWarp:@"58" :@"1,0"];
@@ -174,11 +174,11 @@
 	}
 	// Warp
 	if(userCharacter == characterNestorine){
-		if(userLocation == [locationNestorineLobby intValue]){
-			[self eventWarp:locationNestorineEnter :@"0,-1"];
+		if(userLocation == 7){
+			[self eventWarpDramatic:@"96" :@"0,-1"];
 		}
-		else if(userLocation == [locationNestorineEnter intValue]){
-			[self eventWarp:locationNestorineLobby:@"0,1"];
+		else if(userLocation == 96){
+			[self eventWarp:@"7":@"0,1"];
 		}
 		else if(userLocation == 34){
 			[self eventWarp:@"120" :@"-1,0"];
@@ -187,7 +187,10 @@
 			[self eventWarp:@"34":@"1,0"];
 		}
 		else if(userLocation == 69){
-			[self eventWarp:@"70":@"0,-1"];
+			[self eventWarpDramatic:@"70":@"0,-1"];
+		}
+		else if(userLocation == 70){
+			[self eventWarp:@"69":@"0,1"];
 		}
 	}
 	else{

@@ -243,15 +243,15 @@
 
 	worldNode[39] = @[
 	// Tiles
-	@"4",@"4",@"4",
-	@"13",@"7|event|warpLobby",@"4",
-	@"4",@"4",@"4",
+	@"33",@"33",@"4",
+	@"18",@"7|event|warpLobby",@"33",
+	@"5",@"33",@"33",
 	// Walls
-	@"26",@"26",@"26",@"19",@"19",@"19",
+	@"26",@"19",@"36",@"36",@"19",@"19",
 	// Steps
-	@"0",@"6|warp|38|0,1",@"0",@"0",@"0",@"0",
+	@"0",@"7|warp|38|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Street End",@"White",audioNecomedre];
+	@"Warp Zone I",@"White",audioWarp];
 	
 	worldNode[120] = @[
 	// Tiles
