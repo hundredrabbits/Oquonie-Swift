@@ -44,14 +44,20 @@
 	// Debug: remove
 	if(systemDebug == 1){
 		
-//		userStorageEvents[storageQuestRamenNecomedre] = @"1";
-//		userStorageEvents[storageQuestRamenNephtaline] = @"1";
-//		userStorageEvents[storageQuestRamenNeomine] = @"1";
-//		userStorageEvents[storageQuestRamenNestorine] = @"1";
-//		userStorageEvents[storageQuestRamenNemedique] = @"1";
+		userStorageEvents[storageQuestRamenNecomedre] = @"1";
+		userStorageEvents[storageQuestRamenNephtaline] = @"1";
+		userStorageEvents[storageQuestRamenNeomine] = @"1";
+		userStorageEvents[storageQuestRamenNestorine] = @"1";
+		userStorageEvents[storageQuestRamenNemedique] = @"1";
 		
-//		userSpellbook[0] = @[@"test1",@"2"];
-//		userSpellbook[1] = @[@"test2",@"2"];
+		userStorageEvents[storageQuestPillarNestorine] = @"1";
+		userStorageEvents[storageQuestPillarNecomedre] = @"1";
+		userStorageEvents[storageQuestPillarNemedique] = @"1";
+		userStorageEvents[storageQuestPillarNephtaline] = @"1";
+		userStorageEvents[storageQuestPillarNeomine] = @"1";
+		
+//		userSpellbook[0] = @[@"test1",@"4"];
+//		userSpellbook[1] = @[@"test2",@"4"];
 		
 		self.debugLocation.hidden = NO;
 	}

@@ -517,6 +517,8 @@
 		03DF52D218A0BDD3008C514B /* event.26.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DF52C818A0BDD3008C514B /* event.26.l.3.png */; };
 		03DF52D318A0BDD3008C514B /* event.27.l.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DF52C918A0BDD3008C514B /* event.27.l.2.png */; };
 		03DF52D418A0BDD3008C514B /* event.27.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DF52CA18A0BDD3008C514B /* event.27.l.3.png */; };
+		03DF52D718A0CB5F008C514B /* blocker.25.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DF52D518A0CB5F008C514B /* blocker.25.png */; };
+		03DF52D818A0CB5F008C514B /* blocker.26.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DF52D618A0CB5F008C514B /* blocker.26.png */; };
 		03EC37C1188181AF00D74DE1 /* event.14.l.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03EC37B9188181AF00D74DE1 /* event.14.l.1.png */; };
 		03EC37C2188181AF00D74DE1 /* event.14.l.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03EC37BA188181AF00D74DE1 /* event.14.l.2.png */; };
 		03EC37C3188181AF00D74DE1 /* event.14.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03EC37BB188181AF00D74DE1 /* event.14.l.3.png */; };
@@ -1077,6 +1079,8 @@
 		03DF52C818A0BDD3008C514B /* event.26.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.26.l.3.png; path = en.assets/event.26.l.3.png; sourceTree = "<group>"; };
 		03DF52C918A0BDD3008C514B /* event.27.l.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.27.l.2.png; path = en.assets/event.27.l.2.png; sourceTree = "<group>"; };
 		03DF52CA18A0BDD3008C514B /* event.27.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.27.l.3.png; path = en.assets/event.27.l.3.png; sourceTree = "<group>"; };
+		03DF52D518A0CB5F008C514B /* blocker.25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.25.png; path = en.assets/blocker.25.png; sourceTree = "<group>"; };
+		03DF52D618A0CB5F008C514B /* blocker.26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.26.png; path = en.assets/blocker.26.png; sourceTree = "<group>"; };
 		03EC37B9188181AF00D74DE1 /* event.14.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.14.l.1.png; path = en.assets/event.14.l.1.png; sourceTree = "<group>"; };
 		03EC37BA188181AF00D74DE1 /* event.14.l.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.14.l.2.png; path = en.assets/event.14.l.2.png; sourceTree = "<group>"; };
 		03EC37BB188181AF00D74DE1 /* event.14.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.14.l.3.png; path = en.assets/event.14.l.3.png; sourceTree = "<group>"; };
@@ -1811,9 +1815,10 @@
 		03983BF617C1AA8D00C89446 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				038BA0DB188B849100A3ED4B /* event.19.r.1.png */,
-				035DAABA188A9650007127F5 /* event.19.r.2.png */,
-				035DAABB188A9650007127F5 /* event.19.r.3.png */,
+				03DF52B218A09460008C514B /* Event 22 - Sound */,
+				03DF52B318A09475008C514B /* Event 21 - Intercom off */,
+				03DF52B418A09485008C514B /* Event 20 - Intercom on */,
+				03DF52D918A0D205008C514B /* Event 19 - Stool */,
 				0304D7BE186CFD0000ED6E94 /* Event1 - Owl */,
 				0304D7B6186CFCB200ED6E94 /* Event2 - Necomedre */,
 				0304D7B7186CFCBB00ED6E94 /* Event3 - Nephtaline */,
@@ -1935,6 +1940,8 @@
 		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
+				03DF52D518A0CB5F008C514B /* blocker.25.png */,
+				03DF52D618A0CB5F008C514B /* blocker.26.png */,
 				03DF52C118A0BDD3008C514B /* event.23.l.2.png */,
 				03DF52C218A0BDD3008C514B /* event.23.l.3.png */,
 				03DF52C318A0BDD3008C514B /* event.24.l.2.png */,
@@ -1951,9 +1958,6 @@
 				03DF52B718A0BB1B008C514B /* event.25.l.1.png */,
 				03DF52B818A0BB1B008C514B /* event.26.l.1.png */,
 				03DF52B918A0BB1B008C514B /* event.27.l.1.png */,
-				03DF52B218A09460008C514B /* Event 22 - Sound */,
-				03DF52B318A09475008C514B /* Event 21 - Intercom off */,
-				03DF52B418A09485008C514B /* Event 20 - Intercom on */,
 				037F0265187D8BC400747E8D /* Splash */,
 				0304D7B5186CF18000ED6E94 /* Fx */,
 				038C5926185146AC005D6D35 /* Letters */,
@@ -2058,6 +2062,16 @@
 				037740D718987187001FDB71 /* event.20.portrait.png */,
 			);
 			name = "Event 20 - Intercom on";
+			sourceTree = "<group>";
+		};
+		03DF52D918A0D205008C514B /* Event 19 - Stool */ = {
+			isa = PBXGroup;
+			children = (
+				038BA0DB188B849100A3ED4B /* event.19.r.1.png */,
+				035DAABA188A9650007127F5 /* event.19.r.2.png */,
+				035DAABB188A9650007127F5 /* event.19.r.3.png */,
+			);
+			name = "Event 19 - Stool";
 			sourceTree = "<group>";
 		};
 		03F5C4A5187BBB3900352B8E /* Event11 - Photocopier */ = {
@@ -2207,6 +2221,7 @@
 				03CE07C8189440D7009D7003 /* tile.34.png in Resources */,
 				03DBEECC1880433D00CE6FBC /* event.12.r.2.png in Resources */,
 				03B9435B1884FB32008E834A /* event.18.r.3.png in Resources */,
+				03DF52D818A0CB5F008C514B /* blocker.26.png in Resources */,
 				03798BF31882829400C31389 /* char6.walk.r.f.1.png in Resources */,
 				03CE07C5189440D7009D7003 /* blocker.23.png in Resources */,
 				03BBFABE178A9E4E00E79C3D /* Default.png in Resources */,
@@ -2469,6 +2484,7 @@
 				03CE07CA189440D7009D7003 /* tile.36.png in Resources */,
 				03C0E676186265B3006AA0E6 /* tile.23.png in Resources */,
 				03CE0B3318944F90009D7003 /* wall.35.l.png in Resources */,
+				03DF52D718A0CB5F008C514B /* blocker.25.png in Resources */,
 				0304D789186CEE0200ED6E94 /* char4.stand.r.f.1.png in Resources */,
 				03C0E669186265B3006AA0E6 /* event.5.portrait.png in Resources */,
 				03CE0B3218944F90009D7003 /* wall.34.r.png in Resources */,

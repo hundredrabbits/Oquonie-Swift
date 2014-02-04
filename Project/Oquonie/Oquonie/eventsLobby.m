@@ -78,7 +78,7 @@
 	// Warp
 	if(userCharacter == characterNephtaline){
 		if(userLocation == 38){
-			[self eventWarpDramatic:@"39" :@"0,-1"];
+			[self eventWarp:@"39" :@"0,-1"];
 		}
 		else if(userLocation == 39){
 			[self eventWarp:@"38" :@"0,1"];
@@ -139,7 +139,7 @@
 			[self eventWarp:@"34" :@"1,1"];
 		}
 		else if(userLocation == 58){
-			[self eventWarpDramatic:@"59" :@"-1,0"];
+			[self eventWarp:@"59" :@"-1,0"];
 		}
 		else if(userLocation == 59){
 			[self eventWarp:@"58" :@"1,0"];
@@ -177,8 +177,8 @@
 		if(userLocation == 7){
 			[self eventWarpDramatic:@"96" :@"0,-1"];
 		}
-		else if(userLocation == 96){
-			[self eventWarp:@"7":@"0,1"];
+		else if(userLocation == [locationNestorineEnter intValue]){
+			[self eventWarp:locationNestorineLobby:@"0,1"];
 		}
 		else if(userLocation == 34){
 			[self eventWarp:@"120" :@"-1,0"];
@@ -190,7 +190,7 @@
 			[self eventWarpDramatic:@"70":@"0,-1"];
 		}
 		else if(userLocation == 70){
-			[self eventWarp:@"69":@"0,1"];
+			[self eventWarp:@"69":@"0,-1"];
 		}
 	}
 	else{
@@ -286,7 +286,7 @@
 		}
 		// Nestorine
 		else if(userLocation == 94){
-			[self eventWarp:@"92":@"0,-1"];
+			[self eventWarpDramatic:@"92":@"0,-1"];
 		}
 		else if(userLocation == 92){
 			[self eventWarp:@"94" :@"1,0"];
@@ -687,17 +687,19 @@
 		
 		// count pillars
 		int count = 0;
-		if(userStorageEvents[storageQuestPillarNecomedre]){ count += 1; }
-		if(userStorageEvents[storageQuestPillarNemedique]){ count += 1; }
-		if(userStorageEvents[storageQuestPillarNeomine]){ count += 1; }
-		if(userStorageEvents[storageQuestPillarNephtaline]){ count += 1; }
-		if(userStorageEvents[storageQuestPillarNestorine]){ count += 1; }
+		if([userStorageEvents[storageQuestPillarNecomedre] intValue] == 1){ count += 1; }
+		if([userStorageEvents[storageQuestPillarNemedique] intValue] == 1){ count += 1; }
+		if([userStorageEvents[storageQuestPillarNeomine] intValue] == 1){ count += 1; }
+		if([userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){ count += 1; }
+		if([userStorageEvents[storageQuestPillarNestorine] intValue] == 1){ count += 1; }
 		
+		NSLog(@"HEY!! %d", count)
+		;
 		if(count == 0){ return @"23";}
 		if(count == 1){ return @"24";}
 		if(count == 2){ return @"25";}
 		if(count == 3){ return @"26";}
-		if(count == 4){ return @"27";}
+		if(count == 5){ return @"26";}
 		
 		return @"";
 	}
