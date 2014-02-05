@@ -50,8 +50,8 @@
 		userStorageEvents[storageQuestRamenNestorine] = @"1";
 		userStorageEvents[storageQuestRamenNemedique] = @"1";
 		
-		userGameCompleted = 1;
-		worldBackground = @"blue";
+//		userGameCompleted = 1;
+		worldBackground = @"splash";
 //
 //		userStorageEvents[storageQuestPillarNestorine] = @"1";
 //		userStorageEvents[storageQuestPillarNecomedre] = @"1";

@@ -145,7 +145,7 @@
 	@"21",@"2",@"2",
 	@"21",@"21",@"2|block|4",
 	// Walls
-	@"20",@"19|warp|31|-1,0",@"19",@"17",@"27|event|tutorialRedDoor",@"17",
+	@"20",@"19|warp|31|-1,0",@"19",@"17",@"40|event|tutorialRedDoor",@"17",
 	// Steps
 	@"0",@"3",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio

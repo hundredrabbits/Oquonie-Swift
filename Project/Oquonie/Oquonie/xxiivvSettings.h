@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			3
-#define userCharacterLocation	33
+#define userCharacterId			1
+#define userCharacterLocation	30
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -72,6 +72,7 @@
 #define audioQuiet				@"Quiet"
 #define audioPillar				@"Pillar"
 #define audioLobby				@"Town"
+#define audioLobby2				@"Town2"
 #define audioWarp				@"Warp"
 #define audioRed				@"Red"
 
@@ -95,6 +96,7 @@
 #define eventTutorial			@"12"
 #define eventRed				@"10"
 #define eventRamenSeat			@"18"
+#define eventNepturne			@"28"
 
 #define eventPillarCollectible	@"15"
 #define eventPillarSocket		@"14"

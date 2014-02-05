@@ -590,7 +590,7 @@
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		self.roomContainer.alpha = 0;
 	} completion:^(BOOL finished){
-		[self eventDialog:dialogEnd1:eventRed];
+		[self eventDialog:dialogEnd1:eventNepturne];
 	}];
 	
 	[UIView animateWithDuration:10.5 animations:^(void){
