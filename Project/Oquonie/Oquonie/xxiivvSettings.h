@@ -10,7 +10,7 @@
 #define systemBuild				1
 
 #define userCharacterId			1
-#define userCharacterLocation	30
+#define userCharacterLocation	3
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -63,18 +63,17 @@
 #define dialogConfusion3			@"UUU"
 #define dialogConfusion4			@"UUU"
 
-#define audioQuiet				@"Quiet"
-#define audioNecomedre			@"Necomedre"
-#define audioNephtaline			@"Nephtaline"
-#define audioNeomine			@"Neomine"
-#define audioNestorine			@"Nestorine"
-#define audioNemedique			@"Nemedique"
-#define audioQuiet				@"Quiet"
-#define audioPillar				@"Pillar"
-#define audioLobby				@"Town"
-#define audioLobby2				@"Town2"
-#define audioWarp				@"Warp"
-#define audioRed				@"Red"
+#define audioNecomedre			@"necomedre"
+#define audioNephtaline			@"nephtaline"
+#define audioNeomine			@"neomine"
+#define audioNestorine			@"nestorine"
+#define audioNemedique			@"nemedique"
+#define audioNepturne			@"nepturne"
+#define audioLobby				@"town"
+#define audioLobby2				@"town2"
+#define audioQuiet				@"quiet"
+#define audioPillar				@"pillartree"
+#define audioWarp				@"warp"
 
 #define characterNecomedre		1
 #define characterNephtaline		2
