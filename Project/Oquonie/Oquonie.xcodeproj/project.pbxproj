@@ -553,17 +553,27 @@
 		03FE0D6F18A2493500206675 /* event.29.r.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D6C18A2493500206675 /* event.29.r.1.png */; };
 		03FE0D7018A2493500206675 /* event.29.r.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D6D18A2493500206675 /* event.29.r.2.png */; };
 		03FE0D7118A2493500206675 /* event.29.r.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D6E18A2493500206675 /* event.29.r.3.png */; };
-		03FE0D7E18A25A5600206675 /* necomedre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7318A25A5600206675 /* necomedre.mp3 */; };
-		03FE0D7F18A25A5600206675 /* nemedique.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7418A25A5600206675 /* nemedique.mp3 */; };
-		03FE0D8018A25A5600206675 /* neomine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7518A25A5600206675 /* neomine.mp3 */; };
-		03FE0D8118A25A5600206675 /* nephtaline.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7618A25A5600206675 /* nephtaline.mp3 */; };
-		03FE0D8218A25A5600206675 /* nepturne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7718A25A5600206675 /* nepturne.mp3 */; };
-		03FE0D8318A25A5600206675 /* nestorine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7818A25A5600206675 /* nestorine.mp3 */; };
-		03FE0D8418A25A5600206675 /* pillartree.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7918A25A5600206675 /* pillartree.mp3 */; };
-		03FE0D8518A25A5600206675 /* quiet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7A18A25A5600206675 /* quiet.mp3 */; };
-		03FE0D8618A25A5600206675 /* town1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7B18A25A5600206675 /* town1.mp3 */; };
-		03FE0D8718A25A5600206675 /* town2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7C18A25A5600206675 /* town2.mp3 */; };
-		03FE0D8818A25A5600206675 /* warp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D7D18A25A5600206675 /* warp.mp3 */; };
+		03FE0D9C18A26BE500206675 /* necomedre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D8F18A26BE400206675 /* necomedre.mp3 */; };
+		03FE0D9D18A26BE500206675 /* nemedique.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9018A26BE400206675 /* nemedique.mp3 */; };
+		03FE0D9E18A26BE500206675 /* neomine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9118A26BE400206675 /* neomine.mp3 */; };
+		03FE0D9F18A26BE500206675 /* nephtaline.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9218A26BE500206675 /* nephtaline.mp3 */; };
+		03FE0DA018A26BE500206675 /* nepturne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9318A26BE500206675 /* nepturne.mp3 */; };
+		03FE0DA118A26BE500206675 /* nestorine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9418A26BE500206675 /* nestorine.mp3 */; };
+		03FE0DA218A26BE500206675 /* pillartree.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9518A26BE500206675 /* pillartree.mp3 */; };
+		03FE0DA318A26BE500206675 /* quiet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9618A26BE500206675 /* quiet.mp3 */; };
+		03FE0DA418A26BE500206675 /* secret.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9718A26BE500206675 /* secret.mp3 */; };
+		03FE0DA518A26BE500206675 /* town1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9818A26BE500206675 /* town1.mp3 */; };
+		03FE0DA618A26BE500206675 /* town2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9918A26BE500206675 /* town2.mp3 */; };
+		03FE0DA718A26BE500206675 /* town3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9A18A26BE500206675 /* town3.mp3 */; };
+		03FE0DA818A26BE500206675 /* warp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9B18A26BE500206675 /* warp.mp3 */; };
+		03FE0DB118A2764500206675 /* sfx_ambienttoggleoff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DA918A2764500206675 /* sfx_ambienttoggleoff.wav */; };
+		03FE0DB218A2764500206675 /* sfx_ambienttoggleon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAA18A2764500206675 /* sfx_ambienttoggleon.wav */; };
+		03FE0DB318A2764500206675 /* sfx_bump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAB18A2764500206675 /* sfx_bump.wav */; };
+		03FE0DB418A2764500206675 /* sfx_click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAC18A2764500206675 /* sfx_click1.wav */; };
+		03FE0DB518A2764500206675 /* sfx_dialogclose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAD18A2764500206675 /* sfx_dialogclose.wav */; };
+		03FE0DB618A2764500206675 /* sfx_dialogopen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAE18A2764500206675 /* sfx_dialogopen.wav */; };
+		03FE0DB718A2764500206675 /* sfx_doorlocked.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAF18A2764500206675 /* sfx_doorlocked.wav */; };
+		03FE0DB818A2764500206675 /* sfx_walk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DB018A2764500206675 /* sfx_walk.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1138,17 +1148,27 @@
 		03FE0D6C18A2493500206675 /* event.29.r.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.29.r.1.png; path = en.assets/event.29.r.1.png; sourceTree = "<group>"; };
 		03FE0D6D18A2493500206675 /* event.29.r.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.29.r.2.png; path = en.assets/event.29.r.2.png; sourceTree = "<group>"; };
 		03FE0D6E18A2493500206675 /* event.29.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.29.r.3.png; path = en.assets/event.29.r.3.png; sourceTree = "<group>"; };
-		03FE0D7318A25A5600206675 /* necomedre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = necomedre.mp3; path = en.sounds/necomedre.mp3; sourceTree = "<group>"; };
-		03FE0D7418A25A5600206675 /* nemedique.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nemedique.mp3; path = en.sounds/nemedique.mp3; sourceTree = "<group>"; };
-		03FE0D7518A25A5600206675 /* neomine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = neomine.mp3; path = en.sounds/neomine.mp3; sourceTree = "<group>"; };
-		03FE0D7618A25A5600206675 /* nephtaline.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nephtaline.mp3; path = en.sounds/nephtaline.mp3; sourceTree = "<group>"; };
-		03FE0D7718A25A5600206675 /* nepturne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nepturne.mp3; path = en.sounds/nepturne.mp3; sourceTree = "<group>"; };
-		03FE0D7818A25A5600206675 /* nestorine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nestorine.mp3; path = en.sounds/nestorine.mp3; sourceTree = "<group>"; };
-		03FE0D7918A25A5600206675 /* pillartree.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pillartree.mp3; path = en.sounds/pillartree.mp3; sourceTree = "<group>"; };
-		03FE0D7A18A25A5600206675 /* quiet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = quiet.mp3; path = en.sounds/quiet.mp3; sourceTree = "<group>"; };
-		03FE0D7B18A25A5600206675 /* town1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = town1.mp3; path = en.sounds/town1.mp3; sourceTree = "<group>"; };
-		03FE0D7C18A25A5600206675 /* town2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = town2.mp3; path = en.sounds/town2.mp3; sourceTree = "<group>"; };
-		03FE0D7D18A25A5600206675 /* warp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = warp.mp3; path = en.sounds/warp.mp3; sourceTree = "<group>"; };
+		03FE0D8F18A26BE400206675 /* necomedre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = necomedre.mp3; path = en.sounds/necomedre.mp3; sourceTree = "<group>"; };
+		03FE0D9018A26BE400206675 /* nemedique.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nemedique.mp3; path = en.sounds/nemedique.mp3; sourceTree = "<group>"; };
+		03FE0D9118A26BE400206675 /* neomine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = neomine.mp3; path = en.sounds/neomine.mp3; sourceTree = "<group>"; };
+		03FE0D9218A26BE500206675 /* nephtaline.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nephtaline.mp3; path = en.sounds/nephtaline.mp3; sourceTree = "<group>"; };
+		03FE0D9318A26BE500206675 /* nepturne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nepturne.mp3; path = en.sounds/nepturne.mp3; sourceTree = "<group>"; };
+		03FE0D9418A26BE500206675 /* nestorine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nestorine.mp3; path = en.sounds/nestorine.mp3; sourceTree = "<group>"; };
+		03FE0D9518A26BE500206675 /* pillartree.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pillartree.mp3; path = en.sounds/pillartree.mp3; sourceTree = "<group>"; };
+		03FE0D9618A26BE500206675 /* quiet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = quiet.mp3; path = en.sounds/quiet.mp3; sourceTree = "<group>"; };
+		03FE0D9718A26BE500206675 /* secret.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = secret.mp3; path = en.sounds/secret.mp3; sourceTree = "<group>"; };
+		03FE0D9818A26BE500206675 /* town1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = town1.mp3; path = en.sounds/town1.mp3; sourceTree = "<group>"; };
+		03FE0D9918A26BE500206675 /* town2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = town2.mp3; path = en.sounds/town2.mp3; sourceTree = "<group>"; };
+		03FE0D9A18A26BE500206675 /* town3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = town3.mp3; path = en.sounds/town3.mp3; sourceTree = "<group>"; };
+		03FE0D9B18A26BE500206675 /* warp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = warp.mp3; path = en.sounds/warp.mp3; sourceTree = "<group>"; };
+		03FE0DA918A2764500206675 /* sfx_ambienttoggleoff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_ambienttoggleoff.wav; path = en.sounds/sfx_ambienttoggleoff.wav; sourceTree = "<group>"; };
+		03FE0DAA18A2764500206675 /* sfx_ambienttoggleon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_ambienttoggleon.wav; path = en.sounds/sfx_ambienttoggleon.wav; sourceTree = "<group>"; };
+		03FE0DAB18A2764500206675 /* sfx_bump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_bump.wav; path = en.sounds/sfx_bump.wav; sourceTree = "<group>"; };
+		03FE0DAC18A2764500206675 /* sfx_click1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_click1.wav; path = en.sounds/sfx_click1.wav; sourceTree = "<group>"; };
+		03FE0DAD18A2764500206675 /* sfx_dialogclose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_dialogclose.wav; path = en.sounds/sfx_dialogclose.wav; sourceTree = "<group>"; };
+		03FE0DAE18A2764500206675 /* sfx_dialogopen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_dialogopen.wav; path = en.sounds/sfx_dialogopen.wav; sourceTree = "<group>"; };
+		03FE0DAF18A2764500206675 /* sfx_doorlocked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_doorlocked.wav; path = en.sounds/sfx_doorlocked.wav; sourceTree = "<group>"; };
+		03FE0DB018A2764500206675 /* sfx_walk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_walk.wav; path = en.sounds/sfx_walk.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1741,6 +1761,7 @@
 		038BA0E9188B849B00A3ED4B /* en.sounds */ = {
 			isa = PBXGroup;
 			children = (
+				03FE0DB918A2765300206675 /* Sound Effects */,
 				038BA0EA188B84A600A3ED4B /* Soundtrack */,
 			);
 			name = en.sounds;
@@ -1749,17 +1770,19 @@
 		038BA0EA188B84A600A3ED4B /* Soundtrack */ = {
 			isa = PBXGroup;
 			children = (
-				03FE0D7318A25A5600206675 /* necomedre.mp3 */,
-				03FE0D7418A25A5600206675 /* nemedique.mp3 */,
-				03FE0D7518A25A5600206675 /* neomine.mp3 */,
-				03FE0D7618A25A5600206675 /* nephtaline.mp3 */,
-				03FE0D7718A25A5600206675 /* nepturne.mp3 */,
-				03FE0D7818A25A5600206675 /* nestorine.mp3 */,
-				03FE0D7918A25A5600206675 /* pillartree.mp3 */,
-				03FE0D7A18A25A5600206675 /* quiet.mp3 */,
-				03FE0D7B18A25A5600206675 /* town1.mp3 */,
-				03FE0D7C18A25A5600206675 /* town2.mp3 */,
-				03FE0D7D18A25A5600206675 /* warp.mp3 */,
+				03FE0D8F18A26BE400206675 /* necomedre.mp3 */,
+				03FE0D9018A26BE400206675 /* nemedique.mp3 */,
+				03FE0D9118A26BE400206675 /* neomine.mp3 */,
+				03FE0D9218A26BE500206675 /* nephtaline.mp3 */,
+				03FE0D9318A26BE500206675 /* nepturne.mp3 */,
+				03FE0D9418A26BE500206675 /* nestorine.mp3 */,
+				03FE0D9518A26BE500206675 /* pillartree.mp3 */,
+				03FE0D9618A26BE500206675 /* quiet.mp3 */,
+				03FE0D9718A26BE500206675 /* secret.mp3 */,
+				03FE0D9818A26BE500206675 /* town1.mp3 */,
+				03FE0D9918A26BE500206675 /* town2.mp3 */,
+				03FE0D9A18A26BE500206675 /* town3.mp3 */,
+				03FE0D9B18A26BE500206675 /* warp.mp3 */,
 			);
 			name = Soundtrack;
 			sourceTree = "<group>";
@@ -2258,6 +2281,21 @@
 			name = "Event23 - tree";
 			sourceTree = "<group>";
 		};
+		03FE0DB918A2765300206675 /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				03FE0DA918A2764500206675 /* sfx_ambienttoggleoff.wav */,
+				03FE0DAA18A2764500206675 /* sfx_ambienttoggleon.wav */,
+				03FE0DAB18A2764500206675 /* sfx_bump.wav */,
+				03FE0DAC18A2764500206675 /* sfx_click1.wav */,
+				03FE0DAD18A2764500206675 /* sfx_dialogclose.wav */,
+				03FE0DAE18A2764500206675 /* sfx_dialogopen.wav */,
+				03FE0DAF18A2764500206675 /* sfx_doorlocked.wav */,
+				03FE0DB018A2764500206675 /* sfx_walk.wav */,
+			);
+			name = "Sound Effects";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2323,6 +2361,7 @@
 				0381CC7B18456236003FB458 /* wall.16.r.png in Resources */,
 				035E6C16184B34AC00265870 /* wall.18.r.png in Resources */,
 				03CE07AF1893EF8A009D7003 /* char1.warp.l.f.1.png in Resources */,
+				03FE0DA818A26BE500206675 /* warp.mp3 in Resources */,
 				036A100A18099F720074F6F1 /* tile.E.png in Resources */,
 				0304D7A5186CEE0200ED6E94 /* event.7.l.2.png in Resources */,
 				03CE079F18937C31009D7003 /* wall.gateNeomineClosed.r.png in Resources */,
@@ -2337,10 +2376,12 @@
 				03F5C490187BB8C700352B8E /* letterSpellA.png in Resources */,
 				0304D797186CEE0200ED6E94 /* event.3.r.1.png in Resources */,
 				037740F8189872B5001FDB71 /* event.21.r.2.png in Resources */,
+				03FE0DA718A26BE500206675 /* town3.mp3 in Resources */,
 				03CE07C8189440D7009D7003 /* tile.34.png in Resources */,
 				03DBEECC1880433D00CE6FBC /* event.12.r.2.png in Resources */,
 				03B9435B1884FB32008E834A /* event.18.r.3.png in Resources */,
 				03DF52D818A0CB5F008C514B /* blocker.26.png in Resources */,
+				03FE0DB318A2764500206675 /* sfx_bump.wav in Resources */,
 				03798BF31882829400C31389 /* char6.walk.r.f.1.png in Resources */,
 				03CE07C5189440D7009D7003 /* blocker.23.png in Resources */,
 				03BBFABE178A9E4E00E79C3D /* Default.png in Resources */,
@@ -2349,6 +2390,7 @@
 				03798BEC1882829400C31389 /* char6.stand.r.f.1.png in Resources */,
 				03B943491884F863008E834A /* letterSpellX.png in Resources */,
 				036A100518099F720074F6F1 /* wall.11.l.png in Resources */,
+				03FE0DA418A26BE500206675 /* secret.mp3 in Resources */,
 				03834E40180B941500568E60 /* wall.13.r.png in Resources */,
 				0381CC8018456236003FB458 /* tile.18.png in Resources */,
 				03ECBBE717FC5A1A0039B944 /* wall.7.r.png in Resources */,
@@ -2422,6 +2464,7 @@
 				03798BEF1882829400C31389 /* char6.walk.l.f.1.png in Resources */,
 				03834E3B180B941500568E60 /* step.7.l.png in Resources */,
 				03EC37C2188181AF00D74DE1 /* event.14.l.2.png in Resources */,
+				03FE0DA518A26BE500206675 /* town1.mp3 in Resources */,
 				036A100318099F720074F6F1 /* wall.12.l.png in Resources */,
 				032D74E7179CE0E90068B27E /* tile.3.png in Resources */,
 				030B2A24180AA425008C55A3 /* event.7.r.1.png in Resources */,
@@ -2438,6 +2481,7 @@
 				03DF52CE18A0BDD3008C514B /* event.24.l.3.png in Resources */,
 				03798BE91882829400C31389 /* char6.stand.l.b.1.png in Resources */,
 				03DF52BD18A0BB1B008C514B /* event.26.l.1.png in Resources */,
+				03FE0DA618A26BE500206675 /* town2.mp3 in Resources */,
 				03B9435A1884FB32008E834A /* event.18.r.2.png in Resources */,
 				0365921318540C9A00F7ABA3 /* letterO.png in Resources */,
 				03B943481884F863008E834A /* event.7.r.3.png in Resources */,
@@ -2460,7 +2504,6 @@
 				037E7F0A189A87E700024C8E /* tile.40.png in Resources */,
 				037740FD1898750C001FDB71 /* event.22.r.1.png in Resources */,
 				0304D77C186CEE0200ED6E94 /* char1.stand.l.f.2.png in Resources */,
-				03FE0D8618A25A5600206675 /* town1.mp3 in Resources */,
 				03C0E666186265B3006AA0E6 /* event.1.portrait.png in Resources */,
 				0328126317A54375006D5E9D /* char2.stand.l.b.1.png in Resources */,
 				037E7F15189A87E700024C8E /* wall.38.r.png in Resources */,
@@ -2486,7 +2529,6 @@
 				03A999661883B02E0051DF93 /* wall.32.r.png in Resources */,
 				0304D799186CEE0200ED6E94 /* event.3.r.3.png in Resources */,
 				03B9434F1884FA88008E834A /* letterY.png in Resources */,
-				03FE0D8718A25A5600206675 /* town2.mp3 in Resources */,
 				03798BD21882721600C31389 /* event.16.l.2.png in Resources */,
 				037740ED1898719C001FDB71 /* event.20.l.2.png in Resources */,
 				03CE0B2818944102009D7003 /* blocker.21.png in Resources */,
@@ -2541,7 +2583,7 @@
 				037740F2189871F9001FDB71 /* event.20.r.2.png in Resources */,
 				03CE07A618937C31009D7003 /* wall.gateNestorineClosed.l.png in Resources */,
 				0381CC7C18456236003FB458 /* step.9.l.png in Resources */,
-				03FE0D7E18A25A5600206675 /* necomedre.mp3 in Resources */,
+				03FE0D9C18A26BE500206675 /* necomedre.mp3 in Resources */,
 				03C0E66C186265B3006AA0E6 /* event.8.portrait.png in Resources */,
 				0304D7AD186CEE0200ED6E94 /* event.9.r.1.png in Resources */,
 				03F5C4A0187BBB3200352B8E /* event.11.l.3.png in Resources */,
@@ -2556,7 +2598,7 @@
 				03FE0D6118A221ED00206675 /* wall.40.r.png in Resources */,
 				03834E50180C229700568E60 /* letterC.png in Resources */,
 				032A5B7417A63F8000C98354 /* event.7.l.1.png in Resources */,
-				03FE0D8518A25A5600206675 /* quiet.mp3 in Resources */,
+				03FE0DA318A26BE500206675 /* quiet.mp3 in Resources */,
 				03DF52CC18A0BDD3008C514B /* event.23.l.3.png in Resources */,
 				03B5B0C217AA1CA900B3C18D /* icon.57.png in Resources */,
 				033193DD1800075C0069D8A0 /* wall.8.l.png in Resources */,
@@ -2590,7 +2632,7 @@
 				03FE0D7118A2493500206675 /* event.29.r.3.png in Resources */,
 				03C0E66F186265B3006AA0E6 /* letterU.png in Resources */,
 				037F0264187D8AD000747E8D /* splash.oquonie.png in Resources */,
-				03FE0D8018A25A5600206675 /* neomine.mp3 in Resources */,
+				03FE0D9E18A26BE500206675 /* neomine.mp3 in Resources */,
 				03C16CE317B8772D00401B3D /* wall.5.l.png in Resources */,
 				0373477A186BA790000A5ED7 /* event.1.r.2.png in Resources */,
 				03CE07A218937C31009D7003 /* wall.gateNephtalineClosed.l.png in Resources */,
@@ -2603,7 +2645,7 @@
 				0355CFCA17C196C10069AF97 /* InfoPlist.strings in Resources */,
 				038B4FEF1802F35C00C18480 /* blocker.4.png in Resources */,
 				03DF52C018A0BCCF008C514B /* blocker.24.png in Resources */,
-				03FE0D8218A25A5600206675 /* nepturne.mp3 in Resources */,
+				03FE0DA018A26BE500206675 /* nepturne.mp3 in Resources */,
 				03A9996B1883BA510051DF93 /* tile.28.png in Resources */,
 				037740FE1898750C001FDB71 /* event.22.r.2.png in Resources */,
 				03983BED17C1A41800C89446 /* wall.4.l.png in Resources */,
@@ -2623,7 +2665,7 @@
 				03983BEE17C1A41800C89446 /* wall.4.r.png in Resources */,
 				035A6DBA186B0E610032710C /* event.6.l.3.png in Resources */,
 				0304D79B186CEE0200ED6E94 /* event.4.l.2.png in Resources */,
-				03FE0D8418A25A5600206675 /* pillartree.mp3 in Resources */,
+				03FE0DA218A26BE500206675 /* pillartree.mp3 in Resources */,
 				035A6DB2186B0E610032710C /* event.2.l.3.png in Resources */,
 				0381CC7718456236003FB458 /* blocker.11.png in Resources */,
 				03A20F55184D4F2C00CCED80 /* wall.24.r.png in Resources */,
@@ -2673,6 +2715,7 @@
 				037E7F12189A87E700024C8E /* tile.48.png in Resources */,
 				03834E3E180B941500568E60 /* step.8.r.png in Resources */,
 				03CE0B3118944F90009D7003 /* wall.34.l.png in Resources */,
+				03FE0DB118A2764500206675 /* sfx_ambienttoggleoff.wav in Resources */,
 				0304D794186CEE0200ED6E94 /* event.2.r.2.png in Resources */,
 				0304D79D186CEE0200ED6E94 /* event.4.r.1.png in Resources */,
 				0332383417D4BDB8001B1328 /* char3.walk.l.b.2.png in Resources */,
@@ -2699,6 +2742,7 @@
 				037740E218987187001FDB71 /* wall.gateRedClosed.l.png in Resources */,
 				03FE0D6F18A2493500206675 /* event.29.r.1.png in Resources */,
 				03C0E66D186265B3006AA0E6 /* event.10.portrait.png in Resources */,
+				03FE0DB818A2764500206675 /* sfx_walk.wav in Resources */,
 				035DAAC2188A9650007127F5 /* wall.gateDocument.shut.l.png in Resources */,
 				035E6C14184B34AC00265870 /* wall.17.r.png in Resources */,
 				037E7F1B189A933A00024C8E /* letter1.png in Resources */,
@@ -2712,7 +2756,7 @@
 				037740F9189872B5001FDB71 /* event.21.r.3.png in Resources */,
 				0332383C17D4BDB8001B1328 /* char4.walk.l.f.2.png in Resources */,
 				03834E4F180C229700568E60 /* letterD.png in Resources */,
-				03FE0D8118A25A5600206675 /* nephtaline.mp3 in Resources */,
+				03FE0D9F18A26BE500206675 /* nephtaline.mp3 in Resources */,
 				0304D78A186CEE0200ED6E94 /* char4.stand.r.f.2.png in Resources */,
 				035A6D92186B08000032710C /* event.8.l.2.png in Resources */,
 				037740EA1898719C001FDB71 /* char6.warp.l.f.1.png in Resources */,
@@ -2735,11 +2779,12 @@
 				03EC37C1188181AF00D74DE1 /* event.14.l.1.png in Resources */,
 				0332383F17D4BDB8001B1328 /* char4.walk.r.f.1.png in Resources */,
 				03798BD8188272ED00C31389 /* event.15.l.3.png in Resources */,
+				03FE0DB218A2764500206675 /* sfx_ambienttoggleon.wav in Resources */,
 				0332384017D4BDB8001B1328 /* char4.walk.r.f.2.png in Resources */,
-				03FE0D7F18A25A5600206675 /* nemedique.mp3 in Resources */,
+				03FE0D9D18A26BE500206675 /* nemedique.mp3 in Resources */,
 				035A6DA9186B0E610032710C /* char2.stand.l.f.2.png in Resources */,
 				0381CC7A18456236003FB458 /* wall.16.l.png in Resources */,
-				03FE0D8318A25A5600206675 /* nestorine.mp3 in Resources */,
+				03FE0DA118A26BE500206675 /* nestorine.mp3 in Resources */,
 				037E7F10189A87E700024C8E /* tile.46.png in Resources */,
 				0381CC7D18456236003FB458 /* step.9.r.png in Resources */,
 				03834E1A180B770100568E60 /* wall.7.l.png in Resources */,
@@ -2758,7 +2803,6 @@
 				0304D7AF186CEE0200ED6E94 /* event.9.r.3.png in Resources */,
 				0304D79C186CEE0200ED6E94 /* event.4.l.3.png in Resources */,
 				038B4FF21802F35C00C18480 /* blocker.7.png in Resources */,
-				03FE0D8818A25A5600206675 /* warp.mp3 in Resources */,
 				03A999641883B02E0051DF93 /* wall.31.r.png in Resources */,
 				038B4FF01802F35C00C18480 /* blocker.5.png in Resources */,
 				03DF52BB18A0BB1B008C514B /* event.24.l.1.png in Resources */,
@@ -2767,12 +2811,14 @@
 				036AA049187FCC3C008E6CE0 /* fx.vignette.2.png in Resources */,
 				037E7F13189A87E700024C8E /* tile.49.png in Resources */,
 				035A6D94186B08000032710C /* fx.transform.2.png in Resources */,
+				03FE0DB418A2764500206675 /* sfx_click1.wav in Resources */,
 				03A20F58184D4F2C00CCED80 /* wall.26.l.png in Resources */,
 				03EC37C6188181AF00D74DE1 /* wall.29.l.png in Resources */,
 				0332384417D4BDB8001B1328 /* char5.walk.l.b.1.png in Resources */,
 				03DBEECD1880433D00CE6FBC /* event.12.r.3.png in Resources */,
 				0332384517D4BDB8001B1328 /* char5.walk.l.b.2.png in Resources */,
 				03834E3C180B941500568E60 /* step.7.r.png in Resources */,
+				03FE0DB718A2764500206675 /* sfx_doorlocked.wav in Resources */,
 				03CE07B31893EF8A009D7003 /* char5.warp.l.f.1.png in Resources */,
 				0332384617D4BDB8001B1328 /* char5.walk.l.f.1.png in Resources */,
 				037E7F1D189A933A00024C8E /* letter3.png in Resources */,
@@ -2782,6 +2828,7 @@
 				03798BF01882829400C31389 /* char6.walk.l.f.2.png in Resources */,
 				038C592C185147B4005D6D35 /* event.2.portrait.png in Resources */,
 				0304D7B0186CEE0200ED6E94 /* event.10.l.2.png in Resources */,
+				03FE0DB518A2764500206675 /* sfx_dialogclose.wav in Resources */,
 				0304D78D186CEE0200ED6E94 /* char5.stand.l.f.2.png in Resources */,
 				03834E3F180B941500568E60 /* wall.13.l.png in Resources */,
 				0332384817D4BDB8001B1328 /* char5.walk.r.b.1.png in Resources */,
@@ -2825,6 +2872,7 @@
 				0304D79A186CEE0200ED6E94 /* event.4.l.1.png in Resources */,
 				03FE0D6918A240FB00206675 /* event.29.l.2.png in Resources */,
 				0365921518540C9A00F7ABA3 /* letterM.png in Resources */,
+				03FE0DB618A2764500206675 /* sfx_dialogopen.wav in Resources */,
 				0304D793186CEE0200ED6E94 /* event.2.r.1.png in Resources */,
 				03B943561884FB32008E834A /* event.18.l.1.png in Resources */,
 				038E862917DDFEC300529CC0 /* event.8.l.1.png in Resources */,

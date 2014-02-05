@@ -45,13 +45,13 @@
 	// Debug: remove
 	if(systemDebug == 1){
 		
-		userStorageEvents[storageQuestRamenNecomedre] = @"1";
-		userStorageEvents[storageQuestRamenNephtaline] = @"1";
-		userStorageEvents[storageQuestRamenNeomine] = @"1";
-		userStorageEvents[storageQuestRamenNestorine] = @"1";
-		userStorageEvents[storageQuestRamenNemedique] = @"1";
+//		userStorageEvents[storageQuestRamenNecomedre] = @"1";
+//		userStorageEvents[storageQuestRamenNephtaline] = @"1";
+//		userStorageEvents[storageQuestRamenNeomine] = @"1";
+//		userStorageEvents[storageQuestRamenNestorine] = @"1";
+//		userStorageEvents[storageQuestRamenNemedique] = @"1";
 		
-		userGameCompleted = 1;
+		userGameCompleted = 0;
 		worldBackground = @"splash";
 //
 //		userStorageEvents[storageQuestPillarNestorine] = @"1";
@@ -644,7 +644,11 @@
 	}
 	
 	// Overrides
-	if([filename isEqualToString:@"town.mp3"] && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+	
+	if([filename isEqualToString:@"town.mp3"] && userGameCompleted == 1){
+		filename = @"town3.mp3";
+	}
+	else if([filename isEqualToString:@"town.mp3"] && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
 		filename = @"town2.mp3";
 	}
 	

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#define systemDebug				0
+#define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			5
-#define userCharacterLocation	5
+#define userCharacterId			6
+#define userCharacterLocation	30
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -71,6 +71,7 @@
 #define audioNepturne			@"nepturne"
 #define audioLobby				@"town"
 #define audioLobby2				@"town2"
+#define audioLobby3				@"town3"
 #define audioQuiet				@"quiet"
 #define audioPillar				@"pillartree"
 #define audioWarp				@"warp"
