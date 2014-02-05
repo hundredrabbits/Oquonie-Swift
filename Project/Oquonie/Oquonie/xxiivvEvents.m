@@ -366,16 +366,18 @@
 	[self moveDisable:7];
 	[UIView animateWithDuration:2.0 animations:^(void){
 		// Start
+	} completion:^(BOOL finished){
+		
 		userSpriteOrientationHorizontal = @"l";
 		userSpriteOrientationVertical = @"f";
-	} completion:^(BOOL finished){
+		userSpriteState = @"warp";
 		// First stop
 		[UIView animateWithDuration:1.0 animations:^(void){
 			// Part 1
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 			self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -20);
 			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
-			userSpriteState = @"warp";
+
 			self.userPlayerShadow.alpha = 0;
 			[self audioEffectPlayer:@"transform"];
 		} completion:^(BOOL finished){
@@ -457,8 +459,6 @@
 		
 		[self eventDialog:dialogIntroduction:eventOwl];
 	}];
-	
-	
 
 }
 

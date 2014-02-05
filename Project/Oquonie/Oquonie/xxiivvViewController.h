@@ -132,6 +132,8 @@ int userPositionY;
 int userPositionZ;
 int userCharacter;
 
+int userGameCompleted;
+
 NSMutableArray *userSpellbook;
 NSMutableArray *userStorageEvents;
 
@@ -149,6 +151,8 @@ NSTimer *worldMoveTimer;
 NSTimer *worldWalkTimer;
 
 int worldTimer;
+
+int worldTimerNotifications;
 
 int worldTimerEvents;
 int worldTimerEventCount;

@@ -107,6 +107,8 @@
 	[self roomGenerateEvents];
 	[self roomGenerateNotifications];
 	[self roomGenerateBackground];
+	
+	worldTimerNotifications = 4;
 }
 
 -(void)roomGenerateTiles
@@ -191,7 +193,7 @@
 		
 		NSLog(@"+ NOTIF | Notification | Generate -> %@", [self tileParser:tile :2]);
 		
-		CGRect bubbleViewFrame = [self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]];
+		CGRect bubbleViewFrame = CGRectOffset([self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]], 10, -10);
 		UIImageView *bubbleView = [[UIImageView alloc] initWithFrame:CGRectOffset(bubbleViewFrame, 0, 5)];
 		bubbleView.tag = 30;
 		bubbleView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
@@ -226,23 +228,30 @@
 	if(![worldBackground isEqualToString:worldNode[userLocation][22] ]){
 		NSLog(@"•  ROOM | Background   | Update   -> %@",worldNode[userLocation][22]);
 		worldBackground = worldNode[userLocation][22];
-		// Update Background
-		if([worldBackground isEqualToString:@"Black"]){
+		// Start Game
+		if([worldBackground isEqualToString:@"Black"] && userGameCompleted == 0){
 			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.3.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
 			self.debugLocation.textColor = [UIColor whiteColor];
 		}
-		if([worldBackground isEqualToString:@"Dark"]){
-			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.0 alpha:1];
-			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.3.png"];
-			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
-			self.debugLocation.textColor = [UIColor whiteColor];
-		}
-		if([worldBackground isEqualToString:@"White"]){
+		if([worldBackground isEqualToString:@"White"] && userGameCompleted == 0){
 			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2.png"];
+			self.debugLocation.textColor = [UIColor blackColor];
+		}
+		// End Game
+		if([worldBackground isEqualToString:@"Black"] && userGameCompleted == 1){
+			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];
+			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2.png"];
+			self.debugLocation.textColor = [UIColor redColor];
+		}
+		if([worldBackground isEqualToString:@"White"] && userGameCompleted == 1){
+			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.3.png"];
+			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
 			self.debugLocation.textColor = [UIColor blackColor];
 		}
 	}

@@ -71,7 +71,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"11",@"0",
 	// Name,Background,Audio
-	@"unused",@"Dark",audioRed];
+	@"unused",@"Black",audioRed];
 	
 	worldNode[105] = @[
 	// Tiles

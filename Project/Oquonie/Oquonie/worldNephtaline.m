@@ -87,7 +87,7 @@
 	// Walls
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Steps
-	@"7|warp|46|1,1",@"0",@"0",@"0",@"0",@"7|warp|42|1,0",
+	@"7|warp|46|1,1",@"0",@"0",@"0",@"0",@"7|warp|42|1,1",
 	// Name,Background,Audio
 	@"Necomedre Fork",@"White",audioNephtaline];
 	

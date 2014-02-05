@@ -475,9 +475,6 @@
 		
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( [userStorageEvents[pillarInstanceStorageId] intValue] != 1){
-			return letterPillar;
-		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change

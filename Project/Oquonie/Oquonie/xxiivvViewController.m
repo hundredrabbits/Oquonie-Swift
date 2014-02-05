@@ -45,11 +45,14 @@
 	if(systemDebug == 1){
 		
 		userStorageEvents[storageQuestRamenNecomedre] = @"1";
-//		userStorageEvents[storageQuestRamenNephtaline] = @"1";
-//		userStorageEvents[storageQuestRamenNeomine] = @"1";
-//		userStorageEvents[storageQuestRamenNestorine] = @"1";
-//		userStorageEvents[storageQuestRamenNemedique] = @"1";
-//		
+		userStorageEvents[storageQuestRamenNephtaline] = @"1";
+		userStorageEvents[storageQuestRamenNeomine] = @"1";
+		userStorageEvents[storageQuestRamenNestorine] = @"1";
+		userStorageEvents[storageQuestRamenNemedique] = @"1";
+		
+		userGameCompleted = 1;
+		worldBackground = @"blue";
+//
 //		userStorageEvents[storageQuestPillarNestorine] = @"1";
 //		userStorageEvents[storageQuestPillarNecomedre] = @"1";
 //		userStorageEvents[storageQuestPillarNemedique] = @"1";
@@ -64,8 +67,7 @@
 	else{
 		[self eventIntroduction];
 	}
-	
-	
+
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -520,6 +522,7 @@
 	worldTimer += 1;
 	worldTimerEvents = [self worldTimerEvents];
 	worldTimerUser = [self worldTimerUser];
+	worldTimerNotifications = [self worldTimerNotifications];
 	
 	// Animate only in the cyle
 	if(worldTimerEventCycle < 1){
@@ -529,6 +532,19 @@
 	if(worldTimerUserCycle < 1){
 		[self timerAnimateUser];
 	}
+	// Animate only in the cyle
+	if(worldTimerNotifications == 0){
+		[self timerAnimateNotifications];
+	}
+}
+
+-(int)worldTimerNotifications
+{
+	worldTimerNotifications += 1;
+	if(worldTimerNotifications > 9){
+		worldTimerNotifications = 0;
+	}
+	return worldTimerNotifications;
 }
 
 -(int)worldTimerEvents
@@ -589,6 +605,27 @@
 {
 	if([userSpriteState isEqual:@"stand"]){
 		[self userSpriteUpdate:[NSString stringWithFormat:@"%@", [self templateSpriteName:[NSString stringWithFormat:@"%d",worldTimerUserCount]]] ];
+	}
+}
+
+-(void)timerAnimateNotifications
+{
+	for (UIImageView *subview in [self.spritesContainer subviews]) {
+		if(subview.tag != 30){ continue; }
+		
+		CGRect subviewOrigin = subview.frame;
+		
+		[UIView animateWithDuration:1.5 animations:^(void){
+			subview.frame = CGRectOffset(subviewOrigin, 0, -4);
+		} completion:^(BOOL finished){
+			
+			[UIView animateWithDuration:1.5 animations:^(void){
+				subview.frame = subviewOrigin;
+			} completion:^(BOOL finished){
+				
+			}];
+		}];
+		
 	}
 }
 
