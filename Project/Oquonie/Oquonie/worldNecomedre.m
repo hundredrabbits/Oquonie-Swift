@@ -263,7 +263,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"6|warp|34|0,1",@"0",
 	// Name,Background,Audio
-	@"Necomedre Pillar Room",@"White",audioNecomedre];
+	@"Necomedre Pillar Room",@"White",audioPillar];
 
 }
 

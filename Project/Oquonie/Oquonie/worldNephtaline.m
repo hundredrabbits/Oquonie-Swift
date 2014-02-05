@@ -287,7 +287,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"3|event|gateNemedique",@"0",
 	// Name,Background,Audio
-	@"Necomedre Pillar Room",@"White",audioNephtaline];
+	@"Necomedre Pillar Room",@"White",audioPillar];
 	
 }
 @end

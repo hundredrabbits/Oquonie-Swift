@@ -41,6 +41,7 @@
 	
 	[self audioAmbientPlayer:@"start"];
 	
+	
 	// Debug: remove
 	if(systemDebug == 1){
 		
@@ -50,7 +51,7 @@
 		userStorageEvents[storageQuestRamenNestorine] = @"1";
 		userStorageEvents[storageQuestRamenNemedique] = @"1";
 		
-//		userGameCompleted = 1;
+		userGameCompleted = 1;
 		worldBackground = @"splash";
 //
 //		userStorageEvents[storageQuestPillarNestorine] = @"1";
@@ -67,6 +68,7 @@
 	else{
 		[self eventIntroduction];
 	}
+	
 
 }
 
@@ -636,10 +638,14 @@
 	// Initiate the player
 	if([filename isEqualToString:@"start"]){
 		if(systemDebug != 1){
-			self.audioAmbientPlayer.volume = 0.2;
+			self.audioAmbientPlayer.volume = 1;
 		}
-		
 		return;
+	}
+	
+	// Overrides
+	if([filename isEqualToString:@"town.mp3"] && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+		filename = @"town2.mp3";
 	}
 	
 	float currentVolume = self.audioAmbientPlayer.volume;

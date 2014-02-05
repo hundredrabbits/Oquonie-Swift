@@ -167,7 +167,7 @@
 	// Steps
 	@"0",@"1|warp|94|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Warp Zone IV",@"White",audioNestorine];
+	@"Warp Zone IV",@"White",audioWarp];
 
 	worldNode[93] = @[
 	// Tiles
@@ -215,7 +215,7 @@
 	// Steps
 	@"0",@"1|event|gateNestorine",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Entrance Warp",@"White",audioNestorine];
+	@"Entrance Warp",@"White",audioWarp];
 	
 	worldNode[97] = @[
 	// Tiles
