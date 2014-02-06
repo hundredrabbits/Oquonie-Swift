@@ -112,6 +112,7 @@
 		033124DA18A327D100388D2F /* dialog_ghost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D718A327D100388D2F /* dialog_ghost.wav */; };
 		033124DB18A327D100388D2F /* dialog_red.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D818A327D100388D2F /* dialog_red.wav */; };
 		033124DC18A327D100388D2F /* dialog_shark.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D918A327D100388D2F /* dialog_shark.wav */; };
+		033124DE18A32DB300388D2F /* sfx_teleport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124DD18A32DB300388D2F /* sfx_teleport.wav */; };
 		033193DD1800075C0069D8A0 /* wall.8.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 033193DB1800075C0069D8A0 /* wall.8.l.png */; };
 		033193DE1800075C0069D8A0 /* wall.8.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 033193DC1800075C0069D8A0 /* wall.8.r.png */; };
 		033193E0180009740069D8A0 /* letterS.png in Resources */ = {isa = PBXBuildFile; fileRef = 033193DF180009740069D8A0 /* letterS.png */; };
@@ -703,6 +704,7 @@
 		033124D718A327D100388D2F /* dialog_ghost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_ghost.wav; path = en.sounds/dialog_ghost.wav; sourceTree = "<group>"; };
 		033124D818A327D100388D2F /* dialog_red.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_red.wav; path = en.sounds/dialog_red.wav; sourceTree = "<group>"; };
 		033124D918A327D100388D2F /* dialog_shark.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_shark.wav; path = en.sounds/dialog_shark.wav; sourceTree = "<group>"; };
+		033124DD18A32DB300388D2F /* sfx_teleport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_teleport.wav; path = en.sounds/sfx_teleport.wav; sourceTree = "<group>"; };
 		033193DB1800075C0069D8A0 /* wall.8.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.8.l.png; path = en.assets/wall.8.l.png; sourceTree = "<group>"; };
 		033193DC1800075C0069D8A0 /* wall.8.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.8.r.png; path = en.assets/wall.8.r.png; sourceTree = "<group>"; };
 		033193DF180009740069D8A0 /* letterS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterS.png; path = en.assets/letterS.png; sourceTree = "<group>"; };
@@ -2324,6 +2326,7 @@
 		03FE0DB918A2765300206675 /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
+				033124DD18A32DB300388D2F /* sfx_teleport.wav */,
 				033124D718A327D100388D2F /* dialog_ghost.wav */,
 				033124D818A327D100388D2F /* dialog_red.wav */,
 				033124D918A327D100388D2F /* dialog_shark.wav */,
@@ -2682,6 +2685,7 @@
 				03B943581884FB32008E834A /* event.18.l.3.png in Resources */,
 				03A9996C1883BA510051DF93 /* tile.29.png in Resources */,
 				03EC37C4188181AF00D74DE1 /* fx.parallax.3.png in Resources */,
+				033124DE18A32DB300388D2F /* sfx_teleport.wav in Resources */,
 				03F5C493187BB8C700352B8E /* letterSpellD.png in Resources */,
 				03B5B0C617AA1CB100B3C18D /* icon.72.png in Resources */,
 				0304D78F186CEE0200ED6E94 /* char5.stand.r.f.1.png in Resources */,

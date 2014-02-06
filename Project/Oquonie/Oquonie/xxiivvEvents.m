@@ -87,8 +87,6 @@
 	[self templateRoomAnimation];
 	[self moveParallax];
 	[self moveOrder];
-	
-	[self audioEffectPlayer:@"warp"];
 }
 
 - (void)eventWarpDramatic :(NSString*)nodeId :(NSString*)eventData
@@ -121,6 +119,7 @@
 	[self moveOrder];
 	
 	[self audioEffectPlayer:@"warp"];
+	[self audioEffectPlayer:@"dialog"];
 }
 
 - (void)eventDialog :(NSString*)dialog :(NSString*)characterId
@@ -465,6 +464,7 @@
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates
 {
+	[self audioEffectPlayer:@"teleport"];
 	[self moveDisable:5.5];
 	[UIView animateWithDuration:2.5 animations:^(void){
 		NSLog(@"  EVENT | Pan          | Panning Out");
@@ -500,6 +500,7 @@
 			userSpriteOrientationHorizontal = @"l";
 			userSpriteOrientationVertical = @"f";
 			userDialogActive = 0;
+			[self audioEffectPlayer:@"bump"];
 		}];
 		
 	}];

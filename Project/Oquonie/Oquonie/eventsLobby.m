@@ -422,6 +422,7 @@
 		return @""; // try with 17 ?
 	}
 	
+	[self audioDialogPlayer:@"bump"];
 	[self eventDialog:dialogWarpLobby:@"1"];
 	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
 	
@@ -436,6 +437,7 @@
 	} completion:^(BOOL finished){
 		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(warpLobbyAnimationSpriteUpdate) userInfo:nil repeats:NO];
 		[self eventTransitionPan:locationLobbyLanding:roomCenter];
+		userSpriteState = @"warp";
 	}];
 }
 
