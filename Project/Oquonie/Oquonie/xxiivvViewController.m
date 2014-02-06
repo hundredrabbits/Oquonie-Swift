@@ -69,7 +69,6 @@
 		[self eventIntroduction];
 	}
 	
-
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -635,20 +634,37 @@
 
 # pragma mark Audio Stuff -
 
+-(void)decreaseVolume {
+    // Until threshold is met, lower volume and repeat
+    if(self.audioAmbientPlayer.volume > 0.1) {
+        self.audioAmbientPlayer.volume = self.audioAmbientPlayer.volume - 0.1;
+        [self performSelector:@selector(decreaseVolume) withObject:nil afterDelay:0.1];
+    }
+    // Stop and reset audio
+    else {
+        [self.audioAmbientPlayer stop];
+        self.audioAmbientPlayer.currentTime = 0;
+        [self.audioAmbientPlayer prepareToPlay];
+        self.audioAmbientPlayer.volume = 1.0;
+    }
+}
+
+
 -(void)audioAmbientPlayer:(NSString*)filename
 {
+	
 	// Initiate the player
 	if([filename isEqualToString:@"start"]){
 		self.audioAmbientPlayer.volume = 1;
 		if(systemDebug != 1){
-			
 		}
 		return;
 	}
+//	[self decreaseVolume];
 	
 	// Overrides
 	
-	if([filename isEqualToString:@"town.mp3"] && userGameCompleted == 1){
+	if([filename isEqualToString:@"town1.mp3"] && userGameCompleted == 1){
 		filename = @"town3.mp3";
 	}
 	else if([filename isEqualToString:@"town.mp3"] && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
@@ -666,9 +682,9 @@
 	}
 	else {
 		NSLog(@"$ AUDIO | Ambient      | File     -> %@",filename);
-		self.audioAmbientPlayer.volume = currentVolume;
 		self.audioAmbientPlayer.numberOfLoops = -1;
 		[self.audioAmbientPlayer prepareToPlay];
+		self.audioAmbientPlayer.volume = currentVolume;
 	}
 	
 	[self.audioAmbientPlayer play];
@@ -676,7 +692,7 @@
 
 -(void)audioEffectPlayer:(NSString*)filename
 {
-	self.audioEffectPlayer.volume = 1;
+	self.audioEffectPlayer.volume = 0.5;
 	
 	filename = [NSString stringWithFormat:@"sfx_%@.wav",filename];
 	

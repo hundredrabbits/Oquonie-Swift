@@ -253,6 +253,7 @@
 		return @"";
 	}
 	
+	[self audioDialogPlayer:@"nestorine"];
 	// If the wrong character
 	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
@@ -264,7 +265,6 @@
 	
 	[self eventSpellAdd:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
-	[self audioDialogPlayer:@"nestorine"];
 	
 	return @"";
 }
@@ -301,6 +301,7 @@
 		return @"";
 	}
 	
+	[self audioDialogPlayer:@"nemedique"];
 	// If the wrong character
 	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
@@ -313,7 +314,6 @@
 	// Dialog
 	[self eventSpellAdd:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
-	[self audioDialogPlayer:@"nemedique"];
 	
 	return @"";
 }

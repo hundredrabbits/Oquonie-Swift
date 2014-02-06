@@ -69,7 +69,7 @@
 #define audioNestorine			@"nestorine"
 #define audioNemedique			@"nemedique"
 #define audioNepturne			@"nepturne"
-#define audioLobby				@"town"
+#define audioLobby				@"town1"
 #define audioLobby2				@"town2"
 #define audioLobby3				@"town3"
 #define audioQuiet				@"quiet"
