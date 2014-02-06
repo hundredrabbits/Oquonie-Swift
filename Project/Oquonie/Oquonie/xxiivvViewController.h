@@ -73,6 +73,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter1;
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter2;
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter3;
+@property (strong, nonatomic) IBOutlet UIView *dialogCharacterWarpper;
 
 @property (strong, nonatomic) IBOutlet UIView *spellView;
 @property (strong, nonatomic) IBOutlet UIImageView *spellCharacter1;
