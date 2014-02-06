@@ -655,8 +655,8 @@
 	
 	// Initiate the player
 	if([filename isEqualToString:@"start"]){
-		self.audioAmbientPlayer.volume = 1;
 		if(systemDebug != 1){
+			self.audioAmbientPlayer.volume = 1;
 		}
 		return;
 	}
