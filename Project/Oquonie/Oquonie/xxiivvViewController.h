@@ -46,6 +46,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *step3r;
 
 @property (strong, nonatomic) AVAudioPlayer *audioAmbientPlayer;
+@property (strong, nonatomic) AVAudioPlayer *audioEffectPlayer;
 
 // =================
 // Sprites

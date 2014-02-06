@@ -109,6 +109,7 @@
 		userPositionX += posX;
 		userPositionY += posY;
 		NSLog(@"•  USER | Position     | Update   -> X:%d Y:%d TILE:%d",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
+		[self audioEffectPlayer:@"walk"];
 		[self moveEventCheck:(userPositionX) :(userPositionY)];
 		
 		[UIView animateWithDuration:0.3 animations:^(void){
@@ -117,14 +118,12 @@
 
 		[self moveAnimation];
 		[self moveParallax];
-		[self audioEffectPlayer:@"footstep"];
 		[self moveIndicator:posX:posY];
 	}
 	else{
 		[self moveEventCheck:(userPositionX+posX):(userPositionY+posY)];
 		[self moveCollideAnimateEvent:(userPositionX+posX):(userPositionY+posY)];
 		[self moveCollideAnimateChar:posX:posY];
-		[self audioEffectPlayer:@"blocked"];
 	}
 	[self moveOrder];
 }
@@ -270,18 +269,21 @@
 	// Look if tile is missing
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
 		NSLog(@"> EVENT | Blocked      | No Ground");
+		[self audioEffectPlayer:@"bump"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a blocker
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"block"] ){
 		NSLog(@"> EVENT | Blocked      | Blocker");
+		[self audioEffectPlayer:@"bump"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"warp"] ){
 		NSLog(@"> EVENT | Blocked      | Warp");
+		[self audioEffectPlayer:@"warp"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
@@ -637,8 +639,9 @@
 {
 	// Initiate the player
 	if([filename isEqualToString:@"start"]){
+		self.audioAmbientPlayer.volume = 1;
 		if(systemDebug != 1){
-			self.audioAmbientPlayer.volume = 1;
+			
 		}
 		return;
 	}
@@ -659,7 +662,7 @@
 	self.audioAmbientPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
 	
 	if (error){
-		NSLog(@"$ ERROR | Audio        | Error    -> %@",[error localizedDescription]);
+		NSLog(@"$ ERROR | Ambient      | Error    -> (%@)%@",filename,[error localizedDescription]);
 	}
 	else {
 		NSLog(@"$ AUDIO | Ambient      | File     -> %@",filename);
@@ -673,7 +676,24 @@
 
 -(void)audioEffectPlayer:(NSString*)filename
 {
-	NSLog(@"$ AUDIO | Effect       | File     -> %@",filename);
+	self.audioEffectPlayer.volume = 1;
+	
+	filename = [NSString stringWithFormat:@"sfx_%@.wav",filename];
+	
+	NSError *error;
+	NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
+	
+	self.audioEffectPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
+	
+	if (error){
+		NSLog(@"$ ERROR | Effect       | Error    -> (%@)%@",filename,[error localizedDescription]);
+	}
+	else {
+		NSLog(@"$ AUDIO | Effect       | File     -> %@",filename);
+		self.audioEffectPlayer.numberOfLoops = 0;
+		[self.audioEffectPlayer prepareToPlay];
+	}
+	[self.audioEffectPlayer play];
 }
 
 # pragma mark Interaction Map -

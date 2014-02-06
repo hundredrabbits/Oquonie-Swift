@@ -50,6 +50,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:eventTutorial];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	
@@ -109,6 +110,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -157,6 +159,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -215,6 +218,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	
@@ -286,6 +290,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -347,6 +352,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	return @"";
