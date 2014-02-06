@@ -198,8 +198,9 @@
 		bubbleView.tag = 30;
 		bubbleView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
 		
-			UIImageView *letterView = [[UIImageView alloc] initWithFrame:CGRectMake( (bubbleView.frame.size.width/2)-20, 2.5, 40, 40)];
+			UIImageView *letterView = [[UIImageView alloc] initWithFrame:CGRectMake( (bubbleView.frame.size.width/2)-(bubbleView.frame.size.width/2.2/2), bubbleView.frame.size.width/32, bubbleView.frame.size.width/2.2, bubbleView.frame.size.width/2.2)];
 			letterView.image = [UIImage imageNamed:[NSString stringWithFormat:@"letter%@.png",notificationLetter]];
+			letterView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
 			[bubbleView addSubview:letterView];
 		
 		bubbleView.alpha = 0;
