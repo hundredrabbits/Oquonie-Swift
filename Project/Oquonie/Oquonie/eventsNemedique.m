@@ -55,6 +55,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
+	[self audioDialogPlayer:@"nestorine"];
 	// If the wrong character
 	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy

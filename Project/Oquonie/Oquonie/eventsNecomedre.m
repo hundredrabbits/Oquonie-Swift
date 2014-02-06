@@ -52,6 +52,7 @@
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	[self eventSpellAdd:eventSpellId:6];
+	[self audioDialogPlayer:@"photocopier"];
 	
 	return @"";
 }
@@ -83,6 +84,7 @@
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	[self eventSpellAdd:eventSpellId:6];
+	[self audioDialogPlayer:@"photocopier"];
 	
 	return @"";
 }
@@ -114,6 +116,7 @@
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	[self eventSpellAdd:eventSpellId:6];
+	[self audioDialogPlayer:@"photocopier"];
 	
 	return @"";
 }
@@ -146,6 +149,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nephtaline"];
 	
 	return @"";
 }
@@ -179,6 +183,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nephtaline"];
 	
 	return @"";
 }
@@ -211,6 +216,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nephtaline"];
 	
 	return @"";
 }
@@ -258,6 +264,7 @@
 	
 	[self eventSpellAdd:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
+	[self audioDialogPlayer:@"nestorine"];
 	
 	return @"";
 }
@@ -306,6 +313,7 @@
 	// Dialog
 	[self eventSpellAdd:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
+	[self audioDialogPlayer:@"nemedique"];
 	
 	return @"";
 }

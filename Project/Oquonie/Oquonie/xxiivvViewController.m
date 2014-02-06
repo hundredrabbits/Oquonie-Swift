@@ -696,6 +696,28 @@
 	[self.audioEffectPlayer play];
 }
 
+-(void)audioDialogPlayer:(NSString*)filename
+{
+	self.audioDialogPlayer.volume = 1;
+	
+	filename = [NSString stringWithFormat:@"dialog_%@.wav",filename];
+	
+	NSError *error;
+	NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
+	
+	self.audioDialogPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
+	
+	if (error){
+		NSLog(@"$ ERROR | Effect       | Error    -> (%@)%@",filename,[error localizedDescription]);
+	}
+	else {
+		NSLog(@"$ AUDIO | Effect       | File     -> %@",filename);
+		self.audioDialogPlayer.numberOfLoops = 0;
+		[self.audioDialogPlayer prepareToPlay];
+	}
+	[self.audioDialogPlayer play];
+}
+
 # pragma mark Interaction Map -
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

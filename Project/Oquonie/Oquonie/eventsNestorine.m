@@ -79,6 +79,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nemedique"];
 	
 	return @"";
 }
@@ -111,6 +112,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nemedique"];
 	
 	return @"";
 }
@@ -143,6 +145,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nemedique"];
 	
 	return @"";
 }
@@ -177,6 +180,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
+	[self audioDialogPlayer:@"nephtaline"];
 	// If the wrong character
 	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy

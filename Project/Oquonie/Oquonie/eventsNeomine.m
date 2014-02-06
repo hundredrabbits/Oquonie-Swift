@@ -59,6 +59,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:4];
+	[self audioDialogPlayer:@"nestorine"];
 	
 	return @"";
 }
@@ -124,6 +125,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nestorine"];
 	
 	return @"";
 }
@@ -158,6 +160,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
+	[self audioDialogPlayer:@"necomedre"];
 	// If the wrong character
 	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
@@ -203,6 +206,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
+	[self audioDialogPlayer:@"nephtaline"];
 	// If the wrong character
 	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy

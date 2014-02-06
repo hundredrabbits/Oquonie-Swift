@@ -640,6 +640,7 @@
 	
 	// Dialog
     [self eventDialog:@"UVW":eventOwl];
+	[self audioDialogPlayer:@"owl"];
 	[self userSave];
 	
 	// Return storage Id
@@ -727,6 +728,7 @@
 		userStorageEvents[ramenStorage] = @"1";
 		[self eventWarp:userLocationString:userPositionString];
 		[self eventDialog:dialogGainRamen:eventRamen];
+		[self audioDialogPlayer:@"ramen"];
 	}
 	
 	return @"";
@@ -785,6 +787,7 @@
 	
 	if([userStorageEvents[ramenStorage] intValue] == 1){
 		[self eventSpellAdd:@"ramenQuestSpell":giveSpell];
+		[self audioDialogPlayer:@"ramen"];
 	}
 	
 	return @"";
@@ -808,11 +811,13 @@
 		[self eventAudioToggle:1];
 		[self eventDialog:dialogAudioOn:eventAudio];
 		[self audioEffectPlayer:@"tic"];
+		[self audioDialogPlayer:@"speakerphone"];
 	}
 	else{
 		[self eventAudioToggle:0];
 		[self eventDialog:dialogAudioOff:eventAudio];
 		[self audioEffectPlayer:@"tic"];
+		[self audioDialogPlayer:@"speakerphone"];
 	}
 	
 	[self roomStart];

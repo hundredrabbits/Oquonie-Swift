@@ -47,6 +47,7 @@
 
 @property (strong, nonatomic) AVAudioPlayer *audioAmbientPlayer;
 @property (strong, nonatomic) AVAudioPlayer *audioEffectPlayer;
+@property (strong, nonatomic) AVAudioPlayer *audioDialogPlayer;
 
 // =================
 // Sprites
@@ -103,6 +104,7 @@
 
 -(void)audioAmbientPlayer:(NSString*)filename;
 -(void)audioEffectPlayer:(NSString*)filename;
+-(void)audioDialogPlayer:(NSString*)filename;
 
 - (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY;
 - (void) moveAnimation;

@@ -98,6 +98,20 @@
 		033124BC18A311EC00388D2F /* sfx_spelllost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124BA18A311EC00388D2F /* sfx_spelllost.wav */; };
 		033124BE18A312D700388D2F /* sfx_spellfull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124BD18A312D700388D2F /* sfx_spellfull.wav */; };
 		033124C018A313E500388D2F /* sfx_transform.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124BF18A313E500388D2F /* sfx_transform.wav */; };
+		033124C218A31A0400388D2F /* dialog_owl.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C118A31A0400388D2F /* dialog_owl.wav */; };
+		033124CA18A31B9300388D2F /* dialog_necomedre.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C318A31B9300388D2F /* dialog_necomedre.wav */; };
+		033124CB18A31B9300388D2F /* dialog_nemedique.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C418A31B9300388D2F /* dialog_nemedique.wav */; };
+		033124CC18A31B9300388D2F /* dialog_neomine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C518A31B9300388D2F /* dialog_neomine.wav */; };
+		033124CD18A31B9300388D2F /* dialog_nephtaline.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C618A31B9300388D2F /* dialog_nephtaline.wav */; };
+		033124CE18A31B9300388D2F /* dialog_nepturne.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C718A31B9300388D2F /* dialog_nepturne.wav */; };
+		033124CF18A31B9300388D2F /* dialog_nestorine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C818A31B9300388D2F /* dialog_nestorine.wav */; };
+		033124D018A31B9300388D2F /* dialog_peakerphone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C918A31B9300388D2F /* dialog_peakerphone.wav */; };
+		033124D318A31DC000388D2F /* dialog_photocopier.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D118A31DC000388D2F /* dialog_photocopier.wav */; };
+		033124D418A31DC000388D2F /* dialog_ramen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D218A31DC000388D2F /* dialog_ramen.wav */; };
+		033124D618A31E4300388D2F /* dialog_speakerphone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D518A31E4300388D2F /* dialog_speakerphone.wav */; };
+		033124DA18A327D100388D2F /* dialog_ghost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D718A327D100388D2F /* dialog_ghost.wav */; };
+		033124DB18A327D100388D2F /* dialog_red.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D818A327D100388D2F /* dialog_red.wav */; };
+		033124DC18A327D100388D2F /* dialog_shark.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D918A327D100388D2F /* dialog_shark.wav */; };
 		033193DD1800075C0069D8A0 /* wall.8.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 033193DB1800075C0069D8A0 /* wall.8.l.png */; };
 		033193DE1800075C0069D8A0 /* wall.8.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 033193DC1800075C0069D8A0 /* wall.8.r.png */; };
 		033193E0180009740069D8A0 /* letterS.png in Resources */ = {isa = PBXBuildFile; fileRef = 033193DF180009740069D8A0 /* letterS.png */; };
@@ -675,6 +689,20 @@
 		033124BA18A311EC00388D2F /* sfx_spelllost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_spelllost.wav; path = en.sounds/sfx_spelllost.wav; sourceTree = "<group>"; };
 		033124BD18A312D700388D2F /* sfx_spellfull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_spellfull.wav; path = en.sounds/sfx_spellfull.wav; sourceTree = "<group>"; };
 		033124BF18A313E500388D2F /* sfx_transform.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_transform.wav; path = en.sounds/sfx_transform.wav; sourceTree = "<group>"; };
+		033124C118A31A0400388D2F /* dialog_owl.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_owl.wav; path = en.sounds/dialog_owl.wav; sourceTree = "<group>"; };
+		033124C318A31B9300388D2F /* dialog_necomedre.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_necomedre.wav; path = en.sounds/dialog_necomedre.wav; sourceTree = "<group>"; };
+		033124C418A31B9300388D2F /* dialog_nemedique.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_nemedique.wav; path = en.sounds/dialog_nemedique.wav; sourceTree = "<group>"; };
+		033124C518A31B9300388D2F /* dialog_neomine.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_neomine.wav; path = en.sounds/dialog_neomine.wav; sourceTree = "<group>"; };
+		033124C618A31B9300388D2F /* dialog_nephtaline.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_nephtaline.wav; path = en.sounds/dialog_nephtaline.wav; sourceTree = "<group>"; };
+		033124C718A31B9300388D2F /* dialog_nepturne.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_nepturne.wav; path = en.sounds/dialog_nepturne.wav; sourceTree = "<group>"; };
+		033124C818A31B9300388D2F /* dialog_nestorine.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_nestorine.wav; path = en.sounds/dialog_nestorine.wav; sourceTree = "<group>"; };
+		033124C918A31B9300388D2F /* dialog_peakerphone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_peakerphone.wav; path = en.sounds/dialog_peakerphone.wav; sourceTree = "<group>"; };
+		033124D118A31DC000388D2F /* dialog_photocopier.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_photocopier.wav; path = en.sounds/dialog_photocopier.wav; sourceTree = "<group>"; };
+		033124D218A31DC000388D2F /* dialog_ramen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_ramen.wav; path = en.sounds/dialog_ramen.wav; sourceTree = "<group>"; };
+		033124D518A31E4300388D2F /* dialog_speakerphone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_speakerphone.wav; path = en.sounds/dialog_speakerphone.wav; sourceTree = "<group>"; };
+		033124D718A327D100388D2F /* dialog_ghost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_ghost.wav; path = en.sounds/dialog_ghost.wav; sourceTree = "<group>"; };
+		033124D818A327D100388D2F /* dialog_red.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_red.wav; path = en.sounds/dialog_red.wav; sourceTree = "<group>"; };
+		033124D918A327D100388D2F /* dialog_shark.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_shark.wav; path = en.sounds/dialog_shark.wav; sourceTree = "<group>"; };
 		033193DB1800075C0069D8A0 /* wall.8.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.8.l.png; path = en.assets/wall.8.l.png; sourceTree = "<group>"; };
 		033193DC1800075C0069D8A0 /* wall.8.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.8.r.png; path = en.assets/wall.8.r.png; sourceTree = "<group>"; };
 		033193DF180009740069D8A0 /* letterS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterS.png; path = en.assets/letterS.png; sourceTree = "<group>"; };
@@ -2296,6 +2324,20 @@
 		03FE0DB918A2765300206675 /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
+				033124D718A327D100388D2F /* dialog_ghost.wav */,
+				033124D818A327D100388D2F /* dialog_red.wav */,
+				033124D918A327D100388D2F /* dialog_shark.wav */,
+				033124D518A31E4300388D2F /* dialog_speakerphone.wav */,
+				033124D118A31DC000388D2F /* dialog_photocopier.wav */,
+				033124D218A31DC000388D2F /* dialog_ramen.wav */,
+				033124C318A31B9300388D2F /* dialog_necomedre.wav */,
+				033124C418A31B9300388D2F /* dialog_nemedique.wav */,
+				033124C518A31B9300388D2F /* dialog_neomine.wav */,
+				033124C618A31B9300388D2F /* dialog_nephtaline.wav */,
+				033124C718A31B9300388D2F /* dialog_nepturne.wav */,
+				033124C818A31B9300388D2F /* dialog_nestorine.wav */,
+				033124C918A31B9300388D2F /* dialog_peakerphone.wav */,
+				033124C118A31A0400388D2F /* dialog_owl.wav */,
 				033124BF18A313E500388D2F /* sfx_transform.wav */,
 				033124BD18A312D700388D2F /* sfx_spellfull.wav */,
 				033124B918A311EC00388D2F /* sfx_spellgain.wav */,
@@ -2383,6 +2425,7 @@
 				036A100A18099F720074F6F1 /* tile.E.png in Resources */,
 				0304D7A5186CEE0200ED6E94 /* event.7.l.2.png in Resources */,
 				03CE079F18937C31009D7003 /* wall.gateNeomineClosed.r.png in Resources */,
+				033124DC18A327D100388D2F /* dialog_shark.wav in Resources */,
 				0381CC8318456236003FB458 /* wall.15.r.png in Resources */,
 				03CE07C7189440D7009D7003 /* tile.33.png in Resources */,
 				03834E36180B941500568E60 /* step.4.r.png in Resources */,
@@ -2437,6 +2480,7 @@
 				03798BD01882721600C31389 /* event.15.l.1.png in Resources */,
 				03BBFAD0178AC8D600E79C3D /* tile.1.png in Resources */,
 				0304D791186CEE0200ED6E94 /* char5.stand.r.f.3.png in Resources */,
+				033124CE18A31B9300388D2F /* dialog_nepturne.wav in Resources */,
 				037CCB52179BBAD200833EDB /* char1.stand.l.b.1.png in Resources */,
 				0304D7A3186CEE0200ED6E94 /* event.6.r.2.png in Resources */,
 				035E6C15184B34AC00265870 /* wall.18.l.png in Resources */,
@@ -2478,6 +2522,7 @@
 				03B29A301867241F007A63BA /* wall.27.l.png in Resources */,
 				032D74DD179CD6840068B27E /* tile.0.png in Resources */,
 				032D74E1179CD7D30068B27E /* wall.0.l.png in Resources */,
+				033124CF18A31B9300388D2F /* dialog_nestorine.wav in Resources */,
 				032D74E4179CE0130068B27E /* wall.0.r.png in Resources */,
 				037E7F0E189A87E700024C8E /* tile.44.png in Resources */,
 				03798BEF1882829400C31389 /* char6.walk.l.f.1.png in Resources */,
@@ -2501,6 +2546,7 @@
 				03798BE91882829400C31389 /* char6.stand.l.b.1.png in Resources */,
 				03DF52BD18A0BB1B008C514B /* event.26.l.1.png in Resources */,
 				03FE0DA618A26BE500206675 /* town2.mp3 in Resources */,
+				033124DB18A327D100388D2F /* dialog_red.wav in Resources */,
 				03B9435A1884FB32008E834A /* event.18.r.2.png in Resources */,
 				0365921318540C9A00F7ABA3 /* letterO.png in Resources */,
 				03B943481884F863008E834A /* event.7.r.3.png in Resources */,
@@ -2510,6 +2556,7 @@
 				037E2660179D406C001A1553 /* wall.E.r.png in Resources */,
 				03A20F48184D4F2C00CCED80 /* blocker.15.png in Resources */,
 				03ECBBE817FC5A1A0039B944 /* wall.9.l.png in Resources */,
+				033124C218A31A0400388D2F /* dialog_owl.wav in Resources */,
 				03798BEA1882829400C31389 /* char6.stand.l.f.1.png in Resources */,
 				0304D782186CEE0200ED6E94 /* char2.stand.r.f.2.png in Resources */,
 				03DF52CF18A0BDD3008C514B /* event.25.l.2.png in Resources */,
@@ -2585,6 +2632,7 @@
 				03CE07B01893EF8A009D7003 /* char2.warp.l.f.1.png in Resources */,
 				0304D78C186CEE0200ED6E94 /* char5.stand.l.f.1.png in Resources */,
 				03798BED1882829400C31389 /* char6.walk.l.b.1.png in Resources */,
+				033124D318A31DC000388D2F /* dialog_photocopier.wav in Resources */,
 				03CE07A118937C31009D7003 /* wall.gateNeomineOpen.r.png in Resources */,
 				03834E52180C229700568E60 /* letterB.png in Resources */,
 				0328126E17A54375006D5E9D /* char2.walk.r.f.2.png in Resources */,
@@ -2649,9 +2697,11 @@
 				03798BF21882829400C31389 /* char6.walk.r.b.2.png in Resources */,
 				03C1EE0817AFAC70001AFF21 /* wall.3.l.png in Resources */,
 				03A9996E1883BA510051DF93 /* tile.31.png in Resources */,
+				033124CC18A31B9300388D2F /* dialog_neomine.wav in Resources */,
 				03C1EE0917AFAC70001AFF21 /* wall.3.r.png in Resources */,
 				03FE0D7118A2493500206675 /* event.29.r.3.png in Resources */,
 				03C0E66F186265B3006AA0E6 /* letterU.png in Resources */,
+				033124CB18A31B9300388D2F /* dialog_nemedique.wav in Resources */,
 				037F0264187D8AD000747E8D /* splash.oquonie.png in Resources */,
 				03FE0D9E18A26BE500206675 /* neomine.mp3 in Resources */,
 				03C16CE317B8772D00401B3D /* wall.5.l.png in Resources */,
@@ -2692,6 +2742,7 @@
 				03A20F55184D4F2C00CCED80 /* wall.24.r.png in Resources */,
 				037E7F0F189A87E700024C8E /* tile.45.png in Resources */,
 				03983C0517C1B7A000C89446 /* char3.stand.l.b.1.png in Resources */,
+				033124CA18A31B9300388D2F /* dialog_necomedre.wav in Resources */,
 				0304D796186CEE0200ED6E94 /* event.3.l.1.png in Resources */,
 				03FE0D6018A221ED00206675 /* wall.40.l.png in Resources */,
 				03983C0717C1B7A000C89446 /* char3.stand.r.b.1.png in Resources */,
@@ -2711,6 +2762,7 @@
 				0381CC8218456236003FB458 /* wall.15.l.png in Resources */,
 				03C0E675186265B3006AA0E6 /* tile.24.png in Resources */,
 				03C0E66B186265B3006AA0E6 /* event.7.portrait.png in Resources */,
+				033124CD18A31B9300388D2F /* dialog_nephtaline.wav in Resources */,
 				03983C0B17C1B7A000C89446 /* char3.walk.l.f.2.png in Resources */,
 				03CE079D18937C31009D7003 /* wall.gateNemediqueOpen.r.png in Resources */,
 				0304D792186CEE0200ED6E94 /* event.2.l.1.png in Resources */,
@@ -2726,6 +2778,7 @@
 				0381CC7918456236003FB458 /* blocker.13.png in Resources */,
 				0325D983185D5B5100C8134C /* event.10.l.1.png in Resources */,
 				0365921718540C9A00F7ABA3 /* letterJ.png in Resources */,
+				033124D618A31E4300388D2F /* dialog_speakerphone.wav in Resources */,
 				03C0E667186265B3006AA0E6 /* event.3.portrait.png in Resources */,
 				03983C0E17C1B7A000C89446 /* char3.walk.r.f.1.png in Resources */,
 				03983C0F17C1B7A000C89446 /* char3.walk.r.f.2.png in Resources */,
@@ -2751,6 +2804,7 @@
 				0304D780186CEE0200ED6E94 /* char1.stand.r.f.3.png in Resources */,
 				0332383517D4BDB8001B1328 /* char4.stand.l.b.1.png in Resources */,
 				037E7F16189A87E700024C8E /* wall.39.l.png in Resources */,
+				033124DA18A327D100388D2F /* dialog_ghost.wav in Resources */,
 				0304D783186CEE0200ED6E94 /* char2.stand.r.f.3.png in Resources */,
 				03CE07A318937C31009D7003 /* wall.gateNephtalineClosed.r.png in Resources */,
 				033124BB18A311EC00388D2F /* sfx_spellgain.wav in Resources */,
@@ -2785,6 +2839,7 @@
 				0304D786186CEE0200ED6E94 /* char3.stand.r.f.2.png in Resources */,
 				0304D798186CEE0200ED6E94 /* event.3.r.2.png in Resources */,
 				0304D784186CEE0200ED6E94 /* char3.stand.l.f.1.png in Resources */,
+				033124D418A31DC000388D2F /* dialog_ramen.wav in Resources */,
 				03834E54180C229700568E60 /* tile.11.png in Resources */,
 				03834E58180C229700568E60 /* tile.15.png in Resources */,
 				0332383D17D4BDB8001B1328 /* char4.walk.r.b.1.png in Resources */,
@@ -2820,6 +2875,7 @@
 				0365921218540C9A00F7ABA3 /* letterP.png in Resources */,
 				03B943451884F863008E834A /* char6.stand.r.f.2.png in Resources */,
 				035A6DB9186B0E610032710C /* event.6.l.2.png in Resources */,
+				033124D018A31B9300388D2F /* dialog_peakerphone.wav in Resources */,
 				0304D7B2186CEE0200ED6E94 /* event.10.r.2.png in Resources */,
 				03CE079718937C31009D7003 /* wall.gateNecomedreClosed.r.png in Resources */,
 				0304D7AF186CEE0200ED6E94 /* event.9.r.3.png in Resources */,
