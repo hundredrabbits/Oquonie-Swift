@@ -181,14 +181,12 @@
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
 	[self audioDialogPlayer:@"nephtaline"];
+	// If doesn't have the first pillar
+	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
 	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
-	// If have spell already
-	if([self eventSpellCheck:eventSpellId]){ [self eventDialog:dialogHaveCharacter:eventSpriteId]; return @""; }
-	// If doesn't have the first pillar
-	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	
 	[self eventSpellAdd:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
