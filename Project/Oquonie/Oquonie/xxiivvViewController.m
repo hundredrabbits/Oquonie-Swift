@@ -38,6 +38,7 @@
 	[self roomStart];
 	[self moveOrder];
 	[self timerStart];
+	[self eventSpellRefresh];
 	
 	[self audioAmbientPlayer:@"start"];
 	
@@ -45,29 +46,12 @@
 	// Debug: remove
 	if(systemDebug == 1){
 		
-//		userStorageEvents[storageQuestRamenNecomedre] = @"1";
-//		userStorageEvents[storageQuestRamenNephtaline] = @"1";
-//		userStorageEvents[storageQuestRamenNeomine] = @"1";
-//		userStorageEvents[storageQuestRamenNestorine] = @"1";
-//		userStorageEvents[storageQuestRamenNemedique] = @"1";
-		
-		userGameCompleted = 0;
-		worldBackground = @"splash";
-//
-//		userStorageEvents[storageQuestPillarNestorine] = @"1";
-//		userStorageEvents[storageQuestPillarNecomedre] = @"1";
-//		userStorageEvents[storageQuestPillarNemedique] = @"1";
-//		userStorageEvents[storageQuestPillarNephtaline] = @"1";
-//		userStorageEvents[storageQuestPillarNeomine] = @"1";
-		
-//		userSpellbook[0] = @[@"test1",@"4"];
-//		userSpellbook[1] = @[@"test2",@"4"];
-		
-		self.debugLocation.hidden = NO;
 	}
 	else{
 		[self eventIntroduction];
 	}
+	
+	self.debugLocation.hidden = NO;
 	
 }
 
@@ -738,6 +722,8 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [worldMoveHold invalidate];
+	
 	interactionMap = [[touches anyObject] locationInView:self.view];
     worldMoveHold = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(touchHeld) userInfo:nil repeats:YES];
 }

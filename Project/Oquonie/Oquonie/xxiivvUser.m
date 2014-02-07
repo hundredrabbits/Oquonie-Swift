@@ -21,6 +21,9 @@
 	else{
 		[self userNew];
 	}
+	
+	userMoveEnabled = 1;
+	userDialogActive = 0;
 }
 
 -(void)userSave
@@ -70,6 +73,8 @@
 }
 -(void)userNew
 {
+	NSLog(@"   USER | Starting..     | Please hold");
+	
 	userPositionX = userCharacterX;
 	userPositionY = userCharacterY;
 	userCharacter = userCharacterId;
@@ -78,8 +83,6 @@
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
 	userSpriteOrientationVertical = @"f";
-	userMoveEnabled = 1;
-	userDialogActive = 0;
 	
     // New event storage
     userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
