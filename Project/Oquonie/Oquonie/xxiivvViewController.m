@@ -45,11 +45,16 @@
 	// Debug: remove
 	if(systemDebug == 1){
 		
+		NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+		[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+		
 		userStorageEvents[storageQuestPillarNecomedre] = @"1";
 		userStorageEvents[storageQuestPillarNephtaline] = @"1";
 		userStorageEvents[storageQuestPillarNeomine] = @"1";
 		userStorageEvents[storageQuestPillarNestorine] = @"1";
 		userStorageEvents[storageQuestPillarNemedique] = @"1";
+		
+		userGameCompleted = 1;
 	
 	}
 	else{

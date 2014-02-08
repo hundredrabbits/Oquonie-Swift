@@ -249,7 +249,7 @@
 		// End Game
 		if([worldBackground isEqualToString:@"Black"] && userGameCompleted == 1){
 			[UIView animateWithDuration:1.0 animations:^{
-				self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+				self.roomBackground.backgroundColor = [UIColor redColor];
 			} completion:NULL];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2.png"];

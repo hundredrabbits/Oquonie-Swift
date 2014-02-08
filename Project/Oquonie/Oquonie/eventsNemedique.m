@@ -11,6 +11,7 @@
 #import "xxiivvEvents.h"
 #import "eventsNemedique.h"
 #import "xxiivvWorld.h"
+#import "xxiivvUser.h"
 
 @implementation xxiivvViewController (eventsNemedique)
 
@@ -89,8 +90,7 @@
 	[UIView animateWithDuration:5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		self.spritesContainer.alpha = 0;
-	} completion:^(BOOL finished){
-	}];
+	} completion:^(BOOL finished){}];
 	
 	return @"";
 }
@@ -101,6 +101,10 @@
 	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 	
 	[self start];
+	
+	userGameCompleted = 1;
+	
+	[self userSave];
 	
 	[self eventTransitionPan:@"29":@"0,0"];
 }
