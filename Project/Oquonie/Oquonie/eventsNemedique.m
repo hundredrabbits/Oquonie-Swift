@@ -76,28 +76,27 @@
 
 # pragma mark NPCs -
 
-
 -(NSString*)event_redEnd :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
-	if([option isEqualToString:@"postUpdate"])		{ return eventRed;}
+	if([option isEqualToString:@"postUpdate"])		{
+		if( [userStorageEvents[storageEndForm] intValue] == 1)
+		{
+			return eventNepturne;
+		}
+		return eventRed;
+	}
+	
+	if( ![userStorageEvents[storageEndForm] intValue] == 1)
+	{
+		userStorageEvents[storageEndForm] = @"1";
+		[self roomClearSprites];
+		[self roomGenerateEvents];
+		[self event_redEnd:@"anything"];
+		return @"";
+	}
 	
 	[self moveDisable:10];
-	
-	// Target
-	
-	for (UIImageView *subview in [self.spritesContainer subviews]) {
-		if(subview.tag != 20){ continue; }
-		int tileId = -1;
-		while (tileId < 21) {
-			tileId += 1;
-			// Lets identify the current subview
-			if(![[self tileParser:worldNode[userLocation][tileId] :2] isEqualToString:@"redGhost"]){ continue; }
-			if( subview.frame.origin.x != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
-			if( subview.frame.origin.y != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
-			
-		}
-	}
 	
 	// Dialog
 	

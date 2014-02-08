@@ -32,6 +32,8 @@
 #define storageQuestPillarNestorine		14
 #define storageQuestPillarNemedique		15
 
+#define storageEndForm					20
+
 #define dialogIntroduction			@"AAA"
 #define dialogHaveCharacter			@"QIS" // already are the character from that wizard
 #define dialogHaveSpell				@"PIR" // already have the spell from that wizard
