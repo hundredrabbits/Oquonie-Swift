@@ -96,6 +96,23 @@
                                     <segue destination="2" kind="custom" identifier="skip" customClass="segueFade" id="i3f-op-ru5"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_exist.png" id="Qqp-mw-Jjf" userLabel="EraseImage">
+                                <rect key="frame" x="285" y="445" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1fN-s1-NeF" userLabel="EraseButton">
+                                <rect key="frame" x="280" y="440" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="eraseButton:" destination="9Ow-cj-lXB" eventType="touchUpInside" id="qJO-Jm-Mqs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -103,6 +120,8 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="buttonErase" destination="1fN-s1-NeF" id="x2a-c0-ZP9"/>
+                        <outlet property="eraseImage" destination="Qqp-mw-Jjf" id="tRX-T9-pFm"/>
                         <outlet property="splashLogoOquonie" destination="h5e-rW-0ku" id="HXA-b8-ZGu"/>
                     </connections>
                 </viewController>
@@ -292,19 +311,19 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleAspectFit" id="Y7v-1Q-mTL" userLabel="dialogView">
-                                        <rect key="frame" x="0.0" y="229.99999513387479" width="320.0000018744916" height="250.00000486612521"/>
+                                        <rect key="frame" x="0.0" y="230" width="320" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.10.portrait.png" id="RcO-YQ-M4O" userLabel="dialogCharacter">
-                                                <rect key="frame" x="0.0" y="43" width="320" height="195.00000398695124"/>
+                                                <rect key="frame" x="0.0" y="43" width="320" height="195"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.textbubble.png" id="Rwu-16-j3v" userLabel="dialogBubble">
-                                                <rect key="frame" x="0.0" y="4.8661252094461815e-06" width="320" height="250"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" id="tXm-os-7cx" userLabel="dialogCharacterWarpper">
-                                                <rect key="frame" x="21.000000217482473" y="150" width="160" height="60"/>
+                                                <rect key="frame" x="21" y="150" width="159.99999685299863" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">
@@ -416,6 +435,7 @@
         <image name="fx.parallax.1.png" width="640" height="640"/>
         <image name="fx.parallax.2.png" width="640" height="640"/>
         <image name="fx.textbubble.png" width="640" height="500"/>
+        <image name="game_exist.png" width="50" height="50"/>
         <image name="letterF.png" width="128" height="128"/>
         <image name="letterI.png" width="128" height="128"/>
         <image name="letterM.png" width="128" height="128"/>

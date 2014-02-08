@@ -50,12 +50,20 @@
 -(void)splash3
 {
 	NSLog(@" SPLASH | Slide3       | Animating");
+	
 	slideTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(splashSkip) userInfo:nil repeats:NO];
+	
+	self.eraseImage.alpha = 0;
 	self.splashLogoOquonie.alpha = 0;
 	[UIView animateWithDuration:1.0 animations:^(void){
 		self.splashLogoOquonie.frame = CGRectOffset(self.splashLogoOquonie.frame, 0, 2);
 		self.splashLogoOquonie.alpha = 1;
-	} completion:^(BOOL finished){}];
+	} completion:^(BOOL finished){
+		[UIView animateWithDuration:0.5 animations:^(void){
+			self.eraseImage.alpha = 1;
+		} completion:^(BOOL finished){}];
+	}];
+	
 }
 -(void)splashSkip
 {
@@ -76,4 +84,21 @@
 	[self splashSkip];
 }
 
+- (IBAction)eraseButton:(id)sender {
+	
+	[slideTimer invalidate];
+	
+	if(gameEraseState ==1){
+		self.eraseImage.image = [UIImage imageNamed:@"game_new.png"];
+		gameEraseState = 2;
+		slideTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(splashSkip) userInfo:nil repeats:NO];
+		NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+		[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+	}
+	
+	if(gameEraseState ==0){
+		self.eraseImage.image = [UIImage imageNamed:@"game_erase.png"];
+		gameEraseState = 1;
+	}
+}
 @end
