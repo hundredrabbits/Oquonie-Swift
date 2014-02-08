@@ -230,5 +230,19 @@
 
 # pragma mark Misc -
 
+-(NSString*)event_petuniaFork:(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @""; }
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	if(userGameCompleted == 1){
+		[self eventWarp:@"110":@"-1,-1"];
+	}
+	else{
+		[self eventWarp:@"61":@"-1,-1"];
+	}
+	
+	return @"";
+}
 
 @end

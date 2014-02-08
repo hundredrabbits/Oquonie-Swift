@@ -551,6 +551,8 @@
 		03E14CD518A637CC00B3816F /* event.32.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E14CC818A637CC00B3816F /* event.32.portrait.png */; };
 		03E14CD818A63AF800B3816F /* credit.devine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03E14CD618A63AF800B3816F /* credit.devine.jpg */; };
 		03E14CD918A63AF800B3816F /* credit.rekka.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03E14CD718A63AF800B3816F /* credit.rekka.jpg */; };
+		03E14CDC18A6641400B3816F /* worldSecret.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E14CDB18A6641400B3816F /* worldSecret.m */; };
+		03E14CE018A666E600B3816F /* eventsSecret.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E14CDF18A666E600B3816F /* eventsSecret.m */; };
 		03EC37C1188181AF00D74DE1 /* event.14.l.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03EC37B9188181AF00D74DE1 /* event.14.l.1.png */; };
 		03EC37C2188181AF00D74DE1 /* event.14.l.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03EC37BA188181AF00D74DE1 /* event.14.l.2.png */; };
 		03EC37C3188181AF00D74DE1 /* event.14.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03EC37BB188181AF00D74DE1 /* event.14.l.3.png */; };
@@ -1180,6 +1182,10 @@
 		03E14CC818A637CC00B3816F /* event.32.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.32.portrait.png; path = en.assets/event.32.portrait.png; sourceTree = "<group>"; };
 		03E14CD618A63AF800B3816F /* credit.devine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = credit.devine.jpg; path = en.assets/credit.devine.jpg; sourceTree = "<group>"; };
 		03E14CD718A63AF800B3816F /* credit.rekka.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = credit.rekka.jpg; path = en.assets/credit.rekka.jpg; sourceTree = "<group>"; };
+		03E14CDA18A6641400B3816F /* worldSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldSecret.h; sourceTree = "<group>"; };
+		03E14CDB18A6641400B3816F /* worldSecret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = worldSecret.m; sourceTree = "<group>"; };
+		03E14CDE18A666E600B3816F /* eventsSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsSecret.h; sourceTree = "<group>"; };
+		03E14CDF18A666E600B3816F /* eventsSecret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsSecret.m; sourceTree = "<group>"; };
 		03EC37B9188181AF00D74DE1 /* event.14.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.14.l.1.png; path = en.assets/event.14.l.1.png; sourceTree = "<group>"; };
 		03EC37BA188181AF00D74DE1 /* event.14.l.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.14.l.2.png; path = en.assets/event.14.l.2.png; sourceTree = "<group>"; };
 		03EC37BB188181AF00D74DE1 /* event.14.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.14.l.3.png; path = en.assets/event.14.l.3.png; sourceTree = "<group>"; };
@@ -1917,6 +1923,7 @@
 				03C488FC187E8C9200375E86 /* III - Neomine Universe */,
 				03C488FD187E8C9E00375E86 /* III - Nestorine Universe */,
 				03C488EF187E8C1700375E86 /* III - Nemedique Universe */,
+				03E14CDD18A6641D00B3816F /* III - Secret Universe */,
 				037F026A187D8DC400747E8D /* :II - Tools */,
 			);
 			name = en.sources;
@@ -2226,6 +2233,17 @@
 				035DAABB188A9650007127F5 /* event.19.r.3.png */,
 			);
 			name = "Event 19 - Stool";
+			sourceTree = "<group>";
+		};
+		03E14CDD18A6641D00B3816F /* III - Secret Universe */ = {
+			isa = PBXGroup;
+			children = (
+				03E14CDA18A6641400B3816F /* worldSecret.h */,
+				03E14CDB18A6641400B3816F /* worldSecret.m */,
+				03E14CDE18A666E600B3816F /* eventsSecret.h */,
+				03E14CDF18A666E600B3816F /* eventsSecret.m */,
+			);
+			name = "III - Secret Universe";
 			sourceTree = "<group>";
 		};
 		03F5C4A5187BBB3900352B8E /* Event11 - Photocopier */ = {
@@ -3049,6 +3067,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03BBFAB8178A9E4E00E79C3D /* main.m in Sources */,
+				03E14CE018A666E600B3816F /* eventsSecret.m in Sources */,
 				03C488E7187E8A6300375E86 /* eventsNephtaline.m in Sources */,
 				03C488EE187E8BFB00375E86 /* eventsNemedique.m in Sources */,
 				03F5C4A8187BBB7F00352B8E /* eventsNecomedre.m in Sources */,
@@ -3062,6 +3081,7 @@
 				037F0269187D8DBC00747E8D /* splashViewController.m in Sources */,
 				03F5C4B0187BBF3500352B8E /* eventsLobby.m in Sources */,
 				03377321187105ED00C70C50 /* worldLobby.m in Sources */,
+				03E14CDC18A6641400B3816F /* worldSecret.m in Sources */,
 				037F0262187D845300747E8D /* segueFade.m in Sources */,
 				03C488FB187E8C7500375E86 /* eventsNeomine.m in Sources */,
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,

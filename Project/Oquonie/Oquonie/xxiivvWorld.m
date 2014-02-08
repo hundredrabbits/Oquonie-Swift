@@ -18,6 +18,7 @@
 #import "worldNemedique.h"		// Chapter III
 #import "worldNestorine.h"		// Chapter IV
 #import "worldNeomine.h"		// Chapter V
+#import "worldSecret.h"		// Chapter V
 
 //#import "worldNecostrate.h"		// Chapter: Bonus
 //#import "worldNelorianne.h"		// Chapter: Bonus
@@ -42,6 +43,8 @@
 	[self createWorldNestorine];
 	// 100 - 99
 	[self createWorldNemedique];
+	// 110 - >
+	[self createWorldSecret];
 }
 
 - (NSString*) tileParser :(NSString*)tileString :(int)index
@@ -249,7 +252,7 @@
 		// End Game
 		if([worldBackground isEqualToString:@"Black"] && userGameCompleted == 1){
 			[UIView animateWithDuration:1.0 animations:^{
-				self.roomBackground.backgroundColor = [UIColor redColor];
+				self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1];
 			} completion:NULL];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2.png"];

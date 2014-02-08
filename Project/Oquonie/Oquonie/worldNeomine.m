@@ -19,7 +19,7 @@
 	@"1",@"4",@"1",
 	@"1",@"23",@"1",
 	// Walls
-	@"33",@"31",@"33",@"30|warp|62|1,-1",@"16|event|map",@"14|warp|61|-1,-1",
+	@"33",@"31",@"33",@"30|warp|62|1,-1",@"16|event|map",@"14|event|petuniaFork",
 	// Steps
 	@"0",@"0",@"0",@"0",@"4|event|gateNeomine",@"0",
 	// Name,Background,Audio
