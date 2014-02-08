@@ -23,11 +23,9 @@
 	
 	[self splashStart];
 }
-
 -(void)splashStart
 {
 	NSLog(@" SPLASH | Timer        | Start %d",splashSlide);
-//	slideTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(splashSkip) userInfo:nil repeats:NO];
 	
 	if(splashSlide == 1){
 		[self splash1];
@@ -39,28 +37,26 @@
 		[self splash3];
 	}
 }
-
 -(void)splash1
 {
 	NSLog(@" SPLASH | Slide1       | Animating");
+	slideTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(splashSkip) userInfo:nil repeats:NO];
 }
 -(void)splash2
 {
 	NSLog(@" SPLASH | Slide2       | Animating");
+	slideTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(splashSkip) userInfo:nil repeats:NO];
 }
 -(void)splash3
 {
 	NSLog(@" SPLASH | Slide3       | Animating");
+	slideTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(splashSkip) userInfo:nil repeats:NO];
 	self.splashLogoOquonie.alpha = 0;
 	[UIView animateWithDuration:1.0 animations:^(void){
 		self.splashLogoOquonie.frame = CGRectOffset(self.splashLogoOquonie.frame, 0, 2);
 		self.splashLogoOquonie.alpha = 1;
 	} completion:^(BOOL finished){}];
 }
-
-
-
-
 -(void)splashSkip
 {
 	NSLog(@" SPLASH | Timer        | Ended %d",splashSlide);
