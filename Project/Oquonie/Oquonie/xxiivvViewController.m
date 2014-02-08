@@ -249,6 +249,12 @@
 
 - (int) moveEvent :(int)posX :(int)posY
 {
+	
+	// If Ghost
+	if([[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :2] isEqualToString:@"redGhost"]){
+		return 0;
+	}
+	
 	// Look if tile is missing
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
 		NSLog(@"> EVENT | Blocked      | No Ground");

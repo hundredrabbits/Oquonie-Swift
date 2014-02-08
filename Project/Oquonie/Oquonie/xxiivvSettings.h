@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			6
-#define userCharacterLocation	30
+#define userCharacterId			4
+#define userCharacterLocation	80
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -19,6 +19,12 @@
 #define storageQuestRamenNeomine		3
 #define storageQuestRamenNestorine		4
 #define storageQuestRamenNemedique		5
+
+#define storageGhostOffice				6
+#define storageGhostNecomedre			7
+#define storageGhostNephtaline			8
+#define storageGhostNeomine				9
+#define storageGhostNestorine			10
 
 #define storageQuestPillarNecomedre		11
 #define storageQuestPillarNephtaline	12

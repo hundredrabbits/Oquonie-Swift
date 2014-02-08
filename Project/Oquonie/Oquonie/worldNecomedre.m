@@ -141,7 +141,7 @@
 
 	worldNode[31] = @[
 	// Tiles
-	@"4",@"5|event|tutorialCharacter|12|r",@"6",
+	@"4",@"5|event|redGhost|12|r",@"6",
 	@"6",@"5",@"4",
 	@"5",@"4",@"5",
 	// Walls
@@ -209,7 +209,7 @@
 	// Tiles
 	@"33|event|necomedreNephtaline2|3|r",@"0",@"4",
 	@"33",@"0",@"4",
-	@"33",@"0",@"4",
+	@"33",@"0",@"4|event|redGhost|12|l",
 	// Walls
 	@"26",@"0",@"12|warp|33|-1,1",@"19",@"12|warp|37|0,-1",@"19",
 	// Steps

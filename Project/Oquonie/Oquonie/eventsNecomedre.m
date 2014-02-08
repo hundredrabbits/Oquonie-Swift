@@ -332,10 +332,7 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(userLocation == 31){
-			return eventRed;
-		}
-		return @"";
+		return eventTutorial;
 	}
 	
 	// Dialogs
@@ -413,7 +410,7 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"29";
+		return @"";
 	}
 	
 	[self eventTransitionPan:@"1":@"0,0"];
