@@ -77,6 +77,15 @@
 		return;
 	}
 	
+	// Close credits
+	if(self.creditsImage.alpha == 1){
+		[UIView animateWithDuration:1.0 animations:^(void){
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+			self.creditsImage.alpha = 0;
+		} completion:^(BOOL finished){}];
+		return;
+	}
+	
 	// Move disable timeout
 	[self moveDisable:0.2];
 	

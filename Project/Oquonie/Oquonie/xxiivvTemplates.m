@@ -100,6 +100,7 @@
 	self.dialogCharacter3.alpha = 0;
 	
 	self.debugLocation.hidden = YES;
+	self.creditsImage.hidden = YES;
 	
 }
 

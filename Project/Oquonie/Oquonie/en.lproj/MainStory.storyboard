@@ -283,6 +283,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="R8V-8k-qtG" userLabel="creditsImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ARR-hZ-Pfx" userLabel="moveIndicator">
                                         <rect key="frame" x="110" y="190" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -323,7 +327,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" id="tXm-os-7cx" userLabel="dialogCharacterWarpper">
-                                                <rect key="frame" x="21" y="150" width="159.99999685299863" height="60"/>
+                                                <rect key="frame" x="20.999996852998624" y="150" width="160" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">
@@ -353,6 +357,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="creditsImage" destination="R8V-8k-qtG" id="BQt-Ev-cAQ"/>
                         <outlet property="debugLocation" destination="pka-T6-5M2" id="DJ6-tu-6oV"/>
                         <outlet property="dialogBubble" destination="Rwu-16-j3v" id="SU0-gX-adj"/>
                         <outlet property="dialogCharacter" destination="RcO-YQ-M4O" id="Gf8-nK-s4F"/>

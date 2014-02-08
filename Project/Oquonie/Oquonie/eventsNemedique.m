@@ -164,18 +164,28 @@
 {
 	if([option isEqualToString:@"postNotification"]){
 		NSLog(@"CREDIT PART1");
+		self.creditsImage.backgroundColor = [UIColor blackColor];
+		self.creditsImage.hidden = NO;
+		self.creditsImage.alpha = 1;
+		self.creditsImage.image = [UIImage imageNamed:@"credit.rekka.jpg"];
 		return @"";
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
+	
+	[self eventDialog:@"AAA":@"31"];
+	
 	return @"";
 }
 -(NSString*)event_credit2 :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
-		NSLog(@"CREDIT PART1");
+		NSLog(@"CREDIT PART2");
+		self.creditsImage.alpha = 1;
+		self.creditsImage.image = [UIImage imageNamed:@"credit.devine.jpg"];
 		return @"";
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
+	[self eventDialog:@"AAA":@"32"];
 	return @"";
 }
 -(NSString*)event_credit3 :(NSString*)option
