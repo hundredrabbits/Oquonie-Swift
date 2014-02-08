@@ -106,7 +106,7 @@
 	
 	[self userSave];
 	
-	[self eventTransitionPan:@"29":@"0,0"];
+	[self eventTransitionPan:@"1":@"0,0"];
 }
 
 

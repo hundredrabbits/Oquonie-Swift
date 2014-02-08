@@ -45,8 +45,6 @@
 	// Debug: remove
 	if(systemDebug == 1){
 		
-		NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-		[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 		
 		
 	
@@ -55,12 +53,16 @@
 		[self eventIntroduction];
 	}
 	
+	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+	
 	userStorageEvents[storageQuestPillarNecomedre] = @"1";
 	userStorageEvents[storageQuestPillarNephtaline] = @"1";
 	userStorageEvents[storageQuestPillarNeomine] = @"1";
 	userStorageEvents[storageQuestPillarNestorine] = @"1";
 	userStorageEvents[storageQuestPillarNemedique] = @"1";
-	userGameCompleted = 1;
+//	userGameCompleted = 1;
+	
 	self.debugLocation.hidden = NO;
 	
 }
@@ -673,7 +675,7 @@
 	if([filename isEqualToString:@"town1.mp3"] && userGameCompleted == 1){
 		filename = @"town3.mp3";
 	}
-	else if([filename isEqualToString:@"town.mp3"] && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+	else if([filename isEqualToString:@"town1.mp3"] && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
 		filename = @"town2.mp3";
 	}
 	

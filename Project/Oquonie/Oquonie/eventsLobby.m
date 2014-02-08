@@ -62,9 +62,6 @@
 	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNephtaline);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == characterNephtaline){
-			return @""; // letterUnlocked
-		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
@@ -73,7 +70,7 @@
 		if(userLocation == 93 && [userStorageEvents[storageQuestPillarNestorine] intValue] == 1){
 			return @"19";
 		}
-		if(userCharacter==characterNephtaline){
+		if(userCharacter==characterNephtaline || userCharacter == 7){
 			return @"gateNephtalineOpen";
 		}
 		else{
@@ -87,7 +84,7 @@
 	}
 	
 	// Warp
-	if(userCharacter == characterNephtaline){
+	if(userCharacter == characterNephtaline || userCharacter == 7){
 		if(userLocation == 38){
 			[self eventWarp:@"39" :@"0,-1"];
 		}
@@ -122,14 +119,11 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == characterNeomine){
-			return @""; // letterUnlocked
-		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(userCharacter==characterNeomine){
+		if(userCharacter==characterNeomine || userCharacter == 7){
 			return @"gateNeomineOpen";
 		}
 		else{
@@ -137,7 +131,7 @@
 		}
 	}
 	// Warp
-	if(userCharacter == characterNeomine){
+	if(userCharacter == characterNeomine || userCharacter == 7){
 		if(userLocation == 60){
 			[self eventWarp:@"3" :@"1,0"];
 		}
@@ -171,9 +165,6 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter==4){
-			return @""; // letterUnlocked
-		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
@@ -182,7 +173,7 @@
 		if(userLocation == 34 && [userStorageEvents[storageQuestPillarNecomedre] intValue] == 1){
 			return @"25";
 		}
-		if(userCharacter==characterNestorine){
+		if(userCharacter==characterNestorine || userCharacter == 7){
 			return @"gateNestorineOpen";
 		}
 		else{
@@ -196,7 +187,7 @@
 	}
 	
 	// Warp
-	if(userCharacter == characterNestorine){
+	if(userCharacter == characterNestorine || userCharacter == 7){
 		if(userLocation == 7){
 			[self eventWarpDramatic:@"96" :@"0,-1"];
 		}
@@ -248,7 +239,7 @@
 			return @"36";
 		}
 		
-		if(userCharacter==characterNecomedre){
+		if(userCharacter==characterNecomedre || userCharacter == 7){
 			return @"gateNecomedreOpen";
 		}
 		else{
@@ -267,7 +258,7 @@
 	}
 	
 	// Warp
-	if(userCharacter == characterNecomedre){
+	if(userCharacter == characterNecomedre || userCharacter == 7){
 		if(userLocation == 62){
 			[self eventWarp:@"71" :@"0,-1"];
 		}
@@ -314,7 +305,7 @@
 		if(userLocation == 50 && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){
 			return @"3";
 		}
-		if(userCharacter==5){
+		if(userCharacter==5 || userCharacter == 7){
 			return @"gateNemediqueOpen";
 		}
 		else{
@@ -328,7 +319,7 @@
 	}
 	
 	// Warp
-	if(userCharacter == characterNemedique){
+	if(userCharacter == characterNemedique || userCharacter == 7){
 		if(userLocation == 50){
 			[self eventWarpDramatic:@"121" :@"-1,0"];
 			[self eventDialog:dialogInfoPillar:eventOwl];
@@ -408,7 +399,6 @@
 	else{
 		[self eventDialog:dialogHavePillarsNot:eventRed];
 	}
-	
 	
 	return @"";
 }
@@ -774,6 +764,10 @@
 		giveSpell = spellNecomedre;
 	}
 	
+	if(userGameCompleted ==1){
+		return @"";
+	}
+	
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
 		if([userStorageEvents[ramenStorage] intValue] == 1 && ![self eventSpellCheck:@"ramenQuestSpell"] ){
@@ -877,6 +871,29 @@
 	if([option isEqualToString:@"postUpdate"]){
 		return @"";
 	}
+	// Default
+	return @"";
+}
+
+-(NSString*)event_courtyard:(NSString*)option
+{
+	// Broadcast Notification |warp|11|1,0
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	if(userGameCompleted ==1){
+		[self eventWarpDramatic:@"116":@"1,0"];
+	}
+	else{
+		[self eventWarpDramatic:@"11":@"1,0"];
+		
+	}
+	
 	// Default
 	return @"";
 }

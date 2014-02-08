@@ -9,8 +9,8 @@
 #define systemDebug				0
 #define systemBuild				1
 
-#define userCharacterId			7
-#define userCharacterLocation	40
+#define userCharacterId			5
+#define userCharacterLocation	100
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -110,6 +110,7 @@
 #define eventRed				@"10"
 #define eventRamenSeat			@"18"
 #define eventNepturne			@"28"
+#define eventCat				@"33"
 
 #define eventPillarCollectible	@"15"
 #define eventPillarSocket		@"14"

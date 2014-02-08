@@ -28,7 +28,7 @@
 	
 	worldNode[111] = @[
 	// Tiles
-	@"36",@"36|event|petunia|30|l",@"36",
+	@"36",@"36|event|petunia|30|l",@"36|event|cat|33|l",
 	@"36",@"36",@"36",
 	@"36",@"36",@"36",
 	// Walls
@@ -40,7 +40,7 @@
 	
 	worldNode[112] = @[
 	// Tiles
-	@"32",@"0",@"5",
+	@"32|event|cat|33|l",@"0",@"5",
 	@"30",@"0",@"4",
 	@"4",@"6",@"5",
 	// Walls
@@ -78,7 +78,7 @@
 	// Glitch in nemedique
 	worldNode[115] = @[
 	// Tiles
-	@"98",@"97|event|null|33|l",@"98",
+	@"98",@"97|event|null|32|l",@"98",
 	@"98",@"98",@"97",
 	@"97",@"98",@"98",
 	// Walls
@@ -88,6 +88,18 @@
 	// Name,Background,Audio
 	@"Glitch World(cat1)",@"Pest",audioPlay];
 	
+	// Courtyard
+	worldNode[116] = @[
+	// Tiles
+	@"4",@"5",@"6",
+	@"5",@"33|event|cat|33|l",@"4",
+	@"4",@"6",@"5",
+	// Walls
+	@"36",@"13|warp|9|-1,0",@"36",@"3",@"37",@"3",
+	// Steps
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Test Level",@"White",audioPillar];
 	
 }
 

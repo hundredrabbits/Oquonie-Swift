@@ -52,6 +52,23 @@
 	return [array objectAtIndex: arc4random() % [array count]];
 }
 
+-(NSString*)event_cat:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	[self eventDialog:@"UUU":eventCat];
+	
+	NSLog(@"MOEW");
+	
+	return @"";
+}
 
 -(NSString*)event_catDoorFork:(NSString*)option
 {

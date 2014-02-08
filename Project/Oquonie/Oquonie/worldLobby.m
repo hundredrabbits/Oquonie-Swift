@@ -106,7 +106,7 @@
 	// Walls
 	@"18",@"9|event|gateNemedique",@"18",@"3",@"13|warp|5|0,-1",@"3",
 	// Steps
-	@"0",@"0",@"0",@"0",@"7|warp|11|1,0",@"0",
+	@"0",@"0",@"0",@"0",@"7|event|courtyard",@"0",
 	// Name,Background,Audio
 	@"Lobby Nemedique",@"White",audioLobby];
 
@@ -156,7 +156,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"7|warp|4|1,0",@"0",
 	// Name,Background,Audio
-	@"Test Level",@"White",audioQuiet];
+	@"Test Level",@"White",audioLobby];
 
 }
 
