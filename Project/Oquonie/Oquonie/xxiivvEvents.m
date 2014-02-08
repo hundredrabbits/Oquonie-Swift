@@ -508,7 +508,8 @@
 
 -(void)eventVignette :(NSString*) vignetteType
 {
-	self.vignette.image = [UIImage imageNamed:@"fx.vignette.1.png"];
+	self.vignette.alpha = 1;
+	self.vignette.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.vignette.%@.png",vignetteType]];
 	[UIView animateWithDuration:1.5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		self.vignette.alpha = 0;

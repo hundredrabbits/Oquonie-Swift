@@ -657,7 +657,6 @@
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
 	
-	
 	if([userStorageEvents[storageQuestPillarNemedique] intValue] > 0 || userLocation == 102){
 		// Dialog
 		if(userCharacter == 1){
@@ -671,6 +670,8 @@
 			[NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(event_sharkTransform) userInfo:nil repeats:NO];
 			[NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
 		}
+		// Clear Spellbook
+		userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
 	}
 	
 	// Return storage Id

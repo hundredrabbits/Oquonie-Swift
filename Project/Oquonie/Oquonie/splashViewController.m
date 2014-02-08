@@ -19,9 +19,13 @@
 {
     [super viewDidLoad];
 	
-	if(systemDebug>0){ [self splashSkip]; }
+	if(systemDebug>0){
+		[self splashSkip];
+	}
+	else{
+		[self splashStart];
+	}
 	
-	[self splashStart];
 }
 -(void)splashStart
 {
@@ -94,6 +98,9 @@
 		slideTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(splashSkip) userInfo:nil repeats:NO];
 		NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
 		[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+		[UIView animateWithDuration:0.5 animations:^(void){
+			self.eraseImage.alpha = 0;
+		} completion:^(BOOL finished){}];
 	}
 	
 	if(gameEraseState ==0){

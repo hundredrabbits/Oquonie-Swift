@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#define systemDebug				0
+#define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			1
-#define userCharacterLocation	29
+#define userCharacterId			6
+#define userCharacterLocation	30
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -161,6 +161,9 @@
 #define console(x) NSLog(x);
 
 #define test(x) NSLog(@"%@",x);
+
+#define random(min,max) ((arc4random() % (max-min+1)) + min)
+
 //#define dialogString(x) [NSString stringWithFormat:@"%@",x];
 
 
