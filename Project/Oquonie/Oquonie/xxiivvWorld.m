@@ -231,26 +231,34 @@
 		worldBackground = worldNode[userLocation][22];
 		// Start Game
 		if([worldBackground isEqualToString:@"Black"] && userGameCompleted == 0){
-			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+			[UIView animateWithDuration:1.0 animations:^{
+				self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+			} completion:NULL];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.3.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
 			self.debugLocation.textColor = [UIColor whiteColor];
 		}
 		if([worldBackground isEqualToString:@"White"] && userGameCompleted == 0){
-			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+			[UIView animateWithDuration:1.0 animations:^{
+				self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+			} completion:NULL];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2.png"];
 			self.debugLocation.textColor = [UIColor blackColor];
 		}
 		// End Game
 		if([worldBackground isEqualToString:@"Black"] && userGameCompleted == 1){
-			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+			[UIView animateWithDuration:1.0 animations:^{
+				self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+			} completion:NULL];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2.png"];
 			self.debugLocation.textColor = [UIColor redColor];
 		}
 		if([worldBackground isEqualToString:@"White"] && userGameCompleted == 1){
-			self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+			[UIView animateWithDuration:1.0 animations:^{
+				self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+			} completion:NULL];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.3.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
 			self.debugLocation.textColor = [UIColor blackColor];

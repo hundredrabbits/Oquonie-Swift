@@ -141,15 +141,15 @@
 
 	worldNode[31] = @[
 	// Tiles
-	@"21|block|16",@"2|event|tutorialCharacter|12|r",@"2",
-	@"21",@"2",@"2",
-	@"21",@"21",@"2|block|4",
+	@"4",@"5|event|tutorialCharacter|12|r",@"6",
+	@"6",@"5",@"4",
+	@"5",@"4",@"5",
 	// Walls
-	@"20",@"19|warp|31|-1,0",@"19",@"17",@"40|event|tutorialRedDoor",@"17",
+	@"26",@"26",@"26",@"26",@"40|event|tutorialRedDoor",@"15",
 	// Steps
-	@"0",@"3",@"0",@"0",@"0",@"0",
+	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office Red",@"White",audioQuiet];
+	@"Office Red",@"Black",audioPillar];
 	
 	// =======================
 	// @ Events: Segment 2

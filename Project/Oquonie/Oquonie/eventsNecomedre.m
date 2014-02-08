@@ -394,7 +394,8 @@
 
 -(void)transformCharacter
 {
-	[self eventVignette:@"2"];	
+	[self eventVignette:@"2"];
+	[self eventWarp:@"31":userPositionString];
 }
 
 // =======================
