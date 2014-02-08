@@ -76,6 +76,21 @@
 
 # pragma mark NPCs -
 
+-(NSString*)event_endReset :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"]){ return @"";}
+	
+	[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(endReset_Trigger) userInfo:nil repeats:NO];
+	
+	return @"";
+}
+
+-(void)endReset_Trigger
+{
+	[self eventTransitionPan:@"29":@"0,0"];
+}
+
 -(NSString*)event_redEnd :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
@@ -96,7 +111,7 @@
 		return @"";
 	}
 	
-	[self moveDisable:10];
+	[self moveDisable:8];
 	
 	// Dialog
 	
@@ -133,9 +148,7 @@
 				self.roomContainer.alpha = 1;
 			} completion:^(BOOL finished){
 			}];
-			
 		}];
-		
 	}];
 	
 	[UIView animateWithDuration:2.5 animations:^(void){
