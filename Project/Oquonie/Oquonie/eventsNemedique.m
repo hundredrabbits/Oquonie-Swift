@@ -82,6 +82,8 @@
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"]){ return @"";}
 	
+	[self moveDisable:10];
+	
 	[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(endReset_Trigger) userInfo:nil repeats:NO];
 	
 	[UIView animateWithDuration:5 animations:^(void){
@@ -106,15 +108,6 @@
 
 -(void)redEndTransition
 {
-	
-	// Dialog
-	
-	[UIView animateWithDuration:5.0 animations:^(void){
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		self.roomContainer.alpha = 0;
-	} completion:^(BOOL finished){
-		[self eventDialog:dialogEnd1:eventNepturne];
-	}];
 	
 	[UIView animateWithDuration:10.5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -152,8 +145,21 @@
 	if([option isEqualToString:@"postUpdate"]){
 		
 		if( [userStorageEvents[storageEndForm] intValue] == 0){
+			
+			self.roomContainer.alpha = 0;
+			self.spritesContainer.alpha = 0;
+			
+			[UIView animateWithDuration:4.5 animations:^(void){
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+				[UIView setAnimationDelay:1];
+				self.roomContainer.alpha = 1;
+				self.spritesContainer.alpha = 1;
+			} completion:^(BOOL finished){
+				[self eventDialog:dialogEnd1:eventNepturne];
+			}];
+			
 			[self moveDisable:8];
-			[NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(redEndTransition) userInfo:nil repeats:NO];
+			[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(redEndTransition) userInfo:nil repeats:NO];
 			userStorageEvents[storageEndForm] = @"1";
 			return eventRed;
 		}
