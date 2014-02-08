@@ -84,6 +84,55 @@
 	@"0",@"6|warp|101|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Nemedique warp",@"White",audioWarp];
+	
+	worldNode[106] = @[
+	// Tiles
+	@"0",@"37|event|redGhost|28|r",@"0",
+	@"0",@"37",@"0",
+	@"0",@"37",@"0",
+	// Walls
+	@"39",@"gateRedOpen|warp|107|-1,0",@"39",@"39",@"33",@"39",
+	// Steps
+	@"0",@"0",@"0",@"0",@"11",@"0",
+	// Name,Background,Audio
+	@"unused",@"Black",audioNepturne];
+	
+	worldNode[107] = @[
+	// Tiles
+	@"0",@"37",@"0|event|credit1",
+	@"0",@"37",@"0",
+	@"0",@"37",@"0",
+	// Walls
+	@"39",@"gateRedOpen|warp|108|-1,0",@"39",@"39",@"33",@"39",
+	// Steps
+	@"0",@"0",@"0",@"0",@"11",@"0",
+	// Name,Background,Audio
+	@"unused",@"Black",audioNepturne];
+	
+	worldNode[108] = @[
+	// Tiles
+	@"0",@"37",@"0|event|credit2",
+	@"0",@"37",@"0",
+	@"0",@"37",@"0",
+	// Walls
+	@"39",@"gateRedOpen|warp|109|-1,0",@"39",@"39",@"33",@"39",
+	// Steps
+	@"0",@"0",@"0",@"0",@"11",@"0",
+	// Name,Background,Audio
+	@"unused",@"Black",audioNepturne];
+	
+	worldNode[109] = @[
+	// Tiles
+	@"0",@"37",@"0|event|credit3",
+	@"0",@"37",@"0",
+	@"0",@"37",@"0",
+	// Walls
+	@"39",@"gateRedOpen|warp|29|-1,0",@"39",@"39",@"33",@"39",
+	// Steps
+	@"0",@"0",@"0",@"0",@"11",@"0",
+	// Name,Background,Audio
+	@"unused",@"Black",audioNepturne];
+	
 }
 	
 @end

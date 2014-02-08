@@ -589,7 +589,7 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return eventRed;
+		return @"";
 	}
 	
 	
@@ -634,61 +634,6 @@
 			}];
 		}
 	}
-	return @"";
-}
-
--(NSString*)event_redEnd :(NSString*)option
-{
-	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
-	if([option isEqualToString:@"postUpdate"])		{
-		if(eventEndTimer == 1){
-			return @"1";
-		}
-		return @"";
-	}		// Broadcast Event Sprite Change
-	
-	eventEndTimer = 0;
-	
-	// Dialog
-	
-	[UIView animateWithDuration:5.0 animations:^(void){
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		self.roomContainer.alpha = 0;
-	} completion:^(BOOL finished){
-		[self eventDialog:dialogEnd1:eventNepturne];
-	}];
-	
-	[UIView animateWithDuration:10.5 animations:^(void){
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
-		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
-		self.parallaxBack.alpha = 0;
-		self.parallaxFront.alpha = 0;
-	} completion:^(BOOL finished){
-		[self roomClearDialog];
-		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, 1*screen.size.height+100);
-		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, 1*screen.size.height+200);
-		[UIView animateWithDuration:2.5 animations:^(void){
-			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			self.parallaxBack.frame = parallaxBackOrigin;
-			self.parallaxFront.frame = parallaxFrontOrigin;
-			self.parallaxBack.alpha = 1;
-			self.parallaxFront.alpha = 1;
-		} completion:^(BOOL finished){
-			[self eventVignette:@"1"];
-			eventEndTimer = 1;
-			[self roomGenerateEvents];
-		}];
-		
-	}];
-	
-	
-	[UIView animateWithDuration:2.5 animations:^(void){
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	} completion:^(BOOL finished){
-	}];
-	
-	// Return storage Id
 	return @"";
 }
 

@@ -9,6 +9,7 @@
 #import "xxiivvSettings.h"
 #import "xxiivvEvents.h"
 #import "eventsNemedique.h"
+#import "xxiivvWorld.h"
 
 @implementation xxiivvViewController (eventsNemedique)
 
@@ -74,6 +75,106 @@
 // =======================
 
 # pragma mark NPCs -
+
+
+-(NSString*)event_redEnd :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"])		{ return eventRed;}
+	
+	[self moveDisable:10];
+	
+	// Target
+	
+	for (UIImageView *subview in [self.spritesContainer subviews]) {
+		if(subview.tag != 20){ continue; }
+		int tileId = -1;
+		while (tileId < 21) {
+			tileId += 1;
+			// Lets identify the current subview
+			if(![[self tileParser:worldNode[userLocation][tileId] :2] isEqualToString:@"redGhost"]){ continue; }
+			if( subview.frame.origin.x != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
+			if( subview.frame.origin.y != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
+			
+		}
+	}
+	
+	// Dialog
+	
+	[UIView animateWithDuration:5.0 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		self.roomContainer.alpha = 0;
+	} completion:^(BOOL finished){
+		[self eventDialog:dialogEnd1:eventNepturne];
+	}];
+	
+	[UIView animateWithDuration:10.5 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
+		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
+		self.parallaxBack.alpha = 0;
+		self.parallaxFront.alpha = 0;
+	} completion:^(BOOL finished){
+		[self roomClearDialog];
+		
+		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, 1*screen.size.height+100);
+		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, 1*screen.size.height+200);
+		[UIView animateWithDuration:2.5 animations:^(void){
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+			self.parallaxBack.frame = parallaxBackOrigin;
+			self.parallaxFront.frame = parallaxFrontOrigin;
+			self.parallaxBack.alpha = 1;
+			self.parallaxFront.alpha = 1;
+		} completion:^(BOOL finished){
+			[self eventVignette:@"1"];
+			[self eventWarp:@"106":@"0,0"];
+			
+			[UIView animateWithDuration:2.5 animations:^(void){
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+				self.roomContainer.alpha = 1;
+			} completion:^(BOOL finished){
+			}];
+			
+		}];
+		
+	}];
+	
+	[UIView animateWithDuration:2.5 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	} completion:^(BOOL finished){
+	}];
+	
+	// Return storage Id
+	return @"";
+}
+
+-(NSString*)event_credit1 :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){
+		NSLog(@"CREDIT PART1");
+		return @"";
+	}		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"])		{ return @"";}
+	return @"";
+}
+-(NSString*)event_credit2 :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){
+		NSLog(@"CREDIT PART1");
+		return @"";
+	}		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"])		{ return @"";}
+	return @"";
+}
+-(NSString*)event_credit3 :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){
+		NSLog(@"CREDIT PART1");
+		return @"";
+	}		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"])		{ return @"";}
+	return @"";
+}
 
 // =======================
 // @ Events: Misc

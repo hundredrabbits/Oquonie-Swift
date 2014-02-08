@@ -141,10 +141,6 @@ int userGameCompleted;
 NSMutableArray *userSpellbook;
 NSMutableArray *userStorageEvents;
 
-// Events
-
-int eventEndTimer;
-
 // World
 
 NSString *worldAudio;

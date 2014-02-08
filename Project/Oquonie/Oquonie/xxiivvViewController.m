@@ -42,10 +42,15 @@
 	
 	[self audioAmbientPlayer:@"start"];
 	
-	
 	// Debug: remove
 	if(systemDebug == 1){
 		
+		userStorageEvents[storageQuestPillarNecomedre] = @"1";
+		userStorageEvents[storageQuestPillarNephtaline] = @"1";
+		userStorageEvents[storageQuestPillarNeomine] = @"1";
+		userStorageEvents[storageQuestPillarNestorine] = @"1";
+		userStorageEvents[storageQuestPillarNemedique] = @"1";
+	
 	}
 	else{
 		[self eventIntroduction];
@@ -243,13 +248,10 @@
 			[self.spritesContainer bringSubviewToFront:subview];
 		}
 	}
-	
-	
 }
 
 - (int) moveEvent :(int)posX :(int)posY
 {
-	
 	// If Ghost
 	if([[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :2] isEqualToString:@"redGhost"]){
 		return 0;
