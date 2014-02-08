@@ -101,6 +101,8 @@
 // Misc
 // =================
 
+-(void)start;
+
 -(CGRect) tileLocation :(int)type :(int)posX :(int)posY;
 -(int)flattenTileId :(int)tileId :(NSString*)axis;
 -(void)userSpriteUpdate :(NSString*)imageName;

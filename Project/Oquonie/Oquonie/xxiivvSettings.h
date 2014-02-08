@@ -10,7 +10,7 @@
 #define systemBuild				1
 
 #define userCharacterId			5
-#define userCharacterLocation	106
+#define userCharacterLocation	100
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -33,6 +33,7 @@
 #define storageQuestPillarNemedique		15
 
 #define storageEndForm					20
+#define storageEndFormTrigger			21
 
 #define dialogIntroduction			@"AAA"
 #define dialogHaveCharacter			@"QIS" // already are the character from that wizard

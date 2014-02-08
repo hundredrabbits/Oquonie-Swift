@@ -483,6 +483,7 @@
 		self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, -1*screen.size.height);
 		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
 		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
+		self.spritesContainer.alpha = 1;
 		
 		self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 0, -1*screen.size.height+200);
 		

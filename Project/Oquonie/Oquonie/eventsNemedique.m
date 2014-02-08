@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvViewController.h"
 #import "xxiivvSettings.h"
 #import "xxiivvEvents.h"
 #import "eventsNemedique.h"
@@ -83,35 +84,28 @@
 	
 	[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(endReset_Trigger) userInfo:nil repeats:NO];
 	
+	[UIView animateWithDuration:5 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		self.spritesContainer.alpha = 0;
+	} completion:^(BOOL finished){
+	}];
+	
 	return @"";
 }
 
 -(void)endReset_Trigger
 {
+	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+	
+	[self start];
+	
 	[self eventTransitionPan:@"29":@"0,0"];
 }
 
--(NSString*)event_redEnd :(NSString*)option
+
+-(void)redEndTransition
 {
-	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
-	if([option isEqualToString:@"postUpdate"])		{
-		if( [userStorageEvents[storageEndForm] intValue] == 1)
-		{
-			return eventNepturne;
-		}
-		return eventRed;
-	}
-	
-	if( ![userStorageEvents[storageEndForm] intValue] == 1)
-	{
-		userStorageEvents[storageEndForm] = @"1";
-		[self roomClearSprites];
-		[self roomGenerateEvents];
-		[self event_redEnd:@"anything"];
-		return @"";
-	}
-	
-	[self moveDisable:8];
 	
 	// Dialog
 	
@@ -141,8 +135,7 @@
 			self.parallaxFront.alpha = 1;
 		} completion:^(BOOL finished){
 			[self eventVignette:@"1"];
-			[self eventWarp:@"106":@"0,0"];
-			
+			[self eventWarp:@"106":@"-1,0"];
 			[UIView animateWithDuration:2.5 animations:^(void){
 				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 				self.roomContainer.alpha = 1;
@@ -150,13 +143,26 @@
 			}];
 		}];
 	}];
-	
-	[UIView animateWithDuration:2.5 animations:^(void){
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	} completion:^(BOOL finished){
-	}];
-	
-	// Return storage Id
+	userStorageEvents[storageEndFormTrigger] = @"1";
+}
+
+-(NSString*)event_redEnd :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"]){
+		
+		if( [userStorageEvents[storageEndForm] intValue] == 0){
+			[self moveDisable:8];
+			[NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(redEndTransition) userInfo:nil repeats:NO];
+			userStorageEvents[storageEndForm] = @"1";
+			return eventRed;
+		}
+		if([userStorageEvents[storageEndFormTrigger] intValue]==1){
+			return eventNepturne;
+		}
+		return eventRed;
+		
+	}
 	return @"";
 }
 
