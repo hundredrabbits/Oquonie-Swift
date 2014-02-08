@@ -46,6 +46,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *step3r;
 
 @property (strong, nonatomic) AVAudioPlayer *audioAmbientPlayer;
+@property (strong, nonatomic) AVAudioPlayer *audioEffectPlayer;
+@property (strong, nonatomic) AVAudioPlayer *audioDialogPlayer;
 
 // =================
 // Sprites
@@ -71,6 +73,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter1;
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter2;
 @property (strong, nonatomic) IBOutlet UIImageView *dialogCharacter3;
+@property (strong, nonatomic) IBOutlet UIView *dialogCharacterWarpper;
 
 @property (strong, nonatomic) IBOutlet UIView *spellView;
 @property (strong, nonatomic) IBOutlet UIImageView *spellCharacter1;
@@ -102,6 +105,7 @@
 
 -(void)audioAmbientPlayer:(NSString*)filename;
 -(void)audioEffectPlayer:(NSString*)filename;
+-(void)audioDialogPlayer:(NSString*)filename;
 
 - (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY;
 - (void) moveAnimation;

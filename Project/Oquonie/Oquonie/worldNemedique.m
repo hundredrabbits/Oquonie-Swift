@@ -63,7 +63,7 @@
 	
 	worldNode[104] = @[
 	// Tiles
-	@"41",@"42|event|redEnd|10|r",@"43",
+	@"41",@"42|event|redEnd|28|r",@"43",
 	@"44",@"45",@"46",
 	@"47",@"48",@"49",
 	// Walls
@@ -71,7 +71,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"11",@"0",
 	// Name,Background,Audio
-	@"unused",@"Black",audioRed];
+	@"unused",@"Black",audioNepturne];
 	
 	worldNode[105] = @[
 	// Tiles
@@ -83,7 +83,7 @@
 	// Steps
 	@"0",@"6|warp|101|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Nemedique warp",@"White",audioPillar];
+	@"Nemedique warp",@"White",audioWarp];
 }
 	
 @end

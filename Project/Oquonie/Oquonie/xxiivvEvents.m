@@ -87,8 +87,6 @@
 	[self templateRoomAnimation];
 	[self moveParallax];
 	[self moveOrder];
-	
-	[self audioEffectPlayer:@"warp"];
 }
 
 - (void)eventWarpDramatic :(NSString*)nodeId :(NSString*)eventData
@@ -121,6 +119,7 @@
 	[self moveOrder];
 	
 	[self audioEffectPlayer:@"warp"];
+	[self audioEffectPlayer:@"dialog"];
 }
 
 - (void)eventDialog :(NSString*)dialog :(NSString*)characterId
@@ -196,8 +195,8 @@
 	for (NSArray *spellbookItem in userSpellbook) {
 		if( [spellbookItem[0] isEqualToString:spellId] && [spellbookItem[1] intValue] == spellType){
 			NSLog(@"- EVENT | Spell        | Removed  -> id:%@ type:%d",spellId,spellType);
+			[self audioEffectPlayer:@"spelllost"];
 			userSpellbook[index] = @[@"",@""];
-			[self audioEffectPlayer:@"spellRemoved"];
 			[self eventSpellRefresh];
 			return;
 		}
@@ -213,13 +212,13 @@
 	
 	if(spellSlot > -1){
 		NSLog(@"> EVENT | Spell        | Added    -> id:%@ type:%d",spellId,spellType);
+		[self audioEffectPlayer:@"spellgain"];
 		userSpellbook[spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
-		[self audioEffectPlayer:@"spellAdded"];
 		[self eventSpellRefresh];
 	}
 	else{
 		NSLog(@"> EVENT | Spell        | No available slot");
-		[self audioEffectPlayer:@"error"];
+		[self audioEffectPlayer:@"spellfull"];
 	}
 }
 
@@ -408,6 +407,7 @@
 								[self roomGenerateEvents];
 								[self roomClearNotifications];
 								[self moveOrder];
+								[self audioEffectPlayer:@"bump"];
 								userDialogActive = 0;
 							}];
 						}];
@@ -464,6 +464,7 @@
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates
 {
+	[self audioEffectPlayer:@"teleport"];
 	[self moveDisable:5.5];
 	[UIView animateWithDuration:2.5 animations:^(void){
 		NSLog(@"  EVENT | Pan          | Panning Out");
@@ -499,6 +500,7 @@
 			userSpriteOrientationHorizontal = @"l";
 			userSpriteOrientationVertical = @"f";
 			userDialogActive = 0;
+			[self audioEffectPlayer:@"bump"];
 		}];
 		
 	}];
@@ -506,7 +508,8 @@
 
 -(void)eventVignette :(NSString*) vignetteType
 {
-	self.vignette.image = [UIImage imageNamed:@"fx.vignette.1.png"];
+	self.vignette.alpha = 1;
+	self.vignette.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.vignette.%@.png",vignetteType]];
 	[UIView animateWithDuration:1.5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		self.vignette.alpha = 0;

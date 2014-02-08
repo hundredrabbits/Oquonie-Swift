@@ -111,7 +111,7 @@
 
 	worldNode[68] = @[
 	// Tiles
-	@"38",@"10",@"38",
+	@"38|event|redGhost|12|r",@"10",@"38",
 	@"4",@"9",@"10",
 	@"5",@"6",@"10",
 	// Walls
@@ -155,7 +155,7 @@
 	// Steps
 	@"0",@"3|event|gateNecomedre",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Pillar Room",@"White",audioNeomine];
+	@"Necomedre Pillar Room",@"White",audioPillar];
 	
 }
 @end

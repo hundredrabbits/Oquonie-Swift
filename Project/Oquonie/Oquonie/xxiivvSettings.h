@@ -9,8 +9,8 @@
 #define systemDebug				1
 #define systemBuild				1
 
-#define userCharacterId			3
-#define userCharacterLocation	33
+#define userCharacterId			4
+#define userCharacterLocation	80
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -19,6 +19,12 @@
 #define storageQuestRamenNeomine		3
 #define storageQuestRamenNestorine		4
 #define storageQuestRamenNemedique		5
+
+#define storageGhostOffice				6
+#define storageGhostNecomedre			7
+#define storageGhostNephtaline			8
+#define storageGhostNeomine				9
+#define storageGhostNestorine			10
 
 #define storageQuestPillarNecomedre		11
 #define storageQuestPillarNephtaline	12
@@ -63,17 +69,18 @@
 #define dialogConfusion3			@"UUU"
 #define dialogConfusion4			@"UUU"
 
-#define audioQuiet				@"Quiet"
-#define audioNecomedre			@"Necomedre"
-#define audioNephtaline			@"Nephtaline"
-#define audioNeomine			@"Neomine"
-#define audioNestorine			@"Nestorine"
-#define audioNemedique			@"Nemedique"
-#define audioQuiet				@"Quiet"
-#define audioPillar				@"Pillar"
-#define audioLobby				@"Town"
-#define audioWarp				@"Warp"
-#define audioRed				@"Red"
+#define audioNecomedre			@"necomedre"
+#define audioNephtaline			@"nephtaline"
+#define audioNeomine			@"neomine"
+#define audioNestorine			@"nestorine"
+#define audioNemedique			@"nemedique"
+#define audioNepturne			@"nepturne"
+#define audioLobby				@"town1"
+#define audioLobby2				@"town2"
+#define audioLobby3				@"town3"
+#define audioQuiet				@"quiet"
+#define audioPillar				@"pillartree"
+#define audioWarp				@"warp"
 
 #define characterNecomedre		1
 #define characterNephtaline		2
@@ -95,6 +102,7 @@
 #define eventTutorial			@"12"
 #define eventRed				@"10"
 #define eventRamenSeat			@"18"
+#define eventNepturne			@"28"
 
 #define eventPillarCollectible	@"15"
 #define eventPillarSocket		@"14"
@@ -159,6 +167,9 @@
 #define console(x) NSLog(x);
 
 #define test(x) NSLog(@"%@",x);
+
+#define random(min,max) ((arc4random() % (max-min+1)) + min)
+
 //#define dialogString(x) [NSString stringWithFormat:@"%@",x];
 
 

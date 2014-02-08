@@ -50,11 +50,11 @@
 
 	worldNode[4] = @[
 	// Tiles
-	@"1|event|speakerphone|9|r",@"6",@"1",
-	@"5",@"5|block|9",@"6",
+	@"1|event|speakerphone|9|r",@"1",@"1|block|9",
+	@"1",@"5",@"6",
 	@"1",@"6",@"1",
 	// Walls
-	@"1",@"1",@"1",@"1",@"12|warp|3|0,-1",@"1",
+	@"26",@"14|warp|14|-1,0",@"26",@"1",@"12|warp|3|0,-1",@"1",
 	// Steps
 	@"0",@"0",@"0",@"0",@"7|warp|5|1,0",@"0",
 	// Name,Background,Audio
@@ -133,6 +133,30 @@
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Test Level",@"White",audioPillar];
+	
+	worldNode[13] = @[
+	// Tiles
+	@"4",@"5",@"6",
+	@"5",@"33|event|tree|23|l",@"4",
+	@"4",@"6",@"5",
+	// Walls
+	@"36",@"13|warp|9|-1,0",@"36",@"3",@"37",@"3",
+	// Steps
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Test Level",@"White",audioPillar];
+
+	worldNode[14] = @[
+	// Tiles
+	@"0",@"0|event|null|29|r",@"0",
+	@"0",@"5",@"0",
+	@"0",@"5",@"0",
+	// Walls
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Steps
+	@"0",@"0",@"0",@"0",@"7|warp|4|1,0",@"0",
+	// Name,Background,Audio
+	@"Test Level",@"White",audioQuiet];
 
 }
 

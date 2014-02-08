@@ -16,8 +16,8 @@
 	worldNode[80] = @[
 	// Tiles
 	@"35|block|23",@"35",@"7|event|warpLobby",
-	@"35",@"8",@"35|block|11",
-	@"35",@"35",@"35",
+	@"35",@"8",@"35",
+	@"35",@"35",@"35|block|11",
 	// Walls
 	@"35",@"15",@"35",@"34",@"15",@"34",
 	// Steps
@@ -76,7 +76,7 @@
 	worldNode[85] = @[
 	// Tiles
 	@"34",@"35",@"35",
-	@"35",@"35",@"35",
+	@"35",@"35",@"35|event|redGhost|12|l",
 	@"0",@"35",@"34",
 	// Walls
 	@"26",@"15",@"26",@"34",@"35",@"34",
@@ -167,7 +167,7 @@
 	// Steps
 	@"0",@"1|warp|94|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Warp Zone IV",@"White",audioNestorine];
+	@"Warp Zone IV",@"White",audioWarp];
 
 	worldNode[93] = @[
 	// Tiles
@@ -215,7 +215,7 @@
 	// Steps
 	@"0",@"1|event|gateNestorine",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Entrance Warp",@"White",audioNestorine];
+	@"Entrance Warp",@"White",audioWarp];
 	
 	worldNode[97] = @[
 	// Tiles

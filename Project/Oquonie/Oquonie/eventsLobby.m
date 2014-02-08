@@ -50,6 +50,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:eventTutorial];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	
@@ -109,6 +110,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -157,6 +159,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -215,6 +218,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	
@@ -286,6 +290,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -347,6 +352,7 @@
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
+		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
 	return @"";
@@ -416,6 +422,7 @@
 		return @""; // try with 17 ?
 	}
 	
+	[self audioDialogPlayer:@"bump"];
 	[self eventDialog:dialogWarpLobby:@"1"];
 	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
 	
@@ -430,6 +437,7 @@
 	} completion:^(BOOL finished){
 		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(warpLobbyAnimationSpriteUpdate) userInfo:nil repeats:NO];
 		[self eventTransitionPan:locationLobbyLanding:roomCenter];
+		userSpriteState = @"warp";
 	}];
 }
 
@@ -572,6 +580,63 @@
 
 # pragma mark NPCs -
 
+-(NSString*)event_redGhost:(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return eventRed;
+	}
+	
+	
+	
+	for (UIImageView *subview in [self.spritesContainer subviews]) {
+		if(subview.tag != 20){ continue; }
+		int tileId = -1;
+		while (tileId < 21) {
+			tileId += 1;
+			// Lets identify the current subview
+			if(![[self tileParser:worldNode[userLocation][tileId] :2] isEqualToString:@"redGhost"]){ continue; }
+			if( subview.frame.origin.x != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
+			if( subview.frame.origin.y != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
+			
+			if( userLocation == 31 && [userStorageEvents[storageGhostOffice] intValue] == 1){ subview.alpha = 0; return @"";}
+			if( userLocation == 36 && [userStorageEvents[storageGhostNecomedre] intValue] == 1){ subview.alpha = 0; return @"";}
+			if( userLocation == 40 && [userStorageEvents[storageGhostNephtaline] intValue] == 1){ subview.alpha = 0; return @"";}
+			if( userLocation == 68 && [userStorageEvents[storageGhostNeomine] intValue] == 1){ subview.alpha = 0; return @"";}
+			if( userLocation == 86 && [userStorageEvents[storageGhostNestorine] intValue] == 1){ subview.alpha = 0; return @"";}
+			
+			[self moveDisable:2];
+			
+			[UIView animateWithDuration:2 animations:^(void){
+				[UIView setAnimationDelay:1];
+				subview.alpha = 0;
+			} completion:^(BOOL finished){
+				if(userLocation == 31){
+					userStorageEvents[storageGhostOffice] = @"1";
+				}
+				if(userLocation == 36){
+					userStorageEvents[storageGhostNecomedre] = @"1";
+				}
+				if(userLocation == 40){
+					userStorageEvents[storageGhostNephtaline] = @"1";
+				}
+				if(userLocation == 68){
+					userStorageEvents[storageGhostNeomine] = @"1";
+				}
+				if(userLocation == 86){
+					userStorageEvents[storageGhostNestorine] = @"1";
+				}
+			}];
+		}
+	}
+	return @"";
+}
+
 -(NSString*)event_redEnd :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
@@ -590,7 +655,7 @@
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		self.roomContainer.alpha = 0;
 	} completion:^(BOOL finished){
-		[self eventDialog:dialogEnd1:eventRed];
+		[self eventDialog:dialogEnd1:eventNepturne];
 	}];
 	
 	[UIView animateWithDuration:10.5 animations:^(void){
@@ -634,6 +699,7 @@
 	
 	// Dialog
     [self eventDialog:@"UVW":eventOwl];
+	[self audioDialogPlayer:@"owl"];
 	[self userSave];
 	
 	// Return storage Id
@@ -648,7 +714,6 @@
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
 	
-	
 	if([userStorageEvents[storageQuestPillarNemedique] intValue] > 0 || userLocation == 102){
 		// Dialog
 		if(userCharacter == 1){
@@ -662,6 +727,8 @@
 			[NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(event_sharkTransform) userInfo:nil repeats:NO];
 			[NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
 		}
+		// Clear Spellbook
+		userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
 	}
 	
 	// Return storage Id
@@ -721,6 +788,7 @@
 		userStorageEvents[ramenStorage] = @"1";
 		[self eventWarp:userLocationString:userPositionString];
 		[self eventDialog:dialogGainRamen:eventRamen];
+		[self audioDialogPlayer:@"ramen"];
 	}
 	
 	return @"";
@@ -779,6 +847,7 @@
 	
 	if([userStorageEvents[ramenStorage] intValue] == 1){
 		[self eventSpellAdd:@"ramenQuestSpell":giveSpell];
+		[self audioDialogPlayer:@"ramen"];
 	}
 	
 	return @"";
@@ -802,11 +871,13 @@
 		[self eventAudioToggle:1];
 		[self eventDialog:dialogAudioOn:eventAudio];
 		[self audioEffectPlayer:@"tic"];
+		[self audioDialogPlayer:@"speakerphone"];
 	}
 	else{
 		[self eventAudioToggle:0];
 		[self eventDialog:dialogAudioOff:eventAudio];
 		[self audioEffectPlayer:@"tic"];
+		[self audioDialogPlayer:@"speakerphone"];
 	}
 	
 	[self roomStart];

@@ -60,6 +60,20 @@
 	textBlock3 = CGRectMake(screenMargin+(2*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
 	textBlock4 = CGRectMake(screenMargin+(3*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
 	
+	self.dialogView.frame = CGRectMake(0, screen.size.height-screen.size.width, screen.size.width, screen.size.width);
+	
+	self.dialogCharacterWarpper.frame = CGRectMake(self.dialogView.frame.size.width/15, self.dialogView.frame.size.height/1.7, self.dialogView.frame.size.width/5.5*2.5, self.dialogView.frame.size.width/5.5);
+	
+	float letterSize = self.dialogCharacterWarpper.frame.size.height;
+	float letterSizeMargin = letterSize/8;
+	
+	self.dialogCharacter1.frame = CGRectMake(0, 0, letterSize, letterSize);
+	self.dialogCharacter2.frame = CGRectMake(letterSize-letterSizeMargin, 0, letterSize, letterSize);
+	self.dialogCharacter3.frame = CGRectMake((letterSize*2)-(2*letterSizeMargin), 0, letterSize, letterSize);
+//	self.dialogCharacter2.frame = CGRectMake(self.dialogCharacterWarpper.frame.size.width/3, 0, self.dialogCharacterWarpper.frame.size.width/2.5, self.dialogCharacterWarpper.frame.size.width/2.5);
+//	self.dialogCharacter3.frame = CGRectMake(self.dialogCharacterWarpper.frame.size.width/3*2, 0, self.dialogCharacterWarpper.frame.size.width/2.5, self.dialogCharacterWarpper.frame.size.width/2.5);
+	
+	
 	// Dialog
 	portraitOrigin = self.dialogCharacter.frame;
 	bubbleOrigin = self.dialogBubble.frame;

@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface splashViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIImageView *splashLogoOquonie;
-
+	@property (strong, nonatomic) IBOutlet UIImageView *splashLogoOquonie;
+	@property (strong, nonatomic) IBOutlet UIButton *buttonErase;
+	@property (strong, nonatomic) IBOutlet UIImageView *eraseImage;
+	- (IBAction)eraseButton:(id)sender;
 @end
 
 int splashSlide = 1;
+int gameEraseState;
+
 NSTimer *slideTimer;

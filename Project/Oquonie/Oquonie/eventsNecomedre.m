@@ -52,6 +52,7 @@
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	[self eventSpellAdd:eventSpellId:6];
+	[self audioDialogPlayer:@"photocopier"];
 	
 	return @"";
 }
@@ -83,6 +84,7 @@
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	[self eventSpellAdd:eventSpellId:6];
+	[self audioDialogPlayer:@"photocopier"];
 	
 	return @"";
 }
@@ -114,6 +116,7 @@
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	[self eventSpellAdd:eventSpellId:6];
+	[self audioDialogPlayer:@"photocopier"];
 	
 	return @"";
 }
@@ -146,6 +149,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nephtaline"];
 	
 	return @"";
 }
@@ -179,6 +183,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nephtaline"];
 	
 	return @"";
 }
@@ -211,6 +216,7 @@
 	
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self audioDialogPlayer:@"nephtaline"];
 	
 	return @"";
 }
@@ -247,14 +253,13 @@
 		return @"";
 	}
 	
+	[self audioDialogPlayer:@"nestorine"];
+	// If doesn't have the first pillar
+	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
 	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
-	// If have spell already
-	if([self eventSpellCheck:eventSpellId]){ [self eventDialog:dialogHaveCharacter:eventSpriteId]; return @""; }
-	// If doesn't have the first pillar
-	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	
 	[self eventSpellAdd:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -294,16 +299,14 @@
 		return @"";
 	}
 	
+	[self audioDialogPlayer:@"nemedique"];
+	// If doesn't have the first pillar
+	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
 	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
-	// If have spell already
-	if([self eventSpellCheck:eventSpellId]){ [self eventDialog:dialogHaveCharacter:eventSpriteId]; return @""; }
-	// If doesn't have the first pillar
-	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	
-	// Dialog
 	[self eventSpellAdd:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
 	
@@ -315,6 +318,82 @@
 // =======================
 
 # pragma mark NPCs -
+
+-(NSString*)event_tutorialCharacter :(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		if(userLocation == 30){
+			if(userCharacter == 6){ return letterDocument; }
+			else{ return @""; }
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return eventTutorial;
+	}
+	
+	// Dialogs
+	if(userLocation==30){
+		if(userCharacter == 6){
+			[self eventTranform:1];
+			[self eventDialog:dialogTutorialTalk1:eventTutorial];
+			[NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(tutorialSequence) userInfo:nil repeats:NO];
+//			[self tutorialSequence];
+		}
+	}
+	
+	return @"";
+}
+
+-(void)tutorialSequence
+{
+	NSLog(@"Tutorial Sequence");
+	[self cameraShake:0];
+}
+
+-(void)cameraShake:(int)tremor
+{
+	NSLog(@"camera shake");
+	
+	int minimum = (tremor*-1)/5;
+	int maximum = (tremor)/5;
+	int valX = random(minimum,maximum);
+	int valY = random(minimum,maximum);
+	
+	if(tremor == 50){ self.floor0e.image = [UIImage imageNamed:@"tile.4.png"]; }
+	if(tremor == 110){ self.wall2l.image = [UIImage imageNamed:@"wall.34.r.png"]; }
+	if(tremor == 130){ self.floore1.image = [UIImage imageNamed:@"tile.5.png"]; }
+	if(tremor == 140){ self.wall3r.image = [UIImage imageNamed:@"wall.26.l.png"]; }
+	if(tremor == 150){ self.floor01.image = [UIImage imageNamed:@"tile.6.png"]; }
+	if(tremor == 170){ self.floor1e.image = [UIImage imageNamed:@"tile.4.png"]; }
+	if(tremor == 180){ self.wall3l.image = [UIImage imageNamed:@"wall.26.r.png"]; }
+	if(tremor == 190){ self.step2l.image = [UIImage imageNamed:@"step.9.l.png"]; }
+	if(tremor == 200){ self.wall1r.image = [UIImage imageNamed:@"wall.15.l.png"]; }
+	if(tremor == 200){ self.wall1l.image = [UIImage imageNamed:@"wall.26.r.png"]; }
+	if(tremor == 200){ self.wall2r.image = [UIImage imageNamed:@"wall.40.l.png"]; }
+	
+	if(tremor < 201){
+		[UIView animateWithDuration:0.03 animations:^(void){
+			NSLog(@"x:%d y:%d",valX,valY);
+			self.roomContainer.frame = CGRectOffset(roomContainerOrigin, valX/10, valY/10);
+			self.spritesContainer.frame = CGRectOffset(spriteContainerOrigin, valX/10, valY/10);
+		} completion:^(BOOL finished){
+			[self cameraShake:tremor+1];
+		}];
+	}
+	else{
+		[self transformCharacter];
+	}
+}
+
+-(void)transformCharacter
+{
+	[self eventVignette:@"2"];
+	[self eventWarp:@"31":userPositionString];
+}
 
 // =======================
 // @ Events: Misc
@@ -331,7 +410,7 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"29";
+		return @"";
 	}
 	
 	[self eventTransitionPan:@"1":@"0,0"];
@@ -340,43 +419,7 @@
 	return @"";
 }
 
--(NSString*)event_tutorialCharacter :(NSString*)option
-{
-	// Broadcast Notifications
-	if([option isEqualToString:@"postNotification"]){
-		if(userLocation == 30){
-			if(userCharacter == 1){ return letterConfused; }
-			else{ return @""; }
-		}
-		return @"";
-	}
-	
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		if(userLocation == 31){
-			return eventRed;
-		}
-		return @"";
-	}
-	
-	// Dialogs
-	if(userLocation==30){
-		if(userCharacter == 6){
-			[self eventTranform:1];
-			[self eventDialog:dialogTutorialTalk1:eventTutorial];
-		}
-		else if(userCharacter == 1){
-			[self eventDialog:dialogConfusion1:eventRed];
-			[self eventWarp:@"31" :@"0,0"];
-			[self eventVignette:@"12"];
-		}
-		else{
-			[self eventDialog:dialogConfusion2:eventTutorial];
-		}
-	}
-	
-	return @"";
-}
+
 
 -(NSString*)event_intercom:(NSString*)option
 {

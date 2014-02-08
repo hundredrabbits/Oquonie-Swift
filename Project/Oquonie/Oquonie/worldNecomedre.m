@@ -141,15 +141,15 @@
 
 	worldNode[31] = @[
 	// Tiles
-	@"21|block|16",@"2|event|tutorialCharacter|12|r",@"2",
-	@"21",@"2",@"2",
-	@"21",@"21",@"2|block|4",
+	@"4",@"5|event|redGhost|12|r",@"6",
+	@"6",@"5",@"4",
+	@"5",@"4",@"5",
 	// Walls
-	@"20",@"19|warp|31|-1,0",@"19",@"17",@"27|event|tutorialRedDoor",@"17",
+	@"26",@"26",@"26",@"26",@"40|event|tutorialRedDoor",@"15",
 	// Steps
-	@"0",@"3",@"0",@"0",@"0",@"0",
+	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Office Red",@"White",audioQuiet];
+	@"Office Red",@"Black",audioPillar];
 	
 	// =======================
 	// @ Events: Segment 2
@@ -159,7 +159,7 @@
 	
 	worldNode[32] = @[
 	// Tiles
-	@"33|block|23",@"33",@"33",
+	@"33|block|23",@"33",@"33|event|owlSave|1|r",
 	@"14",@"4",@"5",
 	@"33",@"6",@"33",
 	// Walls
@@ -209,7 +209,7 @@
 	// Tiles
 	@"33|event|necomedreNephtaline2|3|r",@"0",@"4",
 	@"33",@"0",@"4",
-	@"33",@"0",@"4",
+	@"33",@"0",@"4|event|redGhost|12|l",
 	// Walls
 	@"26",@"0",@"12|warp|33|-1,1",@"19",@"12|warp|37|0,-1",@"19",
 	// Steps
@@ -263,7 +263,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"6|warp|34|0,1",@"0",
 	// Name,Background,Audio
-	@"Necomedre Pillar Room",@"White",audioNecomedre];
+	@"Necomedre Pillar Room",@"White",audioPillar];
 
 }
 

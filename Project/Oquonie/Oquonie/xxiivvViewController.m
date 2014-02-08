@@ -38,36 +38,21 @@
 	[self roomStart];
 	[self moveOrder];
 	[self timerStart];
+	[self eventSpellRefresh];
 	
 	[self audioAmbientPlayer:@"start"];
+	
 	
 	// Debug: remove
 	if(systemDebug == 1){
 		
-		userStorageEvents[storageQuestRamenNecomedre] = @"1";
-		userStorageEvents[storageQuestRamenNephtaline] = @"1";
-		userStorageEvents[storageQuestRamenNeomine] = @"1";
-		userStorageEvents[storageQuestRamenNestorine] = @"1";
-		userStorageEvents[storageQuestRamenNemedique] = @"1";
-		
-		userGameCompleted = 1;
-		worldBackground = @"blue";
-//
-//		userStorageEvents[storageQuestPillarNestorine] = @"1";
-//		userStorageEvents[storageQuestPillarNecomedre] = @"1";
-//		userStorageEvents[storageQuestPillarNemedique] = @"1";
-//		userStorageEvents[storageQuestPillarNephtaline] = @"1";
-//		userStorageEvents[storageQuestPillarNeomine] = @"1";
-		
-//		userSpellbook[0] = @[@"test1",@"4"];
-//		userSpellbook[1] = @[@"test2",@"4"];
-		
-		self.debugLocation.hidden = NO;
 	}
 	else{
 		[self eventIntroduction];
 	}
-
+	
+	self.debugLocation.hidden = NO;
+	
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -107,6 +92,7 @@
 		userPositionX += posX;
 		userPositionY += posY;
 		NSLog(@"•  USER | Position     | Update   -> X:%d Y:%d TILE:%d",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
+		[self audioEffectPlayer:@"walk"];
 		[self moveEventCheck:(userPositionX) :(userPositionY)];
 		
 		[UIView animateWithDuration:0.3 animations:^(void){
@@ -115,14 +101,12 @@
 
 		[self moveAnimation];
 		[self moveParallax];
-		[self audioEffectPlayer:@"footstep"];
 		[self moveIndicator:posX:posY];
 	}
 	else{
 		[self moveEventCheck:(userPositionX+posX):(userPositionY+posY)];
 		[self moveCollideAnimateEvent:(userPositionX+posX):(userPositionY+posY)];
 		[self moveCollideAnimateChar:posX:posY];
-		[self audioEffectPlayer:@"blocked"];
 	}
 	[self moveOrder];
 }
@@ -265,21 +249,30 @@
 
 - (int) moveEvent :(int)posX :(int)posY
 {
+	
+	// If Ghost
+	if([[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :2] isEqualToString:@"redGhost"]){
+		return 0;
+	}
+	
 	// Look if tile is missing
 	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
 		NSLog(@"> EVENT | Blocked      | No Ground");
+		[self audioEffectPlayer:@"bump"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a blocker
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"block"] ){
 		NSLog(@"> EVENT | Blocked      | Blocker");
+		[self audioEffectPlayer:@"bump"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"warp"] ){
 		NSLog(@"> EVENT | Blocked      | Warp");
+		[self audioEffectPlayer:@"warp"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
@@ -631,15 +624,41 @@
 
 # pragma mark Audio Stuff -
 
+-(void)decreaseVolume {
+    // Until threshold is met, lower volume and repeat
+    if(self.audioAmbientPlayer.volume > 0.1) {
+        self.audioAmbientPlayer.volume = self.audioAmbientPlayer.volume - 0.1;
+        [self performSelector:@selector(decreaseVolume) withObject:nil afterDelay:0.1];
+    }
+    // Stop and reset audio
+    else {
+        [self.audioAmbientPlayer stop];
+        self.audioAmbientPlayer.currentTime = 0;
+        [self.audioAmbientPlayer prepareToPlay];
+        self.audioAmbientPlayer.volume = 1.0;
+    }
+}
+
+
 -(void)audioAmbientPlayer:(NSString*)filename
 {
+	
 	// Initiate the player
 	if([filename isEqualToString:@"start"]){
 		if(systemDebug != 1){
-			self.audioAmbientPlayer.volume = 0.2;
+			self.audioAmbientPlayer.volume = 1;
 		}
-		
 		return;
+	}
+//	[self decreaseVolume];
+	
+	// Overrides
+	
+	if([filename isEqualToString:@"town1.mp3"] && userGameCompleted == 1){
+		filename = @"town3.mp3";
+	}
+	else if([filename isEqualToString:@"town.mp3"] && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+		filename = @"town2.mp3";
 	}
 	
 	float currentVolume = self.audioAmbientPlayer.volume;
@@ -649,13 +668,13 @@
 	self.audioAmbientPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
 	
 	if (error){
-		NSLog(@"$ ERROR | Audio        | Error    -> %@",[error localizedDescription]);
+		NSLog(@"$ ERROR | Ambient      | Error    -> (%@)%@",filename,[error localizedDescription]);
 	}
 	else {
 		NSLog(@"$ AUDIO | Ambient      | File     -> %@",filename);
-		self.audioAmbientPlayer.volume = currentVolume;
 		self.audioAmbientPlayer.numberOfLoops = -1;
 		[self.audioAmbientPlayer prepareToPlay];
+		self.audioAmbientPlayer.volume = currentVolume;
 	}
 	
 	[self.audioAmbientPlayer play];
@@ -663,13 +682,54 @@
 
 -(void)audioEffectPlayer:(NSString*)filename
 {
-	NSLog(@"$ AUDIO | Effect       | File     -> %@",filename);
+	self.audioEffectPlayer.volume = 0.5;
+	
+	filename = [NSString stringWithFormat:@"sfx_%@.wav",filename];
+	
+	NSError *error;
+	NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
+	
+	self.audioEffectPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
+	
+	if (error){
+		NSLog(@"$ ERROR | Effect       | Error    -> (%@)%@",filename,[error localizedDescription]);
+	}
+	else {
+		NSLog(@"$ AUDIO | Effect       | File     -> %@",filename);
+		self.audioEffectPlayer.numberOfLoops = 0;
+		[self.audioEffectPlayer prepareToPlay];
+	}
+	[self.audioEffectPlayer play];
+}
+
+-(void)audioDialogPlayer:(NSString*)filename
+{
+	self.audioDialogPlayer.volume = 1;
+	
+	filename = [NSString stringWithFormat:@"dialog_%@.wav",filename];
+	
+	NSError *error;
+	NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
+	
+	self.audioDialogPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
+	
+	if (error){
+		NSLog(@"$ ERROR | Effect       | Error    -> (%@)%@",filename,[error localizedDescription]);
+	}
+	else {
+		NSLog(@"$ AUDIO | Effect       | File     -> %@",filename);
+		self.audioDialogPlayer.numberOfLoops = 0;
+		[self.audioDialogPlayer prepareToPlay];
+	}
+	[self.audioDialogPlayer play];
 }
 
 # pragma mark Interaction Map -
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [worldMoveHold invalidate];
+	
 	interactionMap = [[touches anyObject] locationInView:self.view];
     worldMoveHold = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(touchHeld) userInfo:nil repeats:YES];
 }

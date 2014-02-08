@@ -23,7 +23,7 @@
 	// Tiles
 	@"18",@"6",@"4",
 	@"5",@"0",@"30",
-	@"25",@"0",@"32",
+	@"25",@"0",@"32|event|redGhost|12|l",
 	// Walls
 	@"0",@"0",@"0",@"12|warp|41|1,-1",@"0",@"3",
 	// Steps
@@ -287,7 +287,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"3|event|gateNemedique",@"0",
 	// Name,Background,Audio
-	@"Necomedre Pillar Room",@"White",audioNephtaline];
+	@"Necomedre Pillar Room",@"White",audioPillar];
 	
 }
 @end
