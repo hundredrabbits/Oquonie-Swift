@@ -152,7 +152,6 @@
 	self.step2l.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",steptype]];
 	self.step2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",steptype]];
 	
-	[self eventVignette:@"2"];
 }
 
 @end

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#define systemDebug				1
+#define systemDebug				0
 #define systemBuild				1
 
 #define userCharacterId			3
-#define userCharacterLocation	112
+#define userCharacterLocation	100
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -84,6 +84,10 @@
 #define audioQuiet				@"quiet"
 #define audioPillar				@"pillartree"
 #define audioWarp				@"warp"
+#define audioPurgatory			@"purgatory"
+#define audioEndless			@"endless"
+#define audioGlitch				@"glitch"
+#define audioPlay				@"play"
 
 #define characterNecomedre		1
 #define characterNephtaline		2

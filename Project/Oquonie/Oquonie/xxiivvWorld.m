@@ -266,6 +266,14 @@
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
 			self.debugLocation.textColor = [UIColor blackColor];
 		}
+		// End Game
+		if([worldBackground isEqualToString:@"Pest"]){
+			[UIView animateWithDuration:1.0 animations:^{
+				self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1];
+			} completion:NULL];
+			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];
+			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.5.png"];
+		}
 	}
 }
 

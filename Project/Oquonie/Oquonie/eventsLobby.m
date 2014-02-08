@@ -399,8 +399,10 @@
 		}
 	}
 	
-	if(count == 5){
-//		[self eventDialog:dialogHavePillars:eventRed];
+	if(userGameCompleted == 1 && count == 5){
+		[self eventWarp:@"115":@"-1,0"];
+	}
+	else if(count == 5){
 		[self eventWarpDramatic:@"104":@"-1,0"];
 	}
 	else{

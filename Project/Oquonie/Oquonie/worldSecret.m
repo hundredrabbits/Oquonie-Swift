@@ -36,7 +36,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"3|warp|110|1,0",@"0",
 	// Name,Background,Audio
-	@"Neomine Side Room",@"Black",audioNeomine];
+	@"Petunia World(cat2)",@"Black",audioPurgatory];
 	
 	worldNode[112] = @[
 	// Tiles
@@ -58,9 +58,37 @@
 	// Walls
 	@"1",@"1|warp|113|-1,0",@"1",@"1|event|shuffleRoom",@"1|warp|113|0,-1",@"1",
 	// Steps
-	@"0",@"1|warp|113|0,1",@"0",@"0",@"1|warp|113|1,0",@"0",
+	@"0",@"1|warp|112|0,1",@"0",@"0",@"1|warp|113|1,0",@"0",
 	// Name,Background,Audio
-	@"Necomedre Fork",@"White",audioNephtaline];
+	@"Necomedre Fork",@"White",audioEndless];
+	
+	// Glitch in nestorine
+	worldNode[114] = @[
+	// Tiles
+	@"99",@"99",@"99",
+	@"99",@"99",@"99",
+	@"99",@"99",@"99",
+	// Walls
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Steps
+	@"0",@"0",@"0",@"0",@"0|warp|86|1,0",@"0",
+	// Name,Background,Audio
+	@"Glitch World(cat3)",@"White",audioGlitch];
+	
+	// Glitch in nemedique
+	worldNode[115] = @[
+	// Tiles
+	@"98",@"97",@"98",
+	@"98",@"98",@"97",
+	@"97",@"98",@"98",
+	// Walls
+	@"15",@"98",@"1",@"98",@"0",@"0",
+	// Steps
+	@"0",@"0",@"0",@"0",@"98|warp|100|1,0",@"0",
+	// Name,Background,Audio
+	@"Glitch World(cat1)",@"Pest",audioPlay];
+	
+	
 }
 
 @end
