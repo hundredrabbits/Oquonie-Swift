@@ -32,6 +32,7 @@
 -(void)start
 {
 	[self userStart];
+	userAudioPlaying = 1;
 	
 	[self templateStart];
 	[self worldStart];
@@ -40,25 +41,21 @@
 	[self timerStart];
 	[self eventSpellRefresh];
 	
-	[self audioAmbientPlayer:@"start"];
+//	[self audioAmbientPlayer:@"start"];
 	
-	// Debug: remove
-	if(systemDebug == 1){
-	}
-	else{
-		[self eventIntroduction];
-	}
+	[self eventIntroduction];
 	
-	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
-	
-	userStorageEvents[storageQuestPillarNecomedre] = @"1";
-	userStorageEvents[storageQuestPillarNephtaline] = @"1";
-	userStorageEvents[storageQuestPillarNeomine] = @"1";
-	userStorageEvents[storageQuestPillarNestorine] = @"1";
-	userStorageEvents[storageQuestPillarNemedique] = @"1";
-	userAudioPlaying = 1;
-	userGameCompleted = 0;
+//	
+//	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+//	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+//
+//	userStorageEvents[storageQuestPillarNecomedre] = @"1";
+//	userStorageEvents[storageQuestPillarNephtaline] = @"1";
+//	userStorageEvents[storageQuestPillarNeomine] = @"1";
+//	userStorageEvents[storageQuestPillarNestorine] = @"1";
+//	userStorageEvents[storageQuestPillarNemedique] = @"1";
+//	userAudioPlaying = 1;
+//	userGameCompleted = 0;
 	
 	self.debugLocation.hidden = NO;
 	

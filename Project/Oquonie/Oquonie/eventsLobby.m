@@ -583,10 +583,11 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		if(userLocation == 31||userLocation == 36||userLocation == 40|userLocation == 68||userLocation == 86){
+			return eventRed;
+		}
 		return @"";
 	}
-	
-	
 	
 	for (UIImageView *subview in [self.spritesContainer subviews]) {
 		if(subview.tag != 20){ continue; }
