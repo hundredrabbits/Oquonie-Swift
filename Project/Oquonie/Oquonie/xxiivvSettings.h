@@ -128,6 +128,7 @@
 #define spellNestorine			4
 #define spellNemedique			5
 #define spellDocument			6
+#define spellCat				7
 
 #define letterNecomedre			@"D"
 #define letterNephtaline		@"C"
@@ -141,6 +142,7 @@
 #define letterUnlocked			@"K"
 #define letterPillar			@"Y"
 #define letterGuide				@"O"
+#define letterCat				@"5"
 
 #define locationLobbyLanding		@"1"
 #define locationGameStart			@"29"

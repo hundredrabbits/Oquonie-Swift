@@ -12,6 +12,97 @@
 
 @implementation xxiivvViewController (eventsSecret)
 
+
+-(NSString*)event_specialCat1 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"secretCat1";
+	NSString*	eventDialogSpell	= dialogGainSpell(letterCat);
+	NSString*	eventLetter			= letterCat;
+	NSString*	eventSpriteId		= eventCat;
+	int			eventSpell			= spellCat;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		// If doesn't have spell already
+		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		// Else
+		return eventLetter;
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	[self audioDialogPlayer:@"cat"];
+	
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self eventDialog:eventDialogSpell:eventSpriteId];
+	
+	return @"";
+}
+
+
+-(NSString*)event_specialCat2 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"secretCat2";
+	NSString*	eventDialogSpell	= dialogGainSpell(letterCat);
+	NSString*	eventLetter			= letterCat;
+	NSString*	eventSpriteId		= eventCat;
+	int			eventSpell			= spellCat;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		// If doesn't have spell already
+		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		// Else
+		return eventLetter;
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	[self audioDialogPlayer:@"cat"];
+	
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self eventDialog:eventDialogSpell:eventSpriteId];
+	
+	return @"";
+}
+
+-(NSString*)event_specialCat3 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"secretCat3";
+	NSString*	eventDialogSpell	= dialogGainSpell(letterCat);
+	NSString*	eventLetter			= letterCat;
+	NSString*	eventSpriteId		= eventCat;
+	int			eventSpell			= spellCat;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		// If doesn't have spell already
+		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		// Else
+		return eventLetter;
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	[self audioDialogPlayer:@"cat"];
+	
+	[self eventSpellAdd:eventSpellId:eventSpell];
+	[self eventDialog:eventDialogSpell:eventSpriteId];
+	
+	return @"";
+}
+
+
+
+
+
+
 -(NSString*)event_petunia:(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }
