@@ -78,6 +78,7 @@
 
 # pragma mark NPCs -
 
+// End Tree
 -(NSString*)event_endReset :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
@@ -109,11 +110,12 @@
 	[self eventTransitionPan:@"1":@"0,0"];
 }
 
+// Red Character
 
 -(void)redEndTransition
 {
 	
-	[UIView animateWithDuration:10.5 animations:^(void){
+	[UIView animateWithDuration:7.5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
 		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
@@ -124,6 +126,7 @@
 		
 		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, 1*screen.size.height+100);
 		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, 1*screen.size.height+200);
+//		[self eventWarp:@"106":@"-1,0"];
 		[UIView animateWithDuration:2.5 animations:^(void){
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 			self.parallaxBack.frame = parallaxBackOrigin;
@@ -132,7 +135,6 @@
 			self.parallaxFront.alpha = 1;
 		} completion:^(BOOL finished){
 			[self eventVignette:@"1"];
-			[self eventWarp:@"106":@"-1,0"];
 			[UIView animateWithDuration:2.5 animations:^(void){
 				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 				self.roomContainer.alpha = 1;
@@ -143,38 +145,99 @@
 	userStorageEvents[storageEndFormTrigger] = @"1";
 }
 
+/*
+ if( [userStorageEvents[storageEndForm] intValue] == 0){
+ 
+ self.roomContainer.alpha = 0;
+ self.spritesContainer.alpha = 0;
+ 
+ [UIView animateWithDuration:4.5 animations:^(void){
+ [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+ [UIView setAnimationDelay:1];
+ self.roomContainer.alpha = 1;
+ self.spritesContainer.alpha = 1;
+ } completion:^(BOOL finished){
+ [self eventDialog:dialogEnd1:eventNepturne];
+ }];
+ 
+ [self moveDisable:8];
+ [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(redEndTransition) userInfo:nil repeats:NO];
+ userStorageEvents[storageEndForm] = @"1";
+ return eventRed;
+ }
+ if([userStorageEvents[storageEndFormTrigger] intValue]==1){
+ return eventNepturne;
+ }
+ return eventRed;*/
+
 -(NSString*)event_redEnd :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"]){
-		
 		if( [userStorageEvents[storageEndForm] intValue] == 0){
-			
-			self.roomContainer.alpha = 0;
-			self.spritesContainer.alpha = 0;
-			
-			[UIView animateWithDuration:4.5 animations:^(void){
-				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-				[UIView setAnimationDelay:1];
-				self.roomContainer.alpha = 1;
-				self.spritesContainer.alpha = 1;
-			} completion:^(BOOL finished){
-				[self eventDialog:dialogEnd1:eventNepturne];
-			}];
-			
-			[self moveDisable:8];
-			[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(redEndTransition) userInfo:nil repeats:NO];
+			[self redEndSequence];
 			userStorageEvents[storageEndForm] = @"1";
 			return eventRed;
 		}
-		if([userStorageEvents[storageEndFormTrigger] intValue]==1){
-			return eventNepturne;
-		}
-		return eventRed;
-		
 	}
 	return @"";
 }
+
+-(void)redEndSequence
+{
+	NSLog(@"Step 0");
+	[self moveDisable:10];
+	// Remove Background
+	[UIView animateWithDuration:7.5 animations:^(void){
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	} completion:^(BOOL finished){
+		NSLog(@"Step 1");
+		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, 100);
+		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, 200);
+		self.parallaxBack.alpha = 0;
+		self.parallaxFront.alpha = 0;
+		[UIView animateWithDuration:2.5 animations:^(void){
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+			self.parallaxBack.frame = parallaxBackOrigin;
+			self.parallaxFront.frame = parallaxFrontOrigin;
+			self.parallaxBack.alpha = 1;
+			self.parallaxFront.alpha = 1;
+		} completion:^(BOOL finished){
+			NSLog(@"Step 2");
+			[self eventDialog:dialogEnd1:eventRed];
+			[self eventVignette:@"1"];
+			[UIView animateWithDuration:2.5 animations:^(void){
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+				self.roomContainer.alpha = 1;
+			} completion:^(BOOL finished){
+				NSLog(@"Step 3");
+				[UIView animateWithDuration:6.5 animations:^(void){
+					self.roomContainer.alpha = 0;
+				} completion:^(BOOL finished){
+					NSLog(@"Step 4");
+					[self roomClearDialog];
+					[UIView animateWithDuration:5.5 animations:^(void){
+						[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+						self.roomBackground.backgroundColor = [UIColor whiteColor];
+					} completion:^(BOOL finished){
+						NSLog(@"Step 5");
+						[self eventWarp:@"106":@"-1,0"];
+						[UIView animateWithDuration:5.5 animations:^(void){
+							[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+							self.roomContainer.alpha = 1;
+						} completion:^(BOOL finished){
+							NSLog(@"Step 6");
+							[self roomClearDialog];
+						}];
+					}];
+				}];
+			}];
+		}];
+	}];
+}
+
+
+
 
 -(NSString*)event_credit1 :(NSString*)option
 {

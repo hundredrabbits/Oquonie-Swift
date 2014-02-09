@@ -52,7 +52,8 @@
 		userStorageEvents[storageQuestPillarNeomine] = @"1";
 		userStorageEvents[storageQuestPillarNestorine] = @"1";
 		userStorageEvents[storageQuestPillarNemedique] = @"1";
-		userGameCompleted = 1;
+		userAudioPlaying = 0;
+		userGameCompleted = 0;
 	}
 	else{
 		[self eventIntroduction];
@@ -637,10 +638,10 @@
 
 # pragma mark Audio Stuff -
 
--(void)decreaseVolume {
+-(void)decreaseVolume:(NSString*)filename {
     // Until threshold is met, lower volume and repeat
     if(self.audioAmbientPlayer.volume > 0.1) {
-        self.audioAmbientPlayer.volume = self.audioAmbientPlayer.volume - 0.1;
+        self.audioAmbientPlayer.volume = self.audioAmbientPlayer.volume - 0.05;
         [self performSelector:@selector(decreaseVolume) withObject:nil afterDelay:0.1];
     }
     // Stop and reset audio
@@ -648,25 +649,62 @@
         [self.audioAmbientPlayer stop];
         self.audioAmbientPlayer.currentTime = 0;
         [self.audioAmbientPlayer prepareToPlay];
-        self.audioAmbientPlayer.volume = 1.0;
+		
+		audioCurrentlyPlaying = filename;
+		[self audioAmbientPlayer:filename];
+		NSLog(@"ready to play");
     }
+	
+	NSLog(@"%f",self.audioAmbientPlayer.volume);
 }
 
 
 -(void)audioAmbientPlayer:(NSString*)filename
 {
-	
-	// Initiate the player
-	if([filename isEqualToString:@"start"]){
-		if(systemDebug != 1){
-			self.audioAmbientPlayer.volume = 1;
-		}
+	if(userAudioPlaying == 0){
 		return;
 	}
-//	[self decreaseVolume];
 	
-	// Overrides
 	
+	if(audioCurrentlyPlaying != filename){
+		[self fadeOut];
+		audioCurrentlyPlaying = filename;
+	}
+	else{
+		[self fadeIn];
+	}
+}
+
+-(void)fadeOut
+{
+    if(self.audioAmbientPlayer.volume > 0.1) {
+        self.audioAmbientPlayer.volume = self.audioAmbientPlayer.volume - 0.2;
+        [self performSelector:@selector(fadeOut) withObject:nil afterDelay:0.1];
+    }
+    else {
+		[self audioAmbientPlayer:audioCurrentlyPlaying];
+	}
+	NSLog(@"fade out: %f",self.audioAmbientPlayer.volume);
+}
+
+-(void)fadeIn
+{
+	// Initiate audio player if volume is low
+	if(self.audioAmbientPlayer.volume < 0.1){
+		[self playAudio:audioCurrentlyPlaying];
+	}
+	
+	// Until threshold is met, lower volume and repeat
+    if(self.audioAmbientPlayer.volume < 1) {
+        self.audioAmbientPlayer.volume += 0.3;
+        [self performSelector:@selector(fadeIn) withObject:nil afterDelay:0.1];
+    }
+	if(self.audioAmbientPlayer.volume > 1){ self.audioAmbientPlayer.volume = 1;}
+	NSLog(@"fade in: %f",self.audioAmbientPlayer.volume);
+}
+
+-(void)playAudio:(NSString*)filename
+{
 	if([filename isEqualToString:@"town1.mp3"] && userGameCompleted == 1){
 		filename = @"town3.mp3";
 	}
@@ -692,6 +730,7 @@
 	
 	[self.audioAmbientPlayer play];
 }
+
 
 -(void)audioEffectPlayer:(NSString*)filename
 {

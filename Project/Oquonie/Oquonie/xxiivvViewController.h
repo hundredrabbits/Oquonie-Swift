@@ -171,6 +171,7 @@ int worldTimerUserCycle;
 NSMutableArray *worldNode;
 
 int roomDoorState;
+NSString *audioCurrentlyPlaying;
 
 CGRect	screen;
 int		screenMargin;
