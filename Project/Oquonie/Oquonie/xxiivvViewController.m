@@ -32,10 +32,7 @@
 -(void)start
 {
 	[self userStart];
-	userAudioPlaying = 0;
-	
-	userCharacter = 4;
-	userLocation = 80;
+	userAudioPlaying = 1;
 	
 	[self templateStart];
 	[self worldStart];
@@ -55,7 +52,7 @@
 //	userStorageEvents[storageQuestPillarNestorine] = @"1";
 //	userStorageEvents[storageQuestPillarNemedique] = @"1";
 //	userAudioPlaying = 1;
-	userGameCompleted = 0;
+//	userGameCompleted = 0;
 //	userCharacter = 7;
 	
 	self.debugLocation.hidden = YES;
