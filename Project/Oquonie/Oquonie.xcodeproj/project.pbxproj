@@ -218,6 +218,12 @@
 		037546A218A7374200807397 /* wall.gateCatOpen.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 0375469E18A7374200807397 /* wall.gateCatOpen.r.png */; };
 		037546A518A7A7AF00807397 /* letter5.png in Resources */ = {isa = PBXBuildFile; fileRef = 037546A318A7A7AF00807397 /* letter5.png */; };
 		037546A618A7A7AF00807397 /* letterSpell5.png in Resources */ = {isa = PBXBuildFile; fileRef = 037546A418A7A7AF00807397 /* letterSpell5.png */; };
+		037546A818A7AF1600807397 /* icon.76.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 037546A718A7AF1600807397 /* icon.76.jpg */; };
+		037546AB18A7AF1B00807397 /* icon.120.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 037546A918A7AF1A00807397 /* icon.120.jpg */; };
+		037546AC18A7AF1B00807397 /* icon.152.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 037546AA18A7AF1A00807397 /* icon.152.jpg */; };
+		037546AE18A7AF4400807397 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037546AD18A7AF4400807397 /* Images.xcassets */; };
+		037546B018A7AFD400807397 /* icon.60.png in Resources */ = {isa = PBXBuildFile; fileRef = 037546AF18A7AFD400807397 /* icon.60.png */; };
+		037546B218A7B00200807397 /* icon.120.png in Resources */ = {isa = PBXBuildFile; fileRef = 037546B118A7B00200807397 /* icon.120.png */; };
 		037740DE18987187001FDB71 /* event.20.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D618987187001FDB71 /* event.20.l.3.png */; };
 		037740DF18987187001FDB71 /* event.20.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D718987187001FDB71 /* event.20.portrait.png */; };
 		037740E018987187001FDB71 /* wall.37.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D818987187001FDB71 /* wall.37.l.png */; };
@@ -878,6 +884,12 @@
 		0375469E18A7374200807397 /* wall.gateCatOpen.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateCatOpen.r.png; path = en.assets/wall.gateCatOpen.r.png; sourceTree = "<group>"; };
 		037546A318A7A7AF00807397 /* letter5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter5.png; path = en.assets/letter5.png; sourceTree = "<group>"; };
 		037546A418A7A7AF00807397 /* letterSpell5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell5.png; path = en.assets/letterSpell5.png; sourceTree = "<group>"; };
+		037546A718A7AF1600807397 /* icon.76.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.76.jpg; sourceTree = "<group>"; };
+		037546A918A7AF1A00807397 /* icon.120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.120.jpg; sourceTree = "<group>"; };
+		037546AA18A7AF1A00807397 /* icon.152.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.152.jpg; sourceTree = "<group>"; };
+		037546AD18A7AF4400807397 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		037546AF18A7AFD400807397 /* icon.60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.60.png; sourceTree = "<group>"; };
+		037546B118A7B00200807397 /* icon.120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.120.png; sourceTree = "<group>"; };
 		037740D618987187001FDB71 /* event.20.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.20.l.3.png; path = en.assets/event.20.l.3.png; sourceTree = "<group>"; };
 		037740D718987187001FDB71 /* event.20.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.20.portrait.png; path = en.assets/event.20.portrait.png; sourceTree = "<group>"; };
 		037740D818987187001FDB71 /* wall.37.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.37.l.png; path = en.assets/wall.37.l.png; sourceTree = "<group>"; };
@@ -2152,10 +2164,15 @@
 		03BBFA9F178A9E4E00E79C3D = {
 			isa = PBXGroup;
 			children = (
+				037546B118A7B00200807397 /* icon.120.png */,
+				037546AF18A7AFD400807397 /* icon.60.png */,
+				037546A918A7AF1A00807397 /* icon.120.jpg */,
+				037546AA18A7AF1A00807397 /* icon.152.jpg */,
+				03B5B0C117AA1CA900B3C18D /* icon.57.png */,
+				037546A718A7AF1600807397 /* icon.76.jpg */,
 				03B5B0C717AA1CB300B3C18D /* icon.144.png */,
 				03B5B0C517AA1CB100B3C18D /* icon.72.png */,
 				03B5B0C317AA1CAE00B3C18D /* icon.114.png */,
-				03B5B0C117AA1CA900B3C18D /* icon.57.png */,
 				03BBFAB1178A9E4E00E79C3D /* Oquonie */,
 				03BBFAAA178A9E4E00E79C3D /* Frameworks */,
 				03BBFAA9178A9E4E00E79C3D /* Products */,
@@ -2189,6 +2206,7 @@
 				038BA0E9188B849B00A3ED4B /* en.sounds */,
 				03BBFACE178AC8C200E79C3D /* en.assets */,
 				0355CF8C17C196C10069AF97 /* en.lproj */,
+				037546AD18A7AF4400807397 /* Images.xcassets */,
 				03BBFAB2178A9E4E00E79C3D /* Supporting Files */,
 			);
 			path = Oquonie;
@@ -2637,6 +2655,7 @@
 				03CE079F18937C31009D7003 /* wall.gateNeomineClosed.r.png in Resources */,
 				033124DC18A327D100388D2F /* dialog_shark.wav in Resources */,
 				0381CC8318456236003FB458 /* wall.15.r.png in Resources */,
+				037546A818A7AF1600807397 /* icon.76.jpg in Resources */,
 				03E14CB818A5DE4300B3816F /* letter3.png in Resources */,
 				03DD5BEA18A68AB100BFA21E /* char7.stand.r.f.1.png in Resources */,
 				03CE07C7189440D7009D7003 /* tile.33.png in Resources */,
@@ -2812,6 +2831,7 @@
 				0304D7AE186CEE0200ED6E94 /* event.9.r.2.png in Resources */,
 				03798BEE1882829400C31389 /* char6.walk.l.b.2.png in Resources */,
 				03B943461884F863008E834A /* char6.stand.r.f.3.png in Resources */,
+				037546AC18A7AF1B00807397 /* icon.152.jpg in Resources */,
 				035DAAC4188A9650007127F5 /* wall.gateDocument.open.l.png in Resources */,
 				03FE0D6718A240FB00206675 /* blocker.27.png in Resources */,
 				0304D7A9186CEE0200ED6E94 /* event.8.r.3.png in Resources */,
@@ -2893,6 +2913,7 @@
 				03E14CB718A5DE4300B3816F /* letter2.png in Resources */,
 				03CE07A918937C31009D7003 /* wall.gateNestorineOpen.r.png in Resources */,
 				037740F2189871F9001FDB71 /* event.20.r.2.png in Resources */,
+				037546B018A7AFD400807397 /* icon.60.png in Resources */,
 				03CE07A618937C31009D7003 /* wall.gateNestorineClosed.l.png in Resources */,
 				0381CC7C18456236003FB458 /* step.9.l.png in Resources */,
 				03FE0D9C18A26BE500206675 /* necomedre.mp3 in Resources */,
@@ -2916,6 +2937,7 @@
 				03B5B0C217AA1CA900B3C18D /* icon.57.png in Resources */,
 				033193DD1800075C0069D8A0 /* wall.8.l.png in Resources */,
 				033124B618A30EEB00388D2F /* sfx_walk.wav in Resources */,
+				037546B218A7B00200807397 /* icon.120.png in Resources */,
 				036A100618099F720074F6F1 /* wall.11.r.png in Resources */,
 				03CE079E18937C31009D7003 /* wall.gateNeomineClosed.l.png in Resources */,
 				037E7F0C189A87E700024C8E /* tile.42.png in Resources */,
@@ -3038,6 +3060,7 @@
 				03834E3D180B941500568E60 /* step.8.l.png in Resources */,
 				0304D7A0186CEE0200ED6E94 /* event.5.r.2.png in Resources */,
 				03EC37C7188181AF00D74DE1 /* wall.29.r.png in Resources */,
+				037546AB18A7AF1B00807397 /* icon.120.jpg in Resources */,
 				03DD5BF318A68AB100BFA21E /* char7.walk.r.f.1.png in Resources */,
 				037E7F12189A87E700024C8E /* tile.48.png in Resources */,
 				03834E3E180B941500568E60 /* step.8.r.png in Resources */,
@@ -3190,6 +3213,7 @@
 				03834E44180BA6FF00568E60 /* fx.notification.1.png in Resources */,
 				03F5C4A2187BBB3200352B8E /* event.11.r.2.png in Resources */,
 				0373477B186BA790000A5ED7 /* event.1.r.3.png in Resources */,
+				037546AE18A7AF4400807397 /* Images.xcassets in Resources */,
 				035A6D95186B08000032710C /* fx.transform.1.png in Resources */,
 				0332384A17D4BDB8001B1328 /* char5.walk.r.f.1.png in Resources */,
 				03E14CB418A5DE4300B3816F /* game_exist.png in Resources */,
@@ -3370,6 +3394,8 @@
 		03BBFACC178A9E4E00E79C3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3386,6 +3412,8 @@
 		03BBFACD178A9E4E00E79C3D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

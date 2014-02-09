@@ -34,9 +34,6 @@
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	
 	[defaults setObject:[NSString stringWithFormat:@"%d",userLocation] forKey:@"userLocation"];
-	[defaults setObject:[NSString stringWithFormat:@"%d",userPositionX] forKey:@"userPositionX"];
-	[defaults setObject:[NSString stringWithFormat:@"%d",userPositionY] forKey:@"userPositionY"];
-	[defaults setObject:[NSString stringWithFormat:@"%d",userPositionZ] forKey:@"userPositionZ"];
 	[defaults setObject:[NSString stringWithFormat:@"%d",userCharacter] forKey:@"userCharacter"];
 	[defaults setObject:[NSString stringWithFormat:@"%d",userGameCompleted] forKey:@"userGameCompleted"];
 	
@@ -57,9 +54,6 @@
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	
 	userLocation = [[defaults objectForKey:@"userLocation"] intValue];
-	userPositionX = [[defaults objectForKey:@"userPositionX"] intValue];
-	userPositionY = [[defaults objectForKey:@"userPositionY"] intValue];
-	userPositionZ = [[defaults objectForKey:@"userPositionZ"] intValue];
 	userCharacter = [[defaults objectForKey:@"userCharacter"] intValue];
 	userGameCompleted = [[defaults objectForKey:@"userGameCompleted"] intValue];
 	
@@ -75,8 +69,6 @@
 {
 	NSLog(@"   USER | Starting..     | Please hold");
 	
-	userPositionX = userCharacterX;
-	userPositionY = userCharacterY;
 	userCharacter = userCharacterId;
 	userLocation = userCharacterLocation;
 	

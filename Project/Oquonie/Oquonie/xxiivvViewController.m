@@ -41,11 +41,8 @@
 	[self timerStart];
 	[self eventSpellRefresh];
 	
-//	[self audioAmbientPlayer:@"start"];
-	
 	[self eventIntroduction];
 	
-//	
 //	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
 //	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 //
@@ -58,7 +55,7 @@
 //	userGameCompleted = 1;
 //	userCharacter = 7;
 	
-	self.debugLocation.hidden = NO;
+	self.debugLocation.hidden = YES;
 	
 }
 
