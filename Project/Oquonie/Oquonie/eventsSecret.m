@@ -13,7 +13,7 @@
 @implementation xxiivvViewController (eventsSecret)
 
 
--(NSString*)event_specialCat1 :(NSString*)option
+-(NSString*)event_secretCat1 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"secretCat1";
@@ -42,7 +42,7 @@
 }
 
 
--(NSString*)event_specialCat2 :(NSString*)option
+-(NSString*)event_secretCat2 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"secretCat2";
@@ -70,7 +70,7 @@
 	return @"";
 }
 
--(NSString*)event_specialCat3 :(NSString*)option
+-(NSString*)event_secretCat3 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"secretCat3";
@@ -192,10 +192,19 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @"";
+		if(userCharacter == 7){
+			return @"gateCatOpen";
+		}
+		else{
+			return @"gateCatClosed";
+		}
+
 	}
 	
-	[self eventWarp:@"113":@"0,-1"];
+	if(userCharacter == 7){
+		[self eventWarp:@"113":@"0,-1"];
+	}
+	
 	
 	return @"";
 }
@@ -243,14 +252,17 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		[self shuffler];
 		return @"";
 	}
+	
 	
 	return @"";
 }
 
 -(void)shuffler
 {
+	NSLog(@"!!!!!!!!!!");
 	NSMutableArray* tiles = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"9",@"10",@"38",@"32",@"33",@"34",@"35",@"36",@"37",@"28",@"29",@"30",@"31",@"39",@"40",nil];
 	
 	NSString* tileType1 = [self randomObject:tiles];

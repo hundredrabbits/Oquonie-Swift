@@ -55,7 +55,8 @@
 //	userStorageEvents[storageQuestPillarNestorine] = @"1";
 //	userStorageEvents[storageQuestPillarNemedique] = @"1";
 //	userAudioPlaying = 1;
-//	userGameCompleted = 0;
+//	userGameCompleted = 1;
+//	userCharacter = 7;
 	
 	self.debugLocation.hidden = NO;
 	

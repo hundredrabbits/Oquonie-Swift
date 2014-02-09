@@ -420,7 +420,6 @@
 
 -(void)eventAudioToggle :(int)toggle
 {
-	[self audioEffectPlayer:@"tic"];
 	if(toggle == 1){
 		NSLog(@"•  ROOM | Audio        | Turned On");
 		self.audioAmbientPlayer.volume = 1;

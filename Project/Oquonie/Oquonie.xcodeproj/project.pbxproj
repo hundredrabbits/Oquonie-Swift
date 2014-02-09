@@ -212,6 +212,10 @@
 		0375469818A727B400807397 /* char7.stand.l.f.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0375469518A727B400807397 /* char7.stand.l.f.2.png */; };
 		0375469918A727B400807397 /* char7.stand.l.f.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0375469618A727B400807397 /* char7.stand.l.f.3.png */; };
 		0375469A18A727B400807397 /* char7.warp.l.f.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0375469718A727B400807397 /* char7.warp.l.f.1.png */; };
+		0375469F18A7374200807397 /* wall.gateCatClosed.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 0375469B18A7374200807397 /* wall.gateCatClosed.l.png */; };
+		037546A018A7374200807397 /* wall.gateCatClosed.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 0375469C18A7374200807397 /* wall.gateCatClosed.r.png */; };
+		037546A118A7374200807397 /* wall.gateCatOpen.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 0375469D18A7374200807397 /* wall.gateCatOpen.l.png */; };
+		037546A218A7374200807397 /* wall.gateCatOpen.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 0375469E18A7374200807397 /* wall.gateCatOpen.r.png */; };
 		037740DE18987187001FDB71 /* event.20.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D618987187001FDB71 /* event.20.l.3.png */; };
 		037740DF18987187001FDB71 /* event.20.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D718987187001FDB71 /* event.20.portrait.png */; };
 		037740E018987187001FDB71 /* wall.37.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D818987187001FDB71 /* wall.37.l.png */; };
@@ -866,6 +870,10 @@
 		0375469518A727B400807397 /* char7.stand.l.f.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char7.stand.l.f.2.png; path = en.assets/char7.stand.l.f.2.png; sourceTree = "<group>"; };
 		0375469618A727B400807397 /* char7.stand.l.f.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char7.stand.l.f.3.png; path = en.assets/char7.stand.l.f.3.png; sourceTree = "<group>"; };
 		0375469718A727B400807397 /* char7.warp.l.f.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char7.warp.l.f.1.png; path = en.assets/char7.warp.l.f.1.png; sourceTree = "<group>"; };
+		0375469B18A7374200807397 /* wall.gateCatClosed.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateCatClosed.l.png; path = en.assets/wall.gateCatClosed.l.png; sourceTree = "<group>"; };
+		0375469C18A7374200807397 /* wall.gateCatClosed.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateCatClosed.r.png; path = en.assets/wall.gateCatClosed.r.png; sourceTree = "<group>"; };
+		0375469D18A7374200807397 /* wall.gateCatOpen.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateCatOpen.l.png; path = en.assets/wall.gateCatOpen.l.png; sourceTree = "<group>"; };
+		0375469E18A7374200807397 /* wall.gateCatOpen.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateCatOpen.r.png; path = en.assets/wall.gateCatOpen.r.png; sourceTree = "<group>"; };
 		037740D618987187001FDB71 /* event.20.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.20.l.3.png; path = en.assets/event.20.l.3.png; sourceTree = "<group>"; };
 		037740D718987187001FDB71 /* event.20.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.20.portrait.png; path = en.assets/event.20.portrait.png; sourceTree = "<group>"; };
 		037740D818987187001FDB71 /* wall.37.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.37.l.png; path = en.assets/wall.37.l.png; sourceTree = "<group>"; };
@@ -2197,6 +2205,10 @@
 		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
+				0375469B18A7374200807397 /* wall.gateCatClosed.l.png */,
+				0375469C18A7374200807397 /* wall.gateCatClosed.r.png */,
+				0375469D18A7374200807397 /* wall.gateCatOpen.l.png */,
+				0375469E18A7374200807397 /* wall.gateCatOpen.r.png */,
 				0375469518A727B400807397 /* char7.stand.l.f.2.png */,
 				0375469618A727B400807397 /* char7.stand.l.f.3.png */,
 				0375469718A727B400807397 /* char7.warp.l.f.1.png */,
@@ -2659,6 +2671,7 @@
 				0304D7B3186CEE0200ED6E94 /* event.10.r.3.png in Resources */,
 				03CE07A418937C31009D7003 /* wall.gateNephtalineOpen.l.png in Resources */,
 				03A20F4C184D4F2C00CCED80 /* wall.20.l.png in Resources */,
+				0375469F18A7374200807397 /* wall.gateCatClosed.l.png in Resources */,
 				037740FF1898750C001FDB71 /* event.22.r.3.png in Resources */,
 				03DD5BD018A6893700BFA21E /* step.98.r.png in Resources */,
 				03E14CD918A63AF800B3816F /* credit.rekka.jpg in Resources */,
@@ -2747,6 +2760,7 @@
 				03DF52D118A0BDD3008C514B /* event.26.l.2.png in Resources */,
 				032D74E8179CE0E90068B27E /* wall.1.l.png in Resources */,
 				037E2656179D061A001A1553 /* wall.1.r.png in Resources */,
+				037546A218A7374200807397 /* wall.gateCatOpen.r.png in Resources */,
 				037E2659179D3B8A001A1553 /* step.1.l.png in Resources */,
 				03A9996D1883BA510051DF93 /* tile.30.png in Resources */,
 				0365921918540C9A00F7ABA3 /* letterH.png in Resources */,
@@ -2905,6 +2919,7 @@
 				03B943571884FB32008E834A /* event.18.l.2.png in Resources */,
 				0381CC7418456236003FB458 /* blocker.8.png in Resources */,
 				03B943581884FB32008E834A /* event.18.l.3.png in Resources */,
+				037546A118A7374200807397 /* wall.gateCatOpen.l.png in Resources */,
 				03A9996C1883BA510051DF93 /* tile.29.png in Resources */,
 				0375469418A70E5000807397 /* dialog_cat.wav in Resources */,
 				03EC37C4188181AF00D74DE1 /* fx.parallax.3.png in Resources */,
@@ -3069,6 +3084,7 @@
 				0332383C17D4BDB8001B1328 /* char4.walk.l.f.2.png in Resources */,
 				03834E4F180C229700568E60 /* letterD.png in Resources */,
 				03FE0D9F18A26BE500206675 /* nephtaline.mp3 in Resources */,
+				037546A018A7374200807397 /* wall.gateCatClosed.r.png in Resources */,
 				0304D78A186CEE0200ED6E94 /* char4.stand.r.f.2.png in Resources */,
 				035A6D92186B08000032710C /* event.8.l.2.png in Resources */,
 				037740EA1898719C001FDB71 /* char6.warp.l.f.1.png in Resources */,
