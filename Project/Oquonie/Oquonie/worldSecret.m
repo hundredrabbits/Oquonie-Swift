@@ -28,7 +28,7 @@
 	
 	worldNode[111] = @[
 	// Tiles
-	@"36",@"36|event|petunia|30|l",@"36|event|secretCat1|33|l",
+	@"36",@"36|event|petunia|30|l",@"36|event|secretCat2|33|l",
 	@"36",@"36",@"36",
 	@"36",@"36",@"36",
 	// Walls
@@ -92,7 +92,7 @@
 	worldNode[116] = @[
 	// Tiles
 	@"4",@"5",@"6",
-	@"5",@"33|event|secretCat1|33|l",@"4",
+	@"5",@"33|event|secretCat3|33|l",@"4",
 	@"4",@"6",@"5",
 	// Walls
 	@"36",@"13|warp|9|-1,0",@"36",@"3",@"37",@"3",

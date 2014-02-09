@@ -34,6 +34,10 @@
 	[self userStart];
 	userAudioPlaying = 1;
 	
+	
+	userLocation = 40;
+	userCharacter = 3;
+	
 	[self templateStart];
 	[self worldStart];
 	[self roomStart];
@@ -52,7 +56,7 @@
 //	userStorageEvents[storageQuestPillarNestorine] = @"1";
 //	userStorageEvents[storageQuestPillarNemedique] = @"1";
 //	userAudioPlaying = 1;
-//	userGameCompleted = 1;
+	userGameCompleted = 1;
 //	userCharacter = 7;
 	
 	self.debugLocation.hidden = YES;
