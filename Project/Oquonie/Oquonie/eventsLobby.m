@@ -414,7 +414,6 @@
 		return @""; // try with 17 ?
 	}
 	
-	[self audioDialogPlayer:@"bump"];
 	[self eventDialog:dialogWarpLobby:@"1"];
 	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
 	
@@ -488,6 +487,8 @@
 	// Dialog
 	if([userStorageEvents[pillarInstanceStorageId] intValue] != 1){
 		userStorageEvents[pillarInstanceStorageId] = @"1";
+		
+		[self audioDialogPlayer:@"bump"];
 		[self eventDialog:dialogGainPillar:eventOwl];
 		[self eventTransitionPan:pillarInstanceWarp:roomCenter];
 		// Clear Spellbook
@@ -537,7 +538,8 @@
 	// Dialogs
 	if([userStorageEvents[socketInstanceStorageId] intValue] == 1){
 		[self eventDialog:dialogInfoPillar:eventOwl];
-	}	
+	}
+	[self audioEffectPlayer:@"bump1"];
 	
 	// Default
 	return @"";
@@ -652,6 +654,8 @@
 	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
 	
 	if([userStorageEvents[storageQuestPillarNemedique] intValue] > 0 || userLocation == 102){
+		
+		[self audioDialogPlayer:@"shark"];
 		// Dialog
 		if(userCharacter == 1){
 			[self eventDialog:dialogSharkTransform:eventShark];
@@ -765,6 +769,7 @@
 	}
 	
 	if(userGameCompleted ==1){
+		[self audioEffectPlayer:@"ramen"];
 		return @"";
 	}
 	
