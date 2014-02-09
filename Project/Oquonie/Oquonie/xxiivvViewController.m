@@ -32,7 +32,10 @@
 -(void)start
 {
 	[self userStart];
-	userAudioPlaying = 1;
+	userAudioPlaying = 0;
+	
+	userCharacter = 4;
+	userLocation = 80;
 	
 	[self templateStart];
 	[self worldStart];
@@ -52,7 +55,7 @@
 //	userStorageEvents[storageQuestPillarNestorine] = @"1";
 //	userStorageEvents[storageQuestPillarNemedique] = @"1";
 //	userAudioPlaying = 1;
-	userGameCompleted = 1;
+	userGameCompleted = 0;
 //	userCharacter = 7;
 	
 	self.debugLocation.hidden = YES;
@@ -81,6 +84,14 @@
 		[UIView animateWithDuration:1.0 animations:^(void){
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 			self.creditsImage.alpha = 0;
+		} completion:^(BOOL finished){}];
+		return;
+	}
+	
+	// Close Map
+	if(self.mapImage.alpha == 1){
+		[UIView animateWithDuration:0.5 animations:^(void){
+			self.mapImage.alpha = 0;
 		} completion:^(BOOL finished){}];
 		return;
 	}

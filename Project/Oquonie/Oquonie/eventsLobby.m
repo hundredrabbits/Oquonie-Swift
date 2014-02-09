@@ -553,8 +553,30 @@
 	if([option isEqualToString:@"postUpdate"]){
 		return @"";
 	}
+	
 	// Dialogs
-	[self eventDialog:dialogMapHelp:eventOwl];
+	if(userLocation == 32){
+		self.mapImage.image = [UIImage imageNamed:@"map.1.Necomedre.png"];
+	}
+	if(userLocation == 2){
+		self.mapImage.image = [UIImage imageNamed:@"map.1.Lobby.png"];
+	}
+	if(userLocation == 60){
+		self.mapImage.image = [UIImage imageNamed:@"map.1.Neomine.png"];
+	}
+	if(userLocation == 50){
+		self.mapImage.image = [UIImage imageNamed:@"map.1.Nephtaline.png"];
+	}
+	if(userLocation == 85){
+		self.mapImage.image = [UIImage imageNamed:@"map.1.Nestorine.png"];
+	}
+	
+	[self audioEffectPlayer:@"bump1"];
+	[UIView animateWithDuration:1 animations:^(void){
+		self.mapImage.alpha = 1;
+	} completion:^(BOOL finished){
+		[self eventDialog:dialogMapHelp:eventOwl];
+	}];
 	
 	// Default
 	return @"";

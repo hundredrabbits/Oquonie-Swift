@@ -305,6 +305,11 @@
 		037F0262187D845300747E8D /* segueFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 037F0261187D845300747E8D /* segueFade.m */; };
 		037F0264187D8AD000747E8D /* splash.oquonie.png in Resources */ = {isa = PBXBuildFile; fileRef = 037F0263187D8AD000747E8D /* splash.oquonie.png */; };
 		037F0269187D8DBC00747E8D /* splashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037F0268187D8DBC00747E8D /* splashViewController.m */; };
+		0380778818A7BAD70005FD59 /* map.1.Lobby.png in Resources */ = {isa = PBXBuildFile; fileRef = 0380778318A7BAD70005FD59 /* map.1.Lobby.png */; };
+		0380778918A7BAD70005FD59 /* map.1.Necomedre.png in Resources */ = {isa = PBXBuildFile; fileRef = 0380778418A7BAD70005FD59 /* map.1.Necomedre.png */; };
+		0380778A18A7BAD70005FD59 /* map.1.Neomine.png in Resources */ = {isa = PBXBuildFile; fileRef = 0380778518A7BAD70005FD59 /* map.1.Neomine.png */; };
+		0380778B18A7BAD70005FD59 /* map.1.Nephtaline.png in Resources */ = {isa = PBXBuildFile; fileRef = 0380778618A7BAD70005FD59 /* map.1.Nephtaline.png */; };
+		0380778C18A7BAD70005FD59 /* map.1.Nestorine.png in Resources */ = {isa = PBXBuildFile; fileRef = 0380778718A7BAD70005FD59 /* map.1.Nestorine.png */; };
 		0381CC7418456236003FB458 /* blocker.8.png in Resources */ = {isa = PBXBuildFile; fileRef = 0381CC6418456236003FB458 /* blocker.8.png */; };
 		0381CC7518456236003FB458 /* blocker.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 0381CC6518456236003FB458 /* blocker.9.png */; };
 		0381CC7618456236003FB458 /* blocker.10.png in Resources */ = {isa = PBXBuildFile; fileRef = 0381CC6618456236003FB458 /* blocker.10.png */; };
@@ -973,6 +978,11 @@
 		037F0263187D8AD000747E8D /* splash.oquonie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.oquonie.png; path = en.assets/splash.oquonie.png; sourceTree = "<group>"; };
 		037F0267187D8DBC00747E8D /* splashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splashViewController.h; sourceTree = "<group>"; };
 		037F0268187D8DBC00747E8D /* splashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splashViewController.m; sourceTree = "<group>"; };
+		0380778318A7BAD70005FD59 /* map.1.Lobby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.1.Lobby.png; path = en.assets/map.1.Lobby.png; sourceTree = "<group>"; };
+		0380778418A7BAD70005FD59 /* map.1.Necomedre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.1.Necomedre.png; path = en.assets/map.1.Necomedre.png; sourceTree = "<group>"; };
+		0380778518A7BAD70005FD59 /* map.1.Neomine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.1.Neomine.png; path = en.assets/map.1.Neomine.png; sourceTree = "<group>"; };
+		0380778618A7BAD70005FD59 /* map.1.Nephtaline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.1.Nephtaline.png; path = en.assets/map.1.Nephtaline.png; sourceTree = "<group>"; };
+		0380778718A7BAD70005FD59 /* map.1.Nestorine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.1.Nestorine.png; path = en.assets/map.1.Nestorine.png; sourceTree = "<group>"; };
 		0381CC6418456236003FB458 /* blocker.8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.8.png; path = en.assets/blocker.8.png; sourceTree = "<group>"; };
 		0381CC6518456236003FB458 /* blocker.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.9.png; path = en.assets/blocker.9.png; sourceTree = "<group>"; };
 		0381CC6618456236003FB458 /* blocker.10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.10.png; path = en.assets/blocker.10.png; sourceTree = "<group>"; };
@@ -2229,6 +2239,11 @@
 		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
+				0380778318A7BAD70005FD59 /* map.1.Lobby.png */,
+				0380778418A7BAD70005FD59 /* map.1.Necomedre.png */,
+				0380778518A7BAD70005FD59 /* map.1.Neomine.png */,
+				0380778618A7BAD70005FD59 /* map.1.Nephtaline.png */,
+				0380778718A7BAD70005FD59 /* map.1.Nestorine.png */,
 				0375469B18A7374200807397 /* wall.gateCatClosed.l.png */,
 				0375469C18A7374200807397 /* wall.gateCatClosed.r.png */,
 				0375469D18A7374200807397 /* wall.gateCatOpen.l.png */,
@@ -2659,6 +2674,7 @@
 				03E14CB818A5DE4300B3816F /* letter3.png in Resources */,
 				03DD5BEA18A68AB100BFA21E /* char7.stand.r.f.1.png in Resources */,
 				03CE07C7189440D7009D7003 /* tile.33.png in Resources */,
+				0380778A18A7BAD70005FD59 /* map.1.Neomine.png in Resources */,
 				03834E36180B941500568E60 /* step.4.r.png in Resources */,
 				036D5BF4187D0DC50042378D /* event.11.r.1.png in Resources */,
 				0304D790186CEE0200ED6E94 /* char5.stand.r.f.2.png in Resources */,
@@ -2695,6 +2711,7 @@
 				03E14CBB18A5DEAA00B3816F /* game_erase.png in Resources */,
 				0304D7B3186CEE0200ED6E94 /* event.10.r.3.png in Resources */,
 				03CE07A418937C31009D7003 /* wall.gateNephtalineOpen.l.png in Resources */,
+				0380778B18A7BAD70005FD59 /* map.1.Nephtaline.png in Resources */,
 				03A20F4C184D4F2C00CCED80 /* wall.20.l.png in Resources */,
 				0375469F18A7374200807397 /* wall.gateCatClosed.l.png in Resources */,
 				037740FF1898750C001FDB71 /* event.22.r.3.png in Resources */,
@@ -2897,6 +2914,7 @@
 				03DD5BE818A68AB100BFA21E /* char7.stand.l.f.1.png in Resources */,
 				033124D318A31DC000388D2F /* dialog_photocopier.wav in Resources */,
 				03CE07A118937C31009D7003 /* wall.gateNeomineOpen.r.png in Resources */,
+				0380778918A7BAD70005FD59 /* map.1.Necomedre.png in Resources */,
 				03834E52180C229700568E60 /* letterB.png in Resources */,
 				0328126E17A54375006D5E9D /* char2.walk.r.f.2.png in Resources */,
 				0328127117A5527D006D5E9D /* blocker.1.png in Resources */,
@@ -2934,6 +2952,7 @@
 				03FE0DA318A26BE500206675 /* quiet.mp3 in Resources */,
 				03E14CB918A5DE4300B3816F /* splash.kokorobot.png in Resources */,
 				03DF52CC18A0BDD3008C514B /* event.23.l.3.png in Resources */,
+				0380778818A7BAD70005FD59 /* map.1.Lobby.png in Resources */,
 				03B5B0C217AA1CA900B3C18D /* icon.57.png in Resources */,
 				033193DD1800075C0069D8A0 /* wall.8.l.png in Resources */,
 				033124B618A30EEB00388D2F /* sfx_walk.wav in Resources */,
@@ -3175,6 +3194,7 @@
 				0304D7A4186CEE0200ED6E94 /* event.6.r.3.png in Resources */,
 				036AA049187FCC3C008E6CE0 /* fx.vignette.2.png in Resources */,
 				037E7F13189A87E700024C8E /* tile.49.png in Resources */,
+				0380778C18A7BAD70005FD59 /* map.1.Nestorine.png in Resources */,
 				03DD5BE718A68AB100BFA21E /* char7.stand.l.b.1.png in Resources */,
 				035A6D94186B08000032710C /* fx.transform.2.png in Resources */,
 				03FE0DB418A2764500206675 /* sfx_click1.wav in Resources */,

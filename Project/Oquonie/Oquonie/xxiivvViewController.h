@@ -90,6 +90,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *moveIndicator;
 
 @property (strong, nonatomic) IBOutlet UIImageView *creditsImage;
+@property (strong, nonatomic) IBOutlet UIImageView *mapImage;
 
 // =================
 // Controls

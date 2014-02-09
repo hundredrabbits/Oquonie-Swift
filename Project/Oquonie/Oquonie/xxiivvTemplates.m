@@ -73,6 +73,8 @@
 //	self.dialogCharacter2.frame = CGRectMake(self.dialogCharacterWarpper.frame.size.width/3, 0, self.dialogCharacterWarpper.frame.size.width/2.5, self.dialogCharacterWarpper.frame.size.width/2.5);
 //	self.dialogCharacter3.frame = CGRectMake(self.dialogCharacterWarpper.frame.size.width/3*2, 0, self.dialogCharacterWarpper.frame.size.width/2.5, self.dialogCharacterWarpper.frame.size.width/2.5);
 	
+	self.mapImage.alpha = 0;
+	self.mapImage.backgroundColor = [UIColor whiteColor];
 	
 	// Dialog
 	portraitOrigin = self.dialogCharacter.frame;
