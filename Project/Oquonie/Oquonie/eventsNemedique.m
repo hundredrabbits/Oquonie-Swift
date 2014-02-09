@@ -84,7 +84,7 @@
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"]){ return @"";}
 	
-	[self moveDisable:10];
+	[self moveDisable:15];
 	[self audioEffectPlayer:@"bump1"];
 	
 	[UIView animateWithDuration:5 animations:^(void){
@@ -110,7 +110,11 @@
 				NSLog(@"step 3");
 				NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
 				[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
-				[self start];
+				
+				[self worldStart];
+				[self roomStart];
+				[self moveOrder];
+
 				userGameCompleted = 1;
 				[self userSave];
 				[self eventWarpDramatic:@"1":@"0,0"];
