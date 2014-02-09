@@ -34,10 +34,6 @@
 	[self userStart];
 	userAudioPlaying = 1;
 	
-	
-	userLocation = 40;
-	userCharacter = 3;
-	
 	[self templateStart];
 	[self worldStart];
 	[self roomStart];

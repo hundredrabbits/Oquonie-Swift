@@ -35,7 +35,7 @@
 #define storageEndForm					20
 #define storageEndFormTrigger			21
 
-#define dialogIntroduction			@"AAA"
+#define dialogIntroduction			@"KIO"
 #define dialogHaveCharacter			@"QIS" // already are the character from that wizard
 #define dialogHaveSpell				@"PIR" // already have the spell from that wizard
 #define dialogHaveCharacterNot(x)	[NSString stringWithFormat:@"GL%@",x];
@@ -44,12 +44,10 @@
 #define dialogGainPillar			@"RQY"
 #define dialogGainRamen				@"RQO"
 #define dialogHaveRamenNot			@"OQT"
-#define dialogHavePillars			@"UUU"
-#define dialogHavePillarsNot		@"UUU"
+#define dialogHavePillars			@"PIY"
+#define dialogHavePillarsNot		@"YQT"
 
-#define dialogEnd1					@"UUU"
-#define dialogEnd2					@"UUU"
-#define dialogEnd3					@"UUU"
+#define dialogEnd1					@"HIS"
 
 #define dialogSharkHelp				@"QJT"
 #define dialogSharkTransform		@"SID"
@@ -63,15 +61,14 @@
 #define dialogAudioOn				@"NQI"
 #define dialogAudioOff				@"NQJ"
 
-#define dialogTutorialTalk1			@"UUU"
-#define dialogTutorialTalk2			@"UUU"
-#define dialogTutorialTalk3			@"UUU"
-#define dialogNoFace				@"UUU"
+#define dialogTutorialTalk1			@"HIS"
+#define dialogTutorialTalk2			@"HIS"
+#define dialogTutorialTalk3			@"HIS"
+#define dialogNoFace				@"USV"
 
-#define dialogConfusion1			@"UUU"
-#define dialogConfusion2			@"UUU"
-#define dialogConfusion3			@"UUU"
-#define dialogConfusion4			@"UUU"
+#define dialogConfusion1			@"UVW"
+#define dialogConfusion2			@"WUV"
+#define dialogConfusion3			@"VUW"
 
 #define audioNecomedre			@"necomedre"
 #define audioNephtaline			@"nephtaline"
@@ -162,7 +159,7 @@
 
 #define locationNephtalineLobby		@"1"
 #define locationNephtalinePillar	@"121"
-#define locationNephtalineRamen		@"57" // TODO
+#define locationNephtalineRamen		@"57"
 
 #define locationNemediqueLobby		@"9"
 #define locationNemediqueEnter		@"100"

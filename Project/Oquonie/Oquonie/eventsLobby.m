@@ -204,7 +204,7 @@
 			[self eventWarpDramatic:@"70":@"0,-1"];
 		}
 		else if(userLocation == 70){
-			[self eventWarp:@"69":@"0,-1"];
+			[self eventWarp:@"69":@"0,1"];
 		}
 	}
 	else{

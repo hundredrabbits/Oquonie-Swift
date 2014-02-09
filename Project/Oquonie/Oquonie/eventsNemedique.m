@@ -227,7 +227,7 @@
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
 	
-	[self eventDialog:@"AAA":@"31"];
+	[self eventDialog:@"OQS":@"31"];
 	[self audioDialogPlayer:@"rekka"];
 	
 	return @"";
@@ -241,7 +241,7 @@
 		return @"";
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
-	[self eventDialog:@"AAA":@"32"];
+	[self eventDialog:@"OPS":@"32"];
 	[self audioDialogPlayer:@"devine"];
 	return @"";
 }
