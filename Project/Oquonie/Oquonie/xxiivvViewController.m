@@ -44,20 +44,21 @@
 	
 	// Debug: remove
 	if(systemDebug == 1){
-		NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-		[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
-		
-		userStorageEvents[storageQuestPillarNecomedre] = @"1";
-		userStorageEvents[storageQuestPillarNephtaline] = @"1";
-		userStorageEvents[storageQuestPillarNeomine] = @"1";
-		userStorageEvents[storageQuestPillarNestorine] = @"1";
-		userStorageEvents[storageQuestPillarNemedique] = @"1";
-		userAudioPlaying = 0;
-		userGameCompleted = 0;
 	}
 	else{
 		[self eventIntroduction];
 	}
+	
+	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+	
+	userStorageEvents[storageQuestPillarNecomedre] = @"1";
+	userStorageEvents[storageQuestPillarNephtaline] = @"1";
+	userStorageEvents[storageQuestPillarNeomine] = @"1";
+	userStorageEvents[storageQuestPillarNestorine] = @"1";
+	userStorageEvents[storageQuestPillarNemedique] = @"1";
+	userAudioPlaying = 1;
+	userGameCompleted = 0;
 	
 	self.debugLocation.hidden = NO;
 	
@@ -699,7 +700,7 @@
         self.audioAmbientPlayer.volume += 0.3;
         [self performSelector:@selector(fadeIn) withObject:nil afterDelay:0.1];
     }
-	if(self.audioAmbientPlayer.volume > 1){ self.audioAmbientPlayer.volume = 1;}
+//	if(self.audioAmbientPlayer.volume > 1){ self.audioAmbientPlayer.volume = 1;}
 	NSLog(@"fade in: %f",self.audioAmbientPlayer.volume);
 }
 

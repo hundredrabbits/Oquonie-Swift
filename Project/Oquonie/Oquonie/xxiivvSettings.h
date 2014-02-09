@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#define systemDebug				1
+#define systemDebug				0
 #define systemBuild				1
 
 #define userCharacterId			5

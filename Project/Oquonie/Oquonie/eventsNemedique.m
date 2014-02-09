@@ -85,90 +85,62 @@
 	if([option isEqualToString:@"postUpdate"]){ return @"";}
 	
 	[self moveDisable:10];
-	
-	[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(endReset_Trigger) userInfo:nil repeats:NO];
+	[self audioEffectPlayer:@"bump1"];
 	
 	[UIView animateWithDuration:5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		self.spritesContainer.alpha = 0;
-	} completion:^(BOOL finished){}];
+	} completion:^(BOOL finished){
+		NSLog(@"step 1");
+		[UIView animateWithDuration:5 animations:^(void){
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+			self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, 100);
+			self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, 200);
+			self.parallaxBack.alpha = 0;
+			self.parallaxFront.alpha = 0;
+			self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, 50);
+			self.roomContainer.alpha = 0;
+		} completion:^(BOOL finished){
+			NSLog(@"step 2");
+			[UIView animateWithDuration:5 animations:^(void){
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+				self.parallaxBack.frame = parallaxBackOrigin;
+				self.parallaxFront.frame = parallaxFrontOrigin;
+			} completion:^(BOOL finished){
+				NSLog(@"step 3");
+				NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+				[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+				[self start];
+				userGameCompleted = 1;
+				[self userSave];
+				[self eventWarpDramatic:@"1":@"0,0"];
+				[UIView animateWithDuration:5 animations:^(void){
+					[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+					self.roomContainer.alpha = 1;
+					self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1];
+				} completion:^(BOOL finished){
+					NSLog(@"step 4");
+					[UIView animateWithDuration:5 animations:^(void){
+						[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+						self.spritesContainer.alpha = 1;
+					} completion:^(BOOL finished){
+						NSLog(@"step 5");
+						[UIView animateWithDuration:5 animations:^(void){
+							[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+						} completion:^(BOOL finished){
+							NSLog(@"step 5");
+						}];
+					}];
+					
+				}];
+			}];
+		}];
+	}];
 	
 	return @"";
 }
 
--(void)endReset_Trigger
-{
-	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
-	
-	[self start];
-	
-	userGameCompleted = 1;
-	
-	[self userSave];
-	
-	[self eventTransitionPan:@"1":@"0,0"];
-}
-
 // Red Character
-
--(void)redEndTransition
-{
-	
-	[UIView animateWithDuration:7.5 animations:^(void){
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
-		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
-		self.parallaxBack.alpha = 0;
-		self.parallaxFront.alpha = 0;
-	} completion:^(BOOL finished){
-		[self roomClearDialog];
-		
-		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, 1*screen.size.height+100);
-		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, 1*screen.size.height+200);
-//		[self eventWarp:@"106":@"-1,0"];
-		[UIView animateWithDuration:2.5 animations:^(void){
-			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			self.parallaxBack.frame = parallaxBackOrigin;
-			self.parallaxFront.frame = parallaxFrontOrigin;
-			self.parallaxBack.alpha = 1;
-			self.parallaxFront.alpha = 1;
-		} completion:^(BOOL finished){
-			[self eventVignette:@"1"];
-			[UIView animateWithDuration:2.5 animations:^(void){
-				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-				self.roomContainer.alpha = 1;
-			} completion:^(BOOL finished){
-			}];
-		}];
-	}];
-	userStorageEvents[storageEndFormTrigger] = @"1";
-}
-
-/*
- if( [userStorageEvents[storageEndForm] intValue] == 0){
- 
- self.roomContainer.alpha = 0;
- self.spritesContainer.alpha = 0;
- 
- [UIView animateWithDuration:4.5 animations:^(void){
- [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
- [UIView setAnimationDelay:1];
- self.roomContainer.alpha = 1;
- self.spritesContainer.alpha = 1;
- } completion:^(BOOL finished){
- [self eventDialog:dialogEnd1:eventNepturne];
- }];
- 
- [self moveDisable:8];
- [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(redEndTransition) userInfo:nil repeats:NO];
- userStorageEvents[storageEndForm] = @"1";
- return eventRed;
- }
- if([userStorageEvents[storageEndFormTrigger] intValue]==1){
- return eventNepturne;
- }
- return eventRed;*/
 
 -(NSString*)event_redEnd :(NSString*)option
 {
@@ -186,7 +158,7 @@
 -(void)redEndSequence
 {
 	NSLog(@"Step 0");
-	[self moveDisable:10];
+	[self moveDisable:20];
 	// Remove Background
 	[UIView animateWithDuration:7.5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
