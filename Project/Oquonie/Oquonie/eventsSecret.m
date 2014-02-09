@@ -202,6 +202,13 @@
 
 -(NSString*)event_noface:(NSString*)option
 {
+	
+	NSDate *currentTime = [NSDate date];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"hh"];
+	NSString *resultString = [dateFormatter stringFromDate: currentTime];
+	int currentHour = [resultString intValue];
+	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		return @"";
@@ -209,11 +216,20 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		NSLog(@"Current Hour: %d",currentHour);
+		if(currentHour == 11 || currentHour == 12 || currentHour == 1 || currentHour == 2){
+			return eventNoFace;
+		}
+		else{
+			return @"404";
+		}
 		return @"";
 	}
 	
-	[self eventDialog:dialogNoFace:eventNoFace];
-	[self audioDialogPlayer:@"noface"];
+	if(currentHour == 11 || currentHour == 12 || currentHour == 1 || currentHour == 2){
+		[self eventDialog:dialogNoFace:eventNoFace];
+		[self audioDialogPlayer:@"noface"];
+	}
 	
 	return @"";
 }
