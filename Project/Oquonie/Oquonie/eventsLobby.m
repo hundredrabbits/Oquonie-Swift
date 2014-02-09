@@ -302,9 +302,6 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
 		// Nemedique pillar
-		if(userLocation == 50 && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){
-			return @"3";
-		}
 		if(userCharacter==5 || userCharacter == 7){
 			return @"gateNemediqueOpen";
 		}
@@ -315,6 +312,7 @@
 	
 	// Condemned pillar doors
 	if(userLocation == 50 && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){
+		[self eventWarp:@"117" :@"-1,0"];
 		return @"";
 	}
 	

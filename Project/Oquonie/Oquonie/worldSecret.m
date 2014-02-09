@@ -101,6 +101,20 @@
 	// Name,Background,Audio
 	@"Test Level",@"White",audioPillar];
 	
+	// Extra Warp Zone TODO
+	
+	worldNode[117] = @[
+	// Tiles
+	@"3",@"3",@"3",
+	@"3",@"7|event|warpLobby",@"3",
+	@"3",@"3",@"3",
+	// Walls
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Steps
+	@"0",@"0",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Test Level",@"White",audioPillar];
+	
 }
 
 @end
