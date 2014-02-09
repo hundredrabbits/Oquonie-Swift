@@ -189,6 +189,7 @@
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
 	
 	[self eventDialog:@"AAA":@"31"];
+	[self audioDialogPlayer:@"rekka"];
 	
 	return @"";
 }
@@ -202,6 +203,7 @@
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
 	[self eventDialog:@"AAA":@"32"];
+	[self audioDialogPlayer:@"devine"];
 	return @"";
 }
 -(NSString*)event_credit3 :(NSString*)option

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#define systemDebug				0
+#define systemDebug				1
 #define systemBuild				1
 
 #define userCharacterId			5
-#define userCharacterLocation	100
+#define userCharacterLocation	60
 #define userCharacterX			0
 #define userCharacterY			0
 
@@ -66,6 +66,7 @@
 #define dialogTutorialTalk1			@"UUU"
 #define dialogTutorialTalk2			@"UUU"
 #define dialogTutorialTalk3			@"UUU"
+#define dialogNoFace				@"UUU"
 
 #define dialogConfusion1			@"UUU"
 #define dialogConfusion2			@"UUU"
@@ -89,6 +90,9 @@
 #define audioGlitch				@"glitch"
 #define audioPlay				@"play"
 
+#define audioRekka				@"rekka"
+#define audioDevine				@"devine"
+
 #define characterNecomedre		1
 #define characterNephtaline		2
 #define characterNeomine		3
@@ -111,6 +115,7 @@
 #define eventRamenSeat			@"18"
 #define eventNepturne			@"28"
 #define eventCat				@"33"
+#define eventNoFace				@"29"
 
 #define eventPillarCollectible	@"15"
 #define eventPillarSocket		@"14"

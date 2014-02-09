@@ -105,7 +105,6 @@
 		033124CD18A31B9300388D2F /* dialog_nephtaline.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C618A31B9300388D2F /* dialog_nephtaline.wav */; };
 		033124CE18A31B9300388D2F /* dialog_nepturne.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C718A31B9300388D2F /* dialog_nepturne.wav */; };
 		033124CF18A31B9300388D2F /* dialog_nestorine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C818A31B9300388D2F /* dialog_nestorine.wav */; };
-		033124D018A31B9300388D2F /* dialog_peakerphone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C918A31B9300388D2F /* dialog_peakerphone.wav */; };
 		033124D318A31DC000388D2F /* dialog_photocopier.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D118A31DC000388D2F /* dialog_photocopier.wav */; };
 		033124D418A31DC000388D2F /* dialog_ramen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D218A31DC000388D2F /* dialog_ramen.wav */; };
 		033124D618A31E4300388D2F /* dialog_speakerphone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D518A31E4300388D2F /* dialog_speakerphone.wav */; };
@@ -752,7 +751,6 @@
 		033124C618A31B9300388D2F /* dialog_nephtaline.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_nephtaline.wav; path = en.sounds/dialog_nephtaline.wav; sourceTree = "<group>"; };
 		033124C718A31B9300388D2F /* dialog_nepturne.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_nepturne.wav; path = en.sounds/dialog_nepturne.wav; sourceTree = "<group>"; };
 		033124C818A31B9300388D2F /* dialog_nestorine.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_nestorine.wav; path = en.sounds/dialog_nestorine.wav; sourceTree = "<group>"; };
-		033124C918A31B9300388D2F /* dialog_peakerphone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_peakerphone.wav; path = en.sounds/dialog_peakerphone.wav; sourceTree = "<group>"; };
 		033124D118A31DC000388D2F /* dialog_photocopier.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_photocopier.wav; path = en.sounds/dialog_photocopier.wav; sourceTree = "<group>"; };
 		033124D218A31DC000388D2F /* dialog_ramen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_ramen.wav; path = en.sounds/dialog_ramen.wav; sourceTree = "<group>"; };
 		033124D518A31E4300388D2F /* dialog_speakerphone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_speakerphone.wav; path = en.sounds/dialog_speakerphone.wav; sourceTree = "<group>"; };
@@ -2516,7 +2514,6 @@
 				033124C618A31B9300388D2F /* dialog_nephtaline.wav */,
 				033124C718A31B9300388D2F /* dialog_nepturne.wav */,
 				033124C818A31B9300388D2F /* dialog_nestorine.wav */,
-				033124C918A31B9300388D2F /* dialog_peakerphone.wav */,
 				033124C118A31A0400388D2F /* dialog_owl.wav */,
 				033124BF18A313E500388D2F /* sfx_transform.wav */,
 				033124BD18A312D700388D2F /* sfx_spellfull.wav */,
@@ -3102,7 +3099,6 @@
 				03DD5BBF18A67C0400BFA21E /* endless.mp3 in Resources */,
 				03B943451884F863008E834A /* char6.stand.r.f.2.png in Resources */,
 				035A6DB9186B0E610032710C /* event.6.l.2.png in Resources */,
-				033124D018A31B9300388D2F /* dialog_peakerphone.wav in Resources */,
 				0304D7B2186CEE0200ED6E94 /* event.10.r.2.png in Resources */,
 				03CE079718937C31009D7003 /* wall.gateNecomedreClosed.r.png in Resources */,
 				0304D7AF186CEE0200ED6E94 /* event.9.r.3.png in Resources */,

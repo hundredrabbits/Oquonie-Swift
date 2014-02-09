@@ -40,6 +40,7 @@
 	self.wall2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self randomObject:walls]]];
 	self.wall3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self randomObject:walls]]];
 	
+	[self audioDialogPlayer:@"petunia"];
 	
 	return @"";
 }
@@ -109,11 +110,10 @@
 	return @"";
 }
 
--(NSString*)event_shuffleRoom:(NSString*)option
+-(NSString*)event_noface:(NSString*)option
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		[self shuffler];
 		return @"";
 	}
 	
@@ -122,7 +122,23 @@
 		return @"";
 	}
 	
-	[self eventWarp:@"113":@"0,-1"];
+	[self eventDialog:dialogNoFace:eventNoFace];
+	[self audioDialogPlayer:@"noface"];
+	
+	return @"";
+}
+
+-(NSString*)event_shuffleRoom:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
 	
 	return @"";
 }
