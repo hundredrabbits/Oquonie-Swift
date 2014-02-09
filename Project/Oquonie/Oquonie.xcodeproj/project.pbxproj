@@ -208,6 +208,7 @@
 		036D5BF9187D21A70042378D /* letterX.png in Resources */ = {isa = PBXBuildFile; fileRef = 036D5BF8187D21A70042378D /* letterX.png */; };
 		0373477A186BA790000A5ED7 /* event.1.r.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03734778186BA790000A5ED7 /* event.1.r.2.png */; };
 		0373477B186BA790000A5ED7 /* event.1.r.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03734779186BA790000A5ED7 /* event.1.r.3.png */; };
+		0375469418A70E5000807397 /* dialog_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0375469318A70E5000807397 /* dialog_cat.wav */; };
 		037740DE18987187001FDB71 /* event.20.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D618987187001FDB71 /* event.20.l.3.png */; };
 		037740DF18987187001FDB71 /* event.20.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D718987187001FDB71 /* event.20.portrait.png */; };
 		037740E018987187001FDB71 /* wall.37.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D818987187001FDB71 /* wall.37.l.png */; };
@@ -858,6 +859,7 @@
 		036D5BF8187D21A70042378D /* letterX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterX.png; path = en.assets/letterX.png; sourceTree = "<group>"; };
 		03734778186BA790000A5ED7 /* event.1.r.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.1.r.2.png; path = en.assets/event.1.r.2.png; sourceTree = "<group>"; };
 		03734779186BA790000A5ED7 /* event.1.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.1.r.3.png; path = en.assets/event.1.r.3.png; sourceTree = "<group>"; };
+		0375469318A70E5000807397 /* dialog_cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog_cat.wav; path = en.sounds/dialog_cat.wav; sourceTree = "<group>"; };
 		037740D618987187001FDB71 /* event.20.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.20.l.3.png; path = en.assets/event.20.l.3.png; sourceTree = "<group>"; };
 		037740D718987187001FDB71 /* event.20.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.20.portrait.png; path = en.assets/event.20.portrait.png; sourceTree = "<group>"; };
 		037740D818987187001FDB71 /* wall.37.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.37.l.png; path = en.assets/wall.37.l.png; sourceTree = "<group>"; };
@@ -2497,6 +2499,7 @@
 		03FE0DB918A2765300206675 /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
+				0375469318A70E5000807397 /* dialog_cat.wav */,
 				03DD5BB518A67C0400BFA21E /* dialog_devine.wav */,
 				03DD5BB618A67C0400BFA21E /* dialog_noface.wav */,
 				03DD5BB718A67C0400BFA21E /* dialog_petunia.wav */,
@@ -2892,6 +2895,7 @@
 				0381CC7418456236003FB458 /* blocker.8.png in Resources */,
 				03B943581884FB32008E834A /* event.18.l.3.png in Resources */,
 				03A9996C1883BA510051DF93 /* tile.29.png in Resources */,
+				0375469418A70E5000807397 /* dialog_cat.wav in Resources */,
 				03EC37C4188181AF00D74DE1 /* fx.parallax.3.png in Resources */,
 				033124DE18A32DB300388D2F /* sfx_teleport.wav in Resources */,
 				03F5C493187BB8C700352B8E /* letterSpellD.png in Resources */,

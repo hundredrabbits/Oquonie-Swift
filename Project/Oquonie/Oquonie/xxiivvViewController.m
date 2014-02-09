@@ -696,21 +696,19 @@
 -(void)audioEffectPlayer:(NSString*)filename
 {
 	self.audioEffectPlayer.volume = 0.5;
-	
 	filename = [NSString stringWithFormat:@"sfx_%@.wav",filename];
-	
 	NSError *error;
 	NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString: [NSString stringWithFormat:@"/%@", filename] ];
-	
 	self.audioEffectPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:resourcePath] error:&error];
-	
 	if (error){
 		NSLog(@"$ ERROR | Effect       | Error    -> (%@)%@",filename,[error localizedDescription]);
 	}
 	else {
 		NSLog(@"$ AUDIO | Effect       | File     -> %@",filename);
 		self.audioEffectPlayer.numberOfLoops = 0;
-		[self.audioEffectPlayer prepareToPlay];
+		self.audioEffectPlayer.currentTime = 0;
+        [self.audioEffectPlayer prepareToPlay];
+        self.audioEffectPlayer.volume = 0.5;
 	}
 	[self.audioEffectPlayer play];
 }

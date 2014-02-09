@@ -65,8 +65,7 @@
 		return @"";
 	}
 	[self eventDialog:@"UUU":eventCat];
-	
-	NSLog(@"MOEW");
+	[self audioDialogPlayer:@"cat"];
 	
 	return @"";
 }
