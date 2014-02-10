@@ -43,18 +43,6 @@
 	
 	[self eventIntroduction];
 	
-//	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-//	[[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
-//
-//	userStorageEvents[storageQuestPillarNecomedre] = @"1";
-//	userStorageEvents[storageQuestPillarNephtaline] = @"1";
-//	userStorageEvents[storageQuestPillarNeomine] = @"1";
-//	userStorageEvents[storageQuestPillarNestorine] = @"1";
-//	userStorageEvents[storageQuestPillarNemedique] = @"1";
-//	userAudioPlaying = 1;
-//	userGameCompleted = 0;
-//	userCharacter = 7;
-	
 	self.debugLocation.hidden = YES;
 	
 }

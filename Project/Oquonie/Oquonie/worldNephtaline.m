@@ -279,15 +279,15 @@
 	
 	worldNode[121] = @[
 	// Tiles
-	@"1",@"29",@"1",
-	@"29",@"4|event|pillar|15|l",@"29",
-	@"1",@"29",@"1",
+	@"97",@"31",@"97",
+	@"31",@"4|event|pillar|15|l",@"31",
+	@"98",@"31",@"98",
 	// Walls
-	@"1",@"1",@"1",@"1",@"1",@"1",
+	@"25",@"18",@"25",@"25",@"18",@"25",
 	// Steps
 	@"0",@"0",@"0",@"0",@"3|event|gateNemedique",@"0",
 	// Name,Background,Audio
-	@"Necomedre Pillar Room",@"White",audioPillar];
+	@"Necomedre Pillar Room",@"Red",audioPillar];
 	
 }
 @end

@@ -319,19 +319,19 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleAspectFit" id="Y7v-1Q-mTL" userLabel="dialogView">
-                                        <rect key="frame" x="0.0" y="229.99999513387422" width="320" height="250.00000486612578"/>
+                                        <rect key="frame" x="0.0" y="230" width="320" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.10.portrait.png" id="RcO-YQ-M4O" userLabel="dialogCharacter">
-                                                <rect key="frame" x="0.0" y="43" width="320" height="195.0000039869517"/>
+                                                <rect key="frame" x="0.0" y="43" width="320" height="195"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.textbubble.png" id="Rwu-16-j3v" userLabel="dialogBubble">
-                                                <rect key="frame" x="0.0" y="4.8661257778803702e-06" width="320" height="250"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" id="tXm-os-7cx" userLabel="dialogCharacterWarpper">
-                                                <rect key="frame" x="21" y="150" width="159.99999380150581" height="60"/>
+                                                <rect key="frame" x="20.999992769268907" y="150" width="160" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">
@@ -350,6 +350,10 @@
                                             </view>
                                         </subviews>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_save.png" id="Jlj-tJ-CR2" userLabel="saveIndicator">
+                                        <rect key="frame" x="270" y="430" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </imageView>
                                 </subviews>
                             </view>
                         </subviews>
@@ -387,6 +391,7 @@
                         <outlet property="parallaxFront" destination="wOF-9h-gMa" id="nXB-t3-Nod"/>
                         <outlet property="roomBackground" destination="xOc-7y-FYA" id="0oc-76-siq"/>
                         <outlet property="roomContainer" destination="Ags-af-M9v" id="4qg-ij-XvR"/>
+                        <outlet property="saveIndicator" destination="Jlj-tJ-CR2" id="hg8-OK-O1w"/>
                         <outlet property="spellCharacter1" destination="eqt-hH-MTC" id="TKv-rS-n3W"/>
                         <outlet property="spellCharacter2" destination="BZl-BC-yaS" id="bqf-Dh-nGc"/>
                         <outlet property="spellCharacter3" destination="WND-Pa-Vmu" id="UvM-d9-7Jd"/>
@@ -446,6 +451,7 @@
         <image name="fx.parallax.2.png" width="640" height="640"/>
         <image name="fx.textbubble.png" width="640" height="500"/>
         <image name="game_exist.png" width="50" height="50"/>
+        <image name="game_save.png" width="50" height="50"/>
         <image name="letterF.png" width="128" height="128"/>
         <image name="letterI.png" width="128" height="128"/>
         <image name="letterM.png" width="128" height="128"/>

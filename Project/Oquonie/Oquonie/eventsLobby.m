@@ -424,9 +424,10 @@
 	[UIView animateWithDuration:0.5 animations:^(void){
 		self.userPlayer.frame = [self tileLocation:4:0:0];
 	} completion:^(BOOL finished){
+		userSpriteState = @"warp";
+		[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(userSave) userInfo:nil repeats:NO];
 		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(warpLobbyAnimationSpriteUpdate) userInfo:nil repeats:NO];
 		[self eventTransitionPan:locationLobbyLanding:roomCenter];
-		userSpriteState = @"warp";
 	}];
 }
 
@@ -658,7 +659,7 @@
 	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
 	
 	// Dialog
-    [self eventDialog:@"UVW":eventOwl];
+    [self eventDialog:dialogOwlSave:eventOwl];
 	[self audioDialogPlayer:@"owl"];
 	[self userSave];
 	

@@ -274,6 +274,14 @@
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.1.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.5.png"];
 		}
+		// Pillar
+		if([worldBackground isEqualToString:@"Red"]){
+			[UIView animateWithDuration:1.0 animations:^{
+				self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1];
+			} completion:NULL];
+			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.6.png"];
+			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.7.png"];
+		}
 	}
 }
 

@@ -119,7 +119,6 @@
 	[self moveOrder];
 	
 	[self audioEffectPlayer:@"warp"];
-	[self audioEffectPlayer:@"dialog"];
 }
 
 - (void)eventDialog :(NSString*)dialog :(NSString*)characterId
@@ -175,9 +174,6 @@
 	// Hide spellbook if unecessary
 	
 	[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(eventSpellHide) userInfo:nil repeats:NO];
-	
-	[self audioEffectPlayer:@"dialog"];
-	
 }
 
 -(void)eventSpellAdd :(NSString*)spellId :(int)spellType
@@ -441,6 +437,8 @@
 	self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
 	self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 0, -1*screen.size.height+200);
 	
+	[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
+	
 	[UIView animateWithDuration:2.5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		self.roomContainer.frame = roomContainerOrigin;
@@ -455,6 +453,7 @@
 		userSpriteOrientationHorizontal = @"l";
 		userSpriteOrientationVertical = @"f";
 		userDialogActive = 0;
+		[self audioEffectPlayer:@"bump"];
 		
 		[self eventDialog:dialogIntroduction:eventOwl];
 	}];
@@ -536,7 +535,7 @@
 		self.dialogCharacter3.alpha = 0;
 		self.dialogVignette.alpha = 0;
 	} completion:^(BOOL finished){}];
-	[self audioEffectPlayer:@"tic"];
+	[self audioEffectPlayer:@"click1"];
 }
 
 @end

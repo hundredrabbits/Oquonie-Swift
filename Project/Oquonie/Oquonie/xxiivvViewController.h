@@ -91,6 +91,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *creditsImage;
 @property (strong, nonatomic) IBOutlet UIImageView *mapImage;
+@property (strong, nonatomic) IBOutlet UIImageView *saveIndicator;
 
 // =================
 // Controls

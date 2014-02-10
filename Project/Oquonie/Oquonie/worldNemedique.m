@@ -51,15 +51,15 @@
 	
 	worldNode[103] = @[
 	// Tiles
-	@"4",@"4",@"4",
-	@"4",@"4|event|pillar|15|l",@"4",
-	@"4",@"4",@"4",
+	@"33",@"2",@"33",
+	@"2",@"4|event|pillar|15|l",@"2",
+	@"33",@"2",@"33",
 	// Walls
-	@"26",@"26",@"26",@"19",@"19",@"19",
+	@"3",@"31",@"3",@"3",@"31",@"3",
 	// Steps
 	@"0",@"6|event|gateNecomedre",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Nemedique Pillar Room",@"White",audioPillar];
+	@"Nemedique Pillar Room",@"Red",audioPillar];
 	
 	worldNode[104] = @[
 	// Tiles

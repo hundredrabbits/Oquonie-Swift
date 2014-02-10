@@ -30,7 +30,18 @@
 {
 	NSLog(@"   USER | Saving..     | Please hold");
 	
-	// Package
+	[UIView animateWithDuration:0.5 animations:^(void){
+		[UIView setAnimationDelay:1];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		self.saveIndicator.alpha = 1;
+	} completion:^(BOOL finished){
+		[UIView animateWithDuration:3 animations:^(void){
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+			self.saveIndicator.alpha = 0;
+		} completion:^(BOOL finished){}];
+	}];
+	
+	
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	
 	[defaults setObject:[NSString stringWithFormat:@"%d",userLocation] forKey:@"userLocation"];

@@ -104,6 +104,8 @@
 	self.debugLocation.hidden = YES;
 	self.creditsImage.hidden = YES;
 	
+	self.saveIndicator.alpha = 0;
+	
 }
 
 - (void) templateRoomAnimation

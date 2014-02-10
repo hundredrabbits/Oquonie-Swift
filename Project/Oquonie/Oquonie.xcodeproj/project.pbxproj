@@ -203,6 +203,10 @@
 		036A100A18099F720074F6F1 /* tile.E.png in Resources */ = {isa = PBXBuildFile; fileRef = 036A100218099F720074F6F1 /* tile.E.png */; };
 		036AA048187FCC3C008E6CE0 /* fx.vignette.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 036AA046187FCC3C008E6CE0 /* fx.vignette.1.png */; };
 		036AA049187FCC3C008E6CE0 /* fx.vignette.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 036AA047187FCC3C008E6CE0 /* fx.vignette.2.png */; };
+		036C939D18A8509600EE48AD /* game_save.png in Resources */ = {isa = PBXBuildFile; fileRef = 036C939C18A8509600EE48AD /* game_save.png */; };
+		036C939F18A8571C00EE48AD /* fx.pillartile.png in Resources */ = {isa = PBXBuildFile; fileRef = 036C939E18A8571C00EE48AD /* fx.pillartile.png */; };
+		036C93A218A857C000EE48AD /* fx.parallax.6.png in Resources */ = {isa = PBXBuildFile; fileRef = 036C93A018A857C000EE48AD /* fx.parallax.6.png */; };
+		036C93A318A857C000EE48AD /* fx.parallax.7.png in Resources */ = {isa = PBXBuildFile; fileRef = 036C93A118A857C000EE48AD /* fx.parallax.7.png */; };
 		036D5BF4187D0DC50042378D /* event.11.r.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 036D5BF3187D0DC50042378D /* event.11.r.1.png */; };
 		036D5BF7187D1DA00042378D /* xxiivvUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 036D5BF6187D1DA00042378D /* xxiivvUtils.m */; };
 		036D5BF9187D21A70042378D /* letterX.png in Resources */ = {isa = PBXBuildFile; fileRef = 036D5BF8187D21A70042378D /* letterX.png */; };
@@ -873,6 +877,10 @@
 		036A100218099F720074F6F1 /* tile.E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.E.png; path = en.assets/tile.E.png; sourceTree = "<group>"; };
 		036AA046187FCC3C008E6CE0 /* fx.vignette.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.vignette.1.png; path = en.assets/fx.vignette.1.png; sourceTree = "<group>"; };
 		036AA047187FCC3C008E6CE0 /* fx.vignette.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.vignette.2.png; path = en.assets/fx.vignette.2.png; sourceTree = "<group>"; };
+		036C939C18A8509600EE48AD /* game_save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_save.png; path = en.assets/game_save.png; sourceTree = "<group>"; };
+		036C939E18A8571C00EE48AD /* fx.pillartile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.pillartile.png; path = en.assets/fx.pillartile.png; sourceTree = "<group>"; };
+		036C93A018A857C000EE48AD /* fx.parallax.6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.parallax.6.png; path = en.assets/fx.parallax.6.png; sourceTree = "<group>"; };
+		036C93A118A857C000EE48AD /* fx.parallax.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.parallax.7.png; path = en.assets/fx.parallax.7.png; sourceTree = "<group>"; };
 		036D5BF3187D0DC50042378D /* event.11.r.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.11.r.1.png; path = en.assets/event.11.r.1.png; sourceTree = "<group>"; };
 		036D5BF5187D1DA00042378D /* xxiivvUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvUtils.h; sourceTree = "<group>"; };
 		036D5BF6187D1DA00042378D /* xxiivvUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvUtils.m; sourceTree = "<group>"; };
@@ -1397,6 +1405,7 @@
 		0304D7B5186CF18000ED6E94 /* Fx */ = {
 			isa = PBXGroup;
 			children = (
+				036C939E18A8571C00EE48AD /* fx.pillartile.png */,
 				03DD5BD118A689FD00BFA21E /* fx.parallax.5.png */,
 				03CE07B818943D52009D7003 /* fx.indicator.b.l.png */,
 				03CE07B918943D52009D7003 /* fx.indicator.b.r.png */,
@@ -2239,6 +2248,9 @@
 		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
+				036C93A018A857C000EE48AD /* fx.parallax.6.png */,
+				036C93A118A857C000EE48AD /* fx.parallax.7.png */,
+				036C939C18A8509600EE48AD /* game_save.png */,
 				0380778318A7BAD70005FD59 /* map.1.Lobby.png */,
 				0380778418A7BAD70005FD59 /* map.1.Necomedre.png */,
 				0380778518A7BAD70005FD59 /* map.1.Neomine.png */,
@@ -2842,6 +2854,7 @@
 				03C0E666186265B3006AA0E6 /* event.1.portrait.png in Resources */,
 				03DD5BF018A68AB100BFA21E /* char7.walk.l.f.2.png in Resources */,
 				0328126317A54375006D5E9D /* char2.stand.l.b.1.png in Resources */,
+				036C93A218A857C000EE48AD /* fx.parallax.6.png in Resources */,
 				037E7F15189A87E700024C8E /* wall.38.r.png in Resources */,
 				0365921A18540C9A00F7ABA3 /* letterG.png in Resources */,
 				0328126417A54375006D5E9D /* char2.stand.l.f.1.png in Resources */,
@@ -2893,6 +2906,7 @@
 				03F5C494187BB8C700352B8E /* letterSpellE.png in Resources */,
 				0328126A17A54375006D5E9D /* char2.walk.l.f.2.png in Resources */,
 				0328126B17A54375006D5E9D /* char2.walk.r.b.1.png in Resources */,
+				036C939D18A8509600EE48AD /* game_save.png in Resources */,
 				0328126C17A54375006D5E9D /* char2.walk.r.b.2.png in Resources */,
 				0328126D17A54375006D5E9D /* char2.walk.r.f.1.png in Resources */,
 				036A100418099F720074F6F1 /* wall.12.r.png in Resources */,
@@ -3124,6 +3138,7 @@
 				0332383B17D4BDB8001B1328 /* char4.walk.l.f.1.png in Resources */,
 				037740E318987187001FDB71 /* wall.gateRedClosed.r.png in Resources */,
 				03E14CD018A637CC00B3816F /* event.31.l.3.png in Resources */,
+				036C93A318A857C000EE48AD /* fx.parallax.7.png in Resources */,
 				03CE0B3418944F90009D7003 /* wall.35.r.png in Resources */,
 				03834E3A180B941500568E60 /* step.6.r.png in Resources */,
 				03E14CCC18A637CC00B3816F /* event.30.l.3.png in Resources */,
@@ -3156,6 +3171,7 @@
 				03E14CD418A637CC00B3816F /* event.32.l.3.png in Resources */,
 				0377410318987687001FDB71 /* event.22.l.1.png in Resources */,
 				035E6C13184B34AC00265870 /* wall.17.l.png in Resources */,
+				036C939F18A8571C00EE48AD /* fx.pillartile.png in Resources */,
 				03EC37C1188181AF00D74DE1 /* event.14.l.1.png in Resources */,
 				0332383F17D4BDB8001B1328 /* char4.walk.r.f.1.png in Resources */,
 				03798BD8188272ED00C31389 /* event.15.l.3.png in Resources */,

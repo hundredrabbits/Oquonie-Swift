@@ -70,6 +70,8 @@
 #define dialogConfusion2			@"WUV"
 #define dialogConfusion3			@"VUW"
 
+#define dialogOwlSave			@"PRL"
+
 #define audioNecomedre			@"necomedre"
 #define audioNephtaline			@"nephtaline"
 #define audioNeomine			@"neomine"
