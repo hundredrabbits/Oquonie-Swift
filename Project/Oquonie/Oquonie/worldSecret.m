@@ -32,7 +32,7 @@
 	@"36",@"36",@"36",
 	@"36",@"36",@"36",
 	// Walls
-	@"31",@"31",@"31",@"31",@"31",@"31",
+	@"31",@"31",@"31",@"31",@"31|warp|118|0,-1",@"31",
 	// Steps
 	@"0",@"0",@"0",@"0",@"3|warp|110|1,0",@"0",
 	// Name,Background,Audio
@@ -115,6 +115,20 @@
 	// Name,Background,Audio
 	@"Test Level",@"White",audioPillar];
 	
+	// Daniel Room
+	
+	worldNode[118] = @[
+	// Tiles
+	@"31",@"29",@"31",
+	@"29",@"50",@"29|event|daniel|34|l",
+	@"31",@"29",@"31",
+	// Walls
+	@"34",@"37",@"34",@"35",@"37",@"35",
+	// Steps
+	@"0",@"7|warp|111|0,1",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Dianel's Room",@"Red",audioGlitch];
+
 }
 
 @end

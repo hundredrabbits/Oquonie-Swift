@@ -98,6 +98,7 @@
 #define characterNestorine		4
 #define characterNemedique		5
 #define characterDocument		6
+#define characterCat			7
 
 #define eventNecomedre			@"2"
 #define eventNephtaline			@"3"

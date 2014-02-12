@@ -24,6 +24,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if(userCharacter == characterCat){ return @""; }
 		// If doesn't have spell already
 		if([self eventSpellCheck:eventSpellId]){ return @""; }
 		// Else
@@ -53,6 +54,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if(userCharacter == characterCat){ return @""; }
 		// If doesn't have spell already
 		if([self eventSpellCheck:eventSpellId]){ return @""; }
 		// Else
@@ -81,6 +83,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if(userCharacter == characterCat){ return @""; }
 		// If doesn't have spell already
 		if([self eventSpellCheck:eventSpellId]){ return @""; }
 		// Else
@@ -239,6 +242,24 @@
 		[self eventDialog:dialogNoFace:eventNoFace];
 		[self audioDialogPlayer:@"noface"];
 	}
+	
+	return @"";
+}
+
+-(NSString*)event_daniel:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	[self eventDialog:@"UVW":@"34"];
+	[self audioDialogPlayer:@"noface"];
 	
 	return @"";
 }
