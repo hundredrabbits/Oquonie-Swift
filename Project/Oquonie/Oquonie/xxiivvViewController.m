@@ -32,9 +32,7 @@
 -(void)start
 {
 	[self userStart];
-	userAudioPlaying = 0;
-	
-	userLocation = 111;
+	userAudioPlaying = 1;
 	
 	[self templateStart];
 	[self worldStart];
