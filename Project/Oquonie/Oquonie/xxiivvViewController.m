@@ -13,13 +13,16 @@
 #import "xxiivvSettings.h"
 #import "xxiivvUser.h"
 
+#define POINT_DISTANCE(start, end) abs(sqrt((end.x-start.x)*(end.x-start.x) + (end.y-start.y)*(end.y-start.y)))
+#define MOVE_DIRECTION(start, end) start.y > end.y ? (start.x > end.x ? DirectionNorth : DirectionEast) : (start.x > end.x ? DirectionWest : DirectionSouth)
+
 @interface xxiivvViewController ()
 
 @end
 
 @implementation xxiivvViewController
 
-@synthesize interactionMap;
+@synthesize touchAnchorPoint;
 
 -(void)viewDidLoad
 {	
@@ -770,60 +773,84 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [worldMoveHold invalidate];
-	
-	interactionMap = [[touches anyObject] locationInView:self.view];
-    worldMoveHold = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(touchHeld) userInfo:nil repeats:YES];
+    [worldMoveHoldTimer invalidate];
+    currentDirection = DirectionNone;
+    
+	touchAnchorPoint = [[touches anyObject] locationInView:self.view];
+    touchMovePoint = touchAnchorPoint;
+    
+    worldMoveHoldTimer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(moveAndUpdateDirection) userInfo:nil repeats:YES];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	interactionMapHold = [[touches anyObject] locationInView:self.view];
+	touchMovePoint = [[touches anyObject] locationInView:self.view];
 }
 
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self touchesEnded:touches withEvent:event];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [worldMoveHoldTimer invalidate];
+    currentDirection = DirectionNone;
+    
+	if(userMoveEnabled == 0){ return; }
+	
+	CGPoint touchReleasePoint = [[touches anyObject] locationInView:self.view];
+	
+	int xDifference = abs(touchAnchorPoint.x-touchReleasePoint.x);
+	int yDifference = abs(touchAnchorPoint.y-touchReleasePoint.y);
+	
+	if(xDifference < 20 && yDifference < 20){
+		if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [self moveRouter:1 :0 :0]; }
+		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [self moveRouter:-1 :0 :3]; }
+		else if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [self moveRouter:0 :-1 :2]; }
+		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [self moveRouter:0 :1 :1]; }
+	}
+	else{
+		if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)		{ [self moveRouter:-1 :0 :3]; }
+		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)	{ [self moveRouter:0 :-1 :2]; }
+		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [self moveRouter:1 :0 :0];  }
+		else if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [self moveRouter:0 :1 :1];  }
+	}
+}
+
+-(void)moveAndUpdateDirection
+{
+    CGFloat distanceMoved = POINT_DISTANCE(touchAnchorPoint, touchMovePoint);
+    if(distanceMoved > 20) {
+        currentDirection = MOVE_DIRECTION(touchAnchorPoint, touchMovePoint);
+        touchAnchorPoint = touchMovePoint;
+    }
+    switch (currentDirection) {
+        case DirectionNorth: [self moveRouter:1 :0 :0]; break;
+        case DirectionEast:  [self moveRouter:0 :1 :1]; break;
+        case DirectionWest:  [self moveRouter:0 :-1 :2]; break;
+        case DirectionSouth: [self moveRouter:-1 :0 :3]; break;
+        case DirectionNone: default:; // Do nothing
+    }
+}
+
+// Currently not used
 -(void)touchHeld
 {
 	NSString* userSpriteOrientationOriginHorizontal = userSpriteOrientationHorizontal;
 	NSString* userSpriteOrientationOriginVertical = userSpriteOrientationHorizontal;
 	
-    if(interactionMap.y > interactionMapHold.y){
-        if(interactionMap.x > interactionMapHold.x){ [self moveRouter:1 :0 :0]; }
+    if(touchAnchorPoint.y > touchMovePoint.y){
+        if(touchAnchorPoint.x > touchMovePoint.x){ [self moveRouter:1 :0 :0]; }
         else{ [self moveRouter:0 :1 :1]; }
     }
     else{
-        if(interactionMap.x > interactionMapHold.x){ [self moveRouter:0 :-1 :2]; }
+        if(touchAnchorPoint.x > touchMovePoint.x){ [self moveRouter:0 :-1 :2]; }
         else{ [self moveRouter:-1 :0 :3]; }
     }
 	
 	if(userSpriteOrientationHorizontal != userSpriteOrientationOriginHorizontal && userSpriteOrientationVertical != userSpriteOrientationOriginVertical){
-		interactionMap = interactionMapHold;
-	}
-    
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [worldMoveHold invalidate];
-
-	if(userMoveEnabled == 0){ return; }
-	
-	UITouch *theTouch = [touches anyObject];
-	CGPoint endPoint = [theTouch locationInView:self.view];
-	
-	int xDifference = abs(interactionMap.x-endPoint.x);
-	int yDifference = abs(interactionMap.y-endPoint.y);
-	
-	if(xDifference < 20 && yDifference < 20){
-		if( endPoint.x < (screen.size.width/2) && endPoint.y < (screen.size.height/2) ){ [self moveRouter:1 :0 :0]; }
-		else if( endPoint.x > (screen.size.width/2) && endPoint.y > (screen.size.height/2) ){ [self moveRouter:-1 :0 :3]; }
-		else if( endPoint.x < (screen.size.width/2) && endPoint.y > (screen.size.height/2) ){ [self moveRouter:0 :-1 :2]; }
-		else if( endPoint.x > (screen.size.width/2) && endPoint.y < (screen.size.height/2) ){ [self moveRouter:0 :1 :1]; }
-	}
-	else{
-		if(interactionMap.x < endPoint.x && interactionMap.y < endPoint.y)		{ [self moveRouter:-1 :0 :3]; }
-		else if(interactionMap.x > endPoint.x && interactionMap.y < endPoint.y)	{ [self moveRouter:0 :-1 :2]; }
-		else if(interactionMap.x > endPoint.x && interactionMap.y > endPoint.y)	{ [self moveRouter:1 :0 :0];  }
-		else if(interactionMap.x < endPoint.x && interactionMap.y > endPoint.y)	{ [self moveRouter:0 :1 :1];  }
+		touchAnchorPoint = touchMovePoint;
 	}
 }
 
