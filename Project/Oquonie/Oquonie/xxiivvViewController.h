@@ -9,9 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+typedef enum {
+    DirectionNone  = -1,
+    DirectionNorth = 0,
+    DirectionEast  = 1,
+    DirectionSouth = 2,
+    DirectionWest  = 3
+} Direction;
+
 @interface xxiivvViewController : UIViewController{
-	CGPoint interactionMap;
-    CGPoint interactionMapHold;
+	CGPoint touchAnchorPoint;
+    CGPoint touchMovePoint;
+    Direction currentDirection;
 }
 
 // =================
@@ -97,7 +106,7 @@
 // Controls
 // =================
 
-@property CGPoint interactionMap;
+@property CGPoint touchAnchorPoint;
 
 // =================
 // Misc
@@ -152,7 +161,7 @@ NSMutableArray *userStorageEvents;
 NSString *worldAudio;
 NSString *worldBackground;
 
-NSTimer *worldMoveHold;
+NSTimer *worldMoveHoldTimer;
 NSTimer *worldMoveTimer;
 NSTimer *worldWalkTimer;
 
