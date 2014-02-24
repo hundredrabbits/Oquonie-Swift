@@ -311,7 +311,7 @@
 	}
 	
 	// Condemned pillar doors
-	if(userLocation == 50 && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){
+	if(userLocation == 50 && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 1 && userCharacter == characterNemedique){
 		[self eventWarp:@"117" :@"-1,0"];
 		return @"";
 	}

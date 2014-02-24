@@ -12,6 +12,7 @@
 	@property (strong, nonatomic) IBOutlet UIImageView *splashLogoOquonie;
 	@property (strong, nonatomic) IBOutlet UIButton *buttonErase;
 	@property (strong, nonatomic) IBOutlet UIImageView *eraseImage;
+	@property (strong, nonatomic) IBOutlet UILabel *deleteSave;
 	- (IBAction)eraseButton:(id)sender;
 @end
 

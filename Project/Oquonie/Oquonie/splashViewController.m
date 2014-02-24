@@ -105,6 +105,7 @@
 	
 	if(gameEraseState ==0){
 		self.eraseImage.image = [UIImage imageNamed:@"game_erase.png"];
+		self.deleteSave.hidden = NO;
 		gameEraseState = 1;
 	}
 }
