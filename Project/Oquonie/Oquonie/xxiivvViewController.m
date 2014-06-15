@@ -30,6 +30,15 @@
 	[self start];
 }
 
+-(void)createJSON
+{
+    NSError* error;
+	NSData* jsonData = [NSJSONSerialization dataWithJSONObject:worldNode options:NSJSONWritingPrettyPrinted error:&error];
+	NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+	
+	NSLog(@"%@",jsonString);
+}
+
 # pragma mark Start -
 
 -(void)start
@@ -47,6 +56,8 @@
 	[self eventIntroduction];
 	
 	self.debugLocation.hidden = YES;
+	
+//	[self createJSON];
 	
 }
 
