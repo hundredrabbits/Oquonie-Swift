@@ -43,6 +43,8 @@
 
 -(void)start
 {
+	debug = 1;
+	
 	[self userStart];
 	userAudioPlaying = 1;
 	
@@ -734,9 +736,11 @@
 		self.audioAmbientPlayer.volume = currentVolume;
 	}
 	
-	[self.audioAmbientPlayer play];
+	if(debug != 1){
+		[self.audioAmbientPlayer play];
+	}
+	
 }
-
 
 -(void)audioEffectPlayer:(NSString*)filename
 {

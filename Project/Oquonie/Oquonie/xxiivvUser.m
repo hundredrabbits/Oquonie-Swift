@@ -15,7 +15,10 @@
 {
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	
-	if( [[defaults objectForKey:@"userLocation"] intValue]>0 ){
+	if(debug == 1){
+		[self userDebug];
+	}
+	else if( [[defaults objectForKey:@"userLocation"] intValue]>0 ){
 		[self userLoad];
 	}
 	else{
@@ -82,6 +85,25 @@
 	
 	userCharacter = userCharacterId;
 	userLocation = userCharacterLocation;
+	
+	userSpriteState = @"stand";
+	userSpriteOrientationHorizontal = @"l";
+	userSpriteOrientationVertical = @"f";
+	
+    // New event storage
+    userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
+    int myCount = 0;
+    while ( myCount < 40 )	{ myCount++; userStorageEvents[myCount] = @"";	}
+	
+	// User Spellbook
+	userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+}
+-(void)userDebug
+{
+	NSLog(@"   USER | Starting..     | Please hold");
+	
+	userCharacter = 7;
+	userLocation = 130;
 	
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";

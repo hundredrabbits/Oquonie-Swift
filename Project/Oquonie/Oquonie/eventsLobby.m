@@ -49,7 +49,7 @@
 		}
 	}
 	else{
-		[self eventDialog:eventDialogLocked:eventTutorial];
+		[self eventDialog :eventDialogLocked:eventTutorial];
 		[self audioEffectPlayer:@"doorlocked"];
 		[self eventSpellRefresh];
 	}
@@ -362,6 +362,28 @@
 	
 	return @"";
 }
+
+-(NSString*)event_gateNastazie :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if(userCharacter == 8){
+			return @"gateNastazieOpen";
+		}
+		else{
+			return @"gateNastazieClosed";
+		}
+	}
+	
+	[self eventDialog:@"123":eventOwl];
+	
+	return @"";
+}
+
 
 -(NSString*)event_gateEnd:(NSString*)option
 {

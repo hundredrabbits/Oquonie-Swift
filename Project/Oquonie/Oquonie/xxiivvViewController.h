@@ -131,6 +131,8 @@ typedef enum {
 
 @end
 
+int debug;
+
 int viewWidth;
 int tileW;
 int tileH;

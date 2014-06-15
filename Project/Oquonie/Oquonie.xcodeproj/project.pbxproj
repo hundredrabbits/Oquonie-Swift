@@ -404,6 +404,25 @@
 		03A20F57184D4F2C00CCED80 /* wall.25.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A20F44184D4F2C00CCED80 /* wall.25.r.png */; };
 		03A20F58184D4F2C00CCED80 /* wall.26.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A20F45184D4F2C00CCED80 /* wall.26.l.png */; };
 		03A20F59184D4F2C00CCED80 /* wall.26.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A20F46184D4F2C00CCED80 /* wall.26.r.png */; };
+		03A4B845194DC44800D96889 /* worldNastazie.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A4B844194DC44800D96889 /* worldNastazie.m */; };
+		03A4B849194DC47E00D96889 /* eventsNastazie.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A4B848194DC47E00D96889 /* eventsNastazie.m */; };
+		03A4B856194DC96D00D96889 /* event.35.r.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B84A194DC96D00D96889 /* event.35.r.2.png */; };
+		03A4B857194DC96D00D96889 /* event.35.r.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B84B194DC96D00D96889 /* event.35.r.3.png */; };
+		03A4B858194DC96D00D96889 /* wall.99.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B84C194DC96D00D96889 /* wall.99.l.png */; };
+		03A4B859194DC96D00D96889 /* wall.99.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B84D194DC96D00D96889 /* wall.99.r.png */; };
+		03A4B85A194DC96D00D96889 /* wall.100.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B84E194DC96D00D96889 /* wall.100.l.png */; };
+		03A4B85B194DC96D00D96889 /* wall.100.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B84F194DC96D00D96889 /* wall.100.r.png */; };
+		03A4B85C194DC96D00D96889 /* wall.101.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B850194DC96D00D96889 /* wall.101.l.png */; };
+		03A4B85D194DC96D00D96889 /* wall.101.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B851194DC96D00D96889 /* wall.101.r.png */; };
+		03A4B85E194DC96D00D96889 /* wall.gateNastazieClosed.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B852194DC96D00D96889 /* wall.gateNastazieClosed.l.png */; };
+		03A4B85F194DC96D00D96889 /* wall.gateNastazieClosed.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B853194DC96D00D96889 /* wall.gateNastazieClosed.r.png */; };
+		03A4B860194DC96D00D96889 /* wall.gateNastazieOpen.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B854194DC96D00D96889 /* wall.gateNastazieOpen.l.png */; };
+		03A4B861194DC96D00D96889 /* wall.gateNastazieOpen.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B855194DC96D00D96889 /* wall.gateNastazieOpen.r.png */; };
+		03A4B867194DCDFD00D96889 /* event.35.l.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B862194DCDFD00D96889 /* event.35.l.1.png */; };
+		03A4B868194DCDFD00D96889 /* event.35.l.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B863194DCDFD00D96889 /* event.35.l.2.png */; };
+		03A4B869194DCDFD00D96889 /* event.35.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B864194DCDFD00D96889 /* event.35.l.3.png */; };
+		03A4B86A194DCDFD00D96889 /* event.35.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B865194DCDFD00D96889 /* event.35.portrait.png */; };
+		03A4B86B194DCDFD00D96889 /* event.35.r.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A4B866194DCDFD00D96889 /* event.35.r.1.png */; };
 		03A999611883B02E0051DF93 /* wall.30.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A9995B1883B02E0051DF93 /* wall.30.l.png */; };
 		03A999621883B02E0051DF93 /* wall.30.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A9995C1883B02E0051DF93 /* wall.30.r.png */; };
 		03A999631883B02E0051DF93 /* wall.31.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A9995D1883B02E0051DF93 /* wall.31.l.png */; };
@@ -1089,6 +1108,27 @@
 		03A20F44184D4F2C00CCED80 /* wall.25.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.25.r.png; path = en.assets/wall.25.r.png; sourceTree = "<group>"; };
 		03A20F45184D4F2C00CCED80 /* wall.26.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.26.l.png; path = en.assets/wall.26.l.png; sourceTree = "<group>"; };
 		03A20F46184D4F2C00CCED80 /* wall.26.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.26.r.png; path = en.assets/wall.26.r.png; sourceTree = "<group>"; };
+		03A4B843194DC44800D96889 /* worldNastazie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldNastazie.h; sourceTree = "<group>"; };
+		03A4B844194DC44800D96889 /* worldNastazie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = worldNastazie.m; sourceTree = "<group>"; };
+		03A4B847194DC47E00D96889 /* eventsNastazie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNastazie.h; sourceTree = "<group>"; };
+		03A4B848194DC47E00D96889 /* eventsNastazie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNastazie.m; sourceTree = "<group>"; };
+		03A4B84A194DC96D00D96889 /* event.35.r.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.35.r.2.png; path = en.assets/event.35.r.2.png; sourceTree = "<group>"; };
+		03A4B84B194DC96D00D96889 /* event.35.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.35.r.3.png; path = en.assets/event.35.r.3.png; sourceTree = "<group>"; };
+		03A4B84C194DC96D00D96889 /* wall.99.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.99.l.png; path = en.assets/wall.99.l.png; sourceTree = "<group>"; };
+		03A4B84D194DC96D00D96889 /* wall.99.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.99.r.png; path = en.assets/wall.99.r.png; sourceTree = "<group>"; };
+		03A4B84E194DC96D00D96889 /* wall.100.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.100.l.png; path = en.assets/wall.100.l.png; sourceTree = "<group>"; };
+		03A4B84F194DC96D00D96889 /* wall.100.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.100.r.png; path = en.assets/wall.100.r.png; sourceTree = "<group>"; };
+		03A4B850194DC96D00D96889 /* wall.101.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.101.l.png; path = en.assets/wall.101.l.png; sourceTree = "<group>"; };
+		03A4B851194DC96D00D96889 /* wall.101.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.101.r.png; path = en.assets/wall.101.r.png; sourceTree = "<group>"; };
+		03A4B852194DC96D00D96889 /* wall.gateNastazieClosed.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateNastazieClosed.l.png; path = en.assets/wall.gateNastazieClosed.l.png; sourceTree = "<group>"; };
+		03A4B853194DC96D00D96889 /* wall.gateNastazieClosed.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateNastazieClosed.r.png; path = en.assets/wall.gateNastazieClosed.r.png; sourceTree = "<group>"; };
+		03A4B854194DC96D00D96889 /* wall.gateNastazieOpen.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateNastazieOpen.l.png; path = en.assets/wall.gateNastazieOpen.l.png; sourceTree = "<group>"; };
+		03A4B855194DC96D00D96889 /* wall.gateNastazieOpen.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateNastazieOpen.r.png; path = en.assets/wall.gateNastazieOpen.r.png; sourceTree = "<group>"; };
+		03A4B862194DCDFD00D96889 /* event.35.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.35.l.1.png; path = en.assets/event.35.l.1.png; sourceTree = "<group>"; };
+		03A4B863194DCDFD00D96889 /* event.35.l.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.35.l.2.png; path = en.assets/event.35.l.2.png; sourceTree = "<group>"; };
+		03A4B864194DCDFD00D96889 /* event.35.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.35.l.3.png; path = en.assets/event.35.l.3.png; sourceTree = "<group>"; };
+		03A4B865194DCDFD00D96889 /* event.35.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.35.portrait.png; path = en.assets/event.35.portrait.png; sourceTree = "<group>"; };
+		03A4B866194DCDFD00D96889 /* event.35.r.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.35.r.1.png; path = en.assets/event.35.r.1.png; sourceTree = "<group>"; };
 		03A9995B1883B02E0051DF93 /* wall.30.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.30.l.png; path = en.assets/wall.30.l.png; sourceTree = "<group>"; };
 		03A9995C1883B02E0051DF93 /* wall.30.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.30.r.png; path = en.assets/wall.30.r.png; sourceTree = "<group>"; };
 		03A9995D1883B02E0051DF93 /* wall.31.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.31.l.png; path = en.assets/wall.31.l.png; sourceTree = "<group>"; };
@@ -2076,6 +2116,7 @@
 				03C488FD187E8C9E00375E86 /* III - Nestorine Universe */,
 				03C488EF187E8C1700375E86 /* III - Nemedique Universe */,
 				03E14CDD18A6641D00B3816F /* III - Secret Universe */,
+				03A4B846194DC45700D96889 /* IO - Nastazie Universe */,
 				037F026A187D8DC400747E8D /* :II - Tools */,
 			);
 			name = en.sources;
@@ -2181,6 +2222,17 @@
 			name = Char3;
 			sourceTree = "<group>";
 		};
+		03A4B846194DC45700D96889 /* IO - Nastazie Universe */ = {
+			isa = PBXGroup;
+			children = (
+				03A4B843194DC44800D96889 /* worldNastazie.h */,
+				03A4B844194DC44800D96889 /* worldNastazie.m */,
+				03A4B847194DC47E00D96889 /* eventsNastazie.h */,
+				03A4B848194DC47E00D96889 /* eventsNastazie.m */,
+			);
+			name = "IO - Nastazie Universe";
+			sourceTree = "<group>";
+		};
 		03B9435C1884FB37008E834A /* Event18 - Ramen Seat */ = {
 			isa = PBXGroup;
 			children = (
@@ -2264,6 +2316,23 @@
 		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
+				03A4B84A194DC96D00D96889 /* event.35.r.2.png */,
+				03A4B862194DCDFD00D96889 /* event.35.l.1.png */,
+				03A4B863194DCDFD00D96889 /* event.35.l.2.png */,
+				03A4B864194DCDFD00D96889 /* event.35.l.3.png */,
+				03A4B865194DCDFD00D96889 /* event.35.portrait.png */,
+				03A4B866194DCDFD00D96889 /* event.35.r.1.png */,
+				03A4B84B194DC96D00D96889 /* event.35.r.3.png */,
+				03A4B84C194DC96D00D96889 /* wall.99.l.png */,
+				03A4B84D194DC96D00D96889 /* wall.99.r.png */,
+				03A4B84E194DC96D00D96889 /* wall.100.l.png */,
+				03A4B84F194DC96D00D96889 /* wall.100.r.png */,
+				03A4B850194DC96D00D96889 /* wall.101.l.png */,
+				03A4B851194DC96D00D96889 /* wall.101.r.png */,
+				03A4B852194DC96D00D96889 /* wall.gateNastazieClosed.l.png */,
+				03A4B853194DC96D00D96889 /* wall.gateNastazieClosed.r.png */,
+				03A4B854194DC96D00D96889 /* wall.gateNastazieOpen.l.png */,
+				03A4B855194DC96D00D96889 /* wall.gateNastazieOpen.r.png */,
 				03D28D6A18AAF45B001BBBA7 /* event.34.portrait.png */,
 				03D28D6218AAEFA7001BBBA7 /* event.34.l.1.png */,
 				03D28D6318AAEFA7001BBBA7 /* event.34.l.2.png */,
@@ -2793,6 +2862,7 @@
 				03DD5BBD18A67C0400BFA21E /* dialog_petunia.wav in Resources */,
 				03834E57180C229700568E60 /* tile.14.png in Resources */,
 				037CCB58179BBAD200833EDB /* char1.walk.l.f.1.png in Resources */,
+				03A4B86A194DCDFD00D96889 /* event.35.portrait.png in Resources */,
 				03B9434A1884F863008E834A /* wall.33.l.png in Resources */,
 				03A20F59184D4F2C00CCED80 /* wall.26.r.png in Resources */,
 				03DD5BC818A686FA00BFA21E /* tile.98.png in Resources */,
@@ -2802,6 +2872,7 @@
 				03FE0D5E18A221ED00206675 /* event.28.r.2.png in Resources */,
 				033124BC18A311EC00388D2F /* sfx_spelllost.wav in Resources */,
 				03DD5BF518A68AB100BFA21E /* event.33.l.1.png in Resources */,
+				03A4B856194DC96D00D96889 /* event.35.r.2.png in Resources */,
 				03DD5BFE18A68AD000BFA21E /* event.33.r.1.png in Resources */,
 				037CCB5B179BBAD200833EDB /* char1.walk.r.b.2.png in Resources */,
 				03F5C49E187BBB3200352B8E /* event.11.l.1.png in Resources */,
@@ -2859,6 +2930,7 @@
 				03A20F48184D4F2C00CCED80 /* blocker.15.png in Resources */,
 				03ECBBE817FC5A1A0039B944 /* wall.9.l.png in Resources */,
 				033124C218A31A0400388D2F /* dialog_owl.wav in Resources */,
+				03A4B869194DCDFD00D96889 /* event.35.l.3.png in Resources */,
 				03E14CD518A637CC00B3816F /* event.32.portrait.png in Resources */,
 				03798BEA1882829400C31389 /* char6.stand.l.f.1.png in Resources */,
 				0304D782186CEE0200ED6E94 /* char2.stand.r.f.2.png in Resources */,
@@ -2881,9 +2953,11 @@
 				037E7F15189A87E700024C8E /* wall.38.r.png in Resources */,
 				0365921A18540C9A00F7ABA3 /* letterG.png in Resources */,
 				0328126417A54375006D5E9D /* char2.stand.l.f.1.png in Resources */,
+				03A4B859194DC96D00D96889 /* wall.99.r.png in Resources */,
 				03D28D6718AAEFA7001BBBA7 /* event.34.l.2.png in Resources */,
 				0304D7AE186CEE0200ED6E94 /* event.9.r.2.png in Resources */,
 				03798BEE1882829400C31389 /* char6.walk.l.b.2.png in Resources */,
+				03A4B85F194DC96D00D96889 /* wall.gateNastazieClosed.r.png in Resources */,
 				03B943461884F863008E834A /* char6.stand.r.f.3.png in Resources */,
 				037546AC18A7AF1B00807397 /* icon.152.jpg in Resources */,
 				035DAAC4188A9650007127F5 /* wall.gateDocument.open.l.png in Resources */,
@@ -2924,7 +2998,9 @@
 				0328126817A54375006D5E9D /* char2.walk.l.b.2.png in Resources */,
 				03DD5BF218A68AB100BFA21E /* char7.walk.r.b.2.png in Resources */,
 				03A20F4F184D4F2C00CCED80 /* wall.21.r.png in Resources */,
+				03A4B85C194DC96D00D96889 /* wall.101.l.png in Resources */,
 				03DF52BA18A0BB1B008C514B /* event.23.l.1.png in Resources */,
+				03A4B867194DCDFD00D96889 /* event.35.l.1.png in Resources */,
 				03A20F52184D4F2C00CCED80 /* wall.23.r.png in Resources */,
 				0328126917A54375006D5E9D /* char2.walk.l.f.1.png in Resources */,
 				03F5C494187BB8C700352B8E /* letterSpellE.png in Resources */,
@@ -3035,6 +3111,7 @@
 				03FE0D9E18A26BE500206675 /* neomine.mp3 in Resources */,
 				03C16CE317B8772D00401B3D /* wall.5.l.png in Resources */,
 				0373477A186BA790000A5ED7 /* event.1.r.2.png in Resources */,
+				03A4B860194DC96D00D96889 /* wall.gateNastazieOpen.l.png in Resources */,
 				03CE07A218937C31009D7003 /* wall.gateNephtalineClosed.l.png in Resources */,
 				035A6DAB186B0E610032710C /* char3.stand.l.f.2.png in Resources */,
 				03C16CE417B8772D00401B3D /* wall.5.r.png in Resources */,
@@ -3045,6 +3122,7 @@
 				0304D7A6186CEE0200ED6E94 /* event.7.l.3.png in Resources */,
 				0355CFCA17C196C10069AF97 /* InfoPlist.strings in Resources */,
 				038B4FEF1802F35C00C18480 /* blocker.4.png in Resources */,
+				03A4B858194DC96D00D96889 /* wall.99.l.png in Resources */,
 				03DF52C018A0BCCF008C514B /* blocker.24.png in Resources */,
 				03FE0DA018A26BE500206675 /* nepturne.mp3 in Resources */,
 				03A9996B1883BA510051DF93 /* tile.28.png in Resources */,
@@ -3082,7 +3160,9 @@
 				03F5C48F187BB8C700352B8E /* letterSpell0.png in Resources */,
 				03CE07A718937C31009D7003 /* wall.gateNestorineClosed.r.png in Resources */,
 				038C592B185147B4005D6D35 /* fx.textbubble.png in Resources */,
+				03A4B86B194DCDFD00D96889 /* event.35.r.1.png in Resources */,
 				03FE0D5F18A221ED00206675 /* event.28.r.3.png in Resources */,
+				03A4B85B194DC96D00D96889 /* wall.100.r.png in Resources */,
 				03CE07C4189440D7009D7003 /* blocker.22.png in Resources */,
 				037740DE18987187001FDB71 /* event.20.l.3.png in Resources */,
 				03FE0D5918A221ED00206675 /* event.28.l.1.png in Resources */,
@@ -3107,6 +3187,7 @@
 				0304D788186CEE0200ED6E94 /* char4.stand.l.f.1.png in Resources */,
 				0304D7AA186CEE0200ED6E94 /* event.9.l.1.png in Resources */,
 				03983C0D17C1B7A000C89446 /* char3.walk.r.b.2.png in Resources */,
+				03A4B868194DCDFD00D96889 /* event.35.l.2.png in Resources */,
 				0381CC7918456236003FB458 /* blocker.13.png in Resources */,
 				03E14CCF18A637CC00B3816F /* event.31.l.2.png in Resources */,
 				0325D983185D5B5100C8134C /* event.10.l.1.png in Resources */,
@@ -3147,6 +3228,7 @@
 				0304D77D186CEE0200ED6E94 /* char1.stand.l.f.3.png in Resources */,
 				0381CC7618456236003FB458 /* blocker.10.png in Resources */,
 				03834E55180C229700568E60 /* tile.12.png in Resources */,
+				03A4B85E194DC96D00D96889 /* wall.gateNastazieClosed.l.png in Resources */,
 				03EC37C5188181AF00D74DE1 /* fx.parallax.4.png in Resources */,
 				0332383717D4BDB8001B1328 /* char4.stand.r.b.1.png in Resources */,
 				0332383917D4BDB8001B1328 /* char4.walk.l.b.1.png in Resources */,
@@ -3192,6 +3274,7 @@
 				03B29A311867241F007A63BA /* wall.27.r.png in Resources */,
 				03CE0B3018944F90009D7003 /* tile.38.png in Resources */,
 				03C0E671186265B3006AA0E6 /* letterW.png in Resources */,
+				03A4B861194DC96D00D96889 /* wall.gateNastazieOpen.r.png in Resources */,
 				0332383E17D4BDB8001B1328 /* char4.walk.r.b.2.png in Resources */,
 				03DBEECA1880433D00CE6FBC /* event.12.portrait.png in Resources */,
 				03A20F53184D4F2C00CCED80 /* wall.23.l.png in Resources */,
@@ -3249,12 +3332,14 @@
 				03834E3C180B941500568E60 /* step.7.r.png in Resources */,
 				03FE0DB718A2764500206675 /* sfx_doorlocked.wav in Resources */,
 				03CE07B31893EF8A009D7003 /* char5.warp.l.f.1.png in Resources */,
+				03A4B857194DC96D00D96889 /* event.35.r.3.png in Resources */,
 				03DD5BE518A68AB100BFA21E /* char6.warp.l.f.2.png in Resources */,
 				0332384617D4BDB8001B1328 /* char5.walk.l.f.1.png in Resources */,
 				0332384717D4BDB8001B1328 /* char5.walk.l.f.2.png in Resources */,
 				03B29A3518672F48007A63BA /* fx.parallax.2.png in Resources */,
 				03DD5BEE18A68AB100BFA21E /* char7.walk.l.b.2.png in Resources */,
 				031EDC16185BF4F60037ACEA /* blocker.19.png in Resources */,
+				03A4B85A194DC96D00D96889 /* wall.100.l.png in Resources */,
 				03798BF01882829400C31389 /* char6.walk.l.f.2.png in Resources */,
 				038C592C185147B4005D6D35 /* event.2.portrait.png in Resources */,
 				0304D7B0186CEE0200ED6E94 /* event.10.l.2.png in Resources */,
@@ -3330,6 +3415,7 @@
 				03A20F54184D4F2C00CCED80 /* wall.24.l.png in Resources */,
 				03834E32180B941500568E60 /* step.2.r.png in Resources */,
 				037740E418987187001FDB71 /* wall.gateRedOpen.l.png in Resources */,
+				03A4B85D194DC96D00D96889 /* wall.101.r.png in Resources */,
 				03D28D6B18AAF45C001BBBA7 /* event.34.portrait.png in Resources */,
 				03C0E673186265B3006AA0E6 /* tile.26.png in Resources */,
 			);
@@ -3346,10 +3432,12 @@
 				03E14CE018A666E600B3816F /* eventsSecret.m in Sources */,
 				03C488E7187E8A6300375E86 /* eventsNephtaline.m in Sources */,
 				03C488EE187E8BFB00375E86 /* eventsNemedique.m in Sources */,
+				03A4B849194DC47E00D96889 /* eventsNastazie.m in Sources */,
 				03F5C4A8187BBB7F00352B8E /* eventsNecomedre.m in Sources */,
 				03BBFABC178A9E4E00E79C3D /* xxiivvAppDelegate.m in Sources */,
 				03C488F2187E8C5300375E86 /* worldNestorine.m in Sources */,
 				03C488E4187E8A5500375E86 /* worldNephtaline.m in Sources */,
+				03A4B845194DC44800D96889 /* worldNastazie.m in Sources */,
 				03C488F5187E8C5E00375E86 /* eventsNestorine.m in Sources */,
 				036D5BF7187D1DA00042378D /* xxiivvUtils.m in Sources */,
 				03C488F8187E8C6E00375E86 /* worldNeomine.m in Sources */,

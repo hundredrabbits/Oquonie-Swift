@@ -18,7 +18,8 @@
 #import "worldNemedique.h"		// Chapter III
 #import "worldNestorine.h"		// Chapter IV
 #import "worldNeomine.h"		// Chapter V
-#import "worldSecret.h"		// Chapter V
+#import "worldSecret.h"			// Chapter *
+#import "worldNastazie.h"		// Chapter VI
 
 //#import "worldNecostrate.h"		// Chapter: Bonus
 //#import "worldNelorianne.h"		// Chapter: Bonus
@@ -45,6 +46,8 @@
 	[self createWorldNemedique];
 	// 110 - >
 	[self createWorldSecret];
+	// 130
+	[self createWorldNastazie];
 }
 
 - (NSString*) tileParser :(NSString*)tileString :(int)index

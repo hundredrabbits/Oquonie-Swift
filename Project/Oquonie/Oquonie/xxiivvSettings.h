@@ -116,6 +116,7 @@
 #define eventNepturne			@"28"
 #define eventCat				@"33"
 #define eventNoFace				@"29"
+#define eventBaba				@"35"
 
 #define eventPillarCollectible	@"15"
 #define eventPillarSocket		@"14"
