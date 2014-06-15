@@ -186,32 +186,6 @@
 	return @"";
 }
 
--(NSString*)event_catDoor:(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return @"";
-	}
-	
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		if(userCharacter == 7){
-			return @"gateCatOpen";
-		}
-		else{
-			return @"gateCatClosed";
-		}
-
-	}
-	
-	if(userCharacter == 7){
-		[self eventWarp:@"113":@"0,-1"];
-	}
-	
-	
-	return @"";
-}
-
 -(NSString*)event_noface:(NSString*)option
 {
 	
@@ -228,20 +202,11 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		NSLog(@"Current Hour: %d",currentHour);
-		if(currentHour == 11 || currentHour == 12 || currentHour == 1 || currentHour == 2){
-			return eventNoFace;
-		}
-		else{
-			return @"404";
-		}
-		return @"";
+		return eventNoFace;
 	}
-	
-	if(currentHour == 11 || currentHour == 12 || currentHour == 1 || currentHour == 2){
-		[self eventDialog:dialogNoFace:eventNoFace];
-		[self audioDialogPlayer:@"noface"];
-	}
+	[self eventWarpDramatic:@"130":@"0,0"];
+	[self eventDialog:dialogNoFace:eventNoFace];
+	[self audioDialogPlayer:@"noface"];
 	
 	return @"";
 }

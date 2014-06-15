@@ -20,11 +20,23 @@
 	@"39",@"28",@"39|event|baba|35|l",
 	@"36",@"39",@"36",
 	// Walls
-	@"99",@"29|event|gateNastazie",@"100",@"99",@"100",@"101|event|catDoor",
+	@"99",@"29|event|gateNastazie",@"100",@"99",@"100",@"101|event|gateCatfish",
 	// Steps
 	@"0",@"0",@"3",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Neomine Side Room",@"Black",audioNeomine];
+	@"Baba Castle",@"Black",audioNeomine];
+	
+	worldNode[131] = @[
+	// Tiles
+	@"36",@"39",@"36",
+	@"39",@"28",@"39",
+	@"36",@"39",@"36",
+	// Walls
+	@"99",@"31",@"100",@"99",@"100",@"31",
+	// Steps
+	@"0",@"0",@"3|event|gateCatfish",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Baba Castle Lobby",@"Black",audioNeomine];
 	
 }
 

@@ -363,6 +363,32 @@
 	return @"";
 }
 
+-(NSString*)event_gateCatfish:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if(userCharacter == 7){
+			return @"gateCatOpen";
+		}
+		else{
+			return @"gateCatClosed";
+		}
+	}
+	
+	// Warp todo: warp to 113(random door warp is missing)
+	if(userCharacter == 7){
+		if(userLocation == 130){ [self eventWarp:@"131":@"-1,-1"]; }
+		else if(userLocation == 131){ [self eventWarp:@"130":@"-1,1"]; }
+	}
+	
+	return @"";
+}
+
 -(NSString*)event_gateNastazie :(NSString*)option
 {
 	// Broadcast Notification
