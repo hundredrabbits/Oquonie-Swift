@@ -38,6 +38,20 @@
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 	
+	worldNode[132] = @[
+	// Tiles
+	@"101",@"100|event|baba|35|r",@"101",
+	@"101",@"100",@"39",
+	@"101",@"100",@"36",
+	// Walls
+	@"29|event|gateNastazie",@"99",@"100",@"99",@"100",@"101|event|gateCatfish",
+	// Steps
+	@"0",@"0",@"0",@"0",@"3",@"0",
+	// Name,Background,Audio
+	@"Baba Castle",@"Black",audioNeomine];
+
+	
+	
 }
 
 @end
