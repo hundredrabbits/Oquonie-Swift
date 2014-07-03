@@ -116,7 +116,7 @@
 #define eventNepturne			@"28"
 #define eventCat				@"33"
 #define eventNoFace				@"29"
-#define eventBaba				@"35"
+#define eventNastazie			@"35"
 
 #define eventPillarCollectible	@"15"
 #define eventPillarSocket		@"14"
@@ -130,6 +130,7 @@
 #define spellNemedique			5
 #define spellDocument			6
 #define spellCat				7
+#define spellNastazie			8
 
 #define letterNecomedre			@"D"
 #define letterNephtaline		@"C"
@@ -144,6 +145,7 @@
 #define letterPillar			@"Y"
 #define letterGuide				@"O"
 #define letterCat				@"5"
+#define letterNastazie			@"0"
 
 #define locationLobbyLanding		@"1"
 #define locationGameStart			@"29"

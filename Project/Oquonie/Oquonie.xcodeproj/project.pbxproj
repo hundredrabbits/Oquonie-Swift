@@ -1851,6 +1851,20 @@
 			name = Walls;
 			sourceTree = "<group>";
 		};
+		032EE8381965C1A5009E718D /* Event35 - Nastazie */ = {
+			isa = PBXGroup;
+			children = (
+				03A4B84A194DC96D00D96889 /* event.35.r.2.png */,
+				03A4B862194DCDFD00D96889 /* event.35.l.1.png */,
+				03A4B863194DCDFD00D96889 /* event.35.l.2.png */,
+				03A4B864194DCDFD00D96889 /* event.35.l.3.png */,
+				03A4B865194DCDFD00D96889 /* event.35.portrait.png */,
+				03A4B866194DCDFD00D96889 /* event.35.r.1.png */,
+				03A4B84B194DC96D00D96889 /* event.35.r.3.png */,
+			);
+			name = "Event35 - Nastazie";
+			sourceTree = "<group>";
+		};
 		0332384F17D4BDC2001B1328 /* Char4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2171,6 +2185,7 @@
 		03983BF617C1AA8D00C89446 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				032EE8381965C1A5009E718D /* Event35 - Nastazie */,
 				03FE0D7218A2493D00206675 /* Event29 - Ghost */,
 				03FE0D8918A25B6A00206675 /* Event28 - Nepturne */,
 				03FE0D8E18A25BB600206675 /* Event23 - tree */,
@@ -2325,13 +2340,6 @@
 				03A4B86C194DE9A900D96889 /* event.29.l.1.png */,
 				03A4B86D194DE9A900D96889 /* event.29.l.2.png */,
 				03A4B86E194DE9A900D96889 /* event.29.l.3.png */,
-				03A4B84A194DC96D00D96889 /* event.35.r.2.png */,
-				03A4B862194DCDFD00D96889 /* event.35.l.1.png */,
-				03A4B863194DCDFD00D96889 /* event.35.l.2.png */,
-				03A4B864194DCDFD00D96889 /* event.35.l.3.png */,
-				03A4B865194DCDFD00D96889 /* event.35.portrait.png */,
-				03A4B866194DCDFD00D96889 /* event.35.r.1.png */,
-				03A4B84B194DC96D00D96889 /* event.35.r.3.png */,
 				03A4B84C194DC96D00D96889 /* wall.99.l.png */,
 				03A4B84D194DC96D00D96889 /* wall.99.r.png */,
 				03A4B84E194DC96D00D96889 /* wall.100.l.png */,
