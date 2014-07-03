@@ -104,6 +104,13 @@
 		else if(userLocation == 90){
 			[self eventWarp:@"93" :@"1,0"];
 		}
+		// Nastalize
+		else if(userLocation ==	141){
+			[self eventWarpDramatic:@"144":@"-1,0"];
+		}
+		else if(userLocation == 144){
+			[self eventWarp:@"141" :@"1,0"];
+		}
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
@@ -149,6 +156,13 @@
 		}
 		else if(userLocation == 59){
 			[self eventWarp:@"58" :@"1,0"];
+		}
+		// Nastalize
+		else if(userLocation ==	142){
+			[self eventWarpDramatic:@"145":@"-1,0"];
+		}
+		else if(userLocation == 145){
+			[self eventWarp:@"142" :@"1,0"];
 		}
 	}
 	else{
@@ -338,6 +352,13 @@
 		else if(userLocation == 92){
 			[self eventWarp:@"94" :@"1,0"];
 		}
+		// Nastalize
+		else if(userLocation ==	143){
+			[self eventWarpDramatic:@"146":@"-1,0"];
+		}
+		else if(userLocation == 146){
+			[self eventWarp:@"143" :@"1,0"];
+		}
 	}
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
@@ -403,6 +424,11 @@
 		else{
 			return @"gateNastazieClosed";
 		}
+	}
+	
+	if(userCharacter == 8){
+		if(userLocation == 130){ [self eventWarp:@"147":@"0,-1"]; }
+		else if(userLocation == 147){ [self eventWarp:@"130":@"0,1"]; }
 	}
 	
 	[self eventDialog:@"123":eventOwl];
