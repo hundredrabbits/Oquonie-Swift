@@ -102,7 +102,7 @@
 {
 	NSLog(@"   USER | Starting..     | Please hold");
 	
-	userCharacter = 8;
+	userCharacter = 7;
 	userLocation = 130;
 	
 	userSpriteState = @"stand";
