@@ -214,7 +214,7 @@
 	// Walls
 	@"99",@"99",@"99",@"99",@"99",@"99",
 	// Steps
-	@"0",@"0",@"0",@"0",@"0",@"3|warp|143|1,1",
+	@"0",@"0",@"0",@"0",@"3|warp|143|1,0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 
