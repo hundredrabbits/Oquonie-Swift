@@ -10,4 +10,6 @@
 
 @interface xxiivvViewController (eventsLobby)
 
+-(void)event_sharkDialog;
+
 @end

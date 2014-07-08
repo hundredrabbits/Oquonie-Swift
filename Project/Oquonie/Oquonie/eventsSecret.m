@@ -204,11 +204,29 @@
 	if([option isEqualToString:@"postUpdate"]){
 		return eventNoFace;
 	}
-	[self eventWarpDramatic:@"130":@"0,0"];
-	[self eventDialog:dialogNoFace:eventNoFace];
-	[self audioDialogPlayer:@"noface"];
 	
+	if( userCharacter == 7 ){
+		
+		[self moveDisable:4];
+		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
+		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(event_sharkTransform) userInfo:nil repeats:NO];
+		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(event_nofaceWarp) userInfo:nil repeats:NO];
+		
+		[self eventDialog:dialogNoFace:eventNoFace];
+		[self audioDialogPlayer:@"noface"];
+		
+		// Clear Spellbook
+		userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+	}
+	else{
+		// TODO
+	}
 	return @"";
+}
+
+-(void)event_nofaceWarp
+{
+	[self eventTransitionPan:@"130":roomCenter];
 }
 
 -(NSString*)event_daniel:(NSString*)option

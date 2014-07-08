@@ -17,12 +17,12 @@
 	worldNode[130] = @[
 	// Tiles
 	@"36",@"39|event|nastazieNastazie1|35|r",@"36",
-	@"39",@"28",@"39",
+	@"39",@"8",@"39",
 	@"36",@"39",@"36",
 	// Walls
 	@"30|warp|131|-1,-1",@"99",@"100",@"99",@"30|event|gateNastazie",@"99",
 	// Steps
-	@"0",@"0",@"0",@"0",@"3|warp|14|0,0",@"0",
+	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle",@"Black",audioNeomine];
 	
