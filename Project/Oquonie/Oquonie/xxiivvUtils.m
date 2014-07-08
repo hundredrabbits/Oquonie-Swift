@@ -20,6 +20,7 @@
 	if(charId == 5){ return @"A"; }
 	if(charId == 6){ return @"X"; }
 	if(charId == 7){ return @"5"; }
+	if(charId == 8){ return @"F"; }
 	return @"";
 }
 

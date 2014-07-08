@@ -99,6 +99,7 @@
 #define characterNemedique		5
 #define characterDocument		6
 #define characterCat			7
+#define characterCat			7
 
 #define eventNecomedre			@"2"
 #define eventNephtaline			@"3"
@@ -137,6 +138,7 @@
 #define letterNeomine			@"E"
 #define letterNestorine			@"B"
 #define letterNemedique			@"A"
+#define letterNastazie			@"F"
 #define letterDocument			@"X"
 #define letterAudio				@"N"
 #define letterHelp				@"M"
@@ -145,7 +147,6 @@
 #define letterPillar			@"Y"
 #define letterGuide				@"O"
 #define letterCat				@"5"
-#define letterNastazie			@"0"
 
 #define locationLobbyLanding		@"1"
 #define locationGameStart			@"29"
