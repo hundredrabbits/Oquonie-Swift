@@ -938,6 +938,25 @@
 	return @"";
 }
 
+-(NSString*)event_sauvegarde:(NSString*)option
+{
+	// lokiva
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	NSLog(@"!!");
+	
+	return @"";
+}
+
 // =======================
 // @ Events: Misc
 // =======================
