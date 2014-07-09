@@ -128,6 +128,20 @@
 	@"0",@"7|warp|111|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
 	@"Dianel's Room",@"Red",audioGlitch];
+	
+	// Hiversaires Room
+	
+	worldNode[148] = @[
+	// Tiles
+	@"109",@"107",@"105",
+	@"0",@"113",@"106",
+	@"112",@"29",@"108",
+	// Walls
+	@"102",@"111",@"102",@"102",@"103",@"102",
+	// Steps
+	@"0",@"7|warp|111|0,1",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Dianel's Room",@"Black",audioGlitch];
 
 }
 

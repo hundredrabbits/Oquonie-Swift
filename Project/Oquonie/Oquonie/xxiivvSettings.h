@@ -31,6 +31,7 @@
 #define storageQuestPillarNeomine		13
 #define storageQuestPillarNestorine		14
 #define storageQuestPillarNemedique		15
+#define storageQuestPillarHiversaires	16
 
 #define storageEndForm					20
 #define storageEndFormTrigger			21

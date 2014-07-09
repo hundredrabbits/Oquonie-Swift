@@ -94,7 +94,7 @@
 	// Walls
 	@"99",@"29|warp|142|-1,0",@"99",@"99",@"29|warp|133|0,-1",@"99",
 	// Steps
-	@"0",@"0",@"0",@"0",@"3|warp|131|1,0",@"0",
+	@"0",@"0",@"0",@"0",@"8|warp|131|1,0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 
@@ -118,7 +118,7 @@
 	// Walls
 	@"25",@"14|warp|142|-1,0",@"25",@"99",@"99",@"29|warp|134|-1,-1",
 	// Steps
-	@"0",@"0",@"0",@"3|warp|137|1,-1",@"0",@"0",
+	@"0",@"0",@"0",@"8|warp|137|1,-1",@"0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 
@@ -130,7 +130,7 @@
 	// Walls
 	@"30|warp|141|-1,-1",@"99",@"100",@"99",@"29|warp|133|0,-1",@"99",
 	// Steps
-	@"0",@"3|warp|131|0,1",@"0",@"0",@"3|warp|136|1,0",@"0",
+	@"0",@"8|warp|131|0,1",@"0",@"0",@"8|warp|136|1,0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 
@@ -142,7 +142,7 @@
 	// Walls
 	@"12|warp|141|-1,-1",@"99",@"99",@"12|warp|132|1,-1",@"99",@"99",
 	// Steps
-	@"0",@"0",@"0",@"0",@"0",@"3|warp|135|1,1",
+	@"0",@"0",@"0",@"0",@"0",@"8|warp|135|1,1",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 
@@ -154,7 +154,7 @@
 	// Walls
 	@"99",@"5|event|gateNephtaline",@"99",@"99",@"99",@"99",
 	// Steps
-	@"3|warp|140|1,1",@"0",@"0",@"3|warp|137|1,-1",@"0",@"0",
+	@"8|warp|140|1,1",@"0",@"0",@"8|warp|137|1,-1",@"0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 
@@ -166,7 +166,7 @@
 	// Walls
 	@"19",@"5|event|gateNeomine",@"99",@"99",@"99",@"99",
 	// Steps
-	@"0",@"3|warp|139|0,1",@"0",@"0",@"3|warp|136|1,0",@"0",
+	@"0",@"8|warp|139|0,1",@"0",@"0",@"8|warp|136|1,0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 
@@ -178,7 +178,7 @@
 	// Walls
 	@"99",@"5|event|gateNemedique",@"99",@"99",@"99",@"99",
 	// Steps
-	@"0",@"0",@"3|warp|138|-1,1",@"0",@"0",@"3|warp|135|1,1",
+	@"0",@"0",@"3|warp|138|-1,1",@"0",@"0",@"8|warp|135|1,1",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 	
@@ -190,7 +190,7 @@
 	// Walls
 	@"99",@"99",@"99",@"99",@"99",@"99",
 	// Steps
-	@"0",@"0",@"0",@"0",@"3|warp|141|1,0",@"0",
+	@"0",@"0",@"0",@"0",@"8|warp|141|1,0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 
@@ -202,7 +202,7 @@
 	// Walls
 	@"99",@"99",@"99",@"99",@"99",@"99",
 	// Steps
-	@"0",@"0",@"0",@"0",@"3|warp|142|1,0",@"0",
+	@"0",@"0",@"0",@"0",@"8|warp|142|1,0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
 
@@ -214,12 +214,22 @@
 	// Walls
 	@"99",@"99",@"99",@"99",@"99",@"99",
 	// Steps
-	@"0",@"0",@"0",@"0",@"3|warp|143|1,0",@"0",
+	@"0",@"0",@"0",@"0",@"8|warp|143|1,0",@"0",
 	// Name,Background,Audio
 	@"Baba Castle Lobby",@"Black",audioNeomine];
+	
+	worldNode[147] = @[
+	// Tiles
+	@"101",@"39",@"101",
+	@"1",@"1",@"1|event|pillar|15|l",
+	@"101",@"39",@"101",
+	// Walls
+	@"99",@"99",@"99",@"99",@"100",@"99",
+	// Steps
+	@"0",@"8|warp|130|0,1",@"0",@"0",@"0",@"0",
+	// Name,Background,Audio
+	@"Baba Castle Lobby",@"Red",audioGlitch];
 
-	
-	
 }
 
 @end

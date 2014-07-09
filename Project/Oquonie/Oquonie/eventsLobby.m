@@ -130,7 +130,7 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(userCharacter==characterNeomine || userCharacter == 7){
+		if(userCharacter==characterNeomine || userCharacter == 7 || userCharacter == 8 ){
 			return @"gateNeomineOpen";
 		}
 		else{
@@ -138,7 +138,7 @@
 		}
 	}
 	// Warp
-	if(userCharacter == characterNeomine || userCharacter == 7){
+	if(userCharacter == characterNeomine || userCharacter == 7 || userCharacter == 8){
 		if(userLocation == 60){
 			[self eventWarp:@"3" :@"1,0"];
 		}
@@ -376,10 +376,18 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return @""; // try with 17 ?
+		if( [userStorageEvents[storageQuestPillarHiversaires] intValue] == 1){
+			return @"41";
+		}
+		return @"";
 	}
 	
-	[self eventDialog:@"123":eventOwl];
+	if( [userStorageEvents[storageQuestPillarHiversaires] intValue] == 1){
+		[self eventWarpDramatic:@"148":@"-1,0"];
+	}
+	else{
+		[self eventDialog:@"123":eventOwl];
+	}
 	
 	return @"";
 }
@@ -543,6 +551,11 @@
 	else if (userLocation == [locationNemediquePillar intValue]){
 		pillarInstanceStorageId = storageQuestPillarNemedique;
 		pillarInstanceWarp = locationNemediqueLobby;
+	}
+	// Hiversaires
+	else if (userLocation == 147){
+		pillarInstanceStorageId = storageQuestPillarHiversaires;
+		pillarInstanceWarp = locationNeomineLobby;
 	}
 		
 	// Broadcast Notification

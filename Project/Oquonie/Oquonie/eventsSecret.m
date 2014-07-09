@@ -188,13 +188,6 @@
 
 -(NSString*)event_noface:(NSString*)option
 {
-	
-	NSDate *currentTime = [NSDate date];
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateFormat:@"hh"];
-	NSString *resultString = [dateFormatter stringFromDate: currentTime];
-	int currentHour = [resultString intValue];
-	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		return @"";
