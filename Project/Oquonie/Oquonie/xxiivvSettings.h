@@ -71,7 +71,8 @@
 #define dialogConfusion2			@"WUV"
 #define dialogConfusion3			@"VUW"
 
-#define dialogOwlSave			@"PRL"
+#define dialogOwlSave				@"PRL"
+#define dialogHiversaires			@"789"
 
 #define audioNecomedre			@"necomedre"
 #define audioNephtaline			@"nephtaline"
@@ -119,6 +120,7 @@
 #define eventCat				@"33"
 #define eventNoFace				@"29"
 #define eventNastazie			@"35"
+#define eventHiversaires		@"36"
 
 #define eventPillarCollectible	@"15"
 #define eventPillarSocket		@"14"

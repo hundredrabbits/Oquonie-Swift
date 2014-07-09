@@ -952,7 +952,7 @@
 		return @"";
 	}
 	
-	NSLog(@"!!");
+	[self eventDialog:dialogHiversaires:eventHiversaires];
 	
 	return @"";
 }
