@@ -80,6 +80,7 @@
 #define audioNestorine			@"nestorine"
 #define audioNemedique			@"nemedique"
 #define audioNepturne			@"nepturne"
+#define audioNastazie			@"nastazie"
 #define audioLobby				@"town1"
 #define audioLobby2				@"town2"
 #define audioLobby3				@"town3"
@@ -101,7 +102,7 @@
 #define characterNemedique		5
 #define characterDocument		6
 #define characterCat			7
-#define characterCat			7
+#define characterNastazie		8
 
 #define eventNecomedre			@"2"
 #define eventNephtaline			@"3"

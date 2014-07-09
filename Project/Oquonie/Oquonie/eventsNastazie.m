@@ -39,7 +39,7 @@
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[self audioDialogPlayer:@"noface"];
 	
 	return @"";
 }
@@ -71,7 +71,7 @@
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[self audioDialogPlayer:@"noface"];
 	
 	return @"";
 }
@@ -103,7 +103,7 @@
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[self eventSpellAdd:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[self audioDialogPlayer:@"noface"];
 	
 	return @"";
 }

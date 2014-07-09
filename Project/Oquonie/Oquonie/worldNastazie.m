@@ -13,7 +13,7 @@
 @implementation xxiivvViewController (worldNastazie)
 
 -(void)createWorldNastazie
-{ // |event|baba|35|r
+{
 	worldNode[130] = @[
 	// Tiles
 	@"36",@"39|event|nastazieNastazie1|35|r",@"36",
@@ -24,7 +24,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle",@"Black",audioNeomine];
+	@"Baba Castle",@"Black",audioNastazie];
 	
 	worldNode[131] = @[
 	// Tiles
@@ -36,7 +36,7 @@
 	// Steps
 	@"0",@"0",@"0",@"3|warp|130|1,-1",@"0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 	
 	worldNode[132] = @[
 	// Tiles
@@ -48,7 +48,7 @@
 	// Steps
 	@"3|warp|140|1,1",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[133] = @[
 	// Tiles
@@ -60,7 +60,7 @@
 	// Steps
 	@"0",@"3|warp|139|0,1",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[134] = @[
 	// Tiles
@@ -72,7 +72,7 @@
 	// Steps
 	@"0",@"0",@"3|warp|138|-1,1",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[135] = @[
 	// Tiles
@@ -84,7 +84,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[136] = @[
 	// Tiles
@@ -96,7 +96,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"8|warp|131|1,0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[137] = @[
 	// Tiles
@@ -108,7 +108,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[138] = @[
 	// Tiles
@@ -120,7 +120,7 @@
 	// Steps
 	@"0",@"0",@"0",@"8|warp|137|1,-1",@"0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[139] = @[
 	// Tiles
@@ -132,7 +132,7 @@
 	// Steps
 	@"0",@"8|warp|131|0,1",@"0",@"0",@"8|warp|136|1,0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[140] = @[
 	// Tiles
@@ -144,7 +144,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"8|warp|135|1,1",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[141] = @[
 	// Tiles
@@ -156,7 +156,7 @@
 	// Steps
 	@"8|warp|140|1,1",@"0",@"0",@"8|warp|137|1,-1",@"0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[142] = @[
 	// Tiles
@@ -168,7 +168,7 @@
 	// Steps
 	@"0",@"8|warp|139|0,1",@"0",@"0",@"8|warp|136|1,0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[143] = @[
 	// Tiles
@@ -180,7 +180,7 @@
 	// Steps
 	@"0",@"0",@"3|warp|138|-1,1",@"0",@"0",@"8|warp|135|1,1",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 	
 	worldNode[144] = @[
 	// Tiles
@@ -192,7 +192,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"8|warp|141|1,0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[145] = @[
 	// Tiles
@@ -204,7 +204,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"8|warp|142|1,0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 
 	worldNode[146] = @[
 	// Tiles
@@ -216,7 +216,7 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"8|warp|143|1,0",@"0",
 	// Name,Background,Audio
-	@"Baba Castle Lobby",@"Black",audioNeomine];
+	@"Baba Castle Lobby",@"Black",audioNastazie];
 	
 	worldNode[147] = @[
 	// Tiles

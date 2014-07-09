@@ -43,7 +43,7 @@
 
 -(void)start
 {
-	debug = 1;
+	debug = 0;
 	
 	[self userStart];
 	userAudioPlaying = 1;

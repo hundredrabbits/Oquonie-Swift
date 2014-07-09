@@ -27,6 +27,9 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
+		if( userCharacter == characterDocument && userLocation == 29 ){
+			return @"k";
+		}
 		return @"";
 	}
 	// Broadcast Event Sprite Change
