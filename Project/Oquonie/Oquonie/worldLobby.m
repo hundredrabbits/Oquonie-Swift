@@ -62,7 +62,7 @@
 
 	worldNode[5] = @[
 	// Tiles
-	@"9",@"10",@"9|event|socket|14|l",
+	@"9|block|30",@"10",@"9|event|socket|14|l",
 	@"4",@"5",@"14",
 	@"9",@"6",@"9",
 	// Walls

@@ -435,7 +435,7 @@
 	}
 	
 	if(userCharacter == 8){
-		if(userLocation == 130){ [self eventWarp:@"147":@"0,-1"]; }
+		if(userLocation == 130){ [self eventWarpDramatic:@"147":@"0,-1"]; }
 		else if(userLocation == 147){ [self eventWarp:@"130":@"0,1"]; }
 	}
 	
@@ -765,20 +765,20 @@
 	if([userStorageEvents[storageQuestPillarNemedique] intValue] > 0 || userLocation == 102){
 		
 		[self audioDialogPlayer:@"shark"];
-		// Dialog
-		if(userCharacter == 1){
-			[self eventDialog:dialogSharkTransform:eventShark];
-		}
-		else{
-			[self eventDialog:dialogSharkHelp:eventShark];
-			[self moveDisable:4];
-			[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
-			[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(event_sharkDialog) userInfo:nil repeats:NO];
-			[NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(event_sharkTransform) userInfo:nil repeats:NO];
-			[NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
-		}
+	
+		[self eventDialog:dialogSharkHelp:eventShark];
+		[self moveDisable:4];
+		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
+		[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(event_sharkDialog) userInfo:nil repeats:NO];
+		[NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(event_sharkTransform) userInfo:nil repeats:NO];
+		[NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
+		
 		// Clear Spellbook
 		userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+	}
+	else{
+		[self audioDialogPlayer:@"shark"];
+		[self eventDialog:dialogSharkTransform:eventShark];
 	}
 	
 	// Return storage Id

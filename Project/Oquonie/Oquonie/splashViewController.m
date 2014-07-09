@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvViewController.h"
 #import "splashViewController.h"
 #import "xxiivvSettings.h"
 
@@ -19,7 +20,7 @@
 {
     [super viewDidLoad];
 	
-	if(systemDebug>0){
+	if(debug>0){
 		[self splashSkip];
 	}
 	else{

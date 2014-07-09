@@ -205,14 +205,15 @@
 		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(event_sharkTransform) userInfo:nil repeats:NO];
 		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(event_nofaceWarp) userInfo:nil repeats:NO];
 		
-		[self eventDialog:dialogNoFace:eventNoFace];
 		[self audioDialogPlayer:@"noface"];
+		[self eventDialog:dialogIntroduction:eventNoFace];
 		
 		// Clear Spellbook
 		userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
 	}
 	else{
-		// TODO
+		[self audioDialogPlayer:@"noface"];
+		[self eventDialog:dialogNoFace:eventNoFace];
 	}
 	return @"";
 }

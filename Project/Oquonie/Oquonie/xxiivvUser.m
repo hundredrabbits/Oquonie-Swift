@@ -102,8 +102,8 @@
 {
 	NSLog(@"   USER | Starting..     | Please hold");
 	
-	userCharacter = 8;
-	userLocation = 148;
+	userCharacter = 1;
+	userLocation = 1;
 	
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
