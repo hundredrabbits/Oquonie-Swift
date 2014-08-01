@@ -129,6 +129,8 @@ typedef enum {
 -(void)moveOrder;
 -(void)moveParallax;
 
+-(void)apiContact:(NSString*)source :(NSString*)method :(NSString*)term :(NSString*)value;
+
 @end
 
 int debug;

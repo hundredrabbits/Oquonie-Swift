@@ -478,6 +478,7 @@
 	}
 	else if(count == 5){
 		[self eventWarpDramatic:@"104":@"-1,0"];
+		[self apiContact:@"oquonie":@"analytics":@"ending":@"1"];
 	}
 	else{
 		[self eventDialog:dialogHavePillarsNot:eventRed];
@@ -538,27 +539,33 @@
 	if(userLocation == [locationNeominePillar intValue]){
 		pillarInstanceStorageId = storageQuestPillarNeomine;
 		pillarInstanceWarp = locationNeomineLobby;
+		[self apiContact:@"oquonie":@"analytics":@"neomine-pillar":@"1"];
 	}
 	else if (userLocation == [locationNecomedrePillar intValue]){
 		pillarInstanceStorageId = storageQuestPillarNecomedre;
 		pillarInstanceWarp = locationNecomedreLobby;
+		[self apiContact:@"oquonie":@"analytics":@"necomedre-pillar":@"1"];
 	}
 	else if (userLocation == [locationNephtalinePillar intValue]){
 		pillarInstanceStorageId = storageQuestPillarNephtaline;
 		pillarInstanceWarp = locationNephtalineLobby;
+		[self apiContact:@"oquonie":@"analytics":@"nephtaline-pillar":@"1"];
 	}
 	else if (userLocation == [locationNestorinePillar intValue]){
 		pillarInstanceStorageId = storageQuestPillarNestorine;
 		pillarInstanceWarp = locationNestorineLobby;
+		[self apiContact:@"oquonie":@"analytics":@"nestorine-pillar":@"1"];
 	}
 	else if (userLocation == [locationNemediquePillar intValue]){
 		pillarInstanceStorageId = storageQuestPillarNemedique;
 		pillarInstanceWarp = locationNemediqueLobby;
+		[self apiContact:@"oquonie":@"analytics":@"nemedique-pillar":@"1"];
 	}
 	// Hiversaires
 	else if (userLocation == 147){
 		pillarInstanceStorageId = storageQuestPillarHiversaires;
 		pillarInstanceWarp = locationNeomineLobby;
+		[self apiContact:@"oquonie":@"analytics":@"hiversaires-pillar":@"1"];
 	}
 		
 	// Broadcast Notification
