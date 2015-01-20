@@ -56,10 +56,8 @@
 	
 	[self userStart];
     
-    userLocation = 112;
 	userAudioPlaying = 1;
-    userCharacter = 7;
-    
+	
 	[self templateStart];
 	[self worldStart];
 	[self roomStart];
@@ -122,6 +120,7 @@
 	
 	// Move if okay
 	if(blocker == 0){
+        
 		// Update position
 		userPositionX += posX;
 		userPositionY += posY;
@@ -182,12 +181,12 @@
 	
 	self.parallaxFront.alpha = 1;
 	self.parallaxBack.alpha = 1;
-	
+    
 	self.parallaxFront.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
 	self.parallaxBack.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*2, (userPositionX+userPositionY)*-2);
-	
-	self.roomContainer.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
-	self.spritesContainer.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
+    
+	self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
+	self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
 	[UIView commitAnimations];
 	
 }
@@ -321,14 +320,14 @@
 
 -(void)moveCollideAnimateChar :(int)posX :(int)posY
 {
-	[self userSpriteUpdate:[NSString stringWithFormat:@"%@", [self templateSpriteName:@""]]];
-	CGRect userOrigin = self.userPlayer.frame;
-	if( (posX == -1 && posY == 0) || (posX == 0 && posY == 1) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 2, 0); }
-	if( (posX == 0 && posY == -1) || (posX == 1 && posY == 0) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, -2, 0); }
-
-    [UIView animateWithDuration:0.3 animations:^(void){
-        self.userPlayer.frame = userOrigin;
-    } completion:^(BOOL finished){}];
+//	[self userSpriteUpdate:[NSString stringWithFormat:@"%@", [self templateSpriteName:@""]]];
+//	CGRect userOrigin = self.userPlayer.frame;
+//	if( (posX == -1 && posY == 0) || (posX == 0 && posY == 1) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 2, 0); }
+//	if( (posX == 0 && posY == -1) || (posX == 1 && posY == 0) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, -2, 0); }
+//
+//    [UIView animateWithDuration:0.3 animations:^(void){
+//        self.userPlayer.frame = userOrigin;
+//    } completion:^(BOOL finished){}];
 }
 
 -(void)moveCollideAnimateEvent:(int)posX :(int)posY
@@ -355,17 +354,15 @@
 # pragma mark Misc -
 
 - (CGRect)tileLocation :(int)type :(int)posX :(int)posY
-{
-    UIDevice * device = [UIDevice currentDevice];
-    
+{    
     viewWidth = screen.size.width - (2*screenMargin);
     tileW = viewWidth/3;
     tileH = tileW * 0.5;
     
-    int centerW = (screen.size.width/2)-(tileW/2);
-    int centerH = (screen.size.height/2)-(tileH/2);
+    centerW = (screen.size.width/2)-(tileW/2);
+    centerH = (screen.size.height/2)-(tileH/2);
     
-    if( device.orientation == UIDeviceOrientationLandscapeLeft || device.orientation == UIDeviceOrientationLandscapeRight ){
+    if( [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft || [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight ){
         viewWidth = (screen.size.width - (2*screenMargin))/2;
         tileW = viewWidth/3;
         tileH = tileW * 0.5;
@@ -912,6 +909,7 @@
 {
     [self templateStart];
     [self roomStart];
+    [self tileLocation:4:userPositionX:userPositionY];
     self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
     [self moveOrder];
 }

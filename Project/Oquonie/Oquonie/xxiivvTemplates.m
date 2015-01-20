@@ -44,8 +44,7 @@
     if([[UIDevice currentDevice] orientation] == 5){
         [self templatePortraitStart];
     }
-    
-    NSLog(@"%ld",[[UIDevice currentDevice] orientation]);
+
 }
 
 -(void)templatePortraitStart
@@ -53,6 +52,13 @@
     NSLog(@">  TMPL | Loading Landscape Template..");
     screen = [[UIScreen mainScreen] bounds];
     screenMargin = screen.size.width/10;
+    
+    viewWidth = screen.size.width - (2*screenMargin);
+    tileW = viewWidth/3;
+    tileH = tileW * 0.5;
+    
+    centerW = (screen.size.width/2)-(tileW/2);
+    centerH = (screen.size.height/2)-(tileH/2);
     
     self.floor00.frame = [self tileLocation:0 :0 :0];
     self.floor1e.frame = [self tileLocation:0 :-1 :1];
@@ -151,6 +157,13 @@
     NSLog(@">  TMPL | Loading Landscape Template..");
     screen = [[UIScreen mainScreen] bounds];
     screenMargin = screen.size.width/20;
+    
+    viewWidth = (screen.size.width - (2*screenMargin))/2;
+    tileW = viewWidth/3;
+    tileH = tileW * 0.5;
+    
+    centerW = (screen.size.width/2)-(tileW/2);
+    centerH = (screen.size.height/2)+(tileH/2);
     
     self.floor00.frame = [self tileLocation:0 :0 :0];
     self.floor1e.frame = [self tileLocation:0 :-1 :1];

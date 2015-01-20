@@ -265,7 +265,7 @@
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6mA-lT-Y5D" userLabel="userPlayer">
                                         <rect key="frame" x="-40" y="296" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="char.shadow.png" id="lep-qp-oJt" userLabel="userPlayerShadow">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>

@@ -211,3 +211,6 @@ CGRect parallaxBackOrigin;
 CGRect roomContainerOrigin;
 CGRect spriteContainerOrigin;
 
+CGFloat centerW;
+CGFloat centerH;
+
