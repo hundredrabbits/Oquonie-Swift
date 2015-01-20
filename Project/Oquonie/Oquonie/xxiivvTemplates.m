@@ -185,6 +185,9 @@
     textBlock4 = CGRectMake(screenMargin+(3*textBlock), screen.size.height-(textBlock*2), textBlock, textBlock);
     
     self.dialogView.frame = CGRectMake(0, screen.size.height-screen.size.width, screen.size.width, screen.size.width);
+
+    self.dialogView.frame = CGRectMake( (screen.size.width/2)-(screen.size.height/2), tileH/3, screen.size.height, screen.size.height);
+    
     
     self.dialogCharacterWarpper.frame = CGRectMake(self.dialogView.frame.size.width/15, self.dialogView.frame.size.height/1.7, self.dialogView.frame.size.width/5.5*2.5, self.dialogView.frame.size.width/5.5);
     
