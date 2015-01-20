@@ -37,6 +37,7 @@
             break;
             
         default:
+            [self templatePortraitStart];
             break;
     };
 }
@@ -188,7 +189,6 @@
 
     self.dialogView.frame = CGRectMake( (screen.size.width/2)-(screen.size.height/2), tileH/3, screen.size.height, screen.size.height);
     
-    
     self.dialogCharacterWarpper.frame = CGRectMake(self.dialogView.frame.size.width/15, self.dialogView.frame.size.height/1.7, self.dialogView.frame.size.width/5.5*2.5, self.dialogView.frame.size.width/5.5);
     
     float letterSize = self.dialogCharacterWarpper.frame.size.height;
@@ -207,6 +207,10 @@
     char1Origin = self.dialogCharacter1.frame;
     char2Origin = self.dialogCharacter2.frame;
     char3Origin = self.dialogCharacter3.frame;
+    
+    self.spellCharacter1.frame = CGRectMake((screen.size.width/2)-tileW, 0, tileW/2, tileW/2);
+    self.spellCharacter2.frame = CGRectMake((screen.size.width/2)-((tileW/2)/2), 0, tileW/2, tileW/2);
+    self.spellCharacter3.frame = CGRectMake((screen.size.width/2)+(tileW/2), 0, tileW/2, tileW/2);
     
     // Spellbook
     spellCharacter1Origin = self.spellCharacter1.frame;

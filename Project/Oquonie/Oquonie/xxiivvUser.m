@@ -44,7 +44,6 @@
 		} completion:^(BOOL finished){}];
 	}];
 	
-	
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	
 	[defaults setObject:[NSString stringWithFormat:@"%d",userLocation] forKey:@"userLocation"];
@@ -77,8 +76,12 @@
 	
 	userSpellbook = [defaults objectForKey:@"userSpellbook"];
 	userStorageEvents = [defaults objectForKey:@"userStorageEvents"];
+    
+    userSpellbook = [[NSMutableArray alloc] initWithArray:userSpellbook];
+    userStorageEvents = [[NSMutableArray alloc] initWithArray:userStorageEvents];
 	
 }
+
 -(void)userNew
 {
 	NSLog(@"   USER | Starting..     | Please hold");

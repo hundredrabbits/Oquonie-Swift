@@ -197,8 +197,8 @@
 			return;
 		}
 		index += 1;
-	}
-	
+    }
+    
     NSLog(@"> EVENT | Spell        | Looking for free slot");
 
 	int spellSlot = -1;
@@ -206,16 +206,16 @@
 	else if( [userSpellbook[1][0] isEqualToString:@""] ){ spellSlot = 1; }
 	else if( [userSpellbook[2][0] isEqualToString:@""] ){ spellSlot = 2; }
 	
-	if(spellSlot > -1){
-		NSLog(@"> EVENT | Spell        | Added    -> id:%@ type:%d",spellId,spellType);
+    if(spellSlot > -1){
+        NSLog(@"> EVENT | Spell        | Added    -> id:%@ type:%d slot:%d",spellId,spellType,spellSlot);
 		[self audioEffectPlayer:@"spellgain"];
-		userSpellbook[spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
+        userSpellbook[spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
 		[self eventSpellRefresh];
 	}
 	else{
 		NSLog(@"> EVENT | Spell        | No available slot");
 		[self audioEffectPlayer:@"spellfull"];
-	}
+    }
 }
 
 -(void)eventSpellRefresh

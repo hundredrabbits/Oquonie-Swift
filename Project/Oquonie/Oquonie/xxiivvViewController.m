@@ -66,10 +66,7 @@
 	
 	[self eventIntroduction];
 	
-	self.debugLocation.hidden = YES;
-	
-//	[self createJSON];
-	
+	self.debugLocation.hidden = YES;	
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -911,6 +908,8 @@
 - (void) orientationChanged:(NSNotification *)note
 {
     [self templateStart];
+    [self roomStart];
+    [self moveOrder];
 }
 
 @end
