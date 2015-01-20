@@ -55,8 +55,11 @@
 	debug = 0;
 	
 	[self userStart];
+    
+    userLocation = 112;
 	userAudioPlaying = 1;
-	
+    userCharacter = 7;
+    
 	[self templateStart];
 	[self worldStart];
 	[self roomStart];

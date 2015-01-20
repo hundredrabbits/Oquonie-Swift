@@ -414,9 +414,14 @@
 	
 	// Warp todo: warp to 113(random door warp is missing)
 	if(userCharacter == 7){
-		if(userLocation == 130){ [self eventWarp:@"131":@"-1,-1"]; }
-		else if(userLocation == 131){ [self eventWarp:@"130":@"-1,1"]; }
+        if(userLocation == 130){ [self eventWarp:@"131":@"-1,-1"]; }
+        else if(userLocation == 131){ [self eventWarp:@"130":@"-1,1"]; }
+        else if(userLocation == 112){ [self eventWarp:@"113":@"0,-1"]; }
 	}
+    else{
+        NSString* eventDialogLocked = dialogHaveCharacterNot(letterCat);
+        [self eventDialog:eventDialogLocked:eventOwl];
+    }
 	
 	return @"";
 }
