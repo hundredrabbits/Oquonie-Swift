@@ -11,6 +11,7 @@
 @interface xxiivvViewController (Templates)
 
 -(void)templateStart;
+-(void)templateLandscapeStart;
 -(void)templateRoomAnimation;
 -(NSString *)templateSpriteName:(NSString*)mod;
 

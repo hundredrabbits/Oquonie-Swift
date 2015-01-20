@@ -27,7 +27,16 @@
 -(void)viewDidLoad
 {	
 	[super viewDidLoad];
+    [self saveOrientation];
 	[self start];
+}
+
+-(void)saveOrientation{
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(orientationChanged:)
+     name:UIDeviceOrientationDidChangeNotification
+     object:[UIDevice currentDevice]];
 }
 
 -(void)createJSON
@@ -347,15 +356,23 @@
 
 - (CGRect)tileLocation :(int)type :(int)posX :(int)posY
 {
-	screen = [[UIScreen mainScreen] bounds];
-	screenMargin = screen.size.width/10;
-	viewWidth = screen.size.width - (2*screenMargin);
-	
-	tileW = viewWidth/3;
-	tileH = tileW * 0.5;
-	
-	int centerW = (screen.size.width/2)-(tileW/2);
-	int centerH = (screen.size.height/2)-(tileH/2);
+    UIDevice * device = [UIDevice currentDevice];
+    
+    viewWidth = screen.size.width - (2*screenMargin);
+    tileW = viewWidth/3;
+    tileH = tileW * 0.5;
+    
+    int centerW = (screen.size.width/2)-(tileW/2);
+    int centerH = (screen.size.height/2)-(tileH/2);
+    
+    if( device.orientation == UIDeviceOrientationLandscapeLeft || device.orientation == UIDeviceOrientationLandscapeRight ){
+        viewWidth = (screen.size.width - (2*screenMargin))/2;
+        tileW = viewWidth/3;
+        tileH = tileW * 0.5;
+        
+        centerW = (screen.size.width/2)-(tileW/2);
+        centerH = (screen.size.height/2)+(tileH/2);
+    }
 	
 	if( type == 0 ){		
 		if( posX == 2 && posY == -1 ){ return CGRectMake(centerW+(tileW/2)*-3, centerH+(tileH*-0.5), tileW, tileH); }
@@ -889,6 +906,11 @@
 	NSLog(@"& API  | %@: %@",method, theReply);
 	
 	return;
+}
+
+- (void) orientationChanged:(NSNotification *)note
+{
+    [self templateStart];
 }
 
 @end
