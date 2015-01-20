@@ -40,6 +40,12 @@
             [self templatePortraitStart];
             break;
     };
+    
+    if([[UIDevice currentDevice] orientation] == 5){
+        [self templatePortraitStart];
+    }
+    
+    NSLog(@"%ld",[[UIDevice currentDevice] orientation]);
 }
 
 -(void)templatePortraitStart
@@ -111,6 +117,10 @@
     char1Origin = self.dialogCharacter1.frame;
     char2Origin = self.dialogCharacter2.frame;
     char3Origin = self.dialogCharacter3.frame;
+    
+    self.spellCharacter1.frame = CGRectMake((screen.size.width/2)-((tileW/2)*1.5), 0, tileW/2, tileW/2);
+    self.spellCharacter2.frame = CGRectMake((screen.size.width/2)-((tileW/2)/2), 0, tileW/2, tileW/2);
+    self.spellCharacter3.frame = CGRectMake((screen.size.width/2)+((tileW/2)*0.5), 0, tileW/2, tileW/2);
     
     // Spellbook
     spellCharacter1Origin = self.spellCharacter1.frame;
@@ -208,9 +218,9 @@
     char2Origin = self.dialogCharacter2.frame;
     char3Origin = self.dialogCharacter3.frame;
     
-    self.spellCharacter1.frame = CGRectMake((screen.size.width/2)-tileW, 0, tileW/2, tileW/2);
+    self.spellCharacter1.frame = CGRectMake((screen.size.width/2)-((tileW/2)*1.5), 0, tileW/2, tileW/2);
     self.spellCharacter2.frame = CGRectMake((screen.size.width/2)-((tileW/2)/2), 0, tileW/2, tileW/2);
-    self.spellCharacter3.frame = CGRectMake((screen.size.width/2)+(tileW/2), 0, tileW/2, tileW/2);
+    self.spellCharacter3.frame = CGRectMake((screen.size.width/2)+((tileW/2)*0.5), 0, tileW/2, tileW/2);
     
     // Spellbook
     spellCharacter1Origin = self.spellCharacter1.frame;

@@ -909,6 +909,7 @@
 {
     [self templateStart];
     [self roomStart];
+    self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
     [self moveOrder];
 }
 
