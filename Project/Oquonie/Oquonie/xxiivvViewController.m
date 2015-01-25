@@ -320,14 +320,14 @@
 
 -(void)moveCollideAnimateChar :(int)posX :(int)posY
 {
-//	[self userSpriteUpdate:[NSString stringWithFormat:@"%@", [self templateSpriteName:@""]]];
-//	CGRect userOrigin = self.userPlayer.frame;
-//	if( (posX == -1 && posY == 0) || (posX == 0 && posY == 1) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 2, 0); }
-//	if( (posX == 0 && posY == -1) || (posX == 1 && posY == 0) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, -2, 0); }
-//
-//    [UIView animateWithDuration:0.3 animations:^(void){
-//        self.userPlayer.frame = userOrigin;
-//    } completion:^(BOOL finished){}];
+	[self userSpriteUpdate:[NSString stringWithFormat:@"%@", [self templateSpriteName:@""]]];
+	CGRect userOrigin = self.userPlayer.frame;
+	if( (posX == -1 && posY == 0) || (posX == 0 && posY == 1) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 2, 0); }
+	if( (posX == 0 && posY == -1) || (posX == 1 && posY == 0) ){ self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, -2, 0); }
+
+    [UIView animateWithDuration:0.3 animations:^(void){
+        self.userPlayer.frame = userOrigin;
+    } completion:^(BOOL finished){}];
 }
 
 -(void)moveCollideAnimateEvent:(int)posX :(int)posY
