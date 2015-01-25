@@ -327,19 +327,19 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleAspectFit" id="Y7v-1Q-mTL" userLabel="dialogView">
-                                        <rect key="frame" x="0.0" y="229.99999513387402" width="320" height="250.00000486612598"/>
+                                        <rect key="frame" x="0.0" y="230" width="320" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.10.portrait.png" id="RcO-YQ-M4O" userLabel="dialogCharacter">
-                                                <rect key="frame" x="0.0" y="43" width="320" height="195.00000398695187"/>
+                                                <rect key="frame" x="0.0" y="43" width="320" height="195"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.textbubble.png" id="Rwu-16-j3v" userLabel="dialogBubble">
-                                                <rect key="frame" x="0.0" y="4.8661259768323362e-06" width="320" height="250"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" id="tXm-os-7cx" userLabel="dialogCharacterWarpper">
-                                                <rect key="frame" x="20.999996728784101" y="150" width="160" height="60"/>
+                                                <rect key="frame" x="20.999992559625582" y="150" width="160" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">

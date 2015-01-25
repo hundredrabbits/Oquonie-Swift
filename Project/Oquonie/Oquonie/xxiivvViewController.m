@@ -178,12 +178,12 @@
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
 	[UIView setAnimationDelay:0];
-	
+    
 	self.parallaxFront.alpha = 1;
 	self.parallaxBack.alpha = 1;
     
-	self.parallaxFront.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
-	self.parallaxBack.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*2, (userPositionX+userPositionY)*-2);
+	self.parallaxFront.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
+	self.parallaxBack.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*2, (userPositionX+userPositionY)*-2);
     
 	self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
 	self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
