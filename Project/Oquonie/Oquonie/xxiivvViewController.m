@@ -52,11 +52,18 @@
 
 -(void)start
 {
-	debug = 0;
+	debug = 1;
 	
 	[self userStart];
     
-	userAudioPlaying = 1;
+    if( debug == 1){
+        userAudioPlaying = 0;
+        [self eventTranform:1];
+        [self eventWarp:@"130" :@"0,-1"];
+    }
+    else{
+        userAudioPlaying = 1;
+    }
 	
 	[self templateStart];
 	[self worldStart];

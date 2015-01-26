@@ -284,7 +284,16 @@
 			} completion:NULL];
 			self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.6.png"];
 			self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.7.png"];
-		}
+        }
+        // Hiversaires
+        if([worldBackground isEqualToString:@"Void"]){
+            [UIView animateWithDuration:1.0 animations:^{
+                self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+            } completion:NULL];
+            self.parallaxFront.image = [UIImage imageNamed:@"fx.parallax.3.png"];
+            self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
+            self.debugLocation.textColor = [UIColor whiteColor];
+        }
 	}
 }
 

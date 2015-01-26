@@ -254,8 +254,49 @@
 		return @"";
 	}
 	
-	
 	return @"";
+}
+
+-(NSString*)event_gatePhotoBooth :(NSString*)option
+{
+    // Broadcast Notification
+    if([option isEqualToString:@"postNotification"]){
+        return @"";
+    }
+    // Broadcast Event Sprite Change
+    if([option isEqualToString:@"postUpdate"]){
+        // Booth #1
+        if(userLocation == 11){ return @"104"; }
+        // Booth #2
+        if(userLocation == 37){ return @"105"; }
+        // Booth #3
+        if(userLocation == 46){ return @"106"; }
+        // Booth #4
+        if(userLocation == 66){ return @"107"; }
+        // Booth #5
+        if(userLocation == 89){ return @"108"; }
+        // Booth #6
+        if(userLocation == 102){ return @"109"; }
+        // Booth #7
+        if(userLocation == 142){ return @"110"; }
+    }
+    
+    // Booth #1
+    if(userLocation == 11){ [self eventWarp:@"149" :@"0,-1"]; }
+    // Booth #2
+    if(userLocation == 37){ [self eventWarp:@"150" :@"0,-1"]; }
+    // Booth #3
+    if(userLocation == 46){ [self eventWarp:@"151" :@"0,-1"]; }
+    // Booth #4
+    if(userLocation == 66){ [self eventWarp:@"152" :@"0,-1"]; }
+    // Booth #5
+    if(userLocation == 89){ [self eventWarp:@"153" :@"0,-1"]; }
+    // Booth #6
+    if(userLocation == 102){ [self eventWarp:@"154" :@"0,-1"]; }
+    // Booth #7
+    if(userLocation == 142){ [self eventWarp:@"155" :@"0,-1"]; }
+    
+    return @"";
 }
 
 -(void)shuffler

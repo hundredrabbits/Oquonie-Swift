@@ -141,8 +141,106 @@
 	// Steps
 	@"0",@"0",@"0",@"0",@"7|warp|68|1,0",@"0",
 	// Name,Background,Audio
-	@"Dianel's Room",@"Black",audioGlitch];
+    @"Dianel's Room",@"Void",audioGlitch];
+    
+    // Photobooth #1
 
+    worldNode[149] = @[
+    // Tiles
+    @"109",@"107",@"105",
+    @"111|block|999",@"0|event|sauvegarde|36|r",@"106|block|29",
+    @"112|block|999",@"110",@"108|block|999",
+    // Walls
+    @"102",@"103",@"102",@"0",@"0",@"0",
+    // Steps
+    @"0",@"0",@"0",@"0",@"7|warp|68|1,0",@"0",
+    // Name,Background,Audio
+    @"Dianel's Room",@"Void",audioGlitch];
+
+    // Photobooth #2
+
+    worldNode[150] = @[
+    // Tiles
+    @"109",@"107",@"105",
+    @"111|block|999",@"0|event|sauvegarde|36|r",@"106|block|29",
+    @"112|block|999",@"110",@"108|block|999",
+    // Walls
+    @"102",@"103",@"102",@"0",@"0",@"0",
+    // Steps
+    @"0",@"0",@"0",@"0",@"7|warp|68|1,0",@"0",
+    // Name,Background,Audio
+    @"Dianel's Room",@"Void",audioGlitch];
+
+    // Photobooth #3
+
+    worldNode[151] = @[
+    // Tiles
+    @"109",@"107",@"105",
+    @"111|block|999",@"0|event|sauvegarde|36|r",@"106|block|29",
+    @"112|block|999",@"110",@"108|block|999",
+    // Walls
+    @"102",@"103",@"102",@"0",@"0",@"0",
+    // Steps
+    @"0",@"0",@"0",@"0",@"7|warp|68|1,0",@"0",
+    // Name,Background,Audio
+    @"Dianel's Room",@"Void",audioGlitch];
+
+    // Photobooth #4
+
+    worldNode[152] = @[
+    // Tiles
+    @"109",@"107",@"105",
+    @"111|block|999",@"0|event|sauvegarde|36|r",@"106|block|29",
+    @"112|block|999",@"110",@"108|block|999",
+    // Walls
+    @"102",@"103",@"102",@"0",@"0",@"0",
+    // Steps
+    @"0",@"0",@"0",@"0",@"7|warp|68|1,0",@"0",
+    // Name,Background,Audio
+    @"Dianel's Room",@"Void",audioGlitch];
+
+    // Photobooth #5
+
+    worldNode[153] = @[
+    // Tiles
+    @"109",@"107",@"105",
+    @"111|block|999",@"0|event|sauvegarde|36|r",@"106|block|29",
+    @"112|block|999",@"110",@"108|block|999",
+    // Walls
+    @"102",@"103",@"102",@"0",@"0",@"0",
+    // Steps
+    @"0",@"0",@"0",@"0",@"7|warp|68|1,0",@"0",
+    // Name,Background,Audio
+    @"Dianel's Room",@"Void",audioGlitch];
+
+    // Photobooth #6
+
+    worldNode[154] = @[
+    // Tiles
+    @"109",@"107",@"105",
+    @"111|block|999",@"0|event|sauvegarde|36|r",@"106|block|29",
+    @"112|block|999",@"110",@"108|block|999",
+    // Walls
+    @"102",@"103",@"102",@"0",@"0",@"0",
+    // Steps
+    @"0",@"0",@"0",@"0",@"7|warp|68|1,0",@"0",
+    // Name,Background,Audio
+    @"Dianel's Room",@"Void",audioGlitch];
+
+    // Photobooth #7
+
+    worldNode[155] = @[
+    // Tiles
+    @"109",@"107",@"105",
+    @"111|block|999",@"0|event|sauvegarde|36|r",@"106|block|29",
+    @"112|block|999",@"110",@"108|block|999",
+    // Walls
+    @"102",@"103",@"102",@"0",@"0",@"0",
+    // Steps
+    @"0",@"0",@"0",@"0",@"7|warp|68|1,0",@"0",
+    // Name,Background,Audio
+    @"Dianel's Room",@"Void",audioGlitch];
+    
 }
 
 @end

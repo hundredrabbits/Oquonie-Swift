@@ -97,7 +97,7 @@
 	@"17",@"4",@"3",
 	@"3",@"3",@"3|event|nephtalineNeomine1|4|l",
 	// Walls
-	@"18",@"18",@"18",@"13|warp|41|1,-1",@"18",@"18",
+	@"18",@"18|event|gatePhotoBooth",@"18",@"13|warp|41|1,-1",@"18",@"18",
 	// Steps
 	@"0",@"7|warp|47|0,1",@"0",@"0",@"7|warp|51|1,0",@"0",
 	// Name,Background,Audio

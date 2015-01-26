@@ -164,7 +164,7 @@
 	@"39",@"33",@"39",
 	@"36",@"39",@"36",
 	// Walls
-	@"19",@"5|event|gateNeomine",@"99",@"99",@"99",@"99",
+	@"19",@"5|event|gateNeomine",@"99",@"99",@"99|event|gatePhotoBooth",@"99",
 	// Steps
 	@"0",@"8|warp|139|0,1",@"0",@"0",@"8|warp|136|1,0",@"0",
 	// Name,Background,Audio
