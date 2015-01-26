@@ -91,7 +91,7 @@
 #define audioEndless			@"endless"
 #define audioGlitch				@"glitch"
 #define audioPlay				@"play"
-#define audioPhotoBooth			@"photobooth"
+#define audioPhotoBooth			@"kamera"
 
 #define audioRekka				@"rekka"
 #define audioDevine				@"devine"

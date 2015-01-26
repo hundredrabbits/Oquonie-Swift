@@ -257,6 +257,21 @@
 	return @"";
 }
 
+-(NSString*)event_kamera:(NSString*)option
+{
+    // Broadcast Notification
+    if([option isEqualToString:@"postNotification"]){
+        return @"";
+    }
+    
+    // Broadcast Event Sprite Change
+    if([option isEqualToString:@"postUpdate"]){
+        return @"";
+    }
+    
+    return @"";
+}
+
 -(NSString*)event_gatePhotoBooth :(NSString*)option
 {
     // Broadcast Notification
@@ -266,7 +281,7 @@
     // Broadcast Event Sprite Change
     if([option isEqualToString:@"postUpdate"]){
         // Booth #1
-        if(userLocation == 11){ return @"104"; }
+        if(userLocation == 3){ return @"104"; }
         // Booth #2
         if(userLocation == 37){ return @"105"; }
         // Booth #3
@@ -282,13 +297,13 @@
     }
     
     // Booth #1
-    if(userLocation == 11){ [self eventWarp:@"149" :@"0,-1"]; }
+    if(userLocation == 3){ [self eventWarp:@"149" :@"0,-1"]; }
     // Booth #2
-    if(userLocation == 37){ [self eventWarp:@"150" :@"0,-1"]; }
+    if(userLocation == 37){ [self eventWarp:@"150" :@"-1,-1"]; }
     // Booth #3
-    if(userLocation == 46){ [self eventWarp:@"151" :@"0,-1"]; }
+    if(userLocation == 46){ [self eventWarp:@"151" :@"-1,0"]; }
     // Booth #4
-    if(userLocation == 66){ [self eventWarp:@"152" :@"0,-1"]; }
+    if(userLocation == 66){ [self eventWarp:@"152" :@"-1,0"]; }
     // Booth #5
     if(userLocation == 89){ [self eventWarp:@"153" :@"0,-1"]; }
     // Booth #6
