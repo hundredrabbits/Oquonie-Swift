@@ -186,21 +186,6 @@
 	return @"";
 }
 
--(NSString*)event_kamera:(NSString*)option
-{
-    // Broadcast Notification
-    if([option isEqualToString:@"postNotification"]){
-        return @"";
-    }
-    
-    // Broadcast Event Sprite Change
-    if([option isEqualToString:@"postUpdate"]){
-        return eventKamera;
-    }
-    
-    return @"";
-}
-
 -(NSString*)event_noface:(NSString*)option
 {
 	// Broadcast Notification
@@ -289,11 +274,11 @@
         // Booth #4
         if(userLocation == 66){ return @"107"; }
         // Booth #5
-        if(userLocation == 89){ return @"108"; }
+        if(userLocation == 89){ return @"110"; } // TODO
         // Booth #6
-        if(userLocation == 102){ return @"109"; }
+        if(userLocation == 102){ return @"108"; }
         // Booth #7
-        if(userLocation == 142){ return @"110"; }
+        if(userLocation == 142){ return @"109"; }
     }
     
     // Booth #1

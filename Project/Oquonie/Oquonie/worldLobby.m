@@ -42,7 +42,7 @@
 	@"6",@"5",@"1",
 	@"1|block|1",@"4",@"1",
 	// Walls
-	@"1",@"7|event|gateNeomine",@"1",@"1",@"1",@"1",
+	@"1",@"7|event|gateNeomine",@"1",@"1",@"104|event|gatePhotoBooth",@"1",
 	// Steps
 	@"0",@"7|warp|4|0,1",@"0",@"0",@"7|warp|2|1,0",@"0",
 	// Name,Background,Audio
@@ -128,7 +128,7 @@
 	@"5",@"33|event|tree|23|l",@"4",
 	@"4",@"6",@"5",
 	// Walls
-	@"36",@"13|warp|9|-1,0",@"36",@"3",@"37|event|gatePhotoBooth",@"3",
+	@"36",@"13|warp|9|-1,0",@"36",@"3",@"37",@"3",
 	// Steps
 	@"0",@"0",@"0",@"0",@"0",@"0",
 	// Name,Background,Audio

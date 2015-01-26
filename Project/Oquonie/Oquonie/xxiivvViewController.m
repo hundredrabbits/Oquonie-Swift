@@ -59,7 +59,7 @@
     if( debug == 1){
         userAudioPlaying = 0;
         [self eventTranform:3];
-        [self eventWarp:@"149" :@"0,-1"];
+        [self eventWarp:@"142" :@"0,-1"];
     }
     else{
         userAudioPlaying = 1;
