@@ -186,6 +186,21 @@
 	return @"";
 }
 
+-(NSString*)event_kamera:(NSString*)option
+{
+    // Broadcast Notification
+    if([option isEqualToString:@"postNotification"]){
+        return @"";
+    }
+    
+    // Broadcast Event Sprite Change
+    if([option isEqualToString:@"postUpdate"]){
+        return eventKamera;
+    }
+    
+    return @"";
+}
+
 -(NSString*)event_noface:(NSString*)option
 {
 	// Broadcast Notification

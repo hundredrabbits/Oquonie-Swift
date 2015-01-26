@@ -91,6 +91,7 @@
 #define audioEndless			@"endless"
 #define audioGlitch				@"glitch"
 #define audioPlay				@"play"
+#define audioPhotoBooth			@"photobooth"
 
 #define audioRekka				@"rekka"
 #define audioDevine				@"devine"
@@ -122,6 +123,7 @@
 #define eventNoFace				@"29"
 #define eventNastazie			@"35"
 #define eventHiversaires		@"36"
+#define eventKamera             @"37"
 
 #define eventPillarCollectible	@"15"
 #define eventPillarSocket		@"14"
