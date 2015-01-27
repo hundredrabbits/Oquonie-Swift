@@ -181,9 +181,9 @@
     // Walls
     @"25",@"2",@"25",@"25",@"31",@"25",
     // Steps
-    @"0",@"0",@"0",@"0",@"7|warp|46|1,0",@"0",
+    @"0",@"0",@"0",@"0",@"8|warp|46|1,0",@"0",
     // Name,Background,Audio
-    @"Photobooth",@"Black",audioPhotoBooth];
+    @"Photobooth",@"Void",audioPhotoBooth];
 
     // Photobooth #4 - Neomine
 
@@ -195,7 +195,7 @@
     // Walls
     @"0",@"0",@"0",@"31",@"30",@"31",
     // Steps
-    @"0",@"0",@"0",@"0",@"7|warp|66|1,0",@"0",
+    @"0",@"0",@"0",@"0",@"8|warp|66|1,0",@"0",
     // Name,Background,Audio
     @"Photobooth",@"Red",audioPhotoBooth];
 
@@ -203,27 +203,27 @@
 
     worldNode[153] = @[
     // Tiles
-    @"1",@"34",@"34",
-    @"1",@"18",@"34|event|kamera|37|l",
-    @"1",@"34",@"34",
+    @"1",@"35",@"34",
+    @"34",@"18",@"35|event|kamera|37|l",
+    @"1",@"35",@"34",
     // Walls
     @"35",@"34",@"37",@"37",@"34",@"35",
     // Steps
-    @"0",@"7|warp|89|0,1",@"0",@"0",@"0",@"0",
+    @"0",@"8|warp|89|0,1",@"0",@"0",@"0",@"0",
     // Name,Background,Audio
     @"Photobooth",@"Black",audioPhotoBooth];
 
-    // Photobooth #6
+    // Photobooth #6 - Nemedique
 
     worldNode[154] = @[
     // Tiles
-    @"1",@"1",@"1",
-    @"1",@"1",@"1|event|kamera|37|l",
-    @"1",@"1",@"1",
+    @"36",@"32",@"36",
+    @"32",@"18",@"32|event|kamera|37|l",
+    @"36",@"32",@"36",
     // Walls
-    @"1",@"1",@"1",@"1",@"1",@"1",
+    @"25",@"25",@"25",@"2",@"29",@"2",
     // Steps
-    @"0",@"7|warp|102|0,1",@"0",@"0",@"0",@"0",
+    @"0",@"8|warp|102|0,1",@"0",@"0",@"0",@"0",
     // Name,Background,Audio
     @"Photobooth",@"White",audioPhotoBooth];
 
@@ -231,15 +231,15 @@
 
     worldNode[155] = @[
     // Tiles
-    @"1",@"1",@"1",
-    @"1",@"1",@"1|event|kamera|37|l",
-    @"1",@"1",@"1",
+    @"33",@"35",@"35",
+    @"33",@"101",@"35|event|kamera|37|l",
+    @"33",@"33",@"35",
     // Walls
-    @"1",@"1",@"1",@"1",@"1",@"1",
+    @"101",@"101",@"101",@"101",@"100",@"101",
     // Steps
-    @"0",@"7|warp|142|0,1",@"0",@"0",@"0",@"0",
+    @"0",@"8|warp|142|0,1",@"0",@"0",@"0",@"0",
     // Name,Background,Audio
-    @"Photobooth",@"White",audioPhotoBooth];
+    @"Photobooth",@"Void",audioPhotoBooth];
     
 }
 
