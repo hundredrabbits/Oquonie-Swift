@@ -59,8 +59,8 @@
     
     if( debug == 1){
         userAudioPlaying = 0;
-//        [self eventTranform:2];
-        [self eventWarp:@"103" :@"0,0"];
+        [self eventTranform:2];
+        [self eventWarp:@"96" :@"0,0"];
     }
     else{
         userAudioPlaying = 1;
@@ -915,6 +915,10 @@
 
 - (void) orientationChanged:(NSNotification *)note
 {
+    if( [[UIDevice currentDevice] orientation] == 5 ){
+        return;
+    }
+    
     [self templateStart];
     [self roomStart];
     [self tileLocation:4:userPositionX:userPositionY];

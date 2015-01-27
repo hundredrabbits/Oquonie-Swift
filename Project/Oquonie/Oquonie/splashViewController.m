@@ -19,7 +19,9 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    
+    debug = 0;
+    
 	if(debug>0){
 		[self splashSkip];
 	}

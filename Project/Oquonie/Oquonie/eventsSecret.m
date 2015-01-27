@@ -328,7 +328,7 @@
         // Booth #4
         if(userLocation == 66){ return @"107"; }
         // Booth #5
-        if(userLocation == 89){ return @"110"; } // TODO
+        if(userLocation == 89){ return @"110"; }
         // Booth #6
         if(userLocation == 102){ return @"108"; }
         // Booth #7
