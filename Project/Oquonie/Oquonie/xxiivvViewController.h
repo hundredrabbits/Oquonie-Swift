@@ -206,11 +206,6 @@ CGRect spellCharacter1Origin;
 CGRect spellCharacter2Origin;
 CGRect spellCharacter3Origin;
 
-CGRect parallaxFrontOrigin;
-CGRect parallaxBackOrigin;
-CGRect roomContainerOrigin;
-CGRect spriteContainerOrigin;
-
 CGFloat centerW;
 CGFloat centerH;
 

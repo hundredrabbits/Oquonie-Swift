@@ -496,10 +496,10 @@
 		
 		[UIView animateWithDuration:2.5 animations:^(void){
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			self.roomContainer.frame = roomContainerOrigin;
-			self.spritesContainer.frame = spriteContainerOrigin;
-			self.parallaxBack.frame = parallaxBackOrigin;
-            self.parallaxFront.frame = parallaxFrontOrigin;
+			self.roomContainer.frame = self.view.frame;
+			self.spritesContainer.frame = self.view.frame;
+			self.parallaxBack.frame = self.view.frame;
+            self.parallaxFront.frame = self.view.frame;
             self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
 			
 		} completion:^(BOOL finished){

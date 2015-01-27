@@ -104,8 +104,8 @@
 			NSLog(@"step 2");
 			[UIView animateWithDuration:5 animations:^(void){
 				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-				self.parallaxBack.frame = parallaxBackOrigin;
-				self.parallaxFront.frame = parallaxFrontOrigin;
+				self.parallaxBack.frame = self.view.frame;
+				self.parallaxFront.frame = self.view.frame;
 			} completion:^(BOOL finished){
 				NSLog(@"step 3");
 				NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
@@ -174,8 +174,8 @@
 		self.parallaxFront.alpha = 0;
 		[UIView animateWithDuration:2.5 animations:^(void){
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			self.parallaxBack.frame = parallaxBackOrigin;
-			self.parallaxFront.frame = parallaxFrontOrigin;
+			self.parallaxBack.frame = self.view.frame;
+			self.parallaxFront.frame = self.view.frame;
 			self.parallaxBack.alpha = 1;
 			self.parallaxFront.alpha = 1;
 		} completion:^(BOOL finished){

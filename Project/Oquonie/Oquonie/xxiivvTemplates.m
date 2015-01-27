@@ -133,11 +133,6 @@
     spellCharacter2Origin = self.spellCharacter2.frame;
     spellCharacter3Origin = self.spellCharacter3.frame;
     
-    spriteContainerOrigin = self.spritesContainer.frame;
-    roomContainerOrigin = self.roomContainer.frame;
-    parallaxFrontOrigin = self.parallaxFront.frame;
-    parallaxBackOrigin = self.parallaxBack.frame;
-    
     self.dialogCharacter.frame = portraitOrigin;
     self.dialogCharacter.alpha = 0;
     self.dialogBubble.frame = bubbleOrigin;
@@ -239,11 +234,6 @@
     spellCharacter1Origin = self.spellCharacter1.frame;
     spellCharacter2Origin = self.spellCharacter2.frame;
     spellCharacter3Origin = self.spellCharacter3.frame;
-    
-    spriteContainerOrigin = self.spritesContainer.frame;
-    roomContainerOrigin = self.roomContainer.frame;
-    parallaxFrontOrigin = self.parallaxFront.frame;
-    parallaxBackOrigin = self.parallaxBack.frame;
     
     self.dialogCharacter.frame = portraitOrigin;
     self.dialogCharacter.alpha = 0;

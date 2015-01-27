@@ -194,7 +194,7 @@
 		#pragma clang diagnostic pop
 		
 		if([notificationLetter isEqualToString:@""]){ continue; }
-		
+        
 		// Notification
 		
 		NSLog(@"+ NOTIF | Notification | Generate -> %@", [self tileParser:tile :2]);
@@ -328,8 +328,8 @@
 {
 	self.parallaxFront.alpha = 0;
 	self.parallaxBack.alpha = 0;
-	self.parallaxFront.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
-	self.parallaxBack.frame = CGRectOffset(parallaxFrontOrigin, (userPositionX*-1+userPositionY)*1.5, (userPositionX+userPositionY)*-1.5);
+	self.parallaxFront.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
+	self.parallaxBack.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*1.5, (userPositionX+userPositionY)*-1.5);
 }
 
 

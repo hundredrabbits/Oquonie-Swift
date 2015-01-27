@@ -59,8 +59,9 @@
     
     if( debug == 1){
         userAudioPlaying = 0;
-        [self eventTranform:6];
-        [self eventWarp:@"104" :@"0,0"];
+        [self eventTranform:2];
+        [self eventWarp:@"50" :@"0,0"];
+        userStorageEvents[storageQuestPillarNemedique] = @1;
     }
     else{
         userAudioPlaying = 1;
@@ -445,8 +446,9 @@
 	if( posX ==-1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*1.5), tileW, tileH); }
 	
 	if( posX == 2 && posY ==-1 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5)*-0.12, tileW, tileH); }
-	if( posX == 2 && posY == 0 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+(tileH*0.5)*-0.45, tileW, tileH); }
-	if( posX == 2 && posY == 1 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*0.5)*-0.79, tileW, tileH); }
+    if( posX == 2 && posY == 0 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+(tileH*0.5)*-0.45, tileW, tileH); }
+    if( posX == 2 && posY == 1 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*0.5)*-0.79, tileW, tileH); }
+    if( posX == 2 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*0.5, centerH+(tileH*0.5)*-1, tileW, tileH); }
 	
 	if( posX ==-1 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-3, centerH+(tileH*0.5)*-0.12, tileW, tileH); }
 	if( posX == 0 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-2, centerH+(tileH*0.5)*-0.45, tileW, tileH); }
