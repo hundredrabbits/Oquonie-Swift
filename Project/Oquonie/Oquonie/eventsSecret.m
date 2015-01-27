@@ -9,6 +9,7 @@
 #import "xxiivvSettings.h"
 #import "xxiivvEvents.h"
 #import "eventsSecret.h"
+#import <Social/Social.h>
 
 @implementation xxiivvViewController (eventsSecret)
 
@@ -259,6 +260,11 @@
 
 -(NSString*)event_kamera:(NSString*)option
 {
+    if(![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        return @"";
+    }
+    
     // Broadcast Notification
     if([option isEqualToString:@"postNotification"]){
         return @"";
@@ -268,6 +274,22 @@
     if([option isEqualToString:@"postUpdate"]){
         return @"";
     }
+    
+    // Take Screenshot
+    CGRect rect = [self.view bounds];
+    UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.view.layer renderInContext:context];
+    UIImage *capturedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSString  *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/capturedImage.jpg"]];
+    [UIImageJPEGRepresentation(capturedImage, 0.95) writeToFile:imagePath atomically:YES];
+    
+    SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tweetSheet setInitialText:@"I have found the first of seven hidden photobooths in #oquonie.\n"];
+    [tweetSheet addImage:capturedImage];
+    [self presentViewController:tweetSheet animated:YES completion:nil];
     
     return @"";
 }
@@ -294,6 +316,11 @@
         if(userLocation == 102){ return @"108"; }
         // Booth #7
         if(userLocation == 142){ return @"109"; }
+    }
+    
+    if(![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        return @"";
     }
     
     // Booth #1

@@ -12,6 +12,7 @@
 #import "xxiivvEvents.h"
 #import "xxiivvSettings.h"
 #import "xxiivvUser.h"
+#import <Social/Social.h>
 
 #define POINT_DISTANCE(start, end) abs(sqrt((end.x-start.x)*(end.x-start.x) + (end.y-start.y)*(end.y-start.y)))
 #define MOVE_DIRECTION(start, end) start.y > end.y ? (start.x > end.x ? DirectionNorth : DirectionEast) : (start.x > end.x ? DirectionWest : DirectionSouth)
@@ -58,7 +59,7 @@
     
     if( debug == 1){
         userAudioPlaying = 0;
-        [self eventTranform:3];
+        [self eventTranform:8];
         [self eventWarp:@"3" :@"0,-1"];
     }
     else{
