@@ -752,6 +752,7 @@
 		57255E141A76D3AE00388B48 /* wall.109.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 57255E0E1A76D3AE00388B48 /* wall.109.l.png */; };
 		57255E161A76DD1500388B48 /* kamera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57255E151A76DD1500388B48 /* kamera.mp3 */; };
 		57255E181A7710AC00388B48 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57255E171A7710AC00388B48 /* Social.framework */; };
+		57255E1C1A77195F00388B48 /* wall.110.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 57255E1B1A77195F00388B48 /* wall.110.l.png */; };
 		5773509E1A75BF1D00F1B3DA /* event.37.l.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350971A75BF1D00F1B3DA /* event.37.l.1.png */; };
 		5773509F1A75BF1D00F1B3DA /* event.37.l.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350981A75BF1D00F1B3DA /* event.37.l.2.png */; };
 		577350A01A75BF1D00F1B3DA /* event.37.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350991A75BF1D00F1B3DA /* event.37.l.3.png */; };
@@ -1536,6 +1537,7 @@
 		57255E0E1A76D3AE00388B48 /* wall.109.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.109.l.png; path = en.assets/wall.109.l.png; sourceTree = "<group>"; };
 		57255E151A76DD1500388B48 /* kamera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kamera.mp3; path = en.sounds/kamera.mp3; sourceTree = "<group>"; };
 		57255E171A7710AC00388B48 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		57255E1B1A77195F00388B48 /* wall.110.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.110.l.png; path = en.assets/wall.110.l.png; sourceTree = "<group>"; };
 		577350971A75BF1D00F1B3DA /* event.37.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.1.png; path = en.assets/event.37.l.1.png; sourceTree = "<group>"; };
 		577350981A75BF1D00F1B3DA /* event.37.l.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.2.png; path = en.assets/event.37.l.2.png; sourceTree = "<group>"; };
 		577350991A75BF1D00F1B3DA /* event.37.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.3.png; path = en.assets/event.37.l.3.png; sourceTree = "<group>"; };
@@ -2463,6 +2465,7 @@
 		03BBFACE178AC8C200E79C3D /* en.assets */ = {
 			isa = PBXGroup;
 			children = (
+				57255E1B1A77195F00388B48 /* wall.110.l.png */,
 				57255E091A76D3AE00388B48 /* wall.104.l.png */,
 				57255E0A1A76D3AE00388B48 /* wall.105.r.png */,
 				57255E0B1A76D3AE00388B48 /* wall.106.r.png */,
@@ -3660,6 +3663,7 @@
 				03DD5BBE18A67C0400BFA21E /* dialog_rekka.wav in Resources */,
 				033193DE1800075C0069D8A0 /* wall.8.r.png in Resources */,
 				03FE0D5D18A221ED00206675 /* event.28.r.1.png in Resources */,
+				57255E1C1A77195F00388B48 /* wall.110.l.png in Resources */,
 				03A999611883B02E0051DF93 /* wall.30.l.png in Resources */,
 				031EDC15185BF4F60037ACEA /* blocker.18.png in Resources */,
 				03CE0B3518944F90009D7003 /* wall.36.l.png in Resources */,

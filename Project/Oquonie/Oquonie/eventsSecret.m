@@ -275,6 +275,23 @@
         return @"";
     }
     
+    NSString* twitterText = @"";
+    
+    // Booth #1
+    if(userLocation == 3){ twitterText = @"I have found the first of seven hidden photobooths in #oquonie.\n"; }
+    // Booth #2
+    if(userLocation == 37){ twitterText = @"I have found the second of seven hidden photobooths in #oquonie.\n"; }
+    // Booth #3
+    if(userLocation == 46){ twitterText = @"I have found the third of seven hidden photobooths in #oquonie.\n"; }
+    // Booth #4
+    if(userLocation == 66){ twitterText = @"I have found the fourth of seven hidden photobooths in #oquonie.\n"; }
+    // Booth #5
+    if(userLocation == 89){ twitterText = @"I have found the fifth of seven hidden photobooths in #oquonie.\n"; }
+    // Booth #6
+    if(userLocation == 102){ twitterText = @"I have found the sixth of seven hidden photobooths in #oquonie.\n"; }
+    // Booth #7
+    if(userLocation == 142){ twitterText = @"I have found the last of seven hidden photobooths in #oquonie!\n"; }
+    
     // Take Screenshot
     CGRect rect = [self.view bounds];
     UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
@@ -287,7 +304,7 @@
     [UIImageJPEGRepresentation(capturedImage, 0.95) writeToFile:imagePath atomically:YES];
     
     SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [tweetSheet setInitialText:@"I have found the first of seven hidden photobooths in #oquonie.\n"];
+    [tweetSheet setInitialText:twitterText];
     [tweetSheet addImage:capturedImage];
     [self presentViewController:tweetSheet animated:YES completion:nil];
     

@@ -143,7 +143,7 @@
 	// Name,Background,Audio
     @"Dianel's Room",@"Void",audioGlitch];
     
-    // Photobooth #1
+    // Photobooth #1 - Lobby
 
     worldNode[149] = @[
     // Tiles
@@ -151,67 +151,67 @@
     @"5",@"18",@"4|event|kamera|37|l",
     @"6",@"5",@"4",
     // Walls
-    @"36",@"36",@"36",@"36",@"37",@"36",
+    @"19",@"19",@"36",@"36",@"37",@"36",
     // Steps
     @"0",@"7|warp|3|0,1",@"0",@"0",@"0",@"0",
     // Name,Background,Audio
     @"Photobooth",@"White",audioPhotoBooth];
 
-    // Photobooth #2
+    // Photobooth #2 - Necomedre
 
     worldNode[150] = @[
     // Tiles
-    @"1",@"1",@"1",
-    @"1",@"1",@"1|event|kamera|37|l",
-    @"1",@"1",@"1",
+    @"33",@"21",@"21",
+    @"33",@"18",@"21|event|kamera|37|l",
+    @"33",@"21",@"21",
     // Walls
-    @"1",@"1",@"1",@"1",@"1",@"1",
+    @"20",@"21",@"20",@"20",@"21",@"20",
     // Steps
     @"0",@"0",@"0",@"7|warp|37|1,-1",@"0",@"0",
     // Name,Background,Audio
     @"Photobooth",@"White",audioPhotoBooth];
 
-    // Photobooth #3
+    // Photobooth #3 - Nephtaline
 
     worldNode[151] = @[
     // Tiles
     @"1",@"1",@"1",
-    @"1",@"1",@"1|event|kamera|37|l",
+    @"1",@"18",@"1|event|kamera|37|l",
     @"1",@"1",@"1",
     // Walls
-    @"1",@"1",@"1",@"1",@"1",@"1",
+    @"25",@"2",@"25",@"25",@"31",@"25",
     // Steps
     @"0",@"0",@"0",@"0",@"7|warp|46|1,0",@"0",
     // Name,Background,Audio
-    @"Photobooth",@"White",audioPhotoBooth];
+    @"Photobooth",@"Black",audioPhotoBooth];
 
-    // Photobooth #4
+    // Photobooth #4 - Neomine
 
     worldNode[152] = @[
     // Tiles
-    @"1",@"1",@"1",
-    @"1",@"1",@"1|event|kamera|37|l",
-    @"1",@"1",@"1",
+    @"36",@"3",@"36",
+    @"3",@"18",@"3|event|kamera|37|l",
+    @"36",@"3",@"36",
     // Walls
-    @"1",@"1",@"1",@"1",@"1",@"1",
+    @"0",@"0",@"0",@"31",@"30",@"31",
     // Steps
     @"0",@"0",@"0",@"0",@"7|warp|66|1,0",@"0",
     // Name,Background,Audio
-    @"Photobooth",@"White",audioPhotoBooth];
+    @"Photobooth",@"Red",audioPhotoBooth];
 
-    // Photobooth #5
+    // Photobooth #5 - Nestorine
 
     worldNode[153] = @[
     // Tiles
-    @"1",@"1",@"1",
-    @"1",@"1",@"1|event|kamera|37|l",
-    @"1",@"1",@"1",
+    @"1",@"34",@"34",
+    @"1",@"18",@"34|event|kamera|37|l",
+    @"1",@"34",@"34",
     // Walls
-    @"1",@"1",@"1",@"1",@"1",@"1",
+    @"35",@"34",@"37",@"37",@"34",@"35",
     // Steps
     @"0",@"7|warp|89|0,1",@"0",@"0",@"0",@"0",
     // Name,Background,Audio
-    @"Photobooth",@"White",audioPhotoBooth];
+    @"Photobooth",@"Black",audioPhotoBooth];
 
     // Photobooth #6
 
