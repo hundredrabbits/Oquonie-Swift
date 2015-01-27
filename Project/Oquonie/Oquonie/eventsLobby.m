@@ -738,6 +738,22 @@
 
 -(NSString*)event_redGhost:(NSString*)option
 {
+    if(userLocation == 31){
+        userStorageEvents[storageGhostOffice] = @"1";
+    }
+    if(userLocation == 36){
+        userStorageEvents[storageGhostNecomedre] = @"1";
+    }
+    if(userLocation == 40){
+        userStorageEvents[storageGhostNephtaline] = @"1";
+    }
+    if(userLocation == 68){
+        userStorageEvents[storageGhostNeomine] = @"1";
+    }
+    if(userLocation == 86){
+        userStorageEvents[storageGhostNestorine] = @"1";
+    }
+
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
 		
@@ -772,23 +788,7 @@
 			[UIView animateWithDuration:2 animations:^(void){
 				[UIView setAnimationDelay:1];
 				subview.alpha = 0;
-			} completion:^(BOOL finished){
-				if(userLocation == 31){
-					userStorageEvents[storageGhostOffice] = @"1";
-				}
-				if(userLocation == 36){
-					userStorageEvents[storageGhostNecomedre] = @"1";
-				}
-				if(userLocation == 40){
-					userStorageEvents[storageGhostNephtaline] = @"1";
-				}
-				if(userLocation == 68){
-					userStorageEvents[storageGhostNeomine] = @"1";
-				}
-				if(userLocation == 86){
-					userStorageEvents[storageGhostNestorine] = @"1";
-				}
-			}];
+			} completion:^(BOOL finished){}];
 		}
 	}
 	return @"";

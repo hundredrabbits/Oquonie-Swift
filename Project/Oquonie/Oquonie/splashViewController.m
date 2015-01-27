@@ -28,7 +28,6 @@
 	else{
 		[self splashStart];
 	}
-	
 }
 -(void)splashStart
 {

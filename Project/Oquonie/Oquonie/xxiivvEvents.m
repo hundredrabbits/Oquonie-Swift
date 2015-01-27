@@ -369,10 +369,9 @@
 		// First stop
 		[UIView animateWithDuration:1.0 animations:^(void){
 			// Part 1
-			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 			self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -20);
 			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
-
 			self.userPlayerShadow.alpha = 0;
 			[self audioEffectPlayer:@"transform"];
 		} completion:^(BOOL finished){
@@ -383,7 +382,8 @@
 					self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -15);
 				} completion:^(BOOL finished){
 					[self eventVignette:@"1"];
-					userCharacter = charId;
+                    userCharacter = charId;
+                    userSpriteState = @"warp";
 					[self eventSpellRefresh];
 					[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
 					[UIView animateWithDuration:1.0 animations:^(void){
@@ -394,10 +394,10 @@
 						} completion:^(BOOL finished){
 							[UIView animateWithDuration:1.0 animations:^(void){
 								self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, 0);
-							} completion:^(BOOL finished){
+                            } completion:^(BOOL finished){
+                                userSpriteState = @"stand";
 								[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",userCharacter]];
 								self.userPlayerShadow.alpha = 1;
-								userSpriteState = @"stand";
 								[self roomClearDialog];
 								[self roomGenerateTiles];
 								[self roomGenerateEvents];
@@ -429,22 +429,27 @@
 -(void)eventIntroduction
 {
 	NSLog(@"  EVENT | Pan          | Panning In");
+    
 	[self moveDisable:2.5];
-	
-	self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, -1*screen.size.height);
-	self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, -1*screen.size.height);
-	self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
-	self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
-	self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 0, -1*screen.size.height+200);
+    
+    userSpriteState = @"warp";
+    userSpriteOrientationHorizontal = @"l";
+    userSpriteOrientationVertical = @"f";
+    
+	self.roomContainer.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height);
+	self.spritesContainer.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height);
+	self.parallaxBack.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height+100);
+	self.parallaxFront.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height+200);
+	self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -1*screen.size.height+200);
 	
 	[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
 	
 	[UIView animateWithDuration:2.5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-		self.roomContainer.frame = roomContainerOrigin;
-		self.spritesContainer.frame = spriteContainerOrigin;
-		self.parallaxBack.frame = parallaxBackOrigin;
-		self.parallaxFront.frame = parallaxFrontOrigin;
+		self.roomContainer.frame = self.view.frame;
+		self.spritesContainer.frame = self.view.frame;
+		self.parallaxBack.frame = self.view.frame;
+		self.parallaxFront.frame = self.view.frame;
 		self.userPlayer.frame = [self tileLocation:4 :0 :0];
 	} completion:^(BOOL finished){
 		[self roomClearDialog];

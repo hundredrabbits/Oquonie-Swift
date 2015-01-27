@@ -341,7 +341,6 @@
 			[self eventTranform:1];
 			[self eventDialog:dialogTutorialTalk1:eventTutorial];
 			[NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(tutorialSequence) userInfo:nil repeats:NO];
-//			[self tutorialSequence];
 		}
 	}
 	
@@ -356,8 +355,6 @@
 
 -(void)cameraShake:(int)tremor
 {
-	NSLog(@"camera shake");
-	
 	int minimum = (tremor*-1)/5;
 	int maximum = (tremor)/5;
 	int valX = random(minimum,maximum);
@@ -377,9 +374,8 @@
 	
 	if(tremor < 201){
 		[UIView animateWithDuration:0.03 animations:^(void){
-			NSLog(@"x:%d y:%d",valX,valY);
-			self.roomContainer.frame = CGRectOffset(roomContainerOrigin, valX/10, valY/10);
-			self.spritesContainer.frame = CGRectOffset(spriteContainerOrigin, valX/10, valY/10);
+			self.roomContainer.frame = CGRectOffset(self.view.frame, valX/10, valY/10);
+			self.spritesContainer.frame = CGRectOffset(self.view.frame, valX/10, valY/10);
 		} completion:^(BOOL finished){
 			[self cameraShake:tremor+1];
 		}];
