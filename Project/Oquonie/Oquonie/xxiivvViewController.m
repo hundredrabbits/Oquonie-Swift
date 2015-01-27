@@ -53,13 +53,13 @@
 
 -(void)start
 {
-	debug = 0;
+	debug = 1;
 	
 	[self userStart];
     
     if( debug == 1){
         userAudioPlaying = 0;
-        [self eventTranform:2];
+//        [self eventTranform:2];
         [self eventWarp:@"96" :@"0,0"];
     }
     else{

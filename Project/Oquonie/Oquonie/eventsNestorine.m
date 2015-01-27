@@ -40,6 +40,8 @@
 	[self moveAnimation];
 	[UIView animateWithDuration:0.5 animations:^(void){
 		self.userPlayer.frame = [self tileLocation:4:0:0];
+        userPositionX = 0;
+        userPositionY = 0;
     } completion:^(BOOL finished){
         [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(warpLobbyAnimationSpriteUpdate) userInfo:nil repeats:NO];
 		[self eventTransitionPan:@"80":roomCenter];

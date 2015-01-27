@@ -468,21 +468,25 @@
 		NSLog(@"  EVENT | Pan          | Panning Out");
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
 		[UIView setAnimationDelay:0.2];
-		self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, screen.size.height);
-		self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, screen.size.height-30);
-		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, screen.size.height-100);
-		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, screen.size.height-200);
+		self.roomContainer.frame = CGRectOffset(self.view.frame, 0, screen.size.height);
+		self.spritesContainer.frame = CGRectOffset(self.view.frame, 0, screen.size.height-30);
+		self.parallaxBack.frame = CGRectOffset(self.view.frame, 0, screen.size.height-100);
+		self.parallaxFront.frame = CGRectOffset(self.view.frame, 0, screen.size.height-200);
 	} completion:^(BOOL finished){
 		NSLog(@"  EVENT | Pan          | Panning In");
+        
+        userLocation = [destinationId intValue];
+        userPositionY = 0;
+        userPositionX = 0;
+        self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+        [self roomStart];
+        [self moveOrder];
 		
-		[self eventWarp:destinationId:destinationCoordinates];
-		
-		self.roomContainer.frame = CGRectOffset(self.roomContainer.frame, 0, -1*screen.size.height);
-		self.spritesContainer.frame = CGRectOffset(self.spritesContainer.frame, 0, -1*screen.size.height);
-		self.parallaxBack.frame = CGRectOffset(self.parallaxBack.frame, 0, -1*screen.size.height+100);
-		self.parallaxFront.frame = CGRectOffset(self.parallaxFront.frame, 0, -1*screen.size.height+200);
+		self.roomContainer.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height);
+		self.spritesContainer.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height);
+		self.parallaxBack.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height+100);
+		self.parallaxFront.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height+200);
 		self.spritesContainer.alpha = 1;
-		
 		self.userPlayer.frame = CGRectOffset(self.userPlayer.frame, 0, -1*screen.size.height+200);
 		
 		[UIView animateWithDuration:2.5 animations:^(void){
@@ -490,8 +494,9 @@
 			self.roomContainer.frame = roomContainerOrigin;
 			self.spritesContainer.frame = spriteContainerOrigin;
 			self.parallaxBack.frame = parallaxBackOrigin;
-			self.parallaxFront.frame = parallaxFrontOrigin;
-			self.userPlayer.frame = [self tileLocation:4 :0 :0];
+            self.parallaxFront.frame = parallaxFrontOrigin;
+            self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+			
 		} completion:^(BOOL finished){
 			[self roomClearDialog];
 			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",userCharacter]];
@@ -499,6 +504,7 @@
 			userSpriteOrientationHorizontal = @"l";
 			userSpriteOrientationVertical = @"f";
 			userDialogActive = 0;
+            
 			[self audioEffectPlayer:@"bump"];
 		}];
 		

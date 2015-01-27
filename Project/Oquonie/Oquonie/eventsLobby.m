@@ -539,7 +539,10 @@
 	[self moveAnimation];
 	[UIView animateWithDuration:0.5 animations:^(void){
 		self.userPlayer.frame = [self tileLocation:4:0:0];
-	} completion:^(BOOL finished){
+        if( userLocation == 80 ){ // Special warp in Nestorine
+            self.userPlayer.frame = [self tileLocation:4:1:1];
+        }
+    } completion:^(BOOL finished){
 		[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(userSave) userInfo:nil repeats:NO];
 		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(warpLobbyAnimationSpriteUpdate) userInfo:nil repeats:NO];
 		[self eventTransitionPan:locationLobbyLanding:roomCenter];
@@ -551,7 +554,7 @@
 	[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
 	userSpriteState = @"warp";
 	userSpriteOrientationHorizontal = @"l";
-	userSpriteOrientationVertical = @"f";
+    userSpriteOrientationVertical = @"f";
 }
 
 // =======================
