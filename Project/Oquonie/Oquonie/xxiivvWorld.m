@@ -22,30 +22,30 @@
 #import "worldSecret.h"			// Chapter *
 #import "worldNastazie.h"		// Chapter VI
 
-@implementation xxiivvViewController (world)
+@implementation ViewController (world)
 
 -(void)worldStart
 {
-	worldNode = [NSMutableArray arrayWithObjects:@"",nil];
-	int myCount = 0;
-	while ( myCount < 160 )	{ myCount++; worldNode[myCount] = @[];	}
-
-	// 0 - 19
-	[self createWorldLobby];
-	// 20 - 39
-	[self createWorldNecomedre];
-	// 40 - 59
-	[self createWorldNephtaline];
-	// 60 - 79
-	[self createWorldNeomine];
-	// 80 - 99
-	[self createWorldNestorine];
-	// 100 - 99
-	[self createWorldNemedique];
-	// 110 - >
-	[self createWorldSecret];
-	// 130
-	[self createWorldNastazie];
+    worldNode = [NSMutableArray arrayWithObjects:@"",nil];
+    int myCount = 0;
+    while ( myCount < 160 )	{ myCount++; worldNode[myCount] = @[];	}
+    
+    // 0 - 19
+    [self createWorldLobby];
+    // 20 - 39
+    [self createWorldNecomedre];
+    // 40 - 59
+    [self createWorldNephtaline];
+    // 60 - 79
+    [self createWorldNeomine];
+    // 80 - 99
+    [self createWorldNestorine];
+    // 100 - 99
+    [self createWorldNemedique];
+    // 110 - >
+    [self createWorldSecret];
+    // 130
+    [self createWorldNastazie];
 }
 
 - (NSString*) tileParser :(NSString*)tileString :(int)index

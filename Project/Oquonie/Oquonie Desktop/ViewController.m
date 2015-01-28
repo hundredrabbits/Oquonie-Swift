@@ -10,14 +10,14 @@
 
 #import "xxiivvSettings.h"
 #import "xxiivvVariables.h"
-#import "xxiivvWorld.h"
+#import "World.h"
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self start];
-
+    
     // Do any additional setup after loading the view.
 }
 
@@ -31,6 +31,9 @@
 {
     NSLog(@"- TMPL | Start");
     self.test1.frame = CGRectMake(0, 0, 100, 100);
+
+    World * worldTest = [[World alloc] init];
+    [worldTest test];
 }
 
 
