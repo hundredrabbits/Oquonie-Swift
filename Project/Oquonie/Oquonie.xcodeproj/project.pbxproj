@@ -744,6 +744,11 @@
 		03FE0DB618A2764500206675 /* sfx_dialogopen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAE18A2764500206675 /* sfx_dialogopen.wav */; };
 		03FE0DB718A2764500206675 /* sfx_doorlocked.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAF18A2764500206675 /* sfx_doorlocked.wav */; };
 		03FE0DB818A2764500206675 /* sfx_bump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DB018A2764500206675 /* sfx_bump.wav */; };
+		57013B911A7954E800612048 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57013B901A7954E800612048 /* AppDelegate.m */; };
+		57013B931A7954E800612048 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57013B921A7954E800612048 /* main.m */; };
+		57013B961A7954E800612048 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57013B951A7954E800612048 /* ViewController.m */; };
+		57013B981A7954E800612048 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57013B971A7954E800612048 /* Images.xcassets */; };
+		57013B9B1A7954E800612048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57013B991A7954E800612048 /* Main.storyboard */; };
 		57255E0F1A76D3AE00388B48 /* wall.104.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 57255E091A76D3AE00388B48 /* wall.104.l.png */; };
 		57255E101A76D3AE00388B48 /* wall.105.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 57255E0A1A76D3AE00388B48 /* wall.105.r.png */; };
 		57255E111A76D3AE00388B48 /* wall.106.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 57255E0B1A76D3AE00388B48 /* wall.106.r.png */; };
@@ -1265,7 +1270,6 @@
 		03C1EE0217AFAC70001AFF21 /* wall.2.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.2.r.png; path = en.assets/wall.2.r.png; sourceTree = "<group>"; };
 		03C1EE0317AFAC70001AFF21 /* wall.3.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.l.png; path = en.assets/wall.3.l.png; sourceTree = "<group>"; };
 		03C1EE0417AFAC70001AFF21 /* wall.3.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.r.png; path = en.assets/wall.3.r.png; sourceTree = "<group>"; };
-		03C488DF187E751E00375E86 /* xxiivvSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvSettings.h; sourceTree = "<group>"; };
 		03C488E2187E8A5500375E86 /* worldNephtaline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worldNephtaline.h; sourceTree = "<group>"; };
 		03C488E3187E8A5500375E86 /* worldNephtaline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = worldNephtaline.m; sourceTree = "<group>"; };
 		03C488E5187E8A6300375E86 /* eventsNephtaline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNephtaline.h; sourceTree = "<group>"; };
@@ -1529,6 +1533,18 @@
 		03FE0DAE18A2764500206675 /* sfx_dialogopen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_dialogopen.wav; path = en.sounds/sfx_dialogopen.wav; sourceTree = "<group>"; };
 		03FE0DAF18A2764500206675 /* sfx_doorlocked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_doorlocked.wav; path = en.sounds/sfx_doorlocked.wav; sourceTree = "<group>"; };
 		03FE0DB018A2764500206675 /* sfx_bump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_bump.wav; path = en.sounds/sfx_bump.wav; sourceTree = "<group>"; };
+		57013B8B1A7954E800612048 /* Oquonie Desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie Desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57013B8E1A7954E800612048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57013B8F1A7954E800612048 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		57013B901A7954E800612048 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		57013B921A7954E800612048 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		57013B941A7954E800612048 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		57013B951A7954E800612048 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		57013B971A7954E800612048 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		57013B9A1A7954E800612048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		57063F4E1A79445800D97376 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		57063F501A79445D00D97376 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AVKit.framework; sourceTree = DEVELOPER_DIR; };
+		571A8C901A793E31008E846E /* xxiivvSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvSettings.h; sourceTree = "<group>"; };
 		57255E091A76D3AE00388B48 /* wall.104.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.104.l.png; path = en.assets/wall.104.l.png; sourceTree = "<group>"; };
 		57255E0A1A76D3AE00388B48 /* wall.105.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.105.r.png; path = en.assets/wall.105.r.png; sourceTree = "<group>"; };
 		57255E0B1A76D3AE00388B48 /* wall.106.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.106.r.png; path = en.assets/wall.106.r.png; sourceTree = "<group>"; };
@@ -1552,11 +1568,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57255E181A7710AC00388B48 /* Social.framework in Frameworks */,
 				033D9D54188B91ED00B36C93 /* AVFoundation.framework in Frameworks */,
+				57255E181A7710AC00388B48 /* Social.framework in Frameworks */,
 				03BBFAAC178A9E4E00E79C3D /* UIKit.framework in Frameworks */,
 				03BBFAAE178A9E4E00E79C3D /* Foundation.framework in Frameworks */,
 				03BBFAB0178A9E4E00E79C3D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57013B881A7954E800612048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2409,8 +2432,10 @@
 			isa = PBXGroup;
 			children = (
 				03BBFAB1178A9E4E00E79C3D /* Oquonie */,
+				57013B8C1A7954E800612048 /* Oquonie Desktop */,
 				03BBFAAA178A9E4E00E79C3D /* Frameworks */,
 				03BBFAA9178A9E4E00E79C3D /* Products */,
+				571A8C8C1A793CD5008E846E /* Shared */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2418,6 +2443,7 @@
 			isa = PBXGroup;
 			children = (
 				03BBFAA8178A9E4E00E79C3D /* Oquonie.app */,
+				57013B8B1A7954E800612048 /* Oquonie Desktop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2425,6 +2451,8 @@
 		03BBFAAA178A9E4E00E79C3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57063F501A79445D00D97376 /* AVKit.framework */,
+				57063F4E1A79445800D97376 /* AVFoundation.framework */,
 				57255E171A7710AC00388B48 /* Social.framework */,
 				033D9D53188B91ED00B36C93 /* AVFoundation.framework */,
 				03BBFAAB178A9E4E00E79C3D /* UIKit.framework */,
@@ -2723,7 +2751,6 @@
 		03F5C4AB187BBD4000352B8E /* II: - Basic Systems */ = {
 			isa = PBXGroup;
 			children = (
-				03C488DF187E751E00375E86 /* xxiivvSettings.h */,
 				03BBFABA178A9E4E00E79C3D /* xxiivvAppDelegate.h */,
 				03BBFABB178A9E4E00E79C3D /* xxiivvAppDelegate.m */,
 				03BBFAC6178A9E4E00E79C3D /* xxiivvViewController.h */,
@@ -2858,6 +2885,37 @@
 			name = "Sound Effects";
 			sourceTree = "<group>";
 		};
+		57013B8C1A7954E800612048 /* Oquonie Desktop */ = {
+			isa = PBXGroup;
+			children = (
+				57013B8F1A7954E800612048 /* AppDelegate.h */,
+				57013B901A7954E800612048 /* AppDelegate.m */,
+				57013B941A7954E800612048 /* ViewController.h */,
+				57013B951A7954E800612048 /* ViewController.m */,
+				57013B971A7954E800612048 /* Images.xcassets */,
+				57013B991A7954E800612048 /* Main.storyboard */,
+				57013B8D1A7954E800612048 /* Supporting Files */,
+			);
+			path = "Oquonie Desktop";
+			sourceTree = "<group>";
+		};
+		57013B8D1A7954E800612048 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				57013B8E1A7954E800612048 /* Info.plist */,
+				57013B921A7954E800612048 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		571A8C8C1A793CD5008E846E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				571A8C901A793E31008E846E /* xxiivvSettings.h */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
 		57255E191A77132600388B48 /* char.8 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2923,6 +2981,23 @@
 			productReference = 03BBFAA8178A9E4E00E79C3D /* Oquonie.app */;
 			productType = "com.apple.product-type.application";
 		};
+		57013B8A1A7954E800612048 /* Oquonie Desktop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57013BA81A7954E900612048 /* Build configuration list for PBXNativeTarget "Oquonie Desktop" */;
+			buildPhases = (
+				57013B871A7954E800612048 /* Sources */,
+				57013B881A7954E800612048 /* Frameworks */,
+				57013B891A7954E800612048 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Oquonie Desktop";
+			productName = "Oquonie Desktop";
+			productReference = 57013B8B1A7954E800612048 /* Oquonie Desktop.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2936,6 +3011,9 @@
 					03BBFAA7178A9E4E00E79C3D = {
 						DevelopmentTeam = B948MFAE5C;
 					};
+					57013B8A1A7954E800612048 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = 03BBFAA3178A9E4E00E79C3D /* Build configuration list for PBXProject "Oquonie" */;
@@ -2944,6 +3022,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 03BBFA9F178A9E4E00E79C3D;
 			productRefGroup = 03BBFAA9178A9E4E00E79C3D /* Products */;
@@ -2951,6 +3030,7 @@
 			projectRoot = "";
 			targets = (
 				03BBFAA7178A9E4E00E79C3D /* Oquonie */,
+				57013B8A1A7954E800612048 /* Oquonie Desktop */,
 			);
 		};
 /* End PBXProject section */
@@ -3685,6 +3765,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		57013B891A7954E800612048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57013B981A7954E800612048 /* Images.xcassets in Resources */,
+				57013B9B1A7954E800612048 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -3721,6 +3810,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		57013B871A7954E800612048 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57013B961A7954E800612048 /* ViewController.m in Sources */,
+				57013B931A7954E800612048 /* main.m in Sources */,
+				57013B911A7954E800612048 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -3746,6 +3845,14 @@
 				03D4B8EE180957B700AD9DD7 /* en */,
 			);
 			name = MainStory.storyboard;
+			sourceTree = "<group>";
+		};
+		57013B991A7954E800612048 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57013B9A1A7954E800612048 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -3843,6 +3950,64 @@
 			};
 			name = Release;
 		};
+		57013BA91A7954E900612048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Oquonie Desktop/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		57013BAA1A7954E900612048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Oquonie Desktop/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3863,6 +4028,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		57013BA81A7954E900612048 /* Build configuration list for PBXNativeTarget "Oquonie Desktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57013BA91A7954E900612048 /* Debug */,
+				57013BAA1A7954E900612048 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
