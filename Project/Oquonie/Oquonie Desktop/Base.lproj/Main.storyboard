@@ -672,8 +672,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBC-0r-NuQ" userLabel="test1">
-                                <rect key="frame" x="148" y="87" width="163" height="96"/>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBC-0r-NuQ" userLabel="test1" customClass="AdvancedView">
+                                <rect key="frame" x="149" y="87" width="163" height="96"/>
                             </customView>
                         </subviews>
                     </view>
