@@ -764,6 +764,10 @@
 		576FF6D61A79792D000824FE /* xxiivvTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6D51A79792D000824FE /* xxiivvTouch.m */; };
 		576FF6E31A79818B000824FE /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6E21A79818B000824FE /* World.m */; };
 		576FF6E41A79818B000824FE /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6E21A79818B000824FE /* World.m */; };
+		576FF6E71A798C76000824FE /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6E61A798C75000824FE /* Room.m */; };
+		576FF6E81A798C76000824FE /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6E61A798C75000824FE /* Room.m */; };
+		576FF6EB1A798C81000824FE /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6EA1A798C81000824FE /* Tile.m */; };
+		576FF6EC1A798C81000824FE /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6EA1A798C81000824FE /* Tile.m */; };
 		5773509E1A75BF1D00F1B3DA /* event.37.l.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350971A75BF1D00F1B3DA /* event.37.l.1.png */; };
 		5773509F1A75BF1D00F1B3DA /* event.37.l.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350981A75BF1D00F1B3DA /* event.37.l.2.png */; };
 		577350A01A75BF1D00F1B3DA /* event.37.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350991A75BF1D00F1B3DA /* event.37.l.3.png */; };
@@ -1570,6 +1574,10 @@
 		576FF6D51A79792D000824FE /* xxiivvTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvTouch.m; sourceTree = "<group>"; };
 		576FF6E11A79818B000824FE /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = Oquonie/World.h; sourceTree = "<group>"; };
 		576FF6E21A79818B000824FE /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = World.m; path = Oquonie/World.m; sourceTree = "<group>"; };
+		576FF6E51A798C75000824FE /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		576FF6E61A798C75000824FE /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		576FF6E91A798C81000824FE /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
+		576FF6EA1A798C81000824FE /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
 		577350971A75BF1D00F1B3DA /* event.37.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.1.png; path = en.assets/event.37.l.1.png; sourceTree = "<group>"; };
 		577350981A75BF1D00F1B3DA /* event.37.l.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.2.png; path = en.assets/event.37.l.2.png; sourceTree = "<group>"; };
 		577350991A75BF1D00F1B3DA /* event.37.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.3.png; path = en.assets/event.37.l.3.png; sourceTree = "<group>"; };
@@ -2939,6 +2947,10 @@
 				576FF6D31A7975EA000824FE /* xxiivvVariables.h */,
 				576FF6E11A79818B000824FE /* World.h */,
 				576FF6E21A79818B000824FE /* World.m */,
+				576FF6E51A798C75000824FE /* Room.h */,
+				576FF6E61A798C75000824FE /* Room.m */,
+				576FF6E91A798C81000824FE /* Tile.h */,
+				576FF6EA1A798C81000824FE /* Tile.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -3819,6 +3831,7 @@
 				03C488E4187E8A5500375E86 /* worldNephtaline.m in Sources */,
 				03A4B845194DC44800D96889 /* worldNastazie.m in Sources */,
 				03C488F5187E8C5E00375E86 /* eventsNestorine.m in Sources */,
+				576FF6E71A798C76000824FE /* Room.m in Sources */,
 				036D5BF7187D1DA00042378D /* xxiivvUtils.m in Sources */,
 				03C488F8187E8C6E00375E86 /* worldNeomine.m in Sources */,
 				0337732418710A2800C70C50 /* worldNecomedre.m in Sources */,
@@ -3832,6 +3845,7 @@
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
 				576FF6E31A79818B000824FE /* World.m in Sources */,
 				032D74EB179CF9670068B27E /* xxiivvWorld.m in Sources */,
+				576FF6EB1A798C81000824FE /* Tile.m in Sources */,
 				03C488EB187E8BED00375E86 /* worldNemedique.m in Sources */,
 				03DBEEC518802DA400CE6FBC /* xxiivvUser.m in Sources */,
 				03834E1E180B855B00568E60 /* xxiivvEvents.m in Sources */,
@@ -3848,7 +3862,9 @@
 				57013B931A7954E800612048 /* main.m in Sources */,
 				576FF6CD1A79572C000824FE /* AdvancedView.m in Sources */,
 				576FF6D01A796FA8000824FE /* CoreWindow.m in Sources */,
+				576FF6E81A798C76000824FE /* Room.m in Sources */,
 				57013B911A7954E800612048 /* AppDelegate.m in Sources */,
+				576FF6EC1A798C81000824FE /* Tile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,50 +48,7 @@
     [self createWorldNastazie];
 }
 
-- (NSString*) tileParser :(NSString*)tileString :(int)index
-{
-	int exception = 0;
-	// Ignore if index is 99
-	if(index == 99){
-		index = 0;
-		exception = 1;
-	}
-	
-	NSArray* array = [tileString componentsSeparatedByString: @"|"];
-	if( [array count] < (index+1) && index > 0 ){
-		return 0;
-	}
-	
-	// Catch if event is broadcasting an update
-	if( [array count] > 2 && exception == 0){
-		// Update event
-		if( [[array objectAtIndex: 1] isEqualToString:@"event"] && index == 3 ){
-			return [self tileParserUpdate:array:index];
-		}
-		// Update tile
-		else if( [[array objectAtIndex: 1] isEqualToString:@"event"] && index == 0 && [array count] < 4){
-			return [self tileParserUpdate:array:index];
-		}
-	}
-	
-	return [array objectAtIndex:index];
-}
 
--(NSString*)tileParserUpdate :(NSArray*)eventArray :(int)index
-{
-	// Contact event
-	#pragma clang diagnostic push
-	#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-	NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[eventArray objectAtIndex:2]];
-	NSString *eventUpdate = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postUpdate"];
-	#pragma clang diagnostic pop
-	
-	if(![eventUpdate isEqualToString:@""]){
-		return eventUpdate;
-	}
-	
-	return [eventArray objectAtIndex:index];
-}
 
 
 

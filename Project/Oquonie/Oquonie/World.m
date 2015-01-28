@@ -40,6 +40,11 @@
     return self;
 }
 
+-(NSArray*)roomAtLocation :(int)location
+{
+    return worldNode[location];
+}
+
 -(void)createWorldLobby
 {
     worldNode[1] = @[

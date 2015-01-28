@@ -10,6 +10,8 @@
 
 @interface World : NSObject
 
+-(NSArray*)roomAtLocation :(int)location;
+
 @end
 
 NSMutableArray* worldNode;

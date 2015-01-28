@@ -6,13 +6,16 @@
 //  Copyright (c) 2013 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvViewController.h"
+
 #import "xxiivvSettings.h"
 #import "xxiivvVariables.h"
 
-#import "xxiivvViewController.h"
+#import "World.h"
+#import "Room.h"
+#import "Tile.h"
 
 #import "xxiivvTouch.h"
-#import "xxiivvWorld.h"
 #import "xxiivvTemplates.h"
 #import "xxiivvEvents.h"
 #import "xxiivvUser.h"
@@ -57,22 +60,24 @@
 
 -(void)start
 {
-	debug = 0;
+	debug = 1;
 	
 	[self userStart];
     
     if( debug == 1){
         userAudioPlaying = 0;
-        [self eventTranform:2];
+//        [self eventTranform:2];
         [self eventWarp:@"50" :@"0,0"];
         userStorageEvents[storageQuestPillarNemedique] = @1;
     }
     else{
         userAudioPlaying = 1;
     }
+    
+    world = [[World alloc] init];
+    room = [[Room alloc] initWithArray:[world roomAtLocation:userLocation]];
 	
 	[self templateStart];
-	[self worldStart];
 	[self roomStart];
 	[self moveOrder];
 	[self timerStart];
@@ -204,14 +209,12 @@
 	[UIView commitAnimations];
 }
 
-- (void) moveEventCheck :(int)userFuturePositionX :(int)userFuturePositionY
+- (void) moveEventCheck :(int)targetX :(int)targetY
 {
-	NSString *currentLocationString = worldNode[userLocation][[self flattenPosition:userFuturePositionX :userFuturePositionY]];
-	NSString *currentLocationEventKey = [self tileParser:currentLocationString :1];
-	NSString *currentLocationEventValue = [self tileParser:currentLocationString :2];
-	NSString *currentLocationEventData = [self tileParser:currentLocationString :3];
-	if( currentLocationEventKey ){
-		[self eventRouter:currentLocationEventKey:currentLocationEventValue:currentLocationEventData];
+    Tile* tileTarget = [[Tile alloc] initWithString:[room tileAtLocation:targetX:targetY]];
+
+	if( [tileTarget isEvent] == 1 ){
+		[self eventRouter :[tileTarget type]:[tileTarget name]:[tileTarget data]];
 	}
 }
 

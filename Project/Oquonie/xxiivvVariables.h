@@ -6,7 +6,14 @@
 //  Copyright (c) 2015 XXIIVV. All rights reserved.
 //
 
+#import "World.h"
+#import "Room.h"
+#import "Tile.h"
+
 int debug;
+
+World* world;
+Room* room;
 
 int viewWidth;
 int tileW;

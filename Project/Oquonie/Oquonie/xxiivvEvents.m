@@ -26,16 +26,16 @@
 
 # pragma mark Routers -
 
--(void)eventRouter :(NSString*)eventType :(NSString*)eventId :(NSString*)eventData {
-	
+-(void)eventRouter :(NSString*)eventType :(NSString*)eventName :(NSString*)eventData
+{
 	if ([eventType isEqualToString:@"warp"]) {
-		[self eventWarp:eventId:eventData];
+		[self eventWarp:eventName:eventData];
 	}
-	if ([eventType isEqualToString:@"event"]) {
-		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self eventParser:eventId:0]];
-		NSLog(@"------- - ------------ - -------------------");
-		NSLog(@"! EVENT | Load..       * %@", eventId );
-		NSLog(@"------- - ------------ - -------------------");
+    if ([eventType isEqualToString:@"event"]) {
+        NSLog(@"------- - ------------ - -------------------");
+        NSLog(@"! EVENT | Load..       * %@", eventName );
+        NSLog(@"------- - ------------ - -------------------");
+		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self eventParser :eventName:0]];
 		
 		#pragma clang diagnostic push
 		#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -48,8 +48,8 @@
 	
 }
 
-- (NSString*) eventParser :(NSString*)eventString :(int)index {
-	
+- (NSString*) eventParser :(NSString*)eventString :(int)index
+{
 	NSArray* array = [eventString componentsSeparatedByString: @"_"];
 	if( [array count] < (index+1) && index > 0 ){
 		return 0;

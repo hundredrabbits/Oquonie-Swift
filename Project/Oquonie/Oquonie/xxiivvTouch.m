@@ -14,6 +14,51 @@
 
 @implementation xxiivvViewController (general)
 
+- (NSString*) tileParser :(NSString*)tileString :(int)index
+{
+    int exception = 0;
+    // Ignore if index is 99
+    if(index == 99){
+        index = 0;
+        exception = 1;
+    }
+    
+    NSArray* array = [tileString componentsSeparatedByString: @"|"];
+    if( [array count] < (index+1) && index > 0 ){
+        return 0;
+    }
+    
+    // Catch if event is broadcasting an update
+    if( [array count] > 2 && exception == 0){
+        // Update event
+        if( [[array objectAtIndex: 1] isEqualToString:@"event"] && index == 3 ){
+            return [self tileParserUpdate:array:index];
+        }
+        // Update tile
+        else if( [[array objectAtIndex: 1] isEqualToString:@"event"] && index == 0 && [array count] < 4){
+            return [self tileParserUpdate:array:index];
+        }
+    }
+    
+    return [array objectAtIndex:index];
+}
+
+-(NSString*)tileParserUpdate :(NSArray*)eventArray :(int)index
+{
+    // Contact event
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[eventArray objectAtIndex:2]];
+    NSString *eventUpdate = [self performSelector:NSSelectorFromString(eventSelector) withObject:@"postUpdate"];
+#pragma clang diagnostic pop
+    
+    if(![eventUpdate isEqualToString:@""]){
+        return eventUpdate;
+    }
+    
+    return [eventArray objectAtIndex:index];
+}
+
 -(void)roomStart
 {
     NSLog(@"------- - ------------ - -------------------");
@@ -38,15 +83,15 @@
 
 -(void)roomGenerateTiles
 {
-    self.floor00.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][4]:0]] ];
-    self.floor1e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][8]:0]] ];
-    self.floore1.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][0]:0]] ];
-    self.floor10.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][1]:0]] ];
-    self.floor01.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][5]:0]] ];
-    self.floor0e.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][3]:0]] ];
-    self.floore0.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][7]:0]] ];
-    self.floor11.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][2]:0]] ];
-    self.flooree.image = [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self tileParser:worldNode[userLocation][6]:0]] ];
+    self.floor00.image = [room tileImageAtId:0:0];
+    self.floor1e.image = [room tileImageAtId:1:-1];
+    self.floore1.image = [room tileImageAtId:-1:1];
+    self.floor10.image = [room tileImageAtId:1:0];
+    self.floor01.image = [room tileImageAtId:0:1];
+    self.floor0e.image = [room tileImageAtId:0:-1];
+    self.floore0.image = [room tileImageAtId:-1:0];
+    self.floor11.image = [room tileImageAtId:1:1];
+    self.flooree.image = [room tileImageAtId:-1:-1];
     
     self.wall1l.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self tileParser:worldNode[userLocation][9]:0]] ];
     self.wall2l.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self tileParser:worldNode[userLocation][10]:0]] ];
