@@ -8,6 +8,8 @@
 
 #import "xxiivvVariables.h"
 #import "xxiivvSettings.h"
+
+#import "xxiivvTouch.h"
 #import "xxiivvEvents.h"
 #import "eventsNecomedre.h"
 #import "xxiivvWorld.h"

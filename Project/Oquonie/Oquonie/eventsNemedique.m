@@ -7,8 +7,11 @@
 //
 
 #import "xxiivvVariables.h"
-#import "xxiivvViewController.h"
 #import "xxiivvSettings.h"
+
+#import "xxiivvTouch.h"
+
+#import "xxiivvViewController.h"
 #import "xxiivvEvents.h"
 #import "eventsNemedique.h"
 #import "xxiivvWorld.h"

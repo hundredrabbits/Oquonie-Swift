@@ -9,6 +9,7 @@
 #import "xxiivvVariables.h"
 #import "xxiivvSettings.h"
 
+#import "xxiivvTouch.h"
 #import "xxiivvWorld.h"
 #import "xxiivvViewController.h"
 #import "xxiivvTemplates.h"

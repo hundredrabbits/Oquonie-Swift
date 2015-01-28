@@ -761,6 +761,7 @@
 		576FF6CD1A79572C000824FE /* AdvancedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6CC1A79572C000824FE /* AdvancedView.m */; };
 		576FF6D01A796FA8000824FE /* CoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6CF1A796FA8000824FE /* CoreWindow.m */; };
 		576FF6D21A7974F9000824FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576FF6D11A7974F8000824FE /* Foundation.framework */; };
+		576FF6D61A79792D000824FE /* xxiivvTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6D51A79792D000824FE /* xxiivvTouch.m */; };
 		5773509E1A75BF1D00F1B3DA /* event.37.l.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350971A75BF1D00F1B3DA /* event.37.l.1.png */; };
 		5773509F1A75BF1D00F1B3DA /* event.37.l.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350981A75BF1D00F1B3DA /* event.37.l.2.png */; };
 		577350A01A75BF1D00F1B3DA /* event.37.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350991A75BF1D00F1B3DA /* event.37.l.3.png */; };
@@ -1563,6 +1564,8 @@
 		576FF6CF1A796FA8000824FE /* CoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreWindow.m; sourceTree = "<group>"; };
 		576FF6D11A7974F8000824FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		576FF6D31A7975EA000824FE /* xxiivvVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvVariables.h; sourceTree = "<group>"; };
+		576FF6D41A79792D000824FE /* xxiivvTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvTouch.h; sourceTree = "<group>"; };
+		576FF6D51A79792D000824FE /* xxiivvTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvTouch.m; sourceTree = "<group>"; };
 		577350971A75BF1D00F1B3DA /* event.37.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.1.png; path = en.assets/event.37.l.1.png; sourceTree = "<group>"; };
 		577350981A75BF1D00F1B3DA /* event.37.l.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.2.png; path = en.assets/event.37.l.2.png; sourceTree = "<group>"; };
 		577350991A75BF1D00F1B3DA /* event.37.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.3.png; path = en.assets/event.37.l.3.png; sourceTree = "<group>"; };
@@ -2766,6 +2769,8 @@
 				03BBFABB178A9E4E00E79C3D /* xxiivvAppDelegate.m */,
 				03BBFAC6178A9E4E00E79C3D /* xxiivvViewController.h */,
 				03BBFAC7178A9E4E00E79C3D /* xxiivvViewController.m */,
+				576FF6D41A79792D000824FE /* xxiivvTouch.h */,
+				576FF6D51A79792D000824FE /* xxiivvTouch.m */,
 			);
 			name = "II: - Basic Systems";
 			sourceTree = "<group>";
@@ -3817,6 +3822,7 @@
 				03E14CDC18A6641400B3816F /* worldSecret.m in Sources */,
 				037F0262187D845300747E8D /* segueFade.m in Sources */,
 				03C488FB187E8C7500375E86 /* eventsNeomine.m in Sources */,
+				576FF6D61A79792D000824FE /* xxiivvTouch.m in Sources */,
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
 				032D74EB179CF9670068B27E /* xxiivvWorld.m in Sources */,
 				03C488EB187E8BED00375E86 /* worldNemedique.m in Sources */,

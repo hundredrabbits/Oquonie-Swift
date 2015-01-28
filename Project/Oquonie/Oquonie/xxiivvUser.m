@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#import "xxiivvVariables.h"
-#import "xxiivvUser.h"
 #import "xxiivvSettings.h"
+#import "xxiivvVariables.h"
+
+#import "xxiivvUser.h"
 
 @implementation xxiivvViewController (xxiivvUser)
 

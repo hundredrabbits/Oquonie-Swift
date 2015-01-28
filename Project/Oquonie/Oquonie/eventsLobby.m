@@ -8,6 +8,9 @@
 
 #import "xxiivvVariables.h"
 #import "xxiivvSettings.h"
+
+#import "xxiivvTouch.h"
+
 #import "xxiivvViewController.h"
 #import "eventsLobby.h"
 #import "xxiivvEvents.h"
