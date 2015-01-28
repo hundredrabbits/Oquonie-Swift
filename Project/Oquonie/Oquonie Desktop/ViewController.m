@@ -12,13 +12,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.test1.frame = CGRectMake(0, 0, 100, 100);
+    
 
     // Do any additional setup after loading the view.
 }
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
-
+    
     // Update the view, if already loaded.
 }
 

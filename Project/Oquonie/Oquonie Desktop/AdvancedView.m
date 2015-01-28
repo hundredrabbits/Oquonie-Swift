@@ -10,7 +10,10 @@
 
 @implementation AdvancedView
 
-- (void)drawRect:(NSRect)dirtyRect {
+- (void)drawRect:(NSRect)dirtyRect
+{
+    NSLog(@"!!");
+    
     [[NSColor redColor] setFill];
     NSRectFill(dirtyRect);
     [super drawRect:dirtyRect];
