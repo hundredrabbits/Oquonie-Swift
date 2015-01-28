@@ -33,7 +33,6 @@
     self.test1.frame = CGRectMake(0, 0, 100, 100);
 
     World * worldTest = [[World alloc] init];
-    [worldTest test];
 }
 
 

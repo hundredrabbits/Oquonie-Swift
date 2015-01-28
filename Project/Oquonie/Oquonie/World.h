@@ -10,6 +10,6 @@
 
 @interface World : NSObject
 
--(void)test;
-
 @end
+
+NSMutableArray* worldNode;
