@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "xxiivvSettings.h"
+#import "xxiivvVariables.h"
 
 @implementation ViewController
 
@@ -27,17 +29,6 @@
 {
     NSLog(@"- TMPL | Start");
     self.test1.frame = CGRectMake(0, 0, 100, 100);
-}
-
-- (void)keyDown:(NSEvent *)theEvent {
-    // Arrow keys are associated with the numeric keypad
-    if ([theEvent modifierFlags] & NSNumericPadKeyMask) {
-        [self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
-    } else {
-        [super keyDown:theEvent];
-    }
-    
-    NSLog(@"%@",theEvent);
 }
 
 

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
-#import "xxiivvViewController.h"
+#import "xxiivvVariables.h"
 #import "splashViewController.h"
 #import "xxiivvSettings.h"
 

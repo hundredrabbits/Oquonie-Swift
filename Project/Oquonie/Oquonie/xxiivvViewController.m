@@ -6,11 +6,12 @@
 //  Copyright (c) 2013 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
+#import "xxiivvVariables.h"
 #import "xxiivvViewController.h"
 #import "xxiivvWorld.h"
 #import "xxiivvTemplates.h"
 #import "xxiivvEvents.h"
-#import "xxiivvSettings.h"
 #import "xxiivvUser.h"
 #import <Social/Social.h>
 

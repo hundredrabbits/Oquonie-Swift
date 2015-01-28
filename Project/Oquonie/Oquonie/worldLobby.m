@@ -5,6 +5,7 @@
 //  Created by Devine Lu Linvega on 12/30/2013.
 //  Copyright (c) 2013 XXIIVV. All rights reserved.
 //
+#import "xxiivvVariables.h"
 #import "xxiivvSettings.h"
 #import "worldLobby.h"
 

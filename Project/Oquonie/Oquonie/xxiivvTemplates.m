@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvVariables.h"
+#import "xxiivvSettings.h"
 #import "xxiivvWorld.h"
 #import "xxiivvViewController.h"
 

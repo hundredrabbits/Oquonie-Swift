@@ -760,6 +760,7 @@
 		57255E1C1A77195F00388B48 /* wall.110.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 57255E1B1A77195F00388B48 /* wall.110.l.png */; };
 		576FF6CD1A79572C000824FE /* AdvancedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6CC1A79572C000824FE /* AdvancedView.m */; };
 		576FF6D01A796FA8000824FE /* CoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6CF1A796FA8000824FE /* CoreWindow.m */; };
+		576FF6D21A7974F9000824FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576FF6D11A7974F8000824FE /* Foundation.framework */; };
 		5773509E1A75BF1D00F1B3DA /* event.37.l.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350971A75BF1D00F1B3DA /* event.37.l.1.png */; };
 		5773509F1A75BF1D00F1B3DA /* event.37.l.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350981A75BF1D00F1B3DA /* event.37.l.2.png */; };
 		577350A01A75BF1D00F1B3DA /* event.37.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 577350991A75BF1D00F1B3DA /* event.37.l.3.png */; };
@@ -1560,6 +1561,8 @@
 		576FF6CC1A79572C000824FE /* AdvancedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedView.m; sourceTree = "<group>"; };
 		576FF6CE1A796FA8000824FE /* CoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreWindow.h; sourceTree = "<group>"; };
 		576FF6CF1A796FA8000824FE /* CoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreWindow.m; sourceTree = "<group>"; };
+		576FF6D11A7974F8000824FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		576FF6D31A7975EA000824FE /* xxiivvVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvVariables.h; sourceTree = "<group>"; };
 		577350971A75BF1D00F1B3DA /* event.37.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.1.png; path = en.assets/event.37.l.1.png; sourceTree = "<group>"; };
 		577350981A75BF1D00F1B3DA /* event.37.l.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.2.png; path = en.assets/event.37.l.2.png; sourceTree = "<group>"; };
 		577350991A75BF1D00F1B3DA /* event.37.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.3.png; path = en.assets/event.37.l.3.png; sourceTree = "<group>"; };
@@ -1586,6 +1589,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576FF6D21A7974F9000824FE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2457,6 +2461,7 @@
 		03BBFAAA178A9E4E00E79C3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				576FF6D11A7974F8000824FE /* Foundation.framework */,
 				57063F501A79445D00D97376 /* AVKit.framework */,
 				57063F4E1A79445800D97376 /* AVFoundation.framework */,
 				57255E171A7710AC00388B48 /* Social.framework */,
@@ -2922,6 +2927,7 @@
 			isa = PBXGroup;
 			children = (
 				571A8C901A793E31008E846E /* xxiivvSettings.h */,
+				576FF6D31A7975EA000824FE /* xxiivvVariables.h */,
 			);
 			name = Shared;
 			sourceTree = "<group>";

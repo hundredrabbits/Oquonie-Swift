@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvVariables.h"
 #import "xxiivvSettings.h"
 #import "xxiivvEvents.h"
 #import "eventsNephtaline.h"
