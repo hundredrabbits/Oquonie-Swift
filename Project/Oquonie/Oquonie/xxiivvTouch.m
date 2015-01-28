@@ -93,34 +93,38 @@
     self.floor11.image = [room tileImageAtId:1:1];
     self.flooree.image = [room tileImageAtId:-1:-1];
     
-    self.wall1l.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self tileParser:worldNode[userLocation][9]:0]] ];
-    self.wall2l.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self tileParser:worldNode[userLocation][10]:0]] ];
-    self.wall3l.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self tileParser:worldNode[userLocation][11]:0]] ];
-    self.wall1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self tileParser:worldNode[userLocation][14]:0]] ];
-    self.wall2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self tileParser:worldNode[userLocation][13]:0]] ];
-    self.wall3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self tileParser:worldNode[userLocation][12]:0]] ];
+    self.wall1l.image = [room tileImageAtId:2:-1];
+    self.wall2l.image = [room tileImageAtId:2:0];
+    self.wall3l.image = [room tileImageAtId:2:1];
+    self.wall1r.image = [room tileImageAtId:1:2];
+    self.wall2r.image = [room tileImageAtId:0:2];
+    self.wall3r.image = [room tileImageAtId:-1:2];
     
-    self.step1l.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",[self tileParser:worldNode[userLocation][15]:99]] ];
-    self.step2l.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",[self tileParser:worldNode[userLocation][16]:99]] ];
-    self.step3l.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",[self tileParser:worldNode[userLocation][17]:99]] ];
-    self.step1r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][18]:99]] ];
-    self.step2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][19]:99]] ];
-    self.step3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",[self tileParser:worldNode[userLocation][20]:99]] ];
+    self.step1l.image = [room tileImageAtId:1:-2];
+    self.step2l.image = [room tileImageAtId:0:-2];
+    self.step3l.image = [room tileImageAtId:-1:-2];
+    self.step1r.image = [room tileImageAtId:-2:-1];
+    self.step2r.image = [room tileImageAtId:-2:0];
+    self.step3r.image = [room tileImageAtId:-2:1];
 }
 
 -(void)roomGenerateBlockers
 {
+    
     int tileId = 0;
-    for (NSString *tile in worldNode[userLocation]) {
-        if( [[self tileParser:tile :1] isEqualToString:@"block"] ){
-            NSLog(@"+  ROOM | Blockers     | Generate -> #%@ x:%d y:%d", [self tileParser:tile :2], [self flattenTileId:tileId :@"x"], [self flattenTileId:tileId :@"y"] );
+    for (NSString *tileString in worldNode[userLocation]) {
+        
+        Tile * tile = [[Tile alloc] initWithString:tileString];
+        
+        if( [tile isBlocker] ){
             UIImageView *newView = [[UIImageView alloc] initWithFrame:[self tileLocation:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
             newView.tag = 10;
-            newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tile :2]]];
+            newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[self tileParser:tileString :2]]];
             [self.spritesContainer addSubview:newView];
         }
         tileId += 1;
     }
+
 }
 
 -(void)roomGenerateEvents

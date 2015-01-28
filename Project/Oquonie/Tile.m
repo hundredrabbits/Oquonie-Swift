@@ -16,6 +16,14 @@
     return self;
 }
 
+-(int)isBlocker
+{
+    if( [[self type] isEqualToString:@"block"] ){
+        return YES;
+    }
+    return NO;
+}
+
 -(int)isEvent
 {
     if( [[self type] isEqualToString:@"event"] ){

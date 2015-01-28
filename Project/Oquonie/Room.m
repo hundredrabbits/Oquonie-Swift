@@ -30,6 +30,12 @@
 -(UIImage*)tileImageAtId :(int)x :(int)y
 {
     Tile* tile = [[Tile alloc] initWithString:[self tileAtLocation:x :y]];
+    
+    if( x == 2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png", [tile value] ]]; }
+    if( y == 2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png", [tile value] ]]; }
+    if( y == -2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png", [tile value] ]]; }
+    if( x == -2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png", [tile value] ]]; }
+    
     return [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png", [tile value] ]];
 }
 
