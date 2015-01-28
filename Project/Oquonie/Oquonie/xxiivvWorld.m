@@ -22,7 +22,7 @@
 #import "worldSecret.h"			// Chapter *
 #import "worldNastazie.h"		// Chapter VI
 
-@implementation ViewController (world)
+@implementation xxiivvViewController (world)
 
 -(void)worldStart
 {
