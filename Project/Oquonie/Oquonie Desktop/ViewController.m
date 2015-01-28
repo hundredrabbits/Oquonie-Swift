@@ -12,8 +12,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.test1.frame = CGRectMake(0, 0, 100, 100);
-    
+    [self start];
 
     // Do any additional setup after loading the view.
 }
@@ -23,5 +22,23 @@
     
     // Update the view, if already loaded.
 }
+
+-(void)start
+{
+    NSLog(@"- TMPL | Start");
+    self.test1.frame = CGRectMake(0, 0, 100, 100);
+}
+
+- (void)keyDown:(NSEvent *)theEvent {
+    // Arrow keys are associated with the numeric keypad
+    if ([theEvent modifierFlags] & NSNumericPadKeyMask) {
+        [self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
+    } else {
+        [super keyDown:theEvent];
+    }
+    
+    NSLog(@"%@",theEvent);
+}
+
 
 @end
