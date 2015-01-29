@@ -10,7 +10,9 @@
 #import "World.h"
 #import "Room.h"
 #import "Tile.h"
+#import "Event.h"
 #import "Position.h"
+#import "Render.h"
 
 int debug;
 
@@ -18,6 +20,7 @@ User* user;
 World* world;
 Room* room;
 Position* position;
+Render* render;
 
 int viewWidth;
 int tileW;

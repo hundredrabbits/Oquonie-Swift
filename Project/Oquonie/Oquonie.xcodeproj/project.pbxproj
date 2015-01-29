@@ -771,6 +771,8 @@
 		57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
 		57F701241A7AC765009C1C91 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701231A7AC765009C1C91 /* Position.m */; };
 		57F701251A7AC765009C1C91 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701231A7AC765009C1C91 /* Position.m */; };
+		57F701281A7AD890009C1C91 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701271A7AD890009C1C91 /* Render.m */; };
+		57F701291A7AD890009C1C91 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701271A7AD890009C1C91 /* Render.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1569,6 +1571,8 @@
 		57F7011B1A7AC4EC009C1C91 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		57F701221A7AC765009C1C91 /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
 		57F701231A7AC765009C1C91 /* Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Position.m; sourceTree = "<group>"; };
+		57F701261A7AD890009C1C91 /* Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Render.h; sourceTree = "<group>"; };
+		57F701271A7AD890009C1C91 /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Render.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2923,6 +2927,8 @@
 				57F7011B1A7AC4EC009C1C91 /* Event.m */,
 				57F701221A7AC765009C1C91 /* Position.h */,
 				57F701231A7AC765009C1C91 /* Position.m */,
+				57F701261A7AD890009C1C91 /* Render.h */,
+				57F701271A7AD890009C1C91 /* Render.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -3812,6 +3818,7 @@
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
 				57F701241A7AC765009C1C91 /* Position.m in Sources */,
 				576FF6E31A79818B000824FE /* World.m in Sources */,
+				57F701281A7AD890009C1C91 /* Render.m in Sources */,
 				032D74EB179CF9670068B27E /* xxiivvWorld.m in Sources */,
 				576FF6EB1A798C81000824FE /* Tile.m in Sources */,
 				03834E1E180B855B00568E60 /* xxiivvEvents.m in Sources */,
@@ -3827,6 +3834,7 @@
 				57013B961A7954E800612048 /* ViewController.m in Sources */,
 				57013B931A7954E800612048 /* main.m in Sources */,
 				57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */,
+				57F701291A7AD890009C1C91 /* Render.m in Sources */,
 				57F701251A7AC765009C1C91 /* Position.m in Sources */,
 				576FF6CD1A79572C000824FE /* AdvancedView.m in Sources */,
 				576FF6D01A796FA8000824FE /* CoreWindow.m in Sources */,

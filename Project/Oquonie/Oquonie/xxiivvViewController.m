@@ -38,6 +38,7 @@
     world = [[World alloc] init];
     user  = [[User alloc] init];
     position = [[Position alloc] initWithView:self.view.frame];
+    render = [[Render alloc] init];
 
     [self timerStart];
     
@@ -68,71 +69,41 @@
 
 # pragma mark Move -
 
-- (void) moveRouter :(int)posX :(int)posY :(int)direction
+- (void) inputRouter :(int)posX :(int)posY
 {
     NSLog(@"======= + ============ + ===================");
     
-    // Move is disabled if dialog is active
-    if( [user isTalking] ){
-        [self roomClearDialog];
+    if([user isTalking]){
+        // Clear Dialog Event
+        Event * newEvent = [[Event alloc] initWithName:@"clearDialog"];
+        [newEvent addCoordinates:posX:posY];
+        [newEvent addAudio:@"bump"];
+        [render add:newEvent];
         [user talking:0];
         return;
     }
     
-    // Close credits
-    if(self.creditsImage.alpha == 1){
-        [UIView animateWithDuration:1.0 animations:^(void){
-            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-            self.creditsImage.alpha = 0;
-        } completion:^(BOOL finished){}];
+    Tile* destination = [[Tile alloc] initWithString:[room tileAtLocation:posX :posY]];
+    
+    // Event
+    
+    if( [destination isEmpty] || [destination isBlocker] ){
+        Event * newEvent = [[Event alloc] initWithTile:destination];
+        [newEvent addName:@"block"];
+        [render add:newEvent];
+        return;
+    }
+    if( [destination isWarp] || [destination isEvent] ){
+        Event * newEvent = [[Event alloc] initWithTile:destination];
+        [newEvent addName:@"event"];
+        [render add:newEvent];
         return;
     }
     
-    // Close Map
-    if(self.mapImage.alpha == 1){
-        [UIView animateWithDuration:0.5 animations:^(void){
-            self.mapImage.alpha = 0;
-        } completion:^(BOOL finished){}];
-        return;
-    }
-    
-    // Move disable timeout
-    [self moveDisable:0.2];
-    
-    int blocker = [self moveEvent:( [user x]+posX ) :( [user y]+posY )];
-    
-    // Sprite face direction
-    if( direction == 0 ){ [user setHorizontal:@"l"]; [user setVertical:@"b"]; }
-    if( direction == 1 ){ [user setHorizontal:@"r"]; [user setVertical:@"b"]; }
-    if( direction == 2 ){ [user setHorizontal:@"l"]; [user setVertical:@"f"]; }
-    if( direction == 3 ){ [user setHorizontal:@"r"]; [user setVertical:@"f"]; }
-    
-    if( abs([user x]+posX) > 1 ){ blocker = 1; }
-    if( abs([user y]+posY) > 1 ){ blocker = 1; }
-    
-    // Move if okay
-    if(blocker == 0){
-        // Update position
-        [user setX:([user x] + posX)];
-        [user setY:([user y] + posY)];
-        
-        [self audioEffectPlayer:@"walk"];
-        [self moveEventCheck:([user x]) :([user y])];
-        
-        [UIView animateWithDuration:0.3 animations:^(void){
-            self.userPlayer.frame = [position tile:4:[user x]:[user y]];
-        } completion:^(BOOL finished){}];
-        
-        [self moveAnimation];
-        [self moveParallax];
-        [self moveIndicator:posX:posY];
-    }
-    else{
-        [self moveEventCheck:([user x]+posX):([user y]+posY)];
-        [self moveCollideAnimateEvent:([user x]+posX):([user y]+posY)];
-        [self moveCollideAnimateChar:posX:posY];
-    }
-    [self moveOrder];
+    // Move
+    Event * newEvent = [[Event alloc] initWithTile:destination];
+    [newEvent addName:@"move"];
+    [render add:newEvent];
 }
 
 - (void) old_moveRouter :(int)posX :(int)posY :(int)direction
@@ -699,16 +670,16 @@
 	int yDifference = abs(touchAnchorPoint.y-touchReleasePoint.y);
 	
 	if(xDifference < 20 && yDifference < 20){
-		if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [self moveRouter:1 :0 :0]; }
-		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [self moveRouter:-1 :0 :3]; }
-		else if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [self moveRouter:0 :-1 :2]; }
-		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [self moveRouter:0 :1 :1]; }
+		if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [self inputRouter:1 :0]; }
+		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [self inputRouter:-1 :0]; }
+		else if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [self inputRouter:0 :-1]; }
+		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [self inputRouter:0 :1]; }
 	}
 	else{
-		if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)		{ [self moveRouter:-1 :0 :3]; }
-		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)	{ [self moveRouter:0 :-1 :2]; }
-		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [self moveRouter:1 :0 :0];  }
-		else if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [self moveRouter:0 :1 :1];  }
+		if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)		{ [self inputRouter:-1 :0]; }
+		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)	{ [self inputRouter:0 :-1]; }
+		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [self inputRouter:1 :0];  }
+		else if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [self inputRouter:0 :1];  }
 	}
 }
 
@@ -720,10 +691,10 @@
         touchAnchorPoint = touchMovePoint;
     }
     switch (currentDirection) {
-        case DirectionNorth: [self moveRouter:1 :0 :0]; break;
-        case DirectionEast:  [self moveRouter:0 :1 :1]; break;
-        case DirectionWest:  [self moveRouter:0 :-1 :2]; break;
-        case DirectionSouth: [self moveRouter:-1 :0 :3]; break;
+        case DirectionNorth: [self inputRouter:1 :0]; break;
+        case DirectionEast:  [self inputRouter:0 :1]; break;
+        case DirectionWest:  [self inputRouter:0 :-1]; break;
+        case DirectionSouth: [self inputRouter:-1 :0]; break;
         case DirectionNone: default:; // Do nothing
     }
 }

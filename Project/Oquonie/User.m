@@ -16,8 +16,6 @@
     
     userData = [[NSMutableDictionary alloc] initWithDictionary:[self new]];
     
-    // Or load
-    
     return self;
 }
 
@@ -190,7 +188,7 @@
 
 -(int)isListening
 {
-    if( userData[@"isListening"] ){
+    if( [userData[@"isListening"] intValue] == 1 ){
         return TRUE;
     }
     return FALSE;
@@ -203,7 +201,7 @@
 
 -(int)isTalking
 {
-    if( userData[@"isTalking"] ){
+    if( [userData[@"isTalking"] intValue] == 1 ){
         return TRUE;
     }
     return FALSE;
@@ -216,7 +214,7 @@
 
 -(int)isFinished
 {
-    if( userData[@"isFinished"] ){
+    if( [userData[@"isFinished"] intValue] == 1 ){
         return TRUE;
     }
     return FALSE;

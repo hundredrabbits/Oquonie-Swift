@@ -7,7 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Tile.h"
 
 @interface Event : NSObject
 
+-(Event*)initWithTile :(Tile*)tile;
+-(Event*)initWithName :(NSString*)name;
+
+-(NSString*)name;
+
+-(void)addName :(NSString*)name;
+-(void)addCoordinates :(int)x :(int)y;
+-(void)addAudio :(NSString*)soundName;
+-(void)addLocation :(int)value;
+
 @end
+
+NSMutableDictionary * eventData;
