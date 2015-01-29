@@ -23,12 +23,7 @@ int tileH;
 
 // User
 
-NSString *userSpriteState;
-NSString *userSpriteOrientationHorizontal;
-NSString *userSpriteOrientationVertical;
-
 int userAudioPlaying;
-int userMoveEnabled;
 int userDialogActive;
 
 int userGameCompleted;

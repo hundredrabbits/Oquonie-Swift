@@ -12,6 +12,9 @@
 
 -(User*)init;
 
+-(NSString*)state;
+-(void)setState :(NSString*)value;
+
 -(int)location;
 -(void)setLocation :(int)value;
 -(NSString*)locationString;
@@ -24,6 +27,14 @@
 
 -(int)y;
 -(void)setY :(int)value;
+
+-(NSString*)vertical;
+-(void)setVertical :(NSString*)value;
+-(NSString*)horizontal;
+-(void)setHorizontal :(NSString*)value;
+
+-(int)enabled;
+-(void)setEnabled :(int)value;
 
 @end
 

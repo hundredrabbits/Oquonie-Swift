@@ -365,9 +365,9 @@
 		// Start
 	} completion:^(BOOL finished){
 		
-		userSpriteOrientationHorizontal = @"l";
-		userSpriteOrientationVertical = @"f";
-		userSpriteState = @"warp";
+		[user setHorizontal:@"l"];
+		[user setVertical:@"f"];
+		[user setState:@"warp"];
 		// First stop
 		[UIView animateWithDuration:1.0 animations:^(void){
 			// Part 1
@@ -385,7 +385,7 @@
 				} completion:^(BOOL finished){
 					[self eventVignette:@"1"];
                     [user setCharacter:charId];
-                    userSpriteState = @"warp";
+                    [user setState:@"warp"];
 					[self eventSpellRefresh];
 					[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",[user character]]];
 					[UIView animateWithDuration:1.0 animations:^(void){
@@ -397,7 +397,7 @@
 							[UIView animateWithDuration:1.0 animations:^(void){
 								self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, 0);
                             } completion:^(BOOL finished){
-                                userSpriteState = @"stand";
+                                [user setState:@"stand"];
 								[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",[user character]]];
 								self.userPlayerShadow.alpha = 1;
 								[self roomClearDialog];
@@ -434,9 +434,9 @@
     
 	[self moveDisable:2.5];
     
-    userSpriteState = @"warp";
-    userSpriteOrientationHorizontal = @"l";
-    userSpriteOrientationVertical = @"f";
+    [user setState:@"warp"];
+    [user setHorizontal:@"l"];
+    [user setVertical:@"f"];
     
 	self.roomContainer.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height);
 	self.spritesContainer.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height);
@@ -456,9 +456,9 @@
 	} completion:^(BOOL finished){
 		[self roomClearDialog];
 		[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",[user character]]];
-		userSpriteState = @"stand";
-		userSpriteOrientationHorizontal = @"l";
-		userSpriteOrientationVertical = @"f";
+		[user setState:@"stand"];
+		[user setHorizontal:@"l"];
+		[user setVertical:@"f"];
 		userDialogActive = 0;
 		[self audioEffectPlayer:@"bump"];
 		
@@ -508,9 +508,9 @@
 		} completion:^(BOOL finished){
 			[self roomClearDialog];
 			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",[user character]]];
-			userSpriteState = @"stand";
-			userSpriteOrientationHorizontal = @"l";
-			userSpriteOrientationVertical = @"f";
+			[user setState:@"stand"];
+			[user setHorizontal:@"l"];
+			[user setVertical:@"f"];
 			userDialogActive = 0;
             
 			[self audioEffectPlayer:@"bump"];

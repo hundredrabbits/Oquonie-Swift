@@ -27,7 +27,7 @@
 		[self userNew];
 	}
 	
-	userMoveEnabled = 1;
+    [user setEnabled:1];
 	userDialogActive = 0;
 }
 
@@ -52,9 +52,9 @@
 	[defaults setObject:[NSString stringWithFormat:@"%d",[user character]] forKey:@"[user character]"];
 	[defaults setObject:[NSString stringWithFormat:@"%d",userGameCompleted] forKey:@"userGameCompleted"];
 	
-	[defaults setObject:userSpriteState forKey:@"userSpriteState"];
-	[defaults setObject:userSpriteOrientationHorizontal forKey:@"userSpriteOrientationHorizontal"];
-	[defaults setObject:userSpriteOrientationVertical forKey:@"userSpriteOrientationVertical"];
+	[defaults setObject:[user state] forKey:@"userSpriteState"];
+//	[defaults setObject:userSpriteOrientationHorizontal forKey:@"userSpriteOrientationHorizontal"];
+//	[defaults setObject:userSpriteOrientationVertical forKey:@"userSpriteOrientationVertical"];
 	
 	[defaults setObject:userSpellbook forKey:@"userSpellbook"];
 	[defaults setObject:userStorageEvents forKey:@"userStorageEvents"];
@@ -72,9 +72,9 @@
 //	[user character] = [[defaults objectForKey:@"[user character]"] intValue];
 	userGameCompleted = [[defaults objectForKey:@"userGameCompleted"] intValue];
 	
-	userSpriteState = [defaults objectForKey:@"userSpriteState"];
-	userSpriteOrientationHorizontal = [defaults objectForKey:@"userSpriteOrientationHorizontal"];
-	userSpriteOrientationVertical = [defaults objectForKey:@"userSpriteOrientationVertical"];
+    [user setState:[defaults objectForKey:@"userSpriteState"]];
+//	userSpriteOrientationHorizontal = [defaults objectForKey:@"userSpriteOrientationHorizontal"];
+//	userSpriteOrientationVertical = [defaults objectForKey:@"userSpriteOrientationVertical"];
 	
 	userSpellbook = [defaults objectForKey:@"userSpellbook"];
 	userStorageEvents = [defaults objectForKey:@"userStorageEvents"];
@@ -88,12 +88,12 @@
 {
 	NSLog(@"   USER | Starting..     | Please hold");
     
-    [user setCharacter:userCharacterId];
-    [user setLocation:userCharacterLocation];
+    [user setCharacter:1];
+    [user setLocation:29];
 	
-	userSpriteState = @"stand";
-	userSpriteOrientationHorizontal = @"l";
-	userSpriteOrientationVertical = @"f";
+    [user setState:@"stand"];
+	[user setHorizontal:@"l"];
+	[user setVertical:@"f"];
 	
     // New event storage
     userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];
@@ -109,10 +109,10 @@
 	
     [user setCharacter:1];
     [user setLocation:1];
-	
-	userSpriteState = @"stand";
-	userSpriteOrientationHorizontal = @"l";
-	userSpriteOrientationVertical = @"f";
+    
+    [user setState:@"stand"];
+	[user setHorizontal:@"l"];
+	[user setVertical:@"f"];
 	
     // New event storage
     userStorageEvents = [NSMutableArray arrayWithObjects:@"",nil];

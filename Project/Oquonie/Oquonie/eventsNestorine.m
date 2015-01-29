@@ -37,7 +37,7 @@
 
 -(void)warpNestorineAnimation
 {
-    userSpriteState = @"warp";
+    [user setState:@"warp"];
 	[self moveAnimation];
 	[UIView animateWithDuration:0.5 animations:^(void){
 		self.userPlayer.frame = [self tileLocation:4:0:0];

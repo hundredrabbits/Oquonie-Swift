@@ -104,10 +104,10 @@
 	int blocker = [self moveEvent:( [user x]+posX ) :( [user y]+posY )];
 	
 	// Sprite face direction
-	if( direction == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
-	if( direction == 1 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"b"; }
-	if( direction == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
-	if( direction == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
+	if( direction == 0 ){ [user setHorizontal:@"l"]; [user setVertical:@"b"]; }
+	if( direction == 1 ){ [user setHorizontal:@"r"]; [user setVertical:@"b"]; }
+	if( direction == 2 ){ [user setHorizontal:@"l"]; [user setVertical:@"f"]; }
+	if( direction == 3 ){ [user setHorizontal:@"r"]; [user setVertical:@"f"]; }
 		
 	if( abs([user x]+posX) > 1 ){ blocker = 1; }
 	if( abs([user y]+posY) > 1 ){ blocker = 1; }
@@ -197,7 +197,7 @@
 
 - (void) moveAnimation
 {
-	userSpriteState = @"walk";
+	[user setState:@"walk"];
 	[self userSpriteUpdate:[self templateSpriteName:@"1"]];
 	[NSTimer scheduledTimerWithTimeInterval:0.15 target:self selector:@selector(animator1) userInfo:nil repeats:NO];
 	[NSTimer scheduledTimerWithTimeInterval:0.30 target:self selector:@selector(animator2) userInfo:nil repeats:NO];
@@ -205,13 +205,13 @@
 
 - (void) animator1
 {
-	userSpriteState = @"walk";
+	[user setState:@"walk"];
 	[self userSpriteUpdate:[self templateSpriteName:@"2"]];
 }
 
 - (void) animator2
 {
-	userSpriteState = @"stand";
+	[user setState:@"stand"];
 	[self userSpriteUpdate:[self templateSpriteName:@"1"]];
 }
 
@@ -223,8 +223,8 @@
 - (void) moveEnable
 {
 	NSLog(@"•  USER | Move         | Enabled");
-	
-	userMoveEnabled = 1;
+    
+	[user setEnabled:1];
 }
 
 - (void) moveDisable :(float)disableTime
@@ -232,8 +232,8 @@
 	NSLog(@"•  USER | Move         | Disabled");
 	
 	[worldMoveTimer invalidate];
-	
-	userMoveEnabled = 0;
+    
+	[user setEnabled:0];
 	worldMoveTimer = [NSTimer scheduledTimerWithTimeInterval:disableTime target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
 }
 
@@ -631,7 +631,7 @@
 
 -(void)timerAnimateUser
 {
-	if([userSpriteState isEqual:@"stand"]){
+	if([[user state] isEqual:@"stand"]){
 		[self userSpriteUpdate:[NSString stringWithFormat:@"%@", [self templateSpriteName:[NSString stringWithFormat:@"%d",worldTimerUserCount]]] ];
 	}
 }
@@ -822,7 +822,7 @@
     [worldMoveHoldTimer invalidate];
     currentDirection = DirectionNone;
     
-	if(userMoveEnabled == 0){ return; }
+	if( [user enabled] == 0 ){ return; }
 	
 	CGPoint touchReleasePoint = [[touches anyObject] locationInView:self.view];
 	
@@ -862,8 +862,8 @@
 // Currently not used
 -(void)touchHeld
 {
-	NSString* userSpriteOrientationOriginHorizontal = userSpriteOrientationHorizontal;
-	NSString* userSpriteOrientationOriginVertical = userSpriteOrientationHorizontal;
+	NSString* userSpriteOrientationOriginHorizontal = [user horizontal];
+	NSString* userSpriteOrientationOriginVertical = [user vertical];
 	
     if(touchAnchorPoint.y > touchMovePoint.y){
         if(touchAnchorPoint.x > touchMovePoint.x){ [self moveRouter:1 :0 :0]; }
@@ -874,7 +874,7 @@
         else{ [self moveRouter:-1 :0 :3]; }
     }
 	
-	if(userSpriteOrientationHorizontal != userSpriteOrientationOriginHorizontal && userSpriteOrientationVertical != userSpriteOrientationOriginVertical){
+	if([user horizontal] != userSpriteOrientationOriginHorizontal && [user vertical] != userSpriteOrientationOriginVertical){
 		touchAnchorPoint = touchMovePoint;
 	}
 }

@@ -277,7 +277,7 @@
 	NSString *spriteName = @"";
 	
 	// Remove mod if looking back
-	if( [userSpriteState isEqual:@"stand"] && [userSpriteOrientationVertical isEqualToString:@"b"]){
+	if( [[user state] isEqual:@"stand"] && [[user vertical] isEqualToString:@"b"]){
 		mod = @"1";
 	}
 	// If there is no mod
@@ -285,7 +285,7 @@
 		mod = @"1";
 	}
 	
-	spriteName = [NSString stringWithFormat:@"char%d.%@.%@.%@.%@.png", [user character], userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
+	spriteName = [NSString stringWithFormat:@"char%d.%@.%@.%@.%@.png", [user character], [user state], [user horizontal], [user vertical],mod];
 	return spriteName;
 }
 

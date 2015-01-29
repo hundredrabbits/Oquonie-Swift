@@ -14,11 +14,6 @@
 #define systemDebug				0
 #define systemBuild				1
 
-#define userCharacterId			1
-#define userCharacterLocation	29
-#define userCharacterX			0
-#define userCharacterY			0
-
 #define storageQuestRamenNecomedre		1
 #define storageQuestRamenNephtaline		2
 #define storageQuestRamenNeomine		3

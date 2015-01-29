@@ -561,7 +561,7 @@
 
 -(void)warpLobbyAnimation
 {
-    userSpriteState = @"warp";
+    [user setState:@"warp"];
 	[self moveAnimation];
 	[UIView animateWithDuration:0.5 animations:^(void){
 		self.userPlayer.frame = [self tileLocation:4:0:0];
@@ -578,9 +578,9 @@
 -(void)warpLobbyAnimationSpriteUpdate
 {
 	[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",[user character]]];
-	userSpriteState = @"warp";
-	userSpriteOrientationHorizontal = @"l";
-    userSpriteOrientationVertical = @"f";
+	[user setState:@"warp"];
+    [user setHorizontal:@"l"];
+    [user setVertical:@"f"];
 }
 
 // =======================

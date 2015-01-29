@@ -21,6 +21,36 @@
     return self;
 }
 
+-(NSString*)vertical
+{
+    return userData[@"vertical"];
+}
+
+-(void)setVertical :(NSString*)value
+{
+    userData[@"vertical"] = value;
+}
+
+-(NSString*)horizontal
+{
+    return userData[@"horizontal"];
+}
+
+-(void)setHorizontal :(NSString*)value
+{
+    userData[@"horizontal"] = value;
+}
+
+-(NSString*)state
+{
+    return userData[@"state"];
+}
+
+-(void)setState :(NSString*)value
+{
+    userData[@"state"] = value;
+}
+
 -(int)location
 {
     return [userData[@"location"] intValue];
@@ -30,6 +60,7 @@
 {
     userData[@"location"] = @(value);
 }
+
 
 -(NSString*)locationString
 {
@@ -49,6 +80,16 @@
 -(void)setY :(int)value
 {
     userData[@"y"] = @(value);
+}
+
+-(int)enabled
+{
+    return [userData[@"enabled"] intValue];
+}
+
+-(void)setEnabled :(int)value
+{
+    userData[@"enabled"] = @(value);
 }
 
 -(int)character
@@ -73,6 +114,10 @@
     userData[@"location"] = @50;
     userData[@"x"] = @0;
     userData[@"y"] = @0;
+    userData[@"enabled"] = @0;
+    userData[@"state"] = @"warp";
+    userData[@"horizontal"] = @"l";
+    userData[@"vertical"] = @"f";
     
     return userData;
 }
