@@ -39,6 +39,8 @@
     user  = [[User alloc] init];
     position = [[Position alloc] initWithView:self.view.frame];
     render = [[Render alloc] init];
+    
+    [user setX:10];
 
     [self timerStart];
     

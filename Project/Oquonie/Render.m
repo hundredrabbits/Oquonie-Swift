@@ -8,18 +8,36 @@
 
 #import "Render.h"
 #import "Event.h"
+#import "xxiivvSettings.h"
+#import "xxiivvVariables.h"
 
 @implementation Render
 
 -(Render*)init
 {
+    queue = [[NSMutableArray alloc] init];
     return self;
 }
 
 -(void)add :(Event*)event
 {
-    NSLog(@"> RENDR | Added: %@",[event name]);
+    NSLog(@"> RENDR | Added: %@ Size: %lu",[event name], (unsigned long)[queue count] );
     [queue addObject:event];
+    
+    [self compile];
+}
+
+-(void)compile
+{
+    for (Event *event in queue) {
+        NSLog(@"%@",[event name] );
+    }
+    [self emptyQueue];
+}
+
+-(void)emptyQueue
+{
+    queue = [[NSMutableArray alloc] init];
 }
 
 @end
