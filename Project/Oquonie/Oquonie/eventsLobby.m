@@ -68,15 +68,15 @@
 	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNephtaline);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-        if([user character]==2 && [userStorageEvents[storageQuestPillarNemedique] intValue] != 1 && [user location] == 1 ){
+        if([user character]==2 && [user eventExists:storageQuestPillarNemedique] && [user location] == 1 ){
             return letterUnlocked; // letterUnlocked
         }
         // Nestorine Pillar Door
-        if( [userStorageEvents[storageQuestPillarNemedique] intValue] == 1 && [userStorageEvents[storageQuestPillarNestorine] intValue] != 1 && [user location] == 93 ){
+        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNestorine] && [user location] == 93 ){
             return letterPillar; // letterUnlocked
         }
         // Lobby Door
-        if( [userStorageEvents[storageQuestPillarNemedique] intValue] == 1 && [userStorageEvents[storageQuestPillarNephtaline] intValue] != 1 && [user location] == 1 ){
+        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNephtaline] && [user location] == 1 ){
             return letterPillar; // letterUnlocked
         }
 		return @"";
@@ -84,7 +84,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
 		// Nemedique pillar
-		if([user location] == 93 && [userStorageEvents[storageQuestPillarNestorine] intValue] == 1){
+		if([user location] == 93 && [user eventExists:storageQuestPillarNestorine]){
 			return @"19";
 		}
 		if([user character]==characterNephtaline || [user character] == 7){
@@ -96,7 +96,7 @@
 	}
 	
 	// Nemedique pillar
-	if([user location] == 93 && [userStorageEvents[storageQuestPillarNestorine] intValue] == 1){
+	if([user location] == 93 && [user eventExists:storageQuestPillarNestorine]){
 		return @"";
 	}
 	
@@ -142,11 +142,11 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-        if([user character]==3 && [userStorageEvents[storageQuestPillarNemedique] intValue] != 1 && [user location] == 3 ){
+        if([user character]==3 && ![user eventExists:storageQuestPillarNemedique] && [user location] == 3 ){
             return letterUnlocked; // letterUnlocked
         }
         // Lobby Door
-        if( [userStorageEvents[storageQuestPillarNemedique] intValue] == 1 && [userStorageEvents[storageQuestPillarNeomine] intValue] != 1 && [user location] == 3 ){
+        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNeomine] && [user location] == 3 ){
             return letterPillar; // letterUnlocked
         }
 		return @"";
@@ -201,15 +201,15 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-        if([user character]==4 && [userStorageEvents[storageQuestPillarNemedique] intValue] != 1 && [user location] == 7 ){
+        if([user character]==4 && ![user eventExists:storageQuestPillarNemedique] && [user location] == 7 ){
             return letterUnlocked; // letterUnlocked
         }
         // Necomedre Pillar Door
-        if( [userStorageEvents[storageQuestPillarNemedique] intValue] == 1 && [userStorageEvents[storageQuestPillarNecomedre] intValue] != 1 && [user location] == 34 ){
+        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNecomedre] && [user location] == 34 ){
             return letterPillar; // letterUnlocked
         }
         // Lobby Door
-        if( [userStorageEvents[storageQuestPillarNemedique] intValue] == 1 && [userStorageEvents[storageQuestPillarNestorine] intValue] != 1 && [user location] == 7 ){
+        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNestorine] && [user location] == 7 ){
             return letterPillar; // letterUnlocked
         }
 		return @"";
@@ -217,7 +217,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
 		// Condemned pillar doors: Neomine
-		if([user location] == 34 && [userStorageEvents[storageQuestPillarNecomedre] intValue] == 1){
+		if([user location] == 34 && [user eventExists:storageQuestPillarNecomedre]){
 			return @"25";
 		}
 		if([user character]==characterNestorine || [user character] == 7){
@@ -229,7 +229,7 @@
 	}
 	
 	// Condemned pillar doors: Neomine
-	if([user location] == 34 && [userStorageEvents[storageQuestPillarNecomedre] intValue] == 1){
+	if([user location] == 34 && [user eventExists:storageQuestPillarNecomedre]){
 		return @"";
 	}
 	
@@ -268,19 +268,19 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if([user character]==1 && [userStorageEvents[storageQuestPillarNemedique] intValue] != 1 && [user location] == 5 ){
+		if([user character]==1 && ![user eventExists:storageQuestPillarNemedique] && [user location] == 5 ){
 			return letterUnlocked; // letterUnlocked
         }
         // Neomine Pillar Door
-        if( [userStorageEvents[storageQuestPillarNemedique] intValue] == 1 && [userStorageEvents[storageQuestPillarNeomine] intValue] != 1 && [user location] == 62 ){
+        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNeomine] && [user location] == 62 ){
             return letterPillar;
         }
         // Nemedique Pillar Door
-        if( [userStorageEvents[storageQuestPillarNemedique] intValue] == 0 && [userStorageEvents[storageQuestPillarNecomedre] intValue] != 1 && [user location] == 101 ){
+        if( ![user eventExists: storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNecomedre] && [user location] == 101 ){
             return letterPillar; // letterUnlocked
         }
         // Lobby Door
-        if( [userStorageEvents[storageQuestPillarNemedique] intValue] == 1 && [userStorageEvents[storageQuestPillarNecomedre] intValue] != 1 && [user location] == 5 ){
+        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNecomedre] && [user location] == 5 ){
             return letterPillar; // letterUnlocked
         }
         
@@ -290,11 +290,11 @@
 	if([option isEqualToString:@"postUpdate"]){
 		
 		// Nemedique pillar
-		if([user location] == 101 && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+		if([user location] == 101 && [user eventExists:storageQuestPillarNemedique]){
 			return @"13";
 		}
 		// Neomine pillar
-		if([user location] == 62 && [userStorageEvents[storageQuestPillarNeomine] intValue] == 1){
+		if([user location] == 62 && [user eventExists:storageQuestPillarNeomine]){
 			return @"36";
 		}
 		
@@ -307,12 +307,12 @@
 	}
 	
 	// Condemned pillar doors: Nemedique
-	if([user location] == 101 && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+	if([user location] == 101 && [user eventExists:storageQuestPillarNemedique]){
 		[self eventWarp:@"105":@"0,-1"];
 		return @"";
 	}
 	// Condemned pillar doors: Neomine
-	if([user location] == 62 && [userStorageEvents[storageQuestPillarNeomine] intValue] == 1){
+	if([user location] == 62 && [user eventExists:storageQuestPillarNeomine]){
 		return @"";
 	}
 	
@@ -351,11 +351,11 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-        if([user character]==5 && [userStorageEvents[storageQuestPillarNemedique] intValue] != 1 && [user location] == 9 ){
+        if([user character]==5 && ![user eventExists:storageQuestPillarNemedique] && [user location] == 9 ){
             return letterUnlocked;
         }
         // Nephtaline Pillar Door
-        if( [userStorageEvents[storageQuestPillarNemedique] intValue] == 1 && [userStorageEvents[storageQuestPillarNephtaline] intValue] != 1 && [user location] == 50 ){
+        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNephtaline] && [user location] == 50 ){
             return letterPillar;
         }
 		return @"";
@@ -373,7 +373,7 @@
 	}
 	
 	// Condemned pillar doors
-	if([user location] == 50 && [userStorageEvents[storageQuestPillarNephtaline] intValue] == 1 && [user character] == characterNemedique){
+	if([user location] == 50 && [user eventExists:storageQuestPillarNephtaline] && [user character] == characterNemedique){
 		[self eventWarp:@"117" :@"-1,0"];
 		return @"";
 	}
@@ -423,13 +423,13 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if( [userStorageEvents[storageQuestPillarHiversaires] intValue] == 1){
+		if( [user eventExists:storageQuestPillarHiversaires]){
 			return @"41";
 		}
 		return @"";
 	}
 	
-	if( [userStorageEvents[storageQuestPillarHiversaires] intValue] == 1){
+	if( [user eventExists:storageQuestPillarHiversaires]){
 		[self eventWarpDramatic:@"148":@"-1,0"];
 	}
 	else{
@@ -501,11 +501,11 @@
 {
 	// count pillars
 	int count = 0;
-	if([userStorageEvents[storageQuestPillarNecomedre] intValue] == 1){ count += 1; }
-	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 1){ count += 1; }
-	if([userStorageEvents[storageQuestPillarNeomine] intValue] == 1){ count += 1; }
-	if([userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){ count += 1; }
-	if([userStorageEvents[storageQuestPillarNestorine] intValue] == 1){ count += 1; }
+	if([user eventExists:storageQuestPillarNecomedre]){ count += 1; }
+	if([user eventExists:storageQuestPillarNemedique]){ count += 1; }
+	if([user eventExists:storageQuestPillarNeomine]){ count += 1; }
+	if([user eventExists:storageQuestPillarNephtaline]){ count += 1; }
+	if([user eventExists:storageQuestPillarNestorine]){ count += 1; }
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -620,23 +620,23 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if( [userStorageEvents[pillarInstanceStorageId] intValue] == 1){
+		if( [user eventExists: pillarInstanceStorageId]){
 			return eventPillarRemains;
 		}
 		return @"";
 	}
 	
 	// Dialog
-	if([userStorageEvents[pillarInstanceStorageId] intValue] != 1){
-		userStorageEvents[pillarInstanceStorageId] = @"1";
+	if(![user eventExists: pillarInstanceStorageId]){
+        [user eventCollect:pillarInstanceStorageId];
 		[self audioDialogPlayer:@"bump"];
 		[self eventDialog:dialogGainPillar:eventOwl];
 		[self eventTransitionPan:pillarInstanceWarp:roomCenter];
 		// Clear Spellbook
         [user clearSpellbook];
 	}
-	else{
-		userStorageEvents[pillarInstanceStorageId] = @"0";
+    else{
+        [user eventRemove:pillarInstanceStorageId];
 	}
     
     if([user location] == [locationNeominePillar intValue]){
@@ -690,13 +690,13 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if([userStorageEvents[socketInstanceStorageId] intValue] == 1){
+		if([user eventExists:socketInstanceStorageId]){
 			return eventPillarAssembled;
 		}
 		return @"";
 	}
 	// Dialogs
-	if([userStorageEvents[socketInstanceStorageId] intValue] == 1){
+	if([user eventExists:socketInstanceStorageId]){
 		[self eventDialog:dialogInfoPillar:eventOwl];
 	}
 	[self audioEffectPlayer:@"bump1"];
@@ -784,11 +784,11 @@
 			if( subview.frame.origin.x != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
 			if( subview.frame.origin.y != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
 			
-			if( [user location] == 31 && [userStorageEvents[storageGhostOffice] intValue] == 1){ subview.alpha = 0; return @"";}
-			if( [user location] == 36 && [userStorageEvents[storageGhostNecomedre] intValue] == 1){ subview.alpha = 0; return @"";}
-			if( [user location] == 40 && [userStorageEvents[storageGhostNephtaline] intValue] == 1){ subview.alpha = 0; return @"";}
-			if( [user location] == 68 && [userStorageEvents[storageGhostNeomine] intValue] == 1){ subview.alpha = 0; return @"";}
-			if( [user location] == 86 && [userStorageEvents[storageGhostNestorine] intValue] == 1){ subview.alpha = 0; return @"";}
+			if( [user location] == 31 && [user eventExists:storageGhostOffice]){ subview.alpha = 0; return @"";}
+			if( [user location] == 36 && [user eventExists: storageGhostNecomedre]){ subview.alpha = 0; return @"";}
+			if( [user location] == 40 && [user eventExists: storageGhostNephtaline]){ subview.alpha = 0; return @"";}
+			if( [user location] == 68 && [user eventExists: storageGhostNeomine]){ subview.alpha = 0; return @"";}
+			if( [user location] == 86 && [user eventExists: storageGhostNestorine]){ subview.alpha = 0; return @"";}
 			
 			[self moveDisable:2];
 			
@@ -800,19 +800,19 @@
             
             
             if([user location] == 31){
-                userStorageEvents[storageGhostOffice] = @"1";
+                [user eventCollect:storageGhostOffice];
             }
             if([user location] == 36){
-                userStorageEvents[storageGhostNecomedre] = @"1";
+                [user eventCollect:storageGhostNecomedre];
             }
             if([user location] == 40){
-                userStorageEvents[storageGhostNephtaline] = @"1";
+                [user eventCollect:storageGhostNephtaline];
             }
             if([user location] == 68){
-                userStorageEvents[storageGhostNeomine] = @"1";
+                [user eventCollect:storageGhostNeomine];
             }
             if([user location] == 86){
-                userStorageEvents[storageGhostNestorine] = @"1";
+                [user eventCollect:storageGhostNestorine];
             }
 		}
 	}
@@ -836,12 +836,12 @@
 -(NSString*)event_shark :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[storageQuestPillarNemedique] intValue] > 0 && [user character] != 1){ return letterConfused;}
+		if( [user eventExists:storageQuestPillarNemedique] && [user character] != 1){ return letterConfused;}
 		return @"";
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
 	
-	if([userStorageEvents[storageQuestPillarNemedique] intValue] > 0 || [user location] == 102){
+	if([user eventExists: storageQuestPillarNemedique] || [user location] == 102){
 		
 		[self audioDialogPlayer:@"shark"];
 	
@@ -895,7 +895,7 @@
 	}
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[ramenStorage] intValue] == 0){
+		if(![user eventExists: ramenStorage]){
 			return letterGuide;
 		}
 		return @"";
@@ -904,7 +904,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
 		// Completed
-		if([userStorageEvents[ramenStorage] intValue] == 1){
+		if([user eventExists: ramenStorage]){
 			return eventRamenSeat;
 		}
 		else{
@@ -913,8 +913,8 @@
 	}
 	
 	// Dialogs
-	if([userStorageEvents[ramenStorage] intValue] == 0){
-		userStorageEvents[ramenStorage] = @"1";
+	if(![user eventExists: ramenStorage]){
+        [user eventCollect:ramenStorage];
 		[self eventWarp:[user locationString]:userPositionString];
 		[self eventDialog:dialogGainRamen:eventRamen];
 		[self audioDialogPlayer:@"ramen"];
@@ -963,7 +963,7 @@
 	
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[ramenStorage] intValue] == 1 && ![user spellExists:@"ramenQuestSpell"] ){
+		if([user eventExists: ramenStorage] && ![user spellExists:@"ramenQuestSpell"] ){
 			return saySpell;
 		}
 		return @"";
@@ -971,7 +971,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
 		// Completed
-		if([userStorageEvents[ramenStorage] intValue] == 1){
+		if([user eventExists: ramenStorage]){
 			return eventRamen;
 		}
 		else{
@@ -979,7 +979,7 @@
 		}
 	}
 	
-    if([userStorageEvents[ramenStorage] intValue] == 1){
+    if([user eventExists: ramenStorage]){
         [user spellCollect:@"ramenQuestSpell":giveSpell];
 		[self audioDialogPlayer:@"ramen"];
 	}
@@ -1053,11 +1053,11 @@
 		
 		// count pillars
 		int count = 0;
-		if([userStorageEvents[storageQuestPillarNecomedre] intValue] == 1){ count += 1; }
-		if([userStorageEvents[storageQuestPillarNemedique] intValue] == 1){ count += 1; }
-		if([userStorageEvents[storageQuestPillarNeomine] intValue] == 1){ count += 1; }
-		if([userStorageEvents[storageQuestPillarNephtaline] intValue] == 1){ count += 1; }
-		if([userStorageEvents[storageQuestPillarNestorine] intValue] == 1){ count += 1; }
+		if([user eventExists:storageQuestPillarNecomedre]){ count += 1; }
+		if([user eventExists:storageQuestPillarNemedique]){ count += 1; }
+		if([user eventExists:storageQuestPillarNeomine]){ count += 1; }
+		if([user eventExists:storageQuestPillarNephtaline]){ count += 1; }
+		if([user eventExists:storageQuestPillarNestorine]){ count += 1; }
 		
 		if(count == 0){ return @"23";}
 		if(count == 1){ return @"24";}

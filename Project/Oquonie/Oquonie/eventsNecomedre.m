@@ -242,11 +242,11 @@
 		// Must be Nephtaline
 		if([user character] != eventRequirement){ return @""; }
 		// Must have ramen guy
-		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
+		if(![user eventExists: eventRamenRequirement]){ return @""; }
 		// If doesn't have spell already
 		if([user spellExists:eventSpellId]){ return @""; }
 		// Have the first pillar
-		if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ return @""; }
+		if(![user eventExists: storageQuestPillarNemedique]){ return @""; }
 		// Else
 		return eventLetter;
 	}
@@ -258,11 +258,11 @@
 	
 	[self audioDialogPlayer:@"nestorine"];
 	// If doesn't have the first pillar
-	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	if(![user eventExists: storageQuestPillarNemedique]){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
 	if([user character] != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
-	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	if(![user eventExists: eventRamenRequirement]){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
 	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -288,11 +288,11 @@
 		// If the wrong character
 		if([user character] != eventRequirement){ return @""; }
 		// If without the ramen guy
-		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
+		if(![user eventExists: eventRamenRequirement]){ return @""; }
 		// If have spell already
 		if([user spellExists:eventSpellId]){ return @""; }
 		// If doesn't have the first pillar
-		if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ return @""; }
+		if(![user eventExists: storageQuestPillarNemedique]){ return @""; }
 		// Else
 		return eventLetter;
 	}
@@ -304,11 +304,11 @@
 	
 	[self audioDialogPlayer:@"nemedique"];
 	// If doesn't have the first pillar
-	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	if(![user eventExists: storageQuestPillarNemedique]){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
 	if([user character] != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
-	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	if(![user eventExists: eventRamenRequirement]){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
 	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];

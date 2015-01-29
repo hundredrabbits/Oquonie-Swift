@@ -28,9 +28,6 @@ int userDialogActive;
 
 int userGameCompleted;
 
-NSMutableArray *userSpellbook;
-NSMutableArray *userStorageEvents;
-
 // World
 
 NSString *worldAudio;

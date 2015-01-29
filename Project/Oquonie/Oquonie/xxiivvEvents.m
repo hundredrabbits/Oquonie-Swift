@@ -180,46 +180,26 @@
 
 -(void)eventSpellHide
 {
-	int emptySpell = 0;
-	for (NSArray *spellbookItem in userSpellbook) {
-		if([spellbookItem[1] intValue] == 0){
-			emptySpell += 1;
-		}
-	}
-	
-	if(emptySpell==3){
-		int index = 0;
-		while(index < 3){
-			[UIView animateWithDuration:0.2 animations:^(void){
-				[UIView setAnimationDelay:index*0.1];
-				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-				if(index == 0){
-					self.spellCharacter1.frame = CGRectOffset(self.spellCharacter1.frame, 0, 5);
-					self.spellCharacter1.alpha = 0;
-				}
-				else if(index == 1){
-					self.spellCharacter2.frame = CGRectOffset(self.spellCharacter2.frame, 0, 5);
-					self.spellCharacter2.alpha = 0;
-				}
-				else if(index == 2){
-					self.spellCharacter3.frame = CGRectOffset(self.spellCharacter3.frame, 0, 5);
-					self.spellCharacter3.alpha = 0;
-				}
-			} completion:^(BOOL finished){}];
-			index += 1;
-		}
-	}
-}
-
--(bool)eventSpellCheck :(NSString*)spellId
-{
-	NSLog(@"  EVENT | Spell        | Looking for: %@",spellId);
-	for (NSArray *spellbookItem in userSpellbook) {
-		if( [spellbookItem[0] isEqualToString:spellId] ){
-			return TRUE;
-		}
-	}
-	return FALSE;
+    int index = 0;
+    while(index < 3){
+        [UIView animateWithDuration:0.2 animations:^(void){
+            [UIView setAnimationDelay:index*0.1];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            if(index == 0){
+                self.spellCharacter1.frame = CGRectOffset(self.spellCharacter1.frame, 0, 5);
+                self.spellCharacter1.alpha = 0;
+            }
+            else if(index == 1){
+                self.spellCharacter2.frame = CGRectOffset(self.spellCharacter2.frame, 0, 5);
+                self.spellCharacter2.alpha = 0;
+            }
+            else if(index == 2){
+                self.spellCharacter3.frame = CGRectOffset(self.spellCharacter3.frame, 0, 5);
+                self.spellCharacter3.alpha = 0;
+            }
+        } completion:^(BOOL finished){}];
+        index += 1;
+    }
 }
 
 -(void)eventTranform :(int)charId

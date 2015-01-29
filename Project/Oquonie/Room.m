@@ -22,7 +22,6 @@
 -(NSString*)tileAtLocation :(int)x :(int)y
 {
     int index = [self flattenPosition:x:y];
-    
     return roomNode[index];
 }
 

@@ -47,7 +47,7 @@
     if( debug == 1){
         userAudioPlaying = 0;
         [user setLocation:50];
-        userStorageEvents[storageQuestPillarNemedique] = @1;
+        [user eventCollect:storageQuestPillarNemedique];
     }
     else{
         userAudioPlaying = 1;
@@ -725,7 +725,7 @@
 	if([filename isEqualToString:@"town1.mp3"] && userGameCompleted == 1){
 		filename = @"town3.mp3";
 	}
-	else if([filename isEqualToString:@"town1.mp3"] && [userStorageEvents[storageQuestPillarNemedique] intValue] == 1){
+	else if([filename isEqualToString:@"town1.mp3"] && [user eventExists:storageQuestPillarNemedique]){
 		filename = @"town2.mp3";
 	}
 	

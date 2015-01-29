@@ -112,6 +112,16 @@
     userData[@"spellbook"] = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
 }
 
+-(void)eventCollect :(int)eventId
+{
+    userData[@"events"][eventId] = @1;
+}
+
+-(void)eventRemove :(int)eventId
+{
+    userData[@"events"][eventId] = @0;
+}
+
 -(int)spellExists :(NSString*)spellId
 {
     for (NSArray *spellbookItem in userData[@"spellbook"]) {
@@ -120,6 +130,17 @@
         }
     }
     return FALSE;
+}
+
+-(int)spellCount
+{
+    int count = 0;
+    for (NSArray *spellbookItem in userData[@"spellbook"]) {
+        if([spellbookItem[1] intValue] != 0){
+            count += 1;
+        }
+    }
+    return count;
 }
 
 -(void)spellCollect :(NSString*)spellId :(int)spellType
@@ -153,6 +174,14 @@
     }
 }
 
+-(int)eventExists :(int)eventId
+{
+    if( userData[@"events"] ){
+        return TRUE;
+    }
+    return FALSE;
+}
+
 -(NSMutableDictionary*)new
 {
     userData = [[NSMutableDictionary alloc] init];
@@ -165,6 +194,10 @@
     userData[@"horizontal"] = @"l";
     userData[@"vertical"] = @"f";
     userData[@"spellbook"] = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+    userData[@"events"] = [NSMutableArray arrayWithObjects:@"",nil];
+    
+    int myCount = 0;
+    while ( myCount < 40 )	{ myCount++; userData[@"events"][myCount] = @"";	}
     
     return userData;
 }
