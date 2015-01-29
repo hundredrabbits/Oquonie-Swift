@@ -10,12 +10,14 @@
 #import "World.h"
 #import "Room.h"
 #import "Tile.h"
+#import "Position.h"
 
 int debug;
 
 User* user;
 World* world;
 Room* room;
+Position* position;
 
 int viewWidth;
 int tileW;

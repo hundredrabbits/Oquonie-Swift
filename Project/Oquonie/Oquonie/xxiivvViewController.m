@@ -37,6 +37,7 @@
 {
     world = [[World alloc] init];
     user  = [[User alloc] init];
+    position = [[Position alloc] initWithView:self.view.frame];
 
     [self timerStart];
     
@@ -121,7 +122,7 @@
 		[self moveEventCheck:([user x]) :([user y])];
 		
 		[UIView animateWithDuration:0.3 animations:^(void){
-			self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
+			self.userPlayer.frame = [position tile:4:[user x]:[user y]];
 		} completion:^(BOOL finished){}];
 
 		[self moveAnimation];
@@ -324,7 +325,7 @@
 		if(subview.tag == 10){ continue; }
 		
 		CGPoint targetPosition = subview.frame.origin;
-		CGPoint subviewPosition = [self tileLocation:4:posX:posY].origin;
+		CGPoint subviewPosition = [position tile:4:posX:posY].origin;
 		
 		if( targetPosition.x == subviewPosition.x && targetPosition.y == subviewPosition.y){
 			CGRect origin = subview.frame;
@@ -340,100 +341,7 @@
 
 # pragma mark Misc -
 
-- (CGRect)tileLocation :(int)type :(int)posX :(int)posY
-{    
-    viewWidth = screen.size.width - (2*screenMargin);
-    tileW = viewWidth/3;
-    tileH = tileW * 0.5;
-    
-    centerW = (screen.size.width/2)-(tileW/2);
-    centerH = (screen.size.height/2)-(tileH/2);
-    
-    if( [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft || [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight ){
-        viewWidth = (screen.size.width - (2*screenMargin))/2;
-        tileW = viewWidth/3;
-        tileH = tileW * 0.5;
-        
-        centerW = (screen.size.width/2)-(tileW/2);
-        centerH = (screen.size.height/2)+(tileH/2);
-    }
-	
-	if( type == 0 ){		
-		if( posX == 2 && posY == -1 ){ return CGRectMake(centerW+(tileW/2)*-3, centerH+(tileH*-0.5), tileW, tileH); }
-		if( posX == 2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*-2, centerH+(tileH*-1), tileW, tileH); }
-		if( posX == 2 && posY == 1 ){ return CGRectMake(centerW+(tileW/2)*-1, centerH+(tileH*-1.5), tileW, tileH); }
-		
-		if( posX == 1 && posY == 2 ){ return CGRectMake(centerW+(tileW/2)*1, centerH+(tileH*-1.5), tileW, tileH); }
-		if( posX == 0 && posY == 2 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+(tileH*-1), tileW, tileH); }
-		if( posX == -1 && posY == 2 ){ return CGRectMake(centerW+(tileW/2)*3, centerH+(tileH*-0.5), tileW, tileH); }
-	}
-	
-	if( type == 1 ){
-		tileH = tileH * 2;
-		if( (posX + posY) == 1 ){ centerH -= tileH*0.25; }
-		else if( (posX + posY) == 2 ){  }
-		else if( (posX + posY) == -1 ){ centerH -= tileH*0.75; }
-		else if( (posX + posY) == -2 ){ centerH -= tileH; }
-		else{ centerH -= tileH*0.5; }
-		centerH -= tileH/15;
-	}
-	
-	if( type == 3 ){
-		tileH = tileH * 2;
-		if( (posX + posY) == 1 ){ centerH -= tileH*0.25; }
-		else if( (posX + posY) == 2 ){  }
-		else if( (posX + posY) == -1 ){ centerH -= tileH*0.75; }
-		else if( (posX + posY) == -2 ){ centerH -= tileH; }
-		else{ centerH -= tileH*0.5; }
-		centerH -= tileH/15;
-		centerH -= 200;
-	}
-	
-	// Character
-	if( type == 4 ){
-		tileH = tileH * 3;
-		centerH -= (tileH/2) + ((tileW * 0.5)/2);
-		if( (posX + posY) == 1 ){ centerH += (tileW * 0.5); }
-		else if( (posX + posY) == 2 ){ centerH += (tileW); }
-		else if( (posX + posY) == -1 ){ centerH -= (tileW * 0.5); }
-		else if( (posX + posY) == -2 ){ centerH -= (tileW); }
-	}
-	
-	// Wall
-	if( type == 5 ){
-		tileH = tileH * 3;
-		centerH -= (tileH/2) + ((tileW * 0.5)/2);
-	}
-	
-	if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
-	if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW, centerH, tileW, tileH); }
-	if( posX ==-1 && posY == 1 ){ return CGRectMake(centerW+tileW, centerH, tileW, tileH); }
-	if( posX == 1 && posY == 0 ){ return CGRectMake(centerW-(tileW/2), centerH-(tileH/2), tileW, tileH); }
-	if( posX == 0 && posY == 1 ){ return CGRectMake(centerW+(tileW/2), centerH-(tileH/2), tileW, tileH); }
-	if( posX == 0 && posY ==-1 ){ return CGRectMake(centerW-(tileW/2), centerH+(tileH/2), tileW, tileH); }
-	if( posX ==-1 && posY == 0 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH/2), tileW, tileH); }
-	if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH+tileH, tileW, tileH);}
-	if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
-	
-	if( posX ==-2 && posY == 1 ){ return CGRectMake(centerW+(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
-	if( posX ==-2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+(tileH*1.0), tileW, tileH); }
-	if( posX ==-2 && posY ==-1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH*1.5), tileW, tileH); }
-	
-	if( posX == 1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
-	if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }
-	if( posX ==-1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*1.5), tileW, tileH); }
-	
-	if( posX == 2 && posY ==-1 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5)*-0.12, tileW, tileH); }
-    if( posX == 2 && posY == 0 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+(tileH*0.5)*-0.45, tileW, tileH); }
-    if( posX == 2 && posY == 1 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*0.5)*-0.79, tileW, tileH); }
-    if( posX == 2 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*0.5, centerH+(tileH*0.5)*-1, tileW, tileH); }
-	
-	if( posX ==-1 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-3, centerH+(tileH*0.5)*-0.12, tileW, tileH); }
-	if( posX == 0 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-2, centerH+(tileH*0.5)*-0.45, tileW, tileH); }
-	if( posX == 1 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-1, centerH+(tileH*0.5)*-0.79, tileW, tileH); }
-	
-	return CGRectMake(0, 0, 0, 0);
-}
+
 
 
 -(int)flattenPosition :(int)x :(int)y
@@ -612,8 +520,8 @@
             Tile* tile = [[Tile alloc] initWithString:[room tileAtId:tileId]];
             
 			if(![tile isEvent]){ continue; }
-			if( subview.frame.origin.x != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
-			if( subview.frame.origin.y != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
+			if( subview.frame.origin.x != [position tile:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
+			if( subview.frame.origin.y != [position tile:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
             
 			subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[tile data] intValue], [tile extras], worldTimerEventCount]];
 		
@@ -851,25 +759,7 @@
     }
 }
 
-// Currently not used
--(void)touchHeld
-{
-	NSString* userSpriteOrientationOriginHorizontal = [user horizontal];
-	NSString* userSpriteOrientationOriginVertical = [user vertical];
-	
-    if(touchAnchorPoint.y > touchMovePoint.y){
-        if(touchAnchorPoint.x > touchMovePoint.x){ [self moveRouter:1 :0 :0]; }
-        else{ [self moveRouter:0 :1 :1]; }
-    }
-    else{
-        if(touchAnchorPoint.x > touchMovePoint.x){ [self moveRouter:0 :-1 :2]; }
-        else{ [self moveRouter:-1 :0 :3]; }
-    }
-	
-	if([user horizontal] != userSpriteOrientationOriginHorizontal && [user vertical] != userSpriteOrientationOriginVertical){
-		touchAnchorPoint = touchMovePoint;
-	}
-}
+# pragma mark Misc -
 
 -(void)apiContact:(NSString*)source :(NSString*)method :(NSString*)term :(NSString*)value
 {
@@ -909,8 +799,8 @@
     
     [self templateStart];
     [self roomStart];
-    [self tileLocation:4:[user x]:[user y]];
-    self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
+    [position tile:4:[user x]:[user y]];
+    self.userPlayer.frame = [position tile:4:[user x]:[user y]];
     [self moveOrder];
 }
 

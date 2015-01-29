@@ -557,9 +557,9 @@
     [user setState:@"warp"];
 	[self moveAnimation];
 	[UIView animateWithDuration:0.5 animations:^(void){
-		self.userPlayer.frame = [self tileLocation:4:0:0];
+		self.userPlayer.frame = [position tile:4:0:0];
         if( [user location] == 80 ){ // Special warp in Nestorine
-            self.userPlayer.frame = [self tileLocation:4:1:1];
+            self.userPlayer.frame = [position tile:4:1:1];
         }
     } completion:^(BOOL finished){
 		[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(userSave) userInfo:nil repeats:NO];
@@ -780,8 +780,8 @@
             
 			// Lets identify the current subview
 			if(![[tile name] isEqualToString:@"redGhost"]){ continue; }
-			if( subview.frame.origin.x != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
-			if( subview.frame.origin.y != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
+			if( subview.frame.origin.x != [position tile:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
+			if( subview.frame.origin.y != [position tile:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
 			
 			if( [user location] == 31 && [user eventExists:storageGhostOffice]){ subview.alpha = 0; return @"";}
 			if( [user location] == 36 && [user eventExists: storageGhostNecomedre]){ subview.alpha = 0; return @"";}

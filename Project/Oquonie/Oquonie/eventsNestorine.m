@@ -40,7 +40,7 @@
     [user setState:@"warp"];
 	[self moveAnimation];
 	[UIView animateWithDuration:0.5 animations:^(void){
-		self.userPlayer.frame = [self tileLocation:4:0:0];
+		self.userPlayer.frame = [position tile:4:0:0];
         [user setX:0];
         [user setY:0];
     } completion:^(BOOL finished){

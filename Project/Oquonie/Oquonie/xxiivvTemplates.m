@@ -62,34 +62,34 @@
     centerW = (screen.size.width/2)-(tileW/2);
     centerH = (screen.size.height/2)-(tileH/2);
     
-    self.floor00.frame = [self tileLocation:0 :0 :0];
-    self.floor1e.frame = [self tileLocation:0 :-1 :1];
-    self.floore1.frame = [self tileLocation:0 :1 :-1];
-    self.floor10.frame = [self tileLocation:0 :1 :0];
-    self.floor01.frame = [self tileLocation:0 :0 :1];
-    self.floor0e.frame = [self tileLocation:0 :0 :-1];
-    self.floore0.frame = [self tileLocation:0 :-1 :0];
-    self.floor11.frame = [self tileLocation:0 :1 :1];
-    self.flooree.frame = [self tileLocation:0 :-1 :-1];
+    self.floor00.frame = [position tile:0 :0 :0];
+    self.floor1e.frame = [position tile:0 :-1 :1];
+    self.floore1.frame = [position tile:0 :1 :-1];
+    self.floor10.frame = [position tile:0 :1 :0];
+    self.floor01.frame = [position tile:0 :0 :1];
+    self.floor0e.frame = [position tile:0 :0 :-1];
+    self.floore0.frame = [position tile:0 :-1 :0];
+    self.floor11.frame = [position tile:0 :1 :1];
+    self.flooree.frame = [position tile:0 :-1 :-1];
     
-    self.wall1l.frame = [self tileLocation:5 :2 :-1];
-    self.wall2l.frame = [self tileLocation:5 :2 : 0];
-    self.wall3l.frame = [self tileLocation:5 :2 : 1];
+    self.wall1l.frame = [position tile:5 :2 :-1];
+    self.wall2l.frame = [position tile:5 :2 : 0];
+    self.wall3l.frame = [position tile:5 :2 : 1];
     
-    self.wall1r.frame = [self tileLocation:5 : -1 : 2];
-    self.wall2r.frame = [self tileLocation:5 : 0 : 2];
-    self.wall3r.frame = [self tileLocation:5 : 1 : 2];
+    self.wall1r.frame = [position tile:5 : -1 : 2];
+    self.wall2r.frame = [position tile:5 : 0 : 2];
+    self.wall3r.frame = [position tile:5 : 1 : 2];
     
-    self.step1l.frame = [self tileLocation:0 :1 :-2];
-    self.step2l.frame = [self tileLocation:0 :0 :-2];
-    self.step3l.frame = [self tileLocation:0 :-1 :-2];
+    self.step1l.frame = [position tile:0 :1 :-2];
+    self.step2l.frame = [position tile:0 :0 :-2];
+    self.step3l.frame = [position tile:0 :-1 :-2];
     
-    self.step1r.frame = [self tileLocation:0 :-2 : -1];
-    self.step2r.frame = [self tileLocation:0 :-2 : 0];
-    self.step3r.frame = [self tileLocation:0 :-2 : 1];
+    self.step1r.frame = [position tile:0 :-2 : -1];
+    self.step2r.frame = [position tile:0 :-2 : 0];
+    self.step3r.frame = [position tile:0 :-2 : 1];
     
     self.userPlayer.tag = 404;
-    self.userPlayer.frame = [self tileLocation:4 :0 :0];
+    self.userPlayer.frame = [position tile:4 :0 :0];
     
     self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"2"] ] ];
     
@@ -162,34 +162,34 @@
     centerW = (screen.size.width/2)-(tileW/2);
     centerH = (screen.size.height/2)+(tileH/2);
     
-    self.floor00.frame = [self tileLocation:0 :0 :0];
-    self.floor1e.frame = [self tileLocation:0 :-1 :1];
-    self.floore1.frame = [self tileLocation:0 :1 :-1];
-    self.floor10.frame = [self tileLocation:0 :1 :0];
-    self.floor01.frame = [self tileLocation:0 :0 :1];
-    self.floor0e.frame = [self tileLocation:0 :0 :-1];
-    self.floore0.frame = [self tileLocation:0 :-1 :0];
-    self.floor11.frame = [self tileLocation:0 :1 :1];
-    self.flooree.frame = [self tileLocation:0 :-1 :-1];
+    self.floor00.frame = [position tile:0 :0 :0];
+    self.floor1e.frame = [position tile:0 :-1 :1];
+    self.floore1.frame = [position tile:0 :1 :-1];
+    self.floor10.frame = [position tile:0 :1 :0];
+    self.floor01.frame = [position tile:0 :0 :1];
+    self.floor0e.frame = [position tile:0 :0 :-1];
+    self.floore0.frame = [position tile:0 :-1 :0];
+    self.floor11.frame = [position tile:0 :1 :1];
+    self.flooree.frame = [position tile:0 :-1 :-1];
     
-    self.wall1l.frame = [self tileLocation:5 :2 :-1];
-    self.wall2l.frame = [self tileLocation:5 :2 : 0];
-    self.wall3l.frame = [self tileLocation:5 :2 : 1];
+    self.wall1l.frame = [position tile:5 :2 :-1];
+    self.wall2l.frame = [position tile:5 :2 : 0];
+    self.wall3l.frame = [position tile:5 :2 : 1];
     
-    self.wall1r.frame = [self tileLocation:5 : -1 : 2];
-    self.wall2r.frame = [self tileLocation:5 : 0 : 2];
-    self.wall3r.frame = [self tileLocation:5 : 1 : 2];
+    self.wall1r.frame = [position tile:5 : -1 : 2];
+    self.wall2r.frame = [position tile:5 : 0 : 2];
+    self.wall3r.frame = [position tile:5 : 1 : 2];
     
-    self.step1l.frame = [self tileLocation:0 :1 :-2];
-    self.step2l.frame = [self tileLocation:0 :0 :-2];
-    self.step3l.frame = [self tileLocation:0 :-1 :-2];
+    self.step1l.frame = [position tile:0 :1 :-2];
+    self.step2l.frame = [position tile:0 :0 :-2];
+    self.step3l.frame = [position tile:0 :-1 :-2];
     
-    self.step1r.frame = [self tileLocation:0 :-2 : -1];
-    self.step2r.frame = [self tileLocation:0 :-2 : 0];
-    self.step3r.frame = [self tileLocation:0 :-2 : 1];
+    self.step1r.frame = [position tile:0 :-2 : -1];
+    self.step2r.frame = [position tile:0 :-2 : 0];
+    self.step3r.frame = [position tile:0 :-2 : 1];
     
     self.userPlayer.tag = 404;
-    self.userPlayer.frame = [self tileLocation:4 :0 :0];
+    self.userPlayer.frame = [position tile:4 :0 :0];
     
     self.userPlayerChar.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", [self templateSpriteName:@"2"] ] ];
     

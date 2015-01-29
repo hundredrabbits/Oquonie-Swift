@@ -77,7 +77,7 @@
     [user setY:y];
     [user setLocation:[nodeId intValue]];
     
-	self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
+	self.userPlayer.frame = [position tile:4:[user x]:[user y]];
 	
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
@@ -104,7 +104,7 @@
     [user setY:y];
     [user setLocation:[nodeId intValue]];
     
-	self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
+	self.userPlayer.frame = [position tile:4:[user x]:[user y]];
 	
 	[self moveDisable:1.3];
 	
@@ -226,29 +226,29 @@
 		[UIView animateWithDuration:1.0 animations:^(void){
 			// Part 1
             [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -20);
+			self.userPlayer.frame = CGRectOffset([position tile:4:[user x]:[user y]], 0, -20);
 			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",[user character]]];
 			self.userPlayerShadow.alpha = 0;
 			[self audioEffectPlayer:@"transform"];
 		} completion:^(BOOL finished){
 			[UIView animateWithDuration:1.0 animations:^(void){
-				self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -10);
+				self.userPlayer.frame = CGRectOffset([position tile:4:[user x]:[user y]], 0, -10);
 			} completion:^(BOOL finished){
 				[UIView animateWithDuration:1.0 animations:^(void){
-					self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -15);
+					self.userPlayer.frame = CGRectOffset([position tile:4:[user x]:[user y]], 0, -15);
 				} completion:^(BOOL finished){
 					[self eventVignette:@"1"];
                     [user setCharacter:charId];
                     [user setState:@"warp"];
 					[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",[user character]]];
 					[UIView animateWithDuration:1.0 animations:^(void){
-						self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -10);
+						self.userPlayer.frame = CGRectOffset([position tile:4:[user x]:[user y]], 0, -10);
 					} completion:^(BOOL finished){
 						[UIView animateWithDuration:1.0 animations:^(void){
-							self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -15);
+							self.userPlayer.frame = CGRectOffset([position tile:4:[user x]:[user y]], 0, -15);
 						} completion:^(BOOL finished){
 							[UIView animateWithDuration:1.0 animations:^(void){
-								self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, 0);
+								self.userPlayer.frame = CGRectOffset([position tile:4:[user x]:[user y]], 0, 0);
                             } completion:^(BOOL finished){
                                 [user setState:@"stand"];
 								[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",[user character]]];
@@ -295,7 +295,7 @@
 	self.spritesContainer.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height);
 	self.parallaxBack.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height+100);
 	self.parallaxFront.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height+200);
-	self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -1*screen.size.height+200);
+	self.userPlayer.frame = CGRectOffset([position tile:4 :0 :0], 0, -1*screen.size.height+200);
 	
 	[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",[user character]]];
 	
@@ -305,7 +305,7 @@
 		self.spritesContainer.frame = self.view.frame;
 		self.parallaxBack.frame = self.view.frame;
 		self.parallaxFront.frame = self.view.frame;
-		self.userPlayer.frame = [self tileLocation:4 :0 :0];
+		self.userPlayer.frame = [position tile:4 :0 :0];
 	} completion:^(BOOL finished){
 		[self roomClearDialog];
 		[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",[user character]]];
@@ -339,7 +339,7 @@
         [user setY:0];
         [user setLocation:[destinationId intValue]];
 
-        self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
+        self.userPlayer.frame = [position tile:4:[user x]:[user y]];
         [self roomStart];
         [self moveOrder];
 		
@@ -356,7 +356,7 @@
 			self.spritesContainer.frame = self.view.frame;
 			self.parallaxBack.frame = self.view.frame;
             self.parallaxFront.frame = self.view.frame;
-            self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
+            self.userPlayer.frame = [position tile:4:[user x]:[user y]];
 			
 		} completion:^(BOOL finished){
 			[self roomClearDialog];
