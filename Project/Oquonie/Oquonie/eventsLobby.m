@@ -521,7 +521,7 @@
 		}
 	}
 	
-	if(userGameCompleted == 1 && count == 5){
+	if( [user isFinished] && count == 5){
 		[self eventWarp:@"115":@"-1,0"];
 	}
 	else if(count == 5){
@@ -780,8 +780,10 @@
             
 			// Lets identify the current subview
 			if(![[tile name] isEqualToString:@"redGhost"]){ continue; }
-			if( subview.frame.origin.x != [position tile:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
-			if( subview.frame.origin.y != [position tile:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
+            
+            // TODO
+//			if( subview.frame.origin.x != [position tile:4:[room inflateTileId:tileId :@"x"]:[room inflateTileId:tileId :@"y"]].origin.x ){ continue;}
+//			if( subview.frame.origin.y != [position tile:4:[room inflateTileId:tileId :@"x"]:[room inflateTileId:tileId :@"y"]].origin.y ){ continue;}
 			
 			if( [user location] == 31 && [user eventExists:storageGhostOffice]){ subview.alpha = 0; return @"";}
 			if( [user location] == 36 && [user eventExists: storageGhostNecomedre]){ subview.alpha = 0; return @"";}
@@ -955,7 +957,7 @@
 		giveSpell = spellNecomedre;
 	}
 	
-	if(userGameCompleted ==1){
+	if( [user isFinished] ){
 		[self audioEffectPlayer:@"ramen"];
 		return @"";
 	}
@@ -1095,7 +1097,7 @@
 		return @"";
 	}
 	
-	if(userGameCompleted ==1){
+	if( [user isFinished] ){
 		[self eventWarpDramatic:@"116":@"1,0"];
 	}
 	else{

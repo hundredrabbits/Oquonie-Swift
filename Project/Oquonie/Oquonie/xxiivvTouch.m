@@ -73,7 +73,8 @@
         Tile * tile = [[Tile alloc] initWithString:tileString];
         
         if( [tile isBlocker] ){
-            UIImageView *newView = [[UIImageView alloc] initWithFrame:[position tile:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
+            CGRect blockerFrame = [position tile:4:[room inflateTileId:tileId :@"x"]:[room inflateTileId:tileId :@"y"] ];
+            UIImageView *newView = [[UIImageView alloc] initWithFrame:blockerFrame];
             newView.tag = 10;
             newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"blocker.%@.png",[tile name]]];
             [self.spritesContainer addSubview:newView];
@@ -92,7 +93,7 @@
         
         if( [tile isEvent] ){
             
-            UIImageView *newView = [[UIImageView alloc] initWithFrame:[position tile:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]]];
+            UIImageView *newView = [[UIImageView alloc] initWithFrame:[position tile:4 :[room inflateTileId:tileId :@"x"] :[room inflateTileId:tileId :@"y"]]];
             newView.tag = 20;
             newView.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1.png",[tile name],[tile data]]];
             
@@ -124,7 +125,7 @@
         
         // Notification
         
-        CGRect bubbleViewFrame = CGRectOffset([position tile:4 :[self flattenTileId:tileId :@"x"] :[self flattenTileId:tileId :@"y"]], 10, -10);
+        CGRect bubbleViewFrame = CGRectOffset([position tile:4 :[room inflateTileId:tileId :@"x"] :[room inflateTileId:tileId :@"y"]], 10, -10);
         UIImageView *bubbleView = [[UIImageView alloc] initWithFrame:CGRectOffset(bubbleViewFrame, 0, 5)];
         bubbleView.tag = 30;
         bubbleView.image = [UIImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
@@ -161,7 +162,7 @@
         NSLog(@"•  ROOM | Background   | Update   -> %@",worldNode[[user location]][22]);
         worldBackground = worldNode[[user location]][22];
         // Start Game
-        if([worldBackground isEqualToString:@"Black"] && userGameCompleted == 0){
+        if([worldBackground isEqualToString:@"Black"] && ![user isFinished]){
             [UIView animateWithDuration:1.0 animations:^{
                 self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
             } completion:NULL];
@@ -169,7 +170,7 @@
             self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.4.png"];
             self.debugLocation.textColor = [UIColor whiteColor];
         }
-        if([worldBackground isEqualToString:@"White"] && userGameCompleted == 0){
+        if([worldBackground isEqualToString:@"White"] && ![user isFinished]){
             [UIView animateWithDuration:1.0 animations:^{
                 self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
             } completion:NULL];
@@ -178,7 +179,7 @@
             self.debugLocation.textColor = [UIColor blackColor];
         }
         // End Game
-        if([worldBackground isEqualToString:@"Black"] && userGameCompleted == 1){
+        if([worldBackground isEqualToString:@"Black"] && [user isFinished]){
             [UIView animateWithDuration:1.0 animations:^{
                 self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1];
             } completion:NULL];
@@ -186,7 +187,7 @@
             self.parallaxBack.image = [UIImage imageNamed:@"fx.parallax.2.png"];
             self.debugLocation.textColor = [UIColor redColor];
         }
-        if([worldBackground isEqualToString:@"White"] && userGameCompleted == 1){
+        if([worldBackground isEqualToString:@"White"] && [user isFinished]){
             [UIView animateWithDuration:1.0 animations:^{
                 self.roomBackground.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
             } completion:NULL];

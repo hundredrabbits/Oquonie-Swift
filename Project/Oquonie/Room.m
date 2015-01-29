@@ -75,4 +75,62 @@
     return 1;
 }
 
+-(int)inflateTileId :(int)tileId :(NSString*)axis
+{
+    if([axis isEqualToString:@"x"]){
+        // Tiles
+        if(tileId == 0){ return 1;  }
+        if(tileId == 1){ return 1;  }
+        if(tileId == 2){ return 1;  }
+        if(tileId == 3){ return 0;  }
+        if(tileId == 4){ return 0;  }
+        if(tileId == 5){ return 0;  }
+        if(tileId == 6){ return -1; }
+        if(tileId == 7){ return -1; }
+        if(tileId == 8){ return -1; }
+        // Walls
+        if(tileId == 9 ){ return 2; }
+        if(tileId == 10){ return 2; }
+        if(tileId == 11){ return 2; }
+        if(tileId == 12){ return 2; }
+        if(tileId == 13){ return 1; }
+        if(tileId == 14){ return 0; }
+        // Steps
+        if(tileId == 15){ return -1;}
+        if(tileId == 16){ return  0;}
+        if(tileId == 17){ return -1;}
+        if(tileId == 18){ return -1;}
+        if(tileId == 19){ return -1;}
+        if(tileId == 20){ return -1;}
+    }
+    if([axis isEqualToString:@"y"]){
+        // Tiles
+        if(tileId == 0){ return -1; }
+        if(tileId == 1){ return 0; }
+        if(tileId == 2){ return 1; }
+        if(tileId == 3){ return -1; }
+        if(tileId == 4){ return 0; }
+        if(tileId == 5){ return 1; }
+        if(tileId == 6){ return -1; }
+        if(tileId == 7){ return 0; }
+        if(tileId == 8){ return 1; }
+        // Walls
+        if(tileId == 9 ){ return 0; }
+        if(tileId == 10){ return 1; }
+        if(tileId == 11){ return 2; }
+        if(tileId == 12){ return 2; }
+        if(tileId == 13){ return 2; }
+        if(tileId == 14){ return 2; }
+        // Steps
+        if(tileId == 15){ return -1;}
+        if(tileId == 16){ return -2;}
+        if(tileId == 17){ return -1;}
+        if(tileId == 18){ return -1;}
+        if(tileId == 19){ return -1;}
+        if(tileId == 20){ return -1;}
+    }
+    
+    return 0;
+}
+
 @end

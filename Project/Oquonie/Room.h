@@ -14,6 +14,7 @@
 -(NSString*)tileAtLocation :(int)x :(int)y;
 -(NSString*)tileAtId :(int)locationId;
 -(UIImage*)tileImageAtId :(int)x :(int)y;
+-(int)inflateTileId :(int)tileId :(NSString*)axis;
 
 @end
 

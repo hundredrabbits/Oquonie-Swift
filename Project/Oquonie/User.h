@@ -49,6 +49,14 @@
 
 -(void)save;
 
+-(int)isListening;
+-(int)isTalking;
+-(int)isFinished;
+
+-(void)talking :(int)value;
+-(void)listening :(int)value;
+-(void)finishing :(int)value;
+
 @end
 
 NSMutableDictionary * userData;

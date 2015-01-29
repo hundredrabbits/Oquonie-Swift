@@ -127,7 +127,7 @@
 {
 	NSLog(@"  EVENT | Dialog       | Letters %@",dialog);
 	
-	userDialogActive = 1;
+    [user talking:1];
 	
     self.dialogCharacter1.image = [UIImage imageNamed:@""];
     self.dialogCharacter2.image = [UIImage imageNamed:@""];
@@ -259,7 +259,7 @@
 								[self roomClearNotifications];
 								[self moveOrder];
 								[self audioEffectPlayer:@"bump"];
-								userDialogActive = 0;
+                                [user talking:0];
 							}];
 						}];
 					}];
@@ -312,7 +312,7 @@
 		[user setState:@"stand"];
 		[user setHorizontal:@"l"];
 		[user setVertical:@"f"];
-		userDialogActive = 0;
+        [user talking:0];
 		[self audioEffectPlayer:@"bump"];
 		
 		[self eventDialog:dialogIntroduction:eventOwl];
@@ -364,7 +364,7 @@
 			[user setState:@"stand"];
 			[user setHorizontal:@"l"];
 			[user setVertical:@"f"];
-			userDialogActive = 0;
+			[user talking:0];
             
 			[self audioEffectPlayer:@"bump"];
 		}];

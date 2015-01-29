@@ -44,12 +44,12 @@
 	debug = 1;
     
     if( debug == 1){
-        userAudioPlaying = 0;
+        [user listening:0];
         [user setLocation:50];
         [user eventCollect:storageQuestPillarNemedique];
     }
     else{
-        userAudioPlaying = 1;
+        [user listening:1];
     }
     
 	[self templateStart];
@@ -70,12 +70,79 @@
 
 - (void) moveRouter :(int)posX :(int)posY :(int)direction
 {
+    NSLog(@"======= + ============ + ===================");
+    
+    // Move is disabled if dialog is active
+    if( [user isTalking] ){
+        [self roomClearDialog];
+        [user talking:0];
+        return;
+    }
+    
+    // Close credits
+    if(self.creditsImage.alpha == 1){
+        [UIView animateWithDuration:1.0 animations:^(void){
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            self.creditsImage.alpha = 0;
+        } completion:^(BOOL finished){}];
+        return;
+    }
+    
+    // Close Map
+    if(self.mapImage.alpha == 1){
+        [UIView animateWithDuration:0.5 animations:^(void){
+            self.mapImage.alpha = 0;
+        } completion:^(BOOL finished){}];
+        return;
+    }
+    
+    // Move disable timeout
+    [self moveDisable:0.2];
+    
+    int blocker = [self moveEvent:( [user x]+posX ) :( [user y]+posY )];
+    
+    // Sprite face direction
+    if( direction == 0 ){ [user setHorizontal:@"l"]; [user setVertical:@"b"]; }
+    if( direction == 1 ){ [user setHorizontal:@"r"]; [user setVertical:@"b"]; }
+    if( direction == 2 ){ [user setHorizontal:@"l"]; [user setVertical:@"f"]; }
+    if( direction == 3 ){ [user setHorizontal:@"r"]; [user setVertical:@"f"]; }
+    
+    if( abs([user x]+posX) > 1 ){ blocker = 1; }
+    if( abs([user y]+posY) > 1 ){ blocker = 1; }
+    
+    // Move if okay
+    if(blocker == 0){
+        // Update position
+        [user setX:([user x] + posX)];
+        [user setY:([user y] + posY)];
+        
+        [self audioEffectPlayer:@"walk"];
+        [self moveEventCheck:([user x]) :([user y])];
+        
+        [UIView animateWithDuration:0.3 animations:^(void){
+            self.userPlayer.frame = [position tile:4:[user x]:[user y]];
+        } completion:^(BOOL finished){}];
+        
+        [self moveAnimation];
+        [self moveParallax];
+        [self moveIndicator:posX:posY];
+    }
+    else{
+        [self moveEventCheck:([user x]+posX):([user y]+posY)];
+        [self moveCollideAnimateEvent:([user x]+posX):([user y]+posY)];
+        [self moveCollideAnimateChar:posX:posY];
+    }
+    [self moveOrder];
+}
+
+- (void) old_moveRouter :(int)posX :(int)posY :(int)direction
+{
 	NSLog(@"======= + ============ + ===================");
 	
 	// Move is disabled if dialog is active
-	if(userDialogActive == 1){
+	if([user isTalking]){
 		[self roomClearDialog];
-		userDialogActive = 0;
+        [user talking:0];
 		return;
 	}
 	
@@ -112,12 +179,10 @@
 	
 	// Move if okay
 	if(blocker == 0){
-        
         // Update position
         [user setX:([user x] + posX)];
         [user setY:([user y] + posY)];
         
-		NSLog(@"•  USER | Position     | Update   -> X:%d Y:%d TILE:%d",[user x], [user y], [self flattenPosition:[user x] :[user y]]);
 		[self audioEffectPlayer:@"walk"];
 		[self moveEventCheck:([user x]) :([user y])];
 		
@@ -339,102 +404,6 @@
 	}
 }
 
-# pragma mark Misc -
-
-
-
-
--(int)flattenPosition :(int)x :(int)y
-{
-	if(x==1 && y==-1){ return 0; }
-	if(x==1 && y== 0){ return 1; }
-	if(x==1 && y== 1){ return 2; }
-	if(x==0 && y==-1){ return 3; }
-	if(x==0 && y== 0){ return 4; }
-	if(x==0 && y== 1){ return 5; }
-	if(x==-1&& y==-1){ return 6; }
-	if(x==-1&& y== 0){ return 7; }
-	if(x==-1&& y== 1){ return 8; }
-	
-	if(x== 2&& y==-1){ return 9; }
-	if(x== 2&& y== 0){ return 10; }
-	if(x== 2&& y== 1){ return 11; }
-	if(x== 1&& y== 2){ return 12; }
-	if(x== 0&& y== 2){ return 13; }
-	if(x==-1&& y== 2){ return 14; }
-	
-	if(x== 1&& y== 2){ return 12; }
-	if(x== 0&& y== 2){ return 13; }
-	if(x==-1&& y== 2){ return 14; }
-	if(x== 1&& y==-2){ return 15; }
-	if(x== 0&& y==-2){ return 16; }
-	if(x==-1&& y==-2){ return 17; }
-	
-	if(x==-2&& y==-1){ return 18; }
-	if(x==-2&& y== 0){ return 19; }
-	if(x==-2&& y== 1){ return 20; }
-	
-	return 1;
-}
-
--(int)flattenTileId :(int)tileId :(NSString*)axis
-{
-	if([axis isEqualToString:@"x"]){
-		// Tiles
-		if(tileId == 0){ return 1;  }
-		if(tileId == 1){ return 1;  }
-		if(tileId == 2){ return 1;  }
-		if(tileId == 3){ return 0;  }
-		if(tileId == 4){ return 0;  }
-		if(tileId == 5){ return 0;  }
-		if(tileId == 6){ return -1; }
-		if(tileId == 7){ return -1; }
-		if(tileId == 8){ return -1; }
-		// Walls
-		if(tileId == 9 ){ return 2; }
-		if(tileId == 10){ return 2; }
-		if(tileId == 11){ return 2; }
-		if(tileId == 12){ return 2; }
-		if(tileId == 13){ return 1; }
-		if(tileId == 14){ return 0; }
-		// Steps
-		if(tileId == 15){ return -1;}
-		if(tileId == 16){ return  0;}
-		if(tileId == 17){ return -1;}
-		if(tileId == 18){ return -1;}
-		if(tileId == 19){ return -1;}
-		if(tileId == 20){ return -1;}
-	}
-	if([axis isEqualToString:@"y"]){
-		// Tiles
-		if(tileId == 0){ return -1; }
-		if(tileId == 1){ return 0; }
-		if(tileId == 2){ return 1; }
-		if(tileId == 3){ return -1; }
-		if(tileId == 4){ return 0; }
-		if(tileId == 5){ return 1; }
-		if(tileId == 6){ return -1; }
-		if(tileId == 7){ return 0; }
-		if(tileId == 8){ return 1; }
-		// Walls
-		if(tileId == 9 ){ return 0; }
-		if(tileId == 10){ return 1; }
-		if(tileId == 11){ return 2; }
-		if(tileId == 12){ return 2; }
-		if(tileId == 13){ return 2; }
-		if(tileId == 14){ return 2; }
-		// Steps
-		if(tileId == 15){ return -1;}
-		if(tileId == 16){ return -2;}
-		if(tileId == 17){ return -1;}
-		if(tileId == 18){ return -1;}
-		if(tileId == 19){ return -1;}
-		if(tileId == 20){ return -1;}
-	}
-	
-	return 0;
-}
-
 # pragma mark Timer -
 
 -(void)timerStart
@@ -520,8 +489,8 @@
             Tile* tile = [[Tile alloc] initWithString:[room tileAtId:tileId]];
             
 			if(![tile isEvent]){ continue; }
-			if( subview.frame.origin.x != [position tile:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
-			if( subview.frame.origin.y != [position tile:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
+			if( subview.frame.origin.x != [position tile:4:[room inflateTileId:tileId :@"x"]:[room inflateTileId:tileId :@"y"]].origin.x ){ continue;}
+			if( subview.frame.origin.y != [position tile:4:[room inflateTileId:tileId :@"x"]:[room inflateTileId:tileId :@"y"]].origin.y ){ continue;}
             
 			subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[tile data] intValue], [tile extras], worldTimerEventCount]];
 		
@@ -580,7 +549,7 @@
 
 -(void)audioAmbientPlayer:(NSString*)filename
 {
-	if(userAudioPlaying == 0){
+	if(![user isListening]){
 		return;
 	}
 	
@@ -623,7 +592,7 @@
 
 -(void)playAudio:(NSString*)filename
 {
-	if([filename isEqualToString:@"town1.mp3"] && userGameCompleted == 1){
+	if([filename isEqualToString:@"town1.mp3"] && [user isFinished] ){
 		filename = @"town3.mp3";
 	}
 	else if([filename isEqualToString:@"town1.mp3"] && [user eventExists:storageQuestPillarNemedique]){

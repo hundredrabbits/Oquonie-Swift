@@ -115,8 +115,6 @@ typedef enum {
 // =================
 
 -(void)start;
-
--(int)flattenTileId :(int)tileId :(NSString*)axis;
 -(void)userSpriteUpdate :(NSString*)imageName;
 
 -(void)audioAmbientPlayer:(NSString*)filename;

@@ -236,7 +236,7 @@
 	if([option isEqualToString:@"postNotification"]){ return @""; }
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	if(userGameCompleted == 1){
+	if([user isFinished]){
 		[self eventWarp:@"110":@"-1,-1"];
 	}
 	else{

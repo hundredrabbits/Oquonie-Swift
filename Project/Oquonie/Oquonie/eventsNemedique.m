@@ -118,7 +118,7 @@
 				[self roomStart];
 				[self moveOrder];
 
-				userGameCompleted = 1;
+				[user finishing:1];
 				[user save];
 				[self eventWarpDramatic:@"1":@"0,0"];
 				[UIView animateWithDuration:5 animations:^(void){

@@ -178,7 +178,7 @@
 		return @"";
 	}
 	
-	if(userGameCompleted ==1){
+	if([user isFinished]){
 		[self eventWarpDramatic:@"112":@"1,1"];
 	}
 	else{

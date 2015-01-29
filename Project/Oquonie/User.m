@@ -188,6 +188,44 @@
     return FALSE;
 }
 
+-(int)isListening
+{
+    if( userData[@"isListening"] ){
+        return TRUE;
+    }
+    return FALSE;
+}
+
+-(void)listening :(int)value
+{
+    userData[@"isListening"] = @(value);
+}
+
+-(int)isTalking
+{
+    if( userData[@"isTalking"] ){
+        return TRUE;
+    }
+    return FALSE;
+}
+
+-(void)talking :(int)value
+{
+    userData[@"isTalking"] = @(value);
+}
+
+-(int)isFinished
+{
+    if( userData[@"isFinished"] ){
+        return TRUE;
+    }
+    return FALSE;
+}
+-(void)finishing :(int)value
+{
+    userData[@"isFinished"] = @(value);
+}
+
 -(NSMutableDictionary*)new
 {
     userData = [[NSMutableDictionary alloc] init];
@@ -202,6 +240,10 @@
     userData[@"vertical"] = @"f";
     userData[@"spellbook"] = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
     userData[@"events"] = [NSMutableArray arrayWithObjects:@"",nil];
+    
+    userData[@"isListening"] = @1;
+    userData[@"isTalking"] = @0;
+    userData[@"isFinished"] = @0;
     
     int myCount = 0;
     while ( myCount < 40 )	{ myCount++; userData[@"events"][myCount] = @"";	}

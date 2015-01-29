@@ -10,7 +10,7 @@
 
 @interface Position : NSObject
 
--(Position*)initWithView :(CGRect)viewFrame;
+- (Position*)initWithView :(CGRect)viewFrame;
 - (CGRect)tile :(int)type :(int)posX :(int)posY;
 
 @end

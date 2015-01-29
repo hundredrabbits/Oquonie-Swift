@@ -23,13 +23,6 @@ int viewWidth;
 int tileW;
 int tileH;
 
-// User
-
-int userAudioPlaying;
-int userDialogActive;
-
-int userGameCompleted;
-
 // World
 
 NSString *worldAudio;
