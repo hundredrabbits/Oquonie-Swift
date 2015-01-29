@@ -13,13 +13,18 @@
 
 -(Room*)initWithArray :(NSArray*)roomArray
 {
+    NSLog(@"!  ROOM | Data         | Loading..");
     roomNode = [[NSArray alloc] initWithArray:roomArray];
+    NSLog(@"!  ROOM | Data         | Ready");
+    NSLog(@"> %@",roomNode);
     return self;
 }
 
 -(NSString*)tileAtLocation :(int)x :(int)y
 {
-    return roomNode[[self flattenPosition:x:y]];
+    int index = [self flattenPosition:x:y];
+    
+    return roomNode[index];
 }
 
 -(NSString*)tileAtId :(int)locationId
@@ -28,7 +33,7 @@
 }
 
 -(UIImage*)tileImageAtId :(int)x :(int)y
-{
+{    
     Tile* tile = [[Tile alloc] initWithString:[self tileAtLocation:x :y]];
     
     if( x == 2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png", [tile value] ]]; }

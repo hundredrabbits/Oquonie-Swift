@@ -60,22 +60,21 @@
 
 -(void)start
 {
+    world = [[World alloc] init];
+    
+    [self userStart];
+    
 	debug = 1;
-	
-	[self userStart];
     
     if( debug == 1){
         userAudioPlaying = 0;
-//        [self eventTranform:2];
-        [self eventWarp:@"50" :@"0,0"];
+        userLocation = 50;
         userStorageEvents[storageQuestPillarNemedique] = @1;
     }
     else{
         userAudioPlaying = 1;
     }
     
-    world = [[World alloc] init];
-    room = [[Room alloc] initWithArray:[world roomAtLocation:userLocation]];
 	
 	[self templateStart];
 	[self roomStart];
@@ -213,7 +212,7 @@
 {
     Tile* tileTarget = [[Tile alloc] initWithString:[room tileAtLocation:targetX:targetY]];
 
-	if( [tileTarget isEvent] == 1 ){
+	if( [tileTarget isEvent] == 1 || [tileTarget isWarp] == 1 ){
 		[self eventRouter :[tileTarget type]:[tileTarget name]:[tileTarget data]];
 	}
 }

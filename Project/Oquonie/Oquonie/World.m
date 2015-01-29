@@ -42,6 +42,7 @@
 
 -(NSArray*)roomAtLocation :(int)location
 {
+    NSLog(@"! ROOM AT LOCATION: %@",worldNode);
     return worldNode[location];
 }
 

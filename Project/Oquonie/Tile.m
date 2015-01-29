@@ -16,6 +16,14 @@
     return self;
 }
 
+-(int)isWarp
+{
+    if( [[self type] isEqualToString:@"warp"] ){
+        return YES;
+    }
+    return NO;
+}
+
 -(int)isBlocker
 {
     if( [[self type] isEqualToString:@"block"] ){

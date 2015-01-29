@@ -62,9 +62,11 @@
 -(void)roomStart
 {
     NSLog(@"------- - ------------ - -------------------");
-    NSLog(@"!  ROOM | Load..       * %d:%@", userLocation, worldNode[userLocation][21]);
+    NSLog(@"!  ROOM |              * %d:%@", userLocation, worldNode[userLocation][21]);
     NSLog(@"------- - ------------ - -------------------");
     
+    room = [[Room alloc] initWithArray:[world roomAtLocation:userLocation]];
+
     self.debugLocation.text = [NSString stringWithFormat:@"Node:v%d_n%d - %@(%@)",systemBuild,userLocation,worldNode[userLocation][21],worldNode[userLocation][23]];
     
     [self roomClearParallax];

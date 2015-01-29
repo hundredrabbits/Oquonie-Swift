@@ -32,9 +32,7 @@
 		[self eventWarp:eventName:eventData];
 	}
     if ([eventType isEqualToString:@"event"]) {
-        NSLog(@"------- - ------------ - -------------------");
-        NSLog(@"! EVENT | Load..       * %@", eventName );
-        NSLog(@"------- - ------------ - -------------------");
+        
 		NSString *eventSelector = [NSString stringWithFormat:@"event_%@:",[self eventParser :eventName:0]];
 		
 		#pragma clang diagnostic push

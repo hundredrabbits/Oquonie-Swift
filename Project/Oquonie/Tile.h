@@ -12,6 +12,7 @@
 
 -(Tile*)initWithString :(NSString*)tileString;
 
+-(int)isWarp;
 -(int)isBlocker;
 -(int)isEvent;
 
