@@ -6,6 +6,11 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+#import "User.h"
+#import "World.h"
+#import "Room.h"
+#import "Tile.h"
+
 #define systemDebug				0
 #define systemBuild				1
 
@@ -183,8 +188,7 @@
 
 #define intStr() [NSString stringWithFormat:@"%d",int]
 
-#define userLocationString		[NSString stringWithFormat:@"%d",userLocation]
-#define userPositionString		[NSString stringWithFormat:@"%d,%d",userPositionX,userPositionY]
+#define userPositionString		[NSString stringWithFormat:@"%d,%d",[user x],[user y]]
 
 #define MARK	CMLog(@"%s", __PRETTY_FUNCTION__);
 #define CMLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);

@@ -285,7 +285,7 @@
 		mod = @"1";
 	}
 	
-	spriteName = [NSString stringWithFormat:@"char%d.%@.%@.%@.%@.png", userCharacter, userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
+	spriteName = [NSString stringWithFormat:@"char%d.%@.%@.%@.%@.png", [user character], userSpriteState, userSpriteOrientationHorizontal, userSpriteOrientationVertical,mod];
 	return spriteName;
 }
 

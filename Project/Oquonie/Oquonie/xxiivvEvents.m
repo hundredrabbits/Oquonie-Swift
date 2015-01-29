@@ -72,11 +72,12 @@
 	int y = [[array objectAtIndex: 1] intValue];
 	
 	self.userPlayerChar.alpha = 0;
-	
-	userPositionX = x;
-	userPositionY = y;
-	userLocation = [nodeId intValue];
-	self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+    
+    [user setX:x];
+    [user setY:y];
+    [user setLocation:[nodeId intValue]];
+    
+	self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
 	
 	[UIView beginAnimations: @"Fade In" context:nil];
 	[UIView setAnimationDuration:0.3];
@@ -99,10 +100,11 @@
 	
 	self.userPlayerChar.alpha = 0;
 	
-	userPositionX = x;
-	userPositionY = y;
-	userLocation = [nodeId intValue];
-	self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+    [user setX:x];
+    [user setY:y];
+    [user setLocation:[nodeId intValue]];
+    
+	self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
 	
 	[self moveDisable:1.3];
 	
@@ -181,7 +183,7 @@
     NSLog(@"  EVENT | Spell        | Updating..");
 	
 	// If already the character
-	if(spellType == userCharacter){
+	if(spellType == [user character]){
 		NSLog(@"  EVENT | Spell        | Already type:%d",spellType);
 		[self eventSpellRefresh];
 		return;
@@ -370,33 +372,33 @@
 		[UIView animateWithDuration:1.0 animations:^(void){
 			// Part 1
             [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -20);
-			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
+			self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -20);
+			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",[user character]]];
 			self.userPlayerShadow.alpha = 0;
 			[self audioEffectPlayer:@"transform"];
 		} completion:^(BOOL finished){
 			[UIView animateWithDuration:1.0 animations:^(void){
-				self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -10);
+				self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -10);
 			} completion:^(BOOL finished){
 				[UIView animateWithDuration:1.0 animations:^(void){
-					self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -15);
+					self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -15);
 				} completion:^(BOOL finished){
 					[self eventVignette:@"1"];
-                    userCharacter = charId;
+                    [user setCharacter:charId];
                     userSpriteState = @"warp";
 					[self eventSpellRefresh];
-					[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
+					[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",[user character]]];
 					[UIView animateWithDuration:1.0 animations:^(void){
-						self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -10);
+						self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -10);
 					} completion:^(BOOL finished){
 						[UIView animateWithDuration:1.0 animations:^(void){
-							self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, -15);
+							self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, -15);
 						} completion:^(BOOL finished){
 							[UIView animateWithDuration:1.0 animations:^(void){
-								self.userPlayer.frame = CGRectOffset([self tileLocation:4:userPositionX:userPositionY], 0, 0);
+								self.userPlayer.frame = CGRectOffset([self tileLocation:4:[user x]:[user y]], 0, 0);
                             } completion:^(BOOL finished){
                                 userSpriteState = @"stand";
-								[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",userCharacter]];
+								[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",[user character]]];
 								self.userPlayerShadow.alpha = 1;
 								[self roomClearDialog];
 								[self roomGenerateTiles];
@@ -442,7 +444,7 @@
 	self.parallaxFront.frame = CGRectOffset(self.view.frame, 0, -1*screen.size.height+200);
 	self.userPlayer.frame = CGRectOffset([self tileLocation:4 :0 :0], 0, -1*screen.size.height+200);
 	
-	[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",userCharacter]];
+	[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.warp.l.f.1.png",[user character]]];
 	
 	[UIView animateWithDuration:2.5 animations:^(void){
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -453,7 +455,7 @@
 		self.userPlayer.frame = [self tileLocation:4 :0 :0];
 	} completion:^(BOOL finished){
 		[self roomClearDialog];
-		[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",userCharacter]];
+		[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",[user character]]];
 		userSpriteState = @"stand";
 		userSpriteOrientationHorizontal = @"l";
 		userSpriteOrientationVertical = @"f";
@@ -480,10 +482,11 @@
 	} completion:^(BOOL finished){
 		NSLog(@"  EVENT | Pan          | Panning In");
         
-        userLocation = [destinationId intValue];
-        userPositionY = 0;
-        userPositionX = 0;
-        self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+        [user setX:0];
+        [user setY:0];
+        [user setLocation:[destinationId intValue]];
+
+        self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
         [self roomStart];
         [self moveOrder];
 		
@@ -500,11 +503,11 @@
 			self.spritesContainer.frame = self.view.frame;
 			self.parallaxBack.frame = self.view.frame;
             self.parallaxFront.frame = self.view.frame;
-            self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+            self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
 			
 		} completion:^(BOOL finished){
 			[self roomClearDialog];
-			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",userCharacter]];
+			[self userSpriteUpdate:[NSString stringWithFormat:@"char%d.stand.l.f.1.png",[user character]]];
 			userSpriteState = @"stand";
 			userSpriteOrientationHorizontal = @"l";
 			userSpriteOrientationVertical = @"f";

@@ -26,7 +26,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == characterCat){ return @""; }
+		if([user character] == characterCat){ return @""; }
 		// If doesn't have spell already
 		if([self eventSpellCheck:eventSpellId]){ return @""; }
 		// Else
@@ -56,7 +56,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == characterCat){ return @""; }
+		if([user character] == characterCat){ return @""; }
 		// If doesn't have spell already
 		if([self eventSpellCheck:eventSpellId]){ return @""; }
 		// Else
@@ -85,7 +85,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if(userCharacter == characterCat){ return @""; }
+		if([user character] == characterCat){ return @""; }
 		// If doesn't have spell already
 		if([self eventSpellCheck:eventSpellId]){ return @""; }
 		// Else
@@ -200,7 +200,7 @@
 		return eventNoFace;
 	}
 	
-	if( userCharacter == 7 ){
+	if( [user character] == 7 ){
 		
 		[self moveDisable:4];
 		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
@@ -279,19 +279,19 @@
     NSString* twitterText = @"";
     
     // Booth #1
-    if(userLocation == 149){ twitterText = @"I have found the first of seven hidden photobooths in #oquonie.\n"; }
+    if([user location] == 149){ twitterText = @"I have found the first of seven hidden photobooths in #oquonie.\n"; }
     // Booth #2
-    if(userLocation == 150){ twitterText = @"I have found the second of seven hidden photobooths in #oquonie.\n"; }
+    if([user location] == 150){ twitterText = @"I have found the second of seven hidden photobooths in #oquonie.\n"; }
     // Booth #3
-    if(userLocation == 151){ twitterText = @"I have found the third of seven hidden photobooths in #oquonie.\n"; }
+    if([user location] == 151){ twitterText = @"I have found the third of seven hidden photobooths in #oquonie.\n"; }
     // Booth #4
-    if(userLocation == 152){ twitterText = @"I have found the fourth of seven hidden photobooths in #oquonie.\n"; }
+    if([user location] == 152){ twitterText = @"I have found the fourth of seven hidden photobooths in #oquonie.\n"; }
     // Booth #5
-    if(userLocation == 153){ twitterText = @"I have found the fifth of seven hidden photobooths in #oquonie.\n"; }
+    if([user location] == 153){ twitterText = @"I have found the fifth of seven hidden photobooths in #oquonie.\n"; }
     // Booth #6
-    if(userLocation == 154){ twitterText = @"I have found the sixth of seven hidden photobooths in #oquonie.\n"; }
+    if([user location] == 154){ twitterText = @"I have found the sixth of seven hidden photobooths in #oquonie.\n"; }
     // Booth #7
-    if(userLocation == 155){ twitterText = @"I have found the last of seven hidden photobooths in #oquonie!\n"; }
+    if([user location] == 155){ twitterText = @"I have found the last of seven hidden photobooths in #oquonie!\n"; }
     
     // Take Screenshot
     CGRect rect = [self.view bounds];
@@ -321,19 +321,19 @@
     // Broadcast Event Sprite Change
     if([option isEqualToString:@"postUpdate"]){
         // Booth #1
-        if(userLocation == 3){ return @"104"; }
+        if([user location] == 3){ return @"104"; }
         // Booth #2
-        if(userLocation == 37){ return @"105"; }
+        if([user location] == 37){ return @"105"; }
         // Booth #3
-        if(userLocation == 46){ return @"106"; }
+        if([user location] == 46){ return @"106"; }
         // Booth #4
-        if(userLocation == 66){ return @"107"; }
+        if([user location] == 66){ return @"107"; }
         // Booth #5
-        if(userLocation == 89){ return @"110"; }
+        if([user location] == 89){ return @"110"; }
         // Booth #6
-        if(userLocation == 102){ return @"108"; }
+        if([user location] == 102){ return @"108"; }
         // Booth #7
-        if(userLocation == 142){ return @"109"; }
+        if([user location] == 142){ return @"109"; }
     }
     
     if(![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
@@ -342,19 +342,19 @@
     }
     
     // Booth #1
-    if(userLocation == 3){ [self eventWarp:@"149" :@"0,-1"]; }
+    if([user location] == 3){ [self eventWarp:@"149" :@"0,-1"]; }
     // Booth #2
-    if(userLocation == 37){ [self eventWarp:@"150" :@"-1,-1"]; }
+    if([user location] == 37){ [self eventWarp:@"150" :@"-1,-1"]; }
     // Booth #3
-    if(userLocation == 46){ [self eventWarp:@"151" :@"-1,0"]; }
+    if([user location] == 46){ [self eventWarp:@"151" :@"-1,0"]; }
     // Booth #4
-    if(userLocation == 66){ [self eventWarp:@"152" :@"-1,0"]; }
+    if([user location] == 66){ [self eventWarp:@"152" :@"-1,0"]; }
     // Booth #5
-    if(userLocation == 89){ [self eventWarp:@"153" :@"0,-1"]; }
+    if([user location] == 89){ [self eventWarp:@"153" :@"0,-1"]; }
     // Booth #6
-    if(userLocation == 102){ [self eventWarp:@"154" :@"0,-1"]; }
+    if([user location] == 102){ [self eventWarp:@"154" :@"0,-1"]; }
     // Booth #7
-    if(userLocation == 142){ [self eventWarp:@"155" :@"0,-1"]; }
+    if([user location] == 142){ [self eventWarp:@"155" :@"0,-1"]; }
     
     return @"";
 }

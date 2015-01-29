@@ -8,13 +8,6 @@
 
 #import "xxiivvViewController.h"
 
-#import "xxiivvSettings.h"
-#import "xxiivvVariables.h"
-
-#import "World.h"
-#import "Room.h"
-#import "Tile.h"
-
 #import "xxiivvTouch.h"
 #import "xxiivvTemplates.h"
 #import "xxiivvEvents.h"
@@ -39,28 +32,12 @@
 	[self start];
 }
 
--(void)saveOrientation{
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self selector:@selector(orientationChanged:)
-     name:UIDeviceOrientationDidChangeNotification
-     object:[UIDevice currentDevice]];
-}
-
--(void)createJSON
-{
-    NSError* error;
-	NSData* jsonData = [NSJSONSerialization dataWithJSONObject:worldNode options:NSJSONWritingPrettyPrinted error:&error];
-	NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-	
-	NSLog(@"%@",jsonString);
-}
-
 # pragma mark Start -
 
 -(void)start
 {
     world = [[World alloc] init];
+    user  = [[User alloc] init];
     
     [self userStart];
     [self timerStart];
@@ -69,7 +46,7 @@
     
     if( debug == 1){
         userAudioPlaying = 0;
-        userLocation = 50;
+        [user setLocation:50];
         userStorageEvents[storageQuestPillarNemedique] = @1;
     }
     else{
@@ -124,7 +101,7 @@
 	// Move disable timeout
 	[self moveDisable:0.2];
 	
-	int blocker = [self moveEvent:( userPositionX+posX ) :( userPositionY+posY )];
+	int blocker = [self moveEvent:( [user x]+posX ) :( [user y]+posY )];
 	
 	// Sprite face direction
 	if( direction == 0 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"b"; }
@@ -132,21 +109,22 @@
 	if( direction == 2 ){ userSpriteOrientationHorizontal = @"l"; userSpriteOrientationVertical = @"f"; }
 	if( direction == 3 ){ userSpriteOrientationHorizontal = @"r"; userSpriteOrientationVertical = @"f"; }
 		
-	if( abs(userPositionX+posX) > 1 ){ blocker = 1; }
-	if( abs(userPositionY+posY) > 1 ){ blocker = 1; }
+	if( abs([user x]+posX) > 1 ){ blocker = 1; }
+	if( abs([user y]+posY) > 1 ){ blocker = 1; }
 	
 	// Move if okay
 	if(blocker == 0){
         
-		// Update position
-		userPositionX += posX;
-		userPositionY += posY;
-		NSLog(@"•  USER | Position     | Update   -> X:%d Y:%d TILE:%d",userPositionX, userPositionY, [self flattenPosition:userPositionX :userPositionY]);
+        // Update position
+        [user setX:([user x] + posX)];
+        [user setY:([user y] + posY)];
+        
+		NSLog(@"•  USER | Position     | Update   -> X:%d Y:%d TILE:%d",[user x], [user y], [self flattenPosition:[user x] :[user y]]);
 		[self audioEffectPlayer:@"walk"];
-		[self moveEventCheck:(userPositionX) :(userPositionY)];
+		[self moveEventCheck:([user x]) :([user y])];
 		
 		[UIView animateWithDuration:0.3 animations:^(void){
-			self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+			self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
 		} completion:^(BOOL finished){}];
 
 		[self moveAnimation];
@@ -154,8 +132,8 @@
 		[self moveIndicator:posX:posY];
 	}
 	else{
-		[self moveEventCheck:(userPositionX+posX):(userPositionY+posY)];
-		[self moveCollideAnimateEvent:(userPositionX+posX):(userPositionY+posY)];
+		[self moveEventCheck:([user x]+posX):([user y]+posY)];
+		[self moveCollideAnimateEvent:([user x]+posX):([user y]+posY)];
 		[self moveCollideAnimateChar:posX:posY];
 	}
 	[self moveOrder];
@@ -199,11 +177,11 @@
 	self.parallaxFront.alpha = 1;
 	self.parallaxBack.alpha = 1;
     
-	self.parallaxFront.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
-	self.parallaxBack.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*2, (userPositionX+userPositionY)*-2);
+	self.parallaxFront.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*3, ([user x]+[user y])*-3);
+	self.parallaxBack.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*2, ([user x]+[user y])*-2);
     
-	self.roomContainer.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
-	self.spritesContainer.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*1.1, (userPositionX+userPositionY)*-1.1);
+	self.roomContainer.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*1.1, ([user x]+[user y])*-1.1);
+	self.spritesContainer.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*1.1, ([user x]+[user y])*-1.1);
     
 	[UIView commitAnimations];
 }
@@ -923,6 +901,14 @@
 	return;
 }
 
+-(void)saveOrientation{
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(orientationChanged:)
+     name:UIDeviceOrientationDidChangeNotification
+     object:[UIDevice currentDevice]];
+}
+
 - (void) orientationChanged:(NSNotification *)note
 {
     if( [[UIDevice currentDevice] orientation] == 5 ){
@@ -931,8 +917,8 @@
     
     [self templateStart];
     [self roomStart];
-    [self tileLocation:4:userPositionX:userPositionY];
-    self.userPlayer.frame = [self tileLocation:4:userPositionX:userPositionY];
+    [self tileLocation:4:[user x]:[user y]];
+    self.userPlayer.frame = [self tileLocation:4:[user x]:[user y]];
     [self moveOrder];
 }
 

@@ -42,7 +42,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
 			return @"E";
 		}
 		return @"";
@@ -54,7 +54,7 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
@@ -74,7 +74,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
 			return @"E";
 		}
 		return @"";
@@ -86,7 +86,7 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
@@ -107,7 +107,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
 			return @"E";
 		}
 		return @"";
@@ -119,7 +119,7 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+	if( eventSpell == [user character] )				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
@@ -146,7 +146,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		// Must be Nephtaline
-		if(userCharacter != eventRequirement){ return @""; }
+		if([user character] != eventRequirement){ return @""; }
 		// Must have ramen guy
 		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
 		// If doesn't have spell already
@@ -164,7 +164,7 @@
 	// If doesn't have the first pillar
 	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
-	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	if([user character] != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
@@ -190,7 +190,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		// Must be Nephtaline
-		if(userCharacter != eventRequirement){ return @""; }
+		if([user character] != eventRequirement){ return @""; }
 		// Must have ramen guy
 		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
 		// If doesn't have spell already
@@ -208,7 +208,7 @@
 	// If doesn't have the first pillar
 	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
-	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	if([user character] != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	

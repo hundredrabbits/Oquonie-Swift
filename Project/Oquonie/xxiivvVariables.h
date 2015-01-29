@@ -6,12 +6,14 @@
 //  Copyright (c) 2015 XXIIVV. All rights reserved.
 //
 
+#import "User.h"
 #import "World.h"
 #import "Room.h"
 #import "Tile.h"
 
 int debug;
 
+User* user;
 World* world;
 Room* room;
 
@@ -28,12 +30,6 @@ NSString *userSpriteOrientationVertical;
 int userAudioPlaying;
 int userMoveEnabled;
 int userDialogActive;
-
-int userLocation;
-int userPositionX;
-int userPositionY;
-int userPositionZ;
-int userCharacter;
 
 int userGameCompleted;
 

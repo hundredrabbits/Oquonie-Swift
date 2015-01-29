@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "xxiivvSettings.h"
+#import "xxiivvVariables.h"
 
 typedef enum {
     DirectionNone  = -1,

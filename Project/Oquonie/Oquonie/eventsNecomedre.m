@@ -38,7 +38,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
 			return letterDocument;
 		}
 		return @"";
@@ -50,7 +50,7 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
@@ -70,7 +70,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
 			return letterDocument;
 		}
 		return @"";
@@ -82,7 +82,7 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
@@ -102,7 +102,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
 			return letterDocument;
 		}
 		return @"";
@@ -114,7 +114,7 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
@@ -134,7 +134,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
 			return letterNephtaline;
 		}
 		return @"";
@@ -146,7 +146,7 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
@@ -168,7 +168,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
 			return letterNephtaline;
 		}
 		return @"";
@@ -180,7 +180,7 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
@@ -201,7 +201,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && userCharacter != eventSpell ){
+		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
 			return letterNephtaline;
 		}
 		return @"";
@@ -213,7 +213,7 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == userCharacter)				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
     else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
@@ -240,7 +240,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		// Must be Nephtaline
-		if(userCharacter != eventRequirement){ return @""; }
+		if([user character] != eventRequirement){ return @""; }
 		// Must have ramen guy
 		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
 		// If doesn't have spell already
@@ -260,7 +260,7 @@
 	// If doesn't have the first pillar
 	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
-	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	if([user character] != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
@@ -286,7 +286,7 @@
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
 		// If the wrong character
-		if(userCharacter != eventRequirement){ return @""; }
+		if([user character] != eventRequirement){ return @""; }
 		// If without the ramen guy
 		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
 		// If have spell already
@@ -306,7 +306,7 @@
 	// If doesn't have the first pillar
 	if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
-	if(userCharacter != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	if([user character] != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
@@ -326,8 +326,8 @@
 {
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
-		if(userLocation == 30){
-			if(userCharacter == 6){ return letterDocument; }
+		if([user location] == 30){
+			if([user character] == 6){ return letterDocument; }
 			else{ return @""; }
 		}
 		return @"";
@@ -339,8 +339,8 @@
 	}
 	
 	// Dialogs
-	if(userLocation==30){
-		if(userCharacter == 6){
+	if([user location]==30){
+		if([user character] == 6){
 			[self eventTranform:1];
 			[self eventDialog:dialogTutorialTalk1:eventTutorial];
 			[NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(tutorialSequence) userInfo:nil repeats:NO];

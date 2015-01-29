@@ -20,7 +20,7 @@
 	if(debug == 1){
 		[self userDebug];
 	}
-	else if( [[defaults objectForKey:@"userLocation"] intValue]>0 ){
+	else if( [[defaults objectForKey:@"[user location]"] intValue]>0 ){
 		[self userLoad];
 	}
 	else{
@@ -48,8 +48,8 @@
 	
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	
-	[defaults setObject:[NSString stringWithFormat:@"%d",userLocation] forKey:@"userLocation"];
-	[defaults setObject:[NSString stringWithFormat:@"%d",userCharacter] forKey:@"userCharacter"];
+	[defaults setObject:[NSString stringWithFormat:@"%d",[user location]] forKey:@"[user location]"];
+	[defaults setObject:[NSString stringWithFormat:@"%d",[user character]] forKey:@"[user character]"];
 	[defaults setObject:[NSString stringWithFormat:@"%d",userGameCompleted] forKey:@"userGameCompleted"];
 	
 	[defaults setObject:userSpriteState forKey:@"userSpriteState"];
@@ -68,8 +68,8 @@
 	
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	
-	userLocation = [[defaults objectForKey:@"userLocation"] intValue];
-	userCharacter = [[defaults objectForKey:@"userCharacter"] intValue];
+//	[user location] = [[defaults objectForKey:@"[user location]"] intValue];
+//	[user character] = [[defaults objectForKey:@"[user character]"] intValue];
 	userGameCompleted = [[defaults objectForKey:@"userGameCompleted"] intValue];
 	
 	userSpriteState = [defaults objectForKey:@"userSpriteState"];
@@ -87,9 +87,9 @@
 -(void)userNew
 {
 	NSLog(@"   USER | Starting..     | Please hold");
-	
-	userCharacter = userCharacterId;
-	userLocation = userCharacterLocation;
+    
+    [user setCharacter:userCharacterId];
+    [user setLocation:userCharacterLocation];
 	
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";
@@ -107,8 +107,8 @@
 {
 	NSLog(@"   USER | Starting..     | Please hold");
 	
-	userCharacter = 1;
-	userLocation = 1;
+    [user setCharacter:1];
+    [user setLocation:1];
 	
 	userSpriteState = @"stand";
 	userSpriteOrientationHorizontal = @"l";

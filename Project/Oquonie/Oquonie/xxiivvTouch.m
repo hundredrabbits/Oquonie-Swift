@@ -17,12 +17,12 @@
 -(void)roomStart
 {
     NSLog(@"------- - ------------ - -------------------");
-    NSLog(@"!  ROOM |              * %d:%@", userLocation, worldNode[userLocation][21]);
+    NSLog(@"!  ROOM |              * %d:%@", [user location], worldNode[[user location]][21]);
     NSLog(@"------- - ------------ - -------------------");
     
-    room = [[Room alloc] initWithArray:[world roomAtLocation:userLocation]];
+    room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
 
-    self.debugLocation.text = [NSString stringWithFormat:@"Node:v%d_n%d - %@(%@)",systemBuild,userLocation,worldNode[userLocation][21],worldNode[userLocation][23]];
+    self.debugLocation.text = [NSString stringWithFormat:@"Node:v%d_n%d - %@(%@)",systemBuild,[user location],worldNode[[user location]][21],worldNode[[user location]][23]];
     
     [self roomClearParallax];
     [self roomClearSprites];
@@ -68,7 +68,7 @@
 -(void)roomGenerateBlockers
 {
     int tileId = 0;
-    for (NSString *tileString in worldNode[userLocation]) {
+    for (NSString *tileString in worldNode[[user location]]) {
         
         Tile * tile = [[Tile alloc] initWithString:tileString];
         
@@ -86,7 +86,7 @@
 -(void)roomGenerateEvents
 {
     int tileId = 0;
-    for (NSString *tileString in worldNode[userLocation]) {
+    for (NSString *tileString in worldNode[[user location]]) {
         
         Tile * tile = [[Tile alloc] initWithString:tileString];
         
@@ -105,7 +105,7 @@
 -(void)roomGenerateNotifications
 {
     int tileId = -1; // ...
-    for (NSString *tile in worldNode[userLocation]) {
+    for (NSString *tile in worldNode[[user location]]) {
         tileId += 1;
         
         Tile * tile = [[Tile alloc] initWithString:[room tileAtId:tileId]];
@@ -148,18 +148,18 @@
 
 -(void)roomGenerateAudioTrack
 {
-    if(![worldAudio isEqualToString:worldNode[userLocation][23] ]){
-        NSLog(@"•  ROOM | Audio        | Update   -> %@",worldNode[userLocation][23]);
-        [self audioAmbientPlayer:[NSString stringWithFormat:@"%@.mp3",worldNode[userLocation][23]]];
-        worldAudio = worldNode[userLocation][23];
+    if(![worldAudio isEqualToString:worldNode[[user location]][23] ]){
+        NSLog(@"•  ROOM | Audio        | Update   -> %@",worldNode[[user location]][23]);
+        [self audioAmbientPlayer:[NSString stringWithFormat:@"%@.mp3",worldNode[[user location]][23]]];
+        worldAudio = worldNode[[user location]][23];
     }
 }
 
 -(void)roomGenerateBackground
 {
-    if(![worldBackground isEqualToString:worldNode[userLocation][22] ]){
-        NSLog(@"•  ROOM | Background   | Update   -> %@",worldNode[userLocation][22]);
-        worldBackground = worldNode[userLocation][22];
+    if(![worldBackground isEqualToString:worldNode[[user location]][22] ]){
+        NSLog(@"•  ROOM | Background   | Update   -> %@",worldNode[[user location]][22]);
+        worldBackground = worldNode[[user location]][22];
         // Start Game
         if([worldBackground isEqualToString:@"Black"] && userGameCompleted == 0){
             [UIView animateWithDuration:1.0 animations:^{
@@ -253,8 +253,8 @@
 {
     self.parallaxFront.alpha = 0;
     self.parallaxBack.alpha = 0;
-    self.parallaxFront.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*3, (userPositionX+userPositionY)*-3);
-    self.parallaxBack.frame = CGRectOffset(self.view.frame, (userPositionX*-1+userPositionY)*1.5, (userPositionX+userPositionY)*-1.5);
+    self.parallaxFront.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*3, ([user x]+[user y])*-3);
+    self.parallaxBack.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*1.5, ([user x]+[user y])*-1.5);
 }
 
 

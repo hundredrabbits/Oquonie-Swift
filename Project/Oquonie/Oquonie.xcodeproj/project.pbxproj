@@ -775,6 +775,7 @@
 		577350A21A75BF1D00F1B3DA /* event.37.r.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5773509B1A75BF1D00F1B3DA /* event.37.r.1.png */; };
 		577350A31A75BF1D00F1B3DA /* event.37.r.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5773509C1A75BF1D00F1B3DA /* event.37.r.2.png */; };
 		577350A41A75BF1D00F1B3DA /* event.37.r.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5773509D1A75BF1D00F1B3DA /* event.37.r.3.png */; };
+		57F701191A7A8260009C1C91 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1585,6 +1586,8 @@
 		5773509B1A75BF1D00F1B3DA /* event.37.r.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.r.1.png; path = en.assets/event.37.r.1.png; sourceTree = "<group>"; };
 		5773509C1A75BF1D00F1B3DA /* event.37.r.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.r.2.png; path = en.assets/event.37.r.2.png; sourceTree = "<group>"; };
 		5773509D1A75BF1D00F1B3DA /* event.37.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.r.3.png; path = en.assets/event.37.r.3.png; sourceTree = "<group>"; };
+		57F701171A7A8260009C1C91 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		57F701181A7A8260009C1C91 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2951,6 +2954,8 @@
 				576FF6E61A798C75000824FE /* Room.m */,
 				576FF6E91A798C81000824FE /* Tile.h */,
 				576FF6EA1A798C81000824FE /* Tile.m */,
+				57F701171A7A8260009C1C91 /* User.h */,
+				57F701181A7A8260009C1C91 /* User.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -3831,6 +3836,7 @@
 				03C488E4187E8A5500375E86 /* worldNephtaline.m in Sources */,
 				03A4B845194DC44800D96889 /* worldNastazie.m in Sources */,
 				03C488F5187E8C5E00375E86 /* eventsNestorine.m in Sources */,
+				57F701191A7A8260009C1C91 /* User.m in Sources */,
 				576FF6E71A798C76000824FE /* Room.m in Sources */,
 				036D5BF7187D1DA00042378D /* xxiivvUtils.m in Sources */,
 				03C488F8187E8C6E00375E86 /* worldNeomine.m in Sources */,
