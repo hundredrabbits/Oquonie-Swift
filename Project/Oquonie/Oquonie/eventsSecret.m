@@ -28,7 +28,7 @@
 	if([option isEqualToString:@"postNotification"]){
 		if([user character] == characterCat){ return @""; }
 		// If doesn't have spell already
-		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		if([user spellExists:eventSpellId]){ return @""; }
 		// Else
 		return eventLetter;
 	}
@@ -38,7 +38,7 @@
 	
 	[self audioDialogPlayer:@"cat"];
 	
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
@@ -58,7 +58,7 @@
 	if([option isEqualToString:@"postNotification"]){
 		if([user character] == characterCat){ return @""; }
 		// If doesn't have spell already
-		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		if([user spellExists:eventSpellId]){ return @""; }
 		// Else
 		return eventLetter;
 	}
@@ -68,7 +68,7 @@
 	
 	[self audioDialogPlayer:@"cat"];
 	
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
@@ -87,7 +87,7 @@
 	if([option isEqualToString:@"postNotification"]){
 		if([user character] == characterCat){ return @""; }
 		// If doesn't have spell already
-		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		if([user spellExists:eventSpellId]){ return @""; }
 		// Else
 		return eventLetter;
 	}
@@ -97,7 +97,7 @@
 	
 	[self audioDialogPlayer:@"cat"];
 	
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";

@@ -42,7 +42,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return @"E";
 		}
 		return @"";
@@ -55,11 +55,11 @@
 	
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:@"neomine"];
 	
 	return @"";
@@ -74,7 +74,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return @"E";
 		}
 		return @"";
@@ -87,11 +87,11 @@
 	
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:@"neomine"];
 	
 	return @"";
@@ -107,7 +107,7 @@
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return @"E";
 		}
 		return @"";
@@ -120,11 +120,11 @@
 	
 	// Dialogs
 	if( eventSpell == [user character] )				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:@"neomine"];
 	
 	return @"";
@@ -150,7 +150,7 @@
 		// Must have ramen guy
 		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
 		// If doesn't have spell already
-		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		if([user spellExists:eventSpellId]){ return @""; }
 		// Have the first pillar
 		if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ return @""; }
 		// Else
@@ -168,7 +168,7 @@
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
@@ -194,7 +194,7 @@
 		// Must have ramen guy
 		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
 		// If doesn't have spell already
-		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		if([user spellExists:eventSpellId]){ return @""; }
 		// Have the first pillar
 		if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ return @""; }
 		// Else
@@ -212,7 +212,7 @@
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";

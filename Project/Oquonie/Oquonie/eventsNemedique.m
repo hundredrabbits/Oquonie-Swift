@@ -52,7 +52,7 @@
 		// Must have ramen guy
 		if([userStorageEvents[eventRamenRequirement] intValue] < 1){ return @""; }
 		// If doesn't have spell already
-		if([self eventSpellCheck:eventSpellId]){ return @""; }
+		if([user spellExists:eventSpellId]){ return @""; }
 		// Have the first pillar
 		if([userStorageEvents[storageQuestPillarNemedique] intValue] == 0){ return @""; }
 		// Else
@@ -70,7 +70,7 @@
 	// If without the ramen guy
 	if([userStorageEvents[eventRamenRequirement] intValue] < 1){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";

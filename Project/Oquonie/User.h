@@ -39,6 +39,8 @@
 -(void)clearSpellbook;
 
 -(int)spellExists :(NSString*)spellId;
+-(void)spellCollect :(NSString*)spellId :(int)spellType;
+
 @end
 
 NSMutableDictionary * userData;

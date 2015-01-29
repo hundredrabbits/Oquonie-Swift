@@ -25,7 +25,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -36,10 +36,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:@"noface"];
 	
 	return @"";
@@ -57,7 +57,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -68,10 +68,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:@"noface"];
 	
 	return @"";
@@ -89,7 +89,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -100,10 +100,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:@"noface"];
 	
 	return @"";
@@ -121,7 +121,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -132,10 +132,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:eventCharacter];
 	
 	return @"";
@@ -153,7 +153,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -164,10 +164,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:eventCharacter];
 	
 	return @"";
@@ -185,7 +185,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -196,10 +196,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:eventCharacter];
 	
 	return @"";
@@ -217,7 +217,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -228,10 +228,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:eventCharacter];
 	
 	return @"";
@@ -248,7 +248,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -259,10 +259,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:eventCharacter];
 	
 	return @"";
@@ -279,7 +279,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -290,10 +290,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:eventCharacter];
 	
 	return @"";
@@ -311,7 +311,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -322,10 +322,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:eventCharacter];
 	
 	return @"";
@@ -343,7 +343,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -354,10 +354,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:eventCharacter];
 	
 	return @"";
@@ -375,7 +375,7 @@
 	NSString * eventDialogSpell = dialogGainSpell(eventLetter);
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
-		if( ![self eventSpellCheck:eventSpellId] && [user character] != eventSpell ){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
 			return eventLetter;
 		}
 		return @"";
@@ -386,10 +386,10 @@
 	}
 	// Dialogs
 	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [self eventSpellCheck:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[self eventSpellAdd:eventSpellId:eventSpell];
+	[user spellCollect:eventSpellId:eventSpell];
 	[self audioDialogPlayer:eventCharacter];
 	
 	return @"";

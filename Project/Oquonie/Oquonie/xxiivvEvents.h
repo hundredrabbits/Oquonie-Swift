@@ -21,7 +21,6 @@
 -(void)eventIntroduction;
 
 -(bool)eventSpellCheck :(NSString*)spellId;
--(void)eventSpellRefresh;
 
 -(void)eventTransitionPan :(NSString*)destinationId :(NSString*)destinationCoordinates;
 

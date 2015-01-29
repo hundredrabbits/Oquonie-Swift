@@ -58,7 +58,6 @@
 	else{
 		[self eventDialog :eventDialogLocked:eventTutorial];
 		[self audioEffectPlayer:@"doorlocked"];
-		[self eventSpellRefresh];
 	}
 	
 	return @"";
@@ -133,7 +132,6 @@
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
 		[self audioEffectPlayer:@"doorlocked"];
-		[self eventSpellRefresh];
 	}
 	return @"";
 }
@@ -193,7 +191,6 @@
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
 		[self audioEffectPlayer:@"doorlocked"];
-		[self eventSpellRefresh];
 	}
 	return @"";
 }
@@ -260,7 +257,6 @@
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
 		[self audioEffectPlayer:@"doorlocked"];
-		[self eventSpellRefresh];
 	}
 	
 	return @"";
@@ -345,7 +341,6 @@
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
 		[self audioEffectPlayer:@"doorlocked"];
-		[self eventSpellRefresh];
 	}
 	return @"";
 }
@@ -416,7 +411,6 @@
 	else{
 		[self eventDialog:eventDialogLocked:@"1"];
 		[self audioEffectPlayer:@"doorlocked"];
-		[self eventSpellRefresh];
 	}
 	return @"";
 }
@@ -969,7 +963,7 @@
 	
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
-		if([userStorageEvents[ramenStorage] intValue] == 1 && ![self eventSpellCheck:@"ramenQuestSpell"] ){
+		if([userStorageEvents[ramenStorage] intValue] == 1 && ![user spellExists:@"ramenQuestSpell"] ){
 			return saySpell;
 		}
 		return @"";
@@ -985,8 +979,8 @@
 		}
 	}
 	
-	if([userStorageEvents[ramenStorage] intValue] == 1){
-		[self eventSpellAdd:@"ramenQuestSpell":giveSpell];
+    if([userStorageEvents[ramenStorage] intValue] == 1){
+        [user spellCollect:@"ramenQuestSpell":giveSpell];
 		[self audioDialogPlayer:@"ramen"];
 	}
 	

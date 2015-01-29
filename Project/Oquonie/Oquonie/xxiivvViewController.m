@@ -57,7 +57,6 @@
     [self roomStart];
     
     [self moveOrder];
-	[self eventSpellRefresh];
 	
 	[self eventIntroduction];
 	

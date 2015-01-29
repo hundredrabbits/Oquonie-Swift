@@ -122,6 +122,37 @@
     return FALSE;
 }
 
+-(void)spellCollect :(NSString*)spellId :(int)spellType
+{
+    if(spellType == [self character]){
+        NSLog(@"  EVENT | Spell        | Already type:%d",spellType);
+        return;
+    }
+    
+    int index = 0;
+    for (NSArray *spellbookItem in userData[@"spellbook"]) {
+        if( [spellbookItem[0] isEqualToString:spellId] && [spellbookItem[1] intValue] == spellType){
+            NSLog(@"- EVENT | Spell        | Removed  -> id:%@ type:%d",spellId,spellType);
+            userData[@"spellbook"][index] = @[@"",@""];
+            return;
+        }
+        index += 1;
+    }
+    
+    int spellSlot = -1;
+    if( [userData[@"spellbook"][0][0] isEqualToString:@""] ){ spellSlot = 0; }
+    else if( [userData[@"spellbook"][1][0] isEqualToString:@""] ){ spellSlot = 1; }
+    else if( [userData[@"spellbook"][2][0] isEqualToString:@""] ){ spellSlot = 2; }
+    
+    if(spellSlot > -1){
+        NSLog(@"> EVENT | Spell        | Added    -> id:%@ type:%d slot:%d",spellId,spellType,spellSlot);
+        userData[@"spellbook"][spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
+    }
+    else{
+        NSLog(@"> EVENT | Spell        | No available slot");
+    }
+}
+
 -(NSMutableDictionary*)new
 {
     userData = [[NSMutableDictionary alloc] init];
