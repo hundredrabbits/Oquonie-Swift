@@ -39,8 +39,6 @@
     user  = [[User alloc] init];
     position = [[Position alloc] initWithView:self.view.frame];
     render = [[Render alloc] init];
-    
-    [user setX:10];
 
     [self timerStart];
     
@@ -80,32 +78,42 @@
         Event * newEvent = [[Event alloc] initWithName:@"clearDialog"];
         [newEvent addCoordinates:posX:posY];
         [newEvent addAudio:@"bump"];
-        [render add:newEvent];
+        [render router:newEvent];
         [user talking:0];
         return;
     }
     
-    Tile* destination = [[Tile alloc] initWithString:[room tileAtLocation:posX :posY]];
+    Tile* destination = [[Tile alloc] initWithString:[room tileAtLocation:[user x]+posX :[user y]+posY]];
     
     // Event
     
     if( [destination isEmpty] || [destination isBlocker] ){
         Event * newEvent = [[Event alloc] initWithTile:destination];
         [newEvent addName:@"block"];
-        [render add:newEvent];
+        [newEvent addCoordinates:[user x]+posX:[user y]+posY];
+        [render router:newEvent];
         return;
     }
-    if( [destination isWarp] || [destination isEvent] ){
+    else if( [destination isWarp] || [destination isEvent] ){
         Event * newEvent = [[Event alloc] initWithTile:destination];
         [newEvent addName:@"event"];
-        [render add:newEvent];
+        [newEvent addCoordinates:[user x]+posX:[user y]+posY];
+        [render router:newEvent];
+        return;
+    }
+    else if( ([user x]+posX) > 1 || ([user x]+posX) < -1 || ([user y]+posY) > 1 || ([user y]+posY) < -1 ){
+        Event * newEvent = [[Event alloc] initWithTile:destination];
+        [newEvent addName:@"block"];
+        [newEvent addCoordinates:[user x]+posX:[user y]+posY];
+        [render router:newEvent];
         return;
     }
     
     // Move
     Event * newEvent = [[Event alloc] initWithTile:destination];
     [newEvent addName:@"move"];
-    [render add:newEvent];
+    [newEvent addCoordinates:[user x]+posX:[user y]+posY];
+    [render router:newEvent];
 }
 
 - (void) old_moveRouter :(int)posX :(int)posY :(int)direction

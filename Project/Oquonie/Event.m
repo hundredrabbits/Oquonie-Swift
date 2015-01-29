@@ -30,6 +30,16 @@
     return eventData[@"name"];
 }
 
+-(int)x
+{
+    return [eventData[@"x"] intValue];
+}
+
+-(int)y
+{
+    return [eventData[@"y"] intValue];
+}
+
 -(void)addName :(NSString*)name
 {
     eventData[@"name"] = name;
@@ -39,6 +49,8 @@
 {
     eventData[@"x"] = @(x);
     eventData[@"y"] = @(y);
+    
+    NSLog(@"!!! %d %@",x,eventData[@"x"]);
 }
 
 -(void)addAudio :(NSString*)soundName

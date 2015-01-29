@@ -15,6 +15,8 @@
 -(Event*)initWithName :(NSString*)name;
 
 -(NSString*)name;
+-(int)x;
+-(int)y;
 
 -(void)addName :(NSString*)name;
 -(void)addCoordinates :(int)x :(int)y;

@@ -15,29 +15,34 @@
 
 -(Render*)init
 {
-    queue = [[NSMutableArray alloc] init];
     return self;
 }
 
--(void)add :(Event*)event
+-(void)router :(Event*)event
 {
-    NSLog(@"> RENDR | Added: %@ Size: %lu",[event name], (unsigned long)[queue count] );
-    [queue addObject:event];
+    if( [[event name] isEqualToString:@"move"] ){ [self renderMove:event]; }
+    if( [[event name] isEqualToString:@"event"] ){ [self renderEvent:event]; }
+    if( [[event name] isEqualToString:@"block"] ){ [self renderBlock:event]; }
+}
+
+-(void)renderMove :(Event*)event
+{
+    NSLog(@"! EVENT | Moving to: %d %d",[event x],[event y]);
     
-    [self compile];
+    [user setX:[event x]];
+    [user setY:[event y]];
 }
 
--(void)compile
+-(void)renderEvent :(Event*)event
 {
-    for (Event *event in queue) {
-        NSLog(@"%@",[event name] );
-    }
-    [self emptyQueue];
+    NSLog(@"! EVENT | Event at: %d %d",[event x],[event y]);
+    
 }
 
--(void)emptyQueue
+-(void)renderBlock :(Event*)event
 {
-    queue = [[NSMutableArray alloc] init];
+    NSLog(@"! EVENT | Blocked on: %d %d",[event x],[event y]);
+    
 }
 
 @end

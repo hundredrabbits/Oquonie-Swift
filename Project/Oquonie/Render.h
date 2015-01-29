@@ -11,8 +11,6 @@
 
 @interface Render : NSObject
 
--(void)add :(Event*)event;
+-(void)router :(Event*)event;
 
 @end
-
-NSMutableArray* queue;
