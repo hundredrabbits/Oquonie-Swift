@@ -782,8 +782,11 @@
 		int tileId = -1;
 		while (tileId < 21) {
 			tileId += 1;
+            
+            Tile* tile = [[Tile alloc] initWithString:[room tileAtId:tileId]];
+            
 			// Lets identify the current subview
-			if(![[self tileParser:worldNode[userLocation][tileId] :2] isEqualToString:@"redGhost"]){ continue; }
+			if(![[tile name] isEqualToString:@"redGhost"]){ continue; }
 			if( subview.frame.origin.x != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
 			if( subview.frame.origin.y != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
 			

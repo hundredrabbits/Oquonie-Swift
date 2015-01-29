@@ -10,14 +10,11 @@
 
 @interface xxiivvViewController (general)
 
-- (NSString*) tileParser :(NSString*)tileString :(int)index;
--(NSString*)tileParserUpdate :(NSArray*)eventArray :(int)index;
-
 - (void) roomStart;
 - (void) roomGenerateNotifications;
 - (void) roomClearNotifications;
 - (void) roomClearSprites;
--(void)roomGenerateEvents;
--(void)roomGenerateTiles;
+- (void)roomGenerateEvents;
+- (void)roomGenerateTiles;
 
 @end

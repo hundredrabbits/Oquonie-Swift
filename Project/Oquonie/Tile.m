@@ -71,4 +71,10 @@
     return [tileNode objectAtIndex:3];
 }
 
+-(NSString*)extras
+{
+    if( [tileNode count] < 5 ){ return @""; }
+    return [tileNode objectAtIndex:4];
+}
+
 @end

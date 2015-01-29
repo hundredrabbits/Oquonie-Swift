@@ -11,6 +11,5 @@
 @interface xxiivvViewController (world)
 
 - (void) worldStart;
-- (NSString*) tileParser :(NSString*)tileString :(int)index;
 
 @end

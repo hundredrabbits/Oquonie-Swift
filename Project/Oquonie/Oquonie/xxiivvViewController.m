@@ -63,6 +63,7 @@
     world = [[World alloc] init];
     
     [self userStart];
+    [self timerStart];
     
 	debug = 1;
     
@@ -75,11 +76,10 @@
         userAudioPlaying = 1;
     }
     
-	
 	[self templateStart];
-	[self roomStart];
-	[self moveOrder];
-	[self timerStart];
+    [self roomStart];
+    
+    [self moveOrder];
 	[self eventSpellRefresh];
 	
 	[self eventIntroduction];
@@ -310,21 +310,21 @@
 		return 1;
 	}
 	// Look if tile is a blocker
-	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"block"] ){
+	if( [tile isBlocker] ){
 		NSLog(@"> EVENT | Blocked      | Blocker");
 		[self audioEffectPlayer:@"bump"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
-	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"warp"] ){
+	if( [tile isWarp] ){
 		NSLog(@"> EVENT | Blocked      | Warp");
 		[self audioEffectPlayer:@"warp"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
-	if( [[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :1] isEqualToString:@"event"] ){
+	if( [tile isEvent] ){
 		NSLog(@"> EVENT | Blocked      | x%d y%d", posX, posY);
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
@@ -638,11 +638,14 @@
 			tileId += 1;
 			
 			// Lets identify the current subview
-			if(![[self tileParser:worldNode[userLocation][tileId] :1] isEqualToString:@"event"]){ continue; }
+            
+            Tile* tile = [[Tile alloc] initWithString:[room tileAtId:tileId]];
+            
+			if(![tile isEvent]){ continue; }
 			if( subview.frame.origin.x != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.x ){ continue;}
 			if( subview.frame.origin.y != [self tileLocation:4:[self flattenTileId:tileId :@"x"]:[self flattenTileId:tileId :@"y"]].origin.y ){ continue;}
-			
-			subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[self tileParser:worldNode[userLocation][tileId] :3] intValue], [self tileParser:worldNode[userLocation][tileId] :4], worldTimerEventCount]];
+            
+			subview.image = [UIImage imageNamed:[NSString stringWithFormat:@"event.%d.%@.%d.png", [[tile data] intValue], [tile extras], worldTimerEventCount]];
 		
 		}
 	}
@@ -672,7 +675,6 @@
 				
 			}];
 		}];
-		
 	}
 }
 
@@ -698,13 +700,11 @@
 	NSLog(@"%f",self.audioAmbientPlayer.volume);
 }
 
-
 -(void)audioAmbientPlayer:(NSString*)filename
 {
 	if(userAudioPlaying == 0){
 		return;
 	}
-	
 	
 	if(audioCurrentlyPlaying != filename){
 		[self fadeOut];

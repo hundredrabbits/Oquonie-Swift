@@ -21,6 +21,7 @@
 -(NSString*)type;
 -(NSString*)name;
 -(NSString*)data;
+-(NSString*)extras;
 
 @end
 
