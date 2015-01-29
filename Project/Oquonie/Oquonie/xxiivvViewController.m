@@ -295,13 +295,15 @@
 
 - (int) moveEvent :(int)posX :(int)posY
 {
+    Tile* tile = [[Tile alloc] initWithString:[room tileAtLocation:posX :posY]];
+    
 	// If Ghost
-	if([[self tileParser:worldNode[userLocation][[self flattenPosition:posX :posY]] :2] isEqualToString:@"redGhost"]){
+	if([[tile name] isEqualToString:@"redGhost"]){
 		return 0;
 	}
 	
 	// Look if tile is missing
-	if( [worldNode[userLocation][[self flattenPosition:posX :posY]] intValue] == 0 ){
+	if( [tile isEmpty] ){
 		NSLog(@"> EVENT | Blocked      | No Ground");
 		[self audioEffectPlayer:@"bump"];
 		[self moveCollideAnimateChar:posX:posY];

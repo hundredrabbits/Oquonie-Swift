@@ -16,6 +16,14 @@
     return self;
 }
 
+-(int)isEmpty
+{
+    if( [[self value] isEqualToString:@"0"] || [[self value] isEqualToString:@""] ){
+        return YES;
+    }
+    return NO;
+}
+
 -(int)isWarp
 {
     if( [[self type] isEqualToString:@"warp"] ){

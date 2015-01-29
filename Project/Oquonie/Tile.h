@@ -12,6 +12,7 @@
 
 -(Tile*)initWithString :(NSString*)tileString;
 
+-(int)isEmpty;
 -(int)isWarp;
 -(int)isBlocker;
 -(int)isEvent;
@@ -20,6 +21,7 @@
 -(NSString*)type;
 -(NSString*)name;
 -(NSString*)data;
+
 @end
 
 NSArray* tileNode;

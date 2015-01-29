@@ -16,7 +16,6 @@
     NSLog(@"!  ROOM | Data         | Loading..");
     roomNode = [[NSArray alloc] initWithArray:roomArray];
     NSLog(@"!  ROOM | Data         | Ready");
-    NSLog(@"> %@",roomNode);
     return self;
 }
 
@@ -33,7 +32,7 @@
 }
 
 -(UIImage*)tileImageAtId :(int)x :(int)y
-{    
+{
     Tile* tile = [[Tile alloc] initWithString:[self tileAtLocation:x :y]];
     
     if( x == 2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png", [tile value] ]]; }
