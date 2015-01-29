@@ -639,7 +639,7 @@
 		[self eventDialog:dialogGainPillar:eventOwl];
 		[self eventTransitionPan:pillarInstanceWarp:roomCenter];
 		// Clear Spellbook
-		userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+        [user clearSpellbook];
 	}
 	else{
 		userStorageEvents[pillarInstanceStorageId] = @"0";
@@ -859,7 +859,7 @@
 		[NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
 		
 		// Clear Spellbook
-		userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+        [user clearSpellbook];
 	}
 	else{
 		[self audioDialogPlayer:@"shark"];

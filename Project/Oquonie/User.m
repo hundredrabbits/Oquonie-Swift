@@ -107,6 +107,21 @@
     return [userData[@"y"] intValue];
 }
 
+-(void)clearSpellbook
+{
+    userData[@"spellbook"] = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+}
+
+-(int)spellExists :(NSString*)spellId
+{
+    for (NSArray *spellbookItem in userData[@"spellbook"]) {
+        if( [spellbookItem[0] isEqualToString:spellId] ){
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
 -(NSMutableDictionary*)new
 {
     userData = [[NSMutableDictionary alloc] init];
@@ -118,6 +133,7 @@
     userData[@"state"] = @"warp";
     userData[@"horizontal"] = @"l";
     userData[@"vertical"] = @"f";
+    userData[@"spellbook"] = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
     
     return userData;
 }

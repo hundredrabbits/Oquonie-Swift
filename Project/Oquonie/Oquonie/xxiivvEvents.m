@@ -356,7 +356,7 @@
 	
 	NSLog(@"  EVENT | Spell        | Clear Spellbook" );
 	
-	userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+    [user clearSpellbook];
 	
 	NSLog(@"  EVENT | Spell        | Change Sprite" );
 	

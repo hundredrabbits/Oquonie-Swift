@@ -36,6 +36,9 @@
 -(int)enabled;
 -(void)setEnabled :(int)value;
 
+-(void)clearSpellbook;
+
+-(int)spellExists :(NSString*)spellId;
 @end
 
 NSMutableDictionary * userData;

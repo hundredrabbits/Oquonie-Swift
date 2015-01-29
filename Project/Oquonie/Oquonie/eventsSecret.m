@@ -211,7 +211,7 @@
 		[self eventDialog:dialogIntroduction:eventNoFace];
 		
 		// Clear Spellbook
-		userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+		[user clearSpellbook];
 	}
 	else{
 		[self audioDialogPlayer:@"noface"];

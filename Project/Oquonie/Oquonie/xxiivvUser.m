@@ -52,11 +52,6 @@
 	[defaults setObject:[NSString stringWithFormat:@"%d",[user character]] forKey:@"[user character]"];
 	[defaults setObject:[NSString stringWithFormat:@"%d",userGameCompleted] forKey:@"userGameCompleted"];
 	
-	[defaults setObject:[user state] forKey:@"userSpriteState"];
-//	[defaults setObject:userSpriteOrientationHorizontal forKey:@"userSpriteOrientationHorizontal"];
-//	[defaults setObject:userSpriteOrientationVertical forKey:@"userSpriteOrientationVertical"];
-	
-	[defaults setObject:userSpellbook forKey:@"userSpellbook"];
 	[defaults setObject:userStorageEvents forKey:@"userStorageEvents"];
 	
 	[defaults synchronize];
@@ -76,10 +71,8 @@
 //	userSpriteOrientationHorizontal = [defaults objectForKey:@"userSpriteOrientationHorizontal"];
 //	userSpriteOrientationVertical = [defaults objectForKey:@"userSpriteOrientationVertical"];
 	
-	userSpellbook = [defaults objectForKey:@"userSpellbook"];
 	userStorageEvents = [defaults objectForKey:@"userStorageEvents"];
     
-    userSpellbook = [[NSMutableArray alloc] initWithArray:userSpellbook];
     userStorageEvents = [[NSMutableArray alloc] initWithArray:userStorageEvents];
 	
 }
@@ -101,7 +94,7 @@
     while ( myCount < 40 )	{ myCount++; userStorageEvents[myCount] = @"";	}
 	
 	// User Spellbook
-	userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+	[user clearSpellbook];
 }
 -(void)userDebug
 {
@@ -120,7 +113,7 @@
     while ( myCount < 40 )	{ myCount++; userStorageEvents[myCount] = @"";	}
 	
 	// User Spellbook
-	userSpellbook = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+	[user clearSpellbook];
 }
 
 @end
