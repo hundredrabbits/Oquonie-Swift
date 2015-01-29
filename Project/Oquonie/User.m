@@ -89,6 +89,7 @@
 
 -(void)setEnabled :(int)value
 {
+    NSLog(@"•  USER | Move         | Enabled: %d",value);
     userData[@"enabled"] = @(value);
 }
 
@@ -120,6 +121,11 @@
 -(void)eventRemove :(int)eventId
 {
     userData[@"events"][eventId] = @0;
+}
+
+-(void)save
+{
+    NSLog(@"TODO");
 }
 
 -(int)spellExists :(NSString*)spellId
@@ -186,6 +192,7 @@
 {
     userData = [[NSMutableDictionary alloc] init];
     
+    userData[@"character"] = @1;
     userData[@"location"] = @50;
     userData[@"x"] = @0;
     userData[@"y"] = @0;

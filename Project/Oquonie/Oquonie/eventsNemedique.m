@@ -15,7 +15,6 @@
 #import "xxiivvEvents.h"
 #import "eventsNemedique.h"
 #import "xxiivvWorld.h"
-#import "xxiivvUser.h"
 
 @implementation xxiivvViewController (eventsNemedique)
 
@@ -120,7 +119,7 @@
 				[self moveOrder];
 
 				userGameCompleted = 1;
-				[self userSave];
+				[user save];
 				[self eventWarpDramatic:@"1":@"0,0"];
 				[UIView animateWithDuration:5 animations:^(void){
 					[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];

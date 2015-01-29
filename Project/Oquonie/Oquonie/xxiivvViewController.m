@@ -11,7 +11,6 @@
 #import "xxiivvTouch.h"
 #import "xxiivvTemplates.h"
 #import "xxiivvEvents.h"
-#import "xxiivvUser.h"
 #import <Social/Social.h>
 
 #define POINT_DISTANCE(start, end) abs(sqrt((end.x-start.x)*(end.x-start.x) + (end.y-start.y)*(end.y-start.y)))
@@ -38,8 +37,7 @@
 {
     world = [[World alloc] init];
     user  = [[User alloc] init];
-    
-    [self userStart];
+
     [self timerStart];
     
 	debug = 1;
@@ -221,17 +219,12 @@
 
 - (void) moveEnable
 {
-	NSLog(@"•  USER | Move         | Enabled");
-    
 	[user setEnabled:1];
 }
 
 - (void) moveDisable :(float)disableTime
 {
-	NSLog(@"•  USER | Move         | Disabled");
-	
 	[worldMoveTimer invalidate];
-    
 	[user setEnabled:0];
 	worldMoveTimer = [NSTimer scheduledTimerWithTimeInterval:disableTime target:self selector:@selector(moveEnable) userInfo:nil repeats:NO];
 }

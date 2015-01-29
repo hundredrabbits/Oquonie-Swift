@@ -11,6 +11,7 @@
 @interface User : NSObject
 
 -(User*)init;
+-(NSMutableDictionary*)new;
 
 -(NSString*)state;
 -(void)setState :(NSString*)value;
@@ -45,6 +46,8 @@
 -(int)eventExists :(int)eventId;
 -(void)eventCollect :(int)eventId;
 -(void)eventRemove :(int)eventId;
+
+-(void)save;
 
 @end
 

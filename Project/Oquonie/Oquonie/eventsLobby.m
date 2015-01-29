@@ -14,7 +14,6 @@
 #import "xxiivvViewController.h"
 #import "eventsLobby.h"
 #import "xxiivvEvents.h"
-#import "xxiivvUser.h"
 #import "xxiivvWorld.h"
 
 @implementation xxiivvViewController (eventsLobby)
@@ -827,7 +826,7 @@
 	// Dialog
     [self eventDialog:dialogOwlSave:eventOwl];
 	[self audioDialogPlayer:@"owl"];
-	[self userSave];
+	[user save];
 	
 	// Return storage Id
 	return @"";
