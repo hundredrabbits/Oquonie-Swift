@@ -40,6 +40,11 @@
     return [eventData[@"y"] intValue];
 }
 
+-(int)location
+{
+    return [eventData[@"location"] intValue];
+}
+
 -(void)addName :(NSString*)name
 {
     eventData[@"name"] = name;

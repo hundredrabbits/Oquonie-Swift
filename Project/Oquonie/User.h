@@ -23,6 +23,8 @@
 -(int)character;
 -(void)setCharacter :(int)value;
 
+-(void)setPosition :(int)x :(int)y;
+
 -(int)x;
 -(void)setX :(int)value;
 

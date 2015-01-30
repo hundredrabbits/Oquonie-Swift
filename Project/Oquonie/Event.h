@@ -17,6 +17,7 @@
 -(NSString*)name;
 -(int)x;
 -(int)y;
+-(int)location;
 
 -(void)addName :(NSString*)name;
 -(void)addCoordinates :(int)x :(int)y;

@@ -23,6 +23,7 @@
     if( [[event name] isEqualToString:@"move"] ){ [self renderMove:event]; }
     if( [[event name] isEqualToString:@"event"] ){ [self renderEvent:event]; }
     if( [[event name] isEqualToString:@"block"] ){ [self renderBlock:event]; }
+    if( [[event name] isEqualToString:@"warp"] ){ [self renderWarp:event]; }
 }
 
 -(void)renderMove :(Event*)event
@@ -33,10 +34,17 @@
     [user setY:[event y]];
 }
 
+-(void)renderWarp :(Event*)event
+{
+    NSLog(@"! EVENT | Warping to: %d %d %d",[event location],[event x],[event y]);
+    [user setLocation:[event location]];
+    [user setPosition:[event x]:[event y]];
+    room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
+}
+
 -(void)renderEvent :(Event*)event
 {
     NSLog(@"! EVENT | Event at: %d %d",[event x],[event y]);
-    
 }
 
 -(void)renderBlock :(Event*)event

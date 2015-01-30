@@ -70,6 +70,12 @@
     return [userData[@"x"] intValue];
 }
 
+-(void)setPosition :(int)x :(int)y
+{
+    userData[@"x"] = @(x);
+    userData[@"y"] = @(y);
+}
+
 -(void)setX :(int)value
 {
     userData[@"x"] = @(value);

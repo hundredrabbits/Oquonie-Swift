@@ -94,7 +94,16 @@
         [render router:newEvent];
         return;
     }
-    else if( [destination isWarp] || [destination isEvent] ){
+    else if( [destination isWarp] ){
+        Event * newEvent = [[Event alloc] initWithTile:destination];
+        NSArray* coordinates = [[destination data] componentsSeparatedByString: @","];
+        [newEvent addName:@"warp"];
+        [newEvent addCoordinates:[coordinates[0] intValue]:[coordinates[1] intValue]];
+        [newEvent addLocation:[[destination name] intValue]];
+        [render router:newEvent];
+        return;
+    }
+    else if( [destination isEvent] ){
         Event * newEvent = [[Event alloc] initWithTile:destination];
         [newEvent addName:@"event"];
         [newEvent addCoordinates:[user x]+posX:[user y]+posY];
