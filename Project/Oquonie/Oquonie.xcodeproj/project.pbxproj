@@ -769,6 +769,8 @@
 		57C0E4351A7C1CBE008728C8 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4341A7C1CBE008728C8 /* Input.m */; };
 		57C0E4361A7C1CBE008728C8 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4341A7C1CBE008728C8 /* Input.m */; };
 		57C0E4371A7C217D008728C8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
+		57C0E43A1A7C29AB008728C8 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4391A7C29AB008728C8 /* Encounter.m */; };
+		57C0E43B1A7C29AB008728C8 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4391A7C29AB008728C8 /* Encounter.m */; };
 		57F701191A7A8260009C1C91 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
 		57F7011C1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
 		57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
@@ -1570,6 +1572,8 @@
 		5773509D1A75BF1D00F1B3DA /* event.37.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.r.3.png; path = en.assets/event.37.r.3.png; sourceTree = "<group>"; };
 		57C0E4331A7C1CBE008728C8 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Input.h; sourceTree = "<group>"; };
 		57C0E4341A7C1CBE008728C8 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Input.m; sourceTree = "<group>"; };
+		57C0E4381A7C29AB008728C8 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
+		57C0E4391A7C29AB008728C8 /* Encounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encounter.m; sourceTree = "<group>"; };
 		57F701171A7A8260009C1C91 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		57F701181A7A8260009C1C91 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		57F7011A1A7AC4EC009C1C91 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -2936,6 +2940,8 @@
 				57F701271A7AD890009C1C91 /* Render.m */,
 				57C0E4331A7C1CBE008728C8 /* Input.h */,
 				57C0E4341A7C1CBE008728C8 /* Input.m */,
+				57C0E4381A7C29AB008728C8 /* Encounter.h */,
+				57C0E4391A7C29AB008728C8 /* Encounter.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -3806,6 +3812,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03BBFAB8178A9E4E00E79C3D /* main.m in Sources */,
+				57C0E43A1A7C29AB008728C8 /* Encounter.m in Sources */,
 				03E14CE018A666E600B3816F /* eventsSecret.m in Sources */,
 				03C488E7187E8A6300375E86 /* eventsNephtaline.m in Sources */,
 				03C488EE187E8BFB00375E86 /* eventsNemedique.m in Sources */,
@@ -3841,6 +3848,7 @@
 				57C0E4371A7C217D008728C8 /* User.m in Sources */,
 				576FF6E41A79818B000824FE /* World.m in Sources */,
 				57013B961A7954E800612048 /* ViewController.m in Sources */,
+				57C0E43B1A7C29AB008728C8 /* Encounter.m in Sources */,
 				57013B931A7954E800612048 /* main.m in Sources */,
 				57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */,
 				57F701291A7AD890009C1C91 /* Render.m in Sources */,

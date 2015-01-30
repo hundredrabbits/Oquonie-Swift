@@ -14,6 +14,7 @@
 #import "Position.h"
 #import "Render.h"
 #import "Input.h"
+#import "Encounter.h"
 
 int debug;
 

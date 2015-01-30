@@ -44,14 +44,14 @@
 
 -(void)renderEvent :(Event*)event
 {
-    NSLog(@"======= + ============ + ===================");
     NSLog(@"! EVENT | Event        | %@ (%d %d)",[event name],[event x],[event y]);
+    Encounter* newEncounter = [[Encounter alloc] initWithName:[event name]];
+    [newEncounter touch];
 }
 
 -(void)renderBlock :(Event*)event
 {
     NSLog(@"! EVENT | Block        | (%d %d)",[event x],[event y]);
-    
 }
 
 @end
