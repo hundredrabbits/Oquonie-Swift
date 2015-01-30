@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 XXIIVV. All rights reserved.
 //
 
+#import "xxiivvSettings.h"
+#import "xxiivvVariables.h"
 #import "CoreWindow.h"
 
 @implementation CoreWindow
@@ -19,20 +21,25 @@
             return;            // reject dead keys
         if ( [theArrow length] == 1 ) {
             keyChar = [theArrow characterAtIndex:0];
+            Input * newInput = [[Input alloc] init];
             if ( keyChar == NSLeftArrowFunctionKey ) {
-                NSLog(@"Left");
+                NSLog(@"#   KEY | Left");
+                [newInput router:-1:0];
                 return;
             }
             if ( keyChar == NSRightArrowFunctionKey ) {
-                NSLog(@"Right");
+                NSLog(@"#   KEY | Right");
+                [newInput router:1:0];
                 return;
             }
             if ( keyChar == NSUpArrowFunctionKey ) {
-                NSLog(@"Up");
+                NSLog(@"#   KEY | Up");
+                [newInput router:0:1];
                 return;
             }
             if ( keyChar == NSDownArrowFunctionKey ) {
-                NSLog(@"Down");
+                NSLog(@"#   KEY | Down");
+                [newInput router:0:-1];
                 return;
             }
             [super keyDown:theEvent];

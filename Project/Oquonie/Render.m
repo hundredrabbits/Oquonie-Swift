@@ -20,15 +20,15 @@
 
 -(void)router :(Event*)event
 {
-    if( [[event name] isEqualToString:@"move"] ){ [self renderMove:event]; }
-    if( [[event name] isEqualToString:@"event"] ){ [self renderEvent:event]; }
-    if( [[event name] isEqualToString:@"block"] ){ [self renderBlock:event]; }
-    if( [[event name] isEqualToString:@"warp"] ){ [self renderWarp:event]; }
+    if( [[event type] isEqualToString:@"move"] ){ [self renderMove:event]; }
+    if( [[event type] isEqualToString:@"event"] ){ [self renderEvent:event]; }
+    if( [[event type] isEqualToString:@"block"] ){ [self renderBlock:event]; }
+    if( [[event type] isEqualToString:@"warp"] ){ [self renderWarp:event]; }
 }
 
 -(void)renderMove :(Event*)event
 {
-    NSLog(@"! EVENT | Moving to: %d %d",[event x],[event y]);
+    NSLog(@"! EVENT | Moving       | to: %d %d",[event x],[event y]);
     
     [user setX:[event x]];
     [user setY:[event y]];
@@ -36,7 +36,7 @@
 
 -(void)renderWarp :(Event*)event
 {
-    NSLog(@"! EVENT | Warping to: %d %d %d",[event location],[event x],[event y]);
+    NSLog(@"! EVENT | Warp         | To:%d (%d %d)",[event location],[event x],[event y]);
     [user setLocation:[event location]];
     [user setPosition:[event x]:[event y]];
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
@@ -44,12 +44,13 @@
 
 -(void)renderEvent :(Event*)event
 {
-    NSLog(@"! EVENT | Event at: %d %d",[event x],[event y]);
+    NSLog(@"======= + ============ + ===================");
+    NSLog(@"! EVENT | Event        | %@ (%d %d)",[event name],[event x],[event y]);
 }
 
 -(void)renderBlock :(Event*)event
 {
-    NSLog(@"! EVENT | Blocked on: %d %d",[event x],[event y]);
+    NSLog(@"! EVENT | Block        | (%d %d)",[event x],[event y]);
     
 }
 

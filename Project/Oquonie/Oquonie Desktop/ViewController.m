@@ -29,11 +29,15 @@
 
 -(void)start
 {
-    NSLog(@"- TMPL | Start");
-    self.test1.frame = CGRectMake(0, 0, 100, 100);
-
-    World * worldTest = [[World alloc] init];
+    world = [[World alloc] init];
+    user  = [[User alloc] init];
+    position = [[Position alloc] initWithView:self.view.frame];
+    render = [[Render alloc] init];
+    
+    [user listening:0];
+    [user setLocation:50];
+    
+    room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
 }
-
 
 @end

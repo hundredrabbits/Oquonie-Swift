@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "xxiivvSettings.h"
+#import "xxiivvVariables.h"
+
 @interface ViewController : NSViewController
 
 @property (weak) IBOutlet NSView *test1;

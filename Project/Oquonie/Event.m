@@ -11,10 +11,16 @@
 
 @implementation Event
 
--(Event*)initWithName :(NSString*)name
+-(Event*)initWithName :(NSString*)value
 {
     eventData = [[NSMutableDictionary alloc] init];
-    eventData[@"name"] = name;
+    eventData[@"name"] = value;
+    return self;
+}
+-(Event*)initWithType :(NSString*)value
+{
+    eventData = [[NSMutableDictionary alloc] init];
+    eventData[@"type"] = value;
     return self;
 }
 
@@ -45,17 +51,25 @@
     return [eventData[@"location"] intValue];
 }
 
--(void)addName :(NSString*)name
+-(NSString*)type
 {
-    eventData[@"name"] = name;
+    return eventData[@"type"];
+}
+
+-(void)addName :(NSString*)value
+{
+    eventData[@"name"] = value;
+}
+
+-(void)addType :(NSString*)value
+{
+    eventData[@"type"] = value;
 }
 
 -(void)addCoordinates :(int)x :(int)y
 {
     eventData[@"x"] = @(x);
     eventData[@"y"] = @(y);
-    
-    NSLog(@"!!! %d %@",x,eventData[@"x"]);
 }
 
 -(void)addAudio :(NSString*)soundName

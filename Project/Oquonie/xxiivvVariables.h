@@ -13,6 +13,7 @@
 #import "Event.h"
 #import "Position.h"
 #import "Render.h"
+#import "Input.h"
 
 int debug;
 

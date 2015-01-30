@@ -766,6 +766,9 @@
 		577350A21A75BF1D00F1B3DA /* event.37.r.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5773509B1A75BF1D00F1B3DA /* event.37.r.1.png */; };
 		577350A31A75BF1D00F1B3DA /* event.37.r.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5773509C1A75BF1D00F1B3DA /* event.37.r.2.png */; };
 		577350A41A75BF1D00F1B3DA /* event.37.r.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5773509D1A75BF1D00F1B3DA /* event.37.r.3.png */; };
+		57C0E4351A7C1CBE008728C8 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4341A7C1CBE008728C8 /* Input.m */; };
+		57C0E4361A7C1CBE008728C8 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4341A7C1CBE008728C8 /* Input.m */; };
+		57C0E4371A7C217D008728C8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
 		57F701191A7A8260009C1C91 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
 		57F7011C1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
 		57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
@@ -1565,6 +1568,8 @@
 		5773509B1A75BF1D00F1B3DA /* event.37.r.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.r.1.png; path = en.assets/event.37.r.1.png; sourceTree = "<group>"; };
 		5773509C1A75BF1D00F1B3DA /* event.37.r.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.r.2.png; path = en.assets/event.37.r.2.png; sourceTree = "<group>"; };
 		5773509D1A75BF1D00F1B3DA /* event.37.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.r.3.png; path = en.assets/event.37.r.3.png; sourceTree = "<group>"; };
+		57C0E4331A7C1CBE008728C8 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Input.h; sourceTree = "<group>"; };
+		57C0E4341A7C1CBE008728C8 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Input.m; sourceTree = "<group>"; };
 		57F701171A7A8260009C1C91 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		57F701181A7A8260009C1C91 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		57F7011A1A7AC4EC009C1C91 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -2929,6 +2934,8 @@
 				57F701231A7AC765009C1C91 /* Position.m */,
 				57F701261A7AD890009C1C91 /* Render.h */,
 				57F701271A7AD890009C1C91 /* Render.m */,
+				57C0E4331A7C1CBE008728C8 /* Input.h */,
+				57C0E4341A7C1CBE008728C8 /* Input.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -3816,6 +3823,7 @@
 				03C488FB187E8C7500375E86 /* eventsNeomine.m in Sources */,
 				576FF6D61A79792D000824FE /* xxiivvTouch.m in Sources */,
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
+				57C0E4351A7C1CBE008728C8 /* Input.m in Sources */,
 				57F701241A7AC765009C1C91 /* Position.m in Sources */,
 				576FF6E31A79818B000824FE /* World.m in Sources */,
 				57F701281A7AD890009C1C91 /* Render.m in Sources */,
@@ -3830,12 +3838,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C0E4371A7C217D008728C8 /* User.m in Sources */,
 				576FF6E41A79818B000824FE /* World.m in Sources */,
 				57013B961A7954E800612048 /* ViewController.m in Sources */,
 				57013B931A7954E800612048 /* main.m in Sources */,
 				57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */,
 				57F701291A7AD890009C1C91 /* Render.m in Sources */,
 				57F701251A7AC765009C1C91 /* Position.m in Sources */,
+				57C0E4361A7C1CBE008728C8 /* Input.m in Sources */,
 				576FF6CD1A79572C000824FE /* AdvancedView.m in Sources */,
 				576FF6D01A796FA8000824FE /* CoreWindow.m in Sources */,
 				576FF6E81A798C76000824FE /* Room.m in Sources */,

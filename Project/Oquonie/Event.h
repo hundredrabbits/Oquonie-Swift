@@ -15,6 +15,7 @@
 -(Event*)initWithName :(NSString*)name;
 
 -(NSString*)name;
+-(NSString*)type;
 -(int)x;
 -(int)y;
 -(int)location;
@@ -23,6 +24,7 @@
 -(void)addCoordinates :(int)x :(int)y;
 -(void)addAudio :(NSString*)soundName;
 -(void)addLocation :(int)value;
+-(void)addType :(NSString*)value;
 
 @end
 

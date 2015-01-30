@@ -26,15 +26,6 @@
     CGFloat centerW = (screenFrame->size.width/2)-(tileW/2);
     CGFloat centerH = (screenFrame->size.height/2)-(tileH/2);
     
-    if( [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft || [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight ){
-        viewWidth = (screenFrame->size.width - (2*screenMargin))/2;
-        tileW = viewWidth/3;
-        tileH = tileW * 0.5;
-        
-        centerW = (screenFrame->size.width/2)-(tileW/2);
-        centerH = (screenFrame->size.height/2)+(tileH/2);
-    }
-    
     if( type == 0 ){
         if( posX == 2 && posY == -1 ){ return CGRectMake(centerW+(tileW/2)*-3, centerH+(tileH*-0.5), tileW, tileH); }
         if( posX == 2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*-2, centerH+(tileH*-1), tileW, tileH); }

@@ -69,62 +69,6 @@
 
 # pragma mark Move -
 
-- (void) inputRouter :(int)posX :(int)posY
-{
-    NSLog(@"======= + ============ + ===================");
-    
-    if([user isTalking]){
-        // Clear Dialog Event
-        Event * newEvent = [[Event alloc] initWithName:@"clearDialog"];
-        [newEvent addCoordinates:posX:posY];
-        [newEvent addAudio:@"bump"];
-        [render router:newEvent];
-        [user talking:0];
-        return;
-    }
-    
-    Tile* destination = [[Tile alloc] initWithString:[room tileAtLocation:[user x]+posX :[user y]+posY]];
-    
-    // Event
-    
-    if( [destination isEmpty] || [destination isBlocker] ){
-        Event * newEvent = [[Event alloc] initWithTile:destination];
-        [newEvent addName:@"block"];
-        [newEvent addCoordinates:[user x]+posX:[user y]+posY];
-        [render router:newEvent];
-        return;
-    }
-    else if( [destination isWarp] ){
-        Event * newEvent = [[Event alloc] initWithTile:destination];
-        NSArray* coordinates = [[destination data] componentsSeparatedByString: @","];
-        [newEvent addName:@"warp"];
-        [newEvent addCoordinates:[coordinates[0] intValue]:[coordinates[1] intValue]];
-        [newEvent addLocation:[[destination name] intValue]];
-        [render router:newEvent];
-        return;
-    }
-    else if( [destination isEvent] ){
-        Event * newEvent = [[Event alloc] initWithTile:destination];
-        [newEvent addName:@"event"];
-        [newEvent addCoordinates:[user x]+posX:[user y]+posY];
-        [render router:newEvent];
-        return;
-    }
-    else if( ([user x]+posX) > 1 || ([user x]+posX) < -1 || ([user y]+posY) > 1 || ([user y]+posY) < -1 ){
-        Event * newEvent = [[Event alloc] initWithTile:destination];
-        [newEvent addName:@"block"];
-        [newEvent addCoordinates:[user x]+posX:[user y]+posY];
-        [render router:newEvent];
-        return;
-    }
-    
-    // Move
-    Event * newEvent = [[Event alloc] initWithTile:destination];
-    [newEvent addName:@"move"];
-    [newEvent addCoordinates:[user x]+posX:[user y]+posY];
-    [render router:newEvent];
-}
-
 - (void) old_moveRouter :(int)posX :(int)posY :(int)direction
 {
 	NSLog(@"======= + ============ + ===================");
@@ -688,32 +632,36 @@
 	int xDifference = abs(touchAnchorPoint.x-touchReleasePoint.x);
 	int yDifference = abs(touchAnchorPoint.y-touchReleasePoint.y);
 	
+    Input * newInput = [[Input alloc] init];
+    
 	if(xDifference < 20 && yDifference < 20){
-		if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [self inputRouter:1 :0]; }
-		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [self inputRouter:-1 :0]; }
-		else if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [self inputRouter:0 :-1]; }
-		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [self inputRouter:0 :1]; }
+		if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [newInput router:1:0]; }
+		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [newInput router:-1:0]; }
+		else if( touchReleasePoint.x < (screen.size.width/2) && touchReleasePoint.y > (screen.size.height/2) ){ [newInput router:0:-1]; }
+		else if( touchReleasePoint.x > (screen.size.width/2) && touchReleasePoint.y < (screen.size.height/2) ){ [newInput router:0:1]; }
 	}
 	else{
-		if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)		{ [self inputRouter:-1 :0]; }
-		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)	{ [self inputRouter:0 :-1]; }
-		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [self inputRouter:1 :0];  }
-		else if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [self inputRouter:0 :1];  }
+		if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)		{ [newInput router:-1:0]; }
+		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y < touchReleasePoint.y)	{ [newInput router:0:-1]; }
+		else if(touchAnchorPoint.x > touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [newInput router:1:0];  }
+		else if(touchAnchorPoint.x < touchReleasePoint.x && touchAnchorPoint.y > touchReleasePoint.y)	{ [newInput router:0:1];  }
 	}
 }
 
 -(void)moveAndUpdateDirection
 {
+    Input * newInput = [[Input alloc] init];
+    
     CGFloat distanceMoved = POINT_DISTANCE(touchAnchorPoint, touchMovePoint);
     if(distanceMoved > 20) {
         currentDirection = MOVE_DIRECTION(touchAnchorPoint, touchMovePoint);
         touchAnchorPoint = touchMovePoint;
     }
     switch (currentDirection) {
-        case DirectionNorth: [self inputRouter:1 :0]; break;
-        case DirectionEast:  [self inputRouter:0 :1]; break;
-        case DirectionWest:  [self inputRouter:0 :-1]; break;
-        case DirectionSouth: [self inputRouter:-1 :0]; break;
+        case DirectionNorth: [newInput router:1:0]; break;
+        case DirectionEast:  [newInput router:0:1]; break;
+        case DirectionWest:  [newInput router:0:-1]; break;
+        case DirectionSouth: [newInput router:-1:0]; break;
         case DirectionNone: default:; // Do nothing
     }
 }
@@ -740,6 +688,18 @@
 	NSLog(@"& API  | %@: %@",method, theReply);
 	
 	return;
+}
+
+-(UIImage*)tileImageAtId :(int)x :(int)y
+{
+    Tile* tile = [[Tile alloc] initWithString:[self tileAtLocation:x :y]];
+    
+    if( x == 2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png", [tile value] ]]; }
+    if( y == 2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png", [tile value] ]]; }
+    if( y == -2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png", [tile value] ]]; }
+    if( x == -2 ){ return [UIImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png", [tile value] ]]; }
+    
+    return [UIImage imageNamed:[NSString stringWithFormat:@"tile.%@.png", [tile value] ]];
 }
 
 -(void)saveOrientation{
