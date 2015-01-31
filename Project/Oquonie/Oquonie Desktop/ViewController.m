@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    storyboard = self;
     [self start];
     
-    // Do any additional setup after loading the view.
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -38,6 +38,13 @@
     [user setLocation:50];
     
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
+}
+
+-(void)test
+{
+    _roomContainer.frame = CGRectMake(0, 0, 100, 100);
+    self.roomContainer.frame = CGRectMake(0, 0, 100, 100);
+    NSLog(@"yo!");
 }
 
 @end
