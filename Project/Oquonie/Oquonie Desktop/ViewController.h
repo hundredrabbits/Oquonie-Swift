@@ -16,8 +16,15 @@
 @interface ViewController : NSViewController
 
 @property (weak) IBOutlet DrawView *roomContainer;
-@property (weak) IBOutlet NSImageView *floorTile;
-
+@property (weak) IBOutlet NSImageView *floor11;
+@property (weak) IBOutlet NSImageView *floor10;
+@property (weak) IBOutlet NSImageView *floor1e;
+@property (weak) IBOutlet NSImageView *floor0e;
+@property (weak) IBOutlet NSImageView *floor01;
+@property (weak) IBOutlet NSImageView *floor00;
+@property (weak) IBOutlet NSImageView *flooree;
+@property (weak) IBOutlet NSImageView *floore1;
+@property (weak) IBOutlet NSImageView *floore0;
 
 -(void)test;
 

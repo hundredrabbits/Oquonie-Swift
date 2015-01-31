@@ -673,20 +673,68 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView id="jBC-0r-NuQ" userLabel="roomContainer" customClass="DrawView">
-                                <rect key="frame" x="0.0" y="33" width="305" height="237"/>
+                                <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o79-F3-G9T">
-                                        <rect key="frame" x="50" y="54" width="147" height="146"/>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o79-F3-G9T" userLabel="floor11">
+                                        <rect key="frame" x="50" y="87" width="147" height="146"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="Ky1-Lu-llj"/>
+                                    </imageView>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5Rd-0I-tGV" userLabel="floor10">
+                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="XFX-ad-HaS"/>
+                                    </imageView>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1mS-45-P70" userLabel="floor1e">
+                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="A0K-iO-68I"/>
+                                    </imageView>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="yxo-y7-qaF" userLabel="floor0e">
+                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="hOP-a8-28e"/>
+                                    </imageView>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="xlw-qd-ffk" userLabel="floor01">
+                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="e0f-iE-57Z"/>
+                                    </imageView>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="klb-3U-Gcf" userLabel="floor00">
+                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="kEp-gX-mFw"/>
+                                    </imageView>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="T22-ri-cI5" userLabel="flooree">
+                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="k8x-VX-7Vs"/>
+                                    </imageView>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fV8-nh-PDy" userLabel="floore1">
+                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="Qtc-JC-UeM"/>
+                                    </imageView>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Hqi-Gp-RB3" userLabel="floore0">
+                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="Z9g-zv-Qx8"/>
                                     </imageView>
                                 </subviews>
                             </customView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="floorTile" destination="o79-F3-G9T" id="Afb-KK-Yzg"/>
+                        <outlet property="floor00" destination="klb-3U-Gcf" id="Bb5-EL-T4b"/>
+                        <outlet property="floor01" destination="xlw-qd-ffk" id="P6i-cl-j8S"/>
+                        <outlet property="floor0e" destination="yxo-y7-qaF" id="adC-B1-8gm"/>
+                        <outlet property="floor10" destination="5Rd-0I-tGV" id="6ci-mq-bKy"/>
+                        <outlet property="floor11" destination="o79-F3-G9T" id="v65-Gu-GAi"/>
+                        <outlet property="floor1e" destination="1mS-45-P70" id="lGs-Ti-UbO"/>
+                        <outlet property="floore0" destination="Hqi-Gp-RB3" id="Zkw-OG-W7z"/>
+                        <outlet property="floore1" destination="fV8-nh-PDy" id="80y-ch-eh4"/>
+                        <outlet property="flooree" destination="T22-ri-cI5" id="XGp-lV-yRa"/>
                         <outlet property="roomContainer" destination="jBC-0r-NuQ" id="x5c-vQ-YPC"/>
                     </connections>
                 </viewController>

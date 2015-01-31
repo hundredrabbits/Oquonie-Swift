@@ -818,6 +818,7 @@
 		575BE1731A7D6ACB0085179C /* tile.47.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E7F01189A87E700024C8E /* tile.47.png */; };
 		575BE1741A7D6ACB0085179C /* tile.48.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E7F02189A87E700024C8E /* tile.48.png */; };
 		575BE1751A7D6ACB0085179C /* tile.49.png in Resources */ = {isa = PBXBuildFile; fileRef = 037E7F03189A87E700024C8E /* tile.49.png */; };
+		575BE1781A7D6DA60085179C /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BE1771A7D6DA60085179C /* TileView.m */; };
 		576FF6D01A796FA8000824FE /* CoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6CF1A796FA8000824FE /* CoreWindow.m */; };
 		576FF6D21A7974F9000824FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576FF6D11A7974F8000824FE /* Foundation.framework */; };
 		576FF6D61A79792D000824FE /* xxiivvTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 576FF6D51A79792D000824FE /* xxiivvTouch.m */; };
@@ -1619,6 +1620,8 @@
 		57255E1B1A77195F00388B48 /* wall.110.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.110.l.png; path = en.assets/wall.110.l.png; sourceTree = "<group>"; };
 		575BE12D1A7D5E500085179C /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		575BE12E1A7D5E500085179C /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		575BE1761A7D6DA60085179C /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
+		575BE1771A7D6DA60085179C /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
 		576FF6CE1A796FA8000824FE /* CoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreWindow.h; sourceTree = "<group>"; };
 		576FF6CF1A796FA8000824FE /* CoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreWindow.m; sourceTree = "<group>"; };
 		576FF6D11A7974F8000824FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -2958,6 +2961,8 @@
 				576FF6CF1A796FA8000824FE /* CoreWindow.m */,
 				575BE12D1A7D5E500085179C /* DrawView.h */,
 				575BE12E1A7D5E500085179C /* DrawView.m */,
+				575BE1761A7D6DA60085179C /* TileView.h */,
+				575BE1771A7D6DA60085179C /* TileView.m */,
 			);
 			path = "Oquonie Desktop";
 			sourceTree = "<group>";
@@ -3982,6 +3987,7 @@
 				57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */,
 				57F701291A7AD890009C1C91 /* Render.m in Sources */,
 				57F701251A7AC765009C1C91 /* Position.m in Sources */,
+				575BE1781A7D6DA60085179C /* TileView.m in Sources */,
 				57C0E4361A7C1CBE008728C8 /* Input.m in Sources */,
 				575BE1301A7D5E500085179C /* DrawView.m in Sources */,
 				57C0E43F1A7C2D29008728C8 /* Draw.m in Sources */,

@@ -14,11 +14,11 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     storyboard = self;
     [self start];
-    
 }
 
 - (void)setRepresentedObject:(id)representedObject {
