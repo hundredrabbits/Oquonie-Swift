@@ -7,8 +7,6 @@
 //
 
 #import "Encounter.h"
-#import "xxiivvVariables.h"
-#import "xxiivvSettings.h"
 
 @implementation Encounter
 
@@ -62,6 +60,20 @@
     if([user location] == 85){ [newDraw map:@"nestorine"]; }
     
     // Default
+    return @"";
+}
+
+-(NSString*)event_owlSave :(NSString*)option
+{
+    if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+    if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
+    
+    // Dialog
+    [newDraw dialog:dialogOwlSave:eventOwl];
+    [newSound play:@"owl"];
+    [user save];
+    
+    // Return storage Id
     return @"";
 }
 

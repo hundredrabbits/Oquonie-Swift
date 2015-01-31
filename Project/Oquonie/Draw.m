@@ -13,7 +13,6 @@
 
 -(Draw*)init
 {
-    NSLog(@"WAT");
     return self;
 }
 
@@ -21,11 +20,24 @@
 {
     NSLog(@"~  DRAW | Map %@",name);
     [storyboard test];
+    storyboard.roomContainer.frame = CGRectMake(0, 0, storyboard.view.frame.size.width, storyboard.view.frame.size.height);
 }
 
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId
 {
     
+}
+
+-(void)animateRoom
+{
+    NSLog(@"~  DRAW | animateRoom");
+    storyboard.floorTile.frame = CGRectMake(100, 100, 100, 100);
+    storyboard.floorTile.image = [NSImage imageNamed:@"tile.3"];
+}
+
+-(void)animateWalk
+{
+    NSLog(@"~  DRAW | animateWalk");
 }
 
 @end

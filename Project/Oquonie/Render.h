@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#import "Draw.h"
 #import "Event.h"
 
 @interface Render : NSObject
@@ -14,3 +16,5 @@
 -(void)router :(Event*)event;
 
 @end
+
+Draw* newDraw;

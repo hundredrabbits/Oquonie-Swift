@@ -12,11 +12,11 @@
 #import "Tile.h"
 #import "Event.h"
 #import "Position.h"
-#import "Render.h"
 #import "Input.h"
 #import "Encounter.h"
 #import "Draw.h"
 #import "Audio.h"
+#import "Render.h"
 
 int debug;
 

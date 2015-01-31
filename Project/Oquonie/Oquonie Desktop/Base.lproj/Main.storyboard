@@ -672,24 +672,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView id="jBC-0r-NuQ" userLabel="roomContainer" customClass="AdvancedView">
-                                <rect key="frame" x="149" y="87" width="163" height="96"/>
+                            <customView id="jBC-0r-NuQ" userLabel="roomContainer" customClass="DrawView">
+                                <rect key="frame" x="0.0" y="33" width="305" height="237"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o79-F3-G9T">
+                                        <rect key="frame" x="50" y="54" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="Ky1-Lu-llj"/>
+                                    </imageView>
+                                </subviews>
                             </customView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="zBC-GP-cq7">
-                                <rect key="frame" x="33" y="127" width="27" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="sup" placeholderString="Test" id="rN3-TM-jj4">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="floorTile" destination="o79-F3-G9T" id="Afb-KK-Yzg"/>
                         <outlet property="roomContainer" destination="jBC-0r-NuQ" id="x5c-vQ-YPC"/>
-                        <outlet property="testLabel" destination="zBC-GP-cq7" id="gxW-EX-IJR"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -697,4 +695,7 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tile.1" width="200" height="141"/>
+    </resources>
 </document>

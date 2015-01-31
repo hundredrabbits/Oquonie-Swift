@@ -11,12 +11,13 @@
 #import "xxiivvSettings.h"
 #import "xxiivvVariables.h"
 
-#import "AdvancedView.h"
+#import "DrawView.h"
 
 @interface ViewController : NSViewController
 
-@property (weak) IBOutlet AdvancedView *roomContainer;
-@property (weak) IBOutlet NSTextField *testLabel;
+@property (weak) IBOutlet DrawView *roomContainer;
+@property (weak) IBOutlet NSImageView *floorTile;
+
 
 -(void)test;
 

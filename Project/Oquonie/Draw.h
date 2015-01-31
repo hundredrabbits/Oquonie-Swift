@@ -12,5 +12,7 @@
 
 -(void)map :(NSString*)name;
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId;
+-(void)animateRoom;
+-(void)animateWalk;
 
 @end

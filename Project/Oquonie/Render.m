@@ -15,6 +15,7 @@
 
 -(Render*)init
 {
+    newDraw = [[Draw alloc] init];
     return self;
 }
 
@@ -32,6 +33,8 @@
     
     [user setX:[event x]];
     [user setY:[event y]];
+    
+    [newDraw animateWalk];
 }
 
 -(void)renderWarp :(Event*)event
