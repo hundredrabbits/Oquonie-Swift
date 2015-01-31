@@ -13,6 +13,7 @@
 -(Draw*)init
 {
     return self;
+    
 }
 
 -(void)map :(NSString*)name
@@ -26,3 +27,10 @@
 }
 
 @end
+
+
+#if TARGET_OS_IPHONE
+// iOS code
+#else
+// OSX code
+#endif
