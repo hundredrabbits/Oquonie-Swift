@@ -12,19 +12,19 @@
 
 -(Position*)initWithView :(CGRect)viewFrame
 {
-    screenFrame = &viewFrame;
+    screenFrame = viewFrame;
     return self;
 }
 
 - (CGRect)tile :(int)type :(int)posX :(int)posY
 {
-    CGFloat screenMargin = screenFrame->size.width/8;
-    CGFloat viewWidth = screenFrame->size.width - (2*screenMargin);
+    CGFloat screenMargin = screenFrame.size.width/8;
+    CGFloat viewWidth = screenFrame.size.width - (2*screenMargin);
     CGFloat tileW = viewWidth/3;
     CGFloat tileH = tileW * 0.5;
     
-    CGFloat centerW = (screenFrame->size.width/2)-(tileW/2);
-    CGFloat centerH = (screenFrame->size.height/2)-(tileH/2);
+    CGFloat centerW = (screenFrame.size.width/2)-(tileW/2);
+    CGFloat centerH = (screenFrame.size.height/2)-(tileH/2);
     
     if( type == 0 ){
         if( posX == 2 && posY == -1 ){ return CGRectMake(centerW+(tileW/2)*-3, centerH+(tileH*-0.5), tileW, tileH); }

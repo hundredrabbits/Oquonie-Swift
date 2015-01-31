@@ -37,21 +37,12 @@
     [user listening:0];
     [user setLocation:50];
     
-    room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
-    
     [newDraw animateRoom];
 }
 
 -(void)template
 {
     
-}
-
--(void)test
-{
-//    _roomContainer.frame = CGRectMake(0, 0, 100, 100);
-//    self.roomContainer.frame = CGRectMake(0, 0, 100, 100);
-//    NSLog(@"yo!");
 }
 
 @end

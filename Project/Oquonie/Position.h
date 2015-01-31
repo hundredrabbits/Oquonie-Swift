@@ -15,4 +15,4 @@
 
 @end
 
-CGRect* screenFrame;
+CGRect screenFrame;

@@ -7,19 +7,23 @@
 //
 
 #import "Draw.h"
+#import "xxiivvVariables.h"
+#import "xxiivvSettings.h"
+
 #import "ViewController.h"
 
 @implementation Draw
 
 -(Draw*)init
 {
+    room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
+    position = [[Position alloc] initWithView:storyboard.view.frame];
     return self;
 }
 
 -(void)map :(NSString*)name
 {
     NSLog(@"~  DRAW | Map %@",name);
-    [storyboard test];
 }
 
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId
@@ -31,8 +35,8 @@
 {
     NSLog(@"~  DRAW | animateRoom");
     storyboard.roomContainer.frame = storyboard.view.frame;
-    storyboard.floor11.frame = CGRectMake(100, 100, 100, 100);
-    storyboard.floor11.image = [NSImage imageNamed:@"tile.3"];
+    
+    NSLog(@"%f",[position tile:0 :0 :0].origin.x);
     
     storyboard.floor00.frame = [position tile:0 :0 :0];
     storyboard.floor1e.frame = [position tile:0 :-1 :1];
@@ -53,7 +57,6 @@
     storyboard.floore0.image = [self tileImageAtId:-1:0];
     storyboard.floor11.image = [self tileImageAtId:1:1];
     storyboard.flooree.image = [self tileImageAtId:-1:-1];
-    
 }
 
 -(void)animateWalk
@@ -64,6 +67,7 @@
 -(NSImage*)tileImageAtId :(int)x :(int)y
 {
     Tile* tile = [[Tile alloc] initWithString:[room tileAtLocation:x :y]];
+    NSLog(@"%@",[tile value]);
     
     if( x == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png", [tile value] ]]; }
     if( y == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png", [tile value] ]]; }

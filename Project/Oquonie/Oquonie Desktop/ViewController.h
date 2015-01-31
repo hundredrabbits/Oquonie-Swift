@@ -26,8 +26,6 @@
 @property (weak) IBOutlet NSImageView *floore1;
 @property (weak) IBOutlet NSImageView *floore0;
 
--(void)test;
-
 @end
 
 ViewController * storyboard;
