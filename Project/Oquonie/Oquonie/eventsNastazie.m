@@ -35,12 +35,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:@"noface"];
+	[newSound play:@"noface"];
 	
 	return @"";
 }
@@ -67,12 +67,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:@"noface"];
+	[newSound play:@"noface"];
 	
 	return @"";
 }
@@ -99,12 +99,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:@"noface"];
+	[newSound play:@"noface"];
 	
 	return @"";
 }
@@ -131,12 +131,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[newSound play:eventCharacter];
 	
 	return @"";
 }
@@ -163,12 +163,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[newSound play:eventCharacter];
 	
 	return @"";
 }
@@ -195,12 +195,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[newSound play:eventCharacter];
 	
 	return @"";
 }
@@ -227,12 +227,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[newSound play:eventCharacter];
 	
 	return @"";
 }
@@ -258,12 +258,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[newSound play:eventCharacter];
 	
 	return @"";
 }
@@ -289,12 +289,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[newSound play:eventCharacter];
 	
 	return @"";
 }
@@ -321,12 +321,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[newSound play:eventCharacter];
 	
 	return @"";
 }
@@ -353,12 +353,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[newSound play:eventCharacter];
 	
 	return @"";
 }
@@ -385,12 +385,12 @@
 		return @"";
 	}
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:eventCharacter];
+	[newSound play:eventCharacter];
 	
 	return @"";
 }

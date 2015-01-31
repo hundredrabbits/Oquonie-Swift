@@ -7,12 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Draw.h"
+#import "Audio.h"
 
 @interface Encounter : NSObject
 
 -(Encounter*)initWithName :(NSString*)name;
 -(void)touch;
 -(void)see;
+
+-(NSString*)map :(NSString*)option;
+
 @end
 
 NSString* encounterName;
+Draw * newDraw;
+Audio * newSound;

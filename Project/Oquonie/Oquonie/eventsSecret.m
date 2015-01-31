@@ -36,7 +36,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	[self audioDialogPlayer:@"cat"];
+	[newSound play:@"cat"];
 	
 	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -66,7 +66,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	[self audioDialogPlayer:@"cat"];
+	[newSound play:@"cat"];
 	
 	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -95,7 +95,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	[self audioDialogPlayer:@"cat"];
+	[newSound play:@"cat"];
 	
 	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -136,7 +136,7 @@
 	self.wall2r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self randomObject:walls]]];
 	self.wall3r.image = [UIImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self randomObject:walls]]];
 	
-	[self audioDialogPlayer:@"petunia"];
+	[newSound play:@"petunia"];
 	
 	return @"";
 }
@@ -161,7 +161,7 @@
 		return @"";
 	}
 	[self eventDialog:@"UUU":eventCat];
-	[self audioDialogPlayer:@"cat"];
+	[newSound play:@"cat"];
 	
 	return @"";
 }
@@ -207,14 +207,14 @@
 		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(event_sharkTransform) userInfo:nil repeats:NO];
 		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(event_nofaceWarp) userInfo:nil repeats:NO];
 		
-		[self audioDialogPlayer:@"noface"];
+		[newSound play:@"noface"];
 		[self eventDialog:dialogIntroduction:eventNoFace];
 		
 		// Clear Spellbook
 		[user clearSpellbook];
 	}
 	else{
-		[self audioDialogPlayer:@"noface"];
+		[newSound play:@"noface"];
 		[self eventDialog:dialogNoFace:eventNoFace];
 	}
 	return @"";
@@ -238,7 +238,7 @@
 	}
 	
 	[self eventDialog:@"UVW":@"34"];
-	[self audioDialogPlayer:@"noface"];
+	[newSound play:@"noface"];
 	
 	return @"";
 }

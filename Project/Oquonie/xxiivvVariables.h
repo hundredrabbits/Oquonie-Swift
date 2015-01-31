@@ -15,6 +15,8 @@
 #import "Render.h"
 #import "Input.h"
 #import "Encounter.h"
+#import "Draw.h"
+#import "Audio.h"
 
 int debug;
 

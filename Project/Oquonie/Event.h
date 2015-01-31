@@ -13,6 +13,7 @@
 
 -(Event*)initWithTile :(Tile*)tile;
 -(Event*)initWithName :(NSString*)name;
+-(Event*)initWarp :(int)location :(int)x :(int)y;
 
 -(NSString*)name;
 -(NSString*)type;
@@ -25,6 +26,7 @@
 -(void)addAudio :(NSString*)soundName;
 -(void)addLocation :(int)value;
 -(void)addType :(NSString*)value;
+
 
 @end
 

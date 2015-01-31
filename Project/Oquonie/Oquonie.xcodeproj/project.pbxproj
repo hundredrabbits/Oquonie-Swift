@@ -491,10 +491,8 @@
 		03C1EE0717AFAC70001AFF21 /* wall.2.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0217AFAC70001AFF21 /* wall.2.r.png */; };
 		03C1EE0817AFAC70001AFF21 /* wall.3.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0317AFAC70001AFF21 /* wall.3.l.png */; };
 		03C1EE0917AFAC70001AFF21 /* wall.3.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C1EE0417AFAC70001AFF21 /* wall.3.r.png */; };
-		03C488E7187E8A6300375E86 /* eventsNephtaline.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488E6187E8A6300375E86 /* eventsNephtaline.m */; };
 		03C488EE187E8BFB00375E86 /* eventsNemedique.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488ED187E8BFB00375E86 /* eventsNemedique.m */; };
 		03C488F5187E8C5E00375E86 /* eventsNestorine.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488F4187E8C5E00375E86 /* eventsNestorine.m */; };
-		03C488FB187E8C7500375E86 /* eventsNeomine.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C488FA187E8C7500375E86 /* eventsNeomine.m */; };
 		03C7E39B196B15A2002AAFAB /* blocker.29.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E370196B15A1002AAFAB /* blocker.29.png */; };
 		03C7E39C196B15A2002AAFAB /* blocker.30.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E371196B15A1002AAFAB /* blocker.30.png */; };
 		03C7E39D196B15A2002AAFAB /* char8.stand.l.b.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E372196B15A1002AAFAB /* char8.stand.l.b.1.png */; };
@@ -771,6 +769,10 @@
 		57C0E4371A7C217D008728C8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
 		57C0E43A1A7C29AB008728C8 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4391A7C29AB008728C8 /* Encounter.m */; };
 		57C0E43B1A7C29AB008728C8 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4391A7C29AB008728C8 /* Encounter.m */; };
+		57C0E43E1A7C2D29008728C8 /* Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E43D1A7C2D29008728C8 /* Draw.m */; };
+		57C0E43F1A7C2D29008728C8 /* Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E43D1A7C2D29008728C8 /* Draw.m */; };
+		57C0E4421A7C3EF9008728C8 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4411A7C3EF9008728C8 /* Audio.m */; };
+		57C0E4431A7C3EF9008728C8 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4411A7C3EF9008728C8 /* Audio.m */; };
 		57F701191A7A8260009C1C91 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
 		57F7011C1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
 		57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
@@ -1277,14 +1279,10 @@
 		03C1EE0217AFAC70001AFF21 /* wall.2.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.2.r.png; path = en.assets/wall.2.r.png; sourceTree = "<group>"; };
 		03C1EE0317AFAC70001AFF21 /* wall.3.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.l.png; path = en.assets/wall.3.l.png; sourceTree = "<group>"; };
 		03C1EE0417AFAC70001AFF21 /* wall.3.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.3.r.png; path = en.assets/wall.3.r.png; sourceTree = "<group>"; };
-		03C488E5187E8A6300375E86 /* eventsNephtaline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNephtaline.h; sourceTree = "<group>"; };
-		03C488E6187E8A6300375E86 /* eventsNephtaline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNephtaline.m; sourceTree = "<group>"; };
 		03C488EC187E8BFB00375E86 /* eventsNemedique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNemedique.h; sourceTree = "<group>"; };
 		03C488ED187E8BFB00375E86 /* eventsNemedique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNemedique.m; sourceTree = "<group>"; };
 		03C488F3187E8C5E00375E86 /* eventsNestorine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNestorine.h; sourceTree = "<group>"; };
 		03C488F4187E8C5E00375E86 /* eventsNestorine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNestorine.m; sourceTree = "<group>"; };
-		03C488F9187E8C7500375E86 /* eventsNeomine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventsNeomine.h; sourceTree = "<group>"; };
-		03C488FA187E8C7500375E86 /* eventsNeomine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventsNeomine.m; sourceTree = "<group>"; };
 		03C7E370196B15A1002AAFAB /* blocker.29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.29.png; path = en.assets/blocker.29.png; sourceTree = "<group>"; };
 		03C7E371196B15A1002AAFAB /* blocker.30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.30.png; path = en.assets/blocker.30.png; sourceTree = "<group>"; };
 		03C7E372196B15A1002AAFAB /* char8.stand.l.b.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char8.stand.l.b.1.png; path = en.assets/char8.stand.l.b.1.png; sourceTree = "<group>"; };
@@ -1574,6 +1572,10 @@
 		57C0E4341A7C1CBE008728C8 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Input.m; sourceTree = "<group>"; };
 		57C0E4381A7C29AB008728C8 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
 		57C0E4391A7C29AB008728C8 /* Encounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encounter.m; sourceTree = "<group>"; };
+		57C0E43C1A7C2D29008728C8 /* Draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw.h; sourceTree = "<group>"; };
+		57C0E43D1A7C2D29008728C8 /* Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw.m; sourceTree = "<group>"; };
+		57C0E4401A7C3EF9008728C8 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
+		57C0E4411A7C3EF9008728C8 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
 		57F701171A7A8260009C1C91 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		57F701181A7A8260009C1C91 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		57F7011A1A7AC4EC009C1C91 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -2314,8 +2316,6 @@
 				03F5C4AA187BBD2500352B8E /* II: - Core Systems */,
 				03F5C4B1187BBF4600352B8E /* III - Lobby Universe */,
 				03F5C4A9187BBBD500352B8E /* III - Necomedre Universe */,
-				03C488E8187E8A6A00375E86 /* III - Nephtaline Universe */,
-				03C488FC187E8C9200375E86 /* III - Neomine Universe */,
 				03C488FD187E8C9E00375E86 /* III - Nestorine Universe */,
 				03C488EF187E8C1700375E86 /* III - Nemedique Universe */,
 				03E14CDD18A6641D00B3816F /* III - Secret Universe */,
@@ -2613,15 +2613,6 @@
 			name = en.assets;
 			sourceTree = "<group>";
 		};
-		03C488E8187E8A6A00375E86 /* III - Nephtaline Universe */ = {
-			isa = PBXGroup;
-			children = (
-				03C488E5187E8A6300375E86 /* eventsNephtaline.h */,
-				03C488E6187E8A6300375E86 /* eventsNephtaline.m */,
-			);
-			name = "III - Nephtaline Universe";
-			sourceTree = "<group>";
-		};
 		03C488EF187E8C1700375E86 /* III - Nemedique Universe */ = {
 			isa = PBXGroup;
 			children = (
@@ -2629,15 +2620,6 @@
 				03C488ED187E8BFB00375E86 /* eventsNemedique.m */,
 			);
 			name = "III - Nemedique Universe";
-			sourceTree = "<group>";
-		};
-		03C488FC187E8C9200375E86 /* III - Neomine Universe */ = {
-			isa = PBXGroup;
-			children = (
-				03C488F9187E8C7500375E86 /* eventsNeomine.h */,
-				03C488FA187E8C7500375E86 /* eventsNeomine.m */,
-			);
-			name = "III - Neomine Universe";
 			sourceTree = "<group>";
 		};
 		03C488FD187E8C9E00375E86 /* III - Nestorine Universe */ = {
@@ -2942,6 +2924,10 @@
 				57C0E4341A7C1CBE008728C8 /* Input.m */,
 				57C0E4381A7C29AB008728C8 /* Encounter.h */,
 				57C0E4391A7C29AB008728C8 /* Encounter.m */,
+				57C0E43C1A7C2D29008728C8 /* Draw.h */,
+				57C0E43D1A7C2D29008728C8 /* Draw.m */,
+				57C0E4401A7C3EF9008728C8 /* Audio.h */,
+				57C0E4411A7C3EF9008728C8 /* Audio.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -3814,7 +3800,6 @@
 				03BBFAB8178A9E4E00E79C3D /* main.m in Sources */,
 				57C0E43A1A7C29AB008728C8 /* Encounter.m in Sources */,
 				03E14CE018A666E600B3816F /* eventsSecret.m in Sources */,
-				03C488E7187E8A6300375E86 /* eventsNephtaline.m in Sources */,
 				03C488EE187E8BFB00375E86 /* eventsNemedique.m in Sources */,
 				03A4B849194DC47E00D96889 /* eventsNastazie.m in Sources */,
 				03F5C4A8187BBB7F00352B8E /* eventsNecomedre.m in Sources */,
@@ -3827,10 +3812,10 @@
 				037F0269187D8DBC00747E8D /* splashViewController.m in Sources */,
 				03F5C4B0187BBF3500352B8E /* eventsLobby.m in Sources */,
 				037F0262187D845300747E8D /* segueFade.m in Sources */,
-				03C488FB187E8C7500375E86 /* eventsNeomine.m in Sources */,
 				576FF6D61A79792D000824FE /* xxiivvTouch.m in Sources */,
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
 				57C0E4351A7C1CBE008728C8 /* Input.m in Sources */,
+				57C0E4421A7C3EF9008728C8 /* Audio.m in Sources */,
 				57F701241A7AC765009C1C91 /* Position.m in Sources */,
 				576FF6E31A79818B000824FE /* World.m in Sources */,
 				57F701281A7AD890009C1C91 /* Render.m in Sources */,
@@ -3838,6 +3823,7 @@
 				576FF6EB1A798C81000824FE /* Tile.m in Sources */,
 				03834E1E180B855B00568E60 /* xxiivvEvents.m in Sources */,
 				0355CFCC17C196C10069AF97 /* xxiivvTemplates.m in Sources */,
+				57C0E43E1A7C2D29008728C8 /* Draw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3849,12 +3835,14 @@
 				576FF6E41A79818B000824FE /* World.m in Sources */,
 				57013B961A7954E800612048 /* ViewController.m in Sources */,
 				57C0E43B1A7C29AB008728C8 /* Encounter.m in Sources */,
+				57C0E4431A7C3EF9008728C8 /* Audio.m in Sources */,
 				57013B931A7954E800612048 /* main.m in Sources */,
 				57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */,
 				57F701291A7AD890009C1C91 /* Render.m in Sources */,
 				57F701251A7AC765009C1C91 /* Position.m in Sources */,
 				57C0E4361A7C1CBE008728C8 /* Input.m in Sources */,
 				576FF6CD1A79572C000824FE /* AdvancedView.m in Sources */,
+				57C0E43F1A7C2D29008728C8 /* Draw.m in Sources */,
 				576FF6D01A796FA8000824FE /* CoreWindow.m in Sources */,
 				576FF6E81A798C76000824FE /* Room.m in Sources */,
 				57013B911A7954E800612048 /* AppDelegate.m in Sources */,

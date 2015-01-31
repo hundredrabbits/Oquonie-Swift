@@ -17,10 +17,14 @@
     eventData[@"name"] = value;
     return self;
 }
--(Event*)initWithType :(NSString*)value
+
+-(Event*)initWarp :(int)location :(int)x :(int)y
 {
     eventData = [[NSMutableDictionary alloc] init];
-    eventData[@"type"] = value;
+    eventData[@"type"] = @"warp";
+    eventData[@"location"] = @(location);
+    eventData[@"x"] = @(x);
+    eventData[@"y"] = @(y);
     return self;
 }
 

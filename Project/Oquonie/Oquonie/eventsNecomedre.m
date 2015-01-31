@@ -50,12 +50,12 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	[user spellCollect:eventSpellId:6];
-	[self audioDialogPlayer:@"photocopier"];
+	[newSound play:@"photocopier"];
 	
 	return @"";
 }
@@ -82,12 +82,12 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	[user spellCollect:eventSpellId:6];
-	[self audioDialogPlayer:@"photocopier"];
+	[newSound play:@"photocopier"];
 	
 	return @"";
 }
@@ -114,12 +114,12 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	[user spellCollect:eventSpellId:6];
-	[self audioDialogPlayer:@"photocopier"];
+	[newSound play:@"photocopier"];
 	
 	return @"";
 }
@@ -146,13 +146,13 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:@"nephtaline"];
+	[newSound play:@"nephtaline"];
 	
 	return @"";
 }
@@ -180,13 +180,13 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:@"nephtaline"];
+	[newSound play:@"nephtaline"];
 	
 	return @"";
 }
@@ -213,13 +213,13 @@
 	}
 	
 	// Dialogs
-	if( eventSpell == [user character])				{ [self eventDialog:dialogHaveCharacter:eventSpriteId]; }
-    else if( [user spellExists:eventSpellId] )	{ [self eventDialog:dialogHaveSpell:eventSpriteId]; }
-    else											{ [self eventDialog:eventDialogSpell:eventSpriteId]; }
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+    else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+    else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
 	[user spellCollect:eventSpellId:eventSpell];
-	[self audioDialogPlayer:@"nephtaline"];
+	[newSound play:@"nephtaline"];
 	
 	return @"";
 }
@@ -256,13 +256,13 @@
 		return @"";
 	}
 	
-	[self audioDialogPlayer:@"nestorine"];
+	[newSound play:@"nestorine"];
 	// If doesn't have the first pillar
-	if(![user eventExists: storageQuestPillarNemedique]){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
-	if([user character] != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	if([user character] != eventRequirement){ [newDraw dialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
-	if(![user eventExists: eventRamenRequirement]){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
 	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -302,13 +302,13 @@
 		return @"";
 	}
 	
-	[self audioDialogPlayer:@"nemedique"];
+	[newSound play:@"nemedique"];
 	// If doesn't have the first pillar
-	if(![user eventExists: storageQuestPillarNemedique]){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
-	if([user character] != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	if([user character] != eventRequirement){ [newDraw dialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
-	if(![user eventExists: eventRamenRequirement]){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
 	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -437,12 +437,12 @@
 	if(self.audioAmbientPlayer.volume<1){
 		[self eventAudioToggle:1];
 		[self eventDialog:dialogAudioOn:eventAudio];
-		[self audioDialogPlayer:@"speakerphone"];
+		[newSound play:@"speakerphone"];
 	}
 	else{
 		[self eventAudioToggle:0];
 		[self eventDialog:dialogAudioOff:eventAudio];
-		[self audioDialogPlayer:@"speakerphone"];
+		[newSound play:@"speakerphone"];
 	}
 	
 	[self roomStart];

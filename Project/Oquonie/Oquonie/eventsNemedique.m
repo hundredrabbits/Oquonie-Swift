@@ -61,13 +61,13 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	[self audioDialogPlayer:@"nestorine"];
+	[newSound play:@"nestorine"];
 	// If doesn't have the first pillar
-	if(![user eventExists: storageQuestPillarNemedique]){ [self eventDialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
-	if([user character] != eventRequirement){ [self eventDialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	if([user character] != eventRequirement){ [newDraw dialog:eventWrongCharacter:eventSpriteId]; return @""; }
 	// If without the ramen guy
-	if(![user eventExists: eventRamenRequirement]){ [self eventDialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
 	[user spellCollect:eventSpellId:eventSpell];
 	[self eventDialog:eventDialogSpell:eventSpriteId];
@@ -231,7 +231,7 @@
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
 	
 	[self eventDialog:@"OQS":@"31"];
-	[self audioDialogPlayer:@"rekka"];
+	[newSound play:@"rekka"];
 	
 	return @"";
 }
@@ -245,7 +245,7 @@
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
 	[self eventDialog:@"OPS":@"32"];
-	[self audioDialogPlayer:@"devine"];
+	[newSound play:@"devine"];
 	return @"";
 }
 -(NSString*)event_credit3 :(NSString*)option

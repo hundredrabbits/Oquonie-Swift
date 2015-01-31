@@ -463,7 +463,7 @@
 	}
     else{
         NSString* eventDialogLocked = dialogHaveCharacterNot(letterCat);
-        [self eventDialog:eventDialogLocked:eventOwl];
+        [newDraw dialog:eventDialogLocked:eventOwl];
     }
 	
 	return @"";
@@ -628,7 +628,7 @@
 	// Dialog
 	if(![user eventExists: pillarInstanceStorageId]){
         [user eventCollect:pillarInstanceStorageId];
-		[self audioDialogPlayer:@"bump"];
+		[newSound play:@"bump"];
 		[self eventDialog:dialogGainPillar:eventOwl];
 		[self eventTransitionPan:pillarInstanceWarp:roomCenter];
 		// Clear Spellbook
@@ -717,6 +717,7 @@
 	
 	// Dialogs
 	if([user location] == 32){
+        [newDraw ]
 		self.mapImage.image = [UIImage imageNamed:@"map.1.Necomedre.png"];
 	}
 	if([user location] == 2){
@@ -826,8 +827,8 @@
 	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
 	
 	// Dialog
-    [self eventDialog:dialogOwlSave:eventOwl];
-	[self audioDialogPlayer:@"owl"];
+    [newDraw dialog:dialogOwlSave:eventOwl];
+	[newSound play:@"owl"];
 	[user save];
 	
 	// Return storage Id
@@ -844,7 +845,7 @@
 	
 	if([user eventExists: storageQuestPillarNemedique] || [user location] == 102){
 		
-		[self audioDialogPlayer:@"shark"];
+		[newSound play:@"shark"];
 	
 		[self eventDialog:dialogSharkHelp:eventShark];
 		[self moveDisable:4];
@@ -857,7 +858,7 @@
         [user clearSpellbook];
 	}
 	else{
-		[self audioDialogPlayer:@"shark"];
+		[newSound play:@"shark"];
 		[self eventDialog:dialogSharkTransform:eventShark];
 	}
 	
@@ -918,7 +919,7 @@
         [user eventCollect:ramenStorage];
 		[self eventWarp:[user locationString]:userPositionString];
 		[self eventDialog:dialogGainRamen:eventRamen];
-		[self audioDialogPlayer:@"ramen"];
+		[newSound play:@"ramen"];
 	}
 	
 	return @"";
@@ -982,7 +983,7 @@
 	
     if([user eventExists: ramenStorage]){
         [user spellCollect:@"ramenQuestSpell":giveSpell];
-		[self audioDialogPlayer:@"ramen"];
+		[newSound play:@"ramen"];
 	}
 	
 	return @"";
@@ -1005,12 +1006,12 @@
 	if(self.audioAmbientPlayer.volume<1){
 		[self eventAudioToggle:1];
 		[self eventDialog:dialogAudioOn:eventAudio];
-		[self audioDialogPlayer:@"speakerphone"];
+		[newSound play:@"speakerphone"];
 	}
 	else{
 		[self eventAudioToggle:0];
 		[self eventDialog:dialogAudioOff:eventAudio];
-		[self audioDialogPlayer:@"speakerphone"];
+		[newSound play:@"speakerphone"];
 	}
 	
 	[self roomStart];
