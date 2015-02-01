@@ -99,8 +99,8 @@
     
     if( x == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r", [tile value] ]]; }
     if( y == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l", [tile value] ]]; }
-    if( y == -2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"step.%@.l", [tile value] ]]; }
-    if( x == -2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"step.%@.r", [tile value] ]]; }
+    if( y == -2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"step.1.l", [tile value] ]]; }
+    if( x == -2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"step.1.r", [tile value] ]]; }
     
     return [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@", [tile value] ]];
 }
