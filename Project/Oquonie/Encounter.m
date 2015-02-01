@@ -7,6 +7,8 @@
 //
 
 #import "Encounter.h"
+#import "xxiivvVariables.h"
+#import "xxiivvSettings.h"
 
 @implementation Encounter
 
@@ -63,7 +65,7 @@
     return @"";
 }
 
--(NSString*)event_owlSave :(NSString*)option
+-(NSString*)owlSave :(NSString*)option
 {
     if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
     if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
@@ -79,7 +81,7 @@
 
 # pragma mark Nephtaline -
 
--(NSString*)event_nephtalineNeomine1 :(NSString*)option
+-(NSString*)nephtalineNeomine1 :(NSString*)option
 {
     // Event Identifier
     NSString *eventSpellId = @"nephtalineNeomine1";
@@ -111,7 +113,7 @@
     
     return @"";
 }
--(NSString*)event_nephtalineNeomine2 :(NSString*)option
+-(NSString*)nephtalineNeomine2 :(NSString*)option
 {
     // Event Identifier
     NSString *eventSpellId = @"nephtalineNeomine2";
@@ -144,7 +146,7 @@
     return @"";
 }
 
--(NSString*)event_nephtalineNeomine3 :(NSString*)option
+-(NSString*)nephtalineNeomine3 :(NSString*)option
 {
     // Event Identifier
     NSString *eventSpellId = @"nephtalineNeomine3";
@@ -177,7 +179,7 @@
     return @"";
 }
 
--(NSString*)event_nephtalineNemedique1 :(NSString*)option
+-(NSString*)nephtalineNemedique1 :(NSString*)option
 {
     // Special Event Identifier
     NSString*	eventSpellId		= @"nephtalineNemedique1";
@@ -221,7 +223,7 @@
     return @"";
 }
 
--(NSString*)event_nephtalineNecomedre1 :(NSString*)option
+-(NSString*)nephtalineNecomedre1 :(NSString*)option
 {
     // Special Event Identifier
     NSString*	eventSpellId		= @"necomedreNecomedre1";
