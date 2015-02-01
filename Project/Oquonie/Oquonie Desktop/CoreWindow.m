@@ -24,12 +24,12 @@
             Input * newInput = [[Input alloc] init];
             if ( keyChar == NSLeftArrowFunctionKey ) {
                 NSLog(@"#   KEY | Left");
-                [newInput router:-1:0];
+                [newInput router:1:0];
                 return;
             }
             if ( keyChar == NSRightArrowFunctionKey ) {
                 NSLog(@"#   KEY | Right");
-                [newInput router:1:0];
+                [newInput router:-1:0];
                 return;
             }
             if ( keyChar == NSUpArrowFunctionKey ) {

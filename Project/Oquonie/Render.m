@@ -36,6 +36,7 @@
     
     newDraw = [[Draw alloc] init];
     [newDraw animateRoom];
+    [newDraw animateWalk];
 }
 
 -(void)renderWarp :(Event*)event

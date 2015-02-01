@@ -41,19 +41,27 @@
     CGFloat centerW = (screenFrame.size.width/2)-(tileW/2);
     CGFloat centerH = (screenFrame.size.height/2)-(tileH/2);
     
-    // Character
-    if( type == 4 ){
-        tileH = tileH * 3;
-        centerH -= (tileH/2) + ((tileW * 0.5)/2);
-        if( (posX + posY) == 1 ){ centerH += (tileW * 0.5); }
-        else if( (posX + posY) == 2 ){ centerH += (tileW); }
-        else if( (posX + posY) == -1 ){ centerH -= (tileW * 0.5); }
-        else if( (posX + posY) == -2 ){ centerH -= (tileW); }
-    }
-    
     // Wall
     if( type == 5 ){
         tileH = tileH * 2;
+    }
+    
+    if( type == 4 ){
+        tileH = tileH * 2;
+        CGFloat centerH = (screenFrame.size.height/2)-(tileH);
+        if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH + tileH - (tileH*0.15), tileW, tileH); }
+        if( posX == -1 && posY == -1 ){ return CGRectMake(centerW, centerH + tileH - (tileH*0.5), tileW, tileH); }
+        if( posX ==  1 && posY ==  1 ){ return CGRectMake(centerW, centerH + tileH + (tileH*0.15), tileW, tileH); }
+        if( posX ==  -1 && posY ==  0 ){ return CGRectMake(centerW + (tileW*0.35), centerH + tileH - (tileH*0.35), tileW, tileH); }
+        if( posX ==  0 && posY == -1 ){ return CGRectMake(centerW - (tileW*0.35), centerH + tileH - (tileH*0.35), tileW, tileH); }
+        
+        if( posX ==  1 && posY == 0 ){ return CGRectMake(centerW - (tileW*0.35), centerH + tileH + (tileH*0.03), tileW, tileH); }
+        if( posX ==  0 && posY == 1 ){ return CGRectMake(centerW + (tileW*0.35), centerH + tileH + (tileH*0.03), tileW, tileH); }
+        
+        if( posX ==  1 && posY == -1 ){ return CGRectMake(centerW - (tileW*0.75), centerH + tileH - (tileH*0.15), tileW, tileH); }
+        if( posX ==  -1 && posY == 1 ){ return CGRectMake(centerW + (tileW*0.7), centerH + tileH - (tileH*0.15), tileW, tileH); }
+
+        
     }
     
     // Tiles

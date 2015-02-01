@@ -35,6 +35,7 @@
 {
     NSLog(@"~  DRAW | animateRoom");
     storyboard.roomContainer.frame = storyboard.view.frame;
+    storyboard.spriteContainer.frame = storyboard.view.frame;
     
     storyboard.floor00.frame = [position tile:0 :0 :0];
     storyboard.floor1e.frame = [position tile:0 :1 :-1];
@@ -86,11 +87,18 @@
     storyboard.step2r.image = [self tileImageAtId:-2:0];
     storyboard.step3r.image = [self tileImageAtId:-2:1];
     
+    storyboard.spriteUser.frame = [position tile:4 :[user x] : [user y]];
+    storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
+    storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
 }
 
 -(void)animateWalk
 {
     NSLog(@"~  DRAW | animateWalk");
+    
+    storyboard.spriteUser.frame = [position tile:4 :[user x] : [user y]];
+    storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
+    storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
 }
 
 -(NSImage*)tileImageAtId :(int)x :(int)y

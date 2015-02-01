@@ -41,6 +41,11 @@
 @property (weak) IBOutlet NSImageView *step2r;
 @property (weak) IBOutlet NSImageView *step3r;
 
+@property (weak) IBOutlet DrawView *spriteContainer;
+@property (weak) IBOutlet DrawView *spriteUser;
+@property (weak) IBOutlet NSImageView *spriteShadow;
+@property (weak) IBOutlet NSImageView *spriteCharacter;
+
 @end
 
 ViewController * storyboard;
