@@ -36,8 +36,6 @@
     NSLog(@"~  DRAW | animateRoom");
     storyboard.roomContainer.frame = storyboard.view.frame;
     
-    NSLog(@"%f", storyboard.view.frame.size.width);
-    
     storyboard.floor00.frame = [position tile:0 :0 :0];
     storyboard.floor1e.frame = [position tile:0 :1 :-1];
     storyboard.floore1.frame = [position tile:0 :-1 :1];
@@ -57,6 +55,37 @@
     storyboard.floore0.image = [self tileImageAtId:-1:0];
     storyboard.floor11.image = [self tileImageAtId:1:1];
     storyboard.flooree.image = [self tileImageAtId:-1:-1];
+    
+    storyboard.wall1l.frame = [position tile:5 :2 :-1];
+    storyboard.wall2l.frame = [position tile:5 :2 : 0];
+    storyboard.wall3l.frame = [position tile:5 :2 : 1];
+    
+    storyboard.wall1r.frame = [position tile:5 : -1 : 2];
+    storyboard.wall2r.frame = [position tile:5 : 0 : 2];
+    storyboard.wall3r.frame = [position tile:5 : 1 : 2];
+    
+    storyboard.step1l.frame = [position tile:0 :1 :-2];
+    storyboard.step2l.frame = [position tile:0 :0 :-2];
+    storyboard.step3l.frame = [position tile:0 :-1 :-2];
+    
+    storyboard.step1r.frame = [position tile:0 :-2 : -1];
+    storyboard.step2r.frame = [position tile:0 :-2 : 0];
+    storyboard.step3r.frame = [position tile:0 :-2 : 1];
+    
+    storyboard.wall1l.image = [self tileImageAtId:2:-1];
+    storyboard.wall2l.image = [self tileImageAtId:2:0];
+    storyboard.wall3l.image = [self tileImageAtId:2:1];
+    storyboard.wall1r.image = [self tileImageAtId:1:2];
+    storyboard.wall2r.image = [self tileImageAtId:0:2];
+    storyboard.wall3r.image = [self tileImageAtId:-1:2];
+
+    storyboard.step1l.image = [self tileImageAtId:1:-2];
+    storyboard.step2l.image = [self tileImageAtId:0:-2];
+    storyboard.step3l.image = [self tileImageAtId:-1:-2];
+    storyboard.step1r.image = [self tileImageAtId:-2:-1];
+    storyboard.step2r.image = [self tileImageAtId:-2:0];
+    storyboard.step3r.image = [self tileImageAtId:-2:1];
+    
 }
 
 -(void)animateWalk
@@ -68,12 +97,12 @@
 {
     Tile* tile = [[Tile alloc] initWithString:[room tileAtLocation:x :y]];
     
-    if( x == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png", [tile value] ]]; }
-    if( y == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png", [tile value] ]]; }
-    if( y == -2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png", [tile value] ]]; }
-    if( x == -2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png", [tile value] ]]; }
+    if( x == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r", [tile value] ]]; }
+    if( y == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l", [tile value] ]]; }
+    if( y == -2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"step.%@.l", [tile value] ]]; }
+    if( x == -2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"step.%@.r", [tile value] ]]; }
     
-    return [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png", [tile value] ]];
+    return [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@", [tile value] ]];
 }
 
 @end

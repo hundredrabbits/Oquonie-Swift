@@ -34,7 +34,8 @@
     [user setX:[event x]];
     [user setY:[event y]];
     
-    [newDraw animateWalk];
+    newDraw = [[Draw alloc] init];
+    [newDraw animateRoom];
 }
 
 -(void)renderWarp :(Event*)event

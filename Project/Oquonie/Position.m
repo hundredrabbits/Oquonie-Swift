@@ -12,6 +12,7 @@
 
 -(Position*)initWithView :(CGRect)viewFrame
 {
+    NSLog(@"~ FRAME | Recalculate");
     screenFrame = viewFrame;
     return self;
 }
@@ -87,7 +88,10 @@
         centerH -= (tileH/2) + ((tileW * 0.5)/2);
     }
     
+    // Tiles
+    
 #if TARGET_OS_IPHONE
+    
     if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
     if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW, centerH, tileW, tileH); }
     if( posX ==-1 && posY == 1 ){ return CGRectMake(centerW+tileW, centerH, tileW, tileH); }
@@ -97,29 +101,48 @@
     if( posX ==-1 && posY == 0 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH/2), tileW, tileH); }
     if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH+tileH, tileW, tileH);}
     if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
+    
 #else
-    // Reverse for Y/-Y
+    
     if( posX == 0 && posY == -1 ){ return CGRectMake(centerW-(tileW/2), centerH-(tileH/2), tileW, tileH); }
     if( posX == 1 && posY ==  0 ){ return CGRectMake(centerW-(tileW/2), centerH+(tileH/2), tileW, tileH); }
-    
     if( posX == -1 && posY == 0 ){ return CGRectMake(centerW+(tileW/2), centerH-(tileH/2), tileW, tileH); }
     if( posX ==  0 && posY == 1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH/2), tileW, tileH); }
-    
     if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH+tileH, tileW, tileH);}
     if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
-
     if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
     if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW, centerH, tileW, tileH); }
     if( posX ==-1 && posY == 1 ){ return CGRectMake(centerW+tileW, centerH, tileW, tileH); }
+    
 #endif
+    
+    // Steps
+    
+#if TARGET_OS_IPHONE
+    
+    if( posX == 1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
+    if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }
+    if( posX ==-1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*1.5), tileW, tileH); }
     
     if( posX ==-2 && posY == 1 ){ return CGRectMake(centerW+(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
     if( posX ==-2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+(tileH*1.0), tileW, tileH); }
     if( posX ==-2 && posY ==-1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH*1.5), tileW, tileH); }
     
-    if( posX == 1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
-    if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }
-    if( posX ==-1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*1.5), tileW, tileH); }
+#else
+    
+    if( posX == 1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*3, centerH-(tileH*0.5), tileW, tileH); }
+    if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH-tileH, tileW, tileH); }
+    if( posX ==-1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*1, centerH-(tileH*1.5), tileW, tileH); }
+    
+    if( posX ==-2 && posY == 1 ){ return CGRectMake(centerW+(tileW/2)*3, centerH-(tileH*0.5), tileW, tileH); }
+    if( posX ==-2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*2, centerH-(tileH*1.0), tileW, tileH); }
+    if( posX ==-2 && posY ==-1 ){ return CGRectMake(centerW+(tileW/2), centerH-(tileH*1.5), tileW, tileH); }
+    
+#endif
+    
+    // Walls
+    
+#if TARGET_OS_IPHONE
     
     if( posX == 2 && posY ==-1 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5)*-0.12, tileW, tileH); }
     if( posX == 2 && posY == 0 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+(tileH*0.5)*-0.45, tileW, tileH); }
@@ -130,6 +153,19 @@
     if( posX == 0 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-2, centerH+(tileH*0.5)*-0.45, tileW, tileH); }
     if( posX == 1 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-1, centerH+(tileH*0.5)*-0.79, tileW, tileH); }
     
+#else
+    
+    if( posX == 2 && posY ==-1 ){ return CGRectMake(centerW-(tileW/2)*3, (centerH + tileH) + centerH-(tileH*0.5)*-0.12 - 80, tileW, tileH); }
+    if( posX == 2 && posY == 0 ){ return CGRectMake(centerW-(tileW/2)*2, (centerH + tileH) + centerH-(tileH*0.5)*-0.45 - 80, tileW, tileH); }
+    if( posX == 2 && posY == 1 ){ return CGRectMake(centerW-(tileW/2)*1, (centerH + tileH) + centerH-(tileH*0.5)*-0.79 - 80, tileW, tileH); }
+    if( posX == 2 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*0.5, (centerH + tileH) + centerH+(tileH*0.5)*-1 - 80, tileW, tileH); }
+    
+    if( posX ==-1 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-3, (centerH + tileH) + centerH-(tileH*0.5)*-0.12 - 80, tileW, tileH); }
+    if( posX == 0 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-2, (centerH + tileH) + centerH-(tileH*0.5)*-0.45 - 80, tileW, tileH); }
+    if( posX == 1 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-1, (centerH + tileH) + centerH-(tileH*0.5)*-0.79 - 80, tileW, tileH); }
+    
+#endif
+
     return CGRectMake(0, 0, 0, 0);
 }
 
