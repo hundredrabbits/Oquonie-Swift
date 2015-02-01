@@ -84,7 +84,7 @@
     
     // Wall
     if( type == 5 ){
-        tileH = tileH * 3;
+        tileH = tileH * 2;
         centerH -= (tileH/2) + ((tileW * 0.5)/2);
     }
     
@@ -104,15 +104,15 @@
     
 #else
     
-    if( posX == 0 && posY == -1 ){ return CGRectMake(centerW-(tileW/2), centerH-(tileH/2), tileW, tileH); }
-    if( posX == 1 && posY ==  0 ){ return CGRectMake(centerW-(tileW/2), centerH+(tileH/2), tileW, tileH); }
-    if( posX == -1 && posY == 0 ){ return CGRectMake(centerW+(tileW/2), centerH-(tileH/2), tileW, tileH); }
-    if( posX ==  0 && posY == 1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH/2), tileW, tileH); }
-    if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH+tileH, tileW, tileH);}
-    if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
+    if( posX == 0 && posY == -1 ){ return CGRectMake(centerW-(tileW/2) + (tileW/7), centerH-(tileH/2) + (tileH/7), tileW, tileH); }
+    if( posX == 1 && posY ==  0 ){ return CGRectMake(centerW-(tileW/2) + (tileW/7), centerH+(tileH/2) - (tileH/7), tileW, tileH); }
+    if( posX == -1 && posY == 0 ){ return CGRectMake(centerW+(tileW/2) - (tileW/7), centerH-(tileH/2) + (tileH/7), tileW, tileH); }
+    if( posX ==  0 && posY == 1 ){ return CGRectMake(centerW+(tileW/2) - (tileW/7), centerH+(tileH/2) - (tileH/7), tileW, tileH); }
+    if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH+tileH - (tileH/3.5), tileW, tileH);}
+    if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH-tileH + (tileH/3.5), tileW, tileH); }
     if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
-    if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW, centerH, tileW, tileH); }
-    if( posX ==-1 && posY == 1 ){ return CGRectMake(centerW+tileW, centerH, tileW, tileH); }
+    if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW + (tileW/3.5), centerH, tileW, tileH); }
+    if( posX ==-1 && posY == 1 ){ return CGRectMake(centerW+tileW - (tileW/3.5), centerH, tileW, tileH); }
     
 #endif
     
