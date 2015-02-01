@@ -54,7 +54,6 @@
     // Wall
     if( type == 5 ){
         tileH = tileH * 2;
-        centerH -= (tileH/2) + ((tileW * 0.5)/2);
     }
     
     // Tiles
@@ -71,6 +70,14 @@
     if( posX ==-1 && posY ==-1 ){ return CGRectMake(centerW, centerH+tileH, tileW, tileH);}
     if( posX == 1 && posY == 1 ){ return CGRectMake(centerW, centerH-tileH, tileW, tileH); }
     
+    if( posX == 1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
+    if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }
+    if( posX ==-1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*1.5), tileW, tileH); }
+    
+    if( posX ==-2 && posY == 1 ){ return CGRectMake(centerW+(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
+    if( posX ==-2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+(tileH*1.0), tileW, tileH); }
+    if( posX ==-2 && posY ==-1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH*1.5), tileW, tileH); }
+    
 #else
     
     if( posX == 0 && posY == -1 ){ return CGRectMake(centerW-(tileW/2) + (tileW/7), centerH-(tileH/2) + (tileH/7), tileW, tileH); }
@@ -82,22 +89,6 @@
     if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH, tileW, tileH); }
     if( posX == 1 && posY ==-1 ){ return CGRectMake(centerW-tileW + (tileW/3.5), centerH, tileW, tileH); }
     if( posX ==-1 && posY == 1 ){ return CGRectMake(centerW+tileW - (tileW/3.5), centerH, tileW, tileH); }
-    
-#endif
-    
-    // Steps
-    
-#if TARGET_OS_IPHONE
-    
-    if( posX == 1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
-    if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2, centerH+tileH, tileW, tileH); }
-    if( posX ==-1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*1, centerH+(tileH*1.5), tileW, tileH); }
-    
-    if( posX ==-2 && posY == 1 ){ return CGRectMake(centerW+(tileW/2)*3, centerH+(tileH*0.5), tileW, tileH); }
-    if( posX ==-2 && posY == 0 ){ return CGRectMake(centerW+(tileW/2)*2, centerH+(tileH*1.0), tileW, tileH); }
-    if( posX ==-2 && posY ==-1 ){ return CGRectMake(centerW+(tileW/2), centerH+(tileH*1.5), tileW, tileH); }
-    
-#else
     
     if( posX == 1 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*3 + (tileW/7)*3, centerH-(tileH*0.5) + (tileH/7)*1, tileW, tileH); }
     if( posX == 0 && posY ==-2 ){ return CGRectMake(centerW-(tileW/2)*2 + (tileW/7)*2, centerH-tileH + (tileH/7)*2, tileW, tileH); }
@@ -124,14 +115,14 @@
     
 #else
     
-    if( posX == 2 && posY ==-1 ){ return CGRectMake(centerW-(tileW/2)*3 + (tileW/7)*3, (centerH + tileH) + centerH-(tileH*0.5)*-0.12 - 80, tileW, tileH); }
-    if( posX == 2 && posY == 0 ){ return CGRectMake(centerW-(tileW/2)*2 + (tileW/7)*2, (centerH + tileH) + centerH-(tileH*0.5)*-0.45 - 80, tileW, tileH); }
-    if( posX == 2 && posY == 1 ){ return CGRectMake(centerW-(tileW/2)*1 + (tileW/7), (centerH + tileH) + centerH-(tileH*0.5)*-0.79 - 80, tileW, tileH); }
+    if( posX == 2 && posY ==-1 ){ return CGRectMake(centerW-((tileW/2)*2.4) + (tileW/7), centerH +(0.5*tileH*0.35), tileW, tileH); }
+    if( posX == 2 && posY == 0 ){ return CGRectMake(centerW-tileW + (tileW/3.5), centerH +(tileH*0.351), tileW, tileH); }
+    if( posX == 2 && posY == 1 ){ return CGRectMake(centerW-(tileW/2) + (tileW/7), centerH +(1.5*tileH*0.351), tileW, tileH); }
     if( posX == 2 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*0.5, (centerH + tileH) + centerH+(tileH*0.5)*-1 - 80, tileW, tileH); }
     
-    if( posX ==-1 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-3 - (tileW/7)*3, (centerH + tileH) + centerH-(tileH*0.5)*-0.12 - 80, tileW, tileH); }
-    if( posX == 0 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-2 - (tileW/7)*2, (centerH + tileH) + centerH-(tileH*0.5)*-0.45 - 80, tileW, tileH); }
-    if( posX == 1 && posY == 2 ){ return CGRectMake(centerW-(tileW/2)*-1 - (tileW/7), (centerH + tileH) + centerH-(tileH*0.5)*-0.79 - 80, tileW, tileH); }
+    if( posX ==-1 && posY == 2 ){ return CGRectMake(centerW+(tileW*0.35), centerH +(1.5*tileH*0.351), tileW, tileH); }
+    if( posX == 0 && posY == 2 ){ return CGRectMake(centerW+(tileW*0.7), centerH +(tileH*0.351), tileW, tileH); }
+    if( posX == 1 && posY == 2 ){ return CGRectMake(centerW+(tileW/2)*2.108, centerH +(0.5*tileH*0.35), tileW, tileH); }
     
 #endif
 

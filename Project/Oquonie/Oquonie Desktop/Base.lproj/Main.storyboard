@@ -691,20 +691,20 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="8A3-MZ-9YT"/>
                                     </imageView>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qbq-gf-PSR" userLabel="wall3r">
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="c42-HO-I2L" userLabel="wall1r">
                                         <rect key="frame" x="49" y="62" width="147" height="146"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="8pL-9G-tkk"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="5x1-BK-AfF"/>
                                     </imageView>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="mZI-yW-WQt" userLabel="wall2r">
                                         <rect key="frame" x="49" y="62" width="147" height="146"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="6ML-Ly-KiL"/>
                                     </imageView>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="c42-HO-I2L" userLabel="wall1r">
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qbq-gf-PSR" userLabel="wall3r">
                                         <rect key="frame" x="49" y="62" width="147" height="146"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="5x1-BK-AfF"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="8pL-9G-tkk"/>
                                     </imageView>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o79-F3-G9T" userLabel="floor11">
                                         <rect key="frame" x="50" y="87" width="147" height="146"/>
