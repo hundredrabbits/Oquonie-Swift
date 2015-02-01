@@ -12,6 +12,8 @@
 
 - (Position*)initWithView :(CGRect)viewFrame;
 - (CGRect)tile :(int)type :(int)posX :(int)posY;
+- (CGFloat)tileH;
+- (CGFloat)tileW;
 
 @end
 

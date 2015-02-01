@@ -36,11 +36,11 @@
     NSLog(@"~  DRAW | animateRoom");
     storyboard.roomContainer.frame = storyboard.view.frame;
     
-    NSLog(@"%f",[position tile:0 :0 :0].origin.x);
+    NSLog(@"%f", storyboard.view.frame.size.width);
     
     storyboard.floor00.frame = [position tile:0 :0 :0];
-    storyboard.floor1e.frame = [position tile:0 :-1 :1];
-    storyboard.floore1.frame = [position tile:0 :1 :-1];
+    storyboard.floor1e.frame = [position tile:0 :1 :-1];
+    storyboard.floore1.frame = [position tile:0 :-1 :1];
     storyboard.floor10.frame = [position tile:0 :1 :0];
     storyboard.floor01.frame = [position tile:0 :0 :1];
     storyboard.floor0e.frame = [position tile:0 :0 :-1];
@@ -67,7 +67,6 @@
 -(NSImage*)tileImageAtId :(int)x :(int)y
 {
     Tile* tile = [[Tile alloc] initWithString:[room tileAtLocation:x :y]];
-    NSLog(@"%@",[tile value]);
     
     if( x == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png", [tile value] ]]; }
     if( y == 2 ){ return [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png", [tile value] ]]; }

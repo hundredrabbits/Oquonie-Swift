@@ -43,6 +43,7 @@
     [user setLocation:[event location]];
     [user setPosition:[event x]:[event y]];
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
+    newDraw = [[Draw alloc] init];
     [newDraw animateRoom];
 }
 

@@ -678,8 +678,8 @@
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o79-F3-G9T" userLabel="floor11">
                                         <rect key="frame" x="50" y="87" width="147" height="146"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tile.1" id="Ky1-Lu-llj"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="tile.1" id="Ky1-Lu-llj"/>
                                     </imageView>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5Rd-0I-tGV" userLabel="floor10">
                                         <rect key="frame" x="49" y="62" width="147" height="146"/>
