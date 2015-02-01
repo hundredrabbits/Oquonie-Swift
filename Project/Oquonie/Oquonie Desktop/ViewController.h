@@ -49,4 +49,5 @@
 @end
 
 ViewController * storyboard;
+NSView * spriteContainer;
 

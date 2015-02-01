@@ -74,6 +74,8 @@
 #define dialogOwlSave				@"PRL"
 #define dialogHiversaires			@"789"
 
+#define tagBlockers                 470
+
 #define audioNecomedre			@"necomedre"
 #define audioNephtaline			@"nephtaline"
 #define audioNeomine			@"neomine"

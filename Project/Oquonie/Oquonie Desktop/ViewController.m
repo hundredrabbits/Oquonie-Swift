@@ -19,6 +19,7 @@
     [super viewDidLoad];
     storyboard = self;
     [self start];
+    spriteContainer = self.spriteContainer;
 }
 
 - (void)setRepresentedObject:(id)representedObject {

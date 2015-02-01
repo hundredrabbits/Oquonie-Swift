@@ -90,6 +90,49 @@
     storyboard.spriteUser.frame = [position tile:4 :[user x] : [user y]];
     storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
+    
+    [self generateBlockers];
+    
+}
+
+-(void)eraseBlocker
+{
+    NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
+    for(NSImageView* subview in [spriteContainer subviews])
+    {
+        if( subview.tag == tagBlockers ){
+            [viewsToRemove addObject:subview];
+        }
+    }
+    [viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
+}
+
+-(void)generateBlockers
+{
+    [self eraseBlocker];
+    for (int x = -1; x < 2; x++) {
+        for (int y = -1; y < 2; y++) {
+            Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+            [spriteContainer addSubview:[self spriteImageView:x:y:tileCheck]];
+        }
+    }
+    
+    
+}
+
+-(NSImageView*)spriteImageView :(int)x :(int)y :(Tile*)tile
+{
+    NSImageView * newSprite = [[NSImageView alloc] initWithFrame:[position tile:4:x:y]];
+    
+    if( [[tile type] isEqualToString:@"event"] ){
+        newSprite.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.l.1",[tile data]]];
+    }
+    else if( [[tile type] isEqualToString:@"block"] ){
+        newSprite.image = [NSImage imageNamed:[NSString stringWithFormat:@"blocker.%@",[tile name]]];
+    }
+    
+    newSprite.tag = tagBlockers;
+    return newSprite;
 }
 
 -(void)animateWalk
