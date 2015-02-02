@@ -14,27 +14,19 @@
 
 -(World*)init
 {
-    NSLog(@"> WORLD | Starting..");
+    NSLog(@"* WORLD | Init");
     
     worldNode = [NSMutableArray arrayWithObjects:@"",nil];
     int myCount = 0;
     while ( myCount < 160 )	{ myCount++; worldNode[myCount] = @[];	}
     
-    NSLog(@"> WORLD | Generating Lobby..");
     [self createWorldLobby];
-    NSLog(@"> WORLD | Generating Necomedre..");
     [self createWorldNecomedre];
-    NSLog(@"> WORLD | Generating Nephtaline..");
     [self createWorldNephtaline];
-    NSLog(@"> WORLD | Generating Neomine..");
     [self createWorldNeomine];
-    NSLog(@"> WORLD | Generating Nestorine..");
     [self createWorldNestorine];
-    NSLog(@"> WORLD | Generating Nemedique..");
     [self createWorldNemedique];
-    NSLog(@"> WORLD | Generating Secret..");
     [self createWorldSecret];
-    NSLog(@"> WORLD | Generating Nastazie..");
     [self createWorldNastazie];
     
     return self;

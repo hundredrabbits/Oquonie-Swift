@@ -60,7 +60,6 @@
 @property (weak) IBOutlet NSImageView *letterView2;
 @property (weak) IBOutlet NSImageView *letterView3;
 
-
 @end
 
 ViewController * storyboard;

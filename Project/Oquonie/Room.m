@@ -13,9 +13,8 @@
 
 -(Room*)initWithArray :(NSArray*)roomArray
 {
-    NSLog(@"!  ROOM | Data         | Loading..");
+    NSLog(@"*  ROOM | Init");
     roomNode = [[NSArray alloc] initWithArray:roomArray];
-    NSLog(@"!  ROOM | Data         | Ready");
     return self;
 }
 

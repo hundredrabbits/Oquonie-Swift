@@ -15,6 +15,7 @@
 
 -(Render*)init
 {
+    NSLog(@"* RENDR | Init");
     newDraw = [[Draw alloc] init];
     return self;
 }

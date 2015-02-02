@@ -12,7 +12,7 @@
 
 -(Position*)initWithView :(CGRect)viewFrame
 {
-    NSLog(@"~ FRAME | Recalculate");
+    NSLog(@"* FRAME | Init");
     screenFrame = viewFrame;
     return self;
 }

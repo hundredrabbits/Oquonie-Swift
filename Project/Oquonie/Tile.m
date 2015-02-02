@@ -11,7 +11,7 @@
 @implementation Tile
 
 -(Tile*)initWithString :(NSString*)tileString
-{
+{    
     tileNode = [tileString componentsSeparatedByString: @"|"];
     return self;
 }

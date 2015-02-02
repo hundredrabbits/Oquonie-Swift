@@ -830,19 +830,19 @@
                                             </imageView>
                                         </subviews>
                                     </customView>
-                                    <customView id="VaE-dF-Kw4" userLabel="dialogContainer">
+                                    <customView id="VaE-dF-Kw4" userLabel="dialogContainer" customClass="DrawView">
                                         <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oQ7-JZ-QE2" userLabel="portraitImageView">
                                                 <rect key="frame" x="49" y="62" width="147" height="146"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="USD-Vg-1Sk"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="event.1.portrait" id="USD-Vg-1Sk"/>
                                             </imageView>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Fzm-1S-Fif" userLabel="bubbleImageView">
                                                 <rect key="frame" x="49" y="62" width="147" height="146"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="bgp-3m-vw1"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="fx.textbubble" id="bgp-3m-vw1"/>
                                             </imageView>
                                             <customView id="VnG-Jk-2ZF" userLabel="bubbleContainer">
                                                 <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
@@ -851,17 +851,17 @@
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="HMZ-dB-Rnr" userLabel="letterView1">
                                                         <rect key="frame" x="49" y="62" width="147" height="146"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="qBY-wq-TYj"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="letterA" id="qBY-wq-TYj"/>
                                                     </imageView>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="l5c-ZP-xlC" userLabel="letterView2">
                                                         <rect key="frame" x="49" y="62" width="147" height="146"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="CJK-52-ENS"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="letterB" id="CJK-52-ENS"/>
                                                     </imageView>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JPI-Rp-fQ7" userLabel="letterView3">
                                                         <rect key="frame" x="49" y="62" width="147" height="146"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="VJA-x0-P0c"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="letterC" id="VJA-x0-P0c"/>
                                                     </imageView>
                                                 </subviews>
                                             </customView>
@@ -919,7 +919,12 @@
     </scenes>
     <resources>
         <image name="char1.stand.l.f.1" width="200" height="281"/>
+        <image name="event.1.portrait" width="639.91998291015625" height="390"/>
         <image name="fx.shadow" width="200" height="281"/>
+        <image name="fx.textbubble" width="640" height="500"/>
+        <image name="letterA" width="30.719999313354492" height="30.719999313354492"/>
+        <image name="letterB" width="30.719999313354492" height="30.719999313354492"/>
+        <image name="letterC" width="30.719999313354492" height="30.719999313354492"/>
         <image name="tile.1" width="200" height="141"/>
     </resources>
 </document>

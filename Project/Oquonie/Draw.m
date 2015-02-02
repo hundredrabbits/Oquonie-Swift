@@ -16,6 +16,7 @@
 
 -(Draw*)init
 {
+    NSLog(@"*  DRAW | Init");
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
     position = [[Position alloc] initWithView:storyboard.view.frame];
     return self;
@@ -28,6 +29,15 @@
 
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId
 {
+    NSLog(@"~  DRAW | Dialog %@ %@",dialog,characterId);
+    
+    storyboard.dialogContainer.frame = storyboard.view.frame;
+    
+    CALayer *viewLayer = [CALayer layer];
+    [viewLayer setBackgroundColor:CGColorCreateGenericRGB(0.0, 0.0, 0.0, 0.3)]; //RGB plus Alpha Channel
+    [storyboard.dialogContainer setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
+    [storyboard.dialogContainer setLayer:viewLayer];
+    
     
 }
 

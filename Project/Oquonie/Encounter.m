@@ -14,6 +14,7 @@
 
 -(Encounter*)init
 {
+    NSLog(@"* ENCNT | Init");
     newDraw = [[Draw alloc] init];
     newSound = [[Audio alloc] init];
     return self;
