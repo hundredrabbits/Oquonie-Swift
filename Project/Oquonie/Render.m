@@ -37,6 +37,7 @@
     newDraw = [[Draw alloc] init];
     [newDraw animateRoom];
     [newDraw animateWalk];
+    [newDraw animateSpellbook];
 }
 
 -(void)renderWarp :(Event*)event

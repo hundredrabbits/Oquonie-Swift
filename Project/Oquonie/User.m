@@ -184,6 +184,11 @@
     }
 }
 
+-(int)spell :(int)value
+{
+    return [userData[@"spellbook"][value][1] intValue];
+}
+
 -(int)eventExists :(int)eventId
 {
     if( userData[@"events"] ){

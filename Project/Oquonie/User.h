@@ -44,6 +44,7 @@
 -(int)spellExists :(NSString*)spellId;
 -(void)spellCollect :(NSString*)spellId :(int)spellType;
 -(int)spellCount;
+-(int)spell :(int)value;
 
 -(int)eventExists :(int)eventId;
 -(void)eventCollect :(int)eventId;

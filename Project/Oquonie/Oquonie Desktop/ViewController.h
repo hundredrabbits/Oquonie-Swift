@@ -46,6 +46,21 @@
 @property (weak) IBOutlet NSImageView *spriteShadow;
 @property (weak) IBOutlet NSImageView *spriteCharacter;
 
+@property (weak) IBOutlet NSView *interfaceContainer;
+@property (weak) IBOutlet NSView *spellsContainer;
+@property (weak) IBOutlet NSImageView *spellView1;
+@property (weak) IBOutlet NSImageView *spellView2;
+@property (weak) IBOutlet NSImageView *spellView3;
+
+@property (weak) IBOutlet NSView *dialogContainer;
+@property (weak) IBOutlet NSImageView *portraitImageView;
+@property (weak) IBOutlet NSImageView *bubbleImageView;
+@property (weak) IBOutlet NSView *bubbleContainer;
+@property (weak) IBOutlet NSImageView *letterView1;
+@property (weak) IBOutlet NSImageView *letterView2;
+@property (weak) IBOutlet NSImageView *letterView3;
+
+
 @end
 
 ViewController * storyboard;

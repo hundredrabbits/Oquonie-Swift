@@ -805,9 +805,76 @@
                                     </customView>
                                 </subviews>
                             </customView>
+                            <customView id="Biw-3A-RJf" userLabel="interfaceContainer">
+                                <rect key="frame" x="117" y="0.0" width="246" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <customView id="ErZ-yq-B2f" userLabel="spellsContainer">
+                                        <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Jv0-s6-TQd" userLabel="spellView1">
+                                                <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Bug-Qv-eMD"/>
+                                            </imageView>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="V97-lW-grT" userLabel="spellView2">
+                                                <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="1mh-Um-ljS"/>
+                                            </imageView>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="h5c-lv-Nn0" userLabel="spellView3">
+                                                <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="oYv-qg-Plv"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
+                                    <customView id="VaE-dF-Kw4" userLabel="dialogContainer">
+                                        <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oQ7-JZ-QE2" userLabel="portraitImageView">
+                                                <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="USD-Vg-1Sk"/>
+                                            </imageView>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Fzm-1S-Fif" userLabel="bubbleImageView">
+                                                <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="bgp-3m-vw1"/>
+                                            </imageView>
+                                            <customView id="VnG-Jk-2ZF" userLabel="bubbleContainer">
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <subviews>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="HMZ-dB-Rnr" userLabel="letterView1">
+                                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="qBY-wq-TYj"/>
+                                                    </imageView>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="l5c-ZP-xlC" userLabel="letterView2">
+                                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="CJK-52-ENS"/>
+                                                    </imageView>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JPI-Rp-fQ7" userLabel="letterView3">
+                                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="VJA-x0-P0c"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </customView>
+                                        </subviews>
+                                    </customView>
+                                </subviews>
+                            </customView>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="bubbleContainer" destination="VnG-Jk-2ZF" id="USQ-vn-QZL"/>
+                        <outlet property="bubbleImageView" destination="Fzm-1S-Fif" id="rx3-XE-DIm"/>
+                        <outlet property="dialogContainer" destination="VaE-dF-Kw4" id="g9j-G3-QMR"/>
                         <outlet property="floor00" destination="klb-3U-Gcf" id="Bb5-EL-T4b"/>
                         <outlet property="floor01" destination="xlw-qd-ffk" id="P6i-cl-j8S"/>
                         <outlet property="floor0e" destination="yxo-y7-qaF" id="adC-B1-8gm"/>
@@ -817,7 +884,16 @@
                         <outlet property="floore0" destination="Hqi-Gp-RB3" id="Zkw-OG-W7z"/>
                         <outlet property="floore1" destination="fV8-nh-PDy" id="80y-ch-eh4"/>
                         <outlet property="flooree" destination="T22-ri-cI5" id="XGp-lV-yRa"/>
+                        <outlet property="interfaceContainer" destination="Biw-3A-RJf" id="n1y-9B-gtr"/>
+                        <outlet property="letterView1" destination="HMZ-dB-Rnr" id="fIm-XO-4f8"/>
+                        <outlet property="letterView2" destination="l5c-ZP-xlC" id="oZZ-6s-fPm"/>
+                        <outlet property="letterView3" destination="JPI-Rp-fQ7" id="cRc-mh-YAw"/>
+                        <outlet property="portraitImageView" destination="oQ7-JZ-QE2" id="otT-nQ-sZ8"/>
                         <outlet property="roomContainer" destination="jBC-0r-NuQ" id="x5c-vQ-YPC"/>
+                        <outlet property="spellView1" destination="Jv0-s6-TQd" id="j5s-Nn-Uuc"/>
+                        <outlet property="spellView2" destination="V97-lW-grT" id="xbA-gD-9tx"/>
+                        <outlet property="spellView3" destination="h5c-lv-Nn0" id="HuD-Di-zpj"/>
+                        <outlet property="spellsContainer" destination="ErZ-yq-B2f" id="h3H-jh-Wc5"/>
                         <outlet property="spriteCharacter" destination="82y-WS-YAc" id="ao1-mn-enP"/>
                         <outlet property="spriteContainer" destination="K5c-Vq-mjC" id="dtw-Qp-NtO"/>
                         <outlet property="spriteShadow" destination="Kzb-jf-9zz" id="bha-cw-RLp"/>

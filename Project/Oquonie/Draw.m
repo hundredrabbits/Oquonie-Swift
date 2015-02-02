@@ -31,11 +31,32 @@
     
 }
 
+-(void)animateSpellbook
+{
+    NSLog(@"~  DRAW | animateSpellbook");
+    
+    storyboard.interfaceContainer.frame = storyboard.view.frame;
+    storyboard.spellsContainer.frame = CGRectMake((storyboard.view.frame.size.width)/2 - (([position tile:0 :0 :0].size.width)/2), storyboard.view.frame.size.height - 100, ([position tile:0 :0 :0].size.width)/3 * 3, ([position tile:0 :0 :0].size.width)/3);
+    
+    storyboard.spellView1.frame = CGRectMake(0, 0, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3);
+    storyboard.spellView2.frame = CGRectMake(storyboard.spellsContainer.frame.size.width/3, 0, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3);
+    storyboard.spellView3.frame = CGRectMake((storyboard.spellsContainer.frame.size.width/3)*2, 0, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3);
+    
+    if( [user spell:0] > 0 ){ storyboard.spellView1.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell%d",[user spell:0]]]; }
+    else{ storyboard.spellView1.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell0"]]; }
+    
+    if( [user spell:1] > 0 ){ storyboard.spellView2.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell%d",[user spell:1]]]; }
+    else{ storyboard.spellView2.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell0"]]; }
+    
+    if( [user spell:2] > 0 ){ storyboard.spellView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell%d",[user spell:2]]]; }
+    else{ storyboard.spellView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell0"]]; }
+}
+
 -(void)animateRoom
 {
     NSLog(@"~  DRAW | animateRoom");
-    storyboard.roomContainer.frame = storyboard.view.frame;
-    storyboard.spriteContainer.frame = storyboard.view.frame;
+    storyboard.roomContainer.frame = CGRectOffset(storyboard.view.frame, 0, -100);
+    storyboard.spriteContainer.frame = CGRectOffset(storyboard.view.frame, 0, -100);
     
     storyboard.floor00.frame = [position tile:0 :0 :0];
     storyboard.floor1e.frame = [position tile:0 :1 :-1];
@@ -116,8 +137,6 @@
             [spriteContainer addSubview:[self spriteImageView:x:y:tileCheck]];
         }
     }
-    
-    
 }
 
 -(NSImageView*)spriteImageView :(int)x :(int)y :(Tile*)tile

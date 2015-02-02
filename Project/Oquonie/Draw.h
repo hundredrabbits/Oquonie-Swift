@@ -14,5 +14,6 @@
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId;
 -(void)animateRoom;
 -(void)animateWalk;
+-(void)animateSpellbook;
 
 @end

@@ -37,6 +37,7 @@
     
     [user listening:0];
     [user setLocation:50];
+    [user spellCollect:@"nephtalineNeomine1":3];
     
     [newDraw animateRoom];
 }
