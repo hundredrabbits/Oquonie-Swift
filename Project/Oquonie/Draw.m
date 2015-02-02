@@ -33,12 +33,28 @@
     
     storyboard.dialogContainer.frame = storyboard.view.frame;
     
+    
     CALayer *viewLayer = [CALayer layer];
     [viewLayer setBackgroundColor:CGColorCreateGenericRGB(0.0, 0.0, 0.0, 0.3)]; //RGB plus Alpha Channel
     [storyboard.dialogContainer setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
     [storyboard.dialogContainer setLayer:viewLayer];
     
+    storyboard.portraitImageView.frame = CGRectMake(storyboard.view.frame.size.width/6, 0, storyboard.view.frame.size.width/1.5, 240);
+    storyboard.bubbleImageView.frame = storyboard.portraitImageView.frame;
     
+    CGFloat viewCenter = storyboard.view.frame.size.width/2;
+    storyboard.bubbleContainer.frame = CGRectMake(viewCenter-170, 35, 195, 70);
+    CGFloat spellSize = storyboard.bubbleContainer.frame.size.height;
+    
+    storyboard.letterView1.frame = CGRectMake(0, 0, spellSize, spellSize);
+    storyboard.letterView2.frame = CGRectMake(spellSize -10, 0, spellSize, spellSize);
+    storyboard.letterView3.frame = CGRectMake(spellSize*2 -20, 0, spellSize, spellSize);
+    
+    [storyboard.portraitImageView setImageScaling:NSImageScaleProportionallyUpOrDown];
+    [storyboard.bubbleImageView setImageScaling:NSImageScaleProportionallyUpOrDown];
+    [storyboard.letterView1 setImageScaling:NSImageScaleProportionallyUpOrDown];
+    [storyboard.letterView2 setImageScaling:NSImageScaleProportionallyUpOrDown];
+    [storyboard.letterView3 setImageScaling:NSImageScaleProportionallyUpOrDown];
 }
 
 -(void)animateSpellbook
