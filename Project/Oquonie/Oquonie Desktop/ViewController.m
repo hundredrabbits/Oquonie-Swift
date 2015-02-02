@@ -36,8 +36,9 @@
     render = [[Render alloc] init];
     
     [user listening:0];
-    [user setLocation:50];
-    [user spellCollect:@"nephtalineNeomine1":3];
+    [user setLocation:46];
+    [user spellCollect:@"nephtalineNeomine2":3];
+    [user spellCollect:@"nephtalineNeomine3":3];
     
     [newDraw animateRoom];
 }

@@ -322,19 +322,19 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleAspectFit" id="Y7v-1Q-mTL" userLabel="dialogView">
-                                        <rect key="frame" x="0.0" y="230" width="320" height="250"/>
+                                        <rect key="frame" x="0.0" y="229.99999845706074" width="320" height="250.00000154293926"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event.10.portrait.png" id="RcO-YQ-M4O" userLabel="dialogCharacter">
-                                                <rect key="frame" x="0.0" y="43" width="320" height="195"/>
+                                                <rect key="frame" x="0.0" y="43" width="320" height="195.00000126417291"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fx.textbubble.png" id="Rwu-16-j3v" userLabel="dialogBubble">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                                <rect key="frame" x="0.0" y="1.5429392590249336e-06" width="320" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" id="tXm-os-7cx" userLabel="dialogCharacterWarpper">
-                                                <rect key="frame" x="21" y="150" width="159.99999728683622" height="60"/>
+                                                <rect key="frame" x="20.999995903298238" y="150" width="160" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterF.png" id="5pe-i9-9LA" userLabel="dialogCharacter1">
@@ -457,7 +457,7 @@
         <image name="event.10.portrait.png" width="640" height="390"/>
         <image name="fx.parallax.1.png" width="640" height="640"/>
         <image name="fx.parallax.2.png" width="640" height="640"/>
-        <image name="fx.textbubble.png" width="640" height="500"/>
+        <image name="fx.textbubble.png" width="640" height="390"/>
         <image name="game_exist.png" width="50" height="50"/>
         <image name="game_save.png" width="50" height="50"/>
         <image name="letterF.png" width="128" height="128"/>

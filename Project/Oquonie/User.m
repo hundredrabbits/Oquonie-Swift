@@ -177,11 +177,17 @@
     
     if(spellSlot > -1){
         NSLog(@"> EVENT | Spell        | Added    -> id:%@ type:%d slot:%d",spellId,spellType,spellSlot);
-        userData[@"spellbook"][spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
+        userData[@"spellbook"][spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];        
     }
     else{
         NSLog(@"> EVENT | Spell        | No available slot");
     }
+    
+    if( userData[@"spellbook"][0][1] == userData[@"spellbook"][1][1] && userData[@"spellbook"][1][1] == userData[@"spellbook"][2][1] ){
+        NSLog(@"> EVENT | Spell        | Transform?!");
+        [self setCharacter:[userData[@"spellbook"][1][1] intValue]];
+    }
+    
 }
 
 -(int)spell :(int)value
