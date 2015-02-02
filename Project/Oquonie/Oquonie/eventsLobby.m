@@ -24,396 +24,6 @@
 
 # pragma mark Gates -
 
--(NSString*)event_gateDocument :(NSString*)option
-{
-	NSString* eventDialogLocked = dialogHaveCharacterNot(letterDocument);
-	
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if( [user character] == characterDocument && [user location] == 29 ){
-			return letterDocument;
-		}
-		return @"";
-	}
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		if([user character]==characterDocument){
-			return @"gateDocument.open";
-		}
-		else{
-			return @"gateDocument.shut";
-		}
-	}
-	
-	// Warp
-	if([user character] == characterDocument){
-		if([user location] == 29){
-			[self eventWarp:@"30" :@"0,-1"];
-		}
-		else if([user location] == 30){
-			[self eventWarp:@"29" :@"0,1"];
-		}
-	}
-	else{
-		[self eventDialog :eventDialogLocked:eventTutorial];
-		[self audioEffectPlayer:@"doorlocked"];
-	}
-	
-	return @"";
-}
-
--(NSString*)event_gateNephtaline :(NSString*)option
-{
-	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNephtaline);
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-        if([user character]==2 && [user eventExists:storageQuestPillarNemedique] && [user location] == 1 ){
-            return letterUnlocked; // letterUnlocked
-        }
-        // Nestorine Pillar Door
-        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNestorine] && [user location] == 93 ){
-            return letterPillar; // letterUnlocked
-        }
-        // Lobby Door
-        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNephtaline] && [user location] == 1 ){
-            return letterPillar; // letterUnlocked
-        }
-		return @"";
-	}
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		// Nemedique pillar
-		if([user location] == 93 && [user eventExists:storageQuestPillarNestorine]){
-			return @"19";
-		}
-		if([user character]==characterNephtaline || [user character] == 7){
-			return @"gateNephtalineOpen";
-		}
-		else{
-			return @"gateNephtalineClosed";
-		}
-	}
-	
-	// Nemedique pillar
-	if([user location] == 93 && [user eventExists:storageQuestPillarNestorine]){
-		return @"";
-	}
-	
-	// Warp
-	if([user character] == characterNephtaline || [user character] == 7){
-		if([user location] == 38){
-			[self eventWarp:@"39" :@"0,-1"];
-		}
-		else if([user location] == 39){
-			[self eventWarp:@"38" :@"0,1"];
-		}
-		else if([user location] == 1){
-			[self eventWarp:@"40" :@"-1,-1"];
-		}
-		else if([user location] == 40){
-			[self eventWarp:@"1" :@"1,0"];
-		}
-		// Nestorine
-		else if([user location] == 93){
-			[self eventWarp:@"90" :@"-1,0"];
-		}
-		else if([user location] == 90){
-			[self eventWarp:@"93" :@"1,0"];
-		}
-		// Nastalize
-		else if([user location] ==	141){
-			[self eventWarpDramatic:@"144":@"-1,0"];
-		}
-		else if([user location] == 144){
-			[self eventWarp:@"141" :@"1,0"];
-		}
-	}
-	else{
-		[self eventDialog:eventDialogLocked:@"1"];
-		[self audioEffectPlayer:@"doorlocked"];
-	}
-	return @"";
-}
-
--(NSString*)event_gateNeomine :(NSString*)option
-{
-	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNeomine);
-	
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-        if([user character]==3 && ![user eventExists:storageQuestPillarNemedique] && [user location] == 3 ){
-            return letterUnlocked; // letterUnlocked
-        }
-        // Lobby Door
-        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNeomine] && [user location] == 3 ){
-            return letterPillar; // letterUnlocked
-        }
-		return @"";
-	}
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		if([user character]==characterNeomine || [user character] == 7 || [user character] == 8 ){
-			return @"gateNeomineOpen";
-		}
-		else{
-			return @"gateNeomineClosed";
-		}
-	}
-	// Warp
-	if([user character] == characterNeomine || [user character] == 7 || [user character] == 8){
-		if([user location] == 60){
-			[self eventWarp:@"3" :@"1,0"];
-		}
-		else if([user location] == 3){
-			[self eventWarp:@"60" :@"-1,0"];
-		}
-		else if([user location] == 34){
-			[self eventWarp:@"71" :@"-1,1"];
-		}
-		else if([user location] == 71){
-			[self eventWarp:@"34" :@"1,1"];
-		}
-		else if([user location] == 58){
-			[self eventWarp:@"59" :@"-1,0"];
-		}
-		else if([user location] == 59){
-			[self eventWarp:@"58" :@"1,0"];
-		}
-		// Nastalize
-		else if([user location] ==	142){
-			[self eventWarpDramatic:@"145":@"-1,0"];
-		}
-		else if([user location] == 145){
-			[self eventWarp:@"142" :@"1,0"];
-		}
-	}
-	else{
-		[self eventDialog:eventDialogLocked:@"1"];
-		[self audioEffectPlayer:@"doorlocked"];
-	}
-	return @"";
-}
-
--(NSString*)event_gateNestorine :(NSString*)option
-{
-	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNestorine);
-	
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-        if([user character]==4 && ![user eventExists:storageQuestPillarNemedique] && [user location] == 7 ){
-            return letterUnlocked; // letterUnlocked
-        }
-        // Necomedre Pillar Door
-        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNecomedre] && [user location] == 34 ){
-            return letterPillar; // letterUnlocked
-        }
-        // Lobby Door
-        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNestorine] && [user location] == 7 ){
-            return letterPillar; // letterUnlocked
-        }
-		return @"";
-	}
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		// Condemned pillar doors: Neomine
-		if([user location] == 34 && [user eventExists:storageQuestPillarNecomedre]){
-			return @"25";
-		}
-		if([user character]==characterNestorine || [user character] == 7){
-			return @"gateNestorineOpen";
-		}
-		else{
-			return @"gateNestorineClosed";
-		}
-	}
-	
-	// Condemned pillar doors: Neomine
-	if([user location] == 34 && [user eventExists:storageQuestPillarNecomedre]){
-		return @"";
-	}
-	
-	// Warp
-	if([user character] == characterNestorine || [user character] == 7){
-		if([user location] == 7){
-			[self eventWarpDramatic:@"96" :@"0,-1"];
-		}
-		else if([user location] == [locationNestorineEnter intValue]){
-			[self eventWarp:locationNestorineLobby:@"0,1"];
-		}
-		else if([user location] == 34){
-			[self eventWarp:@"120" :@"-1,0"];
-		}
-		else if([user location] == 120){
-			[self eventWarp:@"34":@"1,0"];
-		}
-		else if([user location] == 69){
-			[self eventWarpDramatic:@"70":@"0,-1"];
-		}
-		else if([user location] == 70){
-			[self eventWarp:@"69":@"0,1"];
-		}
-	}
-	else{
-		[self eventDialog:eventDialogLocked:@"1"];
-		[self audioEffectPlayer:@"doorlocked"];
-	}
-	
-	return @"";
-}
-
--(NSString*)event_gateNecomedre :(NSString*)option
-{
-	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNecomedre);
-	
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		if([user character]==1 && ![user eventExists:storageQuestPillarNemedique] && [user location] == 5 ){
-			return letterUnlocked; // letterUnlocked
-        }
-        // Neomine Pillar Door
-        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNeomine] && [user location] == 62 ){
-            return letterPillar;
-        }
-        // Nemedique Pillar Door
-        if( ![user eventExists: storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNecomedre] && [user location] == 101 ){
-            return letterPillar; // letterUnlocked
-        }
-        // Lobby Door
-        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNecomedre] && [user location] == 5 ){
-            return letterPillar; // letterUnlocked
-        }
-        
-		return @"";
-	}
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		
-		// Nemedique pillar
-		if([user location] == 101 && [user eventExists:storageQuestPillarNemedique]){
-			return @"13";
-		}
-		// Neomine pillar
-		if([user location] == 62 && [user eventExists:storageQuestPillarNeomine]){
-			return @"36";
-		}
-		
-		if([user character]==characterNecomedre || [user character] == 7){
-			return @"gateNecomedreOpen";
-		}
-		else{
-			return @"gateNecomedreClosed";
-		}
-	}
-	
-	// Condemned pillar doors: Nemedique
-	if([user location] == 101 && [user eventExists:storageQuestPillarNemedique]){
-		[self eventWarp:@"105":@"0,-1"];
-		return @"";
-	}
-	// Condemned pillar doors: Neomine
-	if([user location] == 62 && [user eventExists:storageQuestPillarNeomine]){
-		return @"";
-	}
-	
-	// Warp
-	if([user character] == characterNecomedre || [user character] == 7){
-		if([user location] == 62){
-			[self eventWarp:@"71" :@"0,-1"];
-		}
-		else if([user location] == 71){
-			[self eventWarp:@"62" :@"0,1"];
-		}
-		else if([user location] == 5){
-			[self eventWarp:@"32" :@"0,-1"];
-		}
-		else if([user location] == 32){
-			[self eventWarp:@"5" :@"0,1"];
-		}
-		// Nemedique Pillar
-		else if([user location] == 101){
-			[self eventWarp:locationNemediquePillar :@"0,-1"];
-		}
-		else if([user location] == [locationNemediquePillar intValue]){
-			[self eventWarp:@"101" :@"0,1"];
-		}
-	}
-	else{
-		[self eventDialog:eventDialogLocked:@"1"];
-		[self audioEffectPlayer:@"doorlocked"];
-	}
-	return @"";
-}
-
--(NSString*)event_gateNemedique :(NSString*)option
-{
-	NSString* eventDialogLocked = dialogHaveCharacterNot(letterNemedique);
-	
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-        if([user character]==5 && ![user eventExists:storageQuestPillarNemedique] && [user location] == 9 ){
-            return letterUnlocked;
-        }
-        // Nephtaline Pillar Door
-        if( [user eventExists:storageQuestPillarNemedique] && ![user eventExists:storageQuestPillarNephtaline] && [user location] == 50 ){
-            return letterPillar;
-        }
-		return @"";
-	}
-	
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		// Nemedique pillar
-		if([user character]==5 || [user character] == 7){
-			return @"gateNemediqueOpen";
-		}
-		else{
-			return @"gateNemediqueClosed";
-		}
-	}
-	
-	// Condemned pillar doors
-	if([user location] == 50 && [user eventExists:storageQuestPillarNephtaline] && [user character] == characterNemedique){
-		[self eventWarp:@"117" :@"-1,0"];
-		return @"";
-	}
-	
-	// Warp
-	if([user character] == characterNemedique || [user character] == 7){
-		if([user location] == 50){
-			[self eventWarpDramatic:@"121" :@"-1,0"];
-			[self eventDialog:dialogInfoPillar:eventOwl];
-		}
-		else if([user location] == 121){
-			[self eventWarp:@"50" :@"1,0"];
-		}
-		else if([user location] == 9){
-			[self eventWarp:locationNemediqueEnter :@"-1,0"];
-		}
-		else if([user location] == 100){
-			[self eventWarp:locationNemediqueLobby :@"1,0"];
-		}
-		// Nestorine
-		else if([user location] == 94){
-			[self eventWarpDramatic:@"92":@"0,-1"];
-		}
-		else if([user location] == 92){
-			[self eventWarp:@"94" :@"1,0"];
-		}
-		// Nastalize
-		else if([user location] ==	143){
-			[self eventWarpDramatic:@"146":@"-1,0"];
-		}
-		else if([user location] == 146){
-			[self eventWarp:@"143" :@"1,0"];
-		}
-	}
-	else{
-		[self eventDialog:eventDialogLocked:@"1"];
-		[self audioEffectPlayer:@"doorlocked"];
-	}
-	return @"";
-}
-
 -(NSString*)event_gateHiversaires :(NSString*)option
 {
 	// Broadcast Notification
@@ -432,7 +42,7 @@
 		[self eventWarpDramatic:@"148":@"-1,0"];
 	}
 	else{
-		[self eventDialog:@"123":eventOwl];
+		[newDraw dialog:@"123":eventOwl];
 	}
 	
 	return @"";
@@ -490,7 +100,7 @@
 		else if([user location] == 147){ [self eventWarp:@"130":@"0,1"]; }
 	}
 	
-	[self eventDialog:@"123":eventOwl];
+	[newDraw dialog:@"123":eventOwl];
 	
 	return @"";
 }
@@ -529,7 +139,7 @@
 		[self apiContact:@"oquonie":@"analytics":@"ending":@"1"];
 	}
 	else{
-		[self eventDialog:dialogHavePillarsNot:eventRed];
+		[newDraw dialog:dialogHavePillarsNot:eventRed];
 	}
 	
 	return @"";
@@ -546,7 +156,7 @@
 		return @""; // try with 17 ?
 	}
 	
-	[self eventDialog:dialogWarpLobby:@"1"];
+	[newDraw dialog:dialogWarpLobby:@"1"];
 	[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpLobbyAnimation) userInfo:nil repeats:NO];
 	
 	return @"";
@@ -629,7 +239,7 @@
 	if(![user eventExists: pillarInstanceStorageId]){
         [user eventCollect:pillarInstanceStorageId];
 		[newSound play:@"bump"];
-		[self eventDialog:dialogGainPillar:eventOwl];
+		[newDraw dialog:dialogGainPillar:eventOwl];
 		[self eventTransitionPan:pillarInstanceWarp:roomCenter];
 		// Clear Spellbook
         [user clearSpellbook];
@@ -696,7 +306,7 @@
 	}
 	// Dialogs
 	if([user eventExists:socketInstanceStorageId]){
-		[self eventDialog:dialogInfoPillar:eventOwl];
+		[newDraw dialog:dialogInfoPillar:eventOwl];
 	}
 	[self audioEffectPlayer:@"bump1"];
 	
@@ -737,7 +347,7 @@
 	[UIView animateWithDuration:1 animations:^(void){
 		self.mapImage.alpha = 1;
 	} completion:^(BOOL finished){
-		[self eventDialog:dialogMapHelp:eventOwl];
+		[newDraw dialog:dialogMapHelp:eventOwl];
 	}];
 	
 	// Default
@@ -833,7 +443,7 @@
 		
 		[newSound play:@"shark"];
 	
-		[self eventDialog:dialogSharkHelp:eventShark];
+		[newDraw dialog:dialogSharkHelp:eventShark];
 		[self moveDisable:4];
 		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
 		[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(event_sharkDialog) userInfo:nil repeats:NO];
@@ -845,7 +455,7 @@
 	}
 	else{
 		[newSound play:@"shark"];
-		[self eventDialog:dialogSharkTransform:eventShark];
+		[newDraw dialog:dialogSharkTransform:eventShark];
 	}
 	
 	// Return storage Id
@@ -854,7 +464,7 @@
 
 -(void)event_sharkDialog
 {
-	[self eventDialog:dialogSharkTransform:eventShark];
+	[newDraw dialog:dialogSharkTransform:eventShark];
 }
 
 -(void)event_sharkTransform
@@ -904,7 +514,7 @@
 	if(![user eventExists: ramenStorage]){
         [user eventCollect:ramenStorage];
 		[self eventWarp:[user locationString]:userPositionString];
-		[self eventDialog:dialogGainRamen:eventRamen];
+		[newDraw dialog:dialogGainRamen:eventRamen];
 		[newSound play:@"ramen"];
 	}
 	
@@ -991,12 +601,12 @@
 	// Dialogs
 	if(self.audioAmbientPlayer.volume<1){
 		[self eventAudioToggle:1];
-		[self eventDialog:dialogAudioOn:eventAudio];
+		[newDraw dialog:dialogAudioOn:eventAudio];
 		[newSound play:@"speakerphone"];
 	}
 	else{
 		[self eventAudioToggle:0];
-		[self eventDialog:dialogAudioOff:eventAudio];
+		[newDraw dialog:dialogAudioOff:eventAudio];
 		[newSound play:@"speakerphone"];
 	}
 	
@@ -1019,7 +629,7 @@
 		return @"";
 	}
 	
-	[self eventDialog:dialogHiversaires:eventHiversaires];
+	[newDraw dialog:dialogHiversaires:eventHiversaires];
 	
 	return @"";
 }

@@ -163,7 +163,7 @@
 #define locationNeominePillar		@"71"
 #define locationNeomineRamen		@"63"
 
-#define locationNestorineLobby		@"7"
+#define locationNestorineLobby		7
 #define locationNestorineEnter		@"96"
 #define locationNestorinePillar		@"90"
 #define locationNestorineRamen		@"88"
@@ -176,10 +176,10 @@
 #define locationNephtalinePillar	@"121"
 #define locationNephtalineRamen		@"57"
 
-#define locationNemediqueLobby		@"9"
-#define locationNemediqueEnter		@"100"
-#define locationNemediqueRamen		@"101"
-#define locationNemediquePillar		@"103"
+#define locationNemediqueLobby		9
+#define locationNemediqueEnter		100
+#define locationNemediqueRamen		101
+#define locationNemediquePillar		103
 
 #define roomCenter				@"0,0"
 

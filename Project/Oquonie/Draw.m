@@ -31,6 +31,8 @@
 {
     NSLog(@"~  DRAW | Dialog %@ %@",dialog,characterId);
     
+    storyboard.dialogContainer.hidden = NO;
+    
     storyboard.dialogContainer.frame = storyboard.view.frame;
     
     CALayer *viewLayer = [CALayer layer];
@@ -57,7 +59,8 @@
     
     storyboard.letterView1.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(0, 1)] ]];
     storyboard.letterView2.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(1, 1)] ]];
-    storyboard.letterView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(2, 1)] ]];    
+    storyboard.letterView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(2, 1)] ]];
+    storyboard.portraitImageView.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.portrait", characterId ]];
 }
 
 -(void)animateSpellbook
@@ -186,6 +189,8 @@
 -(void)animateWalk
 {
     NSLog(@"~  DRAW | animateWalk");
+    
+    storyboard.dialogContainer.hidden = YES;
     
     storyboard.spriteUser.frame = [position tile:4 :[user x] : [user y]];
     storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);

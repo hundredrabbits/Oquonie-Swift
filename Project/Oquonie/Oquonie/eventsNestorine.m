@@ -194,7 +194,7 @@
 	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
 	[user spellCollect:eventSpellId:eventSpell];
-	[self eventDialog:eventDialogSpell:eventSpriteId];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
 }

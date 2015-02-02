@@ -70,7 +70,7 @@
 	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
 	[user spellCollect:eventSpellId:eventSpell];
-	[self eventDialog:eventDialogSpell:eventSpriteId];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
 }
@@ -183,7 +183,7 @@
 			self.parallaxFront.alpha = 1;
 		} completion:^(BOOL finished){
 			NSLog(@"Step 2");
-			[self eventDialog:dialogEnd1:eventRed];
+			[newDraw dialog:dialogEnd1:eventRed];
 			[self eventVignette:@"1"];
 			[UIView animateWithDuration:2.5 animations:^(void){
 				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -230,7 +230,7 @@
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
 	
-	[self eventDialog:@"OQS":@"31"];
+	[newDraw dialog:@"OQS":@"31"];
 	[newSound play:@"rekka"];
 	
 	return @"";
@@ -244,7 +244,7 @@
 		return @"";
 	}		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
-	[self eventDialog:@"OPS":@"32"];
+	[newDraw dialog:@"OPS":@"32"];
 	[newSound play:@"devine"];
 	return @"";
 }

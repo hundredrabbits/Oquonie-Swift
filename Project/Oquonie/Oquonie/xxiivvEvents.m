@@ -315,7 +315,7 @@
         [user talking:0];
 		[self audioEffectPlayer:@"bump"];
 		
-		[self eventDialog:dialogIntroduction:eventOwl];
+		[newDraw dialog:dialogIntroduction:eventOwl];
 	}];
 
 }

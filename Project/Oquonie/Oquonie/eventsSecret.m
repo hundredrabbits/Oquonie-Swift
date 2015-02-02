@@ -39,7 +39,7 @@
 	[newSound play:@"cat"];
 	
 	[user spellCollect:eventSpellId:eventSpell];
-	[self eventDialog:eventDialogSpell:eventSpriteId];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
 }
@@ -69,7 +69,7 @@
 	[newSound play:@"cat"];
 	
 	[user spellCollect:eventSpellId:eventSpell];
-	[self eventDialog:eventDialogSpell:eventSpriteId];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
 }
@@ -98,7 +98,7 @@
 	[newSound play:@"cat"];
 	
 	[user spellCollect:eventSpellId:eventSpell];
-	[self eventDialog:eventDialogSpell:eventSpriteId];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
 }
@@ -160,7 +160,7 @@
 	if([option isEqualToString:@"postUpdate"]){
 		return @"";
 	}
-	[self eventDialog:@"UUU":eventCat];
+	[newDraw dialog:@"UUU":eventCat];
 	[newSound play:@"cat"];
 	
 	return @"";
@@ -208,14 +208,14 @@
 		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(event_nofaceWarp) userInfo:nil repeats:NO];
 		
 		[newSound play:@"noface"];
-		[self eventDialog:dialogIntroduction:eventNoFace];
+		[newDraw dialog:dialogIntroduction:eventNoFace];
 		
 		// Clear Spellbook
 		[user clearSpellbook];
 	}
 	else{
 		[newSound play:@"noface"];
-		[self eventDialog:dialogNoFace:eventNoFace];
+		[newDraw dialog:dialogNoFace:eventNoFace];
 	}
 	return @"";
 }
@@ -237,7 +237,7 @@
 		return @"";
 	}
 	
-	[self eventDialog:@"UVW":@"34"];
+	[newDraw dialog:@"UVW":@"34"];
 	[newSound play:@"noface"];
 	
 	return @"";

@@ -265,7 +265,7 @@
 	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
 	[user spellCollect:eventSpellId:eventSpell];
-	[self eventDialog:eventDialogSpell:eventSpriteId];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
 }
@@ -311,7 +311,7 @@
 	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
 	[user spellCollect:eventSpellId:eventSpell];
-	[self eventDialog:eventDialogSpell:eventSpriteId];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
 }
@@ -342,7 +342,7 @@
 	if([user location]==30){
 		if([user character] == 6){
 			[self eventTranform:1];
-			[self eventDialog:dialogTutorialTalk1:eventTutorial];
+			[newDraw dialog:dialogTutorialTalk1:eventTutorial];
 			[NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(tutorialSequence) userInfo:nil repeats:NO];
 		}
 	}
@@ -413,7 +413,7 @@
 	}
 	
 	[self eventTransitionPan:@"1":@"0,0"];
-	[self eventDialog:dialogTutorialTalk3:eventRed];
+	[newDraw dialog:dialogTutorialTalk3:eventRed];
 	
 	return @"";
 }
@@ -436,12 +436,12 @@
 	// Dialogs
 	if(self.audioAmbientPlayer.volume<1){
 		[self eventAudioToggle:1];
-		[self eventDialog:dialogAudioOn:eventAudio];
+		[newDraw dialog:dialogAudioOn:eventAudio];
 		[newSound play:@"speakerphone"];
 	}
 	else{
 		[self eventAudioToggle:0];
-		[self eventDialog:dialogAudioOff:eventAudio];
+		[newDraw dialog:dialogAudioOff:eventAudio];
 		[newSound play:@"speakerphone"];
 	}
 	
