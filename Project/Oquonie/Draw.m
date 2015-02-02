@@ -33,7 +33,6 @@
     
     storyboard.dialogContainer.frame = storyboard.view.frame;
     
-    
     CALayer *viewLayer = [CALayer layer];
     [viewLayer setBackgroundColor:CGColorCreateGenericRGB(0.0, 0.0, 0.0, 0.3)]; //RGB plus Alpha Channel
     [storyboard.dialogContainer setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
@@ -55,6 +54,10 @@
     [storyboard.letterView1 setImageScaling:NSImageScaleProportionallyUpOrDown];
     [storyboard.letterView2 setImageScaling:NSImageScaleProportionallyUpOrDown];
     [storyboard.letterView3 setImageScaling:NSImageScaleProportionallyUpOrDown];
+    
+    storyboard.letterView1.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(0, 1)] ]];
+    storyboard.letterView2.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(1, 1)] ]];
+    storyboard.letterView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(2, 1)] ]];    
 }
 
 -(void)animateSpellbook
