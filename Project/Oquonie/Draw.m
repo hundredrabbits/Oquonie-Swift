@@ -84,6 +84,11 @@
     else{ storyboard.spellView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell0"]]; }
 }
 
+-(void)animateRoomPan
+{
+    NSLog(@"~  DRAW | animateRoomPan");
+}
+
 -(void)animateRoom
 {
     NSLog(@"~  DRAW | animateRoom");

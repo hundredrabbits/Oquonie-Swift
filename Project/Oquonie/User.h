@@ -42,7 +42,6 @@
 -(void)clearSpellbook;
 
 -(int)spellExists :(NSString*)spellId;
--(void)spellCollect :(NSString*)spellId :(int)spellType;
 -(int)spellCount;
 -(int)spell :(int)value;
 
