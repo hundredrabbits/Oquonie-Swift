@@ -15,7 +15,7 @@
 
 -(Render*)init
 {
-    NSLog(@"* RENDR | Init");
+    NSLog(@"  RENDR | Init");
     newDraw = [[Draw alloc] init];
     return self;
 }
@@ -30,7 +30,7 @@
 
 -(void)renderMove :(Event*)event
 {
-    NSLog(@"! EVENT | Moving       | to: %d %d",[event x],[event y]);
+    NSLog(@"  RENDR | Moving       | to: %d %d",[event x],[event y]);
     
     [user setX:[event x]];
     [user setY:[event y]];
@@ -43,7 +43,7 @@
 
 -(void)renderWarp :(Event*)event
 {
-    NSLog(@"! EVENT | Warp         | To:%d (%d %d)",[event location],[event x],[event y]);
+    NSLog(@"  RENDR | Warp         | To:%d (%d %d)",[event location],[event x],[event y]);
     [user setLocation:[event location]];
     [user setPosition:[event x]:[event y]];
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
@@ -53,14 +53,54 @@
 
 -(void)renderEvent :(Event*)event
 {
-    NSLog(@"! EVENT | Event        | %@ (%d %d)",[event name],[event x],[event y]);
+    NSLog(@"  RENDR | Event        | %@ (%d %d)",[event name],[event x],[event y]);
     Encounter* newEncounter = [[Encounter alloc] initWithName:[event name]];
     [newEncounter touch];
 }
 
 -(void)renderBlock :(Event*)event
 {
-    NSLog(@"! EVENT | Block        | (%d %d)",[event x],[event y]);
+    NSLog(@"  RENDR | Block        | (%d %d)",[event x],[event y]);
+}
+
+-(void)spellCollect :(NSString*)spellId :(int)spellType
+{
+    if(spellType == [user character]){
+        NSLog(@" RENDR | Spell        | Already type:%d",spellType);
+        return;
+    }
+    
+    int index = 0;
+    for (NSArray *spellbookItem in userData[@"spellbook"]) {
+        if( [spellbookItem[0] isEqualToString:spellId] && [spellbookItem[1] intValue] == spellType){
+            NSLog(@"  RENDR | Spell        | Removed  -> id:%@ type:%d",spellId,spellType);
+            userData[@"spellbook"][index] = @[@"",@""];
+            return;
+        }
+        index += 1;
+    }
+    
+    int spellSlot = -1;
+    if( [userData[@"spellbook"][0][0] isEqualToString:@""] ){ spellSlot = 0; }
+    else if( [userData[@"spellbook"][1][0] isEqualToString:@""] ){ spellSlot = 1; }
+    else if( [userData[@"spellbook"][2][0] isEqualToString:@""] ){ spellSlot = 2; }
+    
+    if(spellSlot > -1){
+        NSLog(@"  RENDR | Spell        | Added    -> id:%@ type:%d slot:%d",spellId,spellType,spellSlot);
+        userData[@"spellbook"][spellSlot] = @[[NSString stringWithFormat:@"%@",spellId],[NSString stringWithFormat:@"%d",spellType]];
+    }
+    else{
+        NSLog(@"  RENDR | Spell        | No available slot");
+    }
+    
+    if( userData[@"spellbook"][0][1] == userData[@"spellbook"][1][1] && userData[@"spellbook"][1][1] == userData[@"spellbook"][2][1] ){
+        NSLog(@"  RENDR | Transform    | %d",[userData[@"spellbook"][1][1] intValue]);
+        [user setCharacter:[userData[@"spellbook"][1][1] intValue]];
+        [user clearSpellbook];
+        [newDraw animateSpellbook];
+        [newDraw animateTransform];
+    }
+    
 }
 
 @end

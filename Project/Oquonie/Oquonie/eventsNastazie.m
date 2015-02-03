@@ -39,7 +39,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:@"noface"];
 	
 	return @"";
@@ -71,7 +71,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:@"noface"];
 	
 	return @"";
@@ -103,7 +103,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:@"noface"];
 	
 	return @"";
@@ -135,7 +135,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:eventCharacter];
 	
 	return @"";
@@ -167,7 +167,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:eventCharacter];
 	
 	return @"";
@@ -199,7 +199,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:eventCharacter];
 	
 	return @"";
@@ -231,7 +231,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:eventCharacter];
 	
 	return @"";
@@ -262,7 +262,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:eventCharacter];
 	
 	return @"";
@@ -293,7 +293,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:eventCharacter];
 	
 	return @"";
@@ -325,7 +325,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:eventCharacter];
 	
 	return @"";
@@ -357,7 +357,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:eventCharacter];
 	
 	return @"";
@@ -389,7 +389,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:eventCharacter];
 	
 	return @"";

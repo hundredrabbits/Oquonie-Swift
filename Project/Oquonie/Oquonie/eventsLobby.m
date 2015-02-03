@@ -578,7 +578,7 @@
 	}
 	
     if([user eventExists: ramenStorage]){
-        [user spellCollect:@"ramenQuestSpell":giveSpell];
+        [render spellCollect:@"ramenQuestSpell":giveSpell];
 		[newSound play:@"ramen"];
 	}
 	

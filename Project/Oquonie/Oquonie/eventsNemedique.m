@@ -69,7 +69,7 @@
 	// If without the ramen guy
 	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";

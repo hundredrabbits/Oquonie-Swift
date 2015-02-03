@@ -38,7 +38,7 @@
 	
 	[newSound play:@"cat"];
 	
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
@@ -68,7 +68,7 @@
 	
 	[newSound play:@"cat"];
 	
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
@@ -97,7 +97,7 @@
 	
 	[newSound play:@"cat"];
 	
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";

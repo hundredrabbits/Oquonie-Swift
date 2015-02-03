@@ -199,6 +199,12 @@
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.l.f.1",[user character]]];
 }
 
+-(void)animateTransform
+{
+    NSLog(@"~  DRAW | animateTransform");
+    storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.l.f.1",[user character]]];
+}
+
 -(NSImage*)tileImageAtId :(int)x :(int)y
 {
     Tile* tile = [[Tile alloc] initWithString:[room tileAtLocation:x :y]];

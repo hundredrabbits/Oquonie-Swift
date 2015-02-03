@@ -54,7 +54,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
-	[user spellCollect:eventSpellId:6];
+	[render spellCollect:eventSpellId:6];
 	[newSound play:@"photocopier"];
 	
 	return @"";
@@ -86,7 +86,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
-	[user spellCollect:eventSpellId:6];
+	[render spellCollect:eventSpellId:6];
 	[newSound play:@"photocopier"];
 	
 	return @"";
@@ -118,7 +118,7 @@
     else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
-	[user spellCollect:eventSpellId:6];
+	[render spellCollect:eventSpellId:6];
 	[newSound play:@"photocopier"];
 	
 	return @"";
@@ -151,7 +151,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:@"nephtaline"];
 	
 	return @"";
@@ -185,7 +185,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:@"nephtaline"];
 	
 	return @"";
@@ -218,7 +218,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	// Spell
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newSound play:@"nephtaline"];
 	
 	return @"";
@@ -264,7 +264,7 @@
 	// If without the ramen guy
 	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";
@@ -310,7 +310,7 @@
 	// If without the ramen guy
 	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
 	
-	[user spellCollect:eventSpellId:eventSpell];
+	[render spellCollect:eventSpellId:eventSpell];
 	[newDraw dialog:eventDialogSpell:eventSpriteId];
 	
 	return @"";

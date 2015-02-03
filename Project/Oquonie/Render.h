@@ -14,6 +14,7 @@
 @interface Render : NSObject
 
 -(void)router :(Event*)event;
+-(void)spellCollect :(NSString*)spellId :(int)spellType;
 
 @end
 
