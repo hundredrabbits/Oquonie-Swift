@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Draw.h"
+#if TARGET_OS_IPHONE
+#import "Draw.ios.h"
+#else
+#import "Draw.osx.h"
+#endif
+
+
 #import "Audio.h"
 
 @interface Encounter : NSObject

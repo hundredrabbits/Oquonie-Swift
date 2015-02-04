@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 XXIIVV. All rights reserved.
 //
 
-#import "Draw.h"
+#import "Draw.osx.h"
 #import "xxiivvVariables.h"
 #import "xxiivvSettings.h"
 

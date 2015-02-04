@@ -745,6 +745,7 @@
 		57255E161A76DD1500388B48 /* kamera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57255E151A76DD1500388B48 /* kamera.mp3 */; };
 		57255E181A7710AC00388B48 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57255E171A7710AC00388B48 /* Social.framework */; };
 		57255E1C1A77195F00388B48 /* wall.110.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 57255E1B1A77195F00388B48 /* wall.110.l.png */; };
+		573E074D1A8283D9008F9F62 /* Draw.ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 573E074C1A8283D9008F9F62 /* Draw.ios.m */; };
 		575BE12F1A7D5E500085179C /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BE12E1A7D5E500085179C /* DrawView.m */; };
 		575BE1301A7D5E500085179C /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 575BE12E1A7D5E500085179C /* DrawView.m */; };
 		575BE1311A7D6ACB0085179C /* tile.100.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E38B196B15A1002AAFAB /* tile.100.png */; };
@@ -838,8 +839,7 @@
 		57C0E4371A7C217D008728C8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
 		57C0E43A1A7C29AB008728C8 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4391A7C29AB008728C8 /* Encounter.m */; };
 		57C0E43B1A7C29AB008728C8 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4391A7C29AB008728C8 /* Encounter.m */; };
-		57C0E43E1A7C2D29008728C8 /* Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E43D1A7C2D29008728C8 /* Draw.m */; };
-		57C0E43F1A7C2D29008728C8 /* Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E43D1A7C2D29008728C8 /* Draw.m */; };
+		57C0E43F1A7C2D29008728C8 /* Draw.osx.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E43D1A7C2D29008728C8 /* Draw.osx.m */; };
 		57C0E4421A7C3EF9008728C8 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4411A7C3EF9008728C8 /* Audio.m */; };
 		57C0E4431A7C3EF9008728C8 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4411A7C3EF9008728C8 /* Audio.m */; };
 		57C89F031A7E80800039B9C8 /* wall.41.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEF196C9956004750C7 /* wall.41.r.png */; };
@@ -2220,6 +2220,8 @@
 		57255E151A76DD1500388B48 /* kamera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kamera.mp3; path = en.sounds/kamera.mp3; sourceTree = "<group>"; };
 		57255E171A7710AC00388B48 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		57255E1B1A77195F00388B48 /* wall.110.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.110.l.png; path = en.assets/wall.110.l.png; sourceTree = "<group>"; };
+		573E074B1A8283D9008F9F62 /* Draw.ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw.ios.h; sourceTree = "<group>"; };
+		573E074C1A8283D9008F9F62 /* Draw.ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw.ios.m; sourceTree = "<group>"; };
 		575BE12D1A7D5E500085179C /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		575BE12E1A7D5E500085179C /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 		575BE1761A7D6DA60085179C /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
@@ -2247,8 +2249,8 @@
 		57C0E4341A7C1CBE008728C8 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Input.m; sourceTree = "<group>"; };
 		57C0E4381A7C29AB008728C8 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
 		57C0E4391A7C29AB008728C8 /* Encounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encounter.m; sourceTree = "<group>"; };
-		57C0E43C1A7C2D29008728C8 /* Draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw.h; sourceTree = "<group>"; };
-		57C0E43D1A7C2D29008728C8 /* Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw.m; sourceTree = "<group>"; };
+		57C0E43C1A7C2D29008728C8 /* Draw.osx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Draw.osx.h; path = ../Draw.osx.h; sourceTree = "<group>"; };
+		57C0E43D1A7C2D29008728C8 /* Draw.osx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Draw.osx.m; path = ../Draw.osx.m; sourceTree = "<group>"; };
 		57C0E4401A7C3EF9008728C8 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		57C0E4411A7C3EF9008728C8 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
 		57E2A1CB1A7FC7790016B198 /* letterSpell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell1.png; path = en.assets/letterSpell1.png; sourceTree = "<group>"; };
@@ -3160,6 +3162,8 @@
 		03BBFAB1178A9E4E00E79C3D /* Oquonie */ = {
 			isa = PBXGroup;
 			children = (
+				573E074B1A8283D9008F9F62 /* Draw.ios.h */,
+				573E074C1A8283D9008F9F62 /* Draw.ios.m */,
 				038C59271851472D005D6D35 /* en.sources */,
 				038C592818514739005D6D35 /* en.layouts */,
 				0355CF8C17C196C10069AF97 /* en.lproj */,
@@ -3527,6 +3531,8 @@
 		57013B8C1A7954E800612048 /* Oquonie Desktop */ = {
 			isa = PBXGroup;
 			children = (
+				57C0E43C1A7C2D29008728C8 /* Draw.osx.h */,
+				57C0E43D1A7C2D29008728C8 /* Draw.osx.m */,
 				57013B8F1A7954E800612048 /* AppDelegate.h */,
 				57013B901A7954E800612048 /* AppDelegate.m */,
 				57013B941A7954E800612048 /* ViewController.h */,
@@ -3578,8 +3584,6 @@
 				57C0E4341A7C1CBE008728C8 /* Input.m */,
 				57C0E4381A7C29AB008728C8 /* Encounter.h */,
 				57C0E4391A7C29AB008728C8 /* Encounter.m */,
-				57C0E43C1A7C2D29008728C8 /* Draw.h */,
-				57C0E43D1A7C2D29008728C8 /* Draw.m */,
 				57C0E4401A7C3EF9008728C8 /* Audio.h */,
 				57C0E4411A7C3EF9008728C8 /* Audio.m */,
 			);
@@ -5184,6 +5188,7 @@
 				037F0269187D8DBC00747E8D /* splashViewController.m in Sources */,
 				03F5C4B0187BBF3500352B8E /* eventsLobby.m in Sources */,
 				037F0262187D845300747E8D /* segueFade.m in Sources */,
+				573E074D1A8283D9008F9F62 /* Draw.ios.m in Sources */,
 				576FF6D61A79792D000824FE /* xxiivvTouch.m in Sources */,
 				03BBFAC8178A9E4E00E79C3D /* xxiivvViewController.m in Sources */,
 				57C0E4351A7C1CBE008728C8 /* Input.m in Sources */,
@@ -5196,7 +5201,6 @@
 				576FF6EB1A798C81000824FE /* Tile.m in Sources */,
 				03834E1E180B855B00568E60 /* xxiivvEvents.m in Sources */,
 				0355CFCC17C196C10069AF97 /* xxiivvTemplates.m in Sources */,
-				57C0E43E1A7C2D29008728C8 /* Draw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5216,7 +5220,7 @@
 				575BE1781A7D6DA60085179C /* TileView.m in Sources */,
 				57C0E4361A7C1CBE008728C8 /* Input.m in Sources */,
 				575BE1301A7D5E500085179C /* DrawView.m in Sources */,
-				57C0E43F1A7C2D29008728C8 /* Draw.m in Sources */,
+				57C0E43F1A7C2D29008728C8 /* Draw.osx.m in Sources */,
 				576FF6D01A796FA8000824FE /* CoreWindow.m in Sources */,
 				576FF6E81A798C76000824FE /* Room.m in Sources */,
 				57013B911A7954E800612048 /* AppDelegate.m in Sources */,
