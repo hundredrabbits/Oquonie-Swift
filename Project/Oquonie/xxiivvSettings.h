@@ -156,25 +156,25 @@
 #define letterGuide				@"O"
 #define letterCat				@"5"
 
-#define locationLobbyLanding		@"1"
-#define locationGameStart			@"29"
+#define locationLobbyLanding		1
+#define locationGameStart			29
 
-#define locationNeomineLobby		@"3"
-#define locationNeominePillar		@"71"
-#define locationNeomineRamen		@"63"
+#define locationNeomineLobby		3
+#define locationNeominePillar		71
+#define locationNeomineRamen		63
 
 #define locationNestorineLobby		7
-#define locationNestorineEnter		@"96"
-#define locationNestorinePillar		@"90"
-#define locationNestorineRamen		@"88"
+#define locationNestorineEnter		96
+#define locationNestorinePillar		90
+#define locationNestorineRamen		88
 
-#define locationNecomedrePillar		@"120"
-#define locationNecomedreLobby		@"5"
-#define locationNecomedreRamen		@"35"
+#define locationNecomedrePillar		120
+#define locationNecomedreLobby		5
+#define locationNecomedreRamen		35
 
-#define locationNephtalineLobby		@"1"
-#define locationNephtalinePillar	@"121"
-#define locationNephtalineRamen		@"57"
+#define locationNephtalineLobby		1
+#define locationNephtalinePillar	121
+#define locationNephtalineRamen		57
 
 #define locationNemediqueLobby		9
 #define locationNemediqueEnter		100

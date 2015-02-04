@@ -42,6 +42,178 @@
 
 # pragma mark Lobby -
 
+-(NSString*)tree :(NSString*)option
+{
+    // Broadcast Notification
+    if([option isEqualToString:@"postNotification"]){
+        return @"";
+    }
+    // Broadcast Event Sprite Change
+    if([option isEqualToString:@"postUpdate"]){
+        
+        // count pillars
+        int count = 0;
+        if([user eventExists:storageQuestPillarNecomedre]){ count += 1; }
+        if([user eventExists:storageQuestPillarNemedique]){ count += 1; }
+        if([user eventExists:storageQuestPillarNeomine]){ count += 1; }
+        if([user eventExists:storageQuestPillarNephtaline]){ count += 1; }
+        if([user eventExists:storageQuestPillarNestorine]){ count += 1; }
+        
+        if(count == 0){ return @"23";}
+        if(count == 1){ return @"24";}
+        if(count == 2){ return @"25";}
+        if(count == 3){ return @"26";}
+        if(count >  3){ return @"27";}
+        
+        return @"";
+    }
+    // Default
+    return @"";
+}
+
+-(NSString*)ramen :(NSString*)option
+{
+    int ramenStorage = 0;
+    
+    if( [user location] == locationNestorineRamen){
+        ramenStorage = storageQuestRamenNestorine;
+    }
+    else if( [user location] == locationNeomineRamen){
+        ramenStorage = storageQuestRamenNeomine;
+    }
+    else if( [user location] == locationNecomedreRamen){
+        ramenStorage = storageQuestRamenNecomedre;
+    }
+    else if( [user location] == locationNephtalineRamen){
+        ramenStorage = storageQuestRamenNephtaline;
+    }
+    else if( [user location] == locationNemediqueRamen){
+        ramenStorage = storageQuestRamenNemedique;
+    }
+    // Broadcast Notifications
+    if([option isEqualToString:@"postNotification"]){
+        if(![user eventExists: ramenStorage]){
+            return letterGuide;
+        }
+        return @"";
+    }
+    
+    // Broadcast Event Sprite Change
+    if([option isEqualToString:@"postUpdate"]){
+        // Completed
+        if([user eventExists: ramenStorage]){
+            return eventRamenSeat;
+        }
+        else{
+            return eventRamen;
+        }
+    }
+    
+    // Dialogs
+    if(![user eventExists: ramenStorage]){
+        [user eventCollect:ramenStorage];
+        [newDraw dialog:dialogGainRamen:eventRamen];
+        [newSound play:@"ramen"];
+        [newDraw animateRoom];
+    }
+    
+    return @"";
+}
+
+-(NSString*)ramenLobby :(NSString*)option
+{
+    int ramenStorage = 0;
+    NSString* saySpell;
+    int giveSpell = 0;
+    
+    // Characters Settings
+    if([user character] == characterNestorine){
+        ramenStorage = storageQuestRamenNestorine;
+        saySpell = letterNephtaline;
+        giveSpell = spellNephtaline;
+    }
+    else if([user character] == characterNephtaline){
+        ramenStorage = storageQuestRamenNephtaline;
+        saySpell = letterNemedique;
+        giveSpell = spellNemedique;
+    }
+    else if([user character] == characterNecomedre){
+        ramenStorage = storageQuestRamenNecomedre;
+        saySpell = letterNestorine;
+        giveSpell = spellNestorine;
+    }
+    else if([user character] == characterNemedique){
+        ramenStorage = storageQuestRamenNemedique;
+        saySpell = letterNeomine;
+        giveSpell = spellNeomine;
+    }
+    else if([user character] == characterNeomine){
+        ramenStorage = storageQuestRamenNeomine;
+        saySpell = letterNecomedre;
+        giveSpell = spellNecomedre;
+    }
+    
+    if( [user isFinished] ){
+        return @"";
+    }
+    
+    // Broadcast Notifications
+    if([option isEqualToString:@"postNotification"]){
+        if([user eventExists: ramenStorage] && ![user spellExists:@"ramenQuestSpell"] ){
+            return saySpell;
+        }
+        return @"";
+    }
+    // Broadcast Event Sprite Change
+    if([option isEqualToString:@"postUpdate"]){
+        // Completed
+        if([user eventExists: ramenStorage]){
+            return eventRamen;
+        }
+        else{
+            return eventRamenSeat;
+        }
+    }
+    
+    if([user eventExists: ramenStorage]){
+        [render spellCollect:@"ramenQuestSpell":giveSpell];
+        [newSound play:@"ramen"];
+    }
+    
+    return @"";
+}
+
+-(NSString*)speakerphone :(NSString*)option
+{
+    // Broadcast Notifications
+    if([option isEqualToString:@"postNotification"]){
+        return @"";
+    }
+    
+    // Broadcast Event Sprite Change
+    if([option isEqualToString:@"postUpdate"]){
+        if( [newSound isPlaying]){ return @"22"; }
+        else{ return @"9"; }
+    }
+    
+    // Dialogs
+    if([newSound isPlaying]){
+        [newSound start];
+        [newDraw dialog:dialogAudioOn:eventAudio];
+        [newSound play:@"speakerphone"];
+    }
+    else{
+        [newSound stop];
+        [newDraw dialog:dialogAudioOff:eventAudio];
+        [newSound play:@"speakerphone"];
+    }
+    
+    [newDraw animateRoom];
+    
+    return @"";
+}
+
+
 -(NSString*)map :(NSString*)option
 {
     // Broadcast Notification
@@ -290,7 +462,7 @@
         if([user location] == 7){
             [render router:[[Event alloc] initWarp:96:0:-1]];
         }
-        else if([user location] == [locationNestorineEnter intValue]){
+        else if([user location] == locationNestorineEnter){
             [render router:[[Event alloc] initWarp:7:0:1]];
         }
         else if([user location] == 34){
@@ -464,7 +636,7 @@
     return @"";
 }
 
--(NSString*)event_gateHiversaires :(NSString*)option
+-(NSString*)gateHiversaires :(NSString*)option
 {
     // Broadcast Notification
     if([option isEqualToString:@"postNotification"]){
@@ -488,7 +660,7 @@
     return @"";
 }
 
--(NSString*)event_gateCatfish:(NSString*)option
+-(NSString*)gateCatfish:(NSString*)option
 {
     // Broadcast Notification
     if([option isEqualToString:@"postNotification"]){
@@ -525,7 +697,7 @@
     return @"";
 }
 
--(NSString*)event_gateNastazie :(NSString*)option
+-(NSString*)gateNastazie :(NSString*)option
 {
     // Broadcast Notification
     if([option isEqualToString:@"postNotification"]){

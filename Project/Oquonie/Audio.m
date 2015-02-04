@@ -20,4 +20,19 @@
     NSLog(@"~ AUDIO | File: %@",name);
 }
 
+-(void)start
+{
+    
+}
+
+-(void)stop
+{
+    
+}
+
+-(int)isPlaying
+{
+    return 1;
+}
+
 @end

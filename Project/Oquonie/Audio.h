@@ -11,5 +11,8 @@
 @interface Audio : NSObject
 
 -(void)play :(NSString*)name;
+-(int)isPlaying;
+-(void)start;
+-(void)stop;
 
 @end
