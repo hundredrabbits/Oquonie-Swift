@@ -24,21 +24,29 @@
             Input * newInput = [[Input alloc] init];
             if ( keyChar == NSLeftArrowFunctionKey ) {
                 NSLog(@"#   KEY | Left");
+                [user setHorizontal:@"l"];
+                [user setVertical:@"b"];
                 [newInput router:1:0];
                 return;
             }
             if ( keyChar == NSRightArrowFunctionKey ) {
                 NSLog(@"#   KEY | Right");
+                [user setHorizontal:@"r"];
+                [user setVertical:@"f"];
                 [newInput router:-1:0];
                 return;
             }
             if ( keyChar == NSUpArrowFunctionKey ) {
                 NSLog(@"#   KEY | Up");
+                [user setHorizontal:@"r"];
+                [user setVertical:@"b"];
                 [newInput router:0:1];
                 return;
             }
             if ( keyChar == NSDownArrowFunctionKey ) {
                 NSLog(@"#   KEY | Down");
+                [user setHorizontal:@"l"];
+                [user setVertical:@"f"];
                 [newInput router:0:-1];
                 return;
             }
