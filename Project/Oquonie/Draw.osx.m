@@ -145,10 +145,14 @@
     storyboard.step2r.image = [self tileImageAtId:-2:0];
     storyboard.step3r.image = [self tileImageAtId:-2:1];
     
+    /*
     storyboard.spriteUser.frame = [position tile:4 :[user x] : [user y]];
     storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
+     
+     */
+    
     [self generateBlockers];
     
 }
@@ -197,12 +201,20 @@
     
     storyboard.dialogContainer.hidden = YES;
     
-    storyboard.spriteUser.frame = [position tile:4 :[user x] : [user y]];
+    storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
+    
     storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
-    
-    storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
+	
+	[user setEnabled:0];
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 0.35;
+		[[storyboard.spriteUser animator] setFrame:[position tile:4 :[user x] : [user y]]];
+	} completionHandler:^{
+		[user setEnabled:1];
+	}];
 }
+
 
 -(void)animateTransform
 {

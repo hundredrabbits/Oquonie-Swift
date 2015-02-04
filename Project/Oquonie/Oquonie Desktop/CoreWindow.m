@@ -16,7 +16,9 @@
     
     if ([theEvent modifierFlags] & NSNumericPadKeyMask) { // arrow keys have this mask
         NSString *theArrow = [theEvent charactersIgnoringModifiers];
-        unichar keyChar = 0;
+		unichar keyChar = 0;
+		if ( [user enabled] == 0 )
+			return;            // Cannot move yet
         if ( [theArrow length] == 0 )
             return;            // reject dead keys
         if ( [theArrow length] == 1 ) {

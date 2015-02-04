@@ -15,7 +15,9 @@
     NSLog(@"*  USER | Init");
     
     userData = [[NSMutableDictionary alloc] initWithDictionary:[self new]];
-    
+	
+	[self setEnabled:1];
+	
     return self;
 }
 
