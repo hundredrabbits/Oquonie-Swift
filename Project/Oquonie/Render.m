@@ -36,7 +36,6 @@
     [user setY:[event y]];
     
     newDraw = [[Draw alloc] init];
-    [newDraw animateRoom];
     [newDraw animateWalk];
     [newDraw animateSpellbook];
 }
@@ -47,7 +46,6 @@
     [user setLocation:[event location]];
     [user setPosition:[event x]:[event y]];
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
-    newDraw = [[Draw alloc] init];
     [newDraw animateRoom];
 }
 
@@ -61,6 +59,7 @@
 -(void)renderBlock :(Event*)event
 {
     NSLog(@"  RENDR | Block        | (%d %d)",[event x],[event y]);
+	[newDraw animateBlock];
 }
 
 -(void)spellCollect :(NSString*)spellId :(int)spellType

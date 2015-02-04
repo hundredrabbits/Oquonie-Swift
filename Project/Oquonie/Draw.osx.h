@@ -17,5 +17,6 @@
 -(void)animateSpellbook;
 -(void)animateTransform;
 -(void)animateRoomPan;
+-(void)animateBlock;
 
 @end
