@@ -183,6 +183,26 @@
     return @"";
 }
 
+-(NSString*)warpLobby :(NSString*)option
+{
+    // Broadcast Notifications
+    if([option isEqualToString:@"postNotification"]){
+        return @"";
+    }
+    
+    // Broadcast Event Sprite Change
+    if([option isEqualToString:@"postUpdate"]){
+        return @"";
+    }
+    
+    [user setPosition:0 :0];
+    [user setLocation:1];
+    
+    [newDraw animateRoom];
+    
+    return @"";
+}
+
 -(NSString*)speakerphone :(NSString*)option
 {
     // Broadcast Notifications
