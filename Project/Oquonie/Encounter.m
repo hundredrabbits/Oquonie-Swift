@@ -33,11 +33,11 @@
     [self performSelector:targetSelector withObject:@"touch"];
 }
 
--(void)see
+-(NSString*)see
 {
     NSLog(@"- ENCNT + See          + %@", encounterName);
     SEL targetSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:",encounterName]);
-    [self performSelector:targetSelector withObject:@"see"];
+    return [self performSelector:targetSelector withObject:@"postUpdate"];
 }
 
 # pragma mark Lobby -

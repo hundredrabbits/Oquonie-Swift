@@ -157,6 +157,7 @@
     
     [self blockers];
 	[self notifications];
+	[self updateSprites];
 }
 
 -(void)eraseBlocker
@@ -223,23 +224,57 @@
 	NSLog(@"~  DRAW | updateDrawOrder");
 	
 	int count = 0;
-	
 	NSArray *tempArray = [[spriteContainer subviews] copy];
 	
 	for(NSImageView* subview in tempArray) {
 		// Send at the back
 		if( subview.frame.origin.y == [position tile:4:1:1].origin.y ){
-			[subview removeFromSuperview];
 			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
 		}
 		// Send at the front
 		if( subview.frame.origin.y == [position tile:4:-1:-1].origin.y ){
-			[subview removeFromSuperview];
 			[spriteContainer addSubview:subview positioned:NSWindowAbove relativeTo:nil];
 		}
 		count += 1;
 	}
+	
 	NSLog(@"~  DRAW | updated %d views", count);
+}
+
+-(void)updateSprites
+{
+	for (int x = -2; x < 3; x++) {
+		for (int y = -2; y < 3; y++) {
+			
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![tileCheck isEvent] ){ continue; }
+			
+			// Event is a blocker tile type
+			for(NSImageView* subview in [spriteContainer subviews]) {
+				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
+					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
+					
+					if( [[newEncounter see] isEqualToString:@""] ){
+						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d", [tileCheck name], x, y);
+						subview.image = [NSImage imageNamed:@"event.32.l.3.png"];
+					}
+				}
+			}
+			
+			// Event is a wall tile type
+			for(NSImageView* subview in [storyboard.roomContainer subviews]) {
+				if( subview.frame.origin.y == [position tile:5:x:y].origin.y && subview.frame.origin.x == [position tile:5:x:y].origin.x && subview.frame.size.width == [position tile:5:x:y].size.width && subview.frame.size.height == [position tile:5:x:y].size.height ){
+					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
+					
+					if( ![[newEncounter see] isEqualToString:@""] ){
+						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d with %@", [tileCheck name], x, y, [newEncounter see]);
+						subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[newEncounter see]]];
+					}
+				}
+			}
+			
+		}
+	}
 }
 
 -(void)animateBlock
