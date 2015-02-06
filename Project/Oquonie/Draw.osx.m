@@ -27,6 +27,11 @@
     NSLog(@"~  DRAW | Map %@",name);
 }
 
+-(void)notifications
+{
+	
+}
+
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId
 {
     NSLog(@"~  DRAW | Dialog %@ %@",dialog,characterId);
@@ -150,8 +155,8 @@
     storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
     
-    [self generateBlockers];
-    
+    [self blockers];
+	[self notifications];
 }
 
 -(void)eraseBlocker
@@ -166,7 +171,7 @@
     [viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
--(void)generateBlockers
+-(void)blockers
 {
     [self eraseBlocker];
     for (int x = -1; x < 2; x++) {
@@ -209,6 +214,32 @@
 		context.duration = 0.25;
 		[[storyboard.spriteUser animator] setFrame:[position tile:4 :[user x] : [user y]]];
 	} completionHandler:^{ [user setEnabled:1]; }];
+	
+	[self updateDrawOrder];
+}
+
+-(void)updateDrawOrder
+{
+	NSLog(@"~  DRAW | updateDrawOrder");
+	
+	int count = 0;
+	
+	NSArray *tempArray = [[spriteContainer subviews] copy];
+	
+	for(NSImageView* subview in tempArray) {
+		// Send at the back
+		if( subview.frame.origin.y == [position tile:4:1:1].origin.y ){
+			[subview removeFromSuperview];
+			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
+		}
+		// Send at the front
+		if( subview.frame.origin.y == [position tile:4:-1:-1].origin.y ){
+			[subview removeFromSuperview];
+			[spriteContainer addSubview:subview positioned:NSWindowAbove relativeTo:nil];
+		}
+		count += 1;
+	}
+	NSLog(@"~  DRAW | updated %d views", count);
 }
 
 -(void)animateBlock
