@@ -35,13 +35,19 @@
 
 -(NSString*)see
 {
-    NSLog(@"- ENCNT + See          + %@", encounterName);
-    SEL targetSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:",encounterName]);
-    return [self performSelector:targetSelector withObject:@"postUpdate"];
+	NSLog(@"- ENCNT + See          + %@", encounterName);
+	SEL targetSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:",encounterName]);
+	return [self performSelector:targetSelector withObject:@"postUpdate"];
+}
+
+-(NSString*)notify
+{
+	NSLog(@"- ENCNT + Notify       + %@", encounterName);
+	SEL targetSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:",encounterName]);
+	return [self performSelector:targetSelector withObject:@"postNotification"];
 }
 
 # pragma mark Lobby -
-
 
 -(NSString*)socket :(NSString*)option
 {
@@ -269,12 +275,121 @@
         [newDraw dialog:dialogAudioOff:eventAudio];
         [newSound play:@"speakerphone"];
     }
-    
-    [newDraw updateSprites];
-    
+	
+	[newDraw events];
+	[newDraw notifications];
+	
     return @"";
 }
 
+-(NSString*)pillar:(NSString*)option
+{
+	int pillarInstanceStorageId;
+	int pillarInstanceWarp;
+	
+	if([user location] == locationNeominePillar ){
+		pillarInstanceStorageId = storageQuestPillarNeomine;
+		pillarInstanceWarp = locationNeomineLobby;
+	}
+	else if ([user location] == locationNecomedrePillar ){
+		pillarInstanceStorageId = storageQuestPillarNecomedre;
+		pillarInstanceWarp = locationNecomedreLobby;
+	}
+	else if ([user location] == locationNephtalinePillar ){
+		pillarInstanceStorageId = storageQuestPillarNephtaline;
+		pillarInstanceWarp = locationNephtalineLobby;
+	}
+	else if ([user location] == locationNestorinePillar ){
+		pillarInstanceStorageId = storageQuestPillarNestorine;
+		pillarInstanceWarp = locationNestorineLobby;
+	}
+	else if ([user location] == locationNemediquePillar ){
+		pillarInstanceStorageId = storageQuestPillarNemedique;
+		pillarInstanceWarp = locationNemediqueLobby;
+	}
+	// Hiversaires
+	else if ([user location] == 147){
+		pillarInstanceStorageId = storageQuestPillarHiversaires;
+		pillarInstanceWarp = locationNeomineLobby;
+	}
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if( [user eventExists: pillarInstanceStorageId]){
+			return eventPillarRemains;
+		}
+		return @"";
+	}
+	
+	// Dialog
+	if(![user eventExists: pillarInstanceStorageId]){
+		[user eventCollect:pillarInstanceStorageId];
+		[newSound play:@"bump"];
+		[newDraw dialog:dialogGainPillar:eventOwl];
+		[user setLocation:pillarInstanceWarp];
+		// Clear Spellbook
+		[user clearSpellbook];
+	}
+	else{
+		[user eventRemove:pillarInstanceStorageId];
+	}
+	
+	if([user location] == locationNeominePillar ){
+//		[self apiContact:@"oquonie":@"analytics":@"neomine-pillar":@"1"];
+	}
+	else if ([user location] == locationNecomedrePillar ){
+//		[self apiContact:@"oquonie":@"analytics":@"necomedre-pillar":@"1"];
+	}
+	else if ([user location] == locationNephtalinePillar ){
+//		[self apiContact:@"oquonie":@"analytics":@"nephtaline-pillar":@"1"];
+	}
+	else if ([user location] == locationNestorinePillar ){
+//		[self apiContact:@"oquonie":@"analytics":@"nestorine-pillar":@"1"];
+	}
+	else if ([user location] == locationNemediquePillar ){
+//		[self apiContact:@"oquonie":@"analytics":@"nemedique-pillar":@"1"];
+	}
+	else if ([user location] == 147){
+//		[self apiContact:@"oquonie":@"analytics":@"hiversaires-pillar":@"1"];
+	}
+	
+	[newDraw animateRoom];
+	
+	// Default
+	return @"";
+}
+
+
+-(NSString*)shark :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){
+		if( [user eventExists:storageQuestPillarNemedique] && [user character] != 1){ return letterConfused;}
+		return @"";
+	}		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"])		{ return @""; }		// Broadcast Event Sprite Change
+	
+	if([user eventExists: storageQuestPillarNemedique] || [user location] == 102){
+		
+		[user setCharacter:1];
+		[newSound play:@"shark"];
+		[newDraw dialog:dialogSharkHelp:eventShark];
+		[user setEnabled:0];
+		
+		// Clear Spellbook
+		[user clearSpellbook];
+	}
+	else{
+		[newSound play:@"shark"];
+		[newDraw dialog:dialogSharkTransform:eventShark];
+	}
+	
+	// Return storage Id
+	return @"";
+}
 
 -(NSString*)map :(NSString*)option
 {
@@ -787,6 +902,30 @@
     [newDraw dialog:@"123":eventOwl];
     
     return @"";
+}
+
+-(NSString*)courtyard:(NSString*)option
+{
+	// Broadcast Notification |warp|11|1,0
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	if( [user isFinished] ){
+		[user setLocation:116];
+		[user setPosition:1:0];
+		[render router:[[Event alloc] initWarp:116:1:0]];
+	}
+	else{
+		[render router:[[Event alloc] initWarp:11:1:0]];
+	}
+	
+	// Default
+	return @"";
 }
 
 # pragma mark Nephtaline -

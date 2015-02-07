@@ -75,6 +75,7 @@
 #define dialogHiversaires			@"789"
 
 #define tagBlockers                 470
+#define tagNotifications            490
 
 #define audioNecomedre			@"necomedre"
 #define audioNephtaline			@"nephtaline"

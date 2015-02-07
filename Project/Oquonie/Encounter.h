@@ -22,6 +22,7 @@
 -(Encounter*)initWithName :(NSString*)name;
 -(void)touch;
 -(NSString*)see;
+-(NSString*)notify;
 
 -(NSString*)map :(NSString*)option;
 

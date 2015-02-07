@@ -12,6 +12,8 @@
 
 #import "ViewController.h"
 
+#import "TileView.h"
+
 @implementation Draw
 
 -(Draw*)init
@@ -29,7 +31,85 @@
 
 -(void)notifications
 {
+	[self eraseNotifications];
 	
+	NSLog(@"~  DRAW | Notifications");
+	for (int x = -2; x < 3; x++) {
+		for (int y = -2; y < 3; y++) {
+			
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![tileCheck isEvent] ){ continue; }
+			
+			// Event is a blocker tile type
+			for(NSImageView* subview in [spriteContainer subviews]) {
+				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
+					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
+					
+					if( ![[newEncounter notify] isEqualToString:@""] ){
+						NSLog(@"~  DRAW | Notification : %@ at %d %d", [newEncounter notify], x, y);
+						[storyboard.spriteContainer addSubview:[self notificationView:x:y:[newEncounter notify]]];
+						break;
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+-(NSImageView*)notificationView :(int)x :(int)y :(NSString*)letter
+{
+	NSImageView *bubbleView = [[NSImageView alloc] initWithFrame:[position tile:4:x:y]];
+	bubbleView.tag = tagNotifications;
+	bubbleView.image = [NSImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
+	
+	CGFloat scaleFactor = 3.2;
+	NSImageView *letterView = [[NSImageView alloc] initWithFrame:CGRectMake( (bubbleView.frame.size.width/2)-((bubbleView.frame.size.width/scaleFactor)/2), bubbleView.frame.size.height-(bubbleView.frame.size.width/scaleFactor)-(bubbleView.frame.size.height*0.025), bubbleView.frame.size.width/scaleFactor, bubbleView.frame.size.width/scaleFactor)];
+	letterView.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@.png",letter]];
+	
+	[letterView setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[bubbleView addSubview:letterView];
+	
+	return bubbleView;
+}
+
+-(void)events
+{
+	NSLog(@"~  DRAW | Events");
+	for (int x = -2; x < 3; x++) {
+		for (int y = -2; y < 3; y++) {
+			
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![tileCheck isEvent] ){ continue; }
+			
+			// Event is a blocker tile type
+			for(NSImageView* subview in [spriteContainer subviews]) {
+				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
+					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
+					
+					if( ![[newEncounter see] isEqualToString:@""] ){
+						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d", [tileCheck name], x, y);
+						subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1.png",[newEncounter see],[tileCheck extras] ]];
+					}
+				}
+			}
+			
+			// Event is a wall tile type
+			for(NSImageView* subview in [storyboard.roomContainer subviews]) {
+				if( subview.frame.origin.y == [position tile:5:x:y].origin.y && subview.frame.origin.x == [position tile:5:x:y].origin.x && subview.frame.size.width == [position tile:5:x:y].size.width && subview.frame.size.height == [position tile:5:x:y].size.height ){
+					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
+					
+					if( ![[newEncounter see] isEqualToString:@""] ){
+						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d with %@", [tileCheck name], x, y, [newEncounter see]);
+						if( y == 2 ){ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[newEncounter see]]]; }
+						else{ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[newEncounter see]]]; }
+						
+					}
+				}
+			}
+			
+		}
+	}
 }
 
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId
@@ -154,14 +234,29 @@
     storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
-    
+
     [self blockers];
 	[self notifications];
-	[self updateSprites];
+	[self events];
 	[self updateDrawOrder];
 }
 
--(void)eraseBlocker
+
+-(void)eraseNotifications
+{
+	NSLog(@"~  DRAW | Notifications | Erase");
+	
+	NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
+	for(NSImageView* subview in [spriteContainer subviews])
+	{
+		if( subview.tag == tagNotifications ){
+			[viewsToRemove addObject:subview];
+		}
+	}
+	[viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
+}
+
+-(void)eraseBlockers
 {
     NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
     for(NSImageView* subview in [spriteContainer subviews])
@@ -175,11 +270,14 @@
 
 -(void)blockers
 {
-    [self eraseBlocker];
+    [self eraseBlockers];
     for (int x = -1; x < 2; x++) {
         for (int y = -1; y < 2; y++) {
-            Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
-            [spriteContainer addSubview:[self spriteImageView:x:y:tileCheck]];
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![[tileCheck name] isEqualToString:@""] ){
+				[spriteContainer addSubview:[self spriteImageView:x:y:tileCheck]];
+			}
+			
         }
     }
 }
@@ -189,7 +287,7 @@
     NSImageView * newSprite = [[NSImageView alloc] initWithFrame:[position tile:4:x:y]];
     
     if( [[tile type] isEqualToString:@"event"] ){
-        newSprite.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.l.1",[tile data]]];
+        newSprite.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1",[tile data],[tile extras]]];
     }
     else if( [[tile type] isEqualToString:@"block"] ){
         newSprite.image = [NSImage imageNamed:[NSString stringWithFormat:@"blocker.%@",[tile name]]];
@@ -254,44 +352,6 @@
 	}
 	
 	NSLog(@"~  DRAW | drawOrder    | Redrawn %d views",count);
-}
-
--(void)updateSprites
-{
-	for (int x = -2; x < 3; x++) {
-		for (int y = -2; y < 3; y++) {
-			
-			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
-			if( ![tileCheck isEvent] ){ continue; }
-			
-			// Event is a blocker tile type
-			for(NSImageView* subview in [spriteContainer subviews]) {
-				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
-					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
-					
-					if( ![[newEncounter see] isEqualToString:@""] ){
-						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d", [tileCheck name], x, y);
-						subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1.png",[newEncounter see],[tileCheck extras] ]];
-					}
-				}
-			}
-			
-			// Event is a wall tile type
-			for(NSImageView* subview in [storyboard.roomContainer subviews]) {
-				if( subview.frame.origin.y == [position tile:5:x:y].origin.y && subview.frame.origin.x == [position tile:5:x:y].origin.x && subview.frame.size.width == [position tile:5:x:y].size.width && subview.frame.size.height == [position tile:5:x:y].size.height ){
-					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
-					
-					if( ![[newEncounter see] isEqualToString:@""] ){
-						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d with %@", [tileCheck name], x, y, [newEncounter see]);
-						if( y == 2 ){ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[newEncounter see]]]; }
-						else{ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[newEncounter see]]]; }
-						
-					}
-				}
-			}
-			
-		}
-	}
 }
 
 -(void)animateBlock
