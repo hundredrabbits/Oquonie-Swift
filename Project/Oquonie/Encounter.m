@@ -42,6 +42,48 @@
 
 # pragma mark Lobby -
 
+
+-(NSString*)socket :(NSString*)option
+{
+	int socketInstanceStorageId = 0;
+	
+	if([user location] == locationNeomineLobby ){
+		socketInstanceStorageId = storageQuestPillarNeomine;
+	}
+	else if([user location] == locationNestorineLobby ){
+		socketInstanceStorageId = storageQuestPillarNestorine;
+	}
+	else if([user location] == locationNecomedreLobby ){
+		socketInstanceStorageId = storageQuestPillarNecomedre;
+	}
+	else if([user location] == locationNephtalineLobby ){
+		socketInstanceStorageId = storageQuestPillarNephtaline;
+	}
+	else if([user location] == locationNemediqueLobby ){
+		socketInstanceStorageId = storageQuestPillarNemedique;
+	}
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if([user eventExists:socketInstanceStorageId]){
+			return eventPillarAssembled;
+		}
+		return @"";
+	}
+	// Dialogs
+	if([user eventExists:socketInstanceStorageId]){
+		[newDraw dialog:dialogInfoPillar:eventOwl];
+	}
+	[newSound play:@"bump1"];
+	
+	// Default
+	return @"";
+}
+
 -(NSString*)tree :(NSString*)option
 {
     // Broadcast Notification
@@ -228,7 +270,7 @@
         [newSound play:@"speakerphone"];
     }
     
-    [newDraw animateRoom];
+    [newDraw updateSprites];
     
     return @"";
 }

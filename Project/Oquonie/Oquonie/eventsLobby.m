@@ -151,47 +151,6 @@
 	return @"";
 }
 
--(NSString*)event_socket :(NSString*)option
-{
-	int socketInstanceStorageId;
-	
-	if([user location] == [locationNeomineLobby intValue]){
-		socketInstanceStorageId = storageQuestPillarNeomine;
-	}
-	else if([user location] == [locationNestorineLobby intValue]){
-		socketInstanceStorageId = storageQuestPillarNestorine;
-	}
-	else if([user location] == [locationNecomedreLobby intValue]){
-		socketInstanceStorageId = storageQuestPillarNecomedre;
-	}
-	else if([user location] == [locationNephtalineLobby intValue]){
-		socketInstanceStorageId = storageQuestPillarNephtaline;
-	}
-	else if([user location] == [locationNemediqueLobby intValue]){
-		socketInstanceStorageId = storageQuestPillarNemedique;
-	}
-	
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return @"";
-	}
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		if([user eventExists:socketInstanceStorageId]){
-			return eventPillarAssembled;
-		}
-		return @"";
-	}
-	// Dialogs
-	if([user eventExists:socketInstanceStorageId]){
-		[newDraw dialog:dialogInfoPillar:eventOwl];
-	}
-	[self audioEffectPlayer:@"bump1"];
-	
-	// Default
-	return @"";
-}
-
 -(NSString*)event_map :(NSString*)option
 {
 	// Broadcast Notification

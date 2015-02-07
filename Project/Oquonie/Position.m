@@ -60,7 +60,6 @@
         
         if( posX ==  1 && posY == -1 ){ return CGRectMake(centerW - (tileW*0.75), centerH + tileH - (tileH*0.15), tileW, tileH); }
         if( posX ==  -1 && posY == 1 ){ return CGRectMake(centerW + (tileW*0.7), centerH + tileH - (tileH*0.15), tileW, tileH); }
-
     }
     
     // Tiles

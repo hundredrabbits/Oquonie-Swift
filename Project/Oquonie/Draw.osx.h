@@ -18,5 +18,5 @@
 -(void)animateTransform;
 -(void)animateRoomPan;
 -(void)animateBlock;
-
+-(void)updateSprites;
 @end

@@ -34,7 +34,7 @@
 
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId
 {
-    NSLog(@"~  DRAW | Dialog %@ %@",dialog,characterId);
+    NSLog(@"~  DRAW | Dialog       | Message: %@ %@",dialog,characterId);
     
     storyboard.dialogContainer.hidden = NO;
     
@@ -70,7 +70,7 @@
 
 -(void)animateSpellbook
 {
-    NSLog(@"~  DRAW | animateSpellbook");
+    NSLog(@"~  DRAW | spellbook");
     
     storyboard.interfaceContainer.frame = storyboard.view.frame;
     storyboard.spellsContainer.frame = CGRectMake((storyboard.view.frame.size.width)/2 - (([position tile:0 :0 :0].size.width)/2), storyboard.view.frame.size.height - 100, ([position tile:0 :0 :0].size.width)/3 * 3, ([position tile:0 :0 :0].size.width)/3);
@@ -158,6 +158,7 @@
     [self blockers];
 	[self notifications];
 	[self updateSprites];
+	[self updateDrawOrder];
 }
 
 -(void)eraseBlocker
@@ -228,6 +229,19 @@
 	
 	for(NSImageView* subview in tempArray) {
 		// Send at the back
+		if( subview.frame.origin.y == [position tile:4:0:1].origin.y ){
+			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
+			count += 1;
+		}
+		// Send at the front
+		else if( subview.frame.origin.y == [position tile:4:0:-1].origin.y ){
+			[spriteContainer addSubview:subview positioned:NSWindowAbove relativeTo:nil];
+			count += 1;
+		}
+	}
+	
+	for(NSImageView* subview in tempArray) {
+		// Send at the back
 		if( subview.frame.origin.y == [position tile:4:1:1].origin.y ){
 			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
 			count += 1;
@@ -269,7 +283,9 @@
 					
 					if( ![[newEncounter see] isEqualToString:@""] ){
 						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d with %@", [tileCheck name], x, y, [newEncounter see]);
-						subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[newEncounter see]]];
+						if( y == 2 ){ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[newEncounter see]]]; }
+						else{ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[newEncounter see]]]; }
+						
 					}
 				}
 			}
