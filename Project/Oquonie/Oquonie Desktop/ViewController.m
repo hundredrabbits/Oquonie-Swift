@@ -36,7 +36,8 @@
     render = [[Render alloc] init];
     
     [user listening:0];
-    [user setLocation:46];
+    [user setLocation:56];
+	[user setCharacter:5];
     [render spellCollect:@"nephtalineNeomine2":3];
     [render spellCollect:@"nephtalineNeomine3":3];
     

@@ -221,7 +221,7 @@
 
 -(void)updateDrawOrder
 {
-	NSLog(@"~  DRAW | updateDrawOrder");
+	NSLog(@"~  DRAW | drawOrder    | Redraw");
 	
 	int count = 0;
 	NSArray *tempArray = [[spriteContainer subviews] copy];
@@ -230,15 +230,16 @@
 		// Send at the back
 		if( subview.frame.origin.y == [position tile:4:1:1].origin.y ){
 			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
+			count += 1;
 		}
 		// Send at the front
-		if( subview.frame.origin.y == [position tile:4:-1:-1].origin.y ){
+		else if( subview.frame.origin.y == [position tile:4:-1:-1].origin.y ){
 			[spriteContainer addSubview:subview positioned:NSWindowAbove relativeTo:nil];
+			count += 1;
 		}
-		count += 1;
 	}
 	
-	NSLog(@"~  DRAW | updated %d views", count);
+	NSLog(@"~  DRAW | drawOrder    | Redrawn %d views",count);
 }
 
 -(void)updateSprites
@@ -254,9 +255,9 @@
 				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
 					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
 					
-					if( [[newEncounter see] isEqualToString:@""] ){
+					if( ![[newEncounter see] isEqualToString:@""] ){
 						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d", [tileCheck name], x, y);
-						subview.image = [NSImage imageNamed:@"event.32.l.3.png"];
+						subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1.png",[newEncounter see],[tileCheck extras] ]];
 					}
 				}
 			}
