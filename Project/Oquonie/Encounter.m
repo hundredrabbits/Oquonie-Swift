@@ -14,7 +14,7 @@
 
 -(Encounter*)init
 {
-    NSLog(@"* ENCNT | Init");
+    NSLog(@"+ ENCNT | Init");
     newDraw = [[Draw alloc] init];
     newSound = [[Audio alloc] init];
     return self;
@@ -28,26 +28,38 @@
 
 -(void)touch
 {
-    NSLog(@"- ENCNT + Touch        + %@", encounterName);
     SEL targetSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:",encounterName]);
     [self performSelector:targetSelector withObject:@"touch"];
 }
 
 -(NSString*)see
 {
-	NSLog(@"- ENCNT + See          + %@", encounterName);
 	SEL targetSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:",encounterName]);
 	return [self performSelector:targetSelector withObject:@"postUpdate"];
 }
 
 -(NSString*)notify
 {
-	NSLog(@"- ENCNT + Notify       + %@", encounterName);
 	SEL targetSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:",encounterName]);
 	return [self performSelector:targetSelector withObject:@"postNotification"];
 }
 
 # pragma mark Lobby -
+
+-(NSString*)gatePhotoBooth :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Default
+	return @"";
+}
 
 -(NSString*)socket :(NSString*)option
 {
@@ -276,7 +288,6 @@
         [newSound play:@"speakerphone"];
     }
 	
-	[newDraw events];
 	[newDraw notifications];
 	
     return @"";
@@ -284,8 +295,8 @@
 
 -(NSString*)pillar:(NSString*)option
 {
-	int pillarInstanceStorageId;
-	int pillarInstanceWarp;
+	int pillarInstanceStorageId = 0;
+	int pillarInstanceWarp = 0;
 	
 	if([user location] == locationNeominePillar ){
 		pillarInstanceStorageId = storageQuestPillarNeomine;
@@ -694,11 +705,10 @@
             return @"13";
         }
         // Neomine pillar
-        if([user location] == 62 && [user eventExists:storageQuestPillarNeomine]){
+        else if([user location] == 62 && [user eventExists:storageQuestPillarNeomine]){
             return @"36";
         }
-        
-        if([user character]==characterNecomedre || [user character] == 7){
+        else if([user character]==characterNecomedre || [user character] == 7){
             return @"gateNecomedreOpen";
         }
         else{

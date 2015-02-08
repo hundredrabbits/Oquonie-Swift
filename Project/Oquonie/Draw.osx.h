@@ -20,4 +20,12 @@
 -(void)animateBlock;
 -(void)events;
 -(void)notifications;
+
 @end
+
+NSTimer * eventTimer;
+NSTimer * userTimer;
+
+int eventTime;
+int eventFrame;
+int characterFrame;

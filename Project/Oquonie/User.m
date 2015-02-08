@@ -12,7 +12,7 @@
 
 -(User*)init
 {
-    NSLog(@"*  USER | Init");
+    NSLog(@"+  USER | Init");
     
     userData = [[NSMutableDictionary alloc] initWithDictionary:[self new]];
 	

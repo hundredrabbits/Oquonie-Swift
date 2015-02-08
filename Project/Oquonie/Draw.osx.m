@@ -18,9 +18,13 @@
 
 -(Draw*)init
 {
-    NSLog(@"*  DRAW | Init");
+    NSLog(@"+  DRAW | Init");
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
     position = [[Position alloc] initWithView:storyboard.view.frame];
+	
+	[eventTimer invalidate];
+	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(eventsAnimate) userInfo:nil repeats:YES];
+	
     return self;
 }
 
@@ -73,26 +77,14 @@
 	return bubbleView;
 }
 
--(void)events
+-(void)gates
 {
-	NSLog(@"~  DRAW | Events");
+	NSLog(@"~  DRAW | Gates");
 	for (int x = -2; x < 3; x++) {
 		for (int y = -2; y < 3; y++) {
 			
 			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
 			if( ![tileCheck isEvent] ){ continue; }
-			
-			// Event is a blocker tile type
-			for(NSImageView* subview in [spriteContainer subviews]) {
-				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
-					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
-					
-					if( ![[newEncounter see] isEqualToString:@""] ){
-						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d", [tileCheck name], x, y);
-						subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.1.png",[newEncounter see],[tileCheck extras] ]];
-					}
-				}
-			}
 			
 			// Event is a wall tile type
 			for(NSImageView* subview in [storyboard.roomContainer subviews]) {
@@ -112,7 +104,46 @@
 	}
 }
 
--(void)dialog  :(NSString*)dialog :(NSString*)characterId
+-(void)eventsAnimate
+{
+	eventTime += 1;
+	int value = eventTime;
+	if( eventTime == 1 ){ value = 1;}
+	if( eventTime == 2 ){ value = 2;}
+	if( eventTime == 3 ){ value = 3;}
+	if( eventTime == 4 ){ value = 2;}
+	if( eventTime >  4 ){ value = 1;}
+	if( eventTime > 16 ){ eventTime = 1; }
+	eventFrame = value;
+	[self events];
+}
+
+-(void)events
+{
+	for (int x = -1; x < 2; x++) {
+		for (int y = -1; y < 2; y++) {
+			
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![tileCheck isEvent] ){ continue; }
+			
+			// Event is a blocker tile type
+			for(NSImageView* subview in [spriteContainer subviews]) {
+				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
+					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
+					
+					if( ![[newEncounter see] isEqualToString:@""] ){
+						subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.%d.png",[newEncounter see],[tileCheck extras],eventFrame ]];
+					}
+					else{
+						subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.%d.png",[tileCheck data],[tileCheck extras],eventFrame ]];
+					}
+				}
+			}			
+		}
+	}
+}
+
+-(void)dialog :(NSString*)dialog :(NSString*)characterId
 {
     NSLog(@"~  DRAW | Dialog       | Message: %@ %@",dialog,characterId);
     
@@ -238,13 +269,14 @@
     [self blockers];
 	[self notifications];
 	[self events];
+	[self gates];
 	[self updateDrawOrder];
 }
 
 
 -(void)eraseNotifications
 {
-	NSLog(@"~  DRAW | Notifications | Erase");
+	NSLog(@"~  DRAW | Notifications| Erase");
 	
 	NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
 	for(NSImageView* subview in [spriteContainer subviews])
@@ -291,8 +323,9 @@
     }
     else if( [[tile type] isEqualToString:@"block"] ){
         newSprite.image = [NSImage imageNamed:[NSString stringWithFormat:@"blocker.%@",[tile name]]];
-    }
-    
+	}
+	[newSprite setImageScaling:NSImageScaleProportionallyUpOrDown];
+	
     newSprite.tag = tagBlockers;
     return newSprite;
 }

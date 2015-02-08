@@ -12,6 +12,7 @@
 
 -(Audio*)init
 {
+	NSLog(@"+ AUDIO | Init");
     return self;
 }
 

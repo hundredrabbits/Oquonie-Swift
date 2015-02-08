@@ -15,7 +15,7 @@
 
 -(Render*)init
 {
-    NSLog(@"  RENDR | Init");
+    NSLog(@"+ RENDR | Init");
     newDraw = [[Draw alloc] init];
     return self;
 }
@@ -65,7 +65,7 @@
 -(void)spellCollect :(NSString*)spellId :(int)spellType
 {
     if(spellType == [user character]){
-        NSLog(@" RENDR | Spell        | Already type:%d",spellType);
+        NSLog(@"  RENDR | Spell        | Already type:%d",spellType);
         return;
     }
     

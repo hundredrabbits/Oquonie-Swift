@@ -13,7 +13,7 @@
 
 -(Event*)initWithName :(NSString*)value
 {
-    NSLog(@"* EVENT | Init");
+    NSLog(@"+ EVENT | Init");
     eventData = [[NSMutableDictionary alloc] init];
     eventData[@"name"] = value;
     return self;
@@ -21,7 +21,7 @@
 
 -(Event*)initWarp :(int)location :(int)x :(int)y
 {
-    NSLog(@"* EVENT | Init");
+    NSLog(@"+ EVENT | Init");
     eventData = [[NSMutableDictionary alloc] init];
     eventData[@"type"] = @"warp";
     eventData[@"location"] = @(location);
@@ -32,7 +32,7 @@
 
 -(Event*)initWithTile :(Tile*)tile
 {
-    NSLog(@"* EVENT | Init");
+    NSLog(@"+ EVENT | Init");
     eventData = [[NSMutableDictionary alloc] init];
     eventData[@"name"] = [tile name];
     return self;

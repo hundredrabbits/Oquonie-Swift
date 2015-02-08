@@ -34,7 +34,7 @@
     user  = [[User alloc] init];
     position = [[Position alloc] initWithView:self.view.frame];
     render = [[Render alloc] init];
-    
+	
     [user listening:0];
     [user setLocation:60];
 	[user setCharacter:3];

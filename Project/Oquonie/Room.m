@@ -13,7 +13,7 @@
 
 -(Room*)initWithArray :(NSArray*)roomArray
 {
-    NSLog(@"*  ROOM | Init");
+    NSLog(@"+  ROOM | Init");
     roomNode = [[NSArray alloc] initWithArray:roomArray];
     return self;
 }

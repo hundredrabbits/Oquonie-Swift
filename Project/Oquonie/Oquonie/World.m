@@ -14,7 +14,7 @@
 
 -(World*)init
 {
-    NSLog(@"* WORLD | Init");
+    NSLog(@"+ WORLD | Init");
     
     worldNode = [NSMutableArray arrayWithObjects:@"",nil];
     int myCount = 0;
