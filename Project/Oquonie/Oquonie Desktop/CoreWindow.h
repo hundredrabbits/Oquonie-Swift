@@ -10,4 +10,8 @@
 
 @interface CoreWindow : NSWindow
 
+-(void)fullscreen;
+
 @end
+
+CoreWindow * window;

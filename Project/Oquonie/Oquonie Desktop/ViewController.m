@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CoreWindow.h"
 
 #import "xxiivvSettings.h"
 #import "xxiivvVariables.h"
@@ -36,12 +37,14 @@
     render = [[Render alloc] init];
 	
     [user listening:0];
-    [user setLocation:60];
+    [user setLocation:61];
 	[user setCharacter:3];
     [render spellCollect:@"nephtalineNeomine2":3];
     [render spellCollect:@"nephtalineNeomine3":3];
     
     [newDraw animateRoom];
+	
+	[[[CoreWindow alloc] init] toggleFullScreen:@""];
 }
 
 -(void)template

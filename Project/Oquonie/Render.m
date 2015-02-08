@@ -23,9 +23,9 @@
 -(void)router :(Event*)event
 {
     if( [[event type] isEqualToString:@"move"] ){ [self renderMove:event]; }
-    if( [[event type] isEqualToString:@"event"] ){ [self renderEvent:event]; }
-    if( [[event type] isEqualToString:@"block"] ){ [self renderBlock:event]; }
-    if( [[event type] isEqualToString:@"warp"] ){ [self renderWarp:event]; }
+    else if( [[event type] isEqualToString:@"event"] ){ [self renderEvent:event]; }
+    else if( [[event type] isEqualToString:@"block"] ){ [self renderBlock:event]; }
+    else if( [[event type] isEqualToString:@"warp"] ){ [self renderWarp:event]; }
 }
 
 -(void)renderMove :(Event*)event

@@ -12,8 +12,19 @@
 
 @implementation CoreWindow
 
-- (void)keyDown:(NSEvent *)theEvent {
-    
+-(void)fullscreen
+{
+	NSLog(@"! WNDOW | Fullscreen");
+	[self toggleFullScreen:@""];
+}
+
+- (void)keyDown:(NSEvent *)theEvent
+{
+	if( [theEvent keyCode] == 53 ){
+		NSLog(@"escape");
+		[self toggleFullScreen:@""];
+	}
+	
     if ([theEvent modifierFlags] & NSNumericPadKeyMask) { // arrow keys have this mask
         NSString *theArrow = [theEvent charactersIgnoringModifiers];
 		unichar keyChar = 0;
@@ -52,6 +63,9 @@
                 [newInput router:0:-1];
                 return;
             }
+			if( keyChar == 53 ){
+				NSLog(@"escape!");
+			}
             [super keyDown:theEvent];
         }
     }

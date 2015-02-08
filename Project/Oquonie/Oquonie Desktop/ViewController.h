@@ -11,6 +11,8 @@
 #import "xxiivvSettings.h"
 #import "xxiivvVariables.h"
 
+#import "CoreWindow.h"
+
 #import "DrawView.h"
 
 @interface ViewController : NSViewController
@@ -64,4 +66,5 @@
 
 ViewController * storyboard;
 NSView * spriteContainer;
+CoreWindow * coreWindow;
 

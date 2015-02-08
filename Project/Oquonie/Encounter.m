@@ -90,7 +90,7 @@
 		if([user eventExists:socketInstanceStorageId]){
 			return eventPillarAssembled;
 		}
-		return @"";
+		return eventPillarSocket;
 	}
 	// Dialogs
 	if([user eventExists:socketInstanceStorageId]){
@@ -573,6 +573,7 @@
             return @"gateNeomineClosed";
         }
     }
+	
     // Warp
     if([user character] == characterNeomine || [user character] == 7 || [user character] == 8){
         if([user location] == 60){

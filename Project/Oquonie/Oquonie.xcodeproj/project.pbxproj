@@ -3051,6 +3051,9 @@
 		03983BF617C1AA8D00C89446 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				57C5EEC81A87E58800E98897 /* event.30 petunia */,
+				57C5EEC71A87E57E00E98897 /* event.31 rekka */,
+				57C5EEC61A87E57500E98897 /* event.32 ika */,
 				57C8A1551A7E81610039B9C8 /* event.37 - twitter */,
 				57C8A1561A7E816B0039B9C8 /* event.36 - hiversaires */,
 				032EE8381965C1A5009E718D /* Event35 - Nastazie */,
@@ -3248,18 +3251,6 @@
 				03E14CD618A63AF800B3816F /* credit.devine.jpg */,
 				03E14CD718A63AF800B3816F /* credit.rekka.jpg */,
 				03E14CBC18A637CC00B3816F /* blocker.28.png */,
-				03E14CBD18A637CC00B3816F /* event.30.l.1.png */,
-				03E14CBE18A637CC00B3816F /* event.30.l.2.png */,
-				03E14CBF18A637CC00B3816F /* event.30.l.3.png */,
-				03E14CC018A637CC00B3816F /* event.30.portrait.png */,
-				03E14CC118A637CC00B3816F /* event.31.l.1.png */,
-				03E14CC218A637CC00B3816F /* event.31.l.2.png */,
-				03E14CC318A637CC00B3816F /* event.31.l.3.png */,
-				03E14CC418A637CC00B3816F /* event.31.portrait.png */,
-				03E14CC518A637CC00B3816F /* event.32.l.1.png */,
-				03E14CC618A637CC00B3816F /* event.32.l.2.png */,
-				03E14CC718A637CC00B3816F /* event.32.l.3.png */,
-				03E14CC818A637CC00B3816F /* event.32.portrait.png */,
 				033DEBF4196CDE2F004750C7 /* tile.100_l.png */,
 				037F0265187D8BC400747E8D /* Splash */,
 				0304D7B5186CF18000ED6E94 /* Fx */,
@@ -3633,6 +3624,39 @@
 				03DD5BE218A68AB100BFA21E /* char7.walk.r.f.2.png */,
 			);
 			name = char.7;
+			sourceTree = "<group>";
+		};
+		57C5EEC61A87E57500E98897 /* event.32 ika */ = {
+			isa = PBXGroup;
+			children = (
+				03E14CC518A637CC00B3816F /* event.32.l.1.png */,
+				03E14CC618A637CC00B3816F /* event.32.l.2.png */,
+				03E14CC718A637CC00B3816F /* event.32.l.3.png */,
+				03E14CC818A637CC00B3816F /* event.32.portrait.png */,
+			);
+			name = "event.32 ika";
+			sourceTree = "<group>";
+		};
+		57C5EEC71A87E57E00E98897 /* event.31 rekka */ = {
+			isa = PBXGroup;
+			children = (
+				03E14CC118A637CC00B3816F /* event.31.l.1.png */,
+				03E14CC218A637CC00B3816F /* event.31.l.2.png */,
+				03E14CC318A637CC00B3816F /* event.31.l.3.png */,
+				03E14CC418A637CC00B3816F /* event.31.portrait.png */,
+			);
+			name = "event.31 rekka";
+			sourceTree = "<group>";
+		};
+		57C5EEC81A87E58800E98897 /* event.30 petunia */ = {
+			isa = PBXGroup;
+			children = (
+				03E14CBD18A637CC00B3816F /* event.30.l.1.png */,
+				03E14CBE18A637CC00B3816F /* event.30.l.2.png */,
+				03E14CBF18A637CC00B3816F /* event.30.l.3.png */,
+				03E14CC018A637CC00B3816F /* event.30.portrait.png */,
+			);
+			name = "event.30 petunia";
 			sourceTree = "<group>";
 		};
 		57C8A1551A7E81610039B9C8 /* event.37 - twitter */ = {

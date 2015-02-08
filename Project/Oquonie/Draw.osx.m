@@ -52,7 +52,6 @@
 					if( ![[newEncounter notify] isEqualToString:@""] ){
 						NSLog(@"~  DRAW | Notification : %@ at %d %d", [newEncounter notify], x, y);
 						[storyboard.spriteContainer addSubview:[self notificationView:x:y:[newEncounter notify]]];
-						break;
 					}
 				}
 			}
@@ -98,6 +97,32 @@
 						
 					}
 				}
+			}
+			
+		}
+	}
+}
+
+-(void)eraseBlockers
+{
+	NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
+	for(NSImageView* subview in [spriteContainer subviews])
+	{
+		if( subview.tag == tagBlockers ){
+			[viewsToRemove addObject:subview];
+		}
+	}
+	[viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
+}
+
+-(void)blockers
+{
+	[self eraseBlockers];
+	for (int x = -1; x < 2; x++) {
+		for (int y = -1; y < 2; y++) {
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![[tileCheck name] isEqualToString:@""] ){
+				[spriteContainer addSubview:[self spriteImageView :x:y:tileCheck]];
 			}
 			
 		}
@@ -210,7 +235,18 @@
     NSLog(@"~  DRAW | animateRoom");
     storyboard.roomContainer.frame = CGRectOffset(storyboard.view.frame, 0, -100);
     storyboard.spriteContainer.frame = CGRectOffset(storyboard.view.frame, 0, -100);
-    
+	
+	[storyboard.floor00 setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[storyboard.floor1e setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[storyboard.floore1 setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[storyboard.floor10 setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[storyboard.floor01 setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[storyboard.floor0e setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[storyboard.floore0 setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[storyboard.floor11 setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[storyboard.flooree setImageScaling:NSImageScaleProportionallyUpOrDown];
+	
+	
     storyboard.floor00.frame = [position tile:0 :0 :0];
     storyboard.floor1e.frame = [position tile:0 :1 :-1];
     storyboard.floore1.frame = [position tile:0 :-1 :1];
@@ -267,7 +303,7 @@
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
 
     [self blockers];
-	[self notifications];
+//	[self notifications];
 	[self events];
 	[self gates];
 	[self updateDrawOrder];
@@ -288,34 +324,10 @@
 	[viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
--(void)eraseBlockers
-{
-    NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
-    for(NSImageView* subview in [spriteContainer subviews])
-    {
-        if( subview.tag == tagBlockers ){
-            [viewsToRemove addObject:subview];
-        }
-    }
-    [viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
-}
-
--(void)blockers
-{
-    [self eraseBlockers];
-    for (int x = -1; x < 2; x++) {
-        for (int y = -1; y < 2; y++) {
-			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
-			if( ![[tileCheck name] isEqualToString:@""] ){
-				[spriteContainer addSubview:[self spriteImageView:x:y:tileCheck]];
-			}
-			
-        }
-    }
-}
 
 -(NSImageView*)spriteImageView :(int)x :(int)y :(Tile*)tile
 {
+	NSLog(@"~  DRAW | Sprite       | %@ -> %@", [tile type],[tile name]);
     NSImageView * newSprite = [[NSImageView alloc] initWithFrame:[position tile:4:x:y]];
     
     if( [[tile type] isEqualToString:@"event"] ){
@@ -357,6 +369,16 @@
 	
 	int count = 0;
 	NSArray *tempArray = [[spriteContainer subviews] copy];
+	
+	[self eraseBlockers];
+	
+	for(NSImageView* subview in tempArray) {
+		// Send at the back
+		if( subview.frame.origin.y == [position tile:4:0:0].origin.y ){
+			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
+			count += 1;
+		}
+	}
 	
 	for(NSImageView* subview in tempArray) {
 		// Send at the back

@@ -38,7 +38,7 @@
         [render router:newEvent];
         return;
     }
-    else if( [destination isEvent] ){
+	else if( [destination isEvent] ){
         Event * newEvent = [[Event alloc] initWithTile:destination];
         [newEvent addType:@"event"];
         [newEvent addCoordinates:[user x]+posX:[user y]+posY];
@@ -52,12 +52,15 @@
         [render router:newEvent];
         return;
     }
-    
-    // Move
-    Event * newEvent = [[Event alloc] initWithTile:destination];
-    [newEvent addType:@"move"];
-    [newEvent addCoordinates:[user x]+posX:[user y]+posY];
-    [render router:newEvent];
+	else{
+		// Move
+		Event * newEvent = [[Event alloc] initWithTile:destination];
+		[newEvent addType:@"move"];
+		[newEvent addCoordinates:[user x]+posX:[user y]+posY];
+		[render router:newEvent];
+	
+	}
+	
 }
 
 
