@@ -577,7 +577,7 @@
     // Warp
     if([user character] == characterNeomine || [user character] == 7 || [user character] == 8){
         if([user location] == 60){
-            [render router:[[Event alloc] initWarp:3:-1:0]];
+            [render router:[[Event alloc] initWarp:3:1:0]];
         }
         else if([user location] == 3){
             [render router:[[Event alloc] initWarp:60:-1:0]];

@@ -23,7 +23,7 @@
     position = [[Position alloc] initWithView:storyboard.view.frame];
 	
 	[eventTimer invalidate];
-	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(eventsAnimate) userInfo:nil repeats:YES];
+	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(animate) userInfo:nil repeats:YES];
 	
     return self;
 }
@@ -52,6 +52,7 @@
 					if( ![[newEncounter notify] isEqualToString:@""] ){
 						NSLog(@"~  DRAW | Notification : %@ at %d %d", [newEncounter notify], x, y);
 						[storyboard.spriteContainer addSubview:[self notificationView:x:y:[newEncounter notify]]];
+						break;
 					}
 				}
 			}
@@ -124,23 +125,45 @@
 			if( ![[tileCheck name] isEqualToString:@""] ){
 				[spriteContainer addSubview:[self spriteImageView :x:y:tileCheck]];
 			}
-			
 		}
 	}
 }
 
--(void)eventsAnimate
+
+-(void)animate
 {
 	eventTime += 1;
-	int value = eventTime;
-	if( eventTime == 1 ){ value = 1;}
-	if( eventTime == 2 ){ value = 2;}
-	if( eventTime == 3 ){ value = 3;}
-	if( eventTime == 4 ){ value = 2;}
-	if( eventTime >  4 ){ value = 1;}
-	if( eventTime > 16 ){ eventTime = 1; }
-	eventFrame = value;
+	
+	// Event Frame
+	if( eventTime == 1 ){ eventFrame = 1;}
+	else if( eventTime == 2 ){ eventFrame = 2;}
+	else if( eventTime == 3 ){ eventFrame = 3;}
+	else if( eventTime == 4 ){ eventFrame = 2;}
+	else if( eventTime >  4 ){ eventFrame = 1;}
+	else { eventTime = 1; }
+	
+	// Character Frame
+	if( eventTime <  7 ){ characterFrame = 1;}
+	else if( eventTime == 8 ){ characterFrame = 2;}
+	else if( eventTime == 9 ){ characterFrame = 3;}
+	else if( eventTime ==10 ){ characterFrame = 2;}
+	else { characterFrame = 1;}
+	
+	if( eventTime > 16 ){
+		eventTime = 1;
+	}
+	
 	[self events];
+	[self character];
+}
+
+-(void)character
+{
+	if( ![[user vertical] isEqualToString:@"f"] ){ return; }
+	if( ![[user state] isEqualToString:@"stand"] ){ return; }
+	
+	NSString * imageName = [NSString stringWithFormat:@"char%d.stand.%@.%@.%d",[user character],[user horizontal],[user vertical],characterFrame];
+	storyboard.spriteCharacter.image = [NSImage imageNamed:imageName];
 }
 
 -(void)events
@@ -163,7 +186,7 @@
 						subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.%@.%d.png",[tileCheck data],[tileCheck extras],eventFrame ]];
 					}
 				}
-			}			
+			}
 		}
 	}
 }
@@ -303,7 +326,7 @@
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
 
     [self blockers];
-//	[self notifications];
+	[self notifications];
 	[self events];
 	[self gates];
 	[self updateDrawOrder];
@@ -345,11 +368,11 @@
 -(void)animateWalk
 {
     NSLog(@"~  DRAW | animateWalk");
-    
+	
+	[user setState:@"walk"];
+	
     storyboard.dialogContainer.hidden = YES;
-    
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
-    
     storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
 	
@@ -358,7 +381,10 @@
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 0.25;
 		[[storyboard.spriteUser animator] setFrame:[position tile:4 :[user x] : [user y]]];
-	} completionHandler:^{ [user setEnabled:1]; }];
+	} completionHandler:^{
+		[user setState:@"stand"];
+		[user setEnabled:1];
+	}];
 	
 	[self updateDrawOrder];
 }
@@ -428,7 +454,10 @@
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 0.25;
 		[[storyboard.spriteUser animator] setFrame:[position tile:4 :[user x] : [user y]]];
-	} completionHandler:^{ [user setEnabled:1]; }];
+	} completionHandler:^{
+		[user setEnabled:1];
+		[user setState:@"stand"];
+	}];
 }
 
 

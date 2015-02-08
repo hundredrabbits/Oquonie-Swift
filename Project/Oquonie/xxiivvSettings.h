@@ -76,6 +76,7 @@
 
 #define tagBlockers                 470
 #define tagNotifications            490
+#define tagCharacter                495
 
 #define audioNecomedre			@"necomedre"
 #define audioNephtaline			@"nephtaline"
