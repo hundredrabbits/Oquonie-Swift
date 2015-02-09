@@ -16,6 +16,8 @@
     
     userData = [[NSMutableDictionary alloc] initWithDictionary:[self new]];
 	
+	[self setHorizontal:@"l"];
+	[self setVertical:@"b"];
 	[self setEnabled:1];
 	
     return self;

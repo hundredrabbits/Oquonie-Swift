@@ -25,6 +25,21 @@
 	[eventTimer invalidate];
 	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(animationTimer) userInfo:nil repeats:YES];
 	
+	[storyboard.spriteCharacter setImageScaling:NSImageScaleProportionallyUpOrDown];
+	[storyboard.spriteShadow setImageScaling:NSImageScaleProportionallyUpOrDown];
+	
+	[storyboard.interfaceContainer setWantsLayer:YES];
+	[storyboard.interfaceContainer.layer setBackgroundColor:[[NSColor redColor] CGColor]];
+	[storyboard.interfaceContainer setAlphaValue:0.3];
+	
+	[storyboard.spriteContainer setWantsLayer:YES];
+	[storyboard.spriteContainer.layer setBackgroundColor:[[NSColor blueColor] CGColor]];
+	[storyboard.spriteContainer setAlphaValue:0.3];
+	
+	[storyboard.roomContainer setWantsLayer:YES];
+	[storyboard.roomContainer.layer setBackgroundColor:[[NSColor yellowColor] CGColor]];
+	[storyboard.roomContainer setAlphaValue:0.3];
+	
     return self;
 }
 
@@ -193,17 +208,24 @@
 
 # pragma mark Spellbook -
 
--(void)animateSpellbook
+-(void)spellbookDisplay
 {
     NSLog(@"~  DRAW | spellbook");
     
     storyboard.interfaceContainer.frame = storyboard.view.frame;
     storyboard.spellsContainer.frame = CGRectMake((storyboard.view.frame.size.width)/2 - (([position tile:0 :0 :0].size.width)/2), storyboard.view.frame.size.height - 100, ([position tile:0 :0 :0].size.width)/3 * 3, ([position tile:0 :0 :0].size.width)/3);
-    
-    storyboard.spellView1.frame = CGRectMake(0, 0, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3);
-    storyboard.spellView2.frame = CGRectMake(storyboard.spellsContainer.frame.size.width/3, 0, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3);
-    storyboard.spellView3.frame = CGRectMake((storyboard.spellsContainer.frame.size.width/3)*2, 0, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3);
-    
+	
+	storyboard.spellView1.frame = CGRectMake(0, 10, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3);
+	storyboard.spellView2.frame = CGRectMake(storyboard.spellsContainer.frame.size.width/3, 20, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3);
+	storyboard.spellView3.frame = CGRectMake((storyboard.spellsContainer.frame.size.width/3)*2, 30, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3);
+	
+	[[storyboard.spellView1 animator] setAlphaValue:1];
+	[[storyboard.spellView2 animator] setAlphaValue:1];
+	[[storyboard.spellView3 animator] setAlphaValue:1];
+	[[storyboard.spellView1 animator] setFrame:CGRectMake(0, 0, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3)];
+	[[storyboard.spellView2 animator] setFrame:CGRectMake(storyboard.spellsContainer.frame.size.width/3, 0, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3)];
+	[[storyboard.spellView3 animator] setFrame:CGRectMake((storyboard.spellsContainer.frame.size.width/3)*2, 0, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3)];
+	
     if( [user spell:0] > 0 ){ storyboard.spellView1.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell%d",[user spell:0]]]; }
     else{ storyboard.spellView1.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell0"]]; }
     
@@ -212,6 +234,24 @@
     
     if( [user spell:2] > 0 ){ storyboard.spellView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell%d",[user spell:2]]]; }
     else{ storyboard.spellView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letterSpell0"]]; }
+}
+
+-(void)spellbookHide
+{
+	NSLog(@"~  DRAW | spellbook");
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 0.50;
+		[[storyboard.spellView1 animator] setFrame:CGRectMake(0, 30, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3)];
+		[[storyboard.spellView2 animator] setFrame:CGRectMake(storyboard.spellsContainer.frame.size.width/3, 20, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3)];
+		[[storyboard.spellView3 animator] setFrame:CGRectMake((storyboard.spellsContainer.frame.size.width/3)*2, 10, storyboard.spellsContainer.frame.size.width/3, storyboard.spellsContainer.frame.size.width/3)];
+		
+		[[storyboard.spellView1 animator] setAlphaValue:0];
+		[[storyboard.spellView2 animator] setAlphaValue:0];
+		[[storyboard.spellView3 animator] setAlphaValue:0];
+		
+	} completionHandler:^{}];
+	
 }
 
 -(void)animateRoomPan

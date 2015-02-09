@@ -46,21 +46,6 @@
 
 # pragma mark Lobby -
 
--(NSString*)gatePhotoBooth :(NSString*)option
-{
-	// Broadcast Notification
-	if([option isEqualToString:@"postNotification"]){
-		return @"";
-	}
-	// Broadcast Event Sprite Change
-	if([option isEqualToString:@"postUpdate"]){
-		return @"";
-	}
-	
-	// Default
-	return @"";
-}
-
 -(NSString*)socket :(NSString*)option
 {
 	int socketInstanceStorageId = 0;
@@ -937,7 +922,7 @@
 	
 	// Default
 	return @"";
-}-(NSString*)event_gateEnd:(NSString*)option
+}-(NSString*)gateEnd:(NSString*)option
 {
 	// count pillars
 	int count = 0;
@@ -977,7 +962,7 @@
 
 # pragma mark NPCs -
 
--(NSString*)event_redGhost:(NSString*)option
+-(NSString*)redGhost:(NSString*)option
 {
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
@@ -995,18 +980,18 @@
 	return @"";
 }
 
--(void)event_sharkDialog
+-(void)sharkDialog
 {
 	[newDraw dialog:dialogSharkTransform:eventShark];
 }
 
--(void)event_sharkTransform
+-(void)sharkTransform
 {
 	[user setCharacter:1];
 	[newDraw transformation];
 }
 
--(NSString*)event_sauvegarde:(NSString*)option
+-(NSString*)sauvegarde:(NSString*)option
 {
 	// lokiva
 	
@@ -1031,7 +1016,7 @@
 
 # pragma mark Misc -
 
--(NSString*)event_null :(NSString*)option
+-(NSString*)null :(NSString*)option
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -1047,7 +1032,7 @@
 
 # pragma mark Necomedre -
 
--(NSString*)event_photocopier1 :(NSString*)option
+-(NSString*)photocopier1 :(NSString*)option
 {
 	// Event Identifier
 	NSString*	eventSpellId	= @"photocopier1";
@@ -1079,7 +1064,7 @@
 	return @"";
 }
 
--(NSString*)event_photocopier2 :(NSString*)option
+-(NSString*)photocopier2 :(NSString*)option
 {
 	// Event Identifier
 	NSString*	eventSpellId	= @"photocopier2";
@@ -1111,7 +1096,7 @@
 	return @"";
 }
 
--(NSString*)event_photocopier3 :(NSString*)option
+-(NSString*)photocopier3 :(NSString*)option
 {
 	// Event Identifier
 	NSString*	eventSpellId	= @"photocopier3";
@@ -1143,7 +1128,7 @@
 	return @"";
 }
 
--(NSString*)event_necomedreNephtaline1 :(NSString*)option
+-(NSString*)necomedreNephtaline1 :(NSString*)option
 {
 	// Event Identifier
 	NSString*	eventSpellId	= @"necomedreNephtaline1";
@@ -1176,7 +1161,7 @@
 	return @"";
 }
 
--(NSString*)event_necomedreNephtaline2 :(NSString*)option
+-(NSString*)necomedreNephtaline2 :(NSString*)option
 {
 	
 	// Event Identifier
@@ -1210,7 +1195,7 @@
 	return @"";
 }
 
--(NSString*)event_necomedreNephtaline3 :(NSString*)option
+-(NSString*)necomedreNephtaline3 :(NSString*)option
 {
 	// Event Identifier
 	NSString*	eventSpellId	= @"necomedreNephtaline3";
@@ -1243,7 +1228,7 @@
 	return @"";
 }
 
--(NSString*)event_necomedreNestorine1 :(NSString*)option
+-(NSString*)necomedreNestorine1 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"necomedreNestorine1";
@@ -1289,7 +1274,7 @@
 	return @"";
 }
 
--(NSString*)event_necomedreNemedique1 :(NSString*)option
+-(NSString*)necomedreNemedique1 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"necomedreNemedique1";
@@ -1335,7 +1320,7 @@
 	return @"";
 }
 
--(NSString*)event_tutorialCharacter :(NSString*)option
+-(NSString*)tutorialCharacter :(NSString*)option
 {
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
@@ -1362,7 +1347,7 @@
 	return @"";
 }
 
--(NSString*)event_tutorialRedDoor :(NSString*)option
+-(NSString*)tutorialRedDoor :(NSString*)option
 {
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
@@ -1380,7 +1365,7 @@
 	return @"";
 }
 
--(NSString*)event_intercom:(NSString*)option
+-(NSString*)intercom:(NSString*)option
 {
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
@@ -2359,7 +2344,7 @@
 
 #pragma mark Nemedique -
 
--(NSString*)event_nemediqueNestorine1 :(NSString*)option
+-(NSString*)nemediqueNestorine1 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"nemediqueNestorine1";
@@ -2410,7 +2395,7 @@
 # pragma mark NPCs -
 
 // End Tree
--(NSString*)event_endReset :(NSString*)option
+-(NSString*)endReset :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"]){ return @"";}
@@ -2422,7 +2407,7 @@
 
 // Red Character
 
--(NSString*)event_redEnd :(NSString*)option
+-(NSString*)redEnd :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
 	if([option isEqualToString:@"postUpdate"]){
@@ -2436,7 +2421,7 @@
 }
 
 
--(NSString*)event_credit1 :(NSString*)option
+-(NSString*)credit1 :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @"";}
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
@@ -2448,7 +2433,7 @@
 	return @"";
 }
 
--(NSString*)event_credit2 :(NSString*)option
+-(NSString*)credit2 :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @"";}
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
@@ -2459,7 +2444,7 @@
 	return @"";
 }
 
--(NSString*)event_credit3 :(NSString*)option
+-(NSString*)credit3 :(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @"";}
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
@@ -2470,7 +2455,7 @@
 
 # pragma mark Secret -
 
--(NSString*)event_secretCat1 :(NSString*)option
+-(NSString*)secretCat1 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"secretCat1";
@@ -2500,7 +2485,7 @@
 }
 
 
--(NSString*)event_secretCat2 :(NSString*)option
+-(NSString*)secretCat2 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"secretCat2";
@@ -2529,7 +2514,7 @@
 	return @"";
 }
 
--(NSString*)event_secretCat3 :(NSString*)option
+-(NSString*)secretCat3 :(NSString*)option
 {
 	// Special Event Identifier
 	NSString*	eventSpellId		= @"secretCat3";
@@ -2558,7 +2543,7 @@
 	return @"";
 }
 
--(NSString*)event_petunia:(NSString*)option
+-(NSString*)petunia:(NSString*)option
 {
 	if([option isEqualToString:@"postNotification"]){ return @""; }
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
@@ -2654,7 +2639,7 @@
 	[render router:[[Event alloc] initWarp:130:0:0]];
 }
 
--(NSString*)event_daniel:(NSString*)option
+-(NSString*)daniel:(NSString*)option
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -2672,7 +2657,7 @@
 	return @"";
 }
 
--(NSString*)event_shuffleRoom:(NSString*)option
+-(NSString*)shuffleRoom:(NSString*)option
 {
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -2688,7 +2673,7 @@
 	return @"";
 }
 
--(NSString*)event_kamera:(NSString*)option
+-(NSString*)kamera:(NSString*)option
 {
 	return @"";
 	
@@ -2745,7 +2730,7 @@
 	 */
 }
 
--(NSString*)event_gatePhotoBooth :(NSString*)option
+-(NSString*)gatePhotoBooth :(NSString*)option
 {
 	return @"";
 	

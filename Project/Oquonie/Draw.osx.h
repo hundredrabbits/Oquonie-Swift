@@ -14,7 +14,6 @@
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId;
 
 -(void)animateWalk;
--(void)animateSpellbook;
 -(void)animateTransform;
 -(void)animateRoomPan;
 -(void)animateBlock;
@@ -31,6 +30,9 @@
 -(void)sequenceCredits1;
 -(void)sequenceCredits2;
 -(void)sequenceCredits3;
+
+-(void)spellbookDisplay;
+-(void)spellbookHide;
 
 -(void)transformation;
 

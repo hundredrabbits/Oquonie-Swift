@@ -36,18 +36,18 @@
     position = [[Position alloc] initWithView:self.view.frame];
     render = [[Render alloc] init];
 	
-    [user listening:0];
-    [user setLocation:61];
-	[user setCharacter:3];
-//    [render spellCollect:@"nephtalineNeomine2":3];
-//    [render spellCollect:@"nephtalineNeomine3":3];
+	NSLog(@"  SETUP + ------------------");
 	
-	[[[CoreWindow alloc] init] toggleFullScreen:@""];
+	[user listening:0];
+	[user setLocation:21];
+	[user setCharacter:1];
+	
+	newDraw = [[Draw alloc] init];
 }
 
 -(void)template
 {
-    
+	
 }
 
 @end

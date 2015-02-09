@@ -37,7 +37,6 @@
     
     newDraw = [[Draw alloc] init];
     [newDraw animateWalk];
-    [newDraw animateSpellbook];
 }
 
 -(void)renderWarp :(Event*)event
@@ -46,7 +45,8 @@
     [user setLocation:[event location]];
     [user setPosition:[event x]:[event y]];
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
-    [newDraw room];
+	[newDraw room];
+	[newDraw spellbookHide];
 }
 
 -(void)renderEvent :(Event*)event
@@ -67,7 +67,7 @@
     if(spellType == [user character]){
 		NSLog(@"  RENDR | Spell        | Already type:%d",spellType);
 		[newDraw notifications];
-		[newDraw animateSpellbook];
+		[newDraw spellbookDisplay];
         return;
     }
     
@@ -77,7 +77,7 @@
             NSLog(@"  RENDR | Spell        | Removed  -> id:%@ type:%d",spellId,spellType);
 			userData[@"spellbook"][index] = @[@"",@""];
 			[newDraw notifications];
-			[newDraw animateSpellbook];
+			[newDraw spellbookDisplay];
             return;
         }
         index += 1;
@@ -102,7 +102,7 @@
         [user clearSpellbook];
         [newDraw animateTransform];
 	}
-	[newDraw animateSpellbook];
+	[newDraw spellbookDisplay];
 	[newDraw notifications];
 }
 
