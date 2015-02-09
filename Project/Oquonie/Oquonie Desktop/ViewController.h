@@ -62,6 +62,10 @@
 @property (weak) IBOutlet NSImageView *letterView2;
 @property (weak) IBOutlet NSImageView *letterView3;
 
+@property (weak) IBOutlet NSView *roomColor;
+@property (weak) IBOutlet NSImageView *parallaxBack;
+@property (weak) IBOutlet NSImageView *parallaxFront;
+
 @end
 
 ViewController * storyboard;

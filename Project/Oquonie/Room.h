@@ -14,6 +14,7 @@
 -(NSString*)tileAtLocation :(int)x :(int)y;
 -(NSString*)tileAtId :(int)locationId;
 -(int)inflateTileId :(int)tileId :(NSString*)axis;
+-(NSString*)theme;
 
 @end
 

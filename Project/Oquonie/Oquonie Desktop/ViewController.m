@@ -39,10 +39,8 @@
     [user listening:0];
     [user setLocation:61];
 	[user setCharacter:3];
-    [render spellCollect:@"nephtalineNeomine2":3];
-    [render spellCollect:@"nephtalineNeomine3":3];
-    
-    [newDraw animateRoom];
+//    [render spellCollect:@"nephtalineNeomine2":3];
+//    [render spellCollect:@"nephtalineNeomine3":3];
 	
 	[[[CoreWindow alloc] init] toggleFullScreen:@""];
 }

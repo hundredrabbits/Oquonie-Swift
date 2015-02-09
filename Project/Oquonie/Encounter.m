@@ -174,7 +174,7 @@
         [user eventCollect:ramenStorage];
         [newDraw dialog:dialogGainRamen:eventRamen];
         [newSound play:@"ramen"];
-        [newDraw animateRoom];
+        [newDraw room];
     }
     
     return @"";
@@ -258,7 +258,7 @@
     [user setPosition:0 :0];
     [user setLocation:1];
     
-    [newDraw animateRoom];
+    [newDraw room];
     
     return @"";
 }
@@ -368,7 +368,7 @@
 //		[self apiContact:@"oquonie":@"analytics":@"hiversaires-pillar":@"1"];
 	}
 	
-	[newDraw animateRoom];
+	[newDraw room];
 	
 	// Default
 	return @"";

@@ -12,14 +12,16 @@
 
 -(void)map :(NSString*)name;
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId;
--(void)animateRoom;
+
 -(void)animateWalk;
 -(void)animateSpellbook;
 -(void)animateTransform;
 -(void)animateRoomPan;
 -(void)animateBlock;
+
 -(void)events;
 -(void)notifications;
+-(void)room;
 
 @end
 

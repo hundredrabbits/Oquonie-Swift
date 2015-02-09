@@ -46,7 +46,7 @@
     [user setLocation:[event location]];
     [user setPosition:[event x]:[event y]];
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
-    [newDraw animateRoom];
+    [newDraw room];
 }
 
 -(void)renderEvent :(Event*)event

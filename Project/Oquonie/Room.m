@@ -120,4 +120,9 @@
     return 0;
 }
 
+-(NSString*)theme
+{
+	return roomNode[22];
+}
+
 @end

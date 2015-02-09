@@ -101,6 +101,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <customView id="FAJ-zH-9cX" userLabel="roomColor">
+                                <rect key="frame" x="117" y="0.0" width="246" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="N85-dO-HK3" userLabel="parallaxBack">
+                                <rect key="frame" x="166" y="62" width="147" height="146"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="00i-ss-ICW"/>
+                            </imageView>
                             <customView id="jBC-0r-NuQ" userLabel="roomContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -298,6 +307,11 @@
                                     </customView>
                                 </subviews>
                             </customView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DOF-D6-wbi" userLabel="parallaxFront">
+                                <rect key="frame" x="166" y="62" width="147" height="146"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="TRj-kI-Flv"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
@@ -317,7 +331,10 @@
                         <outlet property="letterView1" destination="HMZ-dB-Rnr" id="fIm-XO-4f8"/>
                         <outlet property="letterView2" destination="l5c-ZP-xlC" id="oZZ-6s-fPm"/>
                         <outlet property="letterView3" destination="JPI-Rp-fQ7" id="cRc-mh-YAw"/>
+                        <outlet property="parallaxBack" destination="N85-dO-HK3" id="DoA-Rl-mAV"/>
+                        <outlet property="parallaxFront" destination="DOF-D6-wbi" id="Myo-5C-gzZ"/>
                         <outlet property="portraitImageView" destination="oQ7-JZ-QE2" id="otT-nQ-sZ8"/>
+                        <outlet property="roomColor" destination="FAJ-zH-9cX" id="aRj-dT-eeb"/>
                         <outlet property="roomContainer" destination="jBC-0r-NuQ" id="x5c-vQ-YPC"/>
                         <outlet property="spellView1" destination="Jv0-s6-TQd" id="j5s-Nn-Uuc"/>
                         <outlet property="spellView2" destination="V97-lW-grT" id="xbA-gD-9tx"/>
