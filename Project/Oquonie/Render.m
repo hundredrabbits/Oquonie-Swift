@@ -37,7 +37,6 @@
     
     newDraw = [[Draw alloc] init];
     [newDraw animateWalk];
-    [newDraw animateSpellbook];
 }
 
 -(void)renderWarp :(Event*)event
@@ -98,6 +97,7 @@
         [user clearSpellbook];
         [newDraw animateSpellbook];
         [newDraw animateTransform];
+		[newDraw notifications];
     }
     
 }

@@ -23,15 +23,12 @@
     position = [[Position alloc] initWithView:storyboard.view.frame];
 	
 	[eventTimer invalidate];
-	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(animate) userInfo:nil repeats:YES];
+	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(animationTimer) userInfo:nil repeats:YES];
 	
     return self;
 }
 
--(void)map :(NSString*)name
-{
-    NSLog(@"~  DRAW | Map %@",name);
-}
+# pragma mark Notifications -
 
 -(void)notifications
 {
@@ -63,46 +60,18 @@
 
 -(NSImageView*)notificationView :(int)x :(int)y :(NSString*)letter
 {
-	NSImageView *bubbleView = [[NSImageView alloc] initWithFrame:[position tile:4:x:y]];
+	int width  = [position tile:4:x:y].size.width;
+	int height = [position tile:4:x:y].size.height;
+	
+	NSImageView *bubbleView = [[NSImageView alloc] initWithFrame:CGRectMake([position tile:4:x:y].origin.x, [position tile:4:x:y].origin.y, width, height)];
 	bubbleView.tag = tagNotifications;
-	bubbleView.image = [NSImage imageNamed:[NSString stringWithFormat:@"fx.notification.1.png"]];
-	
-	CGFloat scaleFactor = 3.2;
-	NSImageView *letterView = [[NSImageView alloc] initWithFrame:CGRectMake( (bubbleView.frame.size.width/2)-((bubbleView.frame.size.width/scaleFactor)/2), bubbleView.frame.size.height-(bubbleView.frame.size.width/scaleFactor)-(bubbleView.frame.size.height*0.025), bubbleView.frame.size.width/scaleFactor, bubbleView.frame.size.width/scaleFactor)];
-	letterView.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@.png",letter]];
-	
-	[letterView setImageScaling:NSImageScaleProportionallyUpOrDown];
-	[bubbleView addSubview:letterView];
+	bubbleView.image = [NSImage imageNamed:[NSString stringWithFormat:@"notification.%@",letter]];
+	[bubbleView setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
 	return bubbleView;
 }
 
--(void)gates
-{
-	NSLog(@"~  DRAW | Gates");
-	for (int x = -2; x < 3; x++) {
-		for (int y = -2; y < 3; y++) {
-			
-			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
-			if( ![tileCheck isEvent] ){ continue; }
-			
-			// Event is a wall tile type
-			for(NSImageView* subview in [storyboard.roomContainer subviews]) {
-				if( subview.frame.origin.y == [position tile:5:x:y].origin.y && subview.frame.origin.x == [position tile:5:x:y].origin.x && subview.frame.size.width == [position tile:5:x:y].size.width && subview.frame.size.height == [position tile:5:x:y].size.height ){
-					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
-					
-					if( ![[newEncounter see] isEqualToString:@""] ){
-						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d with %@", [tileCheck name], x, y, [newEncounter see]);
-						if( y == 2 ){ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[newEncounter see]]]; }
-						else{ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[newEncounter see]]]; }
-						
-					}
-				}
-			}
-			
-		}
-	}
-}
+# pragma mark Notifications -
 
 -(void)eraseBlockers
 {
@@ -129,8 +98,12 @@
 	}
 }
 
+-(void)map :(NSString*)name
+{
+	NSLog(@"~  DRAW | Map %@",name);
+}
 
--(void)animate
+-(void)animationTimer
 {
 	eventTime += 1;
 	
@@ -156,8 +129,6 @@
 	[self events];
 	[self character];
 }
-
-
 
 -(void)events
 {
@@ -219,6 +190,8 @@
     storyboard.letterView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(2, 1)] ]];
     storyboard.portraitImageView.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.portrait", characterId ]];
 }
+
+# pragma mark Spellbook -
 
 -(void)animateSpellbook
 {
@@ -452,6 +425,33 @@
 	
 }
 
+-(void)gates
+{
+	NSLog(@"~  DRAW | Gates");
+	for (int x = -2; x < 3; x++) {
+		for (int y = -2; y < 3; y++) {
+			
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![tileCheck isEvent] ){ continue; }
+			
+			// Event is a wall tile type
+			for(NSImageView* subview in [storyboard.roomContainer subviews]) {
+				if( subview.frame.origin.y == [position tile:5:x:y].origin.y && subview.frame.origin.x == [position tile:5:x:y].origin.x && subview.frame.size.width == [position tile:5:x:y].size.width && subview.frame.size.height == [position tile:5:x:y].size.height ){
+					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
+					
+					if( ![[newEncounter see] isEqualToString:@""] ){
+						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d with %@", [tileCheck name], x, y, [newEncounter see]);
+						if( y == 2 ){ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[newEncounter see]]]; }
+						else{ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[newEncounter see]]]; }
+						
+					}
+				}
+			}
+			
+		}
+	}
+}
+
 -(void)roomShuffle
 {
 	NSMutableArray* tiles = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"9",@"10",@"16",@"17",@"18",@"19",@"38",@"32",@"33",@"34",@"35",@"36",@"37",@"28",@"29",@"30",@"31",@"39",@"40",nil];
@@ -564,6 +564,14 @@
 		}
 	}
 	
+	for(NSImageView* subview in tempArray) {
+		// Send at the back
+		if( subview.tag == tagNotifications ){
+			[spriteContainer addSubview:subview positioned:NSWindowAbove relativeTo:nil];
+			count += 1;
+		}
+	}
+	
 	NSLog(@"~  DRAW | drawOrder    | Redrawn %d views",count);
 }
 
@@ -641,6 +649,8 @@
 {
 	
 }
+
+# pragma mark Sequences -
 
 -(void)sequenceResetTree
 {

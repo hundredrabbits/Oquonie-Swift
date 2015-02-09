@@ -131,7 +131,7 @@
 
 -(void)save
 {
-    NSLog(@"TODO");
+    NSLog(@"Save TODO");
 }
 
 -(int)spellExists :(NSString*)spellId
