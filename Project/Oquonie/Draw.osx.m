@@ -430,6 +430,95 @@
 	[self gates];
 	[self animateContainers];
 	[self updateDrawOrder];
+	
+	[self roomAnimation];
+}
+
+-(void)roomAnimation
+{
+	NSLog(@"~  DRAW | Room         | Animate");
+	
+	for(NSImageView* subview in storyboard.roomContainer.subviews ) {
+		CGRect targetPosition = subview.frame;
+		CGRect offsetPosition = CGRectOffset(targetPosition, 0, (arc4random() % 5) );
+		[[subview animator] setFrame:offsetPosition];
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+			context.duration = 0.5;
+			[[subview animator] setFrame:offsetPosition];
+		} completionHandler:^{
+			
+		}];
+	}
+	
+}
+
+-(void)roomShuffle
+{
+	NSMutableArray* tiles = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"9",@"10",@"16",@"17",@"18",@"19",@"38",@"32",@"33",@"34",@"35",@"36",@"37",@"28",@"29",@"30",@"31",@"39",@"40",nil];
+	
+	storyboard.floor11.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	storyboard.floor01.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	storyboard.floore1.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	
+	storyboard.floor10.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	storyboard.floor00.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	storyboard.floore0.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	
+	storyboard.floor1e.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	storyboard.floor0e.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	storyboard.flooree.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	
+	NSMutableArray* walls = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20",@"21",@"22",@"23",@"24",@"25",@"26",@"28",@"29",@"30",@"31",@"32",@"33",@"34",@"35",@"36",@"37",nil];
+	
+	storyboard.wall1l.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self randomObject:walls]]];
+	storyboard.wall2l.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self randomObject:walls]]];
+	storyboard.wall3l.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[self randomObject:walls]]];
+	storyboard.wall1r.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self randomObject:walls]]];
+	storyboard.wall2r.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self randomObject:walls]]];
+	storyboard.wall3r.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[self randomObject:walls]]];
+}
+
+-(void)roomShuffle2
+{
+	NSMutableArray* tiles = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"9",@"10",@"38",@"32",@"33",@"34",@"35",@"36",@"37",@"28",@"29",@"30",@"31",@"39",@"40",nil];
+	
+	NSString* tileType1 = [self randomObject:tiles];
+	NSString* tileType2 = [self randomObject:tiles];
+	
+	storyboard.floor11.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",tileType1]];
+	storyboard.floor01.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",tileType2]];
+	storyboard.floore1.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",tileType1]];
+	
+	storyboard.floor10.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",tileType2]];
+	storyboard.floor00.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",[self randomObject:tiles]]];
+	storyboard.floore0.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",tileType2]];
+	
+	storyboard.floor1e.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",tileType1]];
+	storyboard.floor0e.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",tileType2]];
+	storyboard.flooree.image = [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@.png",tileType1]];
+	
+	NSMutableArray* walls = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"15",@"16",@"17",@"18",@"19",@"20",@"21",@"22",@"25",@"26",@"28",@"31",@"34",@"35",@"36",@"37",nil];
+	
+	NSString* wallType1 = [self randomObject:walls];
+	NSString* wallType2 = [self randomObject:walls];
+	
+	NSMutableArray* door = [NSMutableArray arrayWithObjects:@"30",@"10",@"11",@"12",@"13",@"14",nil];
+	
+	NSString* doorType = [self randomObject:door];
+	
+	storyboard.wall1l.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",wallType2]];
+	storyboard.wall2l.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",doorType]];
+	storyboard.wall3l.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",wallType2]];
+	storyboard.wall1r.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",wallType1]];
+	storyboard.wall2r.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",doorType]];
+	storyboard.wall3r.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",wallType1]];
+	
+	NSMutableArray* step = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",nil];
+	
+	NSString* steptype = [self randomObject:step];
+	
+	storyboard.step2l.image = [NSImage imageNamed:[NSString stringWithFormat:@"step.%@.l.png",steptype]];
+	storyboard.step2r.image = [NSImage imageNamed:[NSString stringWithFormat:@"step.%@.r.png",steptype]];
 }
 
 -(void)updateDrawOrder
@@ -541,7 +630,51 @@
     return [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@", [tile value] ]];
 }
 
+
+- (id)randomObject :(NSArray*)array
+{
+	id randomObject = [array count] ? array[arc4random_uniform((u_int32_t)[array count])] : nil;
+	return randomObject;
+}
+
+-(void)transformation
+{
+	
+}
+
+-(void)sequenceResetTree
+{
+	
+}
+
+-(void)sequenceEndRed
+{
+	
+}
+
+-(void)sequenceCredits1
+{
+	
+}
+
+-(void)sequenceCredits2
+{
+	
+}
+
+-(void)sequenceCredits3
+{
+	
+}
+
+-(void)sequenceIntro
+{
+
+}
+
 @end
+
+
 
 #if TARGET_OS_IPHONE
 // iOS code

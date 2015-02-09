@@ -22,6 +22,17 @@
 -(void)events;
 -(void)notifications;
 -(void)room;
+-(void)roomShuffle;
+-(void)roomShuffle2;
+
+-(void)sequenceIntro;
+-(void)sequenceResetTree;
+-(void)sequenceEndRed;
+-(void)sequenceCredits1;
+-(void)sequenceCredits2;
+-(void)sequenceCredits3;
+
+-(void)transformation;
 
 @end
 

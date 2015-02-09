@@ -937,6 +937,475 @@
 	
 	// Default
 	return @"";
+}-(NSString*)event_gateEnd:(NSString*)option
+{
+	// count pillars
+	int count = 0;
+	if([user eventExists:storageQuestPillarNecomedre]){ count += 1; }
+	if([user eventExists:storageQuestPillarNemedique]){ count += 1; }
+	if([user eventExists:storageQuestPillarNeomine]){ count += 1; }
+	if([user eventExists:storageQuestPillarNephtaline]){ count += 1; }
+	if([user eventExists:storageQuestPillarNestorine]){ count += 1; }
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		
+		if(count == 5){
+			return @"gateRedOpen";
+		}
+		else{
+			return @"gateRedClosed";
+		}
+	}
+	
+	if( [user isFinished] && count == 5){
+		[render router:[[Event alloc] initWarp:115:-1:0]];
+	}
+	else if(count == 5){
+		[render router:[[Event alloc] initWarp:104:-1:0]];
+	}
+	else{
+		[newDraw dialog:dialogHavePillarsNot:eventRed];
+	}
+	
+	return @"";
+}
+
+# pragma mark NPCs -
+
+-(NSString*)event_redGhost:(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if([user location] == 31||[user location] == 36||[user location] == 40|[user location] == 68||[user location] == 86){
+			return eventRed;
+		}
+		return @"";
+	}
+	
+	return @"";
+}
+
+-(void)event_sharkDialog
+{
+	[newDraw dialog:dialogSharkTransform:eventShark];
+}
+
+-(void)event_sharkTransform
+{
+	[user setCharacter:1];
+	[newDraw transformation];
+}
+
+-(NSString*)event_sauvegarde:(NSString*)option
+{
+	// lokiva
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	[newDraw dialog:dialogHiversaires:eventHiversaires];
+	
+	return @"";
+}
+
+// =======================
+// @ Events: Misc
+// =======================
+
+# pragma mark Misc -
+
+-(NSString*)event_null :(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	// Default
+	return @"";
+}
+
+# pragma mark Necomedre -
+
+-(NSString*)event_photocopier1 :(NSString*)option
+{
+	// Event Identifier
+	NSString*	eventSpellId	= @"photocopier1";
+	NSString*	eventSpriteId	= eventPhotocopier;
+	int			eventSpell		= spellDocument;
+	NSString* eventDialogSpell = dialogGainSpell(letterDocument);
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
+			return letterDocument;
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+	else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+	else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
+	
+	[render spellCollect:eventSpellId:6];
+	[newSound play:@"photocopier"];
+	
+	return @"";
+}
+
+-(NSString*)event_photocopier2 :(NSString*)option
+{
+	// Event Identifier
+	NSString*	eventSpellId	= @"photocopier2";
+	NSString*	eventSpriteId	= eventPhotocopier;
+	int			eventSpell		= spellDocument;
+	NSString* eventDialogSpell = dialogGainSpell(letterDocument);
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
+			return letterDocument;
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+	else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+	else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
+	
+	[render spellCollect:eventSpellId:6];
+	[newSound play:@"photocopier"];
+	
+	return @"";
+}
+
+-(NSString*)event_photocopier3 :(NSString*)option
+{
+	// Event Identifier
+	NSString*	eventSpellId	= @"photocopier3";
+	NSString*	eventSpriteId	= eventPhotocopier;
+	int			eventSpell		= spellDocument;
+	NSString* eventDialogSpell = dialogGainSpell(letterDocument);
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
+			return letterDocument;
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+	else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+	else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
+	
+	[render spellCollect:eventSpellId:6];
+	[newSound play:@"photocopier"];
+	
+	return @"";
+}
+
+-(NSString*)event_necomedreNephtaline1 :(NSString*)option
+{
+	// Event Identifier
+	NSString*	eventSpellId	= @"necomedreNephtaline1";
+	NSString*	eventSpriteId	= eventNephtaline;
+	int			eventSpell		= spellNephtaline;
+	NSString* eventDialogSpell = dialogGainSpell(letterNephtaline);
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
+			return letterNephtaline;
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+	else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+	else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
+	
+	// Spell
+	[render spellCollect:eventSpellId:eventSpell];
+	[newSound play:@"nephtaline"];
+	
+	return @"";
+}
+
+-(NSString*)event_necomedreNephtaline2 :(NSString*)option
+{
+	
+	// Event Identifier
+	NSString*	eventSpellId	= @"necomedreNephtaline2";
+	NSString*	eventSpriteId	= eventNephtaline;
+	int			eventSpell		= spellNephtaline;
+	NSString* eventDialogSpell = dialogGainSpell(letterNephtaline);
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
+			return letterNephtaline;
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+	else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+	else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
+	
+	// Spell
+	[render spellCollect:eventSpellId:eventSpell];
+	[newSound play:@"nephtaline"];
+	
+	return @"";
+}
+
+-(NSString*)event_necomedreNephtaline3 :(NSString*)option
+{
+	// Event Identifier
+	NSString*	eventSpellId	= @"necomedreNephtaline3";
+	NSString*	eventSpriteId	= eventNephtaline;
+	int			eventSpell		= spellNephtaline;
+	NSString* eventDialogSpell = dialogGainSpell(letterNephtaline);
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if( ![user spellExists:eventSpellId] && [user character] != eventSpell ){
+			return letterNephtaline;
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	// Dialogs
+	if( eventSpell == [user character])				{ [newDraw dialog:dialogHaveCharacter:eventSpriteId]; }
+	else if( [user spellExists:eventSpellId] )	{ [newDraw dialog:dialogHaveSpell:eventSpriteId]; }
+	else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
+	
+	// Spell
+	[render spellCollect:eventSpellId:eventSpell];
+	[newSound play:@"nephtaline"];
+	
+	return @"";
+}
+
+-(NSString*)event_necomedreNestorine1 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"necomedreNestorine1";
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNestorine);
+	NSString*	eventLetter			= letterNestorine;
+	NSString*	eventSpriteId		= eventNestorine;
+	int			eventSpell			= spellNestorine;
+	
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNecomedre);
+	int			eventRequirement	= characterNecomedre;
+	int eventRamenRequirement		= storageQuestRamenNecomedre;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		// Must be Nephtaline
+		if([user character] != eventRequirement){ return @""; }
+		// Must have ramen guy
+		if(![user eventExists: eventRamenRequirement]){ return @""; }
+		// If doesn't have spell already
+		if([user spellExists:eventSpellId]){ return @""; }
+		// Have the first pillar
+		if(![user eventExists: storageQuestPillarNemedique]){ return @""; }
+		// Else
+		return eventLetter;
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	[newSound play:@"nestorine"];
+	// If doesn't have the first pillar
+	if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	// If the wrong character
+	if([user character] != eventRequirement){ [newDraw dialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	// If without the ramen guy
+	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	
+	[render spellCollect:eventSpellId:eventSpell];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
+	
+	return @"";
+}
+
+-(NSString*)event_necomedreNemedique1 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"necomedreNemedique1";
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNemedique);
+	NSString*	eventLetter			= letterNemedique;
+	NSString*	eventSpriteId		= eventNemedique;
+	int			eventSpell			= spellNemedique;
+	
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNephtaline);
+	int			eventRequirement	= characterNephtaline;
+	int eventRamenRequirement		= storageQuestRamenNephtaline;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		// If the wrong character
+		if([user character] != eventRequirement){ return @""; }
+		// If without the ramen guy
+		if(![user eventExists: eventRamenRequirement]){ return @""; }
+		// If have spell already
+		if([user spellExists:eventSpellId]){ return @""; }
+		// If doesn't have the first pillar
+		if(![user eventExists: storageQuestPillarNemedique]){ return @""; }
+		// Else
+		return eventLetter;
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	[newSound play:@"nemedique"];
+	// If doesn't have the first pillar
+	if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	// If the wrong character
+	if([user character] != eventRequirement){ [newDraw dialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	// If without the ramen guy
+	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	
+	[render spellCollect:eventSpellId:eventSpell];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
+	
+	return @"";
+}
+
+-(NSString*)event_tutorialCharacter :(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		if([user location] == 30){
+			if([user character] == 6){ return letterDocument; }
+			else{ return @""; }
+		}
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return eventTutorial;
+	}
+	
+	// Dialogs
+	if([user location]==30){
+		if([user character] == 6){
+			[newDraw dialog:dialogTutorialTalk1:eventTutorial];
+			[NSTimer scheduledTimerWithTimeInterval:6 target:newDraw selector:@selector(sequenceIntro) userInfo:nil repeats:NO];
+		}
+	}
+	
+	return @"";
+}
+
+-(NSString*)event_tutorialRedDoor :(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	[render router:[[Event alloc] initWarp:1:0:0]];
+	[newDraw dialog:dialogTutorialTalk3:eventRed];
+	
+	return @"";
+}
+
+-(NSString*)event_intercom:(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		if(![newSound isPlaying]){ return @"21"; }
+		else{ return @"20"; }
+	}
+	
+	// Dialogs
+	if(![newSound isPlaying]){
+		[newSound start];
+		[newDraw dialog:dialogAudioOn:eventAudio];
+		[newSound play:@"speakerphone"];
+	}
+	else{
+		[newSound start];
+		[newDraw dialog:dialogAudioOff:eventAudio];
+		[newSound play:@"speakerphone"];
+	}
+	
+	return @"";
 }
 
 # pragma mark Nephtaline -
@@ -1888,6 +2357,449 @@
     return @"";
 }
 
+#pragma mark Nemedique -
+
+-(NSString*)event_nemediqueNestorine1 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"nemediqueNestorine1";
+	NSString*	eventDialogSpell	= dialogGainSpell(letterNestorine);
+	NSString*	eventLetter			= letterNestorine;
+	NSString*	eventSpriteId		= eventNestorine;
+	int			eventSpell			= spellNestorine;
+	
+	NSString*	eventWrongCharacter	= dialogHaveCharacterNot(letterNecomedre);
+	int			eventRequirement	= characterNecomedre;
+	int eventRamenRequirement		= storageQuestRamenNecomedre;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		// Must be Nephtaline
+		if([user character] != eventRequirement){ return @""; }
+		// Must have ramen guy
+		if([user eventExists:eventRamenRequirement] < 1){ return @""; }
+		// If doesn't have spell already
+		if([user spellExists:eventSpellId]){ return @""; }
+		// Have the first pillar
+		if(![user eventExists:storageQuestPillarNemedique]){ return @""; }
+		// Else
+		return eventLetter;
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	[newSound play:@"nestorine"];
+	// If doesn't have the first pillar
+	if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
+	// If the wrong character
+	if([user character] != eventRequirement){ [newDraw dialog:eventWrongCharacter:eventSpriteId]; return @""; }
+	// If without the ramen guy
+	if(![user eventExists: eventRamenRequirement]){ [newDraw dialog:dialogHaveRamenNot:eventSpriteId]; return @""; }
+	
+	[render spellCollect:eventSpellId:eventSpell];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
+	
+	return @"";
+}
+
+// =======================
+// @ Events: NPCs
+// =======================
+
+# pragma mark NPCs -
+
+// End Tree
+-(NSString*)event_endReset :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"]){ return @"";}
+	
+	[newDraw sequenceResetTree];
+	
+	return @"";
+}
+
+// Red Character
+
+-(NSString*)event_redEnd :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postUpdate"]){
+		if( ![user eventExists:storageEndForm]){
+			[newDraw sequenceEndRed];
+			[user eventCollect:storageEndForm];
+			return eventRed;
+		}
+	}
+	return @"";
+}
+
+
+-(NSString*)event_credit1 :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @"";}
+	if([option isEqualToString:@"postUpdate"])		{ return @"";}
+	
+	[newDraw dialog:@"OQS":@"31"];
+	[newSound play:@"rekka"];
+	[newDraw sequenceCredits1];
+	
+	return @"";
+}
+
+-(NSString*)event_credit2 :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @"";}
+	if([option isEqualToString:@"postUpdate"])		{ return @"";}
+	
+	[newDraw dialog:@"OPS":@"32"];
+	[newSound play:@"devine"];
+	[newDraw sequenceCredits2];
+	return @"";
+}
+
+-(NSString*)event_credit3 :(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @"";}
+	if([option isEqualToString:@"postUpdate"])		{ return @"";}
+
+	[newDraw sequenceCredits3];
+	return @"";
+}
+
+# pragma mark Secret -
+
+-(NSString*)event_secretCat1 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"secretCat1";
+	NSString*	eventDialogSpell	= dialogGainSpell(letterCat);
+	NSString*	eventLetter			= letterCat;
+	NSString*	eventSpriteId		= eventCat;
+	int			eventSpell			= spellCat;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([user character] == characterCat){ return @""; }
+		// If doesn't have spell already
+		if([user spellExists:eventSpellId]){ return @""; }
+		// Else
+		return eventLetter;
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	[newSound play:@"cat"];
+	
+	[render spellCollect:eventSpellId:eventSpell];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
+	
+	return @"";
+}
+
+
+-(NSString*)event_secretCat2 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"secretCat2";
+	NSString*	eventDialogSpell	= dialogGainSpell(letterCat);
+	NSString*	eventLetter			= letterCat;
+	NSString*	eventSpriteId		= eventCat;
+	int			eventSpell			= spellCat;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([user character] == characterCat){ return @""; }
+		// If doesn't have spell already
+		if([user spellExists:eventSpellId]){ return @""; }
+		// Else
+		return eventLetter;
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	[newSound play:@"cat"];
+	
+	[render spellCollect:eventSpellId:eventSpell];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
+	
+	return @"";
+}
+
+-(NSString*)event_secretCat3 :(NSString*)option
+{
+	// Special Event Identifier
+	NSString*	eventSpellId		= @"secretCat3";
+	NSString*	eventDialogSpell	= dialogGainSpell(letterCat);
+	NSString*	eventLetter			= letterCat;
+	NSString*	eventSpriteId		= eventCat;
+	int			eventSpell			= spellCat;
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		if([user character] == characterCat){ return @""; }
+		// If doesn't have spell already
+		if([user spellExists:eventSpellId]){ return @""; }
+		// Else
+		return eventLetter;
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	[newSound play:@"cat"];
+	
+	[render spellCollect:eventSpellId:eventSpell];
+	[newDraw dialog:eventDialogSpell:eventSpriteId];
+	
+	return @"";
+}
+
+-(NSString*)event_petunia:(NSString*)option
+{
+	if([option isEqualToString:@"postNotification"]){ return @""; }
+	if([option isEqualToString:@"postUpdate"]){	return @""; }
+	
+	[newDraw roomShuffle];
+	[newSound play:@"petunia"];
+	
+	return @"";
+}
+
+- (NSString*)randomObject:(NSArray*)array
+{
+	if ([array count] == 0) {
+		return nil;
+	}
+	return [array objectAtIndex: arc4random() % [array count]];
+}
+
+-(NSString*)cat:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	[newDraw dialog:@"UUU":eventCat];
+	[newSound play:@"cat"];
+	
+	return @"";
+}
+
+-(NSString*)catDoorFork:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	if([user isFinished]){
+		[render router:[[Event alloc] initWarp:112:1:1]];
+	}
+	else{
+		[render router:[[Event alloc] initWarp:42:1:1]];
+	}
+	
+	return @"";
+}
+
+-(NSString*)noface:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return eventNoFace;
+	}
+	
+	if( [user character] == 7 ){
+		
+		[user setEnabled:0];
+		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
+		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(sharkTransform) userInfo:nil repeats:NO];
+		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(nofaceWarp) userInfo:nil repeats:NO];
+		
+		[newSound play:@"noface"];
+		[newDraw dialog:dialogIntroduction:eventNoFace];
+		
+		// Clear Spellbook
+		[user clearSpellbook];
+	}
+	else{
+		[newSound play:@"noface"];
+		[newDraw dialog:dialogNoFace:eventNoFace];
+	}
+	return @"";
+}
+
+-(void)nofaceWarp
+{
+	[user setEnabled:0];
+	[render router:[[Event alloc] initWarp:130:0:0]];
+}
+
+-(NSString*)event_daniel:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	[newDraw dialog:@"UVW":@"34"];
+	[newSound play:@"noface"];
+	
+	return @"";
+}
+
+-(NSString*)event_shuffleRoom:(NSString*)option
+{
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		[self shuffler];
+		return @"";
+	}
+	
+	return @"";
+}
+
+-(NSString*)event_kamera:(NSString*)option
+{
+	return @"";
+	
+	/* TODO
+	if(![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+	{
+		return @"";
+	}
+	
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	NSString* twitterText = @"";
+	
+	// Booth #1
+	if([user location] == 149){ twitterText = @"I have found the first of seven hidden photobooths in #oquonie.\n"; }
+	// Booth #2
+	if([user location] == 150){ twitterText = @"I have found the second of seven hidden photobooths in #oquonie.\n"; }
+	// Booth #3
+	if([user location] == 151){ twitterText = @"I have found the third of seven hidden photobooths in #oquonie.\n"; }
+	// Booth #4
+	if([user location] == 152){ twitterText = @"I have found the fourth of seven hidden photobooths in #oquonie.\n"; }
+	// Booth #5
+	if([user location] == 153){ twitterText = @"I have found the fifth of seven hidden photobooths in #oquonie.\n"; }
+	// Booth #6
+	if([user location] == 154){ twitterText = @"I have found the sixth of seven hidden photobooths in #oquonie.\n"; }
+	// Booth #7
+	if([user location] == 155){ twitterText = @"I have found the last of seven hidden photobooths in #oquonie!\n"; }
+	
+	// Take Screenshot
+	CGRect rect = [self.view bounds];
+	UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	[self.view.layer renderInContext:context];
+	UIImage *capturedImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	
+	NSString  *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/capturedImage.jpg"]];
+	[UIImageJPEGRepresentation(capturedImage, 0.95) writeToFile:imagePath atomically:YES];
+	
+	SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+	[tweetSheet setInitialText:twitterText];
+	[tweetSheet addImage:capturedImage];
+	[self presentViewController:tweetSheet animated:YES completion:nil];
+	
+	return @"";
+	 */
+}
+
+-(NSString*)event_gatePhotoBooth :(NSString*)option
+{
+	return @"";
+	
+	/* TODO
+	// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		// Booth #1
+		if([user location] == 3){ return @"104"; }
+		// Booth #2
+		if([user location] == 37){ return @"105"; }
+		// Booth #3
+		if([user location] == 46){ return @"106"; }
+		// Booth #4
+		if([user location] == 66){ return @"107"; }
+		// Booth #5
+		if([user location] == 89){ return @"110"; }
+		// Booth #6
+		if([user location] == 102){ return @"108"; }
+		// Booth #7
+		if([user location] == 142){ return @"109"; }
+	}
+	
+	if(![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+	{
+		return @"";
+	}
+	
+	// Booth #1
+	if([user location] == 3){ [self eventWarp:@"149" :@"0,-1"]; }
+	// Booth #2
+	if([user location] == 37){ [self eventWarp:@"150" :@"-1,-1"]; }
+	// Booth #3
+	if([user location] == 46){ [self eventWarp:@"151" :@"-1,0"]; }
+	// Booth #4
+	if([user location] == 66){ [self eventWarp:@"152" :@"-1,0"]; }
+	// Booth #5
+	if([user location] == 89){ [self eventWarp:@"153" :@"0,-1"]; }
+	// Booth #6
+	if([user location] == 102){ [self eventWarp:@"154" :@"0,-1"]; }
+	// Booth #7
+	if([user location] == 142){ [self eventWarp:@"155" :@"0,-1"]; }
+	
+	return @"";
+	*/
+}
+
+-(void)shuffler
+{
+	[newDraw roomShuffle2];
+}
 
 
 @end
