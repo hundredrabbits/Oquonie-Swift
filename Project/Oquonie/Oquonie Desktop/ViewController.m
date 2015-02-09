@@ -39,10 +39,10 @@
 	NSLog(@"  SETUP + ------------------");
 	
 	[user listening:0];
-	[user setLocation:21];
+	[user setLocation:29];
 	[user setCharacter:1];
 	
-	newDraw = [[Draw alloc] init];
+	[NSTimer scheduledTimerWithTimeInterval:0.25 target:render selector:@selector(layout) userInfo:nil repeats:NO];
 }
 
 -(void)template

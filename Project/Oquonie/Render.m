@@ -106,4 +106,12 @@
 	[newDraw notifications];
 }
 
+-(void)layout
+{
+	NSLog(@"+ RENDR | Layout");
+	
+	newDraw = [[Draw alloc] init];
+	[newDraw layout];
+}
+
 @end

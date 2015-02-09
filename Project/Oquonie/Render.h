@@ -20,6 +20,7 @@
 
 -(void)router :(Event*)event;
 -(void)spellCollect :(NSString*)spellId :(int)spellType;
+-(void)layout;
 
 @end
 

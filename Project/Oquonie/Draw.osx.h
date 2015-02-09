@@ -36,6 +36,8 @@
 
 -(void)transformation;
 
+-(void)layout;
+
 @end
 
 NSTimer * eventTimer;

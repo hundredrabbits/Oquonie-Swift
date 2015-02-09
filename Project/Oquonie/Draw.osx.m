@@ -18,7 +18,7 @@
 
 -(Draw*)init
 {
-    NSLog(@"+  DRAW | Init");
+    NSLog(@"+  DRAW | Init(width:%f height:%f)",storyboard.view.frame.size.width,storyboard.view.frame.size.height);
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
     position = [[Position alloc] initWithView:storyboard.view.frame];
 	
@@ -28,19 +28,22 @@
 	[storyboard.spriteCharacter setImageScaling:NSImageScaleProportionallyUpOrDown];
 	[storyboard.spriteShadow setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
-	[storyboard.interfaceContainer setWantsLayer:YES];
-	[storyboard.interfaceContainer.layer setBackgroundColor:[[NSColor redColor] CGColor]];
-	[storyboard.interfaceContainer setAlphaValue:0.3];
-	
-	[storyboard.spriteContainer setWantsLayer:YES];
-	[storyboard.spriteContainer.layer setBackgroundColor:[[NSColor blueColor] CGColor]];
-	[storyboard.spriteContainer setAlphaValue:0.3];
-	
-	[storyboard.roomContainer setWantsLayer:YES];
-	[storyboard.roomContainer.layer setBackgroundColor:[[NSColor yellowColor] CGColor]];
-	[storyboard.roomContainer setAlphaValue:0.3];
 	
     return self;
+}
+
+-(void)layout
+{
+	NSLog(@"~  DRAW | Layout");
+	
+	storyboard.roomContainer.frame = storyboard.view.frame;
+	storyboard.spriteContainer.frame = storyboard.view.frame;
+	storyboard.interfaceContainer.frame = storyboard.view.frame;
+	
+	storyboard.dialogContainer.hidden = YES;
+	
+	[self room];
+	[self character];
 }
 
 # pragma mark Notifications -
@@ -451,6 +454,7 @@
 {
 	NSLog(@"~  DRAW | Room         | Animate");
 	
+	/* TODO
 	for(NSImageView* subview in storyboard.roomContainer.subviews ) {
 		CGRect targetPosition = subview.frame;
 		CGRect offsetPosition = CGRectOffset(targetPosition, 0, (arc4random() % 5) );
@@ -462,6 +466,7 @@
 			
 		}];
 	}
+	 */
 	
 }
 
