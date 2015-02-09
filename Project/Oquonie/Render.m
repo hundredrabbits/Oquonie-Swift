@@ -37,6 +37,7 @@
     
     newDraw = [[Draw alloc] init];
     [newDraw animateWalk];
+    [newDraw animateSpellbook];
 }
 
 -(void)renderWarp :(Event*)event
@@ -64,7 +65,9 @@
 -(void)spellCollect :(NSString*)spellId :(int)spellType
 {
     if(spellType == [user character]){
-        NSLog(@"  RENDR | Spell        | Already type:%d",spellType);
+		NSLog(@"  RENDR | Spell        | Already type:%d",spellType);
+		[newDraw notifications];
+		[newDraw animateSpellbook];
         return;
     }
     
@@ -72,7 +75,9 @@
     for (NSArray *spellbookItem in userData[@"spellbook"]) {
         if( [spellbookItem[0] isEqualToString:spellId] && [spellbookItem[1] intValue] == spellType){
             NSLog(@"  RENDR | Spell        | Removed  -> id:%@ type:%d",spellId,spellType);
-            userData[@"spellbook"][index] = @[@"",@""];
+			userData[@"spellbook"][index] = @[@"",@""];
+			[newDraw notifications];
+			[newDraw animateSpellbook];
             return;
         }
         index += 1;
@@ -95,11 +100,10 @@
         NSLog(@"  RENDR | Transform    | %d",[userData[@"spellbook"][1][1] intValue]);
         [user setCharacter:[userData[@"spellbook"][1][1] intValue]];
         [user clearSpellbook];
-        [newDraw animateSpellbook];
         [newDraw animateTransform];
-		[newDraw notifications];
-    }
-    
+	}
+	[newDraw animateSpellbook];
+	[newDraw notifications];
 }
 
 @end
