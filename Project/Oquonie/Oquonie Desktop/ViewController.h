@@ -65,6 +65,7 @@
 @property (weak) IBOutlet NSView *roomColor;
 @property (weak) IBOutlet NSImageView *parallaxBack;
 @property (weak) IBOutlet NSImageView *parallaxFront;
+@property (weak) IBOutlet NSImageView *vignette;
 
 @end
 

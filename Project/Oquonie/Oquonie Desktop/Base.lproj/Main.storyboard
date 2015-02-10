@@ -105,6 +105,11 @@
                                 <rect key="frame" x="117" y="0.0" width="246" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ROT-vk-um2" userLabel="vignette">
+                                <rect key="frame" x="166" y="62" width="147" height="146"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="gyo-hy-pf7"/>
+                            </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="N85-dO-HK3" userLabel="parallaxBack">
                                 <rect key="frame" x="166" y="62" width="147" height="146"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,15 +230,15 @@
                                 <rect key="frame" x="117" y="0.0" width="246" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Kzb-jf-9zz" userLabel="spriteShadow">
+                                        <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="fx.shadow" id="vsE-hO-sb3"/>
+                                    </imageView>
                                     <customView id="Y2U-Wf-1RE" userLabel="spriteUser">
                                         <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Kzb-jf-9zz" userLabel="spriteShadow">
-                                                <rect key="frame" x="49" y="62" width="147" height="146"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="fx.shadow" id="vsE-hO-sb3"/>
-                                            </imageView>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="82y-WS-YAc" userLabel="spriteCharacter">
                                                 <rect key="frame" x="49" y="62" width="147" height="146"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,6 +248,11 @@
                                     </customView>
                                 </subviews>
                             </customView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DOF-D6-wbi" userLabel="parallaxFront">
+                                <rect key="frame" x="166" y="62" width="147" height="146"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="TRj-kI-Flv"/>
+                            </imageView>
                             <customView id="Biw-3A-RJf" userLabel="interfaceContainer">
                                 <rect key="frame" x="117" y="0.0" width="246" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -307,11 +317,6 @@
                                     </customView>
                                 </subviews>
                             </customView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DOF-D6-wbi" userLabel="parallaxFront">
-                                <rect key="frame" x="166" y="62" width="147" height="146"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="TRj-kI-Flv"/>
-                            </imageView>
                         </subviews>
                     </view>
                     <connections>
@@ -350,6 +355,7 @@
                         <outlet property="step2r" destination="rlq-Un-AUh" id="IZG-3x-vEQ"/>
                         <outlet property="step3l" destination="Ehh-36-lnq" id="W3M-yB-8gS"/>
                         <outlet property="step3r" destination="GIf-Bw-eTy" id="Lo0-5o-WuR"/>
+                        <outlet property="vignette" destination="ROT-vk-um2" id="IYV-G7-Wr7"/>
                         <outlet property="wall1l" destination="xuv-Ca-KGw" id="8Rv-SX-q4b"/>
                         <outlet property="wall1r" destination="c42-HO-I2L" id="FtE-j6-BQE"/>
                         <outlet property="wall2l" destination="MXr-Ge-xjU" id="32T-qa-KWA"/>

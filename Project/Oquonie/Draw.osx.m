@@ -39,8 +39,13 @@
 	storyboard.roomContainer.frame = storyboard.view.frame;
 	storyboard.spriteContainer.frame = storyboard.view.frame;
 	storyboard.interfaceContainer.frame = storyboard.view.frame;
+	storyboard.dialogContainer.frame = storyboard.view.frame;
+	storyboard.vignette.frame = storyboard.view.frame;
 	
 	storyboard.dialogContainer.hidden = YES;
+	storyboard.vignette.alphaValue = 0;
+	
+	[storyboard.vignette setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
 	[self room];
 	[self character];
@@ -325,6 +330,7 @@
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 0.25;
 		[[storyboard.spriteUser animator] setFrame:[position tile:4 :[user x] : [user y]]];
+		[[storyboard.spriteShadow animator] setFrame:[position tile:4 :[user x] : [user y]]];
 	} completionHandler:^{
 		[user setState:@"stand"];
 		[user setEnabled:1];
@@ -434,10 +440,10 @@
 	storyboard.step1r.image = [self tileImageAtId:-2:-1];
 	storyboard.step2r.image = [self tileImageAtId:-2:0];
 	storyboard.step3r.image = [self tileImageAtId:-2:1];
-	
+
+	storyboard.spriteShadow.frame = [position tile:4 :[user x] : [user y]];
 	storyboard.spriteUser.frame = [position tile:4 :[user x] : [user y]];
 	storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
-	storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
 	storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
 	
 	[self blockers];
@@ -681,17 +687,43 @@
 	NSString * warpImage = [NSString stringWithFormat:@"char%d.warp.l.f.1",currentCharacter];
 	storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
 	
+	// Character
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 1.0;
-		[[storyboard.spriteUser animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 50)];
+		[[storyboard.spriteUser animator] setFrame:CGRectOffset([position tile:4 :[user x]:[user y]], 0, 50)];
 	} completionHandler:^{
 		
+		[self spellbookHide];
+		
 		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
-			NSString * warpImage = [NSString stringWithFormat:@"char%d.warp.l.f.1",nextCharacter];
-			storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
-			context.duration = 1.0;
+			context.duration = 1.5;
 			[[storyboard.spriteUser animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 25)];
 		} completionHandler:^{
+			
+			NSString * warpImage = [NSString stringWithFormat:@"char%d.warp.l.f.1",nextCharacter];
+			storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
+			storyboard.vignette.alphaValue = 1;
+			storyboard.vignette.image = [NSImage imageNamed:@"fx.vignette.1.horizontal"];
+			
+			[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+				context.duration = 1.0;
+				[[storyboard.spriteUser animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 30)];
+			} completionHandler:^{
+				
+				[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+					context.duration = 1.0;
+					[[storyboard.spriteUser animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 0)];
+				} completionHandler:^{
+					
+					NSString * warpImage = [NSString stringWithFormat:@"char%d.stand.l.f.1",nextCharacter];
+					storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
+					[user setLock:0];
+					[user setState:@"stand"];
+					storyboard.vignette.alphaValue = 0;
+					
+				}];
+				
+			}];
 			
 		}];
 		
