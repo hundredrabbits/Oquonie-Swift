@@ -395,15 +395,15 @@
 	[storyboard.floor11 setImageScaling:NSImageScaleProportionallyUpOrDown];
 	[storyboard.flooree setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
-	storyboard.floor00.frame = [position tile:0 :0 :0];
-	storyboard.floor1e.frame = [position tile:0 :1 :-1];
-	storyboard.floore1.frame = [position tile:0 :-1 :1];
-	storyboard.floor10.frame = [position tile:0 :1 :0];
-	storyboard.floor01.frame = [position tile:0 :0 :1];
-	storyboard.floor0e.frame = [position tile:0 :0 :-1];
-	storyboard.floore0.frame = [position tile:0 :-1 :0];
-	storyboard.floor11.frame = [position tile:0 :1 :1];
-	storyboard.flooree.frame = [position tile:0 :-1 :-1];
+	[[storyboard.floor11 animator]  setFrame:[position tile:0 :1 :1]];
+	[[storyboard.floor10 animator]  setFrame:[position tile:0 :1 :0]];
+	[[storyboard.floor1e animator]  setFrame:[position tile:0 :1 :-1]];
+	[[storyboard.floor01 animator]  setFrame:[position tile:0 :0 :1]];
+	[[storyboard.floor00 animator]  setFrame:[position tile:0 :0 :0]];
+	[[storyboard.floor0e animator]  setFrame:[position tile:0 :0 :-1]];
+	[[storyboard.floore1 animator]  setFrame:[position tile:0 :-1 :1]];
+	[[storyboard.floore0 animator]  setFrame:[position tile:0 :-1 :0]];
+	[[storyboard.flooree animator]  setFrame:[position tile:0 :-1 :-1]];
 	
 	storyboard.floor00.image = [self tileImageAtId:0:0];
 	storyboard.floor1e.image = [self tileImageAtId:1:-1];
@@ -415,13 +415,13 @@
 	storyboard.floor11.image = [self tileImageAtId:1:1];
 	storyboard.flooree.image = [self tileImageAtId:-1:-1];
 	
-	storyboard.wall1l.frame = [position tile:5 :2 :-1];
-	storyboard.wall2l.frame = [position tile:5 :2 : 0];
-	storyboard.wall3l.frame = [position tile:5 :2 : 1];
+	[[storyboard.wall1l animator] setFrame:[position tile:5 :2 :-1]];
+	[[storyboard.wall2l animator] setFrame:[position tile:5 :2 : 0]];
+	[[storyboard.wall3l animator] setFrame:[position tile:5 :2 : 1]];
 	
-	storyboard.wall1r.frame = [position tile:5 : -1 : 2];
-	storyboard.wall2r.frame = [position tile:5 : 0 : 2];
-	storyboard.wall3r.frame = [position tile:5 : 1 : 2];
+	[[storyboard.wall1r animator] setFrame:[position tile:5 : -1 : 2]];
+	[[storyboard.wall2r animator] setFrame:[position tile:5 : 0 : 2]];
+	[[storyboard.wall3r animator] setFrame:[position tile:5 : 1 : 2]];
 	
 	storyboard.step1l.frame = [position tile:0 :1 :-2];
 	storyboard.step2l.frame = [position tile:0 :0 :-2];
@@ -761,6 +761,120 @@
 {
 	[user setPosition:0 :0];
 	[newDraw animateWalk];
+	
+	eventTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sequenceWarpLobbyAnimation) userInfo:nil repeats:NO];
+	
+}
+
+-(void)sequenceWarpLobbyAnimation
+{
+	[user setState:@"warp"];
+	[user setLock:1];
+	[user setHorizontal:@"l"];
+	[user setVertical:@"f"];
+	[user setEnabled:1];
+	
+	NSString * warpImage = [NSString stringWithFormat:@"char%d.warp.l.f.1",user.character];
+	storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
+	
+	// Character
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 3.0;
+		[[storyboard.spriteCharacter animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 50)];
+	} completionHandler:^{
+		
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+			context.duration = 3.0;
+			[[storyboard.spriteCharacter animator] setFrame:[position tile:4 :[user x] : [user y]]];
+		} completionHandler:^{
+			
+			NSString * warpImage = [NSString stringWithFormat:@"char%d.stand.l.f.1",user.character];
+			storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
+			[user setEnabled:1];
+			[user setLock:0];
+		}];
+	}];
+	
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		
+		context.duration = 2.0;
+		[[storyboard.floor11 animator] setFrame:CGRectOffset([position tile:0 :1 :1], 0, (arc4random() % 25) )];
+		[[storyboard.floor10 animator] setFrame:CGRectOffset([position tile:0 :1 :0], 0, (arc4random() % 25) )];
+		[[storyboard.floor1e animator] setFrame:CGRectOffset([position tile:0 :1 :-1], 0, (arc4random() % 25) )];
+		[[storyboard.floor01 animator] setFrame:CGRectOffset([position tile:0 :0 :1], 0, (arc4random() % 25) )];
+		[[storyboard.floor00 animator] setFrame:CGRectOffset([position tile:0 :0 :0], 0, (arc4random() % 25) )];
+		[[storyboard.floor0e animator] setFrame:CGRectOffset([position tile:0 :0 :-1], 0, (arc4random() % 25) )];
+		[[storyboard.floore1 animator] setFrame:CGRectOffset([position tile:0 :-1 :1], 0, (arc4random() % 25) )];
+		[[storyboard.floore0 animator] setFrame:CGRectOffset([position tile:0 :-1 :0], 0, (arc4random() % 25) )];
+		[[storyboard.flooree animator] setFrame:CGRectOffset([position tile:0 :-1 :-1], 0, (arc4random() % 25) )];
+		
+		[[storyboard.wall1l animator] setFrame:CGRectOffset([position tile:5 :2 :-1],0,(arc4random() % 35) )];
+		[[storyboard.wall2l animator] setFrame:CGRectOffset([position tile:5 :2 :0], 0, (arc4random() % 35) )];
+		[[storyboard.wall3l animator] setFrame:CGRectOffset([position tile:5 :2 :1], 0, (arc4random() % 35) )];
+		
+		[[storyboard.wall1r animator] setFrame:CGRectOffset([position tile:5 :-1:2],0,(arc4random() % 35) )];
+		[[storyboard.wall2r animator] setFrame:CGRectOffset([position tile:5 :0 :2], 0, (arc4random() % 35) )];
+		[[storyboard.wall3r animator] setFrame:CGRectOffset([position tile:5 :1 :2], 0, (arc4random() % 35) )];
+		
+		[[storyboard.roomContainer animator] setAlphaValue:0];
+		
+	} completionHandler:^{
+		
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+			
+			[user setLocation:1];
+			room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
+			
+			storyboard.floor00.image = [self tileImageAtId:0:0];
+			storyboard.floor1e.image = [self tileImageAtId:1:-1];
+			storyboard.floore1.image = [self tileImageAtId:-1:1];
+			storyboard.floor10.image = [self tileImageAtId:1:0];
+			storyboard.floor01.image = [self tileImageAtId:0:1];
+			storyboard.floor0e.image = [self tileImageAtId:0:-1];
+			storyboard.floore0.image = [self tileImageAtId:-1:0];
+			storyboard.floor11.image = [self tileImageAtId:1:1];
+			storyboard.flooree.image = [self tileImageAtId:-1:-1];
+			
+			storyboard.wall1l.image = [self tileImageAtId:2:-1];
+			storyboard.wall2l.image = [self tileImageAtId:2:0];
+			storyboard.wall3l.image = [self tileImageAtId:2:1];
+			storyboard.wall1r.image = [self tileImageAtId:1:2];
+			storyboard.wall2r.image = [self tileImageAtId:0:2];
+			storyboard.wall3r.image = [self tileImageAtId:-1:2];
+			
+			storyboard.step1l.image = [self tileImageAtId:1:-2];
+			storyboard.step2l.image = [self tileImageAtId:0:-2];
+			storyboard.step3l.image = [self tileImageAtId:-1:-2];
+			storyboard.step1r.image = [self tileImageAtId:-2:-1];
+			storyboard.step2r.image = [self tileImageAtId:-2:0];
+			storyboard.step3r.image = [self tileImageAtId:-2:1];
+			
+			context.duration = 4.0;
+			
+			[[storyboard.floor11 animator]  setFrame:[position tile:0 :1 :1]];
+			[[storyboard.floor10 animator]  setFrame:[position tile:0 :1 :0]];
+			[[storyboard.floor1e animator]  setFrame:[position tile:0 :1 :-1]];
+			[[storyboard.floor01 animator]  setFrame:[position tile:0 :0 :1]];
+			[[storyboard.floor00 animator]  setFrame:[position tile:0 :0 :0]];
+			[[storyboard.floor0e animator]  setFrame:[position tile:0 :0 :-1]];
+			[[storyboard.floore1 animator]  setFrame:[position tile:0 :-1 :1]];
+			[[storyboard.floore0 animator]  setFrame:[position tile:0 :-1 :0]];
+			[[storyboard.flooree animator]  setFrame:[position tile:0 :-1 :-1]];
+			
+			[[storyboard.wall1l animator] setFrame:[position tile:5 :2 :-1]];
+			[[storyboard.wall2l animator] setFrame:[position tile:5 :2 : 0]];
+			[[storyboard.wall3l animator] setFrame:[position tile:5 :2 : 1]];
+			
+			[[storyboard.wall1r animator] setFrame:[position tile:5 : -1 : 2]];
+			[[storyboard.wall2r animator] setFrame:[position tile:5 : 0 : 2]];
+			[[storyboard.wall3r animator] setFrame:[position tile:5 : 1 : 2]];
+			
+			[[storyboard.roomContainer animator] setAlphaValue:1];
+			
+		} completionHandler:^{}];
+		
+	}];
 }
 
 -(void)sequenceResetTree
