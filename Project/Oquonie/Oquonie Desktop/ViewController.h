@@ -44,7 +44,6 @@
 @property (weak) IBOutlet NSImageView *step3r;
 
 @property (weak) IBOutlet DrawView *spriteContainer;
-@property (weak) IBOutlet DrawView *spriteUser;
 @property (weak) IBOutlet NSImageView *spriteShadow;
 @property (weak) IBOutlet NSImageView *spriteCharacter;
 
@@ -62,7 +61,7 @@
 @property (weak) IBOutlet NSImageView *letterView2;
 @property (weak) IBOutlet NSImageView *letterView3;
 
-@property (weak) IBOutlet NSView *roomColor;
+@property (weak) IBOutlet NSImageView *roomColor;
 @property (weak) IBOutlet NSImageView *parallaxBack;
 @property (weak) IBOutlet NSImageView *parallaxFront;
 @property (weak) IBOutlet NSImageView *vignette;

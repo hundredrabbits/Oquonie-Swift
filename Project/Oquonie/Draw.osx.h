@@ -24,6 +24,7 @@
 -(void)roomShuffle;
 -(void)roomShuffle2;
 
+-(void)sequenceWarpLobby;
 -(void)sequenceIntro;
 -(void)sequenceResetTree;
 -(void)sequenceEndRed;
@@ -33,8 +34,6 @@
 
 -(void)spellbookDisplay;
 -(void)spellbookHide;
-
--(void)transformation;
 
 -(void)layout;
 

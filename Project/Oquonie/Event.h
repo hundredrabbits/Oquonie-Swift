@@ -21,11 +21,11 @@
 -(int)y;
 -(int)location;
 
--(void)addName :(NSString*)name;
--(void)addCoordinates :(int)x :(int)y;
--(void)addAudio :(NSString*)soundName;
--(void)addLocation :(int)value;
--(void)addType :(NSString*)value;
+-(void)setName :(NSString*)name;
+-(void)setCoordinates :(int)x :(int)y;
+-(void)setAudio :(NSString*)soundName;
+-(void)setLocation :(int)value;
+-(void)setType :(NSString*)value;
 
 
 @end

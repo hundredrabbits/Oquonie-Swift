@@ -63,28 +63,28 @@
     return eventData[@"type"];
 }
 
--(void)addName :(NSString*)value
+-(void)setName :(NSString*)value
 {
     eventData[@"name"] = value;
 }
 
--(void)addType :(NSString*)value
+-(void)setType :(NSString*)value
 {
     eventData[@"type"] = value;
 }
 
--(void)addCoordinates :(int)x :(int)y
+-(void)setCoordinates :(int)x :(int)y
 {
     eventData[@"x"] = @(x);
     eventData[@"y"] = @(y);
 }
 
--(void)addAudio :(NSString*)soundName
+-(void)setAudio :(NSString*)soundName
 {
     eventData[@"audio"] = soundName;
 }
 
--(void)addLocation :(int)value
+-(void)setLocation :(int)value
 {
     eventData[@"location"] = @(value);
 }

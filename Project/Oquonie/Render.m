@@ -26,6 +26,7 @@
     else if( [[event type] isEqualToString:@"event"] ){ [self renderEvent:event]; }
     else if( [[event type] isEqualToString:@"block"] ){ [self renderBlock:event]; }
     else if( [[event type] isEqualToString:@"warp"] ){ [self renderWarp:event]; }
+	else{ NSLog(@"Unknown Event:%@",[event type]); }
 }
 
 -(void)renderMove :(Event*)event

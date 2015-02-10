@@ -39,8 +39,8 @@
 	NSLog(@"  SETUP + ------------------");
 	
 	[user listening:0];
-	[user setLocation:29];
-	[user setCharacter:1];
+	[user setLocation:38];
+	[user setCharacter:2];
 	
 	[render spellCollect:@"photocopier3":6];
 	[render spellCollect:@"photocopier2":6];

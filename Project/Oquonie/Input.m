@@ -24,39 +24,39 @@
     
     if( [destination isEmpty] || [destination isBlocker] ){
         Event * newEvent = [[Event alloc] initWithTile:destination];
-        [newEvent addType:@"block"];
-        [newEvent addCoordinates:[user x]+posX:[user y]+posY];
+        [newEvent setType:@"block"];
+        [newEvent setCoordinates:[user x]+posX:[user y]+posY];
         [render router:newEvent];
         return;
     }
     else if( [destination isWarp] ){
         Event * newEvent = [[Event alloc] initWithTile:destination];
         NSArray* coordinates = [[destination data] componentsSeparatedByString: @","];
-        [newEvent addType:@"warp"];
-        [newEvent addCoordinates:[coordinates[0] intValue]:[coordinates[1] intValue]];
-        [newEvent addLocation:[[destination name] intValue]];
+        [newEvent setType:@"warp"];
+        [newEvent setCoordinates:[coordinates[0] intValue]:[coordinates[1] intValue]];
+        [newEvent setLocation:[[destination name] intValue]];
         [render router:newEvent];
         return;
     }
 	else if( [destination isEvent] ){
         Event * newEvent = [[Event alloc] initWithTile:destination];
-        [newEvent addType:@"event"];
-        [newEvent addCoordinates:[user x]+posX:[user y]+posY];
+        [newEvent setType:@"event"];
+        [newEvent setCoordinates:[user x]+posX:[user y]+posY];
         [render router:newEvent];
         return;
     }
     else if( ([user x]+posX) > 1 || ([user x]+posX) < -1 || ([user y]+posY) > 1 || ([user y]+posY) < -1 ){
         Event * newEvent = [[Event alloc] initWithTile:destination];
-        [newEvent addType:@"block"];
-        [newEvent addCoordinates:[user x]+posX:[user y]+posY];
+        [newEvent setType:@"block"];
+        [newEvent setCoordinates:[user x]+posX:[user y]+posY];
         [render router:newEvent];
         return;
     }
 	else{
 		// Move
 		Event * newEvent = [[Event alloc] initWithTile:destination];
-		[newEvent addType:@"move"];
-		[newEvent addCoordinates:[user x]+posX:[user y]+posY];
+		[newEvent setType:@"move"];
+		[newEvent setCoordinates:[user x]+posX:[user y]+posY];
 		[render router:newEvent];
 	
 	}

@@ -239,12 +239,9 @@
     if([option isEqualToString:@"postUpdate"]){
         return @"";
     }
-    
-    [user setPosition:0 :0];
-    [user setLocation:1];
-    
-    [newDraw room];
-    
+	
+	[newDraw sequenceWarpLobby];
+	
     return @"";
 }
 
@@ -988,7 +985,6 @@
 -(void)sharkTransform
 {
 	[user setCharacter:1];
-	[newDraw transformation];
 }
 
 -(NSString*)sauvegarde:(NSString*)option
@@ -2615,7 +2611,6 @@
 	if( [user character] == 7 ){
 		
 		[user setEnabled:0];
-		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(roomClearDialog) userInfo:nil repeats:NO];
 		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(sharkTransform) userInfo:nil repeats:NO];
 		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(nofaceWarp) userInfo:nil repeats:NO];
 		
