@@ -1812,7 +1812,6 @@
     [user setX:0];
     [user setY:0];
     [user setLocation:80];
-    [newDraw animateRoomPan];
 }
 
 -(NSString*)nestorineNemedique1 :(NSString*)option

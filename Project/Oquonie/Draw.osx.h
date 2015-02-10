@@ -14,7 +14,7 @@
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId;
 
 -(void)animateWalk;
--(void)animateTransform;
+-(void)animateTransform :(int)nextCharacter;
 -(void)animateRoomPan;
 -(void)animateBlock;
 

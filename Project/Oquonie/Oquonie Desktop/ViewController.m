@@ -42,6 +42,9 @@
 	[user setLocation:29];
 	[user setCharacter:1];
 	
+	[render spellCollect:@"photocopier3":6];
+	[render spellCollect:@"photocopier2":6];
+	
 	[NSTimer scheduledTimerWithTimeInterval:0.25 target:render selector:@selector(layout) userInfo:nil repeats:NO];
 }
 

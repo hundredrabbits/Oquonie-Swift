@@ -98,9 +98,9 @@
     
     if( userData[@"spellbook"][0][1] == userData[@"spellbook"][1][1] && userData[@"spellbook"][1][1] == userData[@"spellbook"][2][1] ){
         NSLog(@"  RENDR | Transform    | %d",[userData[@"spellbook"][1][1] intValue]);
-        [user setCharacter:[userData[@"spellbook"][1][1] intValue]];
-        [user clearSpellbook];
-        [newDraw animateTransform];
+		[newDraw animateTransform:[userData[@"spellbook"][1][1] intValue]];
+		[user setCharacter:[userData[@"spellbook"][1][1] intValue]];
+		[user clearSpellbook];
 	}
 	[newDraw spellbookDisplay];
 	[newDraw notifications];

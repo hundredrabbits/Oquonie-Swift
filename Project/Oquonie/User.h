@@ -39,6 +39,8 @@
 -(int)enabled;
 -(void)setEnabled :(int)value;
 
+-(void)setLock :(int)value;
+
 -(void)clearSpellbook;
 
 -(int)spellExists :(NSString*)spellId;

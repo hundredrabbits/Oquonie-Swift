@@ -19,6 +19,7 @@
 	[self setHorizontal:@"l"];
 	[self setVertical:@"b"];
 	[self setEnabled:1];
+	[self setLock:0];
 	
     return self;
 }
@@ -50,6 +51,7 @@
 
 -(void)setState :(NSString*)value
 {
+	if( [userData[@"locked"] intValue] == 1 ){ return; }
     userData[@"state"] = value;
 }
 
@@ -106,8 +108,15 @@
     return [userData[@"character"] intValue];
 }
 
+-(void)setLock :(int)value
+{
+	NSLog(@"•  USER | Override     | Set: %d",value);
+	userData[@"locked"] = @(value);
+}
+
 -(void)setCharacter :(int)value
 {
+	NSLog(@"•  USER | Character    | Set: %d",value);
     userData[@"character"] = @(value);
 }
 

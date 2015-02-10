@@ -311,7 +311,7 @@
 
 -(void)animateWalk
 {
-    NSLog(@"~  DRAW | animateWalk");
+	NSLog(@"~  DRAW | animateWalk");
 	
 	[user setState:@"walk"];
 	
@@ -665,10 +665,41 @@
 }
 
 
--(void)animateTransform
+-(void)animateTransform :(int)nextCharacter
 {
-    NSLog(@"~  DRAW | animateTransform");
+	int currentCharacter = [user character];
+    NSLog(@"~  DRAW | Transform    | From %d to %d",currentCharacter, nextCharacter);
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
+	
+	[user setEnabled:1];
+	[user setState:@"warp"];
+	[user setHorizontal:@"l"];
+	[user setVertical:@"f"];
+	[user setLock:1];
+	[self spellbookHide];
+	
+	NSString * warpImage = [NSString stringWithFormat:@"char%d.warp.l.f.1",currentCharacter];
+	storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 1.0;
+		[[storyboard.spriteUser animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 50)];
+	} completionHandler:^{
+		
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+			NSString * warpImage = [NSString stringWithFormat:@"char%d.warp.l.f.1",nextCharacter];
+			storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
+			context.duration = 1.0;
+			[[storyboard.spriteUser animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 25)];
+		} completionHandler:^{
+			
+		}];
+		
+	}];
+	
+	[user setEnabled:1];
+	[user setState:@"stand"];
+	
 }
 
 -(NSImage*)tileImageAtId :(int)x :(int)y
