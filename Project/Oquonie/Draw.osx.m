@@ -28,7 +28,6 @@
 	[storyboard.spriteCharacter setImageScaling:NSImageScaleProportionallyUpOrDown];
 	[storyboard.spriteShadow setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
-	
     return self;
 }
 
@@ -646,7 +645,7 @@
 		[[storyboard.spriteContainer animator] setFrame:CGRectOffset(storyboard.view.frame, ([user x])*offsetScale, (([user x]+[user y])*offsetScale*-1)-verticalOffset )];
 		
 	} completionHandler:^{
-		NSLog(@"Animated containers");
+		
 	}];
 }
 

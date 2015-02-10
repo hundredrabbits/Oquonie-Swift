@@ -231,12 +231,12 @@
                                 <rect key="frame" x="117" y="0.0" width="246" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="82y-WS-YAc" userLabel="spriteCharacter">
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" tag="495" id="82y-WS-YAc" userLabel="spriteCharacter">
                                         <rect key="frame" x="49" y="62" width="147" height="146"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="char1.stand.l.f.1" id="ZgT-wc-ZCW"/>
                                     </imageView>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Kzb-jf-9zz" userLabel="spriteShadow">
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" tag="495" id="Kzb-jf-9zz" userLabel="spriteShadow">
                                         <rect key="frame" x="49" y="62" width="147" height="146"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="fx.shadow" id="vsE-hO-sb3"/>
