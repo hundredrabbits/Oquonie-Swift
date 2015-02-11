@@ -22,9 +22,6 @@
     room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
     position = [[Position alloc] initWithView:storyboard.view.frame];
 	
-	[eventTimer invalidate];
-	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(animationTimer) userInfo:nil repeats:YES];
-	
 	[storyboard.spriteCharacter setImageScaling:NSImageScaleProportionallyUpOrDown];
 	[storyboard.spriteShadow setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
@@ -129,6 +126,7 @@
 
 -(void)animationTimer
 {
+	NSLog(@"TIME");
 	eventTime += 1;
 	
 	// Event Frame

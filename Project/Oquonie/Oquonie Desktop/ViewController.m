@@ -46,6 +46,9 @@
 	[render spellCollect:@"photocopier2":6];
 	
 	[NSTimer scheduledTimerWithTimeInterval:0.25 target:render selector:@selector(layout) userInfo:nil repeats:NO];
+	
+	[eventTimer invalidate];
+	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:newDraw selector:@selector(animationTimer) userInfo:nil repeats:YES];
 }
 
 -(void)template

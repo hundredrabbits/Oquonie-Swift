@@ -36,6 +36,7 @@
 -(void)spellbookHide;
 
 -(void)layout;
+-(void)animationTimer;
 
 @end
 
