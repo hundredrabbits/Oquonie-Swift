@@ -223,7 +223,6 @@
 		037546A218A7374200807397 /* wall.gateCatOpen.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 0375469E18A7374200807397 /* wall.gateCatOpen.r.png */; };
 		037546A518A7A7AF00807397 /* letter5.png in Resources */ = {isa = PBXBuildFile; fileRef = 037546A318A7A7AF00807397 /* letter5.png */; };
 		037546A618A7A7AF00807397 /* letterSpell5.png in Resources */ = {isa = PBXBuildFile; fileRef = 037546A418A7A7AF00807397 /* letterSpell5.png */; };
-		037546AE18A7AF4400807397 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037546AD18A7AF4400807397 /* Images.xcassets */; };
 		037740DE18987187001FDB71 /* event.20.l.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D618987187001FDB71 /* event.20.l.3.png */; };
 		037740DF18987187001FDB71 /* event.20.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D718987187001FDB71 /* event.20.portrait.png */; };
 		037740E018987187001FDB71 /* wall.37.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 037740D818987187001FDB71 /* wall.37.l.png */; };
@@ -726,7 +725,7 @@
 		57013B911A7954E800612048 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57013B901A7954E800612048 /* AppDelegate.m */; };
 		57013B931A7954E800612048 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57013B921A7954E800612048 /* main.m */; };
 		57013B961A7954E800612048 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57013B951A7954E800612048 /* ViewController.m */; };
-		57013B981A7954E800612048 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57013B971A7954E800612048 /* Images.xcassets */; };
+		57013B981A7954E800612048 /* OSX.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57013B971A7954E800612048 /* OSX.xcassets */; };
 		57013B9B1A7954E800612048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57013B991A7954E800612048 /* Main.storyboard */; };
 		57255E0F1A76D3AE00388B48 /* wall.104.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 57255E091A76D3AE00388B48 /* wall.104.l.png */; };
 		57255E101A76D3AE00388B48 /* wall.105.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 57255E0A1A76D3AE00388B48 /* wall.105.r.png */; };
@@ -1448,6 +1447,7 @@
 		57C8A1521A7E812E0039B9C8 /* wall.103.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E3C7196B15A9002AAFAB /* wall.103.r.png */; };
 		57C8A1531A7E812E0039B9C8 /* blocker.29.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E370196B15A1002AAFAB /* blocker.29.png */; };
 		57C8A1541A7E812E0039B9C8 /* blocker.30.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E371196B15A1002AAFAB /* blocker.30.png */; };
+		57CCC4ED1A8FADCE00299F9E /* iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */; };
 		57E2A1D21A7FC7790016B198 /* letterSpell1.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E2A1CB1A7FC7790016B198 /* letterSpell1.png */; };
 		57E2A1D31A7FC7790016B198 /* letterSpell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E2A1CC1A7FC7790016B198 /* letterSpell2.png */; };
 		57E2A1D41A7FC7790016B198 /* letterSpell3.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E2A1CD1A7FC7790016B198 /* letterSpell3.png */; };
@@ -1688,7 +1688,6 @@
 		0375469E18A7374200807397 /* wall.gateCatOpen.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateCatOpen.r.png; path = en.assets/wall.gateCatOpen.r.png; sourceTree = "<group>"; };
 		037546A318A7A7AF00807397 /* letter5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter5.png; path = en.assets/letter5.png; sourceTree = "<group>"; };
 		037546A418A7A7AF00807397 /* letterSpell5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell5.png; path = en.assets/letterSpell5.png; sourceTree = "<group>"; };
-		037546AD18A7AF4400807397 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		037740D618987187001FDB71 /* event.20.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.20.l.3.png; path = en.assets/event.20.l.3.png; sourceTree = "<group>"; };
 		037740D718987187001FDB71 /* event.20.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.20.portrait.png; path = en.assets/event.20.portrait.png; sourceTree = "<group>"; };
 		037740D818987187001FDB71 /* wall.37.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.37.l.png; path = en.assets/wall.37.l.png; sourceTree = "<group>"; };
@@ -2202,7 +2201,7 @@
 		57013B921A7954E800612048 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57013B941A7954E800612048 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		57013B951A7954E800612048 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		57013B971A7954E800612048 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		57013B971A7954E800612048 /* OSX.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = OSX.xcassets; path = "Oquonie Desktop/OSX.xcassets"; sourceTree = SOURCE_ROOT; };
 		57013B9A1A7954E800612048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57063F4E1A79445800D97376 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		57063F501A79445D00D97376 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AVKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -2259,6 +2258,7 @@
 		57C0E43D1A7C2D29008728C8 /* Draw.osx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Draw.osx.m; path = ../Draw.osx.m; sourceTree = "<group>"; };
 		57C0E4401A7C3EF9008728C8 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		57C0E4411A7C3EF9008728C8 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
+		57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iOS.xcassets; sourceTree = "<group>"; };
 		57E2A1CB1A7FC7790016B198 /* letterSpell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell1.png; path = en.assets/letterSpell1.png; sourceTree = "<group>"; };
 		57E2A1CC1A7FC7790016B198 /* letterSpell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell2.png; path = en.assets/letterSpell2.png; sourceTree = "<group>"; };
 		57E2A1CD1A7FC7790016B198 /* letterSpell3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell3.png; path = en.assets/letterSpell3.png; sourceTree = "<group>"; };
@@ -3158,6 +3158,8 @@
 		03BBFAB1178A9E4E00E79C3D /* Oquonie */ = {
 			isa = PBXGroup;
 			children = (
+				57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */,
+				57013B971A7954E800612048 /* OSX.xcassets */,
 				037F0260187D845300747E8D /* segueFade.h */,
 				037F0261187D845300747E8D /* segueFade.m */,
 				573E074B1A8283D9008F9F62 /* Draw.ios.h */,
@@ -3165,7 +3167,6 @@
 				038C59271851472D005D6D35 /* en.sources */,
 				038C592818514739005D6D35 /* en.layouts */,
 				0355CF8C17C196C10069AF97 /* en.lproj */,
-				037546AD18A7AF4400807397 /* Images.xcassets */,
 				03BBFAB2178A9E4E00E79C3D /* Supporting Files */,
 			);
 			path = Oquonie;
@@ -3473,7 +3474,6 @@
 				57013B901A7954E800612048 /* AppDelegate.m */,
 				57013B941A7954E800612048 /* ViewController.h */,
 				57013B951A7954E800612048 /* ViewController.m */,
-				57013B971A7954E800612048 /* Images.xcassets */,
 				57013B991A7954E800612048 /* Main.storyboard */,
 				57013B8D1A7954E800612048 /* Supporting Files */,
 				576FF6CE1A796FA8000824FE /* CoreWindow.h */,
@@ -4140,6 +4140,7 @@
 				57E2A1D81A7FC7790016B198 /* letterSpell8.png in Resources */,
 				03D28D6918AAEFA7001BBBA7 /* tile.50.png in Resources */,
 				0304D7AC186CEE0200ED6E94 /* event.9.l.3.png in Resources */,
+				57CCC4ED1A8FADCE00299F9E /* iOS.xcassets in Resources */,
 				0304D7A6186CEE0200ED6E94 /* event.7.l.3.png in Resources */,
 				0355CFCA17C196C10069AF97 /* InfoPlist.strings in Resources */,
 				038B4FEF1802F35C00C18480 /* blocker.4.png in Resources */,
@@ -4414,7 +4415,6 @@
 				03834E44180BA6FF00568E60 /* notification.1.png in Resources */,
 				03F5C4A2187BBB3200352B8E /* event.11.r.2.png in Resources */,
 				0373477B186BA790000A5ED7 /* event.1.r.3.png in Resources */,
-				037546AE18A7AF4400807397 /* Images.xcassets in Resources */,
 				035A6D95186B08000032710C /* fx.transform.1.png in Resources */,
 				0332384A17D4BDB8001B1328 /* char5.walk.r.f.1.png in Resources */,
 				033DEBF6196CDE2F004750C7 /* letter8.png in Resources */,
@@ -4539,7 +4539,7 @@
 				57C89F641A7E80800039B9C8 /* wall.23.l.png in Resources */,
 				57C89F311A7E80800039B9C8 /* wall.33.l.png in Resources */,
 				57C8A08B1A7E81060039B9C8 /* event.23.l.2.png in Resources */,
-				57013B981A7954E800612048 /* Images.xcassets in Resources */,
+				57013B981A7954E800612048 /* OSX.xcassets in Resources */,
 				57C8A0981A7E810C0039B9C8 /* event.29.portrait.png in Resources */,
 				57C8A0DB1A7E81190039B9C8 /* fx.transform.3.png in Resources */,
 				57C8A0691A7E80E80039B9C8 /* event.1.r.2.png in Resources */,
@@ -5321,7 +5321,7 @@
 		03BBFACC178A9E4E00E79C3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Mobile Icons";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -5339,7 +5339,7 @@
 		03BBFACD178A9E4E00E79C3D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Mobile Icons";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -5357,13 +5357,12 @@
 		57013BA91A7954E900612048 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Desktop Icons";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -5387,13 +5386,12 @@
 		57013BAA1A7954E900612048 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Desktop Icons";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
