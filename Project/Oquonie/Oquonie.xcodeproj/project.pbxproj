@@ -2258,7 +2258,7 @@
 		57C0E43D1A7C2D29008728C8 /* Draw.osx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Draw.osx.m; path = ../Draw.osx.m; sourceTree = "<group>"; };
 		57C0E4401A7C3EF9008728C8 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		57C0E4411A7C3EF9008728C8 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
-		57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iOS.xcassets; sourceTree = "<group>"; };
+		57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = iOS.xcassets; path = Oquonie/iOS.xcassets; sourceTree = "<group>"; };
 		57E2A1CB1A7FC7790016B198 /* letterSpell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell1.png; path = en.assets/letterSpell1.png; sourceTree = "<group>"; };
 		57E2A1CC1A7FC7790016B198 /* letterSpell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell2.png; path = en.assets/letterSpell2.png; sourceTree = "<group>"; };
 		57E2A1CD1A7FC7790016B198 /* letterSpell3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell3.png; path = en.assets/letterSpell3.png; sourceTree = "<group>"; };
@@ -3158,8 +3158,6 @@
 		03BBFAB1178A9E4E00E79C3D /* Oquonie */ = {
 			isa = PBXGroup;
 			children = (
-				57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */,
-				57013B971A7954E800612048 /* OSX.xcassets */,
 				037F0260187D845300747E8D /* segueFade.h */,
 				037F0261187D845300747E8D /* segueFade.m */,
 				573E074B1A8283D9008F9F62 /* Draw.ios.h */,
@@ -3498,6 +3496,8 @@
 		571A8C8C1A793CD5008E846E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */,
+				57013B971A7954E800612048 /* OSX.xcassets */,
 				038BA0E9188B849B00A3ED4B /* en.sounds */,
 				03BBFACE178AC8C200E79C3D /* en.assets */,
 				571A8C901A793E31008E846E /* xxiivvSettings.h */,

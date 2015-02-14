@@ -108,11 +108,13 @@
 
 -(void)blockers
 {
+	NSLog(@"~  DRAW | Blockers");
 	[self eraseBlockers];
 	for (int x = -1; x < 2; x++) {
 		for (int y = -1; y < 2; y++) {
 			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
 			if( ![[tileCheck name] isEqualToString:@""] ){
+				NSLog(@"~  DRAW | Blocker      : %@",[tileCheck name]);
 				[spriteContainer addSubview:[self spriteImageView :x:y:tileCheck]];
 			}
 		}
@@ -126,7 +128,6 @@
 
 -(void)animationTimer
 {
-	NSLog(@"TIME");
 	eventTime += 1;
 	
 	// Event Frame
@@ -326,15 +327,12 @@
     storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
 	
-	[user setEnabled:0];
-	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 0.25;
 		[[storyboard.spriteCharacter animator] setFrame:[position tile:4 :[user x] : [user y]]];
 		[[storyboard.spriteShadow animator] setFrame:[position tile:4 :[user x] : [user y]]];
 	} completionHandler:^{
 		[user setState:@"stand"];
-		[user setEnabled:1];
 	}];
 	
 	// Animate Sequence
@@ -343,9 +341,9 @@
 	[NSTimer scheduledTimerWithTimeInterval:0.30 target:self selector:@selector(character) userInfo:nil repeats:NO];
 	
 	[self animateContainers];
-	
 	[self updateDrawOrder];
 }
+
 -(void)characterWalkFrame1
 {
 	NSString * imageName = [NSString stringWithFormat:@"char%d.walk.%@.%@.1",[user character],[user horizontal],[user vertical]];
@@ -652,16 +650,14 @@
 	NSLog(@"~  DRAW | animateBlock");
 	
 	storyboard.dialogContainer.hidden = YES;
-	
 	storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
-	
-	storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
-	storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
+//	storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
+//	storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
 	
 	[user setEnabled:0];
 	
-	if( [[user horizontal] isEqualToString:@"r"] ){	storyboard.spriteCharacter.frame = CGRectOffset([position tile:4 :[user x] : [user y]], 5, 0); }
-	if( [[user horizontal] isEqualToString:@"l"] ){	storyboard.spriteCharacter.frame = CGRectOffset([position tile:4 :[user x] : [user y]], 5, 0); }
+	if( [[user horizontal] isEqualToString:@"r"] ){	storyboard.spriteCharacter.frame = CGRectOffset([position tile:4 :[user x] : [user y]], 15, 0); }
+	else if( [[user horizontal] isEqualToString:@"l"] ){ storyboard.spriteCharacter.frame = CGRectOffset([position tile:4 :[user x] : [user y]], 15, 0); }
 	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 0.25;
@@ -758,10 +754,10 @@
 -(void)sequenceWarpLobby
 {
 	[user setPosition:0 :0];
-	[newDraw animateWalk];
+	[self animateWalk];
+	[user setEnabled:0];
 	
 	eventTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sequenceWarpLobbyAnimation) userInfo:nil repeats:NO];
-	
 }
 
 -(void)sequenceWarpLobbyAnimation
@@ -770,7 +766,6 @@
 	[user setLock:1];
 	[user setHorizontal:@"l"];
 	[user setVertical:@"f"];
-	[user setEnabled:1];
 	
 	NSString * warpImage = [NSString stringWithFormat:@"char%d.warp.l.f.1",user.character];
 	storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
@@ -817,12 +812,36 @@
 		
 		[[storyboard.roomContainer animator] setAlphaValue:0];
 		
+		[[storyboard.parallaxFront animator] setFrame:CGRectOffset(storyboard.view.frame, 0, 50 )];
+		[[storyboard.parallaxBack animator] setFrame:CGRectOffset(storyboard.view.frame, 0, 75 )];
+		
 	} completionHandler:^{
 		
 		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 			
 			[user setLocation:1];
 			room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
+			
+			// Draw Blockers
+			
+			[self blockers];
+			[self updateDrawOrder];
+			
+			for(NSImageView* subview in [spriteContainer subviews]) {
+				if( subview.tag != tagBlockers ){ continue; }
+				CGRect targetPos = subview.frame;
+				subview.frame = CGRectOffset(targetPos, 0, (arc4random() % 50)+5 );
+				subview.alphaValue = 0;
+				
+				[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+					context.duration = 3.5;
+					[[subview animator]  setFrame:targetPos];
+					[[subview animator]  setAlphaValue:1];
+				} completionHandler:^{}];
+				
+			}
+			
+			// Draw Tiles
 			
 			storyboard.floor00.image = [self tileImageAtId:0:0];
 			storyboard.floor1e.image = [self tileImageAtId:1:-1];
@@ -869,6 +888,11 @@
 			[[storyboard.wall3r animator] setFrame:[position tile:5 : 1 : 2]];
 			
 			[[storyboard.roomContainer animator] setAlphaValue:1];
+			
+			[[storyboard.parallaxFront animator] setFrame:storyboard.view.frame];
+			[[storyboard.parallaxBack animator] setFrame:storyboard.view.frame];
+			[[storyboard.parallaxFront animator] setAlphaValue:1];
+			[[storyboard.parallaxBack animator] setAlphaValue:1];
 			
 		} completionHandler:^{}];
 		

@@ -34,8 +34,11 @@
     NSLog(@"  RENDR | Moving       | to: %d %d",[event x],[event y]);
     
     [user setX:[event x]];
-    [user setY:[event y]];
-    
+	[user setY:[event y]];
+	
+	[user setEnabled:0];
+	[NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(enableMovement) userInfo:nil repeats:NO];
+	
     newDraw = [[Draw alloc] init];
     [newDraw animateWalk];
 }
@@ -105,6 +108,16 @@
 	}
 	[newDraw spellbookDisplay];
 	[newDraw notifications];
+}
+
+-(void)disableMovement
+{
+	[user setEnabled:0];
+}
+
+-(void)enableMovement
+{
+	[user setEnabled:1];
 }
 
 -(void)layout

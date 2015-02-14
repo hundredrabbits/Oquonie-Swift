@@ -43,7 +43,7 @@
 @property (weak) IBOutlet NSImageView *step2r;
 @property (weak) IBOutlet NSImageView *step3r;
 
-@property (weak) IBOutlet DrawView *spriteContainer;
+@property (weak) IBOutlet NSImageView *spriteContainer;
 @property (weak) IBOutlet NSImageView *spriteShadow;
 @property (weak) IBOutlet NSImageView *spriteCharacter;
 
