@@ -693,6 +693,7 @@
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 1.0;
 		[[storyboard.spriteCharacter animator] setFrame:CGRectOffset([position tile:4 :[user x]:[user y]], 0, 50)];
+		[[storyboard.spriteShadow animator] setAlphaValue:0];
 	} completionHandler:^{
 		
 		[self spellbookHide];
@@ -719,6 +720,7 @@
 					context.duration = 1.0;
 					[[storyboard.spriteCharacter animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 0)];
 					[storyboard.vignette setAlphaValue:0];
+					[[storyboard.spriteShadow animator] setAlphaValue:1];
 				} completionHandler:^{
 					
 					NSString * warpImage = [NSString stringWithFormat:@"char%d.stand.l.f.1",nextCharacter];
