@@ -367,9 +367,10 @@
 	
 	if([user eventExists: storageQuestPillarNemedique] || [user location] == 102){
 		
-		[user setCharacter:1];
 		[newSound play:@"shark"];
 		[newDraw dialog:dialogSharkHelp:eventShark];
+		[newDraw animateTransform:1];
+		[user setCharacter:1];
 		[user setEnabled:0];
 		
 		// Clear Spellbook

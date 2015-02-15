@@ -391,15 +391,51 @@
 	[storyboard.floor11 setImageScaling:NSImageScaleProportionallyUpOrDown];
 	[storyboard.flooree setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
-	[[storyboard.floor11 animator]  setFrame:[position tile:0 :1 :1]];
-	[[storyboard.floor10 animator]  setFrame:[position tile:0 :1 :0]];
-	[[storyboard.floor1e animator]  setFrame:[position tile:0 :1 :-1]];
-	[[storyboard.floor01 animator]  setFrame:[position tile:0 :0 :1]];
-	[[storyboard.floor00 animator]  setFrame:[position tile:0 :0 :0]];
-	[[storyboard.floor0e animator]  setFrame:[position tile:0 :0 :-1]];
-	[[storyboard.floore1 animator]  setFrame:[position tile:0 :-1 :1]];
-	[[storyboard.floore0 animator]  setFrame:[position tile:0 :-1 :0]];
-	[[storyboard.flooree animator]  setFrame:[position tile:0 :-1 :-1]];
+	// Animate Room
+	
+	[storyboard.floor11 setFrame:CGRectOffset([position tile:0 :1 :1], 0, (arc4random() % 10)+2 )];
+	[storyboard.floor10 setFrame:CGRectOffset([position tile:0 :1 :0], 0, (arc4random() % 10)+2 )];
+	[storyboard.floor1e setFrame:CGRectOffset([position tile:0 :1 :-1], 0, (arc4random() % 10)+2 )];
+	[storyboard.floor01 setFrame:CGRectOffset([position tile:0 :0 :1], 0, (arc4random() % 10)+2 )];
+	[storyboard.floor00 setFrame:CGRectOffset([position tile:0 :0 :0], 0, (arc4random() % 10)+2 )];
+	[storyboard.floor0e setFrame:CGRectOffset([position tile:0 :0 :-1], 0, (arc4random() % 10)+2 )];
+	[storyboard.floore1 setFrame:CGRectOffset([position tile:0 :-1 :1], 0, (arc4random() % 10)+2 )];
+	[storyboard.floore0 setFrame:CGRectOffset([position tile:0 :-1 :0], 0, (arc4random() % 10)+2 )];
+	[storyboard.flooree setFrame:CGRectOffset([position tile:0 :-1 :-1], 0, (arc4random() % 10)+2 )];
+	
+	[storyboard.wall1l setFrame:CGRectOffset([position tile:5 :2 :-1],0,(arc4random() % 10)+2 )];
+	[storyboard.wall2l setFrame:CGRectOffset([position tile:5 :2 :0], 0, (arc4random() % 10)+2 )];
+	[storyboard.wall3l setFrame:CGRectOffset([position tile:5 :2 :1], 0, (arc4random() % 10)+2 )];
+	
+	[storyboard.wall1r setFrame:CGRectOffset([position tile:5 :-1:2],0,(arc4random() % 10)+2 )];
+	[storyboard.wall2r setFrame:CGRectOffset([position tile:5 :0 :2], 0, (arc4random() % 10)+2 )];
+	[storyboard.wall3r setFrame:CGRectOffset([position tile:5 :1 :2], 0, (arc4random() % 10)+2 )];
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 1.5;
+		[[storyboard.floor11 animator]  setFrame:[position tile:0 :1 :1]];
+		[[storyboard.floor10 animator]  setFrame:[position tile:0 :1 :0]];
+		[[storyboard.floor1e animator]  setFrame:[position tile:0 :1 :-1]];
+		[[storyboard.floor01 animator]  setFrame:[position tile:0 :0 :1]];
+		[[storyboard.floor00 animator]  setFrame:[position tile:0 :0 :0]];
+		[[storyboard.floor0e animator]  setFrame:[position tile:0 :0 :-1]];
+		[[storyboard.floore1 animator]  setFrame:[position tile:0 :-1 :1]];
+		[[storyboard.floore0 animator]  setFrame:[position tile:0 :-1 :0]];
+		[[storyboard.flooree animator]  setFrame:[position tile:0 :-1 :-1]];
+		
+		[[storyboard.wall1l animator] setFrame:[position tile:5 :2 :-1]];
+		[[storyboard.wall2l animator] setFrame:[position tile:5 :2 : 0]];
+		[[storyboard.wall3l animator] setFrame:[position tile:5 :2 : 1]];
+		
+		[[storyboard.wall1r animator] setFrame:[position tile:5 : -1 : 2]];
+		[[storyboard.wall2r animator] setFrame:[position tile:5 : 0 : 2]];
+		[[storyboard.wall3r animator] setFrame:[position tile:5 : 1 : 2]];
+		
+	} completionHandler:^{
+		
+	}];
+	
+	
 	
 	storyboard.floor00.image = [self tileImageAtId:0:0];
 	storyboard.floor1e.image = [self tileImageAtId:1:-1];
@@ -410,14 +446,6 @@
 	storyboard.floore0.image = [self tileImageAtId:-1:0];
 	storyboard.floor11.image = [self tileImageAtId:1:1];
 	storyboard.flooree.image = [self tileImageAtId:-1:-1];
-	
-	[[storyboard.wall1l animator] setFrame:[position tile:5 :2 :-1]];
-	[[storyboard.wall2l animator] setFrame:[position tile:5 :2 : 0]];
-	[[storyboard.wall3l animator] setFrame:[position tile:5 :2 : 1]];
-	
-	[[storyboard.wall1r animator] setFrame:[position tile:5 : -1 : 2]];
-	[[storyboard.wall2r animator] setFrame:[position tile:5 : 0 : 2]];
-	[[storyboard.wall3r animator] setFrame:[position tile:5 : 1 : 2]];
 	
 	storyboard.step1l.frame = [position tile:0 :1 :-2];
 	storyboard.step2l.frame = [position tile:0 :0 :-2];
@@ -451,28 +479,6 @@
 	[self gates];
 	[self animateContainers];
 	[self updateDrawOrder];
-	
-	[self roomAnimation];
-}
-
--(void)roomAnimation
-{
-	NSLog(@"~  DRAW | Room         | Animate");
-	
-	/* TODO
-	for(NSImageView* subview in storyboard.roomContainer.subviews ) {
-		CGRect targetPosition = subview.frame;
-		CGRect offsetPosition = CGRectOffset(targetPosition, 0, (arc4random() % 5) );
-		[[subview animator] setFrame:offsetPosition];
-		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
-			context.duration = 0.5;
-			[[subview animator] setFrame:offsetPosition];
-		} completionHandler:^{
-			
-		}];
-	}
-	 */
-	
 }
 
 -(void)gates
@@ -632,7 +638,7 @@
 	CGFloat offsetScale = (storyboard.view.frame.size.height / 200);
 	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
-		context.duration = 1.0;
+		context.duration = 0.5;
 		
 		[[storyboard.parallaxFront animator] setFrame:CGRectOffset(storyboard.view.frame, ([user x]*[user y])*4, ([user x]+[user y])*-4)];
 		[[storyboard.parallaxBack animator] setFrame:CGRectOffset(storyboard.view.frame, ([user x]*[user y])*2, ([user x]+[user y])*-2)];
@@ -701,6 +707,7 @@
 			storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
 			storyboard.vignette.alphaValue = 1;
 			storyboard.vignette.image = [NSImage imageNamed:@"fx.vignette.1.horizontal"];
+			[storyboard.vignette setImageScaling:NSImageScaleAxesIndependently];
 			
 			[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 				context.duration = 1.0;
@@ -716,7 +723,9 @@
 					storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
 					[user setLock:0];
 					[user setState:@"stand"];
+					[user setEnabled:1];
 					storyboard.vignette.alphaValue = 0;
+					[storyboard.vignette setImageScaling:NSImageScaleProportionallyUpOrDown];
 					
 				}];
 				
