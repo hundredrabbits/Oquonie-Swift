@@ -575,7 +575,7 @@
             [render router:[[Event alloc] initWarp:59:-1:0]];
         }
         else if([user location] == 59){
-            [render router:[[Event alloc] initWarp:59:1:0]];
+            [render router:[[Event alloc] initWarp:58:1:0]];
         }
         // Nastalize
         else if([user location] ==	142){

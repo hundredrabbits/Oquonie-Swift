@@ -431,22 +431,8 @@
 		[[storyboard.wall2r animator] setFrame:[position tile:5 : 0 : 2]];
 		[[storyboard.wall3r animator] setFrame:[position tile:5 : 1 : 2]];
 		
-	} completionHandler:^{
-		
-	}];
-	
-	
-	
-	storyboard.floor00.image = [self tileImageAtId:0:0];
-	storyboard.floor1e.image = [self tileImageAtId:1:-1];
-	storyboard.floore1.image = [self tileImageAtId:-1:1];
-	storyboard.floor10.image = [self tileImageAtId:1:0];
-	storyboard.floor01.image = [self tileImageAtId:0:1];
-	storyboard.floor0e.image = [self tileImageAtId:0:-1];
-	storyboard.floore0.image = [self tileImageAtId:-1:0];
-	storyboard.floor11.image = [self tileImageAtId:1:1];
-	storyboard.flooree.image = [self tileImageAtId:-1:-1];
-	
+	} completionHandler:^{}];
+
 	storyboard.step1l.frame = [position tile:0 :1 :-2];
 	storyboard.step2l.frame = [position tile:0 :0 :-2];
 	storyboard.step3l.frame = [position tile:0 :-1 :-2];
@@ -454,7 +440,21 @@
 	storyboard.step1r.frame = [position tile:0 :-2 : -1];
 	storyboard.step2r.frame = [position tile:0 :-2 : 0];
 	storyboard.step3r.frame = [position tile:0 :-2 : 1];
+
+	storyboard.spriteShadow.frame = [position tile:4 :[user x] : [user y]];
+	storyboard.spriteCharacter.frame = [position tile:4 :[user x] : [user y]];
+	storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
 	
+	[self blockers];
+	[self notifications];
+	[self events];
+	[self animateContainers];
+	[self updateDrawOrder];
+	[self roomSprites];
+}
+
+-(void)roomSprites
+{
 	storyboard.wall1l.image = [self tileImageAtId:2:-1];
 	storyboard.wall2l.image = [self tileImageAtId:2:0];
 	storyboard.wall3l.image = [self tileImageAtId:2:1];
@@ -468,22 +468,23 @@
 	storyboard.step1r.image = [self tileImageAtId:-2:-1];
 	storyboard.step2r.image = [self tileImageAtId:-2:0];
 	storyboard.step3r.image = [self tileImageAtId:-2:1];
-
-	storyboard.spriteShadow.frame = [position tile:4 :[user x] : [user y]];
-	storyboard.spriteCharacter.frame = [position tile:4 :[user x] : [user y]];
-	storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
 	
-	[self blockers];
-	[self notifications];
-	[self events];
+	storyboard.floor00.image = [self tileImageAtId:0:0];
+	storyboard.floor1e.image = [self tileImageAtId:1:-1];
+	storyboard.floore1.image = [self tileImageAtId:-1:1];
+	storyboard.floor10.image = [self tileImageAtId:1:0];
+	storyboard.floor01.image = [self tileImageAtId:0:1];
+	storyboard.floor0e.image = [self tileImageAtId:0:-1];
+	storyboard.floore0.image = [self tileImageAtId:-1:0];
+	storyboard.floor11.image = [self tileImageAtId:1:1];
+	storyboard.flooree.image = [self tileImageAtId:-1:-1];
+	
 	[self gates];
-	[self animateContainers];
-	[self updateDrawOrder];
 }
 
 -(void)gates
 {
-	NSLog(@"~  DRAW | Gates");
+	NSLog(@"~  DRAW | Gates        | char%d",[user character]);
 	for (int x = -2; x < 3; x++) {
 		for (int y = -2; y < 3; y++) {
 			
@@ -492,7 +493,6 @@
 			
 			// Event is a wall tile type
 			for(NSImageView* subview in [storyboard.roomContainer subviews]) {
-				if( subview.tag == tagCharacter ){ continue; }
 				if( subview.frame.origin.y == [position tile:5:x:y].origin.y && subview.frame.origin.x == [position tile:5:x:y].origin.x && subview.frame.size.width == [position tile:5:x:y].size.width && subview.frame.size.height == [position tile:5:x:y].size.height ){
 					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
 					
@@ -500,7 +500,6 @@
 						NSLog(@"~  DRAW | Redrawing    : %@ at %d %d with %@", [tileCheck name], x, y, [newEncounter see]);
 						if( y == 2 ){ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.l.png",[newEncounter see]]]; }
 						else{ subview.image = [NSImage imageNamed:[NSString stringWithFormat:@"wall.%@.r.png",[newEncounter see]]]; }
-						
 					}
 				}
 			}
@@ -709,6 +708,8 @@
 			storyboard.vignette.image = [NSImage imageNamed:@"fx.vignette.1.horizontal"];
 			[storyboard.vignette setImageScaling:NSImageScaleAxesIndependently];
 			
+			[self roomSprites];
+			
 			[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 				context.duration = 1.0;
 				[[storyboard.spriteCharacter animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 30)];
@@ -717,6 +718,7 @@
 				[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 					context.duration = 1.0;
 					[[storyboard.spriteCharacter animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 0)];
+					[storyboard.vignette setAlphaValue:0];
 				} completionHandler:^{
 					
 					NSString * warpImage = [NSString stringWithFormat:@"char%d.stand.l.f.1",nextCharacter];
@@ -830,6 +832,7 @@
 			
 			[user setLocation:1];
 			room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
+			[self roomSprites];
 			
 			// Draw Blockers
 			
@@ -849,32 +852,6 @@
 				} completionHandler:^{}];
 				
 			}
-			
-			// Draw Tiles
-			
-			storyboard.floor00.image = [self tileImageAtId:0:0];
-			storyboard.floor1e.image = [self tileImageAtId:1:-1];
-			storyboard.floore1.image = [self tileImageAtId:-1:1];
-			storyboard.floor10.image = [self tileImageAtId:1:0];
-			storyboard.floor01.image = [self tileImageAtId:0:1];
-			storyboard.floor0e.image = [self tileImageAtId:0:-1];
-			storyboard.floore0.image = [self tileImageAtId:-1:0];
-			storyboard.floor11.image = [self tileImageAtId:1:1];
-			storyboard.flooree.image = [self tileImageAtId:-1:-1];
-			
-			storyboard.wall1l.image = [self tileImageAtId:2:-1];
-			storyboard.wall2l.image = [self tileImageAtId:2:0];
-			storyboard.wall3l.image = [self tileImageAtId:2:1];
-			storyboard.wall1r.image = [self tileImageAtId:1:2];
-			storyboard.wall2r.image = [self tileImageAtId:0:2];
-			storyboard.wall3r.image = [self tileImageAtId:-1:2];
-			
-			storyboard.step1l.image = [self tileImageAtId:1:-2];
-			storyboard.step2l.image = [self tileImageAtId:0:-2];
-			storyboard.step3l.image = [self tileImageAtId:-1:-2];
-			storyboard.step1r.image = [self tileImageAtId:-2:-1];
-			storyboard.step2r.image = [self tileImageAtId:-2:0];
-			storyboard.step3r.image = [self tileImageAtId:-2:1];
 			
 			context.duration = 4.0;
 			
@@ -903,7 +880,9 @@
 			[[storyboard.parallaxFront animator] setAlphaValue:1];
 			[[storyboard.parallaxBack animator] setAlphaValue:1];
 			
-		} completionHandler:^{}];
+		} completionHandler:^{
+			[self roomSprites];
+		}];
 		
 	}];
 }
