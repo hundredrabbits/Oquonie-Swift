@@ -126,64 +126,70 @@
     userData[@"character"] = @(value);
 }
 
+# pragma mark Spells -
+
+-(void)clearSpellbook
+{
+	userData[@"spellbook"] = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
+}
+
+-(int)spellExists :(NSString*)spellId
+{
+	for (NSArray *spellbookItem in userData[@"spellbook"]) {
+		if( [spellbookItem[0] isEqualToString:spellId] ){
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
+
+-(int)spellCount
+{
+	int count = 0;
+	for (NSArray *spellbookItem in userData[@"spellbook"]) {
+		if([spellbookItem[1] intValue] != 0){
+			count += 1;
+		}
+	}
+	return count;
+}
+
+-(int)spell :(int)value
+{
+	return [userData[@"spellbook"][value][1] intValue];
+}
+
+# pragma mark Events -
+
+-(void)eventCollect :(int)eventId
+{
+	userData[@"events"][eventId] = @1;
+}
+
+-(void)eventRemove :(int)eventId
+{
+	userData[@"events"][eventId] = @0;
+}
+
+-(int)eventExists :(int)eventId
+{
+	if( [userData[@"events"][eventId] intValue] == 1 ){
+		return TRUE;
+	}
+	return FALSE;
+}
+
+# pragma mark Misc -
+
 -(void)setLock :(int)value
 {
 	NSLog(@"•  USER | Override     | Set: %d",value);
 	userData[@"locked"] = @(value);
 }
 
--(void)clearSpellbook
-{
-    userData[@"spellbook"] = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
-}
-
--(void)eventCollect :(int)eventId
-{
-    userData[@"events"][eventId] = @1;
-}
-
--(void)eventRemove :(int)eventId
-{
-    userData[@"events"][eventId] = @0;
-}
-
 -(void)save
 {
     NSLog(@"Save TODO");
-}
-
--(int)spellExists :(NSString*)spellId
-{
-    for (NSArray *spellbookItem in userData[@"spellbook"]) {
-        if( [spellbookItem[0] isEqualToString:spellId] ){
-            return TRUE;
-        }
-    }
-    return FALSE;
-}
-
--(int)spellCount
-{
-    int count = 0;
-    for (NSArray *spellbookItem in userData[@"spellbook"]) {
-        if([spellbookItem[1] intValue] != 0){
-            count += 1;
-        }
-    }
-    return count;
-}
-
--(int)spell :(int)value
-{
-    return [userData[@"spellbook"][value][1] intValue];
-}
-
--(int)eventExists :(int)eventId
-{
-    if( userData[@"events"] ){
-        return TRUE;
-    }
-    return FALSE;
 }
 
 -(int)isListening
@@ -226,6 +232,7 @@
 
 -(NSMutableDictionary*)new
 {
+	NSLog(@"+  USER | New Game!");
     userData = [[NSMutableDictionary alloc] init];
     
     userData[@"character"] = @1;

@@ -72,7 +72,10 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
+		
 		if([user eventExists:socketInstanceStorageId]){
+			NSLog(@"!!!! %d",socketInstanceStorageId);
+			
 			return eventPillarAssembled;
 		}
 		return eventPillarSocket;
