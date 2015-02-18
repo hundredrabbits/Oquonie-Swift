@@ -24,6 +24,8 @@
     return self;
 }
 
+# pragma mark Location -
+
 -(NSString*)vertical
 {
     return userData[@"vertical"];
@@ -44,6 +46,23 @@
     userData[@"horizontal"] = value;
 }
 
+-(int)location
+{
+	return [userData[@"location"] intValue];
+}
+
+-(void)setLocation :(int)value
+{
+	userData[@"location"] = @(value);
+}
+
+-(NSString*)locationString
+{
+	return [NSString stringWithFormat:@"%@",userData[@"location"]];
+}
+
+# pragma mark State -
+
 -(NSString*)state
 {
     return userData[@"state"];
@@ -55,21 +74,18 @@
     userData[@"state"] = value;
 }
 
--(int)location
+-(int)enabled
 {
-    return [userData[@"location"] intValue];
+	return [userData[@"enabled"] intValue];
 }
 
--(void)setLocation :(int)value
+-(void)setEnabled :(int)value
 {
-    userData[@"location"] = @(value);
+	NSLog(@"•  USER | Move         | Enabled: %d",value);
+	userData[@"enabled"] = @(value);
 }
 
-
--(NSString*)locationString
-{
-    return [NSString stringWithFormat:@"%@",userData[@"location"]];
-}
+# pragma mark Position -
 
 -(int)x
 {
@@ -92,26 +108,16 @@
     userData[@"y"] = @(value);
 }
 
--(int)enabled
+-(int)y
 {
-    return [userData[@"enabled"] intValue];
+	return [userData[@"y"] intValue];
 }
 
--(void)setEnabled :(int)value
-{
-    NSLog(@"•  USER | Move         | Enabled: %d",value);
-    userData[@"enabled"] = @(value);
-}
+# pragma mark Character -
 
 -(int)character
 {
     return [userData[@"character"] intValue];
-}
-
--(void)setLock :(int)value
-{
-	NSLog(@"•  USER | Override     | Set: %d",value);
-	userData[@"locked"] = @(value);
 }
 
 -(void)setCharacter :(int)value
@@ -120,9 +126,10 @@
     userData[@"character"] = @(value);
 }
 
--(int)y
+-(void)setLock :(int)value
 {
-    return [userData[@"y"] intValue];
+	NSLog(@"•  USER | Override     | Set: %d",value);
+	userData[@"locked"] = @(value);
 }
 
 -(void)clearSpellbook

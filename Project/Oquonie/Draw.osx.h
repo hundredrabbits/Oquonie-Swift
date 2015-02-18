@@ -11,7 +11,9 @@
 @interface Draw : NSObject
 
 -(void)map :(NSString*)name;
+
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId;
+-(void)closeDialog;
 
 -(void)animateWalk;
 -(void)animateTransform :(int)nextCharacter;

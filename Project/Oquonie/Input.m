@@ -21,8 +21,15 @@
     Tile* destination = [[Tile alloc] initWithString:[room tileAtLocation:[user x]+posX :[user y]+posY]];
     
     // Event
-    
-    if( [destination isEmpty] || [destination isBlocker] ){
+	
+	if( [user enabled] == 0 ){
+		return;
+	}
+	else if( [user isTalking] ){
+		[newDraw closeDialog];
+		return;
+	}
+    else if( [destination isEmpty] || [destination isBlocker] ){
         Event * newEvent = [[Event alloc] initWithTile:destination];
         [newEvent setType:@"block"];
         [newEvent setCoordinates:[user x]+posX:[user y]+posY];

@@ -179,12 +179,18 @@
 	}
 }
 
+# pragma mark Dialog -
+
 -(void)dialog :(NSString*)dialog :(NSString*)characterId
 {
     NSLog(@"~  DRAW | Dialog       | Message: %@ %@",dialog,characterId);
+	
+	[user talking:1];
     
     storyboard.dialogContainer.hidden = NO;
-    
+	
+	[[storyboard.dialogContainer animator] setAlphaValue:1];
+	
     storyboard.dialogContainer.frame = storyboard.view.frame;
     
     CALayer *viewLayer = [CALayer layer];
@@ -213,6 +219,19 @@
     storyboard.letterView2.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(1, 1)] ]];
     storyboard.letterView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(2, 1)] ]];
     storyboard.portraitImageView.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.portrait", characterId ]];
+	
+}
+
+-(void)closeDialog
+{
+	NSLog(@"~  DRAW | Dialog       | Close");
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 0.50;
+		[[storyboard.dialogContainer animator] setAlphaValue:0];
+	} completionHandler:^{
+		[user talking:0];
+	}];
 }
 
 # pragma mark Spellbook -
@@ -321,8 +340,7 @@
 	NSLog(@"~  DRAW | animateWalk");
 	
 	[user setState:@"walk"];
-	
-    storyboard.dialogContainer.hidden = YES;
+
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
     storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
     storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
@@ -654,7 +672,6 @@
 {
 	NSLog(@"~  DRAW | animateBlock");
 	
-	storyboard.dialogContainer.hidden = YES;
 	storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
 //	storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
 //	storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
@@ -679,7 +696,7 @@
     NSLog(@"~  DRAW | Transform    | From %d to %d",currentCharacter, nextCharacter);
     storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
 	
-	[user setEnabled:1];
+	[user setEnabled:0];
 	[user setState:@"warp"];
 	[user setHorizontal:@"l"];
 	[user setVertical:@"f"];
@@ -738,9 +755,6 @@
 		}];
 		
 	}];
-	
-	[user setEnabled:1];
-	[user setState:@"stand"];
 }
 
 -(NSImage*)tileImageAtId :(int)x :(int)y
@@ -787,11 +801,13 @@
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 3.0;
 		[[storyboard.spriteCharacter animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 50)];
+		[[storyboard.spriteShadow animator] setAlphaValue:0];
 	} completionHandler:^{
 		
 		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 			context.duration = 3.0;
 			[[storyboard.spriteCharacter animator] setFrame:[position tile:4 :[user x] : [user y]]];
+			[[storyboard.spriteShadow animator] setAlphaValue:1];
 		} completionHandler:^{
 			
 			NSString * warpImage = [NSString stringWithFormat:@"char%d.stand.l.f.1",user.character];
