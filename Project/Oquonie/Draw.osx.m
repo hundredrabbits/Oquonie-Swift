@@ -673,9 +673,28 @@
 	NSLog(@"~  DRAW | animateBlock");
 	
 	storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
-//	storyboard.spriteCharacter.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
-//	storyboard.spriteShadow.frame = CGRectMake(0, 0, [position tile:4 :0 : 0].size.width, [position tile:4 :0 : 0].size.height);
 	
+	[user setEnabled:0];
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		
+		context.duration = 0.25;
+		[[storyboard.spriteCharacter animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 10)];
+		
+	} completionHandler:^{
+		
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+			context.duration = 0.15;
+			[[storyboard.spriteCharacter animator] setFrame:[position tile:4 :[user x] : [user y]]];
+		} completionHandler:^{
+			[user setEnabled:1];
+			[user setState:@"stand"];
+		}];
+		
+	}];
+	
+	
+	/*
 	[user setEnabled:0];
 	
 	if( [[user horizontal] isEqualToString:@"r"] ){	storyboard.spriteCharacter.frame = CGRectOffset([position tile:4 :[user x] : [user y]], 15, 0); }
@@ -688,6 +707,8 @@
 		[user setEnabled:1];
 		[user setState:@"stand"];
 	}];
+	 
+	 */
 }
 
 -(void)animateTransform :(int)nextCharacter
