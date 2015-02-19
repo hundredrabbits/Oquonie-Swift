@@ -50,3 +50,5 @@ NSTimer * userTimer;
 int eventTime;
 int eventFrame;
 int characterFrame;
+
+NSRect windowSize;

@@ -25,6 +25,8 @@
 	[storyboard.spriteCharacter setImageScaling:NSImageScaleProportionallyUpOrDown];
 	[storyboard.spriteShadow setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
+	[self isResized];
+	
     return self;
 }
 
@@ -45,6 +47,20 @@
 	
 	[self room];
 	[self character];
+}
+
+-(void)isResized
+{
+	if( windowSize.size.width != storyboard.view.frame.size.width || windowSize.size.height != storyboard.view.frame.size.height ){
+		NSLog(@"~  DRAW | Resized!!!");
+		
+		room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
+		position = [[Position alloc] initWithView:storyboard.view.frame];
+		
+		[self layout];
+//		[render router:[[Event alloc] initWarp:1:0:0]];
+	}
+	windowSize = storyboard.view.frame;
 }
 
 # pragma mark Notifications -
@@ -151,6 +167,7 @@
 	
 	[self events];
 	[self character];
+	[self isResized];
 }
 
 -(void)events
