@@ -7,6 +7,8 @@
 //
 
 #import "Tile.h"
+#import "xxiivvVariables.h"
+#import "xxiivvSettings.h"
 
 @implementation Tile
 
@@ -42,6 +44,13 @@
 
 -(int)isEvent
 {
+	// Make redghost tiles walkable
+	if( [[self name] isEqualToString:@"redGhost"] && [user location] == 31 && [user eventExists:storageGhostOffice] == 1 ){ return NO;}
+	if( [[self name] isEqualToString:@"redGhost"] && [user location] == 36 && [user eventExists:storageGhostNecomedre] == 1 ){ return NO;}
+	if( [[self name] isEqualToString:@"redGhost"] && [user location] == 40 && [user eventExists:storageGhostNephtaline] == 1 ){ return NO;}
+	if( [[self name] isEqualToString:@"redGhost"] && [user location] == 68 && [user eventExists:storageGhostNeomine] == 1 ){ return NO;}
+	if( [[self name] isEqualToString:@"redGhost"] && [user location] == 86 && [user eventExists:storageGhostNestorine] == 1 ){ return NO;}
+	
     if( [[self type] isEqualToString:@"event"] ){
         return YES;
     }

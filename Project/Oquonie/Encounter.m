@@ -72,10 +72,7 @@
 	}
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		
 		if([user eventExists:socketInstanceStorageId]){
-			NSLog(@"!!!! %d",socketInstanceStorageId);
-			
 			return eventPillarAssembled;
 		}
 		return eventPillarSocket;
@@ -968,6 +965,26 @@
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
 		
+		if( [user location] == 31 ){
+			if( [user eventExists:storageGhostOffice] ){[newDraw sequenceRedHide];}
+			else{ [newDraw sequenceRedSight];}
+		}
+		if( [user location] == 36 ){
+			if( [user eventExists:storageGhostNecomedre] ){	[newDraw sequenceRedHide];}
+			else{ [newDraw sequenceRedSight];	}
+		}
+		if( [user location] == 40 ){
+			if( [user eventExists:storageGhostNephtaline] ){ [newDraw sequenceRedHide];}
+			else{ [newDraw sequenceRedSight];}
+		}
+		if( [user location] == 68 ){
+			if( [user eventExists:storageGhostNeomine] ){ [newDraw sequenceRedHide];}
+			else{ [newDraw sequenceRedSight];}
+		}
+		if( [user location] == 86 ){
+			if( [user eventExists:storageGhostNestorine] ){ [newDraw sequenceRedHide];}
+			else{ [newDraw sequenceRedSight];}
+		}
 	}
 	
 	// Broadcast Event Sprite Change

@@ -33,6 +33,8 @@
 -(void)sequenceCredits1;
 -(void)sequenceCredits2;
 -(void)sequenceCredits3;
+-(void)sequenceRedSight;
+-(void)sequenceRedHide;
 
 -(void)spellbookDisplay;
 -(void)spellbookHide;

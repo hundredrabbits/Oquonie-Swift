@@ -458,10 +458,14 @@
 	storyboard.step1r.frame = [position tile:0 :-2 : -1];
 	storyboard.step2r.frame = [position tile:0 :-2 : 0];
 	storyboard.step3r.frame = [position tile:0 :-2 : 1];
-
+	
+	
+	// Animate Character
+	
 	storyboard.spriteShadow.frame = [position tile:4 :[user x] : [user y]];
-	storyboard.spriteCharacter.frame = [position tile:4 :[user x] : [user y]];
 	storyboard.spriteCharacter.image = [NSImage imageNamed:[NSString stringWithFormat:@"char%d.stand.%@.%@.1",[user character],[user horizontal],[user vertical] ]];
+	
+	// Perform
 	
 	[self blockers];
 	[self notifications];
@@ -469,6 +473,17 @@
 	[self animateContainers];
 	[self updateDrawOrder];
 	[self roomSprites];
+	
+	[storyboard.spriteCharacter setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 10, 0)];
+	[storyboard.spriteCharacter setAlphaValue:0];
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 0.5;
+		[[storyboard.spriteCharacter animator] setAlphaValue:1];
+	} completionHandler:^{
+		NSLog(@"Animated entrance");
+	}];
+	
 }
 
 -(void)roomSprites
@@ -678,13 +693,13 @@
 	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		
-		context.duration = 0.25;
+		context.duration = 0.15;
 		[[storyboard.spriteCharacter animator] setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 10)];
 		
 	} completionHandler:^{
 		
 		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
-			context.duration = 0.15;
+			context.duration = 0.07;
 			[[storyboard.spriteCharacter animator] setFrame:[position tile:4 :[user x] : [user y]]];
 		} completionHandler:^{
 			[user setEnabled:1];
@@ -692,23 +707,6 @@
 		}];
 		
 	}];
-	
-	
-	/*
-	[user setEnabled:0];
-	
-	if( [[user horizontal] isEqualToString:@"r"] ){	storyboard.spriteCharacter.frame = CGRectOffset([position tile:4 :[user x] : [user y]], 15, 0); }
-	else if( [[user horizontal] isEqualToString:@"l"] ){ storyboard.spriteCharacter.frame = CGRectOffset([position tile:4 :[user x] : [user y]], 15, 0); }
-	
-	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
-		context.duration = 0.25;
-		[[storyboard.spriteCharacter animator] setFrame:[position tile:4 :[user x] : [user y]]];
-	} completionHandler:^{
-		[user setEnabled:1];
-		[user setState:@"stand"];
-	}];
-	 
-	 */
 }
 
 -(void)animateTransform :(int)nextCharacter
@@ -790,7 +788,6 @@
     return [NSImage imageNamed:[NSString stringWithFormat:@"tile.%@", [tile value] ]];
 }
 
-
 - (id)randomObject :(NSArray*)array
 {
 	id randomObject = [array count] ? array[arc4random_uniform((u_int32_t)[array count])] : nil;
@@ -837,7 +834,6 @@
 			[user setLock:0];
 		}];
 	}];
-	
 	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		
@@ -953,7 +949,63 @@
 
 -(void)sequenceIntro
 {
+	
+}
 
+-(void)sequenceRedSight
+{
+	NSLog(@"~  DRAW | sequenceRedSight");
+	
+	[user setEnabled:0];
+	
+	// Look for red ghost
+	NSImageView * redGhostView = [self findViewWithName:@"redGhost"];
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 3.0;
+		[[redGhostView animator] setAlphaValue:0];
+	} completionHandler:^{
+		
+		if( [user location] == 31 ){ [user eventCollect:storageGhostOffice];		}
+		if( [user location] == 36 ){ [user eventCollect:storageGhostNecomedre];		}
+		if( [user location] == 40 ){ [user eventCollect:storageGhostNephtaline];	}
+		if( [user location] == 68 ){ [user eventCollect:storageGhostNeomine];		}
+		if( [user location] == 36 ){ [user eventCollect:storageGhostNecomedre];		}
+		if( [user location] == 86 ){ [user eventCollect:storageGhostNestorine];		}
+		
+		[user setEnabled:1];
+	}];
+}
+
+-(void)sequenceRedHide
+{
+	NSLog(@"~  DRAW | sequenceRedHide");
+	
+	[[self findViewWithName:@"redGhost"] setAlphaValue:0];
+}
+
+-(NSImageView*)findViewWithName:(NSString*)name
+{
+	NSImageView * target = [[NSImageView alloc] init];
+	for (int x = -1; x < 2; x++) {
+		for (int y = -1; y < 2; y++) {
+			
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![tileCheck isEvent] ){ continue; }
+			if( ![[tileCheck name] isEqualToString:name] ){ continue; }
+			NSLog(@"Seeing: %@", [tileCheck name]);
+			// Event is a blocker tile type
+			for(NSImageView* subview in [spriteContainer subviews]) {
+				 if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
+					 return subview;
+				 }
+			}
+		}
+	}
+	
+	NSLog(@"Could not find the target view: %@", name);
+	
+	return target;
 }
 
 @end
