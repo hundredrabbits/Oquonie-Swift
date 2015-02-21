@@ -39,12 +39,11 @@
 	NSLog(@"  SETUP + ------------------");
 	
 	[user listening:0];
-	[user setLocation:spawnLocation];
-	[user setCharacter:6];
+	[user setLocation:101];
+	[user setCharacter:1];
 	
 //	[render spellCollect:@"photocopier3":3];
 //	[render spellCollect:@"photocopier2":3];
-	
 //	[user eventCollect:storageQuestPillarNemedique];
 	
 	[NSTimer scheduledTimerWithTimeInterval:0.25 target:render selector:@selector(layout) userInfo:nil repeats:NO];

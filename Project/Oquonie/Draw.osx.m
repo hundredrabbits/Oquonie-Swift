@@ -814,19 +814,38 @@
 	return randomObject;
 }
 
+-(void)vignette
+{
+	NSLog(@"~  DRAW | Vignette");
+	
+	storyboard.vignette.image = [NSImage imageNamed:@"fx.vignette.1.horizontal"];
+	[storyboard.vignette setImageScaling:NSImageScaleAxesIndependently];
+
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 0.5;
+		[[storyboard.vignette animator] setAlphaValue:1];
+	} completionHandler:^{
+		[[storyboard.vignette animator] setAlphaValue:0];
+		storyboard.vignette.image = [NSImage imageNamed:@"fx.vignette.1.horizontal"];
+		[storyboard.vignette setImageScaling:NSImageScaleAxesIndependently];
+	}];
+}
+
 # pragma mark Sequences -
 
--(void)sequenceWarpLobby
+-(void)sequenceWarpTo:(int)destination
 {
 	[user setPosition:0 :0];
 	[self animateWalk];
 	[user setEnabled:0];
 	
-	eventTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sequenceWarpLobbyAnimation) userInfo:nil repeats:NO];
+	eventTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sequenceWarpAnimation:) userInfo:@(destination) repeats:NO];
 }
 
--(void)sequenceWarpLobbyAnimation
+-(void)sequenceWarpAnimation:(NSTimer *)timer
 {
+	int destination = [[timer userInfo] intValue];
+	
 	[user setState:@"warp"];
 	[user setLock:1];
 	[user setHorizontal:@"l"];
@@ -885,7 +904,7 @@
 		
 		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 			
-			[user setLocation:1];
+			[user setLocation:destination];
 			room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
 			[self roomSprites];
 			
@@ -965,6 +984,14 @@
 -(void)sequenceCredits3
 {
 	
+}
+
+-(void)sequenceRamen
+{
+	NSLog(@"~  DRAW | sequenceIntro");
+	[self eraseBlockers];
+	[self blockers];
+	[self vignette];
 }
 
 -(void)sequenceIntro

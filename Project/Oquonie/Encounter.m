@@ -157,9 +157,10 @@
     // Dialogs
     if(![user eventExists: ramenStorage]){
         [user eventCollect:ramenStorage];
-        [newDraw dialog:dialogGainRamen:eventRamen];
-        [newSound play:@"ramen"];
-        [newDraw room];
+		[newSound play:@"ramen"];
+		[newDraw dialog:dialogGainRamen:eventRamen];
+		
+        [newDraw sequenceRamen];
     }
     
     return @"";
@@ -240,7 +241,7 @@
         return @"";
     }
 	
-	[newDraw sequenceWarpLobby];
+	[newDraw sequenceWarpTo:1];
 	
     return @"";
 }
@@ -326,6 +327,7 @@
 		[user setLocation:pillarInstanceWarp];
 		// Clear Spellbook
 		[user clearSpellbook];
+		[newDraw sequenceWarpTo:pillarInstanceWarp];
 	}
 	else{
 		[user eventRemove:pillarInstanceStorageId];

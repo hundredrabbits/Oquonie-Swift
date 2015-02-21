@@ -26,7 +26,7 @@
 -(void)roomShuffle;
 -(void)roomShuffle2;
 
--(void)sequenceWarpLobby;
+-(void)sequenceWarpTo:(int)destination;
 -(void)sequenceIntro;
 -(void)sequenceResetTree;
 -(void)sequenceEndRed;
@@ -35,6 +35,7 @@
 -(void)sequenceCredits3;
 -(void)sequenceRedSight;
 -(void)sequenceRedHide;
+-(void)sequenceRamen;
 
 -(void)spellbookDisplay;
 -(void)spellbookHide;
