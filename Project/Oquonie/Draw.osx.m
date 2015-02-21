@@ -835,8 +835,8 @@
 
 -(void)sequenceWarpTo:(int)destination
 {
-	[user setPosition:0 :0];
-	[self animateWalk];
+//	[user setPosition:0 :0];
+//	[self animateWalk];
 	[user setEnabled:0];
 	
 	eventTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sequenceWarpAnimation:) userInfo:@(destination) repeats:NO];
@@ -873,6 +873,15 @@
 			[user setLock:0];
 		}];
 	}];
+	
+	for(NSImageView* subview in [spriteContainer subviews]) {
+		if( subview.tag != tagBlockers ){ continue; }
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+			context.duration = 3.5;
+			[[subview animator] setAlphaValue:0];
+			[[subview animator] setFrame:CGRectOffset(subview.frame, 0, arc4random() % 35 )];
+		} completionHandler:^{}];
+	}
 	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		

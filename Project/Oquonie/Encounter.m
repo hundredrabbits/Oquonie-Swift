@@ -324,35 +324,11 @@
 		[user eventCollect:pillarInstanceStorageId];
 		[newSound play:@"bump"];
 		[newDraw dialog:dialogGainPillar:eventOwl];
-		[user setLocation:pillarInstanceWarp];
+//		[user setLocation:pillarInstanceWarp];
 		// Clear Spellbook
 		[user clearSpellbook];
 		[newDraw sequenceWarpTo:pillarInstanceWarp];
 	}
-	else{
-		[user eventRemove:pillarInstanceStorageId];
-	}
-	
-	if([user location] == locationNeominePillar ){
-//		[self apiContact:@"oquonie":@"analytics":@"neomine-pillar":@"1"];
-	}
-	else if ([user location] == locationNecomedrePillar ){
-//		[self apiContact:@"oquonie":@"analytics":@"necomedre-pillar":@"1"];
-	}
-	else if ([user location] == locationNephtalinePillar ){
-//		[self apiContact:@"oquonie":@"analytics":@"nephtaline-pillar":@"1"];
-	}
-	else if ([user location] == locationNestorinePillar ){
-//		[self apiContact:@"oquonie":@"analytics":@"nestorine-pillar":@"1"];
-	}
-	else if ([user location] == locationNemediquePillar ){
-//		[self apiContact:@"oquonie":@"analytics":@"nemedique-pillar":@"1"];
-	}
-	else if ([user location] == 147){
-//		[self apiContact:@"oquonie":@"analytics":@"hiversaires-pillar":@"1"];
-	}
-	
-	[newDraw room];
 	
 	// Default
 	return @"";
