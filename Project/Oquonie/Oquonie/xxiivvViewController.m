@@ -177,7 +177,7 @@
 	self.parallaxFront.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*3, ([user x]+[user y])*-3);
 	self.parallaxBack.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*2, ([user x]+[user y])*-2);
     
-	self.roomContainer.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*1.1, ([user x]+[user y])*-1.1);
+//	self.roomContainer.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*1.1, ([user x]+[user y])*-1.1);
 	self.spritesContainer.frame = CGRectOffset(self.view.frame, ([user x]*-1+[user y])*1.1, ([user x]+[user y])*-1.1);
     
 	[UIView commitAnimations];

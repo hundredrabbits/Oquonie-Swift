@@ -34,6 +34,8 @@
 {
 	NSLog(@"~  DRAW | Layout");
 	
+	storyboard.view.wantsLayer = YES;
+	
 	storyboard.roomContainer.frame = storyboard.view.frame;
 	storyboard.spriteContainer.frame = storyboard.view.frame;
 	storyboard.interfaceContainer.frame = storyboard.view.frame;
@@ -58,7 +60,6 @@
 		position = [[Position alloc] initWithView:storyboard.view.frame];
 		
 		[self layout];
-//		[render router:[[Event alloc] initWarp:1:0:0]];
 	}
 	windowSize = storyboard.view.frame;
 }
@@ -491,7 +492,7 @@
 	[self updateDrawOrder];
 	[self roomSprites];
 	
-	[storyboard.spriteCharacter setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 10, 0)];
+	[storyboard.spriteCharacter setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 0)];
 	[storyboard.spriteCharacter setAlphaValue:0];
 	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
@@ -685,6 +686,8 @@
 {
 	CGFloat verticalOffset = (storyboard.view.frame.size.height / 10);
 	CGFloat offsetScale = (storyboard.view.frame.size.height / 200);
+	
+	verticalOffset = 0;
 	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 0.5;
@@ -966,8 +969,43 @@
 
 -(void)sequenceIntro
 {
-	
+	NSLog(@"~  DRAW | sequenceIntro");
+	[self cameraShake:0];
 }
+
+-(void)cameraShake:(int)tremor
+{
+	int minimum = (tremor*-1)/5;
+	int maximum = (tremor)/5;
+	int valX = random(minimum,maximum);
+	int valY = random(minimum,maximum);
+	
+	if(tremor == 50){ storyboard.floor0e.image = [NSImage imageNamed:@"tile.4.png"]; }
+	if(tremor == 110){ storyboard.wall2l.image = [NSImage imageNamed:@"wall.34.r.png"]; }
+	if(tremor == 130){ storyboard.floore1.image = [NSImage imageNamed:@"tile.5.png"]; }
+	if(tremor == 140){ storyboard.wall3r.image = [NSImage imageNamed:@"wall.26.l.png"]; }
+	if(tremor == 150){ storyboard.floor01.image = [NSImage imageNamed:@"tile.6.png"]; }
+	if(tremor == 170){ storyboard.floor1e.image = [NSImage imageNamed:@"tile.4.png"]; }
+	if(tremor == 180){ storyboard.wall3l.image = [NSImage imageNamed:@"wall.26.r.png"]; }
+	if(tremor == 190){ storyboard.step2l.image = [NSImage imageNamed:@"step.9.l.png"]; }
+	if(tremor == 200){ storyboard.wall1r.image = [NSImage imageNamed:@"wall.15.l.png"]; }
+	if(tremor == 200){ storyboard.wall1l.image = [NSImage imageNamed:@"wall.26.r.png"]; }
+	if(tremor == 200){ storyboard.wall2r.image = [NSImage imageNamed:@"wall.40.l.png"]; }
+	
+	if(tremor < 201){
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+			context.duration = 0.03;
+			[[storyboard.roomContainer animator] setFrame:CGRectOffset(storyboard.view.frame, valX/10, valY/10)];
+			[[storyboard.spriteContainer animator] setFrame:CGRectOffset(storyboard.view.frame, valX/10, valY/10)];
+		} completionHandler:^{
+			[self cameraShake:tremor+1];
+		}];
+	}
+	else{
+		[render router:[[Event alloc] initWarp:31:0:0]];
+	}
+}
+
 
 -(void)sequenceRedSight
 {

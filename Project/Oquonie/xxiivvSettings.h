@@ -35,6 +35,7 @@
 
 #define storageEndForm					20
 #define storageEndFormTrigger			21
+#define spawnLocation					29
 
 #define dialogIntroduction			@"KIO"
 #define dialogHaveCharacter			@"QIS" // already are the character from that wizard

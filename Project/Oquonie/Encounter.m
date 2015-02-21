@@ -1358,8 +1358,13 @@
 		if([user character] == 6){
 			[newDraw dialog:dialogTutorialTalk1:eventTutorial];
 			[NSTimer scheduledTimerWithTimeInterval:6 target:newDraw selector:@selector(sequenceIntro) userInfo:nil repeats:NO];
+			[newDraw animateTransform:1];
+			[user setCharacter:1];
+			[user setEnabled:0];
 		}
 	}
+
+	
 	
 	return @"";
 }

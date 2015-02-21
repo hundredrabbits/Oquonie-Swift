@@ -39,7 +39,7 @@
     CGFloat tileH = tileW * 0.5;
     
     CGFloat centerW = (screenFrame.size.width/2)-(tileW/2);
-    CGFloat centerH = (screenFrame.size.height/2)-(tileH/2);
+    CGFloat centerH = (screenFrame.size.height/2)-(tileH/2)*2;
     
     // Wall
     if( type == 5 ){
@@ -48,7 +48,7 @@
     
     if( type == 4 ){
         tileH = tileH * 2;
-        CGFloat centerH = (screenFrame.size.height/2)-(tileH);
+        CGFloat centerH = (screenFrame.size.height/2)-(tileH/2)*2.5;
         if( posX == 0 && posY == 0 ){ return CGRectMake(centerW, centerH + tileH - (tileH*0.15), tileW, tileH); }
         if( posX == -1 && posY == -1 ){ return CGRectMake(centerW, centerH + tileH - (tileH*0.5), tileW, tileH); }
         if( posX ==  1 && posY ==  1 ){ return CGRectMake(centerW, centerH + tileH + (tileH*0.19), tileW, tileH); }
