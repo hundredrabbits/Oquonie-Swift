@@ -373,7 +373,7 @@
     // Tiles
     @"33|event|necomedreNephtaline2|3|r",@"0",@"4",
     @"33",@"0",@"4",
-    @"33",@"0",@"4|event|redGhost|12|l",
+    @"33",@"0",@"4|event|redGhost|0|l",
     // Walls
     @"26",@"0",@"12|warp|33|-1,1",@"19",@"12|warp|37|0,-1",@"19",
     // Steps
@@ -438,7 +438,7 @@
     // Tiles
     @"18",@"6",@"4",
     @"5",@"0",@"30",
-    @"25",@"0",@"32|event|redGhost|12|l",
+    @"25",@"0",@"32|event|redGhost|0|l",
     // Walls
     @"0",@"0",@"0",@"12|warp|41|1,-1",@"0",@"3",
     // Steps
@@ -788,7 +788,7 @@
 
     worldNode[68] = @[
     // Tiles
-    @"38|event|redGhost|12|r",@"10",@"38",
+    @"38|event|redGhost|0|r",@"10",@"38",
     @"4",@"9",@"10",
     @"5",@"6",@"10",
     // Walls
@@ -840,7 +840,7 @@
 {
     worldNode[80] = @[
     // Tiles
-    @"35|block|23",@"35",@"7|event|warpLobby",
+    @"35|block|23",@"35",@"7|event|nestorineLobbyWarp",
     @"34",@"8",@"35",
     @"35",@"34",@"35",
     // Walls
@@ -901,7 +901,7 @@
     worldNode[85] = @[
     // Tiles
     @"34",@"35",@"35",
-    @"35",@"35",@"35|event|redGhost|12|l",
+    @"35",@"35",@"35|event|redGhost|0|l",
     @"0",@"35",@"34",
     // Walls
     @"26",@"15",@"26",@"34",@"16|event|map",@"34",

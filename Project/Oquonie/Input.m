@@ -27,6 +27,7 @@
 	}
 	else if( [user isTalking] ){
 		[newDraw closeDialog];
+		[newDraw mapHide];
 		return;
 	}
     else if( [destination isEmpty] || [destination isBlocker] ){

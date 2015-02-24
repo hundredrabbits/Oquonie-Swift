@@ -252,6 +252,17 @@
                                 <rect key="frame" x="117" y="0.0" width="246" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
+                                    <customView id="Lh4-mx-hiZ" userLabel="mapContainer">
+                                        <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MgM-IH-1Yo" userLabel="mapGraphic">
+                                                <rect key="frame" x="49" y="62" width="147" height="146"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="SxI-HG-ky9"/>
+                                            </imageView>
+                                        </subviews>
+                                    </customView>
                                     <customView id="ErZ-yq-B2f" userLabel="spellsContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="246" height="270"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -331,6 +342,8 @@
                         <outlet property="letterView1" destination="HMZ-dB-Rnr" id="fIm-XO-4f8"/>
                         <outlet property="letterView2" destination="l5c-ZP-xlC" id="oZZ-6s-fPm"/>
                         <outlet property="letterView3" destination="JPI-Rp-fQ7" id="cRc-mh-YAw"/>
+                        <outlet property="mapContainer" destination="Lh4-mx-hiZ" id="mfZ-Aw-Kmv"/>
+                        <outlet property="mapGraphic" destination="MgM-IH-1Yo" id="zfj-Xq-bS0"/>
                         <outlet property="parallaxBack" destination="N85-dO-HK3" id="DoA-Rl-mAV"/>
                         <outlet property="parallaxFront" destination="DOF-D6-wbi" id="Myo-5C-gzZ"/>
                         <outlet property="portraitImageView" destination="oQ7-JZ-QE2" id="otT-nQ-sZ8"/>

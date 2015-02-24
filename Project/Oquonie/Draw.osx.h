@@ -15,6 +15,8 @@
 -(void)dialog  :(NSString*)dialog :(NSString*)characterId;
 -(void)closeDialog;
 
+-(void)mapHide;
+
 -(void)animateWalk;
 -(void)animateTransform :(int)nextCharacter;
 -(void)animateRoomPan;
@@ -22,6 +24,7 @@
 
 -(void)events;
 -(void)notifications;
+-(void)eraseNotifications;
 -(void)room;
 -(void)roomShuffle;
 -(void)roomShuffle2;
@@ -42,6 +45,8 @@
 
 -(void)layout;
 -(void)animationTimer;
+
+-(void)bumpEvent :(NSString*)eventName;
 
 @end
 

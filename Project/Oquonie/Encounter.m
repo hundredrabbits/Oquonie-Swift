@@ -30,6 +30,7 @@
 {
     SEL targetSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:",encounterName]);
     [self performSelector:targetSelector withObject:@"touch"];
+	[newDraw bumpEvent:encounterName];
 }
 
 -(NSString*)see
@@ -241,6 +242,8 @@
         return @"";
     }
 	
+	[user setPosition:0 :0];
+	[newDraw animateWalk];
 	[newDraw sequenceWarpTo:1];
 	
     return @"";
@@ -327,6 +330,7 @@
 //		[user setLocation:pillarInstanceWarp];
 		// Clear Spellbook
 		[user clearSpellbook];
+		[user setPosition:0:0];
 		[newDraw sequenceWarpTo:pillarInstanceWarp];
 	}
 	
@@ -396,6 +400,7 @@
     [newDraw dialog:dialogOwlSave:eventOwl];
     [newSound play:@"owl"];
     [user save];
+	[newDraw spellbookDisplay];
     
     // Return storage Id
     return @"";
@@ -943,26 +948,22 @@
 	// Broadcast Notifications
 	if([option isEqualToString:@"postNotification"]){
 		
-		if( [user location] == 31 ){
-			if( [user eventExists:storageGhostOffice] ){[newDraw sequenceRedHide];}
-			else{ [newDraw sequenceRedSight];}
+		if( [user location] == 31 && ![user eventExists:storageGhostOffice] ){
+			[newDraw sequenceRedSight];
 		}
-		if( [user location] == 36 ){
-			if( [user eventExists:storageGhostNecomedre] ){	[newDraw sequenceRedHide];}
-			else{ [newDraw sequenceRedSight];	}
+		else if( [user location] == 36 && ![user eventExists:storageGhostNecomedre] ){
+			[newDraw sequenceRedSight];
 		}
-		if( [user location] == 40 ){
-			if( [user eventExists:storageGhostNephtaline] ){ [newDraw sequenceRedHide];}
-			else{ [newDraw sequenceRedSight];}
+		else if( [user location] == 40 && ![user eventExists:storageGhostNephtaline] ){
+			[newDraw sequenceRedSight];
 		}
-		if( [user location] == 68 ){
-			if( [user eventExists:storageGhostNeomine] ){ [newDraw sequenceRedHide];}
-			else{ [newDraw sequenceRedSight];}
+		else if( [user location] == 68 && ![user eventExists:storageGhostNeomine] ){
+			[newDraw sequenceRedSight];
 		}
-		if( [user location] == 86 ){
-			if( [user eventExists:storageGhostNestorine] ){ [newDraw sequenceRedHide];}
-			else{ [newDraw sequenceRedSight];}
+		else if( [user location] == 86 && ![user eventExists:storageGhostNestorine] ){
+			[newDraw sequenceRedSight];
 		}
+		else{ [newDraw sequenceRedHide]; }
 	}
 	
 	// Broadcast Event Sprite Change
@@ -970,7 +971,7 @@
 		if([user location] == 31||[user location] == 36||[user location] == 40|[user location] == 68||[user location] == 86){
 			return eventRed;
 		}
-		return @"";
+		return @"0";
 	}
 	
 	return @"";
@@ -1335,7 +1336,9 @@
 	if([user location]==30){
 		if([user character] == 6){
 			[newDraw dialog:dialogTutorialTalk1:eventTutorial];
-			[NSTimer scheduledTimerWithTimeInterval:6 target:newDraw selector:@selector(sequenceIntro) userInfo:nil repeats:NO];
+			[NSTimer scheduledTimerWithTimeInterval:5 target:newDraw selector:@selector(sequenceIntro) userInfo:nil repeats:NO];
+			[NSTimer scheduledTimerWithTimeInterval:4 target:newDraw selector:@selector(closeDialog) userInfo:nil repeats:NO];
+			[newDraw eraseNotifications];
 			[newDraw animateTransform:1];
 			[user setCharacter:1];
 			[user setEnabled:0];
@@ -1789,6 +1792,28 @@
 
 # pragma mark Nestorine -
 
+-(NSString*)nestorineLobbyWarp:(NSString*)option
+{
+	// Broadcast Notifications
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
+	// Broadcast Event Sprite Change
+	if([option isEqualToString:@"postUpdate"]){
+		return @"";
+	}
+	
+	[user setPosition:1:1];
+	[newDraw animateWalk];
+	
+	[user setPosition:0:0];
+	
+	[newDraw sequenceWarpTo:7];
+	
+	return @"";
+}
+
 -(NSString*)warpNestorine:(NSString*)option
 {
     // Broadcast Notification
@@ -1799,20 +1824,14 @@
     if([option isEqualToString:@"postUpdate"]){
         return @""; // try with 17 ?
     }
-    
-    [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(warpNestorineAnimation) userInfo:nil repeats:NO];
-    
+	
+	[user setPosition:0:0];
+	[newDraw animateWalk];
+	
+	[newDraw sequenceWarpTo:80];
     return @"";
 }
 
--(void)warpNestorineAnimation
-{
-    [user setState:@"warp"];
-    [newDraw animateWalk];
-    [user setX:0];
-    [user setY:0];
-    [user setLocation:80];
-}
 
 -(NSString*)nestorineNemedique1 :(NSString*)option
 {

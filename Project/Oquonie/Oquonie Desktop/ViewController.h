@@ -66,6 +66,9 @@
 @property (weak) IBOutlet NSImageView *parallaxFront;
 @property (weak) IBOutlet NSImageView *vignette;
 
+@property (weak) IBOutlet NSView *mapContainer;
+@property (weak) IBOutlet NSImageView *mapGraphic;
+
 @end
 
 ViewController * storyboard;

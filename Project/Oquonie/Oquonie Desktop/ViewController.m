@@ -20,7 +20,9 @@
     [super viewDidLoad];
     storyboard = self;
     [self start];
-    spriteContainer = self.spriteContainer;	
+    spriteContainer = self.spriteContainer;
+	
+	[[window contentView] setWantsLayer:YES];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -39,7 +41,7 @@
 	NSLog(@"  SETUP + ------------------");
 	
 	[user listening:0];
-	[user setLocation:101];
+	[user setLocation:33];
 	[user setCharacter:1];
 	
 //	[render spellCollect:@"photocopier3":3];

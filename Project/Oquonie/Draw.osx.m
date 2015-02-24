@@ -47,6 +47,9 @@
 	
 	[storyboard.vignette setImageScaling:NSImageScaleProportionallyUpOrDown];
 	
+	[self spellbookDisplay];
+	[self spellbookHide];
+	
 	[self room];
 	[self character];
 }
@@ -62,85 +65,6 @@
 		[self layout];
 	}
 	windowSize = storyboard.view.frame;
-}
-
-# pragma mark Notifications -
-
--(void)notifications
-{
-	[self eraseNotifications];
-	
-	NSLog(@"~  DRAW | Notifications");
-	for (int x = -2; x < 3; x++) {
-		for (int y = -2; y < 3; y++) {
-			
-			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
-			if( ![tileCheck isEvent] ){ continue; }
-			
-			// Event is a blocker tile type
-			for(NSImageView* subview in [spriteContainer subviews]) {
-				if( subview.tag == tagCharacter ){ continue; }
-				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
-					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
-					
-					if( ![[newEncounter notify] isEqualToString:@""] ){
-						NSLog(@"~  DRAW | Notification : %@ at %d %d", [newEncounter notify], x, y);
-						[storyboard.spriteContainer addSubview:[self notificationView:x:y:[newEncounter notify]]];
-						break;
-					}
-				}
-			}
-			
-		}
-	}
-}
-
--(NSImageView*)notificationView :(int)x :(int)y :(NSString*)letter
-{
-	int width  = [position tile:4:x:y].size.width;
-	int height = [position tile:4:x:y].size.height;
-	
-	NSImageView *bubbleView = [[NSImageView alloc] initWithFrame:CGRectMake([position tile:4:x:y].origin.x, [position tile:4:x:y].origin.y, width, height)];
-	bubbleView.tag = tagNotifications;
-	bubbleView.image = [NSImage imageNamed:[NSString stringWithFormat:@"notification.%@",letter]];
-	[bubbleView setImageScaling:NSImageScaleProportionallyUpOrDown];
-	
-	return bubbleView;
-}
-
-# pragma mark Notifications -
-
--(void)eraseBlockers
-{
-	NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
-	for(NSImageView* subview in [spriteContainer subviews])
-	{
-		if( subview.tag == tagCharacter ){ continue; }
-		if( subview.tag == tagBlockers ){
-			[viewsToRemove addObject:subview];
-		}
-	}
-	[viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
-}
-
--(void)blockers
-{
-	NSLog(@"~  DRAW | Blockers");
-	[self eraseBlockers];
-	for (int x = -1; x < 2; x++) {
-		for (int y = -1; y < 2; y++) {
-			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
-			if( ![[tileCheck name] isEqualToString:@""] ){
-				NSLog(@"~  DRAW | Blocker      : %@",[tileCheck name]);
-				[spriteContainer addSubview:[self spriteImageView :x:y:tileCheck]];
-			}
-		}
-	}
-}
-
--(void)map :(NSString*)name
-{
-	NSLog(@"~  DRAW | Map %@",name);
 }
 
 -(void)animationTimer
@@ -195,6 +119,123 @@
 			}
 		}
 	}
+}
+
+# pragma mark Notifications -
+
+-(void)notifications
+{
+	[self eraseNotifications];
+	
+	NSLog(@"~  DRAW | Notifications");
+	for (int x = -2; x < 3; x++) {
+		for (int y = -2; y < 3; y++) {
+			
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![tileCheck isEvent] ){ continue; }
+			
+			// Event is a blocker tile type
+			for(NSImageView* subview in [spriteContainer subviews]) {
+				if( subview.tag == tagCharacter ){ continue; }
+				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
+					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
+					
+					if( ![[newEncounter notify] isEqualToString:@""] ){
+						NSLog(@"~  DRAW | Notification : %@ at %d %d", [newEncounter notify], x, y);
+						[storyboard.spriteContainer addSubview:[self notificationView:x:y:[newEncounter notify]]];
+						break;
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+-(NSImageView*)notificationView :(int)x :(int)y :(NSString*)letter
+{
+	int width  = [position tile:4:x:y].size.width;
+	int height = [position tile:4:x:y].size.height;
+	
+	NSImageView *bubbleView = [[NSImageView alloc] initWithFrame:CGRectMake([position tile:4:x:y].origin.x, [position tile:4:x:y].origin.y, width, height)];
+	bubbleView.tag = tagNotifications;
+	bubbleView.image = [NSImage imageNamed:[NSString stringWithFormat:@"notification.%@",letter]];
+	[bubbleView setImageScaling:NSImageScaleProportionallyUpOrDown];
+	
+	return bubbleView;
+}
+
+-(void)eraseNotifications
+{
+	NSLog(@"~  DRAW | Notifications| Erase");
+	
+	NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
+	for(NSImageView* subview in [spriteContainer subviews])
+	{
+		if( subview.tag == tagCharacter ){ continue; }
+		if( subview.tag == tagNotifications ){
+			[viewsToRemove addObject:subview];
+		}
+	}
+	[viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
+}
+
+# pragma mark Notifications -
+
+-(void)eraseBlockers
+{
+	NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
+	for(NSImageView* subview in [spriteContainer subviews])
+	{
+		if( subview.tag == tagCharacter ){ continue; }
+		if( subview.tag == tagBlockers ){
+			[viewsToRemove addObject:subview];
+		}
+	}
+	[viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
+}
+
+-(void)blockers
+{
+	NSLog(@"~  DRAW | Blockers");
+	[self eraseBlockers];
+	for (int x = -1; x < 2; x++) {
+		for (int y = -1; y < 2; y++) {
+			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
+			if( ![[tileCheck name] isEqualToString:@""] ){
+				NSLog(@"~  DRAW | Blocker      : %@",[tileCheck name]);
+				[spriteContainer addSubview:[self spriteImageView :x:y:tileCheck]];
+			}
+		}
+	}
+}
+
+# pragma mark Map -
+
+-(void)map :(NSString*)name
+{
+	NSLog(@"~  DRAW | Map          | %@",name);
+	
+	[[storyboard.mapContainer animator] setAlphaValue:1];
+	
+	storyboard.mapContainer.frame = storyboard.view.frame;
+	CALayer *viewLayer = [CALayer layer];
+	[viewLayer setBackgroundColor:CGColorCreateGenericRGB(1, 1, 1, 1)]; //RGB plus Alpha Channel
+	[storyboard.mapContainer setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
+	[storyboard.mapContainer setLayer:viewLayer];
+	
+	storyboard.mapGraphic.frame = storyboard.view.frame;
+	storyboard.mapGraphic.image = [NSImage imageNamed:[NSString stringWithFormat:@"map.1.%@",[name capitalizedString]]];
+	storyboard.mapGraphic.imageScaling = NSImageScaleProportionallyUpOrDown;
+	
+	[user talking:1];
+}
+
+-(void)mapHide
+{
+	NSLog(@"~  DRAW | Map Hide");
+	
+	[[storyboard.mapContainer animator] setAlphaValue:0];
 }
 
 # pragma mark Dialog -
@@ -305,22 +346,6 @@
     NSLog(@"~  DRAW | animateRoomPan");
 }
 
--(void)eraseNotifications
-{
-	NSLog(@"~  DRAW | Notifications| Erase");
-	
-	NSMutableArray *viewsToRemove = [[NSMutableArray alloc] init];
-	for(NSImageView* subview in [spriteContainer subviews])
-	{
-		if( subview.tag == tagCharacter ){ continue; }
-		if( subview.tag == tagNotifications ){
-			[viewsToRemove addObject:subview];
-		}
-	}
-	[viewsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
-}
-
-
 -(NSImageView*)spriteImageView :(int)x :(int)y :(Tile*)tile
 {
 	NSLog(@"~  DRAW | Sprite       | %@ -> %@", [tile type],[tile name]);
@@ -406,17 +431,6 @@
 	[storyboard.view setWantsLayer: YES];
 	[storyboard.roomColor setImageScaling:NSImageScaleAxesIndependently];
 	
-	if( [[room theme] isEqualToString:@"Black"] ){
-		storyboard.roomColor.image = [NSImage imageNamed:@"fx.background.black"];
-		storyboard.parallaxFront.image = [NSImage imageNamed:@"fx.parallax.3"];
-		storyboard.parallaxBack.image = [NSImage imageNamed:@"fx.parallax.4"];
-	}
-	else if( [[room theme] isEqualToString:@"White"] ){
-		storyboard.roomColor.image = [NSImage imageNamed:@"fx.background.white"];
-		storyboard.parallaxFront.image = [NSImage imageNamed:@"fx.parallax.1"];
-		storyboard.parallaxBack.image = [NSImage imageNamed:@"fx.parallax.2"];
-	}
-	
 	[storyboard.floor00 setImageScaling:NSImageScaleProportionallyUpOrDown];
 	[storyboard.floor1e setImageScaling:NSImageScaleProportionallyUpOrDown];
 	[storyboard.floore1 setImageScaling:NSImageScaleProportionallyUpOrDown];
@@ -491,6 +505,7 @@
 	[self animateContainers];
 	[self updateDrawOrder];
 	[self roomSprites];
+	[self backgroundColor];
 	
 	[storyboard.spriteCharacter setFrame:CGRectOffset([position tile:4 :[user x] : [user y]], 0, 0)];
 	[storyboard.spriteCharacter setAlphaValue:0];
@@ -502,6 +517,22 @@
 		NSLog(@"Animated entrance");
 	}];
 	
+}
+
+-(void)backgroundColor
+{
+	NSLog(@"~  DRAW | Theme        | %@",[room theme]);
+	
+	if( [[room theme] isEqualToString:@"Black"] ){
+		storyboard.roomColor.image = [NSImage imageNamed:@"fx.background.black"];
+		storyboard.parallaxFront.image = [NSImage imageNamed:@"fx.parallax.3"];
+		storyboard.parallaxBack.image = [NSImage imageNamed:@"fx.parallax.4"];
+	}
+	else if( [[room theme] isEqualToString:@"White"] ){
+		storyboard.roomColor.image = [NSImage imageNamed:@"fx.background.white"];
+		storyboard.parallaxFront.image = [NSImage imageNamed:@"fx.parallax.1"];
+		storyboard.parallaxBack.image = [NSImage imageNamed:@"fx.parallax.2"];
+	}
 }
 
 -(void)roomSprites
@@ -639,7 +670,7 @@
 	
 	for(NSImageView* subview in tempArray) {
 		// Send at the back
-		if( subview.frame.origin.y == [position tile:4:0:0].origin.y ){
+		if( (int)subview.frame.origin.y == (int)[position tile:4:0:0].origin.y ){
 			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
 			count += 1;
 		}
@@ -647,12 +678,12 @@
 	
 	for(NSImageView* subview in tempArray) {
 		// Send at the back
-		if( subview.frame.origin.y == [position tile:4:0:1].origin.y ){
+		if( (int)subview.frame.origin.y == (int)[position tile:4:0:1].origin.y ){
 			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
 			count += 1;
 		}
 		// Send at the front
-		else if( subview.frame.origin.y == [position tile:4:0:-1].origin.y ){
+		else if( (int)subview.frame.origin.y == (int)[position tile:4:0:-1].origin.y ){
 			[spriteContainer addSubview:subview positioned:NSWindowAbove relativeTo:nil];
 			count += 1;
 		}
@@ -660,12 +691,12 @@
 	
 	for(NSImageView* subview in tempArray) {
 		// Send at the back
-		if( subview.frame.origin.y == [position tile:4:1:1].origin.y ){
+		if( (int)subview.frame.origin.y == (int)[position tile:4:1:1].origin.y ){
 			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
 			count += 1;
 		}
 		// Send at the front
-		else if( subview.frame.origin.y == [position tile:4:-1:-1].origin.y ){
+		else if( (int)subview.frame.origin.y == (int)[position tile:4:-1:-1].origin.y ){
 			[spriteContainer addSubview:subview positioned:NSWindowAbove relativeTo:nil];
 			count += 1;
 		}
@@ -687,16 +718,34 @@
 	CGFloat verticalOffset = (storyboard.view.frame.size.height / 10);
 	CGFloat offsetScale = (storyboard.view.frame.size.height / 200);
 	
+	int xPos = 0;
+	int yPos = 0;
+	
+	if([user x] == 1 && [user y] == 1){ xPos = 0; yPos = 2; }
+	if([user x] == -1 && [user y] == -1){ xPos = 0; yPos = -2; }
+	
+	if([user x] == -1 && [user y] == 1){ xPos = 2; yPos = 0; }
+	if([user x] == 1 && [user y] == -1){ xPos = -2; yPos = 0; }
+	
+	if([user x] == 1 && [user y] == 0){ xPos = -1; yPos = 1; }
+	if([user x] == 0 && [user y] == 1){ xPos = 1; yPos = 1; }
+	if([user x] == 0 && [user y] == -1){ xPos = -1; yPos = -1; }
+	if([user x] == -1 && [user y] == 0){ xPos = 1; yPos = -1; }
+	
+	
+	NSLog(@"%d",xPos);
+	
+	
 	verticalOffset = 0;
 	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 0.5;
 		
-		[[storyboard.parallaxFront animator] setFrame:CGRectOffset(storyboard.view.frame, ([user x]*[user y])*4, ([user x]+[user y])*-4)];
-		[[storyboard.parallaxBack animator] setFrame:CGRectOffset(storyboard.view.frame, ([user x]*[user y])*2, ([user x]+[user y])*-2)];
+		[[storyboard.parallaxFront animator] setFrame:CGRectOffset(storyboard.view.frame, xPos*7, yPos*7)];
+		[[storyboard.parallaxBack animator] setFrame:CGRectOffset(storyboard.view.frame, xPos*3, yPos*3)];
 		
-		[[storyboard.roomContainer animator] setFrame:CGRectOffset(storyboard.view.frame, ([user x])*offsetScale, (([user x]+[user y])*offsetScale*-1)-verticalOffset )];
-		[[storyboard.spriteContainer animator] setFrame:CGRectOffset(storyboard.view.frame, ([user x])*offsetScale, (([user x]+[user y])*offsetScale*-1)-verticalOffset )];
+		[[storyboard.roomContainer animator] setFrame:CGRectOffset(storyboard.view.frame, xPos*offsetScale, yPos*offsetScale*1 )];
+		[[storyboard.spriteContainer animator] setFrame:CGRectOffset(storyboard.view.frame, xPos*offsetScale, yPos*offsetScale*1 )];
 		
 	} completionHandler:^{
 		
@@ -835,10 +884,7 @@
 
 -(void)sequenceWarpTo:(int)destination
 {
-//	[user setPosition:0 :0];
-//	[self animateWalk];
 	[user setEnabled:0];
-	
 	eventTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(sequenceWarpAnimation:) userInfo:@(destination) repeats:NO];
 }
 
@@ -1001,6 +1047,7 @@
 	[self eraseBlockers];
 	[self blockers];
 	[self vignette];
+	[self updateDrawOrder];
 }
 
 -(void)sequenceIntro
@@ -1042,7 +1089,6 @@
 	}
 }
 
-
 -(void)sequenceRedSight
 {
 	NSLog(@"~  DRAW | sequenceRedSight");
@@ -1052,20 +1098,32 @@
 	// Look for red ghost
 	NSImageView * redGhostView = [self findViewWithName:@"redGhost"];
 	
+	[redGhostView setAlphaValue:1];
+	
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
-		context.duration = 3.0;
+		context.duration = 2.5;
 		[[redGhostView animator] setAlphaValue:0];
 	} completionHandler:^{
-		
-		if( [user location] == 31 ){ [user eventCollect:storageGhostOffice];		}
-		if( [user location] == 36 ){ [user eventCollect:storageGhostNecomedre];		}
-		if( [user location] == 40 ){ [user eventCollect:storageGhostNephtaline];	}
-		if( [user location] == 68 ){ [user eventCollect:storageGhostNeomine];		}
-		if( [user location] == 36 ){ [user eventCollect:storageGhostNecomedre];		}
-		if( [user location] == 86 ){ [user eventCollect:storageGhostNestorine];		}
-		
 		[user setEnabled:1];
+		
+		if( [user location] == 31 ){
+			[user eventCollect:storageGhostOffice];
+		}
+		else if( [user location] == 36 ){
+			[user eventCollect:storageGhostNecomedre];
+		}
+		else if( [user location] == 40 ){
+			[user eventCollect:storageGhostNephtaline];
+		}
+		else if( [user location] == 68 ){
+			[user eventCollect:storageGhostNeomine];
+		}
+		else if( [user location] == 86 ){
+			[user eventCollect:storageGhostNestorine];
+		}
+		
 	}];
+	
 }
 
 -(void)sequenceRedHide
@@ -1073,6 +1131,29 @@
 	NSLog(@"~  DRAW | sequenceRedHide");
 	
 	[[self findViewWithName:@"redGhost"] setAlphaValue:0];
+}
+
+-(void)bumpEvent :(NSString*)eventName
+{
+	NSLog(@"Bump");
+	NSView *targetView = [self findViewWithName:eventName];
+	NSRect targetPosition = targetView.frame;
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 0.1;
+		[[targetView animator] setFrame:CGRectOffset(targetView.frame, 0, 5)];
+	} completionHandler:^{
+		
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+			context.duration = 0.1;
+			[[targetView animator] setFrame:targetPosition];
+		} completionHandler:^{
+			
+		}];
+		
+	}];
+	
+//	[[targetView animator] setFrame:targetPosition];
 }
 
 -(NSImageView*)findViewWithName:(NSString*)name
@@ -1084,10 +1165,16 @@
 			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
 			if( ![tileCheck isEvent] ){ continue; }
 			if( ![[tileCheck name] isEqualToString:name] ){ continue; }
-			NSLog(@"Seeing: %@", [tileCheck name]);
 			// Event is a blocker tile type
 			for(NSImageView* subview in [spriteContainer subviews]) {
-				 if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
+				if( subview == storyboard.spriteCharacter ){ continue; }
+				 if(
+					(int)subview.frame.origin.y == (int)[position tile:4:x:y].origin.y &&
+					(int)subview.frame.origin.x == (int)[position tile:4:x:y].origin.x &&
+					(int)subview.frame.size.width == (int)[position tile:4:x:y].size.width &&
+					(int)subview.frame.size.height == (int)[position tile:4:x:y].size.height
+					){
+					 NSLog(@"Found target view: %d %d", x,y);
 					 return subview;
 				 }
 			}
