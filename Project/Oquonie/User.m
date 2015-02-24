@@ -13,8 +13,12 @@
 -(User*)init
 {
     NSLog(@"+  USER | Init");
-    
-    userData = [[NSMutableDictionary alloc] initWithDictionary:[self new]];
+	
+	userData = [[NSMutableDictionary alloc] initWithDictionary:[self new]];
+	
+	if( [[NSUserDefaults standardUserDefaults] objectForKey:@"savedGame"] ){
+		[self load];
+	}
 	
 	[self setHorizontal:@"l"];
 	[self setVertical:@"b"];
@@ -189,7 +193,8 @@
 
 -(void)save
 {
-    NSLog(@"Save TODO");
+	NSLog(@"•  USER | Save         | ");
+	[[NSUserDefaults standardUserDefaults] setObject:userData forKey:@"savedGame"];
 }
 
 -(int)isListening
@@ -243,8 +248,8 @@
     userData[@"state"] = @"warp";
     userData[@"horizontal"] = @"l";
     userData[@"vertical"] = @"f";
-    userData[@"spellbook"] = [NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil];
-    userData[@"events"] = [NSMutableArray arrayWithObjects:@"",nil];
+    userData[@"spellbook"] = [[NSMutableArray alloc] initWithArray:[NSMutableArray arrayWithObjects:@[@"",@""],@[@"",@""],@[@"",@""],nil]];
+    userData[@"events"] = [[NSMutableArray alloc] initWithArray:@[@""]];
     
     userData[@"isListening"] = @1;
     userData[@"isTalking"] = @0;
@@ -254,6 +259,25 @@
     while ( myCount < 40 )	{ myCount++; userData[@"events"][myCount] = @"";	}
     
     return userData;
+}
+
+-(void)load
+{
+	NSLog(@"+  USER | Loading");
+	NSMutableDictionary * test = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedGame"];
+	
+	userData[@"character"] = test[@"character"];
+	userData[@"location"] = test[@"location"];
+	userData[@"x"] = test[@"x"];
+	userData[@"y"] = test[@"y"];
+	userData[@"spellbook"] = test[@"spellbook"];
+	
+	int myCount = 0;
+	while ( myCount < 40 )	{ myCount++; userData[@"events"][myCount] = test[@"events"][myCount];	}
+	
+	userData[@"isListening"] = test[@"isListening"];
+	userData[@"isTalking"] = test[@"isTalking"];
+	userData[@"isFinished"] = test[@"isFinished"];	
 }
 
 @end

@@ -41,7 +41,7 @@
 	NSLog(@"  SETUP + ------------------");
 	
 	[user listening:0];
-	[user setLocation:148];
+	[user setLocation:1];
 	[user setCharacter:7];
 	[user finishing:1];
 	
