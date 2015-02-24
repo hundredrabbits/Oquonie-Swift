@@ -2427,14 +2427,21 @@
 
 -(NSString*)redEnd :(NSString*)option
 {
-	if([option isEqualToString:@"postNotification"]){ return @""; }		// Broadcast Notification
+	if([option isEqualToString:@"postNotification"]){
+		return @"";
+	}
+	
 	if([option isEqualToString:@"postUpdate"]){
-		if( ![user eventExists:storageEndForm]){
-			[newDraw sequenceEndRed];
-			[user eventCollect:storageEndForm];
+		if( [user eventExists:storageEndForm] == 0){
 			return eventRed;
 		}
+		else{
+			return eventNepturne;
+		}
 	}
+	
+	[newDraw sequenceEndRed];
+	
 	return @"";
 }
 
@@ -2446,7 +2453,7 @@
 	
 	[newDraw dialog:@"OQS":@"31"];
 	[newSound play:@"rekka"];
-	[newDraw sequenceCredits1];
+	[newDraw sequenceWarpTo:108];
 	
 	return @"";
 }
@@ -2458,7 +2465,7 @@
 	
 	[newDraw dialog:@"OPS":@"32"];
 	[newSound play:@"devine"];
-	[newDraw sequenceCredits2];
+	[newDraw sequenceWarpTo:109];
 	return @"";
 }
 

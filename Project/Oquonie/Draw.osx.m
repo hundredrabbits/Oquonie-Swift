@@ -528,8 +528,13 @@
 		storyboard.parallaxFront.image = [NSImage imageNamed:@"fx.parallax.3"];
 		storyboard.parallaxBack.image = [NSImage imageNamed:@"fx.parallax.4"];
 	}
-	else if( [[room theme] isEqualToString:@"White"] ){
+	else if( [[room theme] isEqualToString:@"White"] && [user isFinished] == 0 ){
 		storyboard.roomColor.image = [NSImage imageNamed:@"fx.background.white"];
+		storyboard.parallaxFront.image = [NSImage imageNamed:@"fx.parallax.1"];
+		storyboard.parallaxBack.image = [NSImage imageNamed:@"fx.parallax.2"];
+	}
+	else if( [[room theme] isEqualToString:@"White"] && [user isFinished] == 1 ){
+		storyboard.roomColor.image = [NSImage imageNamed:@"fx.background.black"];
 		storyboard.parallaxFront.image = [NSImage imageNamed:@"fx.parallax.1"];
 		storyboard.parallaxBack.image = [NSImage imageNamed:@"fx.parallax.2"];
 	}
@@ -815,6 +820,7 @@
 			[storyboard.vignette setImageScaling:NSImageScaleAxesIndependently];
 			
 			[self roomSprites];
+			[self closeDialog];
 			
 			[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 				context.duration = 1.0;
@@ -962,6 +968,7 @@
 			[user setLocation:destination];
 			room = [[Room alloc] initWithArray:[world roomAtLocation:[user location]]];
 			[self roomSprites];
+			[self backgroundColor];
 			
 			// Draw Blockers
 			
@@ -978,8 +985,8 @@
 					context.duration = 3.5;
 					[[subview animator]  setFrame:targetPos];
 					[[subview animator]  setAlphaValue:1];
+					[[storyboard.spriteContainer animator] setAlphaValue:1];
 				} completionHandler:^{}];
-				
 			}
 			
 			context.duration = 4.0;
@@ -1018,11 +1025,64 @@
 
 -(void)sequenceResetTree
 {
-	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 10.0;
+		[[storyboard.spriteContainer animator] setAlphaValue:0];
+	} completionHandler:^{
+		
+		[user setPosition:0 :0];
+		[newDraw sequenceWarpTo:1];
+		[user finishing:1];
+
+	}];
+
 }
 
 -(void)sequenceEndRed
 {
+	NSLog(@"~  DRAW | sequenceEndRed");
+	
+	[user setEnabled:0];
+	
+	[newDraw dialog:dialogEnd1:eventRed];
+	
+	NSView * redGhostView = [self findViewWithName:@"redEnd"];
+	
+	// Fade Out Ghost
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 4.5;
+		[[redGhostView animator] setAlphaValue:0];
+	} completionHandler:^{
+		
+		[user eventCollect:storageEndForm];
+		[self events];
+		[self closeDialog];
+		
+		// Fade in Red(Nepturne)
+		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+			context.duration = 4.5;
+			[[redGhostView animator] setAlphaValue:1];
+			
+		} completionHandler:^{
+			[newDraw dialog:dialogEnd1:eventNepturne];
+			[user setPosition:0 :0];
+			[newDraw sequenceWarpTo:106];
+		}];
+		
+	}];
+	
+	// Fade out world
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 20.5;
+		[[storyboard.parallaxFront animator] setFrame:CGRectOffset(storyboard.view.frame, 0, storyboard.view.frame.size.height/3)];
+		[[storyboard.parallaxBack animator] setFrame:CGRectOffset(storyboard.view.frame, 0, storyboard.view.frame.size.height/2)];
+		[[storyboard.parallaxFront animator] setAlphaValue:0];
+		[[storyboard.parallaxBack animator] setAlphaValue:0];
+		
+	} completionHandler:^{
+		
+	}];
+	
 	
 }
 

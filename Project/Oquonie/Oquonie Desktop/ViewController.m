@@ -41,12 +41,16 @@
 	NSLog(@"  SETUP + ------------------");
 	
 	[user listening:0];
-	[user setLocation:33];
-	[user setCharacter:1];
+	[user setLocation:108];
+	[user setCharacter:5];
 	
 //	[render spellCollect:@"photocopier3":3];
-//	[render spellCollect:@"photocopier2":3];
-//	[user eventCollect:storageQuestPillarNemedique];
+	//	[render spellCollect:@"photocopier2":3];
+	[user eventCollect:storageQuestPillarNemedique];
+	[user eventCollect:storageQuestPillarNecomedre];
+	[user eventCollect:storageQuestPillarNeomine];
+	[user eventCollect:storageQuestPillarNestorine];
+	[user eventCollect:storageQuestPillarNephtaline];
 	
 	[NSTimer scheduledTimerWithTimeInterval:0.25 target:render selector:@selector(layout) userInfo:nil repeats:NO];
 	
