@@ -1446,6 +1446,8 @@
 		57C8A1521A7E812E0039B9C8 /* wall.103.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E3C7196B15A9002AAFAB /* wall.103.r.png */; };
 		57C8A1531A7E812E0039B9C8 /* blocker.29.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E370196B15A1002AAFAB /* blocker.29.png */; };
 		57C8A1541A7E812E0039B9C8 /* blocker.30.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E371196B15A1002AAFAB /* blocker.30.png */; };
+		57C978871A9D199000A4E23E /* notification.7.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C978861A9D199000A4E23E /* notification.7.png */; };
+		57C978881A9D199000A4E23E /* notification.7.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C978861A9D199000A4E23E /* notification.7.png */; };
 		57CCC4ED1A8FADCE00299F9E /* iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */; };
 		57E2A1D21A7FC7790016B198 /* letterSpell1.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E2A1CB1A7FC7790016B198 /* letterSpell1.png */; };
 		57E2A1D31A7FC7790016B198 /* letterSpell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E2A1CC1A7FC7790016B198 /* letterSpell2.png */; };
@@ -2255,6 +2257,7 @@
 		57C0E43D1A7C2D29008728C8 /* Draw.osx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Draw.osx.m; path = ../Draw.osx.m; sourceTree = "<group>"; };
 		57C0E4401A7C3EF9008728C8 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		57C0E4411A7C3EF9008728C8 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
+		57C978861A9D199000A4E23E /* notification.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.7.png; path = en.assets/notification.7.png; sourceTree = "<group>"; };
 		57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = iOS.xcassets; path = Oquonie/iOS.xcassets; sourceTree = "<group>"; };
 		57E2A1CB1A7FC7790016B198 /* letterSpell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell1.png; path = en.assets/letterSpell1.png; sourceTree = "<group>"; };
 		57E2A1CC1A7FC7790016B198 /* letterSpell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell2.png; path = en.assets/letterSpell2.png; sourceTree = "<group>"; };
@@ -3569,6 +3572,7 @@
 		579434081A8941F20083CF0F /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				57C978861A9D199000A4E23E /* notification.7.png */,
 				579434221A899EE10083CF0F /* notification.X.png */,
 				579434091A8942960083CF0F /* notification.A.png */,
 				5794340A1A8942960083CF0F /* notification.B.png */,
@@ -4098,6 +4102,7 @@
 				03A9996C1883BA510051DF93 /* tile.29.png in Resources */,
 				033DEBF0196C9956004750C7 /* wall.41.r.png in Resources */,
 				0375469418A70E5000807397 /* dialog_cat.wav in Resources */,
+				57C978871A9D199000A4E23E /* notification.7.png in Resources */,
 				03EC37C4188181AF00D74DE1 /* fx.parallax.3.png in Resources */,
 				03C7E3A2196B15A2002AAFAB /* char8.stand.r.f.1.png in Resources */,
 				033124DE18A32DB300388D2F /* sfx_teleport.wav in Resources */,
@@ -4492,6 +4497,7 @@
 				57C8A0F31A7E81240039B9C8 /* char7.stand.l.b.1.png in Resources */,
 				57C8A0C41A7E81140039B9C8 /* letterO.png in Resources */,
 				57C89FA71A7E80990039B9C8 /* char5.walk.r.b.2.png in Resources */,
+				57C978881A9D199000A4E23E /* notification.7.png in Resources */,
 				57C89F291A7E80800039B9C8 /* wall.gateNestorineClosed.l.png in Resources */,
 				57C89F8E1A7E80900039B9C8 /* char6.stand.l.f.1.png in Resources */,
 				57C8A12E1A7E812B0039B9C8 /* char8.stand.r.f.2.png in Resources */,

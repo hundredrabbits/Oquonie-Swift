@@ -157,7 +157,7 @@
 #define letterUnlocked			@"K"
 #define letterPillar			@"Y"
 #define letterGuide				@"O"
-#define letterCat				@"5"
+#define letterCat				@"7"
 
 #define locationLobbyLanding		1
 #define locationGameStart			29

@@ -535,8 +535,8 @@
 	}
 	else if( [[room theme] isEqualToString:@"White"] && [user isFinished] == 1 ){
 		storyboard.roomColor.image = [NSImage imageNamed:@"fx.background.black"];
-		storyboard.parallaxFront.image = [NSImage imageNamed:@"fx.parallax.1"];
-		storyboard.parallaxBack.image = [NSImage imageNamed:@"fx.parallax.2"];
+		storyboard.parallaxFront.image = [NSImage imageNamed:@"fx.parallax.3"];
+		storyboard.parallaxBack.image = [NSImage imageNamed:@"fx.parallax.4"];
 	}
 }
 

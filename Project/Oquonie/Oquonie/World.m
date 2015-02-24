@@ -175,7 +175,7 @@
 
     worldNode[14] = @[
     // Tiles
-    @"0",@"0|event|noface|29|r",@"0",
+    @"0",@"900|event|noface|29|r",@"0",
     @"0",@"5",@"0",
     @"0",@"5",@"0",
     // Walls
@@ -916,7 +916,7 @@
     @"35",@"35",@"35",
     @"34",@"0",@"34",
     // Walls
-    @"34",@"34|warp|114|-1,0",@"34",@"25",@"15",@"25",
+    @"34",@"34",@"34",@"25",@"15",@"25",
     // Steps
     @"0",@"1|warp|80|0,1",@"0",@"0",@"0",@"0",
     // Name,Background,Audio
@@ -1230,7 +1230,7 @@
     // Name,Background,Audio
     @"Necomedre Fork",@"White",audioEndless];
 
-    // Glitch in nestorine
+    // Glitch in nestorine(unused)
     worldNode[114] = @[
     // Tiles
     @"99",@"99",@"99",
@@ -1246,8 +1246,8 @@
     // Glitch in nemedique
     worldNode[115] = @[
     // Tiles
-    @"98",@"97|event|null|32|l",@"98",
-    @"98",@"98",@"97",
+    @"98",@"97",@"98",
+    @"98",@"31",@"97",
     @"97",@"98",@"98",
     // Walls
     @"15",@"98",@"1",@"98",@"0",@"0",

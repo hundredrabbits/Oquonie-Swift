@@ -876,7 +876,7 @@
         }
     }
     
-    [newDraw dialog:@"123":eventOwl];
+    [newDraw dialog:@"GLF":eventOwl];
     
     return @"";
 }
@@ -2635,14 +2635,23 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		return eventNoFace;
+		if( [user isFinished] == 1 ){
+			return eventNoFace;
+		}
+		return @"0";
 	}
 	
-	if( [user character] == 7 ){
+	if( [user isFinished] == 1 ){
 		
 		[user setEnabled:0];
-		[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(sharkTransform) userInfo:nil repeats:NO];
-		[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(nofaceWarp) userInfo:nil repeats:NO];
+		
+		if( [user character] != 1 ){
+			[self nofaceTransform];
+			[NSTimer scheduledTimerWithTimeInterval:4.5 target:self selector:@selector(nofaceWarp) userInfo:nil repeats:NO];
+		}
+		else{
+			[self nofaceWarp];
+		}
 		
 		[newSound play:@"noface"];
 		[newDraw dialog:dialogIntroduction:eventNoFace];
@@ -2650,17 +2659,17 @@
 		// Clear Spellbook
 		[user clearSpellbook];
 	}
-	else{
-		[newSound play:@"noface"];
-		[newDraw dialog:dialogNoFace:eventNoFace];
-	}
 	return @"";
+}
+-(void)nofaceTransform
+{
+	[newDraw animateTransform:1];
+	[user setCharacter:1];
 }
 
 -(void)nofaceWarp
 {
-	[user setEnabled:0];
-	[render router:[[Event alloc] initWarp:130:0:0]];
+	[newDraw sequenceWarpTo:130];
 }
 
 -(NSString*)daniel:(NSString*)option
