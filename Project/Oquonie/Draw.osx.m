@@ -35,6 +35,13 @@
 	NSLog(@"~  DRAW | Layout");
 	
 	storyboard.view.wantsLayer = YES;
+
+	storyboard.roomContainer.hidden = NO;
+	storyboard.spriteContainer.hidden = NO;
+	storyboard.interfaceContainer.hidden = NO;
+	
+	CALayer *viewLayer = [CALayer layer];
+	[storyboard.interfaceContainer setLayer:viewLayer];
 	
 	storyboard.roomContainer.frame = storyboard.view.frame;
 	storyboard.spriteContainer.frame = storyboard.view.frame;
@@ -52,6 +59,40 @@
 	
 	[self room];
 	[self character];
+	
+	
+	storyboard.roomContainer.alphaValue = 0;
+	storyboard.spriteContainer.alphaValue = 0;
+	storyboard.interfaceContainer.alphaValue = 0;
+	storyboard.parallaxBack.alphaValue = 0;
+	storyboard.parallaxFront.alphaValue = 0;
+	
+	// Wait for everything to settle
+	[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(initialFadeIn) userInfo:nil repeats:NO];
+}
+
+-(void)initialFadeIn
+{
+	NSLog(@"~  DRAW | Fade In");
+	
+	[user setEnabled:0];
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 1.50;
+		[[storyboard.roomContainer animator] setAlphaValue:1];
+		[[storyboard.interfaceContainer animator] setAlphaValue:1];
+	} completionHandler:^{[user setEnabled:1];}];
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 2.50;
+		[[storyboard.parallaxBack animator] setAlphaValue:1];
+	} completionHandler:^{	}];
+	
+	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
+		context.duration = 3.50;
+		[[storyboard.spriteContainer animator] setAlphaValue:1];
+		[[storyboard.parallaxFront animator] setAlphaValue:1];
+	} completionHandler:^{	}];
 }
 
 -(void)isResized
@@ -514,14 +555,13 @@
 		context.duration = 0.5;
 		[[storyboard.spriteCharacter animator] setAlphaValue:1];
 	} completionHandler:^{
-		NSLog(@"Animated entrance");
 	}];
 	
 }
 
 -(void)backgroundColor
 {
-	NSLog(@"~  DRAW | Theme        | %@",[room theme]);
+	NSLog(@"~  DRAW | Theme        | %@(%d)",[room theme], [user isFinished]);
 	
 	if( [[room theme] isEqualToString:@"Black"] ){
 		storyboard.roomColor.image = [NSImage imageNamed:@"fx.background.black"];

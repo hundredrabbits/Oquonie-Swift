@@ -10,6 +10,9 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+- (IBAction)clickWiki:(id)sender;
+- (IBAction)clickKokorobot:(id)sender;
+- (IBAction)clickXxiivv:(id)sender;
 
 @end
 

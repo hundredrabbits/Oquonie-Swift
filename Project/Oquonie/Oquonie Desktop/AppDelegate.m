@@ -22,4 +22,21 @@
     // Insert code here to tear down your application
 }
 
+- (IBAction)clickWiki:(id)sender
+{
+	NSURL *url = [NSURL URLWithString:@"http://wiki.xxiivv.com/oquonie"];
+	[[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+- (IBAction)clickKokorobot:(id)sender
+{
+	NSURL *url = [NSURL URLWithString:@"http://kokorobot.ca"];
+	[[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+- (IBAction)clickXxiivv:(id)sender
+{
+	NSURL *url = [NSURL URLWithString:@"http://xxiivv.com"];
+	[[NSWorkspace sharedWorkspace] openURL:url];
+}
 @end

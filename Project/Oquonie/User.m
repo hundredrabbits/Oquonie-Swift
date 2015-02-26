@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "xxiivvSettings.h"
 
 @implementation User
 
@@ -241,7 +242,7 @@
     userData = [[NSMutableDictionary alloc] init];
     
     userData[@"character"] = @1;
-    userData[@"location"] = @50;
+    userData[@"location"] = @(spawnLocation);
     userData[@"x"] = @0;
     userData[@"y"] = @0;
     userData[@"enabled"] = @0;
@@ -270,14 +271,13 @@
 	userData[@"location"] = test[@"location"];
 	userData[@"x"] = test[@"x"];
 	userData[@"y"] = test[@"y"];
-	userData[@"spellbook"] = test[@"spellbook"];
 	
-	int myCount = 0;
-	while ( myCount < 40 )	{ myCount++; userData[@"events"][myCount] = test[@"events"][myCount];	}
+	userData[@"spellbook"] = [test[@"spellbook"] mutableCopy];
+	userData[@"events"] = [test[@"events"] mutableCopy];
 	
 	userData[@"isListening"] = test[@"isListening"];
-	userData[@"isTalking"] = test[@"isTalking"];
-	userData[@"isFinished"] = test[@"isFinished"];	
+	userData[@"isTalking"] = @0;
+	userData[@"isFinished"] = userData[@"isFinished"];
 }
 
 @end

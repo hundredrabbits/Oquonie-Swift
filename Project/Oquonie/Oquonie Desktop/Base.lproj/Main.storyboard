@@ -53,12 +53,21 @@
                                     <items>
                                         <menuItem title="Visit the Wiki" id="1kR-yh-FNK">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="clickWiki:" target="Voe-Tx-rLC" id="KgM-sz-zHZ"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Visit Rekka's Website" id="J7H-7Q-PF0">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="clickKokorobot:" target="Voe-Tx-rLC" id="MXT-mP-7ka"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Visit Devine's Website" id="lO9-9W-PGl">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="clickXxiivv:" target="Voe-Tx-rLC" id="Wr2-Oj-Epe"/>
+                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
