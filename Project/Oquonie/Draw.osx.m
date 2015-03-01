@@ -134,6 +134,7 @@
 	[self events];
 	[self character];
 	[self isResized];
+	
 }
 
 -(void)events
@@ -175,18 +176,20 @@
 			Tile * tileCheck = [[Tile alloc] initWithString:[room tileAtLocation:x:y]];
 			if( ![tileCheck isEvent] ){ continue; }
 			
+			Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
+			
+			if( ![[newEncounter notify] isEqualToString:@""] ){
+				NSLog(@"~  DRAW | Notification : %@ at %d %d", [newEncounter notify], x, y);
+			   [storyboard.spriteContainer addSubview:[self notificationView:x:y:[newEncounter notify]]];
+				break;
+			}
+			
 			// Event is a blocker tile type
 			for(NSImageView* subview in [spriteContainer subviews]) {
 				if( subview.tag == tagCharacter ){ continue; }
-				if( subview.frame.origin.y == [position tile:4:x:y].origin.y && subview.frame.origin.x == [position tile:4:x:y].origin.x && subview.frame.size.width == [position tile:4:x:y].size.width && subview.frame.size.height == [position tile:4:x:y].size.height ){
-					Encounter * newEncounter = [[Encounter alloc] initWithName:[tileCheck name]];
-					
-					if( ![[newEncounter notify] isEqualToString:@""] ){
-						NSLog(@"~  DRAW | Notification : %@ at %d %d", [newEncounter notify], x, y);
-						[storyboard.spriteContainer addSubview:[self notificationView:x:y:[newEncounter notify]]];
-						break;
-					}
-				}
+				
+				
+				
 			}
 			
 		}
@@ -319,19 +322,19 @@
     storyboard.letterView2.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(1, 1)] ]];
     storyboard.letterView3.image = [NSImage imageNamed:[NSString stringWithFormat:@"letter%@", [dialog substringWithRange:NSMakeRange(2, 1)] ]];
     storyboard.portraitImageView.image = [NSImage imageNamed:[NSString stringWithFormat:@"event.%@.portrait", characterId ]];
-	
 }
 
 -(void)closeDialog
 {
 	NSLog(@"~  DRAW | Dialog       | Close");
 	
+	[user talking:0];
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 0.50;
 		[[storyboard.dialogContainer animator] setAlphaValue:0];
 	} completionHandler:^{
-		[user talking:0];
 	}];
+	[[[Audio alloc] init] effect:@"dialogclose"];
 }
 
 # pragma mark Spellbook -
@@ -422,6 +425,7 @@
 -(void)animateWalk
 {
 	NSLog(@"~  DRAW | animateWalk");
+	[[[Audio alloc] init] effect:@"walk"];
 	
 	[user setState:@"walk"];
 
@@ -712,10 +716,36 @@
 	NSArray *tempArray = [[spriteContainer subviews] copy];
 	
 	[self eraseBlockers];
+	[self eraseNotifications];
 	
+	// Middle
 	for(NSImageView* subview in tempArray) {
 		// Send at the back
 		if( (int)subview.frame.origin.y == (int)[position tile:4:0:0].origin.y ){
+			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
+			count += 1;
+		}
+		// Send at the back
+		if( (int)subview.frame.origin.y == (int)[position tile:4:1:1].origin.y ){
+			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
+			count += 1;
+		}
+		// Send at the front
+		else if( (int)subview.frame.origin.y == (int)[position tile:4:-1:-1].origin.y ){
+			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
+			count += 1;
+		}
+	}
+	
+	// Back
+	for(NSImageView* subview in tempArray) {
+		// Send at the back
+		if( (int)subview.frame.origin.y == (int)[position tile:4:1:0].origin.y ){
+			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
+			count += 1;
+		}
+		// Send at the front
+		else if( (int)subview.frame.origin.y == (int)[position tile:4:0:1].origin.y ){
 			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
 			count += 1;
 		}
@@ -723,8 +753,17 @@
 	
 	for(NSImageView* subview in tempArray) {
 		// Send at the back
-		if( (int)subview.frame.origin.y == (int)[position tile:4:0:1].origin.y ){
+		if( (int)subview.frame.origin.y > (int)[position tile:4:1:1].origin.y - 10 ){
 			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
+			count += 1;
+		}
+	}
+	
+	// Front
+	for(NSImageView* subview in tempArray) {
+		// Send at the back
+		if( (int)subview.frame.origin.y == (int)[position tile:4:-1:0].origin.y ){
+			[spriteContainer addSubview:subview positioned:NSWindowAbove relativeTo:nil];
 			count += 1;
 		}
 		// Send at the front
@@ -734,19 +773,16 @@
 		}
 	}
 	
+	// Far Front
 	for(NSImageView* subview in tempArray) {
 		// Send at the back
-		if( (int)subview.frame.origin.y == (int)[position tile:4:1:1].origin.y ){
-			[spriteContainer addSubview:subview positioned:NSWindowBelow relativeTo:nil];
-			count += 1;
-		}
-		// Send at the front
-		else if( (int)subview.frame.origin.y == (int)[position tile:4:-1:-1].origin.y ){
+		if( (int)subview.frame.origin.y < (int)[position tile:4:-1:-1].origin.y + 10 ){
 			[spriteContainer addSubview:subview positioned:NSWindowAbove relativeTo:nil];
 			count += 1;
 		}
 	}
 	
+	// Far Front
 	for(NSImageView* subview in tempArray) {
 		// Send at the back
 		if( subview.tag == tagNotifications ){
@@ -821,6 +857,8 @@
 		}];
 		
 	}];
+	
+	[[[Audio alloc] init] effect:@"bump"];
 }
 
 -(void)animateTransform :(int)nextCharacter
@@ -838,6 +876,8 @@
 	
 	NSString * warpImage = [NSString stringWithFormat:@"char%d.warp.l.f.1",currentCharacter];
 	storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
+	
+	[[[Audio alloc] init] effect:@"transform"];
 	
 	// Character
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
@@ -881,6 +921,7 @@
 					[user setEnabled:1];
 					storyboard.vignette.alphaValue = 0;
 					[storyboard.vignette setImageScaling:NSImageScaleProportionallyUpOrDown];
+					[self updateDrawOrder];
 					
 				}];
 				
@@ -946,6 +987,8 @@
 	NSString * warpImage = [NSString stringWithFormat:@"char%d.warp.l.f.1",user.character];
 	storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
 	
+	[[[Audio alloc] init] effect:@"teleport"];
+	
 	// Character
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 		context.duration = 3.0;
@@ -963,6 +1006,8 @@
 			storyboard.spriteCharacter.image = [NSImage imageNamed:warpImage];
 			[user setEnabled:1];
 			[user setLock:0];
+			[[[Audio alloc] init] effect:@"bump1"];
+			
 		}];
 	}];
 	
@@ -1235,7 +1280,6 @@
 
 -(void)bumpEvent :(NSString*)eventName
 {
-	NSLog(@"Bump");
 	NSView *targetView = [self findViewWithName:eventName];
 	NSRect targetPosition = targetView.frame;
 	
@@ -1252,8 +1296,6 @@
 		}];
 		
 	}];
-	
-//	[[targetView animator] setFrame:targetPosition];
 }
 
 -(NSImageView*)findViewWithName:(NSString*)name

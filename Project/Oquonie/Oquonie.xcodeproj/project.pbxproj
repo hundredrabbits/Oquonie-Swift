@@ -853,6 +853,39 @@
 		57C0E43F1A7C2D29008728C8 /* Draw.osx.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E43D1A7C2D29008728C8 /* Draw.osx.m */; };
 		57C0E4421A7C3EF9008728C8 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4411A7C3EF9008728C8 /* Audio.m */; };
 		57C0E4431A7C3EF9008728C8 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4411A7C3EF9008728C8 /* Audio.m */; };
+		57C1AA0A1AA37397005EFD29 /* dialog_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0375469318A70E5000807397 /* dialog_cat.wav */; };
+		57C1AA0B1AA37397005EFD29 /* dialog_devine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB518A67C0400BFA21E /* dialog_devine.wav */; };
+		57C1AA0C1AA37397005EFD29 /* dialog_noface.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB618A67C0400BFA21E /* dialog_noface.wav */; };
+		57C1AA0D1AA37397005EFD29 /* dialog_petunia.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB718A67C0400BFA21E /* dialog_petunia.wav */; };
+		57C1AA0E1AA37397005EFD29 /* dialog_rekka.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB818A67C0400BFA21E /* dialog_rekka.wav */; };
+		57C1AA0F1AA37397005EFD29 /* sfx_teleport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124DD18A32DB300388D2F /* sfx_teleport.wav */; };
+		57C1AA101AA37397005EFD29 /* dialog_ghost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D718A327D100388D2F /* dialog_ghost.wav */; };
+		57C1AA111AA37397005EFD29 /* dialog_red.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D818A327D100388D2F /* dialog_red.wav */; };
+		57C1AA121AA37397005EFD29 /* dialog_shark.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D918A327D100388D2F /* dialog_shark.wav */; };
+		57C1AA131AA37397005EFD29 /* dialog_speakerphone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D518A31E4300388D2F /* dialog_speakerphone.wav */; };
+		57C1AA141AA37397005EFD29 /* dialog_photocopier.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D118A31DC000388D2F /* dialog_photocopier.wav */; };
+		57C1AA151AA37397005EFD29 /* dialog_ramen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D218A31DC000388D2F /* dialog_ramen.wav */; };
+		57C1AA161AA37397005EFD29 /* dialog_necomedre.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C318A31B9300388D2F /* dialog_necomedre.wav */; };
+		57C1AA171AA37397005EFD29 /* dialog_nemedique.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C418A31B9300388D2F /* dialog_nemedique.wav */; };
+		57C1AA181AA37397005EFD29 /* dialog_neomine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C518A31B9300388D2F /* dialog_neomine.wav */; };
+		57C1AA191AA37397005EFD29 /* dialog_nephtaline.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C618A31B9300388D2F /* dialog_nephtaline.wav */; };
+		57C1AA1A1AA37397005EFD29 /* dialog_nepturne.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C718A31B9300388D2F /* dialog_nepturne.wav */; };
+		57C1AA1B1AA37397005EFD29 /* dialog_nestorine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C818A31B9300388D2F /* dialog_nestorine.wav */; };
+		57C1AA1C1AA37397005EFD29 /* dialog_owl.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C118A31A0400388D2F /* dialog_owl.wav */; };
+		57C1AA1D1AA37397005EFD29 /* sfx_transform.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124BF18A313E500388D2F /* sfx_transform.wav */; };
+		57C1AA1E1AA37397005EFD29 /* sfx_spellfull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124BD18A312D700388D2F /* sfx_spellfull.wav */; };
+		57C1AA1F1AA37397005EFD29 /* sfx_spellgain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124B918A311EC00388D2F /* sfx_spellgain.wav */; };
+		57C1AA201AA37397005EFD29 /* sfx_spelllost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124BA18A311EC00388D2F /* sfx_spelllost.wav */; };
+		57C1AA211AA37397005EFD29 /* sfx_warp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124B718A30F8B00388D2F /* sfx_warp.wav */; };
+		57C1AA221AA37397005EFD29 /* sfx_walk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124B518A30EEB00388D2F /* sfx_walk.wav */; };
+		57C1AA231AA37397005EFD29 /* sfx_ambienttoggleoff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DA918A2764500206675 /* sfx_ambienttoggleoff.wav */; };
+		57C1AA241AA37397005EFD29 /* sfx_ambienttoggleon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAA18A2764500206675 /* sfx_ambienttoggleon.wav */; };
+		57C1AA251AA37397005EFD29 /* sfx_bump1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAB18A2764500206675 /* sfx_bump1.wav */; };
+		57C1AA261AA37397005EFD29 /* sfx_click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAC18A2764500206675 /* sfx_click1.wav */; };
+		57C1AA271AA37397005EFD29 /* sfx_dialogclose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAD18A2764500206675 /* sfx_dialogclose.wav */; };
+		57C1AA281AA37397005EFD29 /* sfx_dialogopen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAE18A2764500206675 /* sfx_dialogopen.wav */; };
+		57C1AA291AA37397005EFD29 /* sfx_doorlocked.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAF18A2764500206675 /* sfx_doorlocked.wav */; };
+		57C1AA2A1AA37397005EFD29 /* sfx_bump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DB018A2764500206675 /* sfx_bump.wav */; };
 		57C89F031A7E80800039B9C8 /* wall.41.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEF196C9956004750C7 /* wall.41.r.png */; };
 		57C89F041A7E80800039B9C8 /* wall.41.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEB196C991F004750C7 /* wall.41.l.png */; };
 		57C89F051A7E80800039B9C8 /* wall.98.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BCD18A688AF00BFA21E /* wall.98.l.png */; };
@@ -4492,12 +4525,15 @@
 				57C89F5D1A7E80800039B9C8 /* wall.16.l.png in Resources */,
 				57C89FFA1A7E80AC0039B9C8 /* blocker.11.png in Resources */,
 				57C8A0241A7E80CC0039B9C8 /* event.10.portrait.png in Resources */,
+				57C1AA2A1AA37397005EFD29 /* sfx_bump.wav in Resources */,
 				57C8A0721A7E80F00039B9C8 /* event.20.l.2.png in Resources */,
 				57C89F391A7E80800039B9C8 /* wall.29.l.png in Resources */,
 				57C8A0F31A7E81240039B9C8 /* char7.stand.l.b.1.png in Resources */,
 				57C8A0C41A7E81140039B9C8 /* letterO.png in Resources */,
 				57C89FA71A7E80990039B9C8 /* char5.walk.r.b.2.png in Resources */,
 				57C978881A9D199000A4E23E /* notification.7.png in Resources */,
+				57C1AA181AA37397005EFD29 /* dialog_neomine.wav in Resources */,
+				57C1AA201AA37397005EFD29 /* sfx_spelllost.wav in Resources */,
 				57C89F291A7E80800039B9C8 /* wall.gateNestorineClosed.l.png in Resources */,
 				57C89F8E1A7E80900039B9C8 /* char6.stand.l.f.1.png in Resources */,
 				57C8A12E1A7E812B0039B9C8 /* char8.stand.r.f.2.png in Resources */,
@@ -4512,6 +4548,7 @@
 				57C8A0831A7E80FE0039B9C8 /* event.26.l.3.png in Resources */,
 				57C8A0D61A7E81190039B9C8 /* fx.parallax.3.png in Resources */,
 				57C8A1401A7E812E0039B9C8 /* event.37.l.1.png in Resources */,
+				57C1AA251AA37397005EFD29 /* sfx_bump1.wav in Resources */,
 				57C89FCC1A7E80A40039B9C8 /* char2.warp.l.f.1.png in Resources */,
 				57C8A0131A7E80BC0039B9C8 /* event.15.l.2.png in Resources */,
 				57C8A0F51A7E81240039B9C8 /* char7.stand.r.b.1.png in Resources */,
@@ -4545,6 +4582,7 @@
 				57C8A0981A7E810C0039B9C8 /* event.29.portrait.png in Resources */,
 				57C8A0DB1A7E81190039B9C8 /* fx.transform.3.png in Resources */,
 				57C8A0691A7E80E80039B9C8 /* event.1.r.2.png in Resources */,
+				57C1AA161AA37397005EFD29 /* dialog_necomedre.wav in Resources */,
 				57C8A0AF1A7E81140039B9C8 /* letterSpellC.png in Resources */,
 				57C8A0F41A7E81240039B9C8 /* char7.stand.l.f.1.png in Resources */,
 				57C8A1391A7E812E0039B9C8 /* wall.110.l.png in Resources */,
@@ -4588,6 +4626,7 @@
 				57C8A0F21A7E81210039B9C8 /* event.32.portrait.png in Resources */,
 				57C8A0A11A7E81140039B9C8 /* letter8.png in Resources */,
 				57C8A0731A7E80F00039B9C8 /* event.20.l.3.png in Resources */,
+				57C1AA121AA37397005EFD29 /* dialog_shark.wav in Resources */,
 				57C89F0F1A7E80800039B9C8 /* wall.38.l.png in Resources */,
 				57C8A0361A7E80D30039B9C8 /* event.8.l.3.png in Resources */,
 				575BE1741A7D6ACB0085179C /* tile.48.png in Resources */,
@@ -4612,6 +4651,7 @@
 				57C89F1A1A7E80800039B9C8 /* wall.gateNecomedreClosed.r.png in Resources */,
 				57C8A14E1A7E812E0039B9C8 /* letterSpellF.png in Resources */,
 				57C89FAC1A7E809D0039B9C8 /* char4.stand.l.f.1.png in Resources */,
+				57C1AA171AA37397005EFD29 /* dialog_nemedique.wav in Resources */,
 				57C8A0FF1A7E81240039B9C8 /* char7.walk.r.f.1.png in Resources */,
 				57C8A08E1A7E81090039B9C8 /* event.28.l.1.png in Resources */,
 				57C89FEB1A7E80A70039B9C8 /* char1.walk.r.b.2.png in Resources */,
@@ -4699,6 +4739,7 @@
 				57C8A03C1A7E80D60039B9C8 /* event.7.r.1.png in Resources */,
 				57C89FB91A7E809D0039B9C8 /* char4.walk.r.f.2.png in Resources */,
 				57C89F351A7E80800039B9C8 /* wall.31.l.png in Resources */,
+				57C1AA1A1AA37397005EFD29 /* dialog_nepturne.wav in Resources */,
 				57C8A12B1A7E812B0039B9C8 /* char8.stand.l.f.3.png in Resources */,
 				57C8A0D91A7E81190039B9C8 /* fx.transform.2.png in Resources */,
 				57C8A03E1A7E80D60039B9C8 /* event.7.l.2.png in Resources */,
@@ -4712,6 +4753,7 @@
 				57C89FBA1A7E80A00039B9C8 /* char4.warp.l.f.1.png in Resources */,
 				57C8A0181A7E80C20039B9C8 /* event.14.l.3.png in Resources */,
 				57C89FE51A7E80A70039B9C8 /* char1.stand.r.b.1.png in Resources */,
+				57C1AA141AA37397005EFD29 /* dialog_photocopier.wav in Resources */,
 				57C89F5A1A7E80800039B9C8 /* wall.14.r.png in Resources */,
 				57C8A0121A7E80B90039B9C8 /* event.16.l.3.png in Resources */,
 				57C8A0B51A7E81140039B9C8 /* letterW.png in Resources */,
@@ -4727,10 +4769,12 @@
 				57C89F9D1A7E80990039B9C8 /* char5.stand.r.f.1.png in Resources */,
 				57C8A0821A7E80FE0039B9C8 /* event.26.l.2.png in Resources */,
 				57C89F881A7E80900039B9C8 /* char6.warp.l.f.1.png in Resources */,
+				57C1AA1D1AA37397005EFD29 /* sfx_transform.wav in Resources */,
 				57C89FD91A7E80A40039B9C8 /* char2.walk.r.b.1.png in Resources */,
 				57C89F501A7E80800039B9C8 /* wall.9.r.png in Resources */,
 				57C89F251A7E80800039B9C8 /* wall.gateNephtalineClosed.l.png in Resources */,
 				57C89FCF1A7E80A40039B9C8 /* char2.stand.r.f.1.png in Resources */,
+				57C1AA231AA37397005EFD29 /* sfx_ambienttoggleoff.wav in Resources */,
 				57C89F1C1A7E80800039B9C8 /* wall.gateNecomedreOpen.r.png in Resources */,
 				57C8A0A01A7E81140039B9C8 /* letter7.png in Resources */,
 				57C89FF71A7E80AC0039B9C8 /* blocker.8.png in Resources */,
@@ -4751,7 +4795,9 @@
 				57C8A1291A7E812B0039B9C8 /* char8.stand.l.f.1.png in Resources */,
 				57C8A09C1A7E810F0039B9C8 /* event.35.l.3.png in Resources */,
 				57C8A1021A7E81280039B9C8 /* event.29.l.2.png in Resources */,
+				57C1AA1C1AA37397005EFD29 /* dialog_owl.wav in Resources */,
 				57C8A1141A7E81280039B9C8 /* game_save.png in Resources */,
+				57C1AA1E1AA37397005EFD29 /* sfx_spellfull.wav in Resources */,
 				57C8A07A1A7E80F90039B9C8 /* event.22.l.2.png in Resources */,
 				57C8A0841A7E80FE0039B9C8 /* event.26.l.1.png in Resources */,
 				57C89F321A7E80800039B9C8 /* wall.33.r.png in Resources */,
@@ -4769,12 +4815,14 @@
 				57C89FD41A7E80A40039B9C8 /* char2.stand.r.b.1.png in Resources */,
 				57C89FB01A7E809D0039B9C8 /* char4.stand.l.b.1.png in Resources */,
 				57C89F2D1A7E80800039B9C8 /* wall.gateDocument.shut.l.png in Resources */,
+				57C1AA0A1AA37397005EFD29 /* dialog_cat.wav in Resources */,
 				57C8A0061A7E80AC0039B9C8 /* blocker.23.png in Resources */,
 				57C89F5C1A7E80800039B9C8 /* wall.15.r.png in Resources */,
 				57C89F711A7E80850039B9C8 /* step.98.r.png in Resources */,
 				57C8A0B71A7E81140039B9C8 /* letterB.png in Resources */,
 				57C8A0FA1A7E81240039B9C8 /* char7.walk.l.b.2.png in Resources */,
 				57C8A0ED1A7E81210039B9C8 /* event.31.l.3.png in Resources */,
+				57C1AA0C1AA37397005EFD29 /* dialog_noface.wav in Resources */,
 				575BE16B1A7D6ACB0085179C /* tile.39.png in Resources */,
 				57C89F901A7E80900039B9C8 /* char6.stand.r.f.1.png in Resources */,
 				57C8A0471A7E80D90039B9C8 /* event.6.r.3.png in Resources */,
@@ -4818,6 +4866,7 @@
 				57C8A12F1A7E812B0039B9C8 /* char8.stand.r.f.3.png in Resources */,
 				57C8A0441A7E80D90039B9C8 /* event.6.portrait.png in Resources */,
 				57C89F6E1A7E80800039B9C8 /* wall.18.r.png in Resources */,
+				57C1AA191AA37397005EFD29 /* dialog_nephtaline.wav in Resources */,
 				57C89F8A1A7E80900039B9C8 /* char6.stand.l.f.3.png in Resources */,
 				57C8A0EE1A7E81210039B9C8 /* event.31.portrait.png in Resources */,
 				57C8A0301A7E80CF0039B9C8 /* event.9.r.2.png in Resources */,
@@ -4830,6 +4879,7 @@
 				57C8A0AE1A7E81140039B9C8 /* letterSpellB.png in Resources */,
 				57C8A0C71A7E81140039B9C8 /* letterR.png in Resources */,
 				57C8A0F11A7E81210039B9C8 /* event.32.l.3.png in Resources */,
+				57C1AA1F1AA37397005EFD29 /* sfx_spellgain.wav in Resources */,
 				57C8A11C1A7E81280039B9C8 /* wall.gateCatOpen.l.png in Resources */,
 				57C89F111A7E80800039B9C8 /* wall.39.l.png in Resources */,
 				57C89FCA1A7E80A00039B9C8 /* char3.walk.r.f.1.png in Resources */,
@@ -4913,9 +4963,11 @@
 				575BE1611A7D6ACB0085179C /* tile.30.png in Resources */,
 				57C8A14F1A7E812E0039B9C8 /* wall.102.l.png in Resources */,
 				57C89F861A7E80850039B9C8 /* step.10.l.png in Resources */,
+				57C1AA221AA37397005EFD29 /* sfx_walk.wav in Resources */,
 				57C8A0AC1A7E81140039B9C8 /* letterSpell0.png in Resources */,
 				57C8A01E1A7E80C90039B9C8 /* event.11.l.1.png in Resources */,
 				57C8A0D01A7E81190039B9C8 /* fx.vignette.1.png in Resources */,
+				57C1AA241AA37397005EFD29 /* sfx_ambienttoggleon.wav in Resources */,
 				57C89F581A7E80800039B9C8 /* wall.13.r.png in Resources */,
 				575BE1491A7D6ACB0085179C /* tile.5.png in Resources */,
 				575BE16D1A7D6ACB0085179C /* tile.41.png in Resources */,
@@ -4952,10 +5004,13 @@
 				57C8A1131A7E81280039B9C8 /* fx.parallax.7.png in Resources */,
 				57C89F7B1A7E80850039B9C8 /* step.4.r.png in Resources */,
 				57C89F2C1A7E80800039B9C8 /* wall.gateNestorineOpen.r.png in Resources */,
+				57C1AA281AA37397005EFD29 /* sfx_dialogopen.wav in Resources */,
+				57C1AA271AA37397005EFD29 /* sfx_dialogclose.wav in Resources */,
 				575BE15D1A7D6ACB0085179C /* tile.36.png in Resources */,
 				57C8A0531A7E80DF0039B9C8 /* event.4.l.2.png in Resources */,
 				57E2A1DD1A7FC7D20016B198 /* letterSpell4.png in Resources */,
 				575BE1551A7D6ACB0085179C /* tile.17.png in Resources */,
+				57C1AA0F1AA37397005EFD29 /* sfx_teleport.wav in Resources */,
 				57C8A0C11A7E81140039B9C8 /* letterL.png in Resources */,
 				57C8A0971A7E810C0039B9C8 /* event.29.r.3.png in Resources */,
 				57C89FC71A7E80A00039B9C8 /* char3.walk.l.f.2.png in Resources */,
@@ -4998,8 +5053,10 @@
 				57C89FA11A7E80990039B9C8 /* char5.stand.r.b.1.png in Resources */,
 				57C8A0E11A7E811D0039B9C8 /* splash.xxiivv.png in Resources */,
 				57C8A0541A7E80DF0039B9C8 /* event.4.l.3.png in Resources */,
+				57C1AA261AA37397005EFD29 /* sfx_click1.wav in Resources */,
 				575BE1681A7D6ACB0085179C /* tile.21.png in Resources */,
 				57C8A0C81A7E81140039B9C8 /* letterS.png in Resources */,
+				57C1AA131AA37397005EFD29 /* dialog_speakerphone.wav in Resources */,
 				57C89FF81A7E80AC0039B9C8 /* blocker.9.png in Resources */,
 				57C8A0671A7E80E80039B9C8 /* event.1.l.3.png in Resources */,
 				57C8A0EC1A7E81210039B9C8 /* event.31.l.2.png in Resources */,
@@ -5009,11 +5066,13 @@
 				57C8A0A31A7E81140039B9C8 /* tile.100_l.png in Resources */,
 				57C89F921A7E80900039B9C8 /* char6.walk.l.b.2.png in Resources */,
 				579434201A89429A0083CF0F /* notification.F.png in Resources */,
+				57C1AA291AA37397005EFD29 /* sfx_doorlocked.wav in Resources */,
 				57C89F2B1A7E80800039B9C8 /* wall.gateNestorineOpen.l.png in Resources */,
 				57C8A0871A7E81010039B9C8 /* event.25.l.1.png in Resources */,
 				57C8A1151A7E81280039B9C8 /* map.1.Lobby.png in Resources */,
 				57C89F8B1A7E80900039B9C8 /* char6.stand.r.f.2.png in Resources */,
 				57C8A0CE1A7E81190039B9C8 /* fx.indicator.f.l.png in Resources */,
+				57C1AA0B1AA37397005EFD29 /* dialog_devine.wav in Resources */,
 				57C8A03D1A7E80D60039B9C8 /* event.7.l.1.png in Resources */,
 				57C89F6B1A7E80800039B9C8 /* wall.17.l.png in Resources */,
 				57C8A06A1A7E80E80039B9C8 /* event.1.r.3.png in Resources */,
@@ -5022,6 +5081,7 @@
 				57C89FE01A7E80A70039B9C8 /* char1.stand.l.f.3.png in Resources */,
 				57C89FE61A7E80A70039B9C8 /* char1.walk.l.b.1.png in Resources */,
 				57C8A10F1A7E81280039B9C8 /* event.34.l.1.png in Resources */,
+				57C1AA0E1AA37397005EFD29 /* dialog_rekka.wav in Resources */,
 				57C8A1241A7E81280039B9C8 /* event.33.r.2.png in Resources */,
 				57C8A1061A7E81280039B9C8 /* wall.100.l.png in Resources */,
 				57C8A0CA1A7E81190039B9C8 /* fx.pillartile.png in Resources */,
@@ -5047,6 +5107,7 @@
 				575BE15A1A7D6ACB0085179C /* tile.33.png in Resources */,
 				57C89F081A7E80800039B9C8 /* wall.40.r.png in Resources */,
 				57C89FC91A7E80A00039B9C8 /* char3.walk.r.b.2.png in Resources */,
+				57C1AA111AA37397005EFD29 /* dialog_red.wav in Resources */,
 				57C8A1371A7E812B0039B9C8 /* char8.walk.r.f.2.png in Resources */,
 				575BE1691A7D6ACB0085179C /* tile.22.png in Resources */,
 				57C8A0CB1A7E81190039B9C8 /* fx.parallax.5.png in Resources */,
@@ -5078,6 +5139,7 @@
 				57C89FC61A7E80A00039B9C8 /* char3.walk.l.f.1.png in Resources */,
 				57C89F491A7E80800039B9C8 /* wall.5.l.png in Resources */,
 				57C8A1361A7E812B0039B9C8 /* char8.walk.r.f.1.png in Resources */,
+				57C1AA211AA37397005EFD29 /* sfx_warp.wav in Resources */,
 				57C89F751A7E80850039B9C8 /* step.1.r.png in Resources */,
 				57C89F0B1A7E80800039B9C8 /* wall.gateRedOpen.l.png in Resources */,
 				57C8A0281A7E80CC0039B9C8 /* event.10.l.3.png in Resources */,
@@ -5109,12 +5171,14 @@
 				57C89F2E1A7E80800039B9C8 /* wall.gateDocument.shut.r.png in Resources */,
 				57C8A00F1A7E80B60039B9C8 /* event.17.l.1.png in Resources */,
 				575BE13C1A7D6ACB0085179C /* tile.111.png in Resources */,
+				57C1AA101AA37397005EFD29 /* dialog_ghost.wav in Resources */,
 				57C8A1331A7E812B0039B9C8 /* char8.walk.l.f.2.png in Resources */,
 				57C89FBF1A7E80A00039B9C8 /* char3.stand.r.f.1.png in Resources */,
 				575BE1631A7D6ACB0085179C /* tile.27.png in Resources */,
 				57C89F891A7E80900039B9C8 /* char6.stand.l.f.2.png in Resources */,
 				57C89F0A1A7E80800039B9C8 /* wall.gateRedClosed.r.png in Resources */,
 				57C89F3E1A7E80800039B9C8 /* wall.E.r.png in Resources */,
+				57C1AA1B1AA37397005EFD29 /* dialog_nestorine.wav in Resources */,
 				5794341C1A89429A0083CF0F /* notification.B.png in Resources */,
 				575BE1391A7D6ACB0085179C /* tile.108.png in Resources */,
 				575BE1531A7D6ACB0085179C /* tile.15.png in Resources */,
@@ -5142,6 +5206,7 @@
 				57C8A06B1A7E80EC0039B9C8 /* event.19.r.1.png in Resources */,
 				57C8A1041A7E81280039B9C8 /* wall.99.l.png in Resources */,
 				57C8A0E61A7E81210039B9C8 /* blocker.28.png in Resources */,
+				57C1AA0D1AA37397005EFD29 /* dialog_petunia.wav in Resources */,
 				57C89FF11A7E80AC0039B9C8 /* blocker.26.png in Resources */,
 				57C8A0511A7E80DF0039B9C8 /* event.4.portrait.png in Resources */,
 				57C89FAA1A7E809D0039B9C8 /* char4.stand.l.f.2.png in Resources */,
@@ -5163,6 +5228,7 @@
 				575BE1581A7D6ACB0085179C /* tile.38.png in Resources */,
 				57C89F591A7E80800039B9C8 /* wall.14.l.png in Resources */,
 				57C8A0E21A7E81210039B9C8 /* event.33.l.1.png in Resources */,
+				57C1AA151AA37397005EFD29 /* dialog_ramen.wav in Resources */,
 				57C8A0DC1A7E811D0039B9C8 /* game_erase.png in Resources */,
 				57C8A0641A7E80E80039B9C8 /* event.1.portrait.png in Resources */,
 				57C89F611A7E80800039B9C8 /* wall.21.l.png in Resources */,
@@ -5364,6 +5430,7 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -5395,6 +5462,7 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

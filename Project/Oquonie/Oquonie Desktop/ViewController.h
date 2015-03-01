@@ -15,6 +15,9 @@
 
 #import "DrawView.h"
 
+#import <Foundation/Foundation.h>
+@import AVFoundation;
+
 @interface ViewController : NSViewController
 
 @property (weak) IBOutlet DrawView *roomContainer;
@@ -74,4 +77,7 @@
 ViewController * storyboard;
 NSView * spriteContainer;
 CoreWindow * coreWindow;
+
+
+int userAudioPlaying;
 

@@ -1269,7 +1269,7 @@
     // Name,Background,Audio
     @"Test Level",@"White",audioPillar];
 
-    // Extra Warp Zone TODO
+    // Extra Warp Zone
 
     worldNode[117] = @[
     // Tiles

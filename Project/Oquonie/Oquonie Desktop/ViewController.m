@@ -50,7 +50,7 @@
 	test.image = [NSImage imageNamed:@"splash.xxiivv"];
 	test.alphaValue = 0;
 	
-	float splashSpeed = 0.2;
+	float splashSpeed = 0; // TODO
 	
 	// Fade In XXIIVV
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
@@ -60,7 +60,7 @@
 		
 		// Fade out XXIIVV
 		[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
-			context.duration = splashSpeed;
+			context.duration = splashSpeed/2;
 			[[test animator] setAlphaValue:0];
 		} completionHandler:^{
 			
@@ -74,7 +74,7 @@
 				
 				// Fade Out Kokorobot
 				[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
-					context.duration = splashSpeed;
+					context.duration = splashSpeed/2;
 					[[test animator] setAlphaValue:0];
 				} completionHandler:^{
 					
@@ -88,7 +88,7 @@
 						
 						// Fade Out Oquonie
 						[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
-							context.duration = splashSpeed;
+							context.duration = splashSpeed/2;
 							[[test animator] setAlphaValue:0];
 						} completionHandler:^{
 							
@@ -102,9 +102,7 @@
 			}];
 		}];
 	}];
-	
-	
-	
+
 }
 
 -(void)start
@@ -116,8 +114,8 @@
 	
 	NSLog(@"  SETUP + ------------------");
 	
-	
-	
+	[user setLocation:1];
+	[user setCharacter:2];
 	
 	/*
 	 
@@ -139,10 +137,10 @@
 //	[user eventCollect:storageQuestPillarNestorine];
 	*/
 	
+	[newDraw dialog:dialogOwlSave:eventOwl];
 	
 	[eventTimer invalidate];
 	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:newDraw selector:@selector(animationTimer) userInfo:nil repeats:YES];
-	
 }
 
 - (void)setRepresentedObject:(id)representedObject {

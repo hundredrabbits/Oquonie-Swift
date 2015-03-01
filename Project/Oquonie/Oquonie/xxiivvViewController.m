@@ -117,7 +117,7 @@
         [user setX:([user x] + posX)];
         [user setY:([user y] + posY)];
         
-		[self audioEffectPlayer:@"walk"];
+		[[[Audio alloc] init] effect:@"walk"];
 		[self moveEventCheck:([user x]) :([user y])];
 		
 		[UIView animateWithDuration:0.3 animations:^(void){
@@ -275,21 +275,21 @@
 	// Look if tile is missing
 	if( [tile isEmpty] ){
 		NSLog(@"> EVENT | Blocked      | No Ground");
-		[self audioEffectPlayer:@"bump"];
+		[[[Audio alloc] init] effect:@"bump"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a blocker
 	if( [tile isBlocker] ){
 		NSLog(@"> EVENT | Blocked      | Blocker");
-		[self audioEffectPlayer:@"bump"];
+		[[[Audio alloc] init] effect:@"bump"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}
 	// Look if tile is a event
 	if( [tile isWarp] ){
 		NSLog(@"> EVENT | Blocked      | Warp");
-		[self audioEffectPlayer:@"warp"];
+		[[[Audio alloc] init] effect:@"warp"];
 		[self moveCollideAnimateChar:posX:posY];
 		return 1;
 	}

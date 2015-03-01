@@ -16,7 +16,6 @@
 {
     NSLog(@"+ ENCNT | Init");
     newDraw = [[Draw alloc] init];
-    newSound = [[Audio alloc] init];
     return self;
 }
 
@@ -82,7 +81,7 @@
 	if([user eventExists:socketInstanceStorageId]){
 		[newDraw dialog:dialogInfoPillar:eventOwl];
 	}
-	[newSound play:@"bump1"];
+	[[[Audio alloc] init] effect:@"bump1"];
 	
 	// Default
 	return @"";
@@ -158,11 +157,14 @@
     // Dialogs
     if(![user eventExists: ramenStorage]){
         [user eventCollect:ramenStorage];
-		[newSound play:@"ramen"];
+		[[[Audio alloc] init] dialog:@"ramen"];
 		[newDraw dialog:dialogGainRamen:eventRamen];
 		
         [newDraw sequenceRamen];
     }
+	else{
+		[[[Audio alloc] init] effect:@"bump"];
+	}
     
     return @"";
 }
@@ -223,9 +225,12 @@
     }
     
     if([user eventExists: ramenStorage]){
-        [render spellCollect:@"ramenQuestSpell":giveSpell];
-        [newSound play:@"ramen"];
+		[render spellCollect:@"ramenQuestSpell":giveSpell];
+		[[[Audio alloc] init] dialog:@"ramen"];
     }
+	else{
+		[[[Audio alloc] init] effect:@"bump"];
+	}
     
     return @"";
 }
@@ -266,12 +271,12 @@
     if([newSound isPlaying]){
         [newSound start];
         [newDraw dialog:dialogAudioOn:eventAudio];
-        [newSound play:@"speakerphone"];
+		[[[Audio alloc] init] dialog:@"speakerphone"];
     }
     else{
         [newSound stop];
         [newDraw dialog:dialogAudioOff:eventAudio];
-        [newSound play:@"speakerphone"];
+		[[[Audio alloc] init] dialog:@"speakerphone"];
     }
 	
 	[newDraw notifications];
@@ -325,9 +330,8 @@
 	// Dialog
 	if(![user eventExists: pillarInstanceStorageId]){
 		[user eventCollect:pillarInstanceStorageId];
-		[newSound play:@"bump"];
+		[[[Audio alloc] init] effect:@"bump"];
 		[newDraw dialog:dialogGainPillar:eventOwl];
-//		[user setLocation:pillarInstanceWarp];
 		// Clear Spellbook
 		[user clearSpellbook];
 		[user setPosition:0:0];
@@ -349,7 +353,7 @@
 	
 	if([user eventExists: storageQuestPillarNemedique] || [user location] == 102){
 		
-		[newSound play:@"shark"];
+		[[[Audio alloc] init] dialog:@"shark"];
 		[newDraw dialog:dialogSharkHelp:eventShark];
 		[newDraw animateTransform:1];
 		[user setCharacter:1];
@@ -359,7 +363,7 @@
 		[user clearSpellbook];
 	}
 	else{
-		[newSound play:@"shark"];
+		[[[Audio alloc] init] dialog:@"shark"];
 		[newDraw dialog:dialogSharkTransform:eventShark];
 	}
 	
@@ -386,7 +390,9 @@
     if([user location] == 60){ [newDraw map:@"neomine"]; }
     if([user location] == 50){ [newDraw map:@"nephtaline"]; }
     if([user location] == 85){ [newDraw map:@"nestorine"]; }
-    
+	
+	[[[Audio alloc] init] effect:@"click1"];
+	
     // Default
     return @"";
 }
@@ -398,7 +404,7 @@
     
     // Dialog
     [newDraw dialog:dialogOwlSave:eventOwl];
-    [newSound play:@"owl"];
+	[[[Audio alloc] init] dialog:@"owl"];
     [user save];
 	[newDraw spellbookDisplay];
     
@@ -1034,7 +1040,7 @@
 	NSString*	eventSpellId	= @"photocopier1";
 	NSString*	eventSpriteId	= eventPhotocopier;
 	int			eventSpell		= spellDocument;
-	NSString* eventDialogSpell = dialogGainSpell(letterDocument);
+	NSString* eventDialogSpell  = dialogGainSpell(letterDocument);
 	
 	// Broadcast Notification
 	if([option isEqualToString:@"postNotification"]){
@@ -1055,7 +1061,8 @@
 	else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	[render spellCollect:eventSpellId:6];
-	[newSound play:@"photocopier"];
+	
+	[[[Audio alloc] init] dialog:@"photocopier"];
 	
 	return @"";
 }
@@ -1087,7 +1094,7 @@
 	else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	[render spellCollect:eventSpellId:6];
-	[newSound play:@"photocopier"];
+	[[[Audio alloc] init] dialog:@"photocopier"];
 	
 	return @"";
 }
@@ -1119,7 +1126,7 @@
 	else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
 	
 	[render spellCollect:eventSpellId:6];
-	[newSound play:@"photocopier"];
+	[[[Audio alloc] init] dialog:@"photocopier"];
 	
 	return @"";
 }
@@ -1152,7 +1159,7 @@
 	
 	// Spell
 	[render spellCollect:eventSpellId:eventSpell];
-	[newSound play:@"nephtaline"];
+	[[[Audio alloc] init] dialog:@"nephtaline"];
 	
 	return @"";
 }
@@ -1186,7 +1193,7 @@
 	
 	// Spell
 	[render spellCollect:eventSpellId:eventSpell];
-	[newSound play:@"nephtaline"];
+	[[[Audio alloc] init] dialog:@"nephtaline"];
 	
 	return @"";
 }
@@ -1219,7 +1226,7 @@
 	
 	// Spell
 	[render spellCollect:eventSpellId:eventSpell];
-	[newSound play:@"nephtaline"];
+	[[[Audio alloc] init] dialog:@"nephtaline"];
 	
 	return @"";
 }
@@ -1256,7 +1263,7 @@
 		return @"";
 	}
 	
-	[newSound play:@"nestorine"];
+	[[[Audio alloc] init] dialog:@"nestorine"];
 	// If doesn't have the first pillar
 	if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
@@ -1302,7 +1309,7 @@
 		return @"";
 	}
 	
-	[newSound play:@"nemedique"];
+	[[[Audio alloc] init] dialog:@"nemedique"];
 	// If doesn't have the first pillar
 	if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
@@ -1385,12 +1392,12 @@
 	if(![newSound isPlaying]){
 		[newSound start];
 		[newDraw dialog:dialogAudioOn:eventAudio];
-		[newSound play:@"speakerphone"];
+		[[[Audio alloc] init] dialog:@"speakerphone"];
 	}
 	else{
 		[newSound start];
 		[newDraw dialog:dialogAudioOff:eventAudio];
-		[newSound play:@"speakerphone"];
+		[[[Audio alloc] init] dialog:@"speakerphone"];
 	}
 	
 	return @"";
@@ -1426,7 +1433,7 @@
     
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"neomine"];
+	[[[Audio alloc] init] dialog:@"neomine"];
     
     return @"";
 }
@@ -1458,7 +1465,7 @@
     
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"neomine"];
+	[[[Audio alloc] init] dialog:@"neomine"];
     
     return @"";
 }
@@ -1491,7 +1498,7 @@
     
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"neomine"];
+	[[[Audio alloc] init] dialog:@"neomine"];
     
     return @"";
 }
@@ -1525,8 +1532,8 @@
     
     // Broadcast Event Sprite Change
     if([option isEqualToString:@"postUpdate"]){	return @""; }
-    
-    [newSound play:@"nemedique"];
+	
+	[[[Audio alloc] init] dialog:@"nemedique"];
     // If doesn't have the first pillar
     if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
     // If the wrong character
@@ -1570,7 +1577,7 @@
     // Broadcast Event Sprite Change
     if([option isEqualToString:@"postUpdate"]){	return @""; }
     
-    [newSound play:@"necomedre"];
+	[[[Audio alloc] init] dialog:@"necomedre"];
     // If doesn't have the first pillar
     if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
     // If the wrong character
@@ -1615,7 +1622,7 @@
     
     // Spell
     [render spellCollect:eventSpellId:4];
-    [newSound play:@"nestorine"];
+	[[[Audio alloc] init] dialog:@"nestorine"];
     
     return @"";
 }
@@ -1648,7 +1655,7 @@
     
     // Spell
     [render spellCollect:eventSpellId:4];
-    [newSound play:@"nestorine"];
+	[[[Audio alloc] init] dialog:@"nestorine"];
     
     return @"";
 }
@@ -1682,7 +1689,7 @@
     
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"nestorine"];
+	[[[Audio alloc] init] dialog:@"nestorine"];
     
     return @"";
 }
@@ -1716,8 +1723,8 @@
     
     // Broadcast Event Sprite Change
     if([option isEqualToString:@"postUpdate"]){	return @""; }
-    
-    [newSound play:@"necomedre"];
+	
+	[[[Audio alloc] init] dialog:@"necomedre"];
     // If doesn't have the first pillar
     if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
     // If the wrong character
@@ -1760,8 +1767,8 @@
     
     // Broadcast Event Sprite Change
     if([option isEqualToString:@"postUpdate"]){	return @""; }
-    
-    [newSound play:@"nephtaline"];
+	
+	[[[Audio alloc] init] dialog:@"nephtaline"];
     // If doesn't have the first pillar
     if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
     // If the wrong character
@@ -1771,6 +1778,7 @@
     
     [render spellCollect:eventSpellId:eventSpell];
     [newDraw dialog:eventDialogSpell:eventSpriteId];
+	[[[Audio alloc] init] dialog:@"nephtaline"];
     
     return @"";
 }
@@ -1861,7 +1869,7 @@
     
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"nemedique"];
+	[[[Audio alloc] init] dialog:@"nemedique"];
     
     return @"";
 }
@@ -1894,7 +1902,7 @@
     
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"nemedique"];
+	[[[Audio alloc] init] dialog:@"nemedique"];
     
     return @"";
 }
@@ -1927,7 +1935,7 @@
     
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"nemedique"];
+	[[[Audio alloc] init] dialog:@"nemedique"];
     
     return @"";
 }
@@ -1962,7 +1970,7 @@
     // Broadcast Event Sprite Change
     if([option isEqualToString:@"postUpdate"]){	return @""; }
     
-    [newSound play:@"nephtaline"];
+	[[[Audio alloc] init] dialog:@"nephtaline"];
     // If doesn't have the first pillar
     if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
     // If the wrong character
@@ -1972,6 +1980,7 @@
     
     [render spellCollect:eventSpellId:eventSpell];
     [newDraw dialog:eventDialogSpell:eventSpriteId];
+	[[[Audio alloc] init] dialog:@"nephtaline"];
     
     return @"";
 }
@@ -2005,7 +2014,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"noface"];
+	[[[Audio alloc] init] dialog:@"noface"];
     
     return @"";
 }
@@ -2037,7 +2046,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"noface"];
+	[[[Audio alloc] init] dialog:@"noface"];
     
     return @"";
 }
@@ -2069,7 +2078,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:@"noface"];
+	[[[Audio alloc] init] dialog:@"noface"];
     
     return @"";
 }
@@ -2101,7 +2110,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:eventCharacter];
+	[[[Audio alloc] init] dialog:eventCharacter];
     
     return @"";
 }
@@ -2133,7 +2142,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:eventCharacter];
+	[[[Audio alloc] init] dialog:eventCharacter];
     
     return @"";
 }
@@ -2165,7 +2174,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:eventCharacter];
+	[[[Audio alloc] init] dialog:eventCharacter];
     
     return @"";
 }
@@ -2197,7 +2206,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:eventCharacter];
+	[[[Audio alloc] init] dialog:eventCharacter];
     
     return @"";
 }
@@ -2228,7 +2237,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:eventCharacter];
+	[[[Audio alloc] init] dialog:eventCharacter];
     
     return @"";
 }
@@ -2259,7 +2268,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:eventCharacter];
+	[[[Audio alloc] init] dialog:eventCharacter];
     
     return @"";
 }
@@ -2291,7 +2300,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:eventCharacter];
+	[[[Audio alloc] init] dialog:eventCharacter];
     
     return @"";
 }
@@ -2323,7 +2332,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:eventCharacter];
+	[[[Audio alloc] init] dialog:eventCharacter];
     
     return @"";
 }
@@ -2355,7 +2364,7 @@
     else											{ [newDraw dialog:eventDialogSpell:eventSpriteId]; }
     // Spell
     [render spellCollect:eventSpellId:eventSpell];
-    [newSound play:eventCharacter];
+	[[[Audio alloc] init] dialog:eventCharacter];
     
     return @"";
 }
@@ -2392,7 +2401,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	[newSound play:@"nestorine"];
+	[[[Audio alloc] init] dialog:@"nestorine"];
 	// If doesn't have the first pillar
 	if(![user eventExists: storageQuestPillarNemedique]){ [newDraw dialog:dialogHavePillarsNot:eventSpriteId]; return @""; }
 	// If the wrong character
@@ -2419,6 +2428,7 @@
 	if([option isEqualToString:@"postUpdate"]){ return @"";}
 	
 	[newDraw sequenceResetTree];
+	[[[Audio alloc] init] effect:@"bump1"];
 	
 	return @"";
 }
@@ -2452,7 +2462,7 @@
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
 	
 	[newDraw dialog:@"OQS":@"31"];
-	[newSound play:@"rekka"];
+	[[[Audio alloc] init] dialog:@"rekka"];
 	[newDraw sequenceWarpTo:108];
 	
 	return @"";
@@ -2464,7 +2474,7 @@
 	if([option isEqualToString:@"postUpdate"])		{ return @"";}
 	
 	[newDraw dialog:@"OPS":@"32"];
-	[newSound play:@"devine"];
+	[[[Audio alloc] init] dialog:@"devine"];
 	[newDraw sequenceWarpTo:109];
 	return @"";
 }
@@ -2501,7 +2511,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	[newSound play:@"cat"];
+	[[[Audio alloc] init] dialog:@"cat"];
 	
 	[render spellCollect:eventSpellId:eventSpell];
 	[newDraw dialog:eventDialogSpell:eventSpriteId];
@@ -2531,7 +2541,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	[newSound play:@"cat"];
+	[[[Audio alloc] init] dialog:@"cat"];
 	
 	[render spellCollect:eventSpellId:eventSpell];
 	[newDraw dialog:eventDialogSpell:eventSpriteId];
@@ -2560,7 +2570,7 @@
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
-	[newSound play:@"cat"];
+	[[[Audio alloc] init] dialog:@"cat"];
 	
 	[render spellCollect:eventSpellId:eventSpell];
 	[newDraw dialog:eventDialogSpell:eventSpriteId];
@@ -2574,7 +2584,7 @@
 	if([option isEqualToString:@"postUpdate"]){	return @""; }
 	
 	[newDraw roomShuffle];
-	[newSound play:@"petunia"];
+	[[[Audio alloc] init] dialog:@"petinia"];
 	
 	return @"";
 }
@@ -2599,7 +2609,7 @@
 		return @"";
 	}
 	[newDraw dialog:@"UUU":eventCat];
-	[newSound play:@"cat"];
+	[[[Audio alloc] init] dialog:@"cat"];
 	
 	return @"";
 }
@@ -2653,7 +2663,7 @@
 			[self nofaceWarp];
 		}
 		
-		[newSound play:@"noface"];
+		[[[Audio alloc] init] dialog:@"noface"];
 		[newDraw dialog:dialogIntroduction:eventNoFace];
 		
 		// Clear Spellbook
@@ -2685,7 +2695,7 @@
 	}
 	
 	[newDraw dialog:@"UVW":@"34"];
-	[newSound play:@"noface"];
+	[[[Audio alloc] init] dialog:@"noface"];
 	
 	return @"";
 }

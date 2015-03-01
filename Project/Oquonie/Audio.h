@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import AVFoundation;
 
 @interface Audio : NSObject
 
@@ -14,5 +15,8 @@
 -(int)isPlaying;
 -(void)start;
 -(void)stop;
+
+-(void)dialog:(NSString*)filename;
+-(void)effect:(NSString*)filename;
 
 @end
