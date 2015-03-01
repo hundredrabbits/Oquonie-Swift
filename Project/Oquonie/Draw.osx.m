@@ -561,6 +561,8 @@
 	} completionHandler:^{
 	}];
 	
+	[[[Audio alloc] init] effect:@"bump1"];
+	
 }
 
 -(void)backgroundColor

@@ -268,15 +268,15 @@
     }
     
     // Dialogs
-    if([newSound isPlaying]){
-        [newSound start];
+    if([newSound isPlaying] == 1){
         [newDraw dialog:dialogAudioOn:eventAudio];
 		[[[Audio alloc] init] dialog:@"speakerphone"];
+		[[[Audio alloc] init] stop];
     }
     else{
-        [newSound stop];
         [newDraw dialog:dialogAudioOff:eventAudio];
 		[[[Audio alloc] init] dialog:@"speakerphone"];
+		[[[Audio alloc] init] stop];
     }
 	
 	[newDraw notifications];
@@ -1384,20 +1384,20 @@
 	
 	// Broadcast Event Sprite Change
 	if([option isEqualToString:@"postUpdate"]){
-		if(![newSound isPlaying]){ return @"21"; }
+		if([newSound isPlaying] == 0){ return @"21"; }
 		else{ return @"20"; }
 	}
 	
 	// Dialogs
-	if(![newSound isPlaying]){
-		[newSound start];
+	if( [newSound isPlaying] == 0 ){
 		[newDraw dialog:dialogAudioOn:eventAudio];
 		[[[Audio alloc] init] dialog:@"speakerphone"];
+		[[[Audio alloc] init] start];
 	}
 	else{
-		[newSound start];
 		[newDraw dialog:dialogAudioOff:eventAudio];
 		[[[Audio alloc] init] dialog:@"speakerphone"];
+		[[[Audio alloc] init] stop];
 	}
 	
 	return @"";

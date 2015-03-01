@@ -26,9 +26,26 @@
 	[NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(splash) userInfo:nil repeats:NO];
 }
 
+-(void)start
+{
+    world = [[World alloc] init];
+    user  = [[User alloc] init];
+    position = [[Position alloc] initWithView:self.view.frame];
+    render = [[Render alloc] init];
+	
+	NSLog(@"  SETUP + ------------------");
+	
+	[newDraw dialog:dialogOwlSave:eventOwl];
+	
+	[eventTimer invalidate];
+	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:newDraw selector:@selector(animationTimer) userInfo:nil repeats:YES];
+}
+
 -(void)splash
 {
 	NSLog(@"  SPLASH + -----------------");
+	
+	float splashSpeed = 2; // TODO
 	
 	self.roomContainer.hidden = YES;
 	self.spriteContainer.hidden = YES;
@@ -46,11 +63,9 @@
 	NSImageView * test = [[NSImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2)-graphicSize/2, (self.view.frame.size.height/2)-graphicSize/2, graphicSize, graphicSize)];
 	test.imageScaling = NSImageScaleProportionallyUpOrDown;
 	[self.interfaceContainer addSubview:test];
-
+	
 	test.image = [NSImage imageNamed:@"splash.xxiivv"];
 	test.alphaValue = 0;
-	
-	float splashSpeed = 0; // TODO
 	
 	// Fade In XXIIVV
 	[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
@@ -66,7 +81,7 @@
 			
 			// Fade In Kokorobot
 			test.image = [NSImage imageNamed:@"splash.kokorobot"];
-
+			
 			[NSAnimationContext runAnimationGroup:^(NSAnimationContext *context){
 				context.duration = splashSpeed;
 				[[test animator] setAlphaValue:1];
@@ -102,45 +117,7 @@
 			}];
 		}];
 	}];
-
-}
-
--(void)start
-{
-    world = [[World alloc] init];
-    user  = [[User alloc] init];
-    position = [[Position alloc] initWithView:self.view.frame];
-    render = [[Render alloc] init];
 	
-	NSLog(@"  SETUP + ------------------");
-	
-	[user setLocation:1];
-	[user setCharacter:2];
-	
-	/*
-	 
-	 [user listening:0];
-	 
-	 [user setLocation:1];
-	 [user eventCollect:storageQuestPillarNephtaline];
-	 [user setCharacter:2];
-	 [user finishing:0];
-	 
-//	[user setCharacter:7];
-//	[user finishing:1];
-	
-//	[render spellCollect:@"photocopier3":3];
-	//	[render spellCollect:@"photocopier2":3];
-//	[user eventCollect:storageQuestPillarNemedique];
-//	[user eventCollect:storageQuestPillarNecomedre];
-//	[user eventCollect:storageQuestPillarNeomine];
-//	[user eventCollect:storageQuestPillarNestorine];
-	*/
-	
-	[newDraw dialog:dialogOwlSave:eventOwl];
-	
-	[eventTimer invalidate];
-	eventTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:newDraw selector:@selector(animationTimer) userInfo:nil repeats:YES];
 }
 
 - (void)setRepresentedObject:(id)representedObject {

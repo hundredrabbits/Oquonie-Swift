@@ -8,6 +8,7 @@
 
 #import "Room.h"
 #import "Tile.h"
+#import "xxiivvVariables.h"
 
 @implementation Room
 
@@ -15,6 +16,7 @@
 {
     NSLog(@"+  ROOM | Init");
     roomNode = [[NSArray alloc] initWithArray:roomArray];
+	[self roomGenerateAudioTrack];
     return self;
 }
 
@@ -123,6 +125,16 @@
 -(NSString*)theme
 {
 	return roomNode[22];
+}
+
+
+-(void)roomGenerateAudioTrack
+{
+	if(![ambientTrack isEqualToString:roomNode[23] ]){
+		NSLog(@"•  ROOM | Audio        | Update   -> %@",roomNode[23]);
+		[[[Audio alloc] init] ambient:roomNode[23]];
+		ambientTrack = roomNode[23];
+	}
 }
 
 @end

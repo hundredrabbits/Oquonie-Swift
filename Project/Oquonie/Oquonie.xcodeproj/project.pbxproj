@@ -886,6 +886,25 @@
 		57C1AA281AA37397005EFD29 /* sfx_dialogopen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAE18A2764500206675 /* sfx_dialogopen.wav */; };
 		57C1AA291AA37397005EFD29 /* sfx_doorlocked.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAF18A2764500206675 /* sfx_doorlocked.wav */; };
 		57C1AA2A1AA37397005EFD29 /* sfx_bump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DB018A2764500206675 /* sfx_bump.wav */; };
+		57C1AA2B1AA38257005EFD29 /* kamera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57255E151A76DD1500388B48 /* kamera.mp3 */; };
+		57C1AA2C1AA38257005EFD29 /* nastazie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03A9D623196D8156005EB95C /* nastazie.mp3 */; };
+		57C1AA2D1AA38257005EFD29 /* play.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BC518A685DF00BFA21E /* play.mp3 */; };
+		57C1AA2E1AA38257005EFD29 /* glitch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BC318A6807600BFA21E /* glitch.mp3 */; };
+		57C1AA2F1AA38257005EFD29 /* endless.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB918A67C0400BFA21E /* endless.mp3 */; };
+		57C1AA301AA38257005EFD29 /* purgatory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BBA18A67C0400BFA21E /* purgatory.mp3 */; };
+		57C1AA311AA38257005EFD29 /* necomedre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D8F18A26BE400206675 /* necomedre.mp3 */; };
+		57C1AA321AA38257005EFD29 /* nemedique.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9018A26BE400206675 /* nemedique.mp3 */; };
+		57C1AA331AA38257005EFD29 /* neomine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9118A26BE400206675 /* neomine.mp3 */; };
+		57C1AA341AA38257005EFD29 /* nephtaline.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9218A26BE500206675 /* nephtaline.mp3 */; };
+		57C1AA351AA38257005EFD29 /* nepturne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9318A26BE500206675 /* nepturne.mp3 */; };
+		57C1AA361AA38257005EFD29 /* nestorine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9418A26BE500206675 /* nestorine.mp3 */; };
+		57C1AA371AA38257005EFD29 /* pillartree.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9518A26BE500206675 /* pillartree.mp3 */; };
+		57C1AA381AA38257005EFD29 /* quiet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9618A26BE500206675 /* quiet.mp3 */; };
+		57C1AA391AA38257005EFD29 /* secret.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9718A26BE500206675 /* secret.mp3 */; };
+		57C1AA3A1AA38257005EFD29 /* town1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9818A26BE500206675 /* town1.mp3 */; };
+		57C1AA3B1AA38257005EFD29 /* town2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9918A26BE500206675 /* town2.mp3 */; };
+		57C1AA3C1AA38257005EFD29 /* town3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9A18A26BE500206675 /* town3.mp3 */; };
+		57C1AA3D1AA38257005EFD29 /* warp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9B18A26BE500206675 /* warp.mp3 */; };
 		57C89F031A7E80800039B9C8 /* wall.41.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEF196C9956004750C7 /* wall.41.r.png */; };
 		57C89F041A7E80800039B9C8 /* wall.41.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEB196C991F004750C7 /* wall.41.l.png */; };
 		57C89F051A7E80800039B9C8 /* wall.98.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BCD18A688AF00BFA21E /* wall.98.l.png */; };
@@ -3497,12 +3516,12 @@
 		57013B8C1A7954E800612048 /* Oquonie Desktop */ = {
 			isa = PBXGroup;
 			children = (
+				57013B941A7954E800612048 /* ViewController.h */,
+				57013B951A7954E800612048 /* ViewController.m */,
 				57C0E43C1A7C2D29008728C8 /* Draw.osx.h */,
 				57C0E43D1A7C2D29008728C8 /* Draw.osx.m */,
 				57013B8F1A7954E800612048 /* AppDelegate.h */,
 				57013B901A7954E800612048 /* AppDelegate.m */,
-				57013B941A7954E800612048 /* ViewController.h */,
-				57013B951A7954E800612048 /* ViewController.m */,
 				57013B991A7954E800612048 /* Main.storyboard */,
 				57013B8D1A7954E800612048 /* Supporting Files */,
 				576FF6CE1A796FA8000824FE /* CoreWindow.h */,
@@ -4533,6 +4552,7 @@
 				57C89FA71A7E80990039B9C8 /* char5.walk.r.b.2.png in Resources */,
 				57C978881A9D199000A4E23E /* notification.7.png in Resources */,
 				57C1AA181AA37397005EFD29 /* dialog_neomine.wav in Resources */,
+				57C1AA331AA38257005EFD29 /* neomine.mp3 in Resources */,
 				57C1AA201AA37397005EFD29 /* sfx_spelllost.wav in Resources */,
 				57C89F291A7E80800039B9C8 /* wall.gateNestorineClosed.l.png in Resources */,
 				57C89F8E1A7E80900039B9C8 /* char6.stand.l.f.1.png in Resources */,
@@ -4702,6 +4722,7 @@
 				57C89FC21A7E80A00039B9C8 /* char3.stand.l.b.1.png in Resources */,
 				57C89F931A7E80900039B9C8 /* char6.walk.l.f.1.png in Resources */,
 				57C89F821A7E80850039B9C8 /* step.8.l.png in Resources */,
+				57C1AA311AA38257005EFD29 /* necomedre.mp3 in Resources */,
 				57C89F791A7E80850039B9C8 /* step.3.r.png in Resources */,
 				57C8A0161A7E80C20039B9C8 /* event.14.l.1.png in Resources */,
 				57C89F0E1A7E80800039B9C8 /* wall.37.r.png in Resources */,
@@ -4759,8 +4780,10 @@
 				57C8A0B51A7E81140039B9C8 /* letterW.png in Resources */,
 				57C89F4B1A7E80800039B9C8 /* wall.7.l.png in Resources */,
 				57C8A1311A7E812B0039B9C8 /* char8.walk.l.b.2.png in Resources */,
+				57C1AA301AA38257005EFD29 /* purgatory.mp3 in Resources */,
 				57C8A0601A7E80E50039B9C8 /* event.2.r.2.png in Resources */,
 				57C89F181A7E80800039B9C8 /* wall.36.r.png in Resources */,
+				57C1AA2B1AA38257005EFD29 /* kamera.mp3 in Resources */,
 				57C8A0B21A7E81140039B9C8 /* letterX.png in Resources */,
 				57C8A1381A7E812B0039B9C8 /* char8.warp.l.f.1.png in Resources */,
 				57C89FC41A7E80A00039B9C8 /* char3.walk.l.b.1.png in Resources */,
@@ -4858,10 +4881,13 @@
 				57C89F261A7E80800039B9C8 /* wall.gateNephtalineClosed.r.png in Resources */,
 				57C89F911A7E80900039B9C8 /* char6.walk.l.b.1.png in Resources */,
 				57E2A1DF1A7FC7D20016B198 /* letterSpell6.png in Resources */,
+				57C1AA3D1AA38257005EFD29 /* warp.mp3 in Resources */,
 				57C89F481A7E80800039B9C8 /* wall.4.r.png in Resources */,
+				57C1AA371AA38257005EFD29 /* pillartree.mp3 in Resources */,
 				57C89FA41A7E80990039B9C8 /* char5.walk.l.f.1.png in Resources */,
 				57C89FB51A7E809D0039B9C8 /* char4.walk.l.f.2.png in Resources */,
 				57C89FB61A7E809D0039B9C8 /* char4.walk.r.b.1.png in Resources */,
+				57C1AA391AA38257005EFD29 /* secret.mp3 in Resources */,
 				57C8A14D1A7E812E0039B9C8 /* event.36.r.3.png in Resources */,
 				57C8A12F1A7E812B0039B9C8 /* char8.stand.r.f.3.png in Resources */,
 				57C8A0441A7E80D90039B9C8 /* event.6.portrait.png in Resources */,
@@ -4875,6 +4901,7 @@
 				57C8A0BF1A7E81140039B9C8 /* letterJ.png in Resources */,
 				575BE1461A7D6ACB0085179C /* tile.2.png in Resources */,
 				57C8A01F1A7E80C90039B9C8 /* event.11.l.2.png in Resources */,
+				57C1AA351AA38257005EFD29 /* nepturne.mp3 in Resources */,
 				57C8A0BC1A7E81140039B9C8 /* letterG.png in Resources */,
 				57C8A0AE1A7E81140039B9C8 /* letterSpellB.png in Resources */,
 				57C8A0C71A7E81140039B9C8 /* letterR.png in Resources */,
@@ -4897,6 +4924,7 @@
 				57C89F421A7E80800039B9C8 /* wall.1.r.png in Resources */,
 				57C8A1101A7E81280039B9C8 /* event.34.l.2.png in Resources */,
 				5794341F1A89429A0083CF0F /* notification.E.png in Resources */,
+				57C1AA2D1AA38257005EFD29 /* play.mp3 in Resources */,
 				57C89FF91A7E80AC0039B9C8 /* blocker.10.png in Resources */,
 				57C8A1231A7E81280039B9C8 /* event.33.r.1.png in Resources */,
 				57C8A0B41A7E81140039B9C8 /* letterV.png in Resources */,
@@ -4910,6 +4938,7 @@
 				57C8A1281A7E812B0039B9C8 /* char8.stand.l.b.1.png in Resources */,
 				57C8A06E1A7E80F00039B9C8 /* event.20.r.1.png in Resources */,
 				57C8A0F61A7E81240039B9C8 /* char7.stand.r.f.1.png in Resources */,
+				57C1AA341AA38257005EFD29 /* nephtaline.mp3 in Resources */,
 				57C8A0911A7E81090039B9C8 /* event.28.portrait.png in Resources */,
 				57C89F0D1A7E80800039B9C8 /* wall.37.l.png in Resources */,
 				57C8A09D1A7E810F0039B9C8 /* event.35.portrait.png in Resources */,
@@ -4985,6 +5014,7 @@
 				57C89F521A7E80800039B9C8 /* wall.10.r.png in Resources */,
 				57C8A0561A7E80E20039B9C8 /* event.3.l.2.png in Resources */,
 				57C8A0321A7E80D30039B9C8 /* event.8.portrait.png in Resources */,
+				57C1AA321AA38257005EFD29 /* nemedique.mp3 in Resources */,
 				57C8A0191A7E80C50039B9C8 /* event.12.portrait.png in Resources */,
 				5794341D1A89429A0083CF0F /* notification.C.png in Resources */,
 				57C89F691A7E80800039B9C8 /* wall.26.l.png in Resources */,
@@ -5002,6 +5032,7 @@
 				57C8A09F1A7E810F0039B9C8 /* event.35.r.3.png in Resources */,
 				57C89FFC1A7E80AC0039B9C8 /* blocker.13.png in Resources */,
 				57C8A1131A7E81280039B9C8 /* fx.parallax.7.png in Resources */,
+				57C1AA2E1AA38257005EFD29 /* glitch.mp3 in Resources */,
 				57C89F7B1A7E80850039B9C8 /* step.4.r.png in Resources */,
 				57C89F2C1A7E80800039B9C8 /* wall.gateNestorineOpen.r.png in Resources */,
 				57C1AA281AA37397005EFD29 /* sfx_dialogopen.wav in Resources */,
@@ -5011,6 +5042,7 @@
 				57E2A1DD1A7FC7D20016B198 /* letterSpell4.png in Resources */,
 				575BE1551A7D6ACB0085179C /* tile.17.png in Resources */,
 				57C1AA0F1AA37397005EFD29 /* sfx_teleport.wav in Resources */,
+				57C1AA2C1AA38257005EFD29 /* nastazie.mp3 in Resources */,
 				57C8A0C11A7E81140039B9C8 /* letterL.png in Resources */,
 				57C8A0971A7E810C0039B9C8 /* event.29.r.3.png in Resources */,
 				57C89FC71A7E80A00039B9C8 /* char3.walk.l.f.2.png in Resources */,
@@ -5023,6 +5055,7 @@
 				57C8A0401A7E80D60039B9C8 /* event.7.portrait.png in Resources */,
 				57C8A13C1A7E812E0039B9C8 /* wall.106.r.png in Resources */,
 				57C8A00B1A7E80B30039B9C8 /* event.18.r.2.png in Resources */,
+				57C1AA381AA38257005EFD29 /* quiet.mp3 in Resources */,
 				57C8A14B1A7E812E0039B9C8 /* event.36.r.1.png in Resources */,
 				57C89F971A7E80900039B9C8 /* char6.walk.r.f.1.png in Resources */,
 				57C8A04A1A7E80DC0039B9C8 /* event.5.portrait.png in Resources */,
@@ -5133,10 +5166,12 @@
 				57C8A0491A7E80DC0039B9C8 /* event.5.l.3.png in Resources */,
 				57C8A11A1A7E81280039B9C8 /* wall.gateCatClosed.l.png in Resources */,
 				57C89FDE1A7E80A70039B9C8 /* char1.stand.l.f.1.png in Resources */,
+				57C1AA2F1AA38257005EFD29 /* endless.mp3 in Resources */,
 				57C89F1B1A7E80800039B9C8 /* wall.gateNecomedreOpen.l.png in Resources */,
 				57C89F571A7E80800039B9C8 /* wall.13.l.png in Resources */,
 				575BE1371A7D6ACB0085179C /* tile.106.png in Resources */,
 				57C89FC61A7E80A00039B9C8 /* char3.walk.l.f.1.png in Resources */,
+				57C1AA3C1AA38257005EFD29 /* town3.mp3 in Resources */,
 				57C89F491A7E80800039B9C8 /* wall.5.l.png in Resources */,
 				57C8A1361A7E812B0039B9C8 /* char8.walk.r.f.1.png in Resources */,
 				57C1AA211AA37397005EFD29 /* sfx_warp.wav in Resources */,
@@ -5163,12 +5198,14 @@
 				575BE1401A7D6ACB0085179C /* tile.97.png in Resources */,
 				57C89FB31A7E809D0039B9C8 /* char4.walk.l.b.2.png in Resources */,
 				57C8A0611A7E80E50039B9C8 /* event.2.r.3.png in Resources */,
+				57C1AA3A1AA38257005EFD29 /* town1.mp3 in Resources */,
 				57C8A1491A7E812E0039B9C8 /* event.36.l.3.png in Resources */,
 				57C8A13A1A7E812E0039B9C8 /* wall.104.l.png in Resources */,
 				57C8A13E1A7E812E0039B9C8 /* wall.108.l.png in Resources */,
 				575BE1351A7D6ACB0085179C /* tile.104.png in Resources */,
 				575BE1561A7D6ACB0085179C /* tile.18.png in Resources */,
 				57C89F2E1A7E80800039B9C8 /* wall.gateDocument.shut.r.png in Resources */,
+				57C1AA3B1AA38257005EFD29 /* town2.mp3 in Resources */,
 				57C8A00F1A7E80B60039B9C8 /* event.17.l.1.png in Resources */,
 				575BE13C1A7D6ACB0085179C /* tile.111.png in Resources */,
 				57C1AA101AA37397005EFD29 /* dialog_ghost.wav in Resources */,
@@ -5224,6 +5261,7 @@
 				57C89F171A7E80800039B9C8 /* wall.36.l.png in Resources */,
 				575BE1621A7D6ACB0085179C /* tile.31.png in Resources */,
 				57C8A12D1A7E812B0039B9C8 /* char8.stand.r.f.1.png in Resources */,
+				57C1AA361AA38257005EFD29 /* nestorine.mp3 in Resources */,
 				57C8A0481A7E80DC0039B9C8 /* event.5.l.2.png in Resources */,
 				575BE1581A7D6ACB0085179C /* tile.38.png in Resources */,
 				57C89F591A7E80800039B9C8 /* wall.14.l.png in Resources */,

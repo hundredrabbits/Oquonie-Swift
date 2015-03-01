@@ -81,3 +81,5 @@ CGFloat centerH;
 AVAudioPlayer *audioAmbientPlayer;
 AVAudioPlayer *audioEffectPlayer;
 AVAudioPlayer *audioDialogPlayer;
+
+NSString * ambientTrack;

@@ -18,5 +18,8 @@
 
 -(void)dialog:(NSString*)filename;
 -(void)effect:(NSString*)filename;
+-(void)ambient:(NSString*)filename;
 
 @end
+
+int volume;
