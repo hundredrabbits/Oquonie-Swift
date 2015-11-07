@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Oquonie AppleTV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Oquonie Desktop.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Oquonie iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
@@ -38,6 +48,26 @@
 			<true/>
 		</dict>
 		<key>571A8C7D1A79341D008E846E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57A668161BEE9770007CDD8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57A668301BEE982D007CDD8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57A668461BEE9894007CDD8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57A668601BEE98AA007CDD8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
