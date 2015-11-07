@@ -845,6 +845,7 @@
 		579434211A89429A0083CF0F /* notification.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03834E43180BA6FF00568E60 /* notification.1.png */; };
 		579434231A899EE10083CF0F /* notification.X.png in Resources */ = {isa = PBXBuildFile; fileRef = 579434221A899EE10083CF0F /* notification.X.png */; };
 		579434241A899F810083CF0F /* notification.X.png in Resources */ = {isa = PBXBuildFile; fileRef = 579434221A899EE10083CF0F /* notification.X.png */; };
+		57A668121BEE92AE007CDD8B /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = 57A668111BEE92AE007CDD8B /* Todo */; };
 		57C0E4351A7C1CBE008728C8 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4341A7C1CBE008728C8 /* Input.m */; };
 		57C0E4361A7C1CBE008728C8 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4341A7C1CBE008728C8 /* Input.m */; };
 		57C0E4371A7C217D008728C8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
@@ -2301,6 +2302,7 @@
 		5794340D1A8942960083CF0F /* notification.E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.E.png; path = en.assets/notification.E.png; sourceTree = "<group>"; };
 		5794340E1A8942960083CF0F /* notification.F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.F.png; path = en.assets/notification.F.png; sourceTree = "<group>"; };
 		579434221A899EE10083CF0F /* notification.X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.X.png; path = en.assets/notification.X.png; sourceTree = "<group>"; };
+		57A668111BEE92AE007CDD8B /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		57C0E4331A7C1CBE008728C8 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Input.h; sourceTree = "<group>"; };
 		57C0E4341A7C1CBE008728C8 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Input.m; sourceTree = "<group>"; };
 		57C0E4381A7C29AB008728C8 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
@@ -3175,6 +3177,7 @@
 		03BBFA9F178A9E4E00E79C3D = {
 			isa = PBXGroup;
 			children = (
+				57A668111BEE92AE007CDD8B /* Todo */,
 				03BBFAB1178A9E4E00E79C3D /* Oquonie */,
 				57013B8C1A7954E800612048 /* Oquonie Desktop */,
 				03BBFAAA178A9E4E00E79C3D /* Frameworks */,
@@ -4430,6 +4433,7 @@
 				03FE0DB418A2764500206675 /* sfx_click1.wav in Resources */,
 				03C7E3B5196B15A2002AAFAB /* letterSpellF.png in Resources */,
 				03A20F58184D4F2C00CCED80 /* wall.26.l.png in Resources */,
+				57A668121BEE92AE007CDD8B /* Todo in Resources */,
 				03EC37C6188181AF00D74DE1 /* wall.29.l.png in Resources */,
 				0332384417D4BDB8001B1328 /* char5.walk.l.b.1.png in Resources */,
 				03DBEECD1880433D00CE6FBC /* event.12.r.3.png in Resources */,
