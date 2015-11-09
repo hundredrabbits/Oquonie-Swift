@@ -16,7 +16,7 @@ class GameScene: SKScene
 		let world = World()
 
 		let room = GameRoom(room: world.all[2])
-		room.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+		room.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 100)
 		addChild(room)
 	}
 

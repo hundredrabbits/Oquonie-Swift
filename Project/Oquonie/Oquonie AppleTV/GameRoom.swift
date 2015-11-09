@@ -33,12 +33,12 @@ class GameRoom : SKNode
 	
 	init(room:Room)
 	{
-		wall3 = GameTile(sprite: Types.wall, id:room.walls[2], orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 0.5, y: 0), size: templates.wall)
-		wall4 = GameTile(sprite: Types.wall, id:room.walls[3], orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 0.5, y: 0), size: templates.wall)
-		wall2 = GameTile(sprite: Types.wall, id:room.walls[1], orientation:Orientation.r, position: CGPoint(x: -templates.wall.width, y: 0), size: templates.wall)
-		wall5 = GameTile(sprite: Types.wall, id:room.walls[4], orientation:Orientation.l, position: CGPoint(x:  templates.wall.width, y: 0), size: templates.wall)
-		wall1 = GameTile(sprite: Types.wall, id:room.walls[0], orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 1.5, y: 0), size: templates.wall)
-		wall6 = GameTile(sprite: Types.wall, id:room.walls[5], orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 1.5, y: 0), size: templates.wall)
+		wall3 = GameTile(sprite: Types.wall, id:room.walls[2], orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
+		wall4 = GameTile(sprite: Types.wall, id:room.walls[3], orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
+		wall2 = GameTile(sprite: Types.wall, id:room.walls[1], orientation:Orientation.r, position: CGPoint(x: -templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
+		wall5 = GameTile(sprite: Types.wall, id:room.walls[4], orientation:Orientation.l, position: CGPoint(x:  templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
+		wall1 = GameTile(sprite: Types.wall, id:room.walls[0], orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
+		wall6 = GameTile(sprite: Types.wall, id:room.walls[5], orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
 		
 		let offset:CGFloat = 0.7
 		
@@ -66,12 +66,12 @@ class GameRoom : SKNode
 	
 	func start()
 	{
-//		addChild(wall3)
-//		addChild(wall4)
-//		addChild(wall2)
-//		addChild(wall5)
-//		addChild(wall1)
-//		addChild(wall6)
+		addChild(wall3)
+		addChild(wall4)
+		addChild(wall2)
+		addChild(wall5)
+		addChild(wall1)
+		addChild(wall6)
 		
 		addChild(floor11)
 		addChild(floor10)
@@ -93,13 +93,26 @@ class GameRoom : SKNode
 		floor0e.zPosition =  3
 		flooree.zPosition =  5
 		
-//		addChild(step1)
-//		addChild(step6)
-//		addChild(step2)
-//		addChild(step5)
-//		addChild(step3)
-//		addChild(step4)
+		addChild(step1)
+		addChild(step6)
+		addChild(step2)
+		addChild(step5)
+		addChild(step3)
+		addChild(step4)
 		
+		wall1.zPosition = -2
+		wall2.zPosition = -4
+		wall3.zPosition = -6
+		wall4.zPosition = -6
+		wall5.zPosition = -4
+		wall6.zPosition = -2
+		
+		step1.zPosition =  2
+		step2.zPosition =  4
+		step3.zPosition =  6
+		step4.zPosition =  6
+		step5.zPosition =  4
+		step6.zPosition =  2		
 	}
 	
 	required init?(coder aDecoder: NSCoder)
