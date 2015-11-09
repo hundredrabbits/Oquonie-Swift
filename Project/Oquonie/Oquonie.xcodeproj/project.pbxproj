@@ -895,6 +895,10 @@
 		57E3D2C11BF1059500E4D319 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
 		57E3D2C31BF108D900E4D319 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C21BF108D900E4D319 /* Event.swift */; };
 		57E3D2C51BF1092500E4D319 /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C41BF1092500E4D319 /* Blocker.swift */; };
+		57E3D2C71BF10DCF00E4D319 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C61BF10DCF00E4D319 /* Socket.swift */; };
+		57E3D2C91BF10E5E00E4D319 /* GateNephtaline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C81BF10E5E00E4D319 /* GateNephtaline.swift */; };
+		57E3D2CB1BF10E7B00E4D319 /* Warp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2CA1BF10E7B00E4D319 /* Warp.swift */; };
+		57E3D2CD1BF10FAD00E4D319 /* WorldMigration in Resources */ = {isa = PBXBuildFile; fileRef = 57E3D2CC1BF10FAD00E4D319 /* WorldMigration */; };
 		57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
 		57F701251A7AC765009C1C91 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701231A7AC765009C1C91 /* Position.m */; };
 		57F701291A7AD890009C1C91 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701271A7AD890009C1C91 /* Render.m */; };
@@ -1697,6 +1701,10 @@
 		57E3D2C01BF1059500E4D319 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		57E3D2C21BF108D900E4D319 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		57E3D2C41BF1092500E4D319 /* Blocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blocker.swift; sourceTree = "<group>"; };
+		57E3D2C61BF10DCF00E4D319 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		57E3D2C81BF10E5E00E4D319 /* GateNephtaline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GateNephtaline.swift; sourceTree = "<group>"; };
+		57E3D2CA1BF10E7B00E4D319 /* Warp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warp.swift; sourceTree = "<group>"; };
+		57E3D2CC1BF10FAD00E4D319 /* WorldMigration */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorldMigration; sourceTree = "<group>"; };
 		57F701171A7A8260009C1C91 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		57F701181A7A8260009C1C91 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		57F7011A1A7AC4EC009C1C91 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -2965,6 +2973,7 @@
 				57A668671BEE98AA007CDD8B /* GameScene.swift */,
 				57E3D2BC1BF0FE0400E4D319 /* GameRoom.swift */,
 				578BFD871BF0E6D8006DAF1C /* GameTile.swift */,
+				57E3D2CC1BF10FAD00E4D319 /* WorldMigration */,
 				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
 				57A668651BEE98AA007CDD8B /* GameScene.sks */,
 				57A6686D1BEE98AA007CDD8B /* Main.storyboard */,
@@ -2976,6 +2985,9 @@
 				57E3D2C01BF1059500E4D319 /* Room.swift */,
 				57E3D2C21BF108D900E4D319 /* Event.swift */,
 				57E3D2C41BF1092500E4D319 /* Blocker.swift */,
+				57E3D2C61BF10DCF00E4D319 /* Socket.swift */,
+				57E3D2C81BF10E5E00E4D319 /* GateNephtaline.swift */,
+				57E3D2CA1BF10E7B00E4D319 /* Warp.swift */,
 			);
 			path = "Oquonie AppleTV";
 			sourceTree = "<group>";
@@ -3972,6 +3984,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E3D2CD1BF10FAD00E4D319 /* WorldMigration in Resources */,
 				578BFDF21BF0E8E9006DAF1C /* event.33.l.3.png in Resources */,
 				578BFDD31BF0E8E9006DAF1C /* event.29.l.2.png in Resources */,
 				578BFDDC1BF0E8E9006DAF1C /* wall.gateNastazieClosed.r.png in Resources */,
@@ -4083,10 +4096,13 @@
 				57E3D2C31BF108D900E4D319 /* Event.swift in Sources */,
 				57E3D2C51BF1092500E4D319 /* Blocker.swift in Sources */,
 				578BFD881BF0E6D8006DAF1C /* GameTile.swift in Sources */,
+				57E3D2C91BF10E5E00E4D319 /* GateNephtaline.swift in Sources */,
 				57E3D2C11BF1059500E4D319 /* Room.swift in Sources */,
 				57A6686A1BEE98AA007CDD8B /* GameViewController.swift in Sources */,
+				57E3D2C71BF10DCF00E4D319 /* Socket.swift in Sources */,
 				57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */,
 				57E3D2BD1BF0FE0400E4D319 /* GameRoom.swift in Sources */,
+				57E3D2CB1BF10E7B00E4D319 /* Warp.swift in Sources */,
 				57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */,
 				578BFE001BF0EA52006DAF1C /* Settings.swift in Sources */,
 			);

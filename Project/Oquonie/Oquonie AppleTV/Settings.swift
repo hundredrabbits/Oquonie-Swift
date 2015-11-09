@@ -21,6 +21,9 @@ enum Soundtrack
 {
 	case none
 	case lobby
+	case nemedique
+	case nephtaline
+	case neomine
 }
 
 enum Theme
