@@ -2970,9 +2970,11 @@
 			isa = PBXGroup;
 			children = (
 				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
-				57A668671BEE98AA007CDD8B /* GameScene.swift */,
-				57E3D2BC1BF0FE0400E4D319 /* GameRoom.swift */,
-				578BFD871BF0E6D8006DAF1C /* GameTile.swift */,
+				57F0E2CB1BF13A490067CC94 /* Game */,
+				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
+				57E3D2BE1BF1033A00E4D319 /* World.swift */,
+				57E3D2C01BF1059500E4D319 /* Room.swift */,
+				57F0E2CA1BF13A320067CC94 /* Events */,
 				57E3D2CC1BF10FAD00E4D319 /* WorldMigration */,
 				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
 				57A668651BEE98AA007CDD8B /* GameScene.sks */,
@@ -2980,14 +2982,6 @@
 				57A6686B1BEE98AA007CDD8B /* Game.xcassets */,
 				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
 				57A668721BEE98AA007CDD8B /* Info.plist */,
-				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
-				57E3D2BE1BF1033A00E4D319 /* World.swift */,
-				57E3D2C01BF1059500E4D319 /* Room.swift */,
-				57E3D2C21BF108D900E4D319 /* Event.swift */,
-				57E3D2C41BF1092500E4D319 /* Blocker.swift */,
-				57E3D2C61BF10DCF00E4D319 /* Socket.swift */,
-				57E3D2C81BF10E5E00E4D319 /* GateNephtaline.swift */,
-				57E3D2CA1BF10E7B00E4D319 /* Warp.swift */,
 			);
 			path = "Oquonie AppleTV";
 			sourceTree = "<group>";
@@ -3066,6 +3060,28 @@
 				037546A418A7A7AF00807397 /* letterSpell5.png */,
 			);
 			name = Spells;
+			sourceTree = "<group>";
+		};
+		57F0E2CA1BF13A320067CC94 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				57E3D2C21BF108D900E4D319 /* Event.swift */,
+				57E3D2C41BF1092500E4D319 /* Blocker.swift */,
+				57E3D2C61BF10DCF00E4D319 /* Socket.swift */,
+				57E3D2C81BF10E5E00E4D319 /* GateNephtaline.swift */,
+				57E3D2CA1BF10E7B00E4D319 /* Warp.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		57F0E2CB1BF13A490067CC94 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				57A668671BEE98AA007CDD8B /* GameScene.swift */,
+				57E3D2BC1BF0FE0400E4D319 /* GameRoom.swift */,
+				578BFD871BF0E6D8006DAF1C /* GameTile.swift */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

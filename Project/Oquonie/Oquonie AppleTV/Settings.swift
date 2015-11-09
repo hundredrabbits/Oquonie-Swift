@@ -5,11 +5,21 @@
 import SpriteKit
 import Foundation
 
-enum Type
+enum Types
 {
-	case floor
 	case tile
+	case step
+	case wall
 }
+
+struct Templates
+{
+	let floor:CGSize = CGSize(width: 200, height: 141)
+	let step:CGSize = CGSize(width: 200, height: 141)
+	let wall:CGSize = CGSize(width: 200, height: 281)
+}
+
+let templates = Templates()
 
 enum Orientation
 {
@@ -29,17 +39,4 @@ enum Soundtrack
 enum Theme
 {
 	case white
-}
-
-struct Templates
-{
-	let floor:CGSize = CGSize(width: 200, height: 141)
-	let wall:CGSize = CGSize(width: 200, height: 281)
-}
-
-let templates = Templates()
-
-struct Test
-{
-	let child : (test:String, something:String)
 }

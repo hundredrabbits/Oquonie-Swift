@@ -7,24 +7,28 @@ import Foundation
 
 class GameTile : SKSpriteNode
 {
-	var type:Type!
+	var sprite:Types!
 	var id:Int!
 	var orientation:Orientation!
 	
-	init(type:Type,id:Int,orientation:Orientation! = nil, position:CGPoint)
+	init(sprite:Types,id:Int,orientation:Orientation! = nil, position:CGPoint, size: CGSize)
 	{
-		let texture = (orientation != nil) ? SKTexture(image: UIImage(named: "\(type).\(id).\(orientation).png")!) : SKTexture(image: UIImage(named: "\(type).\(id).png")!)
-		let tileSize = (type == Type.floor) ? templates.wall : templates.floor
+		let imageName = (orientation != nil) ? "\(sprite).\(id).\(orientation).png" : "\(sprite).\(id).png"
 		
-		super.init(texture: texture, color: UIColor.purpleColor(), size: tileSize)
+		print(imageName)
 		
-		self.color = UIColor.redColor()
+		var image:UIImage!
+		var texture:SKTexture!
+
+		if UIImage(named: imageName) != nil {
+			image = UIImage(named: imageName)!
+			texture = SKTexture(image: image!)
+		}
+		
+		super.init(texture: texture, color: UIColor.clearColor(), size: size)
+		
+//		self.color = UIColor.redColor()
 		self.position = position
-	}
-	
-	func updateTexture(type:Type,id:Int,orientation:Orientation! = nil)
-	{
-		self.texture = (orientation != nil) ? SKTexture(image: UIImage(named: "\(type).\(id).\(orientation).png")!) : SKTexture(image: UIImage(named: "\(type).\(id).png")!)
 	}
 
 	required init?(coder aDecoder: NSCoder)
