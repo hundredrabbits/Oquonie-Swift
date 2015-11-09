@@ -1,10 +1,6 @@
-//
-//  AppDelegate.swift
-//  Oquonie AppleTV
-//
+
 //  Created by Devine Lu Linvega on 2015-11-07.
 //  Copyright © 2015 XXIIVV. All rights reserved.
-//
 
 import UIKit
 
@@ -12,7 +8,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
