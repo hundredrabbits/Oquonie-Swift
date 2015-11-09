@@ -16,9 +16,63 @@ class GameViewController: UIViewController
 			scene.size = CGSize(width: 1400, height: 1400)
 			scene.scaleMode = .AspectFill
             skView.presentScene(scene)
-        }
+		}
+		
+		let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+		swipeRight.direction = .Right
+		self.view.addGestureRecognizer(swipeRight)
+		
+		let swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+		swipeDown.direction = .Down
+		self.view.addGestureRecognizer(swipeDown)
+		
+		let swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+		swipeUp.direction = .Up
+		self.view.addGestureRecognizer(swipeUp)
+		
+		let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+		swipeLeft.direction = .Left
+		self.view.addGestureRecognizer(swipeLeft)
     }
-
+	
+	func respondToSwipeGesture(gesture: UIGestureRecognizer)
+	{
+		if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+			switch swipeGesture.direction {
+			case UISwipeGestureRecognizerDirection.Right:
+				moveRight()
+			case UISwipeGestureRecognizerDirection.Down:
+				moveDown()
+			case UISwipeGestureRecognizerDirection.Left:
+				moveLeft()
+			case UISwipeGestureRecognizerDirection.Up:
+				moveUp()
+			default:
+				break
+			}
+		}
+	}
+	
+	func moveUp()
+	{
+		print("up")
+	}
+	
+	func moveLeft()
+	{
+		print("left")
+	}
+	
+	func moveRight()
+	{
+		print("right")
+	}
+	
+	func moveDown()
+	{
+		print("down")
+	}
+	
     override func didReceiveMemoryWarning()
 	{
         super.didReceiveMemoryWarning()
