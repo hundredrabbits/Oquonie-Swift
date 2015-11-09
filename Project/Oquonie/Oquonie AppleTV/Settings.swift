@@ -17,6 +17,7 @@ struct Templates
 	let floor:CGSize = CGSize(width: 200, height: 141)
 	let step:CGSize = CGSize(width: 200, height: 141)
 	let wall:CGSize = CGSize(width: 200, height: 281)
+	let player:CGSize = CGSize(width: 200, height: 281)
 }
 
 let templates = Templates()

@@ -27,7 +27,6 @@ class GameTile : SKSpriteNode
 		
 		super.init(texture: texture, color: UIColor.clearColor(), size: size)
 		
-//		self.color = UIColor.redColor()
 		self.position = position
 	}
 
