@@ -17,6 +17,17 @@ enum Orientation
 	case r
 }
 
+enum Soundtrack
+{
+	case none
+	case lobby
+}
+
+enum Theme
+{
+	case white
+}
+
 struct Templates
 {
 	let floor:CGSize = CGSize(width: 200, height: 141)

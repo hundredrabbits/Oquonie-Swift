@@ -891,6 +891,10 @@
 		57E2A1DF1A7FC7D20016B198 /* letterSpell6.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E2A1D01A7FC7790016B198 /* letterSpell6.png */; };
 		57E2A1E01A7FC7D20016B198 /* letterSpell8.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E2A1D11A7FC7790016B198 /* letterSpell8.png */; };
 		57E3D2BD1BF0FE0400E4D319 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* GameRoom.swift */; };
+		57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BE1BF1033A00E4D319 /* World.swift */; };
+		57E3D2C11BF1059500E4D319 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
+		57E3D2C31BF108D900E4D319 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C21BF108D900E4D319 /* Event.swift */; };
+		57E3D2C51BF1092500E4D319 /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C41BF1092500E4D319 /* Blocker.swift */; };
 		57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
 		57F701251A7AC765009C1C91 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701231A7AC765009C1C91 /* Position.m */; };
 		57F701291A7AD890009C1C91 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701271A7AD890009C1C91 /* Render.m */; };
@@ -1689,6 +1693,10 @@
 		57E2A1D01A7FC7790016B198 /* letterSpell6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell6.png; path = en.assets/letterSpell6.png; sourceTree = "<group>"; };
 		57E2A1D11A7FC7790016B198 /* letterSpell8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell8.png; path = en.assets/letterSpell8.png; sourceTree = "<group>"; };
 		57E3D2BC1BF0FE0400E4D319 /* GameRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
+		57E3D2BE1BF1033A00E4D319 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		57E3D2C01BF1059500E4D319 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		57E3D2C21BF108D900E4D319 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		57E3D2C41BF1092500E4D319 /* Blocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blocker.swift; sourceTree = "<group>"; };
 		57F701171A7A8260009C1C91 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		57F701181A7A8260009C1C91 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		57F7011A1A7AC4EC009C1C91 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -2964,6 +2972,10 @@
 				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
 				57A668721BEE98AA007CDD8B /* Info.plist */,
 				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
+				57E3D2BE1BF1033A00E4D319 /* World.swift */,
+				57E3D2C01BF1059500E4D319 /* Room.swift */,
+				57E3D2C21BF108D900E4D319 /* Event.swift */,
+				57E3D2C41BF1092500E4D319 /* Blocker.swift */,
 			);
 			path = "Oquonie AppleTV";
 			sourceTree = "<group>";
@@ -4068,10 +4080,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A668681BEE98AA007CDD8B /* GameScene.swift in Sources */,
+				57E3D2C31BF108D900E4D319 /* Event.swift in Sources */,
+				57E3D2C51BF1092500E4D319 /* Blocker.swift in Sources */,
 				578BFD881BF0E6D8006DAF1C /* GameTile.swift in Sources */,
+				57E3D2C11BF1059500E4D319 /* Room.swift in Sources */,
 				57A6686A1BEE98AA007CDD8B /* GameViewController.swift in Sources */,
 				57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */,
 				57E3D2BD1BF0FE0400E4D319 /* GameRoom.swift in Sources */,
+				57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */,
 				578BFE001BF0EA52006DAF1C /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

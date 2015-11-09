@@ -21,21 +21,21 @@ class GameRoom : SKNode
 	
 	let flooree:GameTile!
 	
-	init(roomData:String = "")
+	init(room:Room)
 	{
-		floor11 = GameTile(type: Type.tile, id:1, position: CGPoint(x: 0, y: templates.floor.height))
+		floor11 = GameTile(type: Type.tile, id:room.floors[2], position: CGPoint(x: 0, y: templates.floor.height))
 		
-		floor10 = GameTile(type: Type.tile, id:1, position: CGPoint(x: -templates.floor.width/2, y: templates.floor.height/2))
-		floor01 = GameTile(type: Type.tile, id:1, position: CGPoint(x: templates.floor.width/2, y: templates.floor.height/2))
+		floor01 = GameTile(type: Type.tile, id:room.floors[1], position: CGPoint(x: -templates.floor.width/2, y: templates.floor.height/2))
+		floor10 = GameTile(type: Type.tile, id:room.floors[5], position: CGPoint(x: templates.floor.width/2, y: templates.floor.height/2))
 		
-		floor00 = GameTile(type: Type.tile, id:1, position: CGPoint(x: -templates.floor.width, y: 0))
-		floor1e = GameTile(type: Type.tile, id:1, position: CGPoint(x: 0, y: 0))
-		floore1 = GameTile(type: Type.tile, id:1, position: CGPoint(x: templates.floor.width, y: 0))
+		floore1 = GameTile(type: Type.tile, id:room.floors[0], position: CGPoint(x: -templates.floor.width, y: 0))
+		floor00 = GameTile(type: Type.tile, id:room.floors[4], position: CGPoint(x: 0, y: 0))
+		floor1e = GameTile(type: Type.tile, id:room.floors[8], position: CGPoint(x: templates.floor.width, y: 0))
 		
-		floore0 = GameTile(type: Type.tile, id:1, position: CGPoint(x: -templates.floor.width/2, y: -templates.floor.height/2))
-		floor0e = GameTile(type: Type.tile, id:1, position: CGPoint(x: templates.floor.width/2, y: -templates.floor.height/2))
+		floore0 = GameTile(type: Type.tile, id:room.floors[8], position: CGPoint(x: -templates.floor.width/2, y: -templates.floor.height/2))
+		floor0e = GameTile(type: Type.tile, id:room.floors[3], position: CGPoint(x: templates.floor.width/2, y: -templates.floor.height/2))
 		
-		flooree = GameTile(type: Type.tile, id:1, position: CGPoint(x: 0, y: -templates.floor.height))
+		flooree = GameTile(type: Type.tile, id:room.floors[6], position: CGPoint(x: 0, y: -templates.floor.height))
 		
 		super.init()
 		
