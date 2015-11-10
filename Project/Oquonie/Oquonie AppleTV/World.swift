@@ -65,6 +65,8 @@ class World
 		room.steps  = [ 0,7,0, 0,0,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
+		room.addEvent(Blocker(x: 1, y: 1, id: 24))
+		room.addEvent(Ramen(x: 1, y: 0))
 		all[2] = room
 		
 //	worldNode[3] = [

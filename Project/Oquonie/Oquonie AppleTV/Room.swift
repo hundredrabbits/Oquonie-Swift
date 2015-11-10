@@ -20,6 +20,6 @@ class Room
 	
 	func addEvent(event:Event)
 	{
-	
+		events.append(event)
 	}
 }

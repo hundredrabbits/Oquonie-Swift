@@ -19,8 +19,8 @@ class GameScene: SKScene
 		addChild(stage)
 		
 		player.position = CGPoint(x: 0, y: 0)
-		stage.addChild(player)
 		player.zPosition = 900
+		stage.events_root.addChild(player)
 		
 		stage.enter(world.all[2])
 	}

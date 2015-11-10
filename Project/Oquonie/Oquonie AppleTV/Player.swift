@@ -5,16 +5,13 @@
 import SpriteKit
 import Foundation
 
-class Player : SKNode
+class Player : Event
 {
-	var sprite:SKSpriteNode!
-	var x:Int = 0
-	var y:Int = 0
 	var isMoving:Bool = false
 	
-	override init()
+	init()
 	{
-		super.init()
+		super.init(x:0,y:0)
 		
 		let imageName = "char2.stand.l.f.3.png"
 		
@@ -26,7 +23,7 @@ class Player : SKNode
 			texture = SKTexture(image: image!)
 		}
 
-		sprite = SKSpriteNode(texture: texture, color: UIColor.purpleColor(), size: templates.player)
+		sprite = SKSpriteNode(texture: texture, color: UIColor.clearColor(), size: templates.player)
 		sprite.position = CGPoint(x: 0, y: 100)
 		addChild(sprite)
 		
@@ -39,27 +36,31 @@ class Player : SKNode
 	func move(x:Int, y:Int)
 	{
 		
-		print("moving: \(x)/\(y) to: \(self.x)/\(self.y)")
-		
 		if isMoving == true { return }
 		isMoving = true
 		
 		let destination_x:Int = self.x + x
 		let destination_y:Int = self.y + y
+		let destination_event:Event! = stage.eventAtLocation(destination_x,y:destination_y)
 		
 		// Look for event
-		let destination_event:Event! = stage.eventAtLocation(destination_x,y:destination_y)
 		if destination_event != nil {
 			destination_event.collide()
 		}
 		else if destination_x < 2 && destination_x > -2 && destination_y < 2 && destination_y > -2 {
 			self.x = destination_x
 			self.y = destination_y
-			player.runAction(SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.5), completion: { self.isMoving = false })
+			print("moving: \(x)/\(y) to: \(self.x)/\(self.y)")
+			player.runAction(SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.25), completion: { self.isMoving = false })
 		}
 		else{
 			self.isMoving = false
 		}
+	}
+	
+	override func remove()
+	{
+		print("cannot remove player")
 	}
 
 	required init?(coder aDecoder: NSCoder)

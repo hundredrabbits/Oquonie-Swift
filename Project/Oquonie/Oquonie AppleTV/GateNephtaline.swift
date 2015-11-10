@@ -10,4 +10,9 @@ class GateNephtaline : Event
 	{
 		super.init(x: x, y: y)
 	}
+
+	required init?(coder aDecoder: NSCoder)
+	{
+	    fatalError("init(coder:) has not been implemented")
+	}
 }

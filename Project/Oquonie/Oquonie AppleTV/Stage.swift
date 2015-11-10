@@ -31,6 +31,10 @@ class Stage : SKNode
 	let step5:Tile!
 	let step6:Tile!
 	
+	let events_root = SKNode()
+	var room:Room!
+	var room_root = SKNode()
+	
 	override init()
 	{
 		wall3 = Tile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
@@ -74,22 +78,22 @@ class Stage : SKNode
 	
 	func start()
 	{
-		addChild(wall3)
-		addChild(wall4)
-		addChild(wall2)
-		addChild(wall5)
-		addChild(wall1)
-		addChild(wall6)
+		room_root.addChild(wall3)
+		room_root.addChild(wall4)
+		room_root.addChild(wall2)
+		room_root.addChild(wall5)
+		room_root.addChild(wall1)
+		room_root.addChild(wall6)
 		
-		addChild(floor11)
-		addChild(floor10)
-		addChild(floor01)
-		addChild(floor1e)
-		addChild(floor00)
-		addChild(floore1)
-		addChild(floore0)
-		addChild(floor0e)
-		addChild(flooree)
+		room_root.addChild(floor11)
+		room_root.addChild(floor10)
+		room_root.addChild(floor01)
+		room_root.addChild(floor1e)
+		room_root.addChild(floor00)
+		room_root.addChild(floore1)
+		room_root.addChild(floore0)
+		room_root.addChild(floor0e)
+		room_root.addChild(flooree)
 		
 		floor11.zPosition = -5
 		floor10.zPosition = -3
@@ -101,12 +105,12 @@ class Stage : SKNode
 		floor0e.zPosition =  3
 		flooree.zPosition =  5
 		
-		addChild(step1)
-		addChild(step6)
-		addChild(step2)
-		addChild(step5)
-		addChild(step3)
-		addChild(step4)
+		room_root.addChild(step1)
+		room_root.addChild(step6)
+		room_root.addChild(step2)
+		room_root.addChild(step5)
+		room_root.addChild(step3)
+		room_root.addChild(step4)
 		
 		wall1.zPosition = -2
 		wall2.zPosition = -4
@@ -120,10 +124,26 @@ class Stage : SKNode
 		step3.zPosition =  6
 		step4.zPosition =  6
 		step5.zPosition =  4
-		step6.zPosition =  2		
+		step6.zPosition =  2
+		
+		addChild(room_root)
+		
+		addChild(events_root)
+		events_root.zPosition = 900
 	}
 	
 	func enter(room:Room)
+	{
+		self.room = room
+		updateTiles()
+		removeEvents()
+		
+		for event in room.events {
+			addEvent(event)
+		}
+	}
+	
+	func updateTiles()
 	{
 		wall3.updateSprite(room.walls[2])
 		wall4.updateSprite(room.walls[3])
@@ -150,8 +170,27 @@ class Stage : SKNode
 		step4.updateSprite(room.steps[3])
 	}
 	
+	func removeEvents()
+	{
+		for event in events_root.children {
+			let event = event as! Event
+			event.remove()
+		}
+	}
+	
+	func addEvent(event:Event)
+	{
+		print("Adding \(event)")
+		events_root.addChild(event)
+	}
+	
 	func eventAtLocation(x:Int,y:Int) -> Event!
 	{
+		for event in events_root.children {
+			let event = event as! Event
+			if event.x != x || event.y != y { continue }
+			return event
+		}
 		return nil
 	}
 

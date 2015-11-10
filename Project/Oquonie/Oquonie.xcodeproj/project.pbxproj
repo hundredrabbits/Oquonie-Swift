@@ -303,6 +303,8 @@
 		57C843E51BF234C200288847 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C843E41BF234C200288847 /* Default-568h@2x.png */; };
 		57C843EC1BF237A300288847 /* Info iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C843EB1BF237A300288847 /* Info iOS.plist */; };
 		57C843EE1BF237B200288847 /* Info AppleTV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C843ED1BF237B200288847 /* Info AppleTV.plist */; };
+		57C843F41BF2878300288847 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F31BF2878300288847 /* Ramen.swift */; };
+		57C843F51BF2878300288847 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F31BF2878300288847 /* Ramen.swift */; };
 		57C89F031A7E80800039B9C8 /* wall.41.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEF196C9956004750C7 /* wall.41.r.png */; };
 		57C89F041A7E80800039B9C8 /* wall.41.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEB196C991F004750C7 /* wall.41.l.png */; };
 		57C89F051A7E80800039B9C8 /* wall.98.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BCD18A688AF00BFA21E /* wall.98.l.png */; };
@@ -1696,6 +1698,7 @@
 		57C843E41BF234C200288847 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		57C843EB1BF237A300288847 /* Info iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info iOS.plist"; sourceTree = "<group>"; };
 		57C843ED1BF237B200288847 /* Info AppleTV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info AppleTV.plist"; sourceTree = "<group>"; };
+		57C843F31BF2878300288847 /* Ramen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ramen.swift; sourceTree = "<group>"; };
 		57C978861A9D199000A4E23E /* notification.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.7.png; path = en.assets/notification.7.png; sourceTree = "<group>"; };
 		57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = iOS.xcassets; path = Oquonie/iOS.xcassets; sourceTree = "<group>"; };
 		57E2A1CB1A7FC7790016B198 /* letterSpell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell1.png; path = en.assets/letterSpell1.png; sourceTree = "<group>"; };
@@ -3024,17 +3027,9 @@
 				578BFD871BF0E6D8006DAF1C /* Tile.swift */,
 				57E3D2BE1BF1033A00E4D319 /* World.swift */,
 				57E3D2C01BF1059500E4D319 /* Room.swift */,
-				57C843E81BF235B200288847 /* Objects */,
 				57F0E2CA1BF13A320067CC94 /* Events */,
 			);
 			name = "Oquonie Core";
-			sourceTree = "<group>";
-		};
-		57C843E81BF235B200288847 /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Objects;
 			sourceTree = "<group>";
 		};
 		57C8A1551A7E81610039B9C8 /* event.37 - twitter */ = {
@@ -3088,6 +3083,7 @@
 				57E3D2C61BF10DCF00E4D319 /* Socket.swift */,
 				57E3D2C81BF10E5E00E4D319 /* GateNephtaline.swift */,
 				57E3D2CA1BF10E7B00E4D319 /* Warp.swift */,
+				57C843F31BF2878300288847 /* Ramen.swift */,
 			);
 			name = Events;
 			path = "Oquonie AppleTV";
@@ -4131,6 +4127,7 @@
 				57C843D91BF233CB00288847 /* Settings.swift in Sources */,
 				57C843D31BF233CB00288847 /* Tile.swift in Sources */,
 				57C843D21BF233CB00288847 /* Stage.swift in Sources */,
+				57C843F41BF2878300288847 /* Ramen.swift in Sources */,
 				57C843DA1BF233CB00288847 /* World.swift in Sources */,
 				57C843D01BF233CB00288847 /* GameViewController.swift in Sources */,
 				57C843D51BF233CB00288847 /* Blocker.swift in Sources */,
@@ -4152,6 +4149,7 @@
 				57A6686A1BEE98AA007CDD8B /* GameViewController.swift in Sources */,
 				57E3D2C71BF10DCF00E4D319 /* Socket.swift in Sources */,
 				57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */,
+				57C843F51BF2878300288847 /* Ramen.swift in Sources */,
 				57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */,
 				57E3D2CB1BF10E7B00E4D319 /* Warp.swift in Sources */,
 				57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */,
@@ -4268,6 +4266,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
