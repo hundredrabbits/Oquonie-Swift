@@ -5,7 +5,7 @@
 import SpriteKit
 import Foundation
 
-class GameTile : SKSpriteNode
+class Tile : SKSpriteNode
 {
 	var sprite:Types!
 	var id:Int!

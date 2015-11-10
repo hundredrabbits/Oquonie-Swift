@@ -5,57 +5,57 @@
 import SpriteKit
 import Foundation
 
-class GameRoom : SKNode
+class Stage : SKNode
 {
-	let wall1:GameTile!
-	let wall2:GameTile!
-	let wall3:GameTile!
-	let wall4:GameTile!
-	let wall5:GameTile!
-	let wall6:GameTile!
+	let wall1:Tile!
+	let wall2:Tile!
+	let wall3:Tile!
+	let wall4:Tile!
+	let wall5:Tile!
+	let wall6:Tile!
 	
-	let floor11:GameTile!
-	let floor10:GameTile!
-	let floor01:GameTile!
-	let floor1e:GameTile!
-	let floor00:GameTile!
-	let floore1:GameTile!
-	let floor0e:GameTile!
-	let floore0:GameTile!
-	let flooree:GameTile!
+	let floor11:Tile!
+	let floor10:Tile!
+	let floor01:Tile!
+	let floor1e:Tile!
+	let floor00:Tile!
+	let floore1:Tile!
+	let floor0e:Tile!
+	let floore0:Tile!
+	let flooree:Tile!
 	
-	let step1:GameTile!
-	let step2:GameTile!
-	let step3:GameTile!
-	let step4:GameTile!
-	let step5:GameTile!
-	let step6:GameTile!
+	let step1:Tile!
+	let step2:Tile!
+	let step3:Tile!
+	let step4:Tile!
+	let step5:Tile!
+	let step6:Tile!
 	
 	override init()
 	{
-		wall3 = GameTile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
-		wall4 = GameTile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
-		wall2 = GameTile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
-		wall5 = GameTile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
-		wall1 = GameTile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
-		wall6 = GameTile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
+		wall3 = Tile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
+		wall4 = Tile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
+		wall2 = Tile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
+		wall5 = Tile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
+		wall1 = Tile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
+		wall6 = Tile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
 		
-		floor11 = GameTile(sprite: Types.tile, size: templates.floor)
-		floor01 = GameTile(sprite: Types.tile, size: templates.floor)
-		floor10 = GameTile(sprite: Types.tile, size: templates.floor)
-		floore1 = GameTile(sprite: Types.tile, size: templates.floor)
-		floor00 = GameTile(sprite: Types.tile, size: templates.floor)
-		floor1e = GameTile(sprite: Types.tile, size: templates.floor)
-		floore0 = GameTile(sprite: Types.tile, size: templates.floor)
-		floor0e = GameTile(sprite: Types.tile, size: templates.floor)
-		flooree = GameTile(sprite: Types.tile, size: templates.floor)
+		floor11 = Tile(sprite: Types.tile, size: templates.floor)
+		floor01 = Tile(sprite: Types.tile, size: templates.floor)
+		floor10 = Tile(sprite: Types.tile, size: templates.floor)
+		floore1 = Tile(sprite: Types.tile, size: templates.floor)
+		floor00 = Tile(sprite: Types.tile, size: templates.floor)
+		floor1e = Tile(sprite: Types.tile, size: templates.floor)
+		floore0 = Tile(sprite: Types.tile, size: templates.floor)
+		floor0e = Tile(sprite: Types.tile, size: templates.floor)
+		flooree = Tile(sprite: Types.tile, size: templates.floor)
 		
-		step1 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
-		step2 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
-		step3 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
-		step4 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
-		step5 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
-		step6 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
+		step1 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
+		step2 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
+		step3 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
+		step4 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
+		step5 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
+		step6 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
 		
 		super.init()
 		

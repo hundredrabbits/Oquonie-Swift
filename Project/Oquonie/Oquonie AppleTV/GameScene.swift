@@ -15,14 +15,14 @@ class GameScene: SKScene
 	{
 		let world = World()
 
-		room.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 150)
-		addChild(room)
+		stage.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 150)
+		addChild(stage)
 		
 		player.position = CGPoint(x: 0, y: 0)
-		room.addChild(player)
+		stage.addChild(player)
 		player.zPosition = 900
 		
-		room.enter(world.all[2])
+		stage.enter(world.all[2])
 	}
 
     override func update(currentTime: CFTimeInterval)

@@ -22,7 +22,7 @@ struct Templates
 
 let templates = Templates()
 let player = Player()
-let room = GameRoom()
+let stage = Stage()
 
 enum Orientation
 {
