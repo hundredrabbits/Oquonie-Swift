@@ -41,11 +41,22 @@ class Player : SKNode
 		if isMoving == true { return }
 		isMoving = true
 		
-		if self.x + x <  2 { self.x += x }
-		if self.y + y <  2 { self.y += y }
-		if self.x + x > -2 { self.x -= x }
-		if self.y + y < -2 { self.y -= y }
-		player.runAction(SKAction.moveTo(room.positionAt(self.x,y:self.y), duration: 0.5), completion: { self.isMoving = false })
+		let destination_x:Int = self.x + x
+		let destination_y:Int = self.y + y
+		
+		// Look for event
+		let destination_event:Event! = room.eventAtLocation(destination_x,y:destination_y)
+		if destination_event != nil {
+			destination_event.collide()
+		}
+		else{
+			if destination_x <  2 { self.x += x }
+			else if destination_x > -2 { self.x += x }
+			else if destination_y <  2 { self.y += y }
+			else if destination_y > -2 { self.y += y }
+			print("moving: \(x)/\(y) to: \(self.x)/\(self.y)")
+			player.runAction(SKAction.moveTo(room.positionAt(self.x,y:self.y), duration: 0.5), completion: { self.isMoving = false })
+		}
 	}
 
 	required init?(coder aDecoder: NSCoder)

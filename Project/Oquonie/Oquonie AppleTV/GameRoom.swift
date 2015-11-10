@@ -150,6 +150,11 @@ class GameRoom : SKNode
 		step4.updateSprite(room.steps[3])
 	}
 	
+	func eventAtLocation(x:Int,y:Int) -> Event!
+	{
+		return nil
+	}
+
 	func positionAt(x:Int,y:Int) -> CGPoint
 	{
 		let offset:CGFloat = 0.7
