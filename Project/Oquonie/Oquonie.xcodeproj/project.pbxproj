@@ -10,6 +10,18 @@
 		57557D451A8A592D003AAF25 /* fx.vignette.1.horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 57557D431A8A592D003AAF25 /* fx.vignette.1.horizontal.png */; };
 		57557D491A8A8C8B003AAF25 /* fx.background.black.png in Resources */ = {isa = PBXBuildFile; fileRef = 57557D461A8A8C8B003AAF25 /* fx.background.black.png */; };
 		57557D4B1A8A8C8B003AAF25 /* fx.background.white.png in Resources */ = {isa = PBXBuildFile; fileRef = 57557D471A8A8C8B003AAF25 /* fx.background.white.png */; };
+		5755DCE31BF2970300C5353D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C21BF108D900E4D319 /* Event.swift */; };
+		5755DCE41BF2970300C5353D /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C41BF1092500E4D319 /* Blocker.swift */; };
+		5755DCE51BF2970300C5353D /* Pillar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C61BF10DCF00E4D319 /* Pillar.swift */; };
+		5755DCE61BF2970300C5353D /* Gate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C81BF10E5E00E4D319 /* Gate.swift */; };
+		5755DCE71BF2970300C5353D /* Warp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2CA1BF10E7B00E4D319 /* Warp.swift */; };
+		5755DCE81BF2970300C5353D /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F31BF2878300288847 /* Ramen.swift */; };
+		5755DCE91BF2970300C5353D /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F61BF28A4200288847 /* Map.swift */; };
+		5755DCEA1BF2970300C5353D /* Owl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843FC1BF292C400288847 /* Owl.swift */; };
+		5755DCEB1BF2970300C5353D /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCDF1BF296D600C5353D /* Speaker.swift */; };
+		5755DCED1BF2979C00C5353D /* Shark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCEC1BF2979C00C5353D /* Shark.swift */; };
+		5755DCEF1BF2982E00C5353D /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCEE1BF2982E00C5353D /* Tree.swift */; };
+		5755DCF11BF2994900C5353D /* NoFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCF01BF2994900C5353D /* NoFace.swift */; };
 		575BE1311A7D6ACB0085179C /* tile.100.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E38B196B15A1002AAFAB /* tile.100.png */; };
 		575BE1321A7D6ACB0085179C /* tile.101.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E38C196B15A1002AAFAB /* tile.101.png */; };
 		575BE1331A7D6ACB0085179C /* tile.102.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E38D196B15A1002AAFAB /* tile.102.png */; };
@@ -273,11 +285,6 @@
 		57C843D11BF233CB00288847 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* GameScene.swift */; };
 		57C843D21BF233CB00288847 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
 		57C843D31BF233CB00288847 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* Tile.swift */; };
-		57C843D41BF233CB00288847 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C21BF108D900E4D319 /* Event.swift */; };
-		57C843D51BF233CB00288847 /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C41BF1092500E4D319 /* Blocker.swift */; };
-		57C843D61BF233CB00288847 /* Pillar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C61BF10DCF00E4D319 /* Pillar.swift */; };
-		57C843D71BF233CB00288847 /* Gate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C81BF10E5E00E4D319 /* Gate.swift */; };
-		57C843D81BF233CB00288847 /* Warp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2CA1BF10E7B00E4D319 /* Warp.swift */; };
 		57C843D91BF233CB00288847 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFDFF1BF0EA52006DAF1C /* Settings.swift */; };
 		57C843DA1BF233CB00288847 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BE1BF1033A00E4D319 /* World.swift */; };
 		57C843DB1BF233CB00288847 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
@@ -290,12 +297,6 @@
 		57C843E51BF234C200288847 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C843E41BF234C200288847 /* Default-568h@2x.png */; };
 		57C843EC1BF237A300288847 /* Info iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C843EB1BF237A300288847 /* Info iOS.plist */; };
 		57C843EE1BF237B200288847 /* Info AppleTV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C843ED1BF237B200288847 /* Info AppleTV.plist */; };
-		57C843F41BF2878300288847 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F31BF2878300288847 /* Ramen.swift */; };
-		57C843F51BF2878300288847 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F31BF2878300288847 /* Ramen.swift */; };
-		57C843F71BF28A4200288847 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F61BF28A4200288847 /* Map.swift */; };
-		57C843F81BF28A4200288847 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F61BF28A4200288847 /* Map.swift */; };
-		57C843FD1BF292C400288847 /* Owl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843FC1BF292C400288847 /* Owl.swift */; };
-		57C843FE1BF292C400288847 /* Owl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843FC1BF292C400288847 /* Owl.swift */; };
 		57C89F031A7E80800039B9C8 /* wall.41.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEF196C9956004750C7 /* wall.41.r.png */; };
 		57C89F041A7E80800039B9C8 /* wall.41.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEB196C991F004750C7 /* wall.41.l.png */; };
 		57C89F051A7E80800039B9C8 /* wall.98.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BCD18A688AF00BFA21E /* wall.98.l.png */; };
@@ -898,11 +899,6 @@
 		57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
 		57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BE1BF1033A00E4D319 /* World.swift */; };
 		57E3D2C11BF1059500E4D319 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
-		57E3D2C31BF108D900E4D319 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C21BF108D900E4D319 /* Event.swift */; };
-		57E3D2C51BF1092500E4D319 /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C41BF1092500E4D319 /* Blocker.swift */; };
-		57E3D2C71BF10DCF00E4D319 /* Pillar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C61BF10DCF00E4D319 /* Pillar.swift */; };
-		57E3D2C91BF10E5E00E4D319 /* Gate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C81BF10E5E00E4D319 /* Gate.swift */; };
-		57E3D2CB1BF10E7B00E4D319 /* Warp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2CA1BF10E7B00E4D319 /* Warp.swift */; };
 		57F0E2CF1BF147AC0067CC94 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0E2CE1BF147AC0067CC94 /* Player.swift */; };
 		57F701291A7AD890009C1C91 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701271A7AD890009C1C91 /* Render.m */; };
 /* End PBXBuildFile section */
@@ -1624,6 +1620,10 @@
 		57557D431A8A592D003AAF25 /* fx.vignette.1.horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.vignette.1.horizontal.png; path = en.assets/fx.vignette.1.horizontal.png; sourceTree = "<group>"; };
 		57557D461A8A8C8B003AAF25 /* fx.background.black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.background.black.png; path = en.assets/fx.background.black.png; sourceTree = "<group>"; };
 		57557D471A8A8C8B003AAF25 /* fx.background.white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.background.white.png; path = en.assets/fx.background.white.png; sourceTree = "<group>"; };
+		5755DCDF1BF296D600C5353D /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		5755DCEC1BF2979C00C5353D /* Shark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shark.swift; sourceTree = "<group>"; };
+		5755DCEE1BF2982E00C5353D /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		5755DCF01BF2994900C5353D /* NoFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoFace.swift; sourceTree = "<group>"; };
 		576FF6E11A79818B000824FE /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = Oquonie/World.h; sourceTree = "<group>"; };
 		576FF6E21A79818B000824FE /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = World.m; path = Oquonie/World.m; sourceTree = "<group>"; };
 		577350971A75BF1D00F1B3DA /* event.37.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.1.png; path = en.assets/event.37.l.1.png; sourceTree = "<group>"; };
@@ -3011,6 +3011,10 @@
 				57C843F31BF2878300288847 /* Ramen.swift */,
 				57C843F61BF28A4200288847 /* Map.swift */,
 				57C843FC1BF292C400288847 /* Owl.swift */,
+				5755DCDF1BF296D600C5353D /* Speaker.swift */,
+				5755DCEC1BF2979C00C5353D /* Shark.swift */,
+				5755DCEE1BF2982E00C5353D /* Tree.swift */,
+				5755DCF01BF2994900C5353D /* NoFace.swift */,
 			);
 			name = Events;
 			path = "Oquonie AppleTV";
@@ -4027,23 +4031,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57C843D71BF233CB00288847 /* Gate.swift in Sources */,
 				57C843D11BF233CB00288847 /* GameScene.swift in Sources */,
-				57C843F71BF28A4200288847 /* Map.swift in Sources */,
 				57C843DB1BF233CB00288847 /* Room.swift in Sources */,
-				57C843D61BF233CB00288847 /* Pillar.swift in Sources */,
+				5755DCE91BF2970300C5353D /* Map.swift in Sources */,
 				57C843DD1BF233CB00288847 /* AppDelegate.swift in Sources */,
-				57C843D81BF233CB00288847 /* Warp.swift in Sources */,
+				5755DCE71BF2970300C5353D /* Warp.swift in Sources */,
+				5755DCEF1BF2982E00C5353D /* Tree.swift in Sources */,
+				5755DCE51BF2970300C5353D /* Pillar.swift in Sources */,
+				5755DCE81BF2970300C5353D /* Ramen.swift in Sources */,
 				57C843DC1BF233CB00288847 /* Player.swift in Sources */,
-				57C843FD1BF292C400288847 /* Owl.swift in Sources */,
+				5755DCEA1BF2970300C5353D /* Owl.swift in Sources */,
+				5755DCED1BF2979C00C5353D /* Shark.swift in Sources */,
+				5755DCE31BF2970300C5353D /* Event.swift in Sources */,
 				57C843D91BF233CB00288847 /* Settings.swift in Sources */,
 				57C843D31BF233CB00288847 /* Tile.swift in Sources */,
+				5755DCF11BF2994900C5353D /* NoFace.swift in Sources */,
+				5755DCE41BF2970300C5353D /* Blocker.swift in Sources */,
 				57C843D21BF233CB00288847 /* Stage.swift in Sources */,
-				57C843F41BF2878300288847 /* Ramen.swift in Sources */,
+				5755DCE61BF2970300C5353D /* Gate.swift in Sources */,
+				5755DCEB1BF2970300C5353D /* Speaker.swift in Sources */,
 				57C843DA1BF233CB00288847 /* World.swift in Sources */,
 				57C843D01BF233CB00288847 /* GameViewController.swift in Sources */,
-				57C843D51BF233CB00288847 /* Blocker.swift in Sources */,
-				57C843D41BF233CB00288847 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4052,20 +4060,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A668681BEE98AA007CDD8B /* GameScene.swift in Sources */,
-				57E3D2C31BF108D900E4D319 /* Event.swift in Sources */,
-				57C843F81BF28A4200288847 /* Map.swift in Sources */,
-				57E3D2C51BF1092500E4D319 /* Blocker.swift in Sources */,
 				578BFD881BF0E6D8006DAF1C /* Tile.swift in Sources */,
 				57F0E2CF1BF147AC0067CC94 /* Player.swift in Sources */,
-				57E3D2C91BF10E5E00E4D319 /* Gate.swift in Sources */,
 				57E3D2C11BF1059500E4D319 /* Room.swift in Sources */,
-				57C843FE1BF292C400288847 /* Owl.swift in Sources */,
 				57A6686A1BEE98AA007CDD8B /* GameViewController.swift in Sources */,
-				57E3D2C71BF10DCF00E4D319 /* Pillar.swift in Sources */,
 				57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */,
-				57C843F51BF2878300288847 /* Ramen.swift in Sources */,
 				57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */,
-				57E3D2CB1BF10E7B00E4D319 /* Warp.swift in Sources */,
 				57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */,
 				578BFE001BF0EA52006DAF1C /* Settings.swift in Sources */,
 			);

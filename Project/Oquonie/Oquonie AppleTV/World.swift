@@ -50,20 +50,6 @@ class World
 		room.addEvent(Warp(x: 0, y: 2, room:3, to_x: -1, to_y:0))
 		all[2] = room
 		
-//	worldNode[3] = [
-//	// Tiles
-//	"1|event|socket|14|l","23","1|event|owlSave|1|r",
-//	"6","5","1",
-//	"1|block|1","4","1",
-//	// Walls
-//	"1","7|event|gateNeomine","1","1","104|event|gatePhotoBooth","1",
-//	// Steps
-//	"0","7|warp|4|0,1","0","0","7|warp|2|1,0","0",
-//	// Name,Background,Audio
-//	"Lobby Neomine","White",audioLobby];
-//	
-		
-		
 		room = Room()
 		room.floors = [ 1,23,1, 6,5,1, 1,4,1 ]
 		room.walls  = [ 1,7,1, 1,104,1 ]
@@ -72,21 +58,11 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Pillar(x: -1, y: 1))
 		room.addEvent(Owl(x: 1, y: 1))
+		room.addEvent(Blocker(x: -1, y: -1, id:1))
+		room.addEvent(Gate(x: 0, y: 2, required:Personas.neomine))
+		room.addEvent(Warp(x: -2, y: 0, room:4, to_x: 0, to_y:1))
+		room.addEvent(Warp(x: 0, y: -2, room:2, to_x: 1, to_y:0))
 		all[3] = room
-		
-		
-//	worldNode[4] = [
-//	// Tiles
-//	"1|event|speakerphone|9|r","1","1|block|9",
-//	"1","5","6",
-//	"1","6","1",
-//	// Walls
-//	"26","14|warp|14|-1,0","26","1","12|warp|3|0,-1","1",
-//	// Steps
-//	"0","0","0","0","7|warp|5|1,0","0",
-//	// Name,Background,Audio
-//	"Lobby House Room","White",audioLobby];
-//	
 		
 		room = Room()
 		room.floors = [ 1,1,1, 1,5,6, 1,6,1 ]
@@ -94,21 +70,12 @@ class World
 		room.steps  = [ 0,0,0, 0,7,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
+		room.addEvent(Blocker(x: 1, y: 1, id:9))
+		room.addEvent(Speaker(x: 1, y: 1))
+		room.addEvent(Warp(x: 0, y: 2, room:14, to_x: -1, to_y:0))
+		room.addEvent(Warp(x: 2, y: 0, room:3, to_x: 0, to_y:-1))
+		room.addEvent(Warp(x: 0, y: -2, room:5, to_x: 1, to_y:0))
 		all[4] = room
-		
-//	worldNode[5] = [
-//	// Tiles
-//	"9|block|30","10","9|event|socket|14|l",
-//	"4","5","14",
-//	"9","6","9",
-//	// Walls
-//	"3","14|warp|4|-1,0","3","3","4|event|gateNecomedre","3",
-//	// Steps
-//	"0","7|warp|9|0,1","0","0","7|warp|6|1,0","0",
-//	// Name,Background,Audio
-//	"Lobby Fork","White",audioLobby];
-//	
-		
 		
 		room = Room()
 		room.floors = [ 9,10,9, 4,5,14, 9,6,9 ]
@@ -117,20 +84,12 @@ class World
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
 		room.addEvent(Pillar(x: 1, y: 1))
+		room.addEvent(Blocker(x: -1, y: 1, id:30))
+		room.addEvent(Warp(x: 0, y: 2, room:4, to_x: -1, to_y:0))
+		room.addEvent(Gate(x: 2, y: 0, required:Personas.necomedre))
+		room.addEvent(Warp(x: -2, y: 0, room:9, to_x: 0, to_y:1))
+		room.addEvent(Warp(x: 0, y: -2, room:6, to_x: 1, to_y:0))
 		all[5] = room
-		
-//	worldNode[6] = [
-//	// Tiles
-//	"9","4","9|block|5",
-//	"10","5","6",
-//	"9","10","9|event|shark|8|l",
-//	// Walls
-//	"3","13|warp|5|-1,0","3","26","13|warp|7|0,-1","26",
-//	// Steps
-//	"0","0","0","0","0","0",
-//	// Name,Background,Audio
-//	"Lobby Turn","White",audioLobby];
-//	
 		
 		room = Room()
 		room.floors = [ 9,4,9, 10,5,6, 9,10,9 ]
@@ -138,21 +97,11 @@ class World
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
+		room.addEvent(Blocker(x: 1, y: 1, id:5))
+		room.addEvent(Shark(x: 1, y: -1))
+		room.addEvent(Warp(x: 0, y: 2, room:5, to_x: -1, to_y:0))
+		room.addEvent(Warp(x: 2, y: 0, room:7, to_x: 0, to_y:-1))
 		all[6] = room
-		
-		
-//	worldNode[7] = [
-//	// Tiles
-//	"9","10|block|11","0",
-//	"4","5","12",
-//	"9|event|socket|14|l","0","0",
-//	// Walls
-//	"19","0","0","0","8|event|gateNestorine","0",
-//	// Steps
-//	"0","7|warp|6|0,1","0","0","0","0",
-//	// Name,Background,Audio
-//	"Lobby Nestorine","White",audioLobby];
-//	
 		
 		room = Room()
 		room.floors = [ 9,10,0, 4,5,12, 9,0,0 ]
@@ -161,20 +110,10 @@ class World
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
 		room.addEvent(Pillar(x: -1, y: -1))
+		room.addEvent(Blocker(x: 0, y: 1, id:11))
+		room.addEvent(Gate(x: 2, y: 0, required:Personas.nestorine))
+		room.addEvent(Warp(x: -2, y: 0, room:6, to_x: 0, to_y:1))
 		all[7] = room
-//	
-//	worldNode[9] = [
-//	// Tiles
-//	"10|event|socket|14|l","27","10",
-//	"9","4","5",
-//	"0","6","10",
-//	// Walls
-//	"18","9|event|gateNemedique","18","3","13|warp|5|0,-1","3",
-//	// Steps
-//	"0","0","0","0","7|event|courtyard","0",
-//	// Name,Background,Audio
-//	"Lobby Nemedique","White",audioLobby];
-//	
 		
 		room = Room()
 		room.floors = [ 10,27,10, 9,4,5, 0,6,10 ]
@@ -183,84 +122,19 @@ class World
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
 		room.addEvent(Pillar(x: -1, y: 1))
+		room.addEvent(Gate(x: 0, y: 2, required:Personas.nemedique))
+		room.addEvent(Warp(x: 2, y: 0, room:5, to_x: 0, to_y:-1))
 		all[9] = room
-		
-//	worldNode[10] = [
-//	// Tiles
-//	"3","3","3",
-//	"3","3","3",
-//	"3","3","3",
-//	// Walls
-//	"3","3","3","3","3","3",
-//	// Steps
-//	"0","0","0","0","0","0",
-//	// Name,Background,Audio
-//	"Test Level","White",audioLobby];
-//	
-		
-		room = Room()
-		room.floors = [ 3,3,3, 3,3,3, 3,3,3 ]
-		room.walls  = [ 3,3,3, 3,3,3 ]
-		room.steps  = [ 0,0,0, 0,0,0 ]
-		room.audio  = Soundtrack.lobby
-		room.theme  = Theme.white
-		all[10] = room
-		
-//	worldNode[11] = [
-//	// Tiles
-//	"4","5","6",
-//	"5","33|event|tree|23|l","4",
-//	"4","6","5",
-//	// Walls
-//	"36","13|warp|9|-1,0","36","3","37","3",
-//	// Steps
-//	"0","0","0","0","0","0",
-//	// Name,Background,Audio
-//	"Test Level","White",audioPillar];
-//	
-		
-		room = Room()
-		room.floors = [ 4,5,6, 5,33,4, 4,6,5 ]
-		room.walls  = [ 36,13,36, 3,37,3 ]
-		room.steps  = [ 0,0,0, 0,0,0 ]
-		room.audio  = Soundtrack.lobby
-		room.theme  = Theme.white
-		all[11] = room
-		
-		
-//	worldNode[13] = [
-//	// Tiles
-//	"4","5","6",
-//	"5","33|event|tree|23|l","4",
-//	"4","6","5",
-//	// Walls
-//	"36","13|warp|9|-1,0","36","3","37","3",
-//	// Steps
-//	"0","0","0","0","0","0",
-//	// Name,Background,Audio
-//	"Test Level","White",audioPillar];
-//	
-		
-		room = Room()
-		room.floors = [ 4,5,6, 5,33,4, 4,6,5 ]
-		room.walls  = [ 36,13,36, 3,37,3 ]
-		room.steps  = [ 0,0,0, 0,0,0 ]
-		room.audio  = Soundtrack.lobby
-		room.theme  = Theme.white
-		all[13] = room
-		
-//	worldNode[14] = [
-//	// Tiles
-//	"0","900|event|noface|29|r","0",
-//	"0","5","0",
-//	"0","5","0",
-//	// Walls
-//	"0","0","0","0","0","0",
-//	// Steps
-//	"0","0","0","0","7|warp|4|1,0","0",
-//	// Name,Background,Audio
-//	"Test Level","White",audioNastazie];
 	
+		room = Room()
+		room.floors = [ 4,5,6, 5,33,4, 4,6,5 ]
+		room.walls  = [ 36,13,36, 3,37,3 ]
+		room.steps  = [ 0,0,0, 0,0,0 ]
+		room.audio  = Soundtrack.lobby
+		room.theme  = Theme.white
+		room.addEvent(Warp(x: 0, y: 2, room:9, to_x: -1, to_y:0))
+		room.addEvent(Tree(x: 0, y: 0))
+		all[11] = room
 		
 		room = Room()
 		room.floors = [ 0,900,0, 0,5,0, 0,5,0 ]
@@ -268,8 +142,9 @@ class World
 		room.steps  = [ 0,0,0, 0,7,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
+		room.addEvent(NoFace(x: 0, y: 1))
+		room.addEvent(Warp(x: 0, y: -2, room:4, to_x: 1, to_y:0))
 		all[14] = room
-		
 	}
 	
 }

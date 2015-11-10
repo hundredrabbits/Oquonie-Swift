@@ -909,7 +909,9 @@
 	
 	// Default
 	return @"";
-}-(NSString*)gateEnd:(NSString*)option
+}
+
+-(NSString*)gateEnd:(NSString*)option
 {
 	// count pillars
 	int count = 0;
