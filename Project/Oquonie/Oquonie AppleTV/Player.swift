@@ -39,6 +39,7 @@ class Player : SKNode
 	{
 		print("up")
 		
+		
 	}
 	
 	func moveLeft()

@@ -31,33 +31,33 @@ class GameRoom : SKNode
 	let step5:GameTile!
 	let step6:GameTile!
 	
-	init(room:Room)
+	override init()
 	{
-		wall3 = GameTile(sprite: Types.wall, id:room.walls[2], orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
-		wall4 = GameTile(sprite: Types.wall, id:room.walls[3], orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
-		wall2 = GameTile(sprite: Types.wall, id:room.walls[1], orientation:Orientation.r, position: CGPoint(x: -templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
-		wall5 = GameTile(sprite: Types.wall, id:room.walls[4], orientation:Orientation.l, position: CGPoint(x:  templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
-		wall1 = GameTile(sprite: Types.wall, id:room.walls[0], orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
-		wall6 = GameTile(sprite: Types.wall, id:room.walls[5], orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
+		wall3 = GameTile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
+		wall4 = GameTile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
+		wall2 = GameTile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
+		wall5 = GameTile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
+		wall1 = GameTile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
+		wall6 = GameTile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
 		
 		let offset:CGFloat = 0.7
 		
-		floor11 = GameTile(sprite: Types.tile, id:room.floors[2], position: CGPoint(x: 0, y: templates.floor.height * offset), size: templates.floor)
-		floor01 = GameTile(sprite: Types.tile, id:room.floors[1], position: CGPoint(x: -templates.floor.width/2, y: templates.floor.height/2 * offset), size: templates.floor)
-		floor10 = GameTile(sprite: Types.tile, id:room.floors[5], position: CGPoint(x: templates.floor.width/2, y: templates.floor.height/2 * offset), size: templates.floor)
-		floore1 = GameTile(sprite: Types.tile, id:room.floors[0], position: CGPoint(x: -templates.floor.width, y: 0), size: templates.floor)
-		floor00 = GameTile(sprite: Types.tile, id:room.floors[4], position: CGPoint(x: 0, y: 0), size: templates.floor)
-		floor1e = GameTile(sprite: Types.tile, id:room.floors[8], position: CGPoint(x: templates.floor.width, y: 0), size: templates.floor)
-		floore0 = GameTile(sprite: Types.tile, id:room.floors[8], position: CGPoint(x: -templates.floor.width/2, y: -templates.floor.height/2 * offset), size: templates.floor)
-		floor0e = GameTile(sprite: Types.tile, id:room.floors[3], position: CGPoint(x: templates.floor.width/2, y: -templates.floor.height/2 * offset), size: templates.floor)
-		flooree = GameTile(sprite: Types.tile, id:room.floors[6], position: CGPoint(x: 0, y: -templates.floor.height * offset), size: templates.floor)
+		floor11 = GameTile(sprite: Types.tile, position: CGPoint(x: 0, y: templates.floor.height * offset), size: templates.floor)
+		floor01 = GameTile(sprite: Types.tile, position: CGPoint(x: -templates.floor.width/2, y: templates.floor.height/2 * offset), size: templates.floor)
+		floor10 = GameTile(sprite: Types.tile, position: CGPoint(x: templates.floor.width/2, y: templates.floor.height/2 * offset), size: templates.floor)
+		floore1 = GameTile(sprite: Types.tile, position: CGPoint(x: -templates.floor.width, y: 0), size: templates.floor)
+		floor00 = GameTile(sprite: Types.tile, position: CGPoint(x: 0, y: 0), size: templates.floor)
+		floor1e = GameTile(sprite: Types.tile, position: CGPoint(x: templates.floor.width, y: 0), size: templates.floor)
+		floore0 = GameTile(sprite: Types.tile, position: CGPoint(x: -templates.floor.width/2, y: -templates.floor.height/2 * offset), size: templates.floor)
+		floor0e = GameTile(sprite: Types.tile, position: CGPoint(x: templates.floor.width/2, y: -templates.floor.height/2 * offset), size: templates.floor)
+		flooree = GameTile(sprite: Types.tile, position: CGPoint(x: 0, y: -templates.floor.height * offset), size: templates.floor)
 		
-		step1 = GameTile(sprite: Types.step, id:room.steps[0], orientation:Orientation.r, position: CGPoint(x: -templates.step.width * 1.5, y: 0), size: templates.step)
-		step6 = GameTile(sprite: Types.step, id:room.steps[5], orientation:Orientation.l, position: CGPoint(x:  templates.step.width * 1.5, y: 0), size: templates.step)
-		step2 = GameTile(sprite: Types.step, id:room.steps[1], orientation:Orientation.r, position: CGPoint(x: -templates.step.width, y: 0), size: templates.step)
-		step5 = GameTile(sprite: Types.step, id:room.steps[4], orientation:Orientation.l, position: CGPoint(x:  templates.step.width, y: 0), size: templates.step)
-		step3 = GameTile(sprite: Types.step, id:room.steps[2], orientation:Orientation.r, position: CGPoint(x: -templates.step.width * 0.5, y: 0), size: templates.step)
-		step4 = GameTile(sprite: Types.step, id:room.steps[3], orientation:Orientation.l, position: CGPoint(x:  templates.step.width * 0.5, y: 0), size: templates.step)
+		step1 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x: -templates.step.width * 1.5, y: 0), size: templates.step)
+		step6 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x:  templates.step.width * 1.5, y: 0), size: templates.step)
+		step2 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x: -templates.step.width, y: 0), size: templates.step)
+		step5 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x:  templates.step.width, y: 0), size: templates.step)
+		step3 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x: -templates.step.width * 0.5, y: 0), size: templates.step)
+		step4 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x:  templates.step.width * 0.5, y: 0), size: templates.step)
 		
 		super.init()
 		
@@ -113,6 +113,33 @@ class GameRoom : SKNode
 		step4.zPosition =  6
 		step5.zPosition =  4
 		step6.zPosition =  2		
+	}
+	
+	func enter(room:Room)
+	{
+		wall3.updateSprite(room.walls[2])
+		wall4.updateSprite(room.walls[3])
+		wall2.updateSprite(room.walls[1])
+		wall5.updateSprite(room.walls[4])
+		wall1.updateSprite(room.walls[0])
+		wall6.updateSprite(room.walls[5])
+		
+		floor11.updateSprite(room.floors[2])
+		floor01.updateSprite(room.floors[1])
+		floor10.updateSprite(room.floors[5])
+		floore1.updateSprite(room.floors[0])
+		floor00.updateSprite(room.floors[4])
+		floor1e.updateSprite(room.floors[7])
+		floore0.updateSprite(room.floors[8])
+		floor0e.updateSprite(room.floors[3])
+		flooree.updateSprite(room.floors[6])
+		
+		step1.updateSprite(room.floors[0])
+		step6.updateSprite(room.floors[5])
+		step2.updateSprite(room.floors[1])
+		step5.updateSprite(room.floors[4])
+		step3.updateSprite(room.floors[2])
+		step4.updateSprite(room.floors[3])
 	}
 	
 	required init?(coder aDecoder: NSCoder)

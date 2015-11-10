@@ -6,6 +6,9 @@ import SpriteKit
 
 class GameScene: SKScene
 {
+	var player = Player()
+	var room = GameRoom()
+	
     override func didMoveToView(view: SKView)
 	{
 		start()
@@ -15,16 +18,14 @@ class GameScene: SKScene
 	{
 		let world = World()
 
-		let room = GameRoom(room: world.all[2])
 		room.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 150)
 		addChild(room)
 		
-		let player = Player()
 		player.position = CGPoint(x: 0, y: 0)
 		room.addChild(player)
 		player.zPosition = 900
 		
-		player.runAction(SKAction.moveTo(CGPointMake(110,110), duration:2.0))
+		room.enter(world.all[2])
 	}
 
     override func update(currentTime: CFTimeInterval)

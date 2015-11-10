@@ -11,23 +11,44 @@ class GameTile : SKSpriteNode
 	var id:Int!
 	var orientation:Orientation!
 	
-	init(sprite:Types,id:Int,orientation:Orientation! = nil, position:CGPoint, size: CGSize)
+	init(sprite:Types,id:Int! = nil,orientation:Orientation! = nil, position:CGPoint, size: CGSize)
 	{
-		let imageName = (orientation != nil) ? "\(sprite).\(id).\(orientation).png" : "\(sprite).\(id).png"
+		var image:UIImage!
+		var texture:SKTexture!
 		
-		print(imageName)
+		if id != nil {
+			let imageName = (orientation != nil) ? "\(sprite).\(id).\(orientation).png" : "\(sprite).\(id).png"
+			if UIImage(named: imageName) != nil {
+				image = UIImage(named: imageName)!
+				texture = SKTexture(image: image!)
+			}
+		}
+		else{
+			texture = nil
+		}
+		
+		super.init(texture: texture, color: UIColor.clearColor(), size: size)
+		self.position = position
+	}
+	
+	func updateSprite(id:Int)
+	{
+		self.id = id
+		
+		let imageName = (orientation != nil) ? "\(self.sprite).\(self.id).\(self.orientation).png" : "\(self.sprite).\(self.id).png"
 		
 		var image:UIImage!
 		var texture:SKTexture!
-
+		
 		if UIImage(named: imageName) != nil {
 			image = UIImage(named: imageName)!
 			texture = SKTexture(image: image!)
 		}
-		
-		super.init(texture: texture, color: UIColor.clearColor(), size: size)
-		
-		self.position = position
+		else{
+			print("not found \(imageName)")
+		}
+
+		self.texture = texture
 	}
 
 	required init?(coder aDecoder: NSCoder)
