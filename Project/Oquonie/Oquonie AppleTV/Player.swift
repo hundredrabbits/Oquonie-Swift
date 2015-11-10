@@ -54,6 +54,7 @@ class Player : Event
 			player.runAction(SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.25), completion: { self.isMoving = false })
 		}
 		else{
+			print("disabled: \(destination_x + x)/\(destination_x + y)")
 			self.isMoving = false
 		}
 	}

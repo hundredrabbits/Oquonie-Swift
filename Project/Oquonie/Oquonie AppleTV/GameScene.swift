@@ -13,8 +13,6 @@ class GameScene: SKScene
 	
 	func start()
 	{
-		let world = World()
-
 		stage.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 150)
 		addChild(stage)
 		

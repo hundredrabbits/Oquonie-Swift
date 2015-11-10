@@ -20,6 +20,7 @@ struct Templates
 	let player:CGSize = CGSize(width: 200, height: 281)
 }
 
+let world = World()
 let templates = Templates()
 let player = Player()
 let stage = Stage()

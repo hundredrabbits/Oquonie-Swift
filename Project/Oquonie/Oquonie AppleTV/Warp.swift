@@ -6,9 +6,27 @@ import Foundation
 
 class Warp : Event
 {
-	init(room:Int,x:Int,y:Int)
+	var destination:Int!
+	var to_x:Int!
+	var to_y:Int!
+	
+	init(x:Int,y:Int,room:Int,to_x:Int,to_y:Int)
 	{
 		super.init(x: x, y: y)
+		
+		self.x = x
+		self.y = y
+		self.destination = room
+		self.to_x = to_x
+		self.to_y = to_y
+	}
+	
+	override func collide()
+	{
+		print("Hit warp to: \(destination)")
+		player.isMoving = false
+		
+		stage.enter(world.all[destination])
 	}
 
 	required init?(coder aDecoder: NSCoder)
