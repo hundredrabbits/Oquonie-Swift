@@ -25,39 +25,17 @@ class World
 	{
 		var room = Room()
 		
-//	worldNode[1] = [
-//	// Tiles
-//	"0","25","2|block|10",
-//	"2","8","4",
-//	"2","2","2|event|socket|14|l",
-//	// Walls
-//	"0","5|event|gateNephtaline","2","2","12|warp|2|0,-1","15",
-//	// Steps
-//	"0","0","0","0","0","0",
-//	// Name,Background,Audio
-//	"Lobby Entrance","White",audioLobby];
-//	
-		
 		room = Room()
 		room.floors = [ 0,25,2, 2,8,4, 2,2,2 ]
 		room.walls  = [ 0,5,2,2,12,15 ]
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
+		room.addEvent(Blocker(x: 1, y: 1, id: 10))
+		room.addEvent(Pillar(x: 1, y: -1))
+		room.addEvent(Gate(x: 0, y: 2, required:Personas.nephtaline))
+		room.addEvent(Warp(x: 2, y: 0, room:2, to_x: 0, to_y:-1))
 		all[1] = room
-		
-//	worldNode[2] = [
-//	// Tiles
-//	"1","4","1|block|24",
-//	"6","5","1|event|ramenLobby|7|l",
-//	"1","1","1",
-//	// Walls
-//	"16|event|map","12|warp|3|-1,0","19","25","25","25",
-//	// Steps
-//	"0","7|warp|1|0,1","0","0","0","0",
-//	// Name,Background,Audio
-//	"Lobby Deck","White",audioLobby];
-//	
 		
 		room = Room()
 		room.floors = [ 1,4,1, 6,5,1, 1,1,1 ]
@@ -69,6 +47,7 @@ class World
 		room.addEvent(Ramen(x: 1, y: 0))
 		room.addEvent(Map(x: -1, y: 2))
 		room.addEvent(Warp(x: -2, y: 0, room:1, to_x: 1, to_y:0))
+		room.addEvent(Warp(x: 0, y: 2, room:3, to_x: -1, to_y:0))
 		all[2] = room
 		
 //	worldNode[3] = [
@@ -91,6 +70,8 @@ class World
 		room.steps  = [ 0,7,0, 0,7,0]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
+		room.addEvent(Pillar(x: -1, y: 1))
+		room.addEvent(Owl(x: 1, y: 1))
 		all[3] = room
 		
 		
@@ -135,6 +116,7 @@ class World
 		room.steps  = [ 0,7,0, 0,7,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
+		room.addEvent(Pillar(x: 1, y: 1))
 		all[5] = room
 		
 //	worldNode[6] = [
@@ -178,6 +160,7 @@ class World
 		room.steps  = [ 0,7,0, 0,0,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
+		room.addEvent(Pillar(x: -1, y: -1))
 		all[7] = room
 //	
 //	worldNode[9] = [
@@ -199,6 +182,7 @@ class World
 		room.steps  = [ 0,0,0, 0,7,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
+		room.addEvent(Pillar(x: -1, y: 1))
 		all[9] = room
 		
 //	worldNode[10] = [

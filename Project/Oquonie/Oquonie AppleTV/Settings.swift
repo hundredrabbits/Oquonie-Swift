@@ -31,6 +31,16 @@ enum Orientation
 	case r
 }
 
+enum Personas
+{
+	case necomedre
+	case nephtaline
+	case neomine
+	case nestorine
+	case nemedique
+	case nastazie
+}
+
 enum Soundtrack
 {
 	case none
