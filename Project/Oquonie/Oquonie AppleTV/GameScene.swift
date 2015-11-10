@@ -23,6 +23,8 @@ class GameScene: SKScene
 		player.position = CGPoint(x: 0, y: 0)
 		room.addChild(player)
 		player.zPosition = 900
+		
+		player.runAction(SKAction.moveTo(CGPointMake(110,110), duration:2.0))
 	}
 
     override func update(currentTime: CFTimeInterval)

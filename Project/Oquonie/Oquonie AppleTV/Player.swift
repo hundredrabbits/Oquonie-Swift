@@ -5,13 +5,16 @@
 import SpriteKit
 import Foundation
 
-class Player : SKSpriteNode
+class Player : SKNode
 {
+	var sprite:SKSpriteNode!
 	var x:Int = 0
 	var y:Int = 0
 	
-	init()
+	override init()
 	{
+		super.init()
+		
 		let imageName = "char2.stand.l.f.3.png"
 		
 		var image:UIImage!
@@ -21,8 +24,36 @@ class Player : SKSpriteNode
 			image = UIImage(named: imageName)!
 			texture = SKTexture(image: image!)
 		}
+
+		sprite = SKSpriteNode(texture: texture, color: UIColor.purpleColor(), size: templates.player)
+		sprite.position = CGPoint(x: 0, y: 100)
+		addChild(sprite)
 		
-		super.init(texture: texture, color: UIColor.redColor(), size: templates.player)
+		let marker = SKShapeNode(circleOfRadius: 5)
+		marker.fillColor = UIColor.redColor()
+		marker.strokeColor = UIColor.clearColor()
+		addChild(marker)
+	}
+	
+	func moveUp()
+	{
+		print("up")
+		
+	}
+	
+	func moveLeft()
+	{
+		print("left")
+	}
+	
+	func moveRight()
+	{
+		print("right")
+	}
+	
+	func moveDown()
+	{
+		print("down")
 	}
 
 	required init?(coder aDecoder: NSCoder)

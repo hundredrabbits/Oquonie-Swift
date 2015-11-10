@@ -21,6 +21,7 @@ struct Templates
 }
 
 let templates = Templates()
+let player = Player()
 
 enum Orientation
 {

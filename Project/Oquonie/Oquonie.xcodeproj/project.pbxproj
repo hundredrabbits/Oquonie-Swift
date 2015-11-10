@@ -218,19 +218,12 @@
 		579434201A89429A0083CF0F /* notification.F.png in Resources */ = {isa = PBXBuildFile; fileRef = 5794340E1A8942960083CF0F /* notification.F.png */; };
 		579434211A89429A0083CF0F /* notification.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 03834E43180BA6FF00568E60 /* notification.1.png */; };
 		579434241A899F810083CF0F /* notification.X.png in Resources */ = {isa = PBXBuildFile; fileRef = 579434221A899EE10083CF0F /* notification.X.png */; };
-		57A6684A1BEE9894007CDD8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668491BEE9894007CDD8B /* AppDelegate.swift */; };
-		57A6684C1BEE9894007CDD8B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A6684B1BEE9894007CDD8B /* GameScene.sks */; };
-		57A6684E1BEE9894007CDD8B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6684D1BEE9894007CDD8B /* GameScene.swift */; };
-		57A668501BEE9894007CDD8B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6684F1BEE9894007CDD8B /* GameViewController.swift */; };
-		57A668531BEE9894007CDD8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A668511BEE9894007CDD8B /* Main.storyboard */; };
-		57A668551BEE9894007CDD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668541BEE9894007CDD8B /* Assets.xcassets */; };
-		57A668581BEE9894007CDD8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A668561BEE9894007CDD8B /* LaunchScreen.storyboard */; };
 		57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668631BEE98AA007CDD8B /* AppDelegate.swift */; };
 		57A668661BEE98AA007CDD8B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* GameScene.sks */; };
 		57A668681BEE98AA007CDD8B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* GameScene.swift */; };
 		57A6686A1BEE98AA007CDD8B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668691BEE98AA007CDD8B /* GameViewController.swift */; };
 		57A6686C1BEE98AA007CDD8B /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686B1BEE98AA007CDD8B /* Game.xcassets */; };
-		57A6686F1BEE98AA007CDD8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686D1BEE98AA007CDD8B /* Main.storyboard */; };
+		57A6686F1BEE98AA007CDD8B /* AppleTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686D1BEE98AA007CDD8B /* AppleTV.storyboard */; };
 		57A668711BEE98AA007CDD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
 		57C0E4361A7C1CBE008728C8 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4341A7C1CBE008728C8 /* Input.m */; };
 		57C0E4371A7C217D008728C8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701181A7A8260009C1C91 /* User.m */; };
@@ -289,6 +282,27 @@
 		57C1AA3B1AA38257005EFD29 /* town2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9918A26BE500206675 /* town2.mp3 */; };
 		57C1AA3C1AA38257005EFD29 /* town3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9A18A26BE500206675 /* town3.mp3 */; };
 		57C1AA3D1AA38257005EFD29 /* warp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9B18A26BE500206675 /* warp.mp3 */; };
+		57C843D01BF233CB00288847 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668691BEE98AA007CDD8B /* GameViewController.swift */; };
+		57C843D11BF233CB00288847 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* GameScene.swift */; };
+		57C843D21BF233CB00288847 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* GameRoom.swift */; };
+		57C843D31BF233CB00288847 /* GameTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* GameTile.swift */; };
+		57C843D41BF233CB00288847 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C21BF108D900E4D319 /* Event.swift */; };
+		57C843D51BF233CB00288847 /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C41BF1092500E4D319 /* Blocker.swift */; };
+		57C843D61BF233CB00288847 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C61BF10DCF00E4D319 /* Socket.swift */; };
+		57C843D71BF233CB00288847 /* GateNephtaline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C81BF10E5E00E4D319 /* GateNephtaline.swift */; };
+		57C843D81BF233CB00288847 /* Warp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2CA1BF10E7B00E4D319 /* Warp.swift */; };
+		57C843D91BF233CB00288847 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFDFF1BF0EA52006DAF1C /* Settings.swift */; };
+		57C843DA1BF233CB00288847 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BE1BF1033A00E4D319 /* World.swift */; };
+		57C843DB1BF233CB00288847 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
+		57C843DC1BF233CB00288847 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0E2CE1BF147AC0067CC94 /* Player.swift */; };
+		57C843DD1BF233CB00288847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668631BEE98AA007CDD8B /* AppDelegate.swift */; };
+		57C843DE1BF233CB00288847 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* GameScene.sks */; };
+		57C843DF1BF233CB00288847 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686B1BEE98AA007CDD8B /* Game.xcassets */; };
+		57C843E01BF233CB00288847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
+		57C843E31BF2341100288847 /* iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C843E21BF2341100288847 /* iOS.storyboard */; };
+		57C843E51BF234C200288847 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C843E41BF234C200288847 /* Default-568h@2x.png */; };
+		57C843EC1BF237A300288847 /* Info iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C843EB1BF237A300288847 /* Info iOS.plist */; };
+		57C843EE1BF237B200288847 /* Info AppleTV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C843ED1BF237B200288847 /* Info AppleTV.plist */; };
 		57C89F031A7E80800039B9C8 /* wall.41.r.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEF196C9956004750C7 /* wall.41.r.png */; };
 		57C89F041A7E80800039B9C8 /* wall.41.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 033DEBEB196C991F004750C7 /* wall.41.l.png */; };
 		57C89F051A7E80800039B9C8 /* wall.98.l.png in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BCD18A688AF00BFA21E /* wall.98.l.png */; };
@@ -898,7 +912,6 @@
 		57E3D2C71BF10DCF00E4D319 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C61BF10DCF00E4D319 /* Socket.swift */; };
 		57E3D2C91BF10E5E00E4D319 /* GateNephtaline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C81BF10E5E00E4D319 /* GateNephtaline.swift */; };
 		57E3D2CB1BF10E7B00E4D319 /* Warp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2CA1BF10E7B00E4D319 /* Warp.swift */; };
-		57E3D2CD1BF10FAD00E4D319 /* WorldMigration in Resources */ = {isa = PBXBuildFile; fileRef = 57E3D2CC1BF10FAD00E4D319 /* WorldMigration */; };
 		57F0E2CF1BF147AC0067CC94 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0E2CE1BF147AC0067CC94 /* Player.swift */; };
 		57F7011D1A7AC4EC009C1C91 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F7011B1A7AC4EC009C1C91 /* Event.m */; };
 		57F701251A7AC765009C1C91 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F701231A7AC765009C1C91 /* Position.m */; };
@@ -1653,7 +1666,7 @@
 		5773509C1A75BF1D00F1B3DA /* event.37.r.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.r.2.png; path = en.assets/event.37.r.2.png; sourceTree = "<group>"; };
 		5773509D1A75BF1D00F1B3DA /* event.37.r.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.r.3.png; path = en.assets/event.37.r.3.png; sourceTree = "<group>"; };
 		578BFD871BF0E6D8006DAF1C /* GameTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTile.swift; sourceTree = "<group>"; };
-		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Oquonie AppleTV/Settings.swift"; sourceTree = "<group>"; };
 		579434091A8942960083CF0F /* notification.A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.A.png; path = en.assets/notification.A.png; sourceTree = "<group>"; };
 		5794340A1A8942960083CF0F /* notification.B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.B.png; path = en.assets/notification.B.png; sourceTree = "<group>"; };
 		5794340B1A8942960083CF0F /* notification.C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.C.png; path = en.assets/notification.C.png; sourceTree = "<group>"; };
@@ -1663,23 +1676,14 @@
 		579434221A899EE10083CF0F /* notification.X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.X.png; path = en.assets/notification.X.png; sourceTree = "<group>"; };
 		57A668111BEE92AE007CDD8B /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		57A668471BEE9894007CDD8B /* Oquonie iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		57A668491BEE9894007CDD8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57A6684B1BEE9894007CDD8B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		57A6684D1BEE9894007CDD8B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		57A6684F1BEE9894007CDD8B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		57A668521BEE9894007CDD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		57A668541BEE9894007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		57A668571BEE9894007CDD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		57A668591BEE9894007CDD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57A668611BEE98AA007CDD8B /* Oquonie AppleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie AppleTV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		57A668631BEE98AA007CDD8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		57A668631BEE98AA007CDD8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Oquonie AppleTV/AppDelegate.swift"; sourceTree = "<group>"; };
 		57A668651BEE98AA007CDD8B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		57A668671BEE98AA007CDD8B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		57A668691BEE98AA007CDD8B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		57A6686B1BEE98AA007CDD8B /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
-		57A6686E1BEE98AA007CDD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		57A668701BEE98AA007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		57A668721BEE98AA007CDD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57A668691BEE98AA007CDD8B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = "Oquonie AppleTV/GameViewController.swift"; sourceTree = "<group>"; };
+		57A6686B1BEE98AA007CDD8B /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Game.xcassets; path = "Oquonie AppleTV/Game.xcassets"; sourceTree = "<group>"; };
+		57A6686E1BEE98AA007CDD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppleTV.storyboard; sourceTree = "<group>"; };
+		57A668701BEE98AA007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Oquonie AppleTV/Assets.xcassets"; sourceTree = "<group>"; };
 		57C0E4331A7C1CBE008728C8 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Input.h; sourceTree = "<group>"; };
 		57C0E4341A7C1CBE008728C8 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Input.m; sourceTree = "<group>"; };
 		57C0E4381A7C29AB008728C8 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
@@ -1688,6 +1692,10 @@
 		57C0E43D1A7C2D29008728C8 /* Draw.osx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Draw.osx.m; path = ../Draw.osx.m; sourceTree = "<group>"; };
 		57C0E4401A7C3EF9008728C8 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		57C0E4411A7C3EF9008728C8 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
+		57C843E21BF2341100288847 /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
+		57C843E41BF234C200288847 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		57C843EB1BF237A300288847 /* Info iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info iOS.plist"; sourceTree = "<group>"; };
+		57C843ED1BF237B200288847 /* Info AppleTV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info AppleTV.plist"; sourceTree = "<group>"; };
 		57C978861A9D199000A4E23E /* notification.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notification.7.png; path = en.assets/notification.7.png; sourceTree = "<group>"; };
 		57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = iOS.xcassets; path = Oquonie/iOS.xcassets; sourceTree = "<group>"; };
 		57E2A1CB1A7FC7790016B198 /* letterSpell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell1.png; path = en.assets/letterSpell1.png; sourceTree = "<group>"; };
@@ -1698,15 +1706,14 @@
 		57E2A1D01A7FC7790016B198 /* letterSpell6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell6.png; path = en.assets/letterSpell6.png; sourceTree = "<group>"; };
 		57E2A1D11A7FC7790016B198 /* letterSpell8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell8.png; path = en.assets/letterSpell8.png; sourceTree = "<group>"; };
 		57E3D2BC1BF0FE0400E4D319 /* GameRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
-		57E3D2BE1BF1033A00E4D319 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
-		57E3D2C01BF1059500E4D319 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		57E3D2BE1BF1033A00E4D319 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = World.swift; path = "Oquonie AppleTV/World.swift"; sourceTree = "<group>"; };
+		57E3D2C01BF1059500E4D319 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = "Oquonie AppleTV/Room.swift"; sourceTree = "<group>"; };
 		57E3D2C21BF108D900E4D319 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		57E3D2C41BF1092500E4D319 /* Blocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blocker.swift; sourceTree = "<group>"; };
 		57E3D2C61BF10DCF00E4D319 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		57E3D2C81BF10E5E00E4D319 /* GateNephtaline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GateNephtaline.swift; sourceTree = "<group>"; };
 		57E3D2CA1BF10E7B00E4D319 /* Warp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warp.swift; sourceTree = "<group>"; };
-		57E3D2CC1BF10FAD00E4D319 /* WorldMigration */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorldMigration; sourceTree = "<group>"; };
-		57F0E2CE1BF147AC0067CC94 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		57F0E2CE1BF147AC0067CC94 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = "Oquonie AppleTV/Player.swift"; sourceTree = "<group>"; };
 		57F701171A7A8260009C1C91 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		57F701181A7A8260009C1C91 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		57F7011A1A7AC4EC009C1C91 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -2578,7 +2585,10 @@
 			isa = PBXGroup;
 			children = (
 				57A668111BEE92AE007CDD8B /* Todo */,
-				571A8C8C1A793CD5008E846E /* Oquonie Core */,
+				57A6686B1BEE98AA007CDD8B /* Game.xcassets */,
+				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
+				57C843E61BF2356300288847 /* Oquonie Core */,
+				571A8C8C1A793CD5008E846E /* Oquonie Core Archive */,
 				57013B8C1A7954E800612048 /* Oquonie Desktop */,
 				57A668481BEE9894007CDD8B /* Oquonie iOS */,
 				57A668621BEE98AA007CDD8B /* Oquonie AppleTV */,
@@ -2852,7 +2862,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		571A8C8C1A793CD5008E846E /* Oquonie Core */ = {
+		571A8C8C1A793CD5008E846E /* Oquonie Core Archive */ = {
 			isa = PBXGroup;
 			children = (
 				57CCC4EC1A8FADCE00299F9E /* iOS.xcassets */,
@@ -2882,7 +2892,7 @@
 				57C0E4401A7C3EF9008728C8 /* Audio.h */,
 				57C0E4411A7C3EF9008728C8 /* Audio.m */,
 			);
-			name = "Oquonie Core";
+			name = "Oquonie Core Archive";
 			sourceTree = "<group>";
 		};
 		57255E191A77132600388B48 /* char.8 */ = {
@@ -2952,14 +2962,9 @@
 		57A668481BEE9894007CDD8B /* Oquonie iOS */ = {
 			isa = PBXGroup;
 			children = (
-				57A668491BEE9894007CDD8B /* AppDelegate.swift */,
-				57A6684B1BEE9894007CDD8B /* GameScene.sks */,
-				57A6684D1BEE9894007CDD8B /* GameScene.swift */,
-				57A6684F1BEE9894007CDD8B /* GameViewController.swift */,
-				57A668511BEE9894007CDD8B /* Main.storyboard */,
-				57A668541BEE9894007CDD8B /* Assets.xcassets */,
-				57A668561BEE9894007CDD8B /* LaunchScreen.storyboard */,
-				57A668591BEE9894007CDD8B /* Info.plist */,
+				57C843EB1BF237A300288847 /* Info iOS.plist */,
+				57C843E21BF2341100288847 /* iOS.storyboard */,
+				57C843E41BF234C200288847 /* Default-568h@2x.png */,
 			);
 			path = "Oquonie iOS";
 			sourceTree = "<group>";
@@ -2967,20 +2972,9 @@
 		57A668621BEE98AA007CDD8B /* Oquonie AppleTV */ = {
 			isa = PBXGroup;
 			children = (
-				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
-				57F0E2CB1BF13A490067CC94 /* Game */,
-				57F0E2CA1BF13A320067CC94 /* Events */,
-				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
-				57E3D2BE1BF1033A00E4D319 /* World.swift */,
-				57E3D2C01BF1059500E4D319 /* Room.swift */,
-				57F0E2CE1BF147AC0067CC94 /* Player.swift */,
-				57E3D2CC1BF10FAD00E4D319 /* WorldMigration */,
-				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
+				57C843ED1BF237B200288847 /* Info AppleTV.plist */,
+				57A6686D1BEE98AA007CDD8B /* AppleTV.storyboard */,
 				57A668651BEE98AA007CDD8B /* GameScene.sks */,
-				57A6686D1BEE98AA007CDD8B /* Main.storyboard */,
-				57A6686B1BEE98AA007CDD8B /* Game.xcassets */,
-				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
-				57A668721BEE98AA007CDD8B /* Info.plist */,
 			);
 			path = "Oquonie AppleTV";
 			sourceTree = "<group>";
@@ -3016,6 +3010,29 @@
 				03E14CC018A637CC00B3816F /* event.30.portrait.png */,
 			);
 			name = "event.30 petunia";
+			sourceTree = "<group>";
+		};
+		57C843E61BF2356300288847 /* Oquonie Core */ = {
+			isa = PBXGroup;
+			children = (
+				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
+				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
+				57F0E2CB1BF13A490067CC94 /* Game */,
+				57C843E81BF235B200288847 /* Objects */,
+				57F0E2CA1BF13A320067CC94 /* Events */,
+			);
+			name = "Oquonie Core";
+			sourceTree = "<group>";
+		};
+		57C843E81BF235B200288847 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
+				57E3D2BE1BF1033A00E4D319 /* World.swift */,
+				57E3D2C01BF1059500E4D319 /* Room.swift */,
+				57F0E2CE1BF147AC0067CC94 /* Player.swift */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		57C8A1551A7E81610039B9C8 /* event.37 - twitter */ = {
@@ -3071,6 +3088,7 @@
 				57E3D2CA1BF10E7B00E4D319 /* Warp.swift */,
 			);
 			name = Events;
+			path = "Oquonie AppleTV";
 			sourceTree = "<group>";
 		};
 		57F0E2CB1BF13A490067CC94 /* Game */ = {
@@ -3081,6 +3099,7 @@
 				578BFD871BF0E6D8006DAF1C /* GameTile.swift */,
 			);
 			name = Game;
+			path = "Oquonie AppleTV";
 			sourceTree = "<group>";
 		};
 		57F0E2D01BF14C1E0067CC94 /* Maps */ = {
@@ -3943,6 +3962,7 @@
 			files = (
 				578BFDB71BF0E8E8006DAF1C /* event.33.l.3.png in Resources */,
 				578BFD981BF0E8E8006DAF1C /* event.29.l.2.png in Resources */,
+				57C843EC1BF237A300288847 /* Info iOS.plist in Resources */,
 				578BFDA11BF0E8E8006DAF1C /* wall.gateNastazieClosed.r.png in Resources */,
 				578BFDC11BF0E8E8006DAF1C /* credit.rekka.jpg in Resources */,
 				578BFDA41BF0E8E8006DAF1C /* event.34.portrait.png in Resources */,
@@ -3950,6 +3970,7 @@
 				578BFDB41BF0E8E8006DAF1C /* char7.stand.l.f.2.png in Resources */,
 				578BFD951BF0E8E8006DAF1C /* blocker.29.png in Resources */,
 				578BFD921BF0E8E8006DAF1C /* wall.102.r.png in Resources */,
+				57C843DF1BF233CB00288847 /* Game.xcassets in Resources */,
 				578BFDA31BF0E8E8006DAF1C /* wall.gateNastazieOpen.r.png in Resources */,
 				578BFDB01BF0E8E8006DAF1C /* wall.gateCatClosed.l.png in Resources */,
 				578BFDA71BF0E8E8006DAF1C /* event.34.l.3.png in Resources */,
@@ -3957,17 +3978,17 @@
 				578BFD8A1BF0E8E8006DAF1C /* wall.104.l.png in Resources */,
 				578BFDA51BF0E8E8006DAF1C /* event.34.l.1.png in Resources */,
 				578BFDAA1BF0E8E8006DAF1C /* game_save.png in Resources */,
+				57C843DE1BF233CB00288847 /* GameScene.sks in Resources */,
 				578BFD941BF0E8E8006DAF1C /* wall.103.r.png in Resources */,
 				578BFD931BF0E8E8006DAF1C /* wall.103.l.png in Resources */,
 				578BFDAF1BF0E8E8006DAF1C /* map.1.Nestorine.png in Resources */,
-				57A6684C1BEE9894007CDD8B /* GameScene.sks in Resources */,
 				578BFDAD1BF0E8E8006DAF1C /* map.1.Neomine.png in Resources */,
 				578BFD9D1BF0E8E8006DAF1C /* wall.100.r.png in Resources */,
 				578BFDAE1BF0E8E8006DAF1C /* map.1.Nephtaline.png in Resources */,
+				57C843E01BF233CB00288847 /* Assets.xcassets in Resources */,
 				578BFDBB1BF0E8E8006DAF1C /* event.33.r.3.png in Resources */,
 				578BFD9A1BF0E8E8006DAF1C /* wall.99.l.png in Resources */,
 				578BFDA01BF0E8E8006DAF1C /* wall.gateNastazieClosed.l.png in Resources */,
-				57A668581BEE9894007CDD8B /* LaunchScreen.storyboard in Resources */,
 				578BFDB81BF0E8E8006DAF1C /* event.33.portrait.png in Resources */,
 				578BFDA81BF0E8E8006DAF1C /* fx.parallax.6.png in Resources */,
 				578BFDB11BF0E8E8006DAF1C /* wall.gateCatClosed.r.png in Resources */,
@@ -3976,11 +3997,9 @@
 				578BFD8D1BF0E8E8006DAF1C /* wall.107.r.png in Resources */,
 				578BFD891BF0E8E8006DAF1C /* wall.110.l.png in Resources */,
 				578BFDB21BF0E8E8006DAF1C /* wall.gateCatOpen.l.png in Resources */,
-				57A668551BEE9894007CDD8B /* Assets.xcassets in Resources */,
 				578BFD911BF0E8E8006DAF1C /* wall.102.l.png in Resources */,
 				578BFDB31BF0E8E8006DAF1C /* wall.gateCatOpen.r.png in Resources */,
 				578BFDBD1BF0E8E8006DAF1C /* char6.warp.l.f.3.png in Resources */,
-				57A668531BEE9894007CDD8B /* Main.storyboard in Resources */,
 				578BFDBF1BF0E8E8006DAF1C /* event.33.l.2.png in Resources */,
 				578BFDA21BF0E8E8006DAF1C /* wall.gateNastazieOpen.l.png in Resources */,
 				578BFDB91BF0E8E8006DAF1C /* event.33.r.1.png in Resources */,
@@ -3989,11 +4008,13 @@
 				578BFDC21BF0E8E8006DAF1C /* blocker.28.png in Resources */,
 				578BFDC01BF0E8E8006DAF1C /* credit.devine.jpg in Resources */,
 				578BFDA91BF0E8E8006DAF1C /* fx.parallax.7.png in Resources */,
+				57C843E51BF234C200288847 /* Default-568h@2x.png in Resources */,
 				578BFD9E1BF0E8E8006DAF1C /* wall.101.l.png in Resources */,
 				578BFD8C1BF0E8E8006DAF1C /* wall.106.r.png in Resources */,
 				578BFD991BF0E8E8006DAF1C /* event.29.l.3.png in Resources */,
 				578BFDB61BF0E8E8006DAF1C /* char7.warp.l.f.1.png in Resources */,
 				578BFD9C1BF0E8E8006DAF1C /* wall.100.l.png in Resources */,
+				57C843E31BF2341100288847 /* iOS.storyboard in Resources */,
 				578BFD9B1BF0E8E8006DAF1C /* wall.99.r.png in Resources */,
 				578BFDBE1BF0E8E8006DAF1C /* event.33.l.1.png in Resources */,
 				578BFDBC1BF0E8E8006DAF1C /* char6.warp.l.f.2.png in Resources */,
@@ -4011,7 +4032,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57E3D2CD1BF10FAD00E4D319 /* WorldMigration in Resources */,
 				578BFDF21BF0E8E9006DAF1C /* event.33.l.3.png in Resources */,
 				578BFDD31BF0E8E9006DAF1C /* event.29.l.2.png in Resources */,
 				578BFDDC1BF0E8E9006DAF1C /* wall.gateNastazieClosed.r.png in Resources */,
@@ -4031,7 +4051,7 @@
 				578BFDCF1BF0E8E9006DAF1C /* wall.103.r.png in Resources */,
 				578BFDCE1BF0E8E9006DAF1C /* wall.103.l.png in Resources */,
 				578BFDEA1BF0E8E9006DAF1C /* map.1.Nestorine.png in Resources */,
-				57A6686F1BEE98AA007CDD8B /* Main.storyboard in Resources */,
+				57A6686F1BEE98AA007CDD8B /* AppleTV.storyboard in Resources */,
 				578BFDE81BF0E8E9006DAF1C /* map.1.Neomine.png in Resources */,
 				578BFDD81BF0E8E9006DAF1C /* wall.100.r.png in Resources */,
 				578BFDE91BF0E8E9006DAF1C /* map.1.Nephtaline.png in Resources */,
@@ -4064,6 +4084,7 @@
 				578BFDC71BF0E8E9006DAF1C /* wall.106.r.png in Resources */,
 				578BFDD41BF0E8E9006DAF1C /* event.29.l.3.png in Resources */,
 				578BFDF11BF0E8E9006DAF1C /* char7.warp.l.f.1.png in Resources */,
+				57C843EE1BF237B200288847 /* Info AppleTV.plist in Resources */,
 				578BFDD71BF0E8E9006DAF1C /* wall.100.l.png in Resources */,
 				578BFDD61BF0E8E9006DAF1C /* wall.99.r.png in Resources */,
 				578BFDF91BF0E8E9006DAF1C /* event.33.l.1.png in Resources */,
@@ -4109,9 +4130,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A6684E1BEE9894007CDD8B /* GameScene.swift in Sources */,
-				57A668501BEE9894007CDD8B /* GameViewController.swift in Sources */,
-				57A6684A1BEE9894007CDD8B /* AppDelegate.swift in Sources */,
+				57C843D71BF233CB00288847 /* GateNephtaline.swift in Sources */,
+				57C843D11BF233CB00288847 /* GameScene.swift in Sources */,
+				57C843DB1BF233CB00288847 /* Room.swift in Sources */,
+				57C843D61BF233CB00288847 /* Socket.swift in Sources */,
+				57C843DD1BF233CB00288847 /* AppDelegate.swift in Sources */,
+				57C843D81BF233CB00288847 /* Warp.swift in Sources */,
+				57C843DC1BF233CB00288847 /* Player.swift in Sources */,
+				57C843D91BF233CB00288847 /* Settings.swift in Sources */,
+				57C843D31BF233CB00288847 /* GameTile.swift in Sources */,
+				57C843D21BF233CB00288847 /* GameRoom.swift in Sources */,
+				57C843DA1BF233CB00288847 /* World.swift in Sources */,
+				57C843D01BF233CB00288847 /* GameViewController.swift in Sources */,
+				57C843D51BF233CB00288847 /* Blocker.swift in Sources */,
+				57C843D41BF233CB00288847 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4147,28 +4179,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		57A668511BEE9894007CDD8B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				57A668521BEE9894007CDD8B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		57A668561BEE9894007CDD8B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				57A668571BEE9894007CDD8B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		57A6686D1BEE98AA007CDD8B /* Main.storyboard */ = {
+		57A6686D1BEE98AA007CDD8B /* AppleTV.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				57A6686E1BEE98AA007CDD8B /* Base */,
 			);
-			name = Main.storyboard;
+			name = AppleTV.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -4298,7 +4314,6 @@
 		57A6685B1BEE9894007CDD8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -4313,7 +4328,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Oquonie iOS/Info.plist";
+				INFOPLIST_FILE = "Oquonie iOS/Info iOS.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -4326,7 +4341,6 @@
 		57A6685C1BEE9894007CDD8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -4343,7 +4357,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Oquonie iOS/Info.plist";
+				INFOPLIST_FILE = "Oquonie iOS/Info iOS.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -4371,7 +4385,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Oquonie AppleTV/Info.plist";
+				INFOPLIST_FILE = "Oquonie AppleTV/Info AppleTV.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-AppleTV";
@@ -4404,7 +4418,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Oquonie AppleTV/Info.plist";
+				INFOPLIST_FILE = "Oquonie AppleTV/Info AppleTV.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-AppleTV";

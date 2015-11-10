@@ -18,6 +18,16 @@ class GameViewController: UIViewController
             skView.presentScene(scene)
 		}
 		
+		start()
+    }
+	
+	func start()
+	{
+		addGestures()
+	}
+	
+	func addGestures()
+	{
 		let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
 		swipeRight.direction = .Right
 		self.view.addGestureRecognizer(swipeRight)
@@ -33,44 +43,44 @@ class GameViewController: UIViewController
 		let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
 		swipeLeft.direction = .Left
 		self.view.addGestureRecognizer(swipeLeft)
-    }
+	}
 	
 	func respondToSwipeGesture(gesture: UIGestureRecognizer)
 	{
 		if let swipeGesture = gesture as? UISwipeGestureRecognizer {
 			switch swipeGesture.direction {
 			case UISwipeGestureRecognizerDirection.Right:
-				moveRight()
+				player.moveRight()
 			case UISwipeGestureRecognizerDirection.Down:
-				moveDown()
+				player.moveDown()
 			case UISwipeGestureRecognizerDirection.Left:
-				moveLeft()
+				player.moveLeft()
 			case UISwipeGestureRecognizerDirection.Up:
-				moveUp()
+				player.moveUp()
 			default:
 				break
 			}
 		}
 	}
 	
-	func moveUp()
+	override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?)
 	{
-		print("up")
-	}
-	
-	func moveLeft()
-	{
-		print("left")
-	}
-	
-	func moveRight()
-	{
-		print("right")
-	}
-	
-	func moveDown()
-	{
-		print("down")
+		super.pressesEnded(presses, withEvent: event)
+		for press in presses
+		{
+			switch press.type {
+			case UIPressType.LeftArrow:
+				player.moveLeft()
+			case UIPressType.RightArrow:
+				player.moveRight()
+			case UIPressType.UpArrow:
+				player.moveUp()
+			case UIPressType.DownArrow:
+				player.moveDown()
+			default:
+				break
+			}
+		}
 	}
 	
     override func didReceiveMemoryWarning()
