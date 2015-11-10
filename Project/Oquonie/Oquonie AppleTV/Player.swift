@@ -10,6 +10,7 @@ class Player : SKNode
 	var sprite:SKSpriteNode!
 	var x:Int = 0
 	var y:Int = 0
+	var isMoving:Bool = false
 	
 	override init()
 	{
@@ -35,26 +36,16 @@ class Player : SKNode
 		addChild(marker)
 	}
 	
-	func moveUp()
+	func move(x:Int, y:Int)
 	{
-		print("up")
-		let test = SKAction.moveToX(30, duration: 5.0)
-		player.runAction(test, completion: { print("hey") })
-	}
-	
-	func moveLeft()
-	{
-		print("left")
-	}
-	
-	func moveRight()
-	{
-		print("right")
-	}
-	
-	func moveDown()
-	{
-		print("down")
+		if isMoving == true { return }
+		isMoving = true
+		
+		if self.x + x <  2 { self.x += x }
+		if self.y + y <  2 { self.y += y }
+		if self.x + x > -2 { self.x -= x }
+		if self.y + y < -2 { self.y -= y }
+		player.runAction(SKAction.moveTo(room.positionAt(self.x,y:self.y), duration: 0.5), completion: { self.isMoving = false })
 	}
 
 	required init?(coder aDecoder: NSCoder)

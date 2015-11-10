@@ -11,7 +11,7 @@ class GameTile : SKSpriteNode
 	var id:Int!
 	var orientation:Orientation!
 	
-	init(sprite:Types,id:Int! = nil,orientation:Orientation! = nil, position:CGPoint, size: CGSize)
+	init(sprite:Types,id:Int! = nil,orientation:Orientation! = nil, position:CGPoint = CGPoint(x: 0,y: 0), size: CGSize)
 	{
 		var image:UIImage!
 		var texture:SKTexture!

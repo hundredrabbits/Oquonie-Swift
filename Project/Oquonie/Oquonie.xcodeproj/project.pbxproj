@@ -3027,10 +3027,10 @@
 		57C843E81BF235B200288847 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				57F0E2CE1BF147AC0067CC94 /* Player.swift */,
 				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
 				57E3D2BE1BF1033A00E4D319 /* World.swift */,
 				57E3D2C01BF1059500E4D319 /* Room.swift */,
-				57F0E2CE1BF147AC0067CC94 /* Player.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";

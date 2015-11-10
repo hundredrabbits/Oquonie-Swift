@@ -40,17 +40,15 @@ class GameRoom : SKNode
 		wall1 = GameTile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
 		wall6 = GameTile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
 		
-		let offset:CGFloat = 0.7
-		
-		floor11 = GameTile(sprite: Types.tile, position: CGPoint(x: 0, y: templates.floor.height * offset), size: templates.floor)
-		floor01 = GameTile(sprite: Types.tile, position: CGPoint(x: -templates.floor.width/2, y: templates.floor.height/2 * offset), size: templates.floor)
-		floor10 = GameTile(sprite: Types.tile, position: CGPoint(x: templates.floor.width/2, y: templates.floor.height/2 * offset), size: templates.floor)
-		floore1 = GameTile(sprite: Types.tile, position: CGPoint(x: -templates.floor.width, y: 0), size: templates.floor)
-		floor00 = GameTile(sprite: Types.tile, position: CGPoint(x: 0, y: 0), size: templates.floor)
-		floor1e = GameTile(sprite: Types.tile, position: CGPoint(x: templates.floor.width, y: 0), size: templates.floor)
-		floore0 = GameTile(sprite: Types.tile, position: CGPoint(x: -templates.floor.width/2, y: -templates.floor.height/2 * offset), size: templates.floor)
-		floor0e = GameTile(sprite: Types.tile, position: CGPoint(x: templates.floor.width/2, y: -templates.floor.height/2 * offset), size: templates.floor)
-		flooree = GameTile(sprite: Types.tile, position: CGPoint(x: 0, y: -templates.floor.height * offset), size: templates.floor)
+		floor11 = GameTile(sprite: Types.tile, size: templates.floor)
+		floor01 = GameTile(sprite: Types.tile, size: templates.floor)
+		floor10 = GameTile(sprite: Types.tile, size: templates.floor)
+		floore1 = GameTile(sprite: Types.tile, size: templates.floor)
+		floor00 = GameTile(sprite: Types.tile, size: templates.floor)
+		floor1e = GameTile(sprite: Types.tile, size: templates.floor)
+		floore0 = GameTile(sprite: Types.tile, size: templates.floor)
+		floor0e = GameTile(sprite: Types.tile, size: templates.floor)
+		flooree = GameTile(sprite: Types.tile, size: templates.floor)
 		
 		step1 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
 		step2 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
@@ -60,6 +58,16 @@ class GameRoom : SKNode
 		step6 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
 		
 		super.init()
+		
+		floor11.position = positionAt(1,y: 1)
+		floor01.position = positionAt(0, y: 1)
+		floor10.position = positionAt(1, y: 0)
+		floore1.position = positionAt(-1, y: 1)
+		floor00.position = positionAt(0, y: 0)
+		floor1e.position = positionAt(1, y: -1)
+		floore0.position = positionAt(-1, y: 0)
+		floor0e.position = positionAt(0, y: -1)
+		flooree.position = positionAt(-1, y: -1)
 		
 		start()
 	}
@@ -140,6 +148,21 @@ class GameRoom : SKNode
 		step5.updateSprite(room.steps[4])
 		step3.updateSprite(room.steps[2])
 		step4.updateSprite(room.steps[3])
+	}
+	
+	func positionAt(x:Int,y:Int) -> CGPoint
+	{
+		let offset:CGFloat = 0.7
+		if x == 1 && y == 1 { return CGPoint(x: 0, y: templates.floor.height * offset) }
+		if x == 0 && y == 1 { return CGPoint(x: -templates.floor.width/2, y: templates.floor.height/2 * offset) }
+		if x == 1 && y == 0 { return CGPoint(x: templates.floor.width/2, y: templates.floor.height/2 * offset) }
+		if x == -1 && y == 1 { return CGPoint(x: -templates.floor.width, y: 0) }
+		if x == 0 && y == 0 { return  CGPoint(x: 0, y: 0) }
+		if x == 1 && y == -1 { return  CGPoint(x: templates.floor.width, y: 0) }
+		if x == -1 && y == 0 { return CGPoint(x: -templates.floor.width/2, y: -templates.floor.height/2 * offset)  }
+		if x == 0 && y == -1 { return  CGPoint(x: templates.floor.width/2, y: -templates.floor.height/2 * offset) }
+		if x == -1 && y == -1 { return  CGPoint(x: 0, y: -templates.floor.height * offset) }
+		return CGPoint(x: 0, y: -300)
 	}
 	
 	required init?(coder aDecoder: NSCoder)

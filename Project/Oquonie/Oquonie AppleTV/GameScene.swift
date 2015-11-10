@@ -5,10 +5,7 @@
 import SpriteKit
 
 class GameScene: SKScene
-{
-	var player = Player()
-	var room = GameRoom()
-	
+{	
     override func didMoveToView(view: SKView)
 	{
 		start()
@@ -20,17 +17,16 @@ class GameScene: SKScene
 
 		room.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 150)
 		addChild(room)
-	
-		room.enter(world.all[2])
 		
-		self.addChild(player)
-		
-		player.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+		player.position = CGPoint(x: 0, y: 0)
+		room.addChild(player)
 		player.zPosition = 900
+		
+		room.enter(world.all[2])
 	}
 
     override func update(currentTime: CFTimeInterval)
 	{
-        /* Called before each frame is rendered */
+		super.update(currentTime)
     }
 }

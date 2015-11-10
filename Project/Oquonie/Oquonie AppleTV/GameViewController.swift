@@ -50,13 +50,13 @@ class GameViewController: UIViewController
 		if let swipeGesture = gesture as? UISwipeGestureRecognizer {
 			switch swipeGesture.direction {
 			case UISwipeGestureRecognizerDirection.Right:
-				player.moveRight()
+				player.move(1, y: 0)
 			case UISwipeGestureRecognizerDirection.Down:
-				player.moveDown()
+				player.move(0, y: -1)
 			case UISwipeGestureRecognizerDirection.Left:
-				player.moveLeft()
+				player.move(-1, y: 0)
 			case UISwipeGestureRecognizerDirection.Up:
-				player.moveUp()
+				player.move(0, y: 1)
 			default:
 				break
 			}
@@ -70,13 +70,13 @@ class GameViewController: UIViewController
 		{
 			switch press.type {
 			case UIPressType.LeftArrow:
-				player.moveLeft()
+				player.move(-1, y: 0)
 			case UIPressType.RightArrow:
-				player.moveRight()
+				player.move(1, y: 0)
 			case UIPressType.UpArrow:
-				player.moveUp()
+				player.move(0, y: 1)
 			case UIPressType.DownArrow:
-				player.moveDown()
+				player.move(0, y: -1)
 			default:
 				break
 			}
@@ -86,6 +86,5 @@ class GameViewController: UIViewController
     override func didReceiveMemoryWarning()
 	{
         super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
 }
