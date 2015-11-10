@@ -20,12 +20,13 @@ class GameScene: SKScene
 
 		room.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 150)
 		addChild(room)
-		
-		player.position = CGPoint(x: 0, y: 0)
-		room.addChild(player)
-		player.zPosition = 900
-		
+	
 		room.enter(world.all[2])
+		
+		self.addChild(player)
+		
+		player.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+		player.zPosition = 900
 	}
 
     override func update(currentTime: CFTimeInterval)

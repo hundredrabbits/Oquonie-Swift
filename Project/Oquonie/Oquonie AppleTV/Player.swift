@@ -38,8 +38,8 @@ class Player : SKNode
 	func moveUp()
 	{
 		print("up")
-		
-		
+		let test = SKAction.moveToX(30, duration: 5.0)
+		player.runAction(test, completion: { print("hey") })
 	}
 	
 	func moveLeft()

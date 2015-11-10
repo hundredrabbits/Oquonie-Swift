@@ -52,12 +52,12 @@ class GameRoom : SKNode
 		floor0e = GameTile(sprite: Types.tile, position: CGPoint(x: templates.floor.width/2, y: -templates.floor.height/2 * offset), size: templates.floor)
 		flooree = GameTile(sprite: Types.tile, position: CGPoint(x: 0, y: -templates.floor.height * offset), size: templates.floor)
 		
-		step1 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x: -templates.step.width * 1.5, y: 0), size: templates.step)
-		step6 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x:  templates.step.width * 1.5, y: 0), size: templates.step)
-		step2 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x: -templates.step.width, y: 0), size: templates.step)
-		step5 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x:  templates.step.width, y: 0), size: templates.step)
-		step3 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x: -templates.step.width * 0.5, y: 0), size: templates.step)
-		step4 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x:  templates.step.width * 0.5, y: 0), size: templates.step)
+		step1 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
+		step2 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
+		step3 = GameTile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
+		step4 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
+		step5 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
+		step6 = GameTile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
 		
 		super.init()
 		

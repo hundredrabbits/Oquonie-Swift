@@ -23,10 +23,10 @@ class GameViewController: UIViewController
 	
 	func start()
 	{
-		addGestures()
+		installGestures()
 	}
 	
-	func addGestures()
+	func installGestures()
 	{
 		let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
 		swipeRight.direction = .Right
