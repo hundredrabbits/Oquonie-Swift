@@ -33,6 +33,7 @@ enum Orientation
 
 enum Personas
 {
+	case photocopier
 	case necomedre
 	case nephtaline
 	case neomine
@@ -44,13 +45,25 @@ enum Personas
 enum Soundtrack
 {
 	case none
+	case necomedre
 	case lobby
 	case nemedique
 	case nephtaline
 	case neomine
+	case quiet
+	case nestorine
+	case nastazie
+	case glitch
+	case photobooth
+	case endless
+	case nepturne
+	case pillar
+	case warp
 }
 
 enum Theme
 {
 	case white
+	case black
+	case red
 }
