@@ -34,7 +34,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: 1, y: 1, id: 10))
 		room.addEvent(Pillar(x: 1, y: -1))
-		room.addEvent(Gate(x: 0, y: 2, required:Personas.nephtaline))
+		room.addEvent(Gate(x: 0, y: 2, requirement:Personas.nephtaline))
 		room.addEvent(Warp(x: 2, y: 0, room:2, to_x: -1, to_y:0))
 		all[1] = room
 		
@@ -60,7 +60,7 @@ class World
 		room.addEvent(Pillar(x: -1, y: 1))
 		room.addEvent(Owl(x: 1, y: 1))
 		room.addEvent(Blocker(x: -1, y: -1, id:1))
-		room.addEvent(Gate(x: 0, y: 2, required:Personas.neomine))
+		room.addEvent(Gate(x: 0, y: 2, requirement:Personas.neomine))
 		room.addEvent(Warp(x: -2, y: 0, room:4, to_x: 1, to_y:0))
 		room.addEvent(Warp(x: 0, y: -2, room:2, to_x: 0, to_y:1))
 		all[3] = room
@@ -87,7 +87,7 @@ class World
 		room.addEvent(Pillar(x: 1, y: 1))
 		room.addEvent(Blocker(x: -1, y: 1, id:30))
 		room.addEvent(Warp(x: 0, y: 2, room:4, to_x: 0, to_y:-1))
-		room.addEvent(Gate(x: 2, y: 0, required:Personas.necomedre))
+		room.addEvent(Gate(x: 2, y: 0, requirement:Personas.necomedre))
 		room.addEvent(Warp(x: -2, y: 0, room:9, to_x: 1, to_y:0))
 		room.addEvent(Warp(x: 0, y: -2, room:6, to_x: 0, to_y:1))
 		all[5] = room
@@ -112,7 +112,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Pillar(x: -1, y: -1))
 		room.addEvent(Blocker(x: 0, y: 1, id:11))
-		room.addEvent(Gate(x: 2, y: 0, required:Personas.nestorine))
+		room.addEvent(Gate(x: 2, y: 0, requirement:Personas.nestorine))
 		room.addEvent(Warp(x: -2, y: 0, room:6, to_x: 1, to_y:0))
 		all[7] = room
 		
@@ -123,7 +123,7 @@ class World
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
 		room.addEvent(Pillar(x: -1, y: 1))
-		room.addEvent(Gate(x: 0, y: 2, required:Personas.nemedique))
+		room.addEvent(Gate(x: 0, y: 2, requirement:Personas.nemedique))
 		room.addEvent(Warp(x: 2, y: 0, room:5, to_x: -1, to_y:0))
 		room.addEvent(Warp(x: 0, y: -2, room:11, to_x: 0, to_y:1))
 		all[9] = room
@@ -263,7 +263,7 @@ class World
 		room.addEvent(Blocker(x: -1, y: 1, id:15))
 		room.addEvent(Blocker(x: 1, y: -1, id:16))
 		room.addEvent(Warp(x: 0, y: 2, room:28, to_x: -1, to_y:-1))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gateDocument))
+		room.addEvent(Wizard(x: 2, y: 0, requirement: Personas.Document))
 		all[29] = room
 		
 		room = Room()
@@ -276,7 +276,7 @@ class World
 		room.addEvent(Wizard(x: 0, y: 1, spell: tutorialCharacter))
 		room.addEvent(Blocker(x: -1, y: 0, id:1))
 		room.addEvent(Warp(x: 0, y: 2, room:31, to_x: -1, to_y:-1))
-		room.addEvent(Wizard(x: -2, y: 0, spell: gateDocument))
+		room.addEvent(Gate(x: -2, y: 0, requirement: gateDocument))
 		all[30] = room
 		
 		room = Room()
@@ -299,7 +299,7 @@ class World
 		room.addEvent(Wizard(x: 1, y: 1, spell: owlSave))
 		room.addEvent(Wizard(x: 0, y: 2, spell: map))
 		room.addEvent(Warp(x: 2, y: 0, room:33, to_x: 0, to_y:0))
-		room.addEvent(Wizard(x: -2, y: 0, spell: gateNecomedre))
+		room.addEvent(Gate(x: -2, y: 0, requirement: Personas.necomedre))
 		room.addEvent(Warp(x: 0, y: -2, room:35, to_x: 1, to_y:1))
 		all[32] = room
 		
@@ -309,7 +309,7 @@ class World
 		room.steps  = [ 0,7,0, 0,0,6 ]
 		room.audio  = Soundtrack.necomedre
 		room.theme  = Theme.white
-		room.addEvent(Wizard(x: 0, y: 1, spell: necomedreNephtaline1))
+		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nephtaline))
 		room.addEvent(Warp(x: 2, y: 0, room:34, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: -2, y: 0, room:32, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: 1, y: -2, room:36, to_x: 1, to_y:1))
@@ -323,7 +323,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.nestorine))
 		room.addEvent(Blocker(x: -1, y: 0, id:11))
-		room.addEvent(Wizard(x: 1, y: 2, spell: gateNestorine))
+		room.addEvent(Gate(x: 1, y: 2, requirement: Personas.nestorine))
 		room.addEvent(Warp(x: 2, y: 0, room:35, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: -2, y: 0, room:33, to_x: 0, to_y:0))
 		all[34] = room
@@ -348,7 +348,7 @@ class World
 		room.audio  = Soundtrack.necomedre
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.nephtaline))
-		room.addEvent(Wizard(x: -1, y: 0, spell: redGhost))
+		room.addEvent(Red(x: -1, y: 0))
 		room.addEvent(Warp(x: 1, y: 2, room:33, to_x: -1, to_y:-1))
 		room.addEvent(Warp(x: 2, y: 0, room:37, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: -2, y: 0, room:35, to_x: 0, to_y:0))
@@ -362,7 +362,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nemedique))
 		room.addEvent(Blocker(x: -1, y: 0, id:23))
-		room.addEvent(Wizard(x: -1, y: 2, spell: gatePhotoBooth))
+		room.addEvent(Gate(x: -1, y: 2, requirement: Personas.PhotoBooth))
 		room.addEvent(Warp(x: 2, y: 0, room:38, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: -2, y: 0, room:36, to_x: 0, to_y:0))
 		all[37] = room
@@ -375,7 +375,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nephtaline))
 		room.addEvent(Blocker(x: -1, y: -1, id:5))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gateNephtaline))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.nephtaline))
 		room.addEvent(Warp(x: -2, y: 0, room:37, to_x: 0, to_y:0))
 		all[38] = room
 		
@@ -413,7 +413,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: -1, y: 0, spell: redGhost))
 		room.addEvent(Warp(x: 2, y: 1, room:41, to_x: 1, to_y:1))
-		room.addEvent(Wizard(x: -1, y: -2, spell: gateNephtaline))
+		room.addEvent(Gate(x: -1, y: -2, requirement: Personas.nephtaline))
 		all[40] = room
 		
 		room = Room()
@@ -478,7 +478,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:13))
 		room.addEvent(Wizard(x: -1, y: 0, spell: Personas.neomine))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gatePhotoBooth))
+		room.addEvent(Gate(x: 0, y: 2, requirement: Personas.PhotoBooth))
 		room.addEvent(Warp(x: 2, y: 1, room:41, to_x: 1, to_y:1))
 		room.addEvent(Warp(x: -2, y: 0, room:47, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: 0, y: -2, room:51, to_x: 1, to_y:1))
@@ -523,7 +523,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 1, y: 1, spell: owlSave))
 		room.addEvent(Blocker(x: -1, y: 0, id:21))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gateNemedique))
+		room.addEvent(Gate(x: 0, y: 2, requirement: Personas.nemedique))
 		room.addEvent(Wizard(x: 2, y: 0, spell: map))
 		room.addEvent(Warp(x: -2, y: 0, room:47, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: 0, y: -2, room:55, to_x: 1, to_y:1))
@@ -611,7 +611,7 @@ class World
 		room.audio  = Soundtrack.nephtaline
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 1, y: 0, spell: Personas.neomine))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gateNeomine))
+		room.addEvent(Gate(x: 0, y: 2, requirement: Personas.neomine))
 		room.addEvent(Warp(x: -2, y: 0, room:47, to_x: 0, to_y:0))
 		all[58] = room
 		
@@ -622,7 +622,7 @@ class World
 		room.audio  = Soundtrack.warp
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 0, y: 0, spell: warpLobby))
-		room.addEvent(Wizard(x: 0, y: -2, spell: gateNeomine))
+		room.addEvent(Gate(x: 0, y: -2, requirement: Personas.neomine))
 		all[59] = room
 		
 		room = Room()
@@ -632,7 +632,7 @@ class World
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
 		room.addEvent(Pillar(x: 0, y: 0))
-		room.addEvent(Wizard(x: 0, y: -2, spell: gateNemedique))
+		room.addEvent(Gate(x: 0, y: -2, requirement: Personas.nemedique))
 		all[121] = room
 	}
 	
@@ -650,7 +650,7 @@ class World
 		room.addEvent(Warp(x: 2, y: 1, room:62, to_x: 1, to_y:1))
 		room.addEvent(Wizard(x: 2, y: 0, spell: map))
 		room.addEvent(Wizard(x: 2, y: -1, spell: petuniaFork))
-		room.addEvent(Wizard(x: 0, y: -2, spell: gateNeomine))
+		room.addEvent(Gate(x: 0, y: -2, requirement: Personas.neomine))
 		all[60] = room
 		
 		room = Room()
@@ -673,7 +673,7 @@ class World
 		room.theme  = Theme.black
 		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.necomedre))
 		room.addEvent(Blocker(x: 1, y: -1, id:23))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gateNecomedre))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.necomedre))
 		room.addEvent(Warp(x: -2, y: 1, room:60, to_x: 1, to_y:1))
 		room.addEvent(Warp(x: -2, y: -1, room:63, to_x: -1, to_y:-1))
 		all[62] = room
@@ -723,7 +723,7 @@ class World
 		room.theme  = Theme.black
 		room.addEvent(Blocker(x: 1, y: 1, id:13))
 		room.addEvent(Wizard(x: 1, y: 0, spell: owlSave))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gatePhotoBooth))
+		room.addEvent(Gate(x: 0, y: 2, requirement: Personas.PhotoBooth))
 		room.addEvent(Warp(x: -2, y: 1, room:63, to_x: 1, to_y:1))
 		room.addEvent(Warp(x: -2, y: 0, room:67, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: -2, y: -1, room:68, to_x: -1, to_y:-1))
@@ -746,7 +746,7 @@ class World
 		room.audio  = Soundtrack.neomine
 		room.theme  = Theme.black
 		room.addEvent(Wizard(x: -1, y: 1, spell: redGhost))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gateHiversaires))
+		room.addEvent(Gate(x: 0, y: 2, requirement: Personas.Hiversaires))
 		room.addEvent(Warp(x: 2, y: 1, room:64, to_x: 1, to_y:1))
 		room.addEvent(Warp(x: 2, y: 0, room:69, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: 2, y: -1, room:66, to_x: -1, to_y:-1))
@@ -759,7 +759,7 @@ class World
 		room.audio  = Soundtrack.neomine
 		room.theme  = Theme.black
 		room.addEvent(Wizard(x: 1, y: 1, spell: speakerphone))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gateNestorine))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.nestorine))
 		room.addEvent(Warp(x: -2, y: 0, room:68, to_x: 0, to_y:0))
 		all[69] = room
 		
@@ -776,7 +776,7 @@ class World
 		room.addEvent(Warp(x: 2, y: 1, room:70, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: 2, y: 0, room:70, to_x: -1, to_y:-1))
 		room.addEvent(Warp(x: 2, y: -1, room:70, to_x: 1, to_y:1))
-		room.addEvent(Wizard(x: -2, y: 0, spell: gateNestorine))
+		room.addEvent(Gate(x: -2, y: 0, requirement: Personas.nestorine))
 		all[70] = room
 		
 		room = Room()
@@ -786,7 +786,7 @@ class World
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
 		room.addEvent(Pillar(x: 0, y: 0))
-		room.addEvent(Wizard(x: -2, y: 0, spell: gateNecomedre))
+		room.addEvent(Gate(x: -2, y: 0, requirement: Personas.necomedre))
 		all[71] = room
 	}
 	
@@ -897,7 +897,7 @@ class World
 		room.steps  = [ 0,0,0, 0,1,0 ]
 		room.audio  = Soundtrack.nestorine
 		room.theme  = Theme.white
-		room.addEvent(Wizard(x: 2, y: 0, spell: gatePhotoBooth))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.PhotoBooth))
 		room.addEvent(Warp(x: 0, y: -2, room:80, to_x: 1, to_y:1))
 		all[89] = room
 		
@@ -908,7 +908,7 @@ class World
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
 		room.addEvent(Pillar(x: 0, y: 0))
-		room.addEvent(Wizard(x: 0, y: -2, spell: gateNephtaline))
+		room.addEvent(Gate(x: 0, y: -2, requirement: Personas.nephtaline))
 		all[90] = room
 		
 		room = Room()
@@ -941,7 +941,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.nemedique))
 		room.addEvent(Blocker(x: -1, y: 0, id:11))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gateNephtaline))
+		room.addEvent(Gate(x: 0, y: 2, requirement: Personas.nephtaline))
 		room.addEvent(Warp(x: -2, y: 0, room:80, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: 0, y: -2, room:95, to_x: 1, to_y:1))
 		all[93] = room
@@ -953,7 +953,7 @@ class World
 		room.audio  = Soundtrack.nestorine
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.nemedique))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gateNemedique))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.nemedique))
 		room.addEvent(Warp(x: -2, y: 0, room:95, to_x: 0, to_y:0))
 		all[94] = room
 		
@@ -976,7 +976,7 @@ class World
 		room.audio  = Soundtrack.warp
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 0, y: 0, spell: warpNestorine))
-		room.addEvent(Wizard(x: -2, y: 0, spell: gateNestorine))
+		room.addEvent(Gate(x: -2, y: 0, requirement: Personas.nestorine))
 		all[96] = room
 		
 		room = Room()
@@ -1001,9 +1001,9 @@ class World
 		room.audio  = Soundtrack.nemedique
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.nestorine))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gateEnd))
+		room.addEvent(Wizard(x: 0, y: 2, requirement: Personas.End))
 		room.addEvent(Warp(x: 2, y: 0, room:101, to_x: 0, to_y:0))
-		room.addEvent(Wizard(x: 0, y: -2, spell: gateNemedique))
+		room.addEvent(Gate(x: 0, y: -2, requirement: Personas.nemedique))
 		all[100] = room
 		
 		room = Room()
@@ -1014,7 +1014,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 1, y: 1, spell: ramen))
 		room.addEvent(Warp(x: 0, y: 2, room:102, to_x: -1, to_y:-1))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gateNecomedre))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.necomedre))
 		room.addEvent(Warp(x: -2, y: 0, room:100, to_x: 0, to_y:0))
 		all[101] = room
 		
@@ -1025,7 +1025,7 @@ class World
 		room.audio  = Soundtrack.nemedique
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 0, y: 1, spell: shark))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gatePhotoBooth))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.PhotoBooth))
 		room.addEvent(Warp(x: 0, y: -2, room:101, to_x: 1, to_y:1))
 		all[102] = room
 		
@@ -1036,7 +1036,7 @@ class World
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
 		room.addEvent(Pillar(x: 0, y: 0))
-		room.addEvent(Wizard(x: -2, y: 0, spell: gateNecomedre))
+		room.addEvent(Gate(x: -2, y: 0, requirement: Personas.necomedre))
 		all[103] = room
 		
 		room = Room()
@@ -1149,7 +1149,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: -1, y: 1, spell: secretCat1))
 		room.addEvent(Warp(x: 1, y: 2, room:41, to_x: -1, to_y:-1))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gateCatfish))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.Catfish))
 		room.addEvent(Warp(x: -2, y: -1, room:43, to_x: -1, to_y:-1))
 		all[112] = room
 		
@@ -1337,7 +1337,7 @@ class World
 		room.theme  = Theme.black
 		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nastazie))
 		room.addEvent(Warp(x: -1, y: 2, room:131, to_x: -1, to_y:-1))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gateNastazie))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.Nastazie))
 		all[130] = room
 		
 		room = Room()
@@ -1462,7 +1462,7 @@ class World
 		room.audio  = Soundtrack.nastazie
 		room.theme  = Theme.black
 		room.addEvent(Blocker(x: 1, y: 1, id:30))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gateNephtaline))
+		room.addEvent(Gate(x: 0, y: 2, requirement: Personas.nephtaline))
 		room.addEvent(Warp(x: -2, y: 1, room:140, to_x: 1, to_y:1))
 		room.addEvent(Warp(x: -1, y: -2, room:137, to_x: 1, to_y:1))
 		all[141] = room
@@ -1474,8 +1474,8 @@ class World
 		room.audio  = Soundtrack.nastazie
 		room.theme  = Theme.black
 		room.addEvent(Blocker(x: 1, y: 1, id:30))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gateNeomine))
-		room.addEvent(Wizard(x: 2, y: 0, spell: gatePhotoBooth))
+		room.addEvent(Gate(x: 0, y: 2, requirement: Personas.neomine))
+		room.addEvent(Gate(x: 2, y: 0, requirement: Personas.PhotoBooth))
 		room.addEvent(Warp(x: -2, y: 0, room:139, to_x: 0, to_y:0))
 		room.addEvent(Warp(x: 0, y: -2, room:136, to_x: 1, to_y:1))
 		all[142] = room
@@ -1487,7 +1487,7 @@ class World
 		room.audio  = Soundtrack.nastazie
 		room.theme  = Theme.black
 		room.addEvent(Blocker(x: 1, y: 1, id:30))
-		room.addEvent(Wizard(x: 0, y: 2, spell: gateNemedique))
+		room.addEvent(Gate(x: 0, y: 2, requirement: Personas.nemedique))
 		room.addEvent(Warp(x: -2, y: -1, room:138, to_x: -1, to_y:-1))
 		room.addEvent(Warp(x: 1, y: -2, room:135, to_x: 1, to_y:1))
 		all[143] = room

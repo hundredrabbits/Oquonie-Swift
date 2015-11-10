@@ -5,9 +5,9 @@
 import SceneKit
 import Foundation
 
-class Wizard : Event
+class Red : Event
 {
-	init(x:Int,y:Int, spell:Personas)
+	init(x:Int,y:Int)
 	{
 		super.init(x: x, y: y)
 		updateSprite("event.wizard.png")

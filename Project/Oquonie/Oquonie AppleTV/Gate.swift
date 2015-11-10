@@ -6,7 +6,7 @@ import Foundation
 
 class Gate : Event
 {
-	init(x:Int,y:Int,required:Personas)
+	init(x:Int,y:Int,requirement:Personas)
 	{
 		super.init(x: x, y: y)
 	}
