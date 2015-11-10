@@ -28,7 +28,12 @@ class GameTile : SKSpriteNode
 		}
 		
 		super.init(texture: texture, color: UIColor.clearColor(), size: size)
+		
+		self.sprite = sprite
+		self.id = id
+		self.orientation = orientation
 		self.position = position
+		self.size = size
 	}
 	
 	func updateSprite(id:Int)

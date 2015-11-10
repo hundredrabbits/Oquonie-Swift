@@ -134,12 +134,12 @@ class GameRoom : SKNode
 		floor0e.updateSprite(room.floors[3])
 		flooree.updateSprite(room.floors[6])
 		
-		step1.updateSprite(room.floors[0])
-		step6.updateSprite(room.floors[5])
-		step2.updateSprite(room.floors[1])
-		step5.updateSprite(room.floors[4])
-		step3.updateSprite(room.floors[2])
-		step4.updateSprite(room.floors[3])
+		step1.updateSprite(room.steps[0])
+		step6.updateSprite(room.steps[5])
+		step2.updateSprite(room.steps[1])
+		step5.updateSprite(room.steps[4])
+		step3.updateSprite(room.steps[2])
+		step4.updateSprite(room.steps[3])
 	}
 	
 	required init?(coder aDecoder: NSCoder)
