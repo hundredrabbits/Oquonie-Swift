@@ -49,7 +49,7 @@ class Tile : SKSpriteNode
 			image = UIImage(named: imageName)!
 			texture = SKTexture(image: image!)
 		}
-		else{
+		else if id > 0 {
 			print("not found \(imageName)")
 		}
 

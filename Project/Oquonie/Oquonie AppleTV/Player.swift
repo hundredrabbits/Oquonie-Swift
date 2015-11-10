@@ -35,7 +35,6 @@ class Player : Event
 	
 	func move(x:Int, y:Int)
 	{
-		
 		if isMoving == true { return }
 		isMoving = true
 		
@@ -57,6 +56,13 @@ class Player : Event
 			print("disabled: \(destination_x + x)/\(destination_x + y)")
 			self.isMoving = false
 		}
+	}
+	
+	func updatePosition(x:Int,y:Int)
+	{
+		self.x = x
+		self.y = y
+		self.position = stage.positionAt(self.x,y:self.y)
 	}
 	
 	override func remove()

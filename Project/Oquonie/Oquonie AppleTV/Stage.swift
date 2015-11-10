@@ -180,7 +180,6 @@ class Stage : SKNode
 	
 	func addEvent(event:Event)
 	{
-		print("Adding \(event)")
 		events_root.addChild(event)
 	}
 	

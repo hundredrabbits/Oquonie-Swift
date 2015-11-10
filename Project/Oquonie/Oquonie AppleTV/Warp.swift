@@ -23,10 +23,13 @@ class Warp : Event
 	
 	override func collide()
 	{
-		print("Hit warp to: \(destination)")
+		print("> WARP: \(destination)")
 		player.isMoving = false
 		
 		stage.enter(world.all[destination])
+		player.x = self.to_x
+		player.y = self.to_y
+		player.updatePosition(to_x,y:to_y)
 	}
 
 	required init?(coder aDecoder: NSCoder)
