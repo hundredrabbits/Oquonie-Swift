@@ -1213,7 +1213,6 @@
 		570756511BF2D78400638CAE /* wall.gateRedClosed.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateRedClosed.r.png; path = en.assets/wall.gateRedClosed.r.png; sourceTree = "<group>"; };
 		570756521BF2D78400638CAE /* wall.gateRedOpen.l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateRedOpen.l.png; path = en.assets/wall.gateRedOpen.l.png; sourceTree = "<group>"; };
 		570756531BF2D78400638CAE /* wall.gateRedOpen.r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gateRedOpen.r.png; path = en.assets/wall.gateRedOpen.r.png; sourceTree = "<group>"; };
-		571A8C901A793E31008E846E /* xxiivvSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvSettings.h; sourceTree = "<group>"; };
 		57255E151A76DD1500388B48 /* kamera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kamera.mp3; path = en.sounds/kamera.mp3; sourceTree = "<group>"; };
 		57255E171A7710AC00388B48 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		5755DCDF1BF296D600C5353D /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
@@ -1227,7 +1226,6 @@
 		576570671BF388AD00F563B8 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
 		578BFD871BF0E6D8006DAF1C /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Oquonie AppleTV/Tile.swift"; sourceTree = "<group>"; };
 		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Oquonie AppleTV/Settings.swift"; sourceTree = "<group>"; };
-		57A668111BEE92AE007CDD8B /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		57A668471BEE9894007CDD8B /* Oquonie iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A668611BEE98AA007CDD8B /* Oquonie AppleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie AppleTV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A668631BEE98AA007CDD8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Oquonie AppleTV/AppDelegate.swift"; sourceTree = "<group>"; };
@@ -1279,13 +1277,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		038BA0E9188B849B00A3ED4B /* en.sounds */ = {
+		038BA0E9188B849B00A3ED4B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
 				03FE0DB918A2765300206675 /* Sound Effects */,
 				038BA0EA188B84A600A3ED4B /* Soundtrack */,
 			);
-			name = en.sounds;
+			name = Sounds;
 			path = Oquonie;
 			sourceTree = "<group>";
 		};
@@ -1318,16 +1316,13 @@
 		03BBFA9F178A9E4E00E79C3D = {
 			isa = PBXGroup;
 			children = (
-				57A668111BEE92AE007CDD8B /* Todo */,
-				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
-				57A6686B1BEE98AA007CDD8B /* Game.xcassets */,
-				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
 				57C843E61BF2356300288847 /* Oquonie Core */,
-				571A8C8C1A793CD5008E846E /* Oquonie Core Archive */,
 				57A668481BEE9894007CDD8B /* Oquonie iOS */,
 				57A668621BEE98AA007CDD8B /* Oquonie AppleTV */,
-				038BA0E9188B849B00A3ED4B /* en.sounds */,
-				03BBFACE178AC8C200E79C3D /* en.assets */,
+				57A6686B1BEE98AA007CDD8B /* Game.xcassets */,
+				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
+				038BA0E9188B849B00A3ED4B /* Sounds */,
+				03BBFACE178AC8C200E79C3D /* Assets */,
 				03BBFAAA178A9E4E00E79C3D /* Frameworks */,
 				03BBFAA9178A9E4E00E79C3D /* Products */,
 			);
@@ -1355,7 +1350,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		03BBFACE178AC8C200E79C3D /* en.assets */ = {
+		03BBFACE178AC8C200E79C3D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				570754471BF2D78200638CAE /* 7.png */,
@@ -1884,7 +1879,7 @@
 				570756521BF2D78400638CAE /* wall.gateRedOpen.l.png */,
 				570756531BF2D78400638CAE /* wall.gateRedOpen.r.png */,
 			);
-			name = en.assets;
+			name = Assets;
 			path = Oquonie;
 			sourceTree = "<group>";
 		};
@@ -1928,14 +1923,6 @@
 			name = "Sound Effects";
 			sourceTree = "<group>";
 		};
-		571A8C8C1A793CD5008E846E /* Oquonie Core Archive */ = {
-			isa = PBXGroup;
-			children = (
-				571A8C901A793E31008E846E /* xxiivvSettings.h */,
-			);
-			name = "Oquonie Core Archive";
-			sourceTree = "<group>";
-		};
 		57A668481BEE9894007CDD8B /* Oquonie iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1959,6 +1946,7 @@
 		57C843E61BF2356300288847 /* Oquonie Core */ = {
 			isa = PBXGroup;
 			children = (
+				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
 				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
 				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
 				57A668671BEE98AA007CDD8B /* GameScene.swift */,
