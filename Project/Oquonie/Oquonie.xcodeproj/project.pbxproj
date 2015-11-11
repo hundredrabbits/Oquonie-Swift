@@ -1975,6 +1975,7 @@
 			children = (
 				57E3D2C21BF108D900E4D319 /* Event.swift */,
 				57E3D2C41BF1092500E4D319 /* Blocker.swift */,
+				5755DCF21BF2B6A400C5353D /* Wizard.swift */,
 				57E3D2C61BF10DCF00E4D319 /* Pillar.swift */,
 				57E3D2CA1BF10E7B00E4D319 /* Door.swift */,
 				57C843F31BF2878300288847 /* Ramen.swift */,
@@ -1984,7 +1985,6 @@
 				5755DCEC1BF2979C00C5353D /* Shark.swift */,
 				5755DCEE1BF2982E00C5353D /* Tree.swift */,
 				5755DCF01BF2994900C5353D /* NoFace.swift */,
-				5755DCF21BF2B6A400C5353D /* Wizard.swift */,
 				5755DCF51BF2BAC200C5353D /* Red.swift */,
 				5755DD051BF2CC1F00C5353D /* TownWarp.swift */,
 				5755DD081BF2CDEA00C5353D /* Kamera.swift */,

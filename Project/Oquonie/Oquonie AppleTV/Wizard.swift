@@ -10,7 +10,7 @@ class Wizard : Event
 	init(x:Int,y:Int, spell:Personas)
 	{
 		super.init(x: x, y: y)
-		updateSprite("event.wizard.png")
+		updateSprite("event.\(spell).1.png")
 	}
 	
 	override func collide()

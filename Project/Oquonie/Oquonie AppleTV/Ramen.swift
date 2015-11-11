@@ -10,8 +10,7 @@ class Ramen : Event
 	override init(x:Int,y:Int)
 	{
 		super.init(x: x, y: y)
-		
-		updateSprite("event.7.l.1.png")
+		updateSprite("event.ramen.1.png")
 	}
 	
 	override func collide()

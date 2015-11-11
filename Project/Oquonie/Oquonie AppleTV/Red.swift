@@ -10,7 +10,7 @@ class Red : Event
 	override init(x:Int,y:Int)
 	{
 		super.init(x: x, y: y)
-		updateSprite("event.wizard.png")
+		updateSprite("event.redghost.1.png")
 	}
 	
 	override func collide()

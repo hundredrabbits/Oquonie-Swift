@@ -68,15 +68,15 @@ class Player : Event
 	
 	override func remove()
 	{
-		print("cannot remove player")
+		// Disable the removal of the player SKNode
 	}
 	
 	func warp(destination:Int,to_x:Int,to_y:Int)
 	{
 		stage.enter(world.all[destination])
-		player.x = to_x
-		player.y = to_y
 		player.updatePosition(to_x,y:to_y)
+		
+		print("moving: \(destination) -> \(x)/\(y)")
 	}
 
 	required init?(coder aDecoder: NSCoder)
