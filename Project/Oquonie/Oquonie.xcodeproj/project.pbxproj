@@ -469,6 +469,7 @@
 		575DA5821BF3EABE00FE6921 /* wall.110.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA5501BF3EABE00FE6921 /* wall.110.png */; };
 		575DA5831BF3EABE00FE6921 /* wall.E.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA5511BF3EABE00FE6921 /* wall.E.png */; };
 		575DA5851BF3F23800FE6921 /* step.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA5841BF3F23800FE6921 /* step.1.png */; };
+		575DA5871BF3F53900FE6921 /* Spellbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575DA5861BF3F53900FE6921 /* Spellbook.swift */; };
 		576570691BF388B100F563B8 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576570671BF388AD00F563B8 /* SKNode.swift */; };
 		578BFD881BF0E6D8006DAF1C /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* Tile.swift */; };
 		578BFE001BF0EA52006DAF1C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFDFF1BF0EA52006DAF1C /* Settings.swift */; };
@@ -1067,6 +1068,7 @@
 		575DA5501BF3EABE00FE6921 /* wall.110.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.110.png; path = en.assets/wall.110.png; sourceTree = "<group>"; };
 		575DA5511BF3EABE00FE6921 /* wall.E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.E.png; path = en.assets/wall.E.png; sourceTree = "<group>"; };
 		575DA5841BF3F23800FE6921 /* step.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step.1.png; path = en.assets/step.1.png; sourceTree = "<group>"; };
+		575DA5861BF3F53900FE6921 /* Spellbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spellbook.swift; sourceTree = "<group>"; };
 		576570671BF388AD00F563B8 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
 		578BFD871BF0E6D8006DAF1C /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Oquonie AppleTV/Tile.swift"; sourceTree = "<group>"; };
 		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Oquonie AppleTV/Settings.swift"; sourceTree = "<group>"; };
@@ -1713,9 +1715,8 @@
 			isa = PBXGroup;
 			children = (
 				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
-				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
-				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
 				57A668671BEE98AA007CDD8B /* GameScene.swift */,
+				575DA5861BF3F53900FE6921 /* Spellbook.swift */,
 				57E3D2BC1BF0FE0400E4D319 /* Stage.swift */,
 				57F0E2CE1BF147AC0067CC94 /* Player.swift */,
 				578BFD871BF0E6D8006DAF1C /* Tile.swift */,
@@ -1723,6 +1724,8 @@
 				57E3D2C01BF1059500E4D319 /* Room.swift */,
 				57F0E2CA1BF13A320067CC94 /* Events */,
 				576570671BF388AD00F563B8 /* SKNode.swift */,
+				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
+				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
 			);
 			name = "Oquonie Core";
 			sourceTree = "<group>";
@@ -2410,6 +2413,7 @@
 				5755DCED1BF2979C00C5353D /* Shark.swift in Sources */,
 				5755DCE31BF2970300C5353D /* Event.swift in Sources */,
 				57C843D91BF233CB00288847 /* Settings.swift in Sources */,
+				575DA5871BF3F53900FE6921 /* Spellbook.swift in Sources */,
 				57C843D31BF233CB00288847 /* Tile.swift in Sources */,
 				5755DD091BF2CDEA00C5353D /* Kamera.swift in Sources */,
 				5755DCF11BF2994900C5353D /* NoFace.swift in Sources */,

@@ -25,6 +25,11 @@ class GameScene: SKScene
 		stage.events_root.addChild(player)
 		
 		stage.enter(world.all[5])
+		
+		self.addChild(spellbook)
+		
+		spellbook.position = CGPoint(x: 0, y: (CGRectGetMidY(self.frame) * 2) - (templates.spell.height + 20) )
+		spellbook.zPosition = 9000
 	}
 
     override func update(currentTime: CFTimeInterval)

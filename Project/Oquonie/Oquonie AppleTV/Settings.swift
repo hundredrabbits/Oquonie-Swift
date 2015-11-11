@@ -9,6 +9,7 @@ let world = World()
 let templates = Templates()
 let player = Player()
 let stage = Stage()
+let spellbook = Spellbook()
 
 enum Types
 {
@@ -23,6 +24,7 @@ struct Templates
 	let step:CGSize = CGSize(width: 200, height: 141)
 	let wall:CGSize = CGSize(width: 200, height: 281)
 	let player:CGSize = CGSize(width: 200, height: 281)
+	let spell:CGSize = CGSize(width: 120, height: 120)
 }
 
 enum Orientation
@@ -89,6 +91,23 @@ enum Theme
 func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat
 {
 	return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
+}
+
+
+
+func textureWithName(imageName:String) -> SKTexture!
+{
+	var image:UIImage!
+	var texture:SKTexture!
+	
+	if UIImage(named: imageName) != nil {
+		image = UIImage(named: imageName)!
+		texture = SKTexture(image: image!)
+	}
+	else {
+		print("! not found \(imageName)")
+	}
+	return texture
 }
 
 /*

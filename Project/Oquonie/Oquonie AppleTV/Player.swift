@@ -59,7 +59,7 @@ class Player : Event
 	
 	func bump()
 	{
-		
+		print("bump!")
 	}
 	
 	func walk(destination_x:Int, destination_y:Int)
