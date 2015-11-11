@@ -11,7 +11,7 @@ class Tile : SKSpriteNode
 	var id:Int!
 	var orientation:Orientation!
 	
-	init(sprite:Types,id:Int! = nil,orientation:Orientation! = nil, position:CGPoint = CGPoint(x: 0,y: 0), size: CGSize)
+	init(sprite:Types,id:Int! = nil, position:CGPoint = CGPoint(x: 0,y: 0), size: CGSize)
 	{
 		var image:UIImage!
 		var texture:SKTexture!
@@ -31,7 +31,6 @@ class Tile : SKSpriteNode
 		
 		self.sprite = sprite
 		self.id = id
-		self.orientation = orientation
 		self.position = position
 		self.size = size
 	}
@@ -40,7 +39,7 @@ class Tile : SKSpriteNode
 	{
 		self.id = id
 		
-		let imageName = (orientation != nil) ? "\(self.sprite).\(self.id).\(self.orientation).png" : "\(self.sprite).\(self.id).png"
+		let imageName = "\(self.sprite).\(self.id).png"
 		
 		var image:UIImage!
 		var texture:SKTexture!
@@ -53,6 +52,21 @@ class Tile : SKSpriteNode
 			print("not found \(imageName)")
 		}
 
+		self.texture = texture
+	}
+	
+	func updateSpriteWithName(imageName:String)
+	{
+		var image:UIImage!
+		var texture:SKTexture!
+		
+		if UIImage(named: imageName) != nil {
+			image = UIImage(named: imageName)!
+			texture = SKTexture(image: image!)
+		}
+		else if id > 0 {
+			print("not found \(imageName)")
+		}
 		self.texture = texture
 	}
 	

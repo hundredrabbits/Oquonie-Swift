@@ -39,15 +39,13 @@ class Door : Event
 	
 	override func bind(node:Tile)
 	{
-		print("Binded to \(node)")
 		target = node
-		
 		if self.requirement != nil {
 			if requirement == player.persona {
-				print("Display:\(requirement) unlocked")
+				target.updateSpriteWithName("wall.gate.\(requirement).open.png")
 			}
 			else{
-				print("Display:\(requirement) locked")
+				target.updateSpriteWithName("wall.gate.\(requirement).close.png")
 			}
 		}
 	}

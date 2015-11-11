@@ -416,20 +416,20 @@
 		575DA50F1BF3EA1D00FE6921 /* wall.gate.cat.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CB1BF3EA1D00FE6921 /* wall.gate.cat.open.png */; };
 		575DA5101BF3EA1D00FE6921 /* wall.gate.document.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CC1BF3EA1D00FE6921 /* wall.gate.document.open.png */; };
 		575DA5111BF3EA1D00FE6921 /* wall.gate.document.shut.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CD1BF3EA1D00FE6921 /* wall.gate.document.shut.png */; };
-		575DA5121BF3EA1D00FE6921 /* wall.gate.nastazieClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazieClosed.png */; };
-		575DA5131BF3EA1D00FE6921 /* wall.gate.nastazieOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CF1BF3EA1D00FE6921 /* wall.gate.nastazieOpen.png */; };
-		575DA5141BF3EA1D00FE6921 /* wall.gate.necomedreClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D01BF3EA1D00FE6921 /* wall.gate.necomedreClosed.png */; };
-		575DA5151BF3EA1D00FE6921 /* wall.gate.necomedreOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D11BF3EA1D00FE6921 /* wall.gate.necomedreOpen.png */; };
-		575DA5161BF3EA1D00FE6921 /* wall.gate.nemediqueClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D21BF3EA1D00FE6921 /* wall.gate.nemediqueClosed.png */; };
-		575DA5171BF3EA1D00FE6921 /* wall.gate.nemediqueOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D31BF3EA1D00FE6921 /* wall.gate.nemediqueOpen.png */; };
-		575DA5181BF3EA1D00FE6921 /* wall.gate.neomineClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D41BF3EA1D00FE6921 /* wall.gate.neomineClosed.png */; };
-		575DA5191BF3EA1D00FE6921 /* wall.gate.neomineOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D51BF3EA1D00FE6921 /* wall.gate.neomineOpen.png */; };
-		575DA51A1BF3EA1D00FE6921 /* wall.gate.nephtalineClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D61BF3EA1D00FE6921 /* wall.gate.nephtalineClosed.png */; };
-		575DA51B1BF3EA1D00FE6921 /* wall.gate.nephtalineOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D71BF3EA1D00FE6921 /* wall.gate.nephtalineOpen.png */; };
-		575DA51C1BF3EA1D00FE6921 /* wall.gate.nestorineClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D81BF3EA1D00FE6921 /* wall.gate.nestorineClosed.png */; };
-		575DA51D1BF3EA1D00FE6921 /* wall.gate.nestorineOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D91BF3EA1D00FE6921 /* wall.gate.nestorineOpen.png */; };
-		575DA51E1BF3EA1D00FE6921 /* wall.gate.redClosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4DA1BF3EA1D00FE6921 /* wall.gate.redClosed.png */; };
-		575DA51F1BF3EA1D00FE6921 /* wall.gate.redOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4DB1BF3EA1D00FE6921 /* wall.gate.redOpen.png */; };
+		575DA5121BF3EA1D00FE6921 /* wall.gate.nastazie.closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazie.closed.png */; };
+		575DA5131BF3EA1D00FE6921 /* wall.gate.nastazie.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CF1BF3EA1D00FE6921 /* wall.gate.nastazie.open.png */; };
+		575DA5141BF3EA1D00FE6921 /* wall.gate.necomedre.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D01BF3EA1D00FE6921 /* wall.gate.necomedre.close.png */; };
+		575DA5151BF3EA1D00FE6921 /* wall.gate.necomedre.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D11BF3EA1D00FE6921 /* wall.gate.necomedre.open.png */; };
+		575DA5161BF3EA1D00FE6921 /* wall.gate.nemedique.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D21BF3EA1D00FE6921 /* wall.gate.nemedique.close.png */; };
+		575DA5171BF3EA1D00FE6921 /* wall.gate.nemedique.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D31BF3EA1D00FE6921 /* wall.gate.nemedique.open.png */; };
+		575DA5181BF3EA1D00FE6921 /* wall.gate.neomine.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D41BF3EA1D00FE6921 /* wall.gate.neomine.close.png */; };
+		575DA5191BF3EA1D00FE6921 /* wall.gate.neomine.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D51BF3EA1D00FE6921 /* wall.gate.neomine.open.png */; };
+		575DA51A1BF3EA1D00FE6921 /* wall.gate.nephtaline.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D61BF3EA1D00FE6921 /* wall.gate.nephtaline.close.png */; };
+		575DA51B1BF3EA1D00FE6921 /* wall.gate.nephtaline.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D71BF3EA1D00FE6921 /* wall.gate.nephtaline.open.png */; };
+		575DA51C1BF3EA1D00FE6921 /* wall.gate.nestorine.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D81BF3EA1D00FE6921 /* wall.gate.nestorine.close.png */; };
+		575DA51D1BF3EA1D00FE6921 /* wall.gate.nestorine.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D91BF3EA1D00FE6921 /* wall.gate.nestorine.open.png */; };
+		575DA51E1BF3EA1D00FE6921 /* wall.gate.red.closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4DA1BF3EA1D00FE6921 /* wall.gate.red.closed.png */; };
+		575DA51F1BF3EA1D00FE6921 /* wall.gate.red.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4DB1BF3EA1D00FE6921 /* wall.gate.red.open.png */; };
 		575DA5521BF3EABE00FE6921 /* wall.0.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA5201BF3EABE00FE6921 /* wall.0.png */; };
 		575DA5531BF3EABE00FE6921 /* wall.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA5211BF3EABE00FE6921 /* wall.1.png */; };
 		575DA5541BF3EABE00FE6921 /* wall.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA5221BF3EABE00FE6921 /* wall.2.png */; };
@@ -1025,20 +1025,20 @@
 		575DA4CB1BF3EA1D00FE6921 /* wall.gate.cat.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.cat.open.png; path = en.assets/wall.gate.cat.open.png; sourceTree = "<group>"; };
 		575DA4CC1BF3EA1D00FE6921 /* wall.gate.document.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.document.open.png; path = en.assets/wall.gate.document.open.png; sourceTree = "<group>"; };
 		575DA4CD1BF3EA1D00FE6921 /* wall.gate.document.shut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.document.shut.png; path = en.assets/wall.gate.document.shut.png; sourceTree = "<group>"; };
-		575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazieClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nastazieClosed.png; path = en.assets/wall.gate.nastazieClosed.png; sourceTree = "<group>"; };
-		575DA4CF1BF3EA1D00FE6921 /* wall.gate.nastazieOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nastazieOpen.png; path = en.assets/wall.gate.nastazieOpen.png; sourceTree = "<group>"; };
-		575DA4D01BF3EA1D00FE6921 /* wall.gate.necomedreClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.necomedreClosed.png; path = en.assets/wall.gate.necomedreClosed.png; sourceTree = "<group>"; };
-		575DA4D11BF3EA1D00FE6921 /* wall.gate.necomedreOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.necomedreOpen.png; path = en.assets/wall.gate.necomedreOpen.png; sourceTree = "<group>"; };
-		575DA4D21BF3EA1D00FE6921 /* wall.gate.nemediqueClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nemediqueClosed.png; path = en.assets/wall.gate.nemediqueClosed.png; sourceTree = "<group>"; };
-		575DA4D31BF3EA1D00FE6921 /* wall.gate.nemediqueOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nemediqueOpen.png; path = en.assets/wall.gate.nemediqueOpen.png; sourceTree = "<group>"; };
-		575DA4D41BF3EA1D00FE6921 /* wall.gate.neomineClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.neomineClosed.png; path = en.assets/wall.gate.neomineClosed.png; sourceTree = "<group>"; };
-		575DA4D51BF3EA1D00FE6921 /* wall.gate.neomineOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.neomineOpen.png; path = en.assets/wall.gate.neomineOpen.png; sourceTree = "<group>"; };
-		575DA4D61BF3EA1D00FE6921 /* wall.gate.nephtalineClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nephtalineClosed.png; path = en.assets/wall.gate.nephtalineClosed.png; sourceTree = "<group>"; };
-		575DA4D71BF3EA1D00FE6921 /* wall.gate.nephtalineOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nephtalineOpen.png; path = en.assets/wall.gate.nephtalineOpen.png; sourceTree = "<group>"; };
-		575DA4D81BF3EA1D00FE6921 /* wall.gate.nestorineClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nestorineClosed.png; path = en.assets/wall.gate.nestorineClosed.png; sourceTree = "<group>"; };
-		575DA4D91BF3EA1D00FE6921 /* wall.gate.nestorineOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nestorineOpen.png; path = en.assets/wall.gate.nestorineOpen.png; sourceTree = "<group>"; };
-		575DA4DA1BF3EA1D00FE6921 /* wall.gate.redClosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.redClosed.png; path = en.assets/wall.gate.redClosed.png; sourceTree = "<group>"; };
-		575DA4DB1BF3EA1D00FE6921 /* wall.gate.redOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.redOpen.png; path = en.assets/wall.gate.redOpen.png; sourceTree = "<group>"; };
+		575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazie.closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nastazie.closed.png; path = en.assets/wall.gate.nastazie.closed.png; sourceTree = "<group>"; };
+		575DA4CF1BF3EA1D00FE6921 /* wall.gate.nastazie.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nastazie.open.png; path = en.assets/wall.gate.nastazie.open.png; sourceTree = "<group>"; };
+		575DA4D01BF3EA1D00FE6921 /* wall.gate.necomedre.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.necomedre.close.png; path = en.assets/wall.gate.necomedre.close.png; sourceTree = "<group>"; };
+		575DA4D11BF3EA1D00FE6921 /* wall.gate.necomedre.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.necomedre.open.png; path = en.assets/wall.gate.necomedre.open.png; sourceTree = "<group>"; };
+		575DA4D21BF3EA1D00FE6921 /* wall.gate.nemedique.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nemedique.close.png; path = en.assets/wall.gate.nemedique.close.png; sourceTree = "<group>"; };
+		575DA4D31BF3EA1D00FE6921 /* wall.gate.nemedique.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nemedique.open.png; path = en.assets/wall.gate.nemedique.open.png; sourceTree = "<group>"; };
+		575DA4D41BF3EA1D00FE6921 /* wall.gate.neomine.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.neomine.close.png; path = en.assets/wall.gate.neomine.close.png; sourceTree = "<group>"; };
+		575DA4D51BF3EA1D00FE6921 /* wall.gate.neomine.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.neomine.open.png; path = en.assets/wall.gate.neomine.open.png; sourceTree = "<group>"; };
+		575DA4D61BF3EA1D00FE6921 /* wall.gate.nephtaline.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nephtaline.close.png; path = en.assets/wall.gate.nephtaline.close.png; sourceTree = "<group>"; };
+		575DA4D71BF3EA1D00FE6921 /* wall.gate.nephtaline.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nephtaline.open.png; path = en.assets/wall.gate.nephtaline.open.png; sourceTree = "<group>"; };
+		575DA4D81BF3EA1D00FE6921 /* wall.gate.nestorine.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nestorine.close.png; path = en.assets/wall.gate.nestorine.close.png; sourceTree = "<group>"; };
+		575DA4D91BF3EA1D00FE6921 /* wall.gate.nestorine.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nestorine.open.png; path = en.assets/wall.gate.nestorine.open.png; sourceTree = "<group>"; };
+		575DA4DA1BF3EA1D00FE6921 /* wall.gate.red.closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.red.closed.png; path = en.assets/wall.gate.red.closed.png; sourceTree = "<group>"; };
+		575DA4DB1BF3EA1D00FE6921 /* wall.gate.red.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.red.open.png; path = en.assets/wall.gate.red.open.png; sourceTree = "<group>"; };
 		575DA5201BF3EABE00FE6921 /* wall.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.0.png; path = en.assets/wall.0.png; sourceTree = "<group>"; };
 		575DA5211BF3EABE00FE6921 /* wall.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.1.png; path = en.assets/wall.1.png; sourceTree = "<group>"; };
 		575DA5221BF3EABE00FE6921 /* wall.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.2.png; path = en.assets/wall.2.png; sourceTree = "<group>"; };
@@ -1273,20 +1273,20 @@
 				575DA4CB1BF3EA1D00FE6921 /* wall.gate.cat.open.png */,
 				575DA4CC1BF3EA1D00FE6921 /* wall.gate.document.open.png */,
 				575DA4CD1BF3EA1D00FE6921 /* wall.gate.document.shut.png */,
-				575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazieClosed.png */,
-				575DA4CF1BF3EA1D00FE6921 /* wall.gate.nastazieOpen.png */,
-				575DA4D01BF3EA1D00FE6921 /* wall.gate.necomedreClosed.png */,
-				575DA4D11BF3EA1D00FE6921 /* wall.gate.necomedreOpen.png */,
-				575DA4D21BF3EA1D00FE6921 /* wall.gate.nemediqueClosed.png */,
-				575DA4D31BF3EA1D00FE6921 /* wall.gate.nemediqueOpen.png */,
-				575DA4D41BF3EA1D00FE6921 /* wall.gate.neomineClosed.png */,
-				575DA4D51BF3EA1D00FE6921 /* wall.gate.neomineOpen.png */,
-				575DA4D61BF3EA1D00FE6921 /* wall.gate.nephtalineClosed.png */,
-				575DA4D71BF3EA1D00FE6921 /* wall.gate.nephtalineOpen.png */,
-				575DA4D81BF3EA1D00FE6921 /* wall.gate.nestorineClosed.png */,
-				575DA4D91BF3EA1D00FE6921 /* wall.gate.nestorineOpen.png */,
-				575DA4DA1BF3EA1D00FE6921 /* wall.gate.redClosed.png */,
-				575DA4DB1BF3EA1D00FE6921 /* wall.gate.redOpen.png */,
+				575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazie.closed.png */,
+				575DA4CF1BF3EA1D00FE6921 /* wall.gate.nastazie.open.png */,
+				575DA4D01BF3EA1D00FE6921 /* wall.gate.necomedre.close.png */,
+				575DA4D11BF3EA1D00FE6921 /* wall.gate.necomedre.open.png */,
+				575DA4D21BF3EA1D00FE6921 /* wall.gate.nemedique.close.png */,
+				575DA4D31BF3EA1D00FE6921 /* wall.gate.nemedique.open.png */,
+				575DA4D41BF3EA1D00FE6921 /* wall.gate.neomine.close.png */,
+				575DA4D51BF3EA1D00FE6921 /* wall.gate.neomine.open.png */,
+				575DA4D61BF3EA1D00FE6921 /* wall.gate.nephtaline.close.png */,
+				575DA4D71BF3EA1D00FE6921 /* wall.gate.nephtaline.open.png */,
+				575DA4D81BF3EA1D00FE6921 /* wall.gate.nestorine.close.png */,
+				575DA4D91BF3EA1D00FE6921 /* wall.gate.nestorine.open.png */,
+				575DA4DA1BF3EA1D00FE6921 /* wall.gate.red.closed.png */,
+				575DA4DB1BF3EA1D00FE6921 /* wall.gate.red.open.png */,
 				570754471BF2D78200638CAE /* 7.png */,
 				570754481BF2D78200638CAE /* blocker.0.png */,
 				570754491BF2D78200638CAE /* blocker.1.png */,
@@ -1921,7 +1921,7 @@
 				570756721BF2D78400638CAE /* char.catfish.stand.b.png in Resources */,
 				5707572C1BF2D78400638CAE /* fx.parallax.6.png in Resources */,
 				570757071BF2D78400638CAE /* event.ramen.2.png in Resources */,
-				575DA51B1BF3EA1D00FE6921 /* wall.gate.nephtalineOpen.png in Resources */,
+				575DA51B1BF3EA1D00FE6921 /* wall.gate.nephtaline.open.png in Resources */,
 				570757A51BF2D78400638CAE /* tile.17.png in Resources */,
 				575DA5721BF3EABE00FE6921 /* wall.35.png in Resources */,
 				570757D71BF2D78400638CAE /* tile.112.png in Resources */,
@@ -1943,7 +1943,7 @@
 				575DA5781BF3EABE00FE6921 /* wall.41.png in Resources */,
 				5707569E1BF2D78400638CAE /* char.nemedique.warp.png in Resources */,
 				570756AA1BF2D78400638CAE /* char.nephtaline.stand.f.2.png in Resources */,
-				575DA5161BF3EA1D00FE6921 /* wall.gate.nemediqueClosed.png in Resources */,
+				575DA5161BF3EA1D00FE6921 /* wall.gate.nemedique.close.png in Resources */,
 				570757501BF2D78400638CAE /* letterO.png in Resources */,
 				57C1AA251AA37397005EFD29 /* sfx_bump1.wav in Resources */,
 				570757021BF2D78400638CAE /* event.radio.2.png in Resources */,
@@ -1975,7 +1975,7 @@
 				5707566C1BF2D78400638CAE /* blocker.26.png in Resources */,
 				575DA56A1BF3EABE00FE6921 /* wall.26.png in Resources */,
 				570756FA1BF2D78400638CAE /* event.photocopier.portrait.png in Resources */,
-				575DA51A1BF3EA1D00FE6921 /* wall.gate.nephtalineClosed.png in Resources */,
+				575DA51A1BF3EA1D00FE6921 /* wall.gate.nephtaline.close.png in Resources */,
 				570756E11BF2D78400638CAE /* event.neomine.3.png in Resources */,
 				570756591BF2D78400638CAE /* blocker.7.png in Resources */,
 				570757721BF2D78400638CAE /* notification.7.png in Resources */,
@@ -2132,7 +2132,7 @@
 				570756571BF2D78400638CAE /* blocker.4.png in Resources */,
 				5707579F1BF2D78400638CAE /* tile.11.png in Resources */,
 				575DA5821BF3EABE00FE6921 /* wall.110.png in Resources */,
-				575DA5131BF3EA1D00FE6921 /* wall.gate.nastazieOpen.png in Resources */,
+				575DA5131BF3EA1D00FE6921 /* wall.gate.nastazie.open.png in Resources */,
 				570757D81BF2D78400638CAE /* tile.113.png in Resources */,
 				570757281BF2D78400638CAE /* fx.parallax.2.png in Resources */,
 				5707579B1BF2D78400638CAE /* tile.7.png in Resources */,
@@ -2205,7 +2205,7 @@
 				570756E51BF2D78400638CAE /* event.nephtaline.3.png in Resources */,
 				5707573C1BF2D78400638CAE /* letter2.png in Resources */,
 				5707568D1BF2D78400638CAE /* char.necomedre.stand.b.png in Resources */,
-				575DA51F1BF3EA1D00FE6921 /* wall.gate.redOpen.png in Resources */,
+				575DA51F1BF3EA1D00FE6921 /* wall.gate.red.open.png in Resources */,
 				57C1AA381AA38257005EFD29 /* quiet.mp3 in Resources */,
 				570756A31BF2D78400638CAE /* char.neomine.walk.b.1.png in Resources */,
 				570756691BF2D78400638CAE /* blocker.23.png in Resources */,
@@ -2213,7 +2213,7 @@
 				570757D41BF2D78400638CAE /* tile.109.png in Resources */,
 				570756A61BF2D78400638CAE /* char.neomine.walk.f.2.png in Resources */,
 				570757741BF2D78400638CAE /* notification.B.png in Resources */,
-				575DA51C1BF3EA1D00FE6921 /* wall.gate.nestorineClosed.png in Resources */,
+				575DA51C1BF3EA1D00FE6921 /* wall.gate.nestorine.close.png in Resources */,
 				570756DD1BF2D78400638CAE /* event.nemedique.3.png in Resources */,
 				570757C71BF2D78400638CAE /* tile.97.png in Resources */,
 				575DA5571BF3EABE00FE6921 /* wall.5.png in Resources */,
@@ -2256,14 +2256,14 @@
 				570756D61BF2D78400638CAE /* event.nastazie.portrait.png in Resources */,
 				570756F31BF2D78400638CAE /* event.photo.1.png in Resources */,
 				575DA5831BF3EABE00FE6921 /* wall.E.png in Resources */,
-				575DA5151BF3EA1D00FE6921 /* wall.gate.necomedreOpen.png in Resources */,
+				575DA5151BF3EA1D00FE6921 /* wall.gate.necomedre.open.png in Resources */,
 				570757C31BF2D78400638CAE /* tile.47.png in Resources */,
 				575DA5541BF3EABE00FE6921 /* wall.2.png in Resources */,
 				57C1AA0E1AA37397005EFD29 /* dialog_rekka.wav in Resources */,
 				5707574A1BF2D78400638CAE /* letterI.png in Resources */,
 				570757A81BF2D78400638CAE /* tile.20.png in Resources */,
 				570756731BF2D78400638CAE /* char.catfish.stand.f.1.png in Resources */,
-				575DA5141BF3EA1D00FE6921 /* wall.gate.necomedreClosed.png in Resources */,
+				575DA5141BF3EA1D00FE6921 /* wall.gate.necomedre.close.png in Resources */,
 				570756EA1BF2D78400638CAE /* event.nestorine.portrait.png in Resources */,
 				575DA5711BF3EABE00FE6921 /* wall.34.png in Resources */,
 				570756E71BF2D78400638CAE /* event.nestorine.1.png in Resources */,
@@ -2280,7 +2280,7 @@
 				570756DB1BF2D78400638CAE /* event.nemedique.1.png in Resources */,
 				570756F51BF2D78400638CAE /* event.photo.3.png in Resources */,
 				570756C41BF2D78400638CAE /* event.daniel.1.png in Resources */,
-				575DA51E1BF3EA1D00FE6921 /* wall.gate.redClosed.png in Resources */,
+				575DA51E1BF3EA1D00FE6921 /* wall.gate.red.closed.png in Resources */,
 				5707568F1BF2D78400638CAE /* char.necomedre.stand.f.2.png in Resources */,
 				57C1AA111AA37397005EFD29 /* dialog_red.wav in Resources */,
 				575DA50E1BF3EA1D00FE6921 /* wall.gate.cat.close.png in Resources */,
@@ -2296,7 +2296,7 @@
 				575DA5521BF3EABE00FE6921 /* wall.0.png in Resources */,
 				570757701BF2D78400638CAE /* map.1.Nestorine.png in Resources */,
 				575DA5641BF3EABE00FE6921 /* wall.19.png in Resources */,
-				575DA51D1BF3EA1D00FE6921 /* wall.gate.nestorineOpen.png in Resources */,
+				575DA51D1BF3EA1D00FE6921 /* wall.gate.nestorine.open.png in Resources */,
 				5707576B1BF2D78400638CAE /* letterY.png in Resources */,
 				5707576A1BF2D78400638CAE /* letterX.png in Resources */,
 				570757791BF2D78400638CAE /* notification.X.png in Resources */,
@@ -2363,7 +2363,7 @@
 				570757081BF2D78400638CAE /* event.ramen.3.png in Resources */,
 				5707569C1BF2D78400638CAE /* char.nemedique.walk.b.2.png in Resources */,
 				570757B51BF2D78400638CAE /* tile.33.png in Resources */,
-				575DA5191BF3EA1D00FE6921 /* wall.gate.neomineOpen.png in Resources */,
+				575DA5191BF3EA1D00FE6921 /* wall.gate.neomine.open.png in Resources */,
 				575DA55D1BF3EABE00FE6921 /* wall.12.png in Resources */,
 				570757A71BF2D78400638CAE /* tile.19.png in Resources */,
 				570756DA1BF2D78400638CAE /* event.necomedre.portrait.png in Resources */,
@@ -2380,10 +2380,10 @@
 				570756541BF2D78400638CAE /* 7.png in Resources */,
 				570756921BF2D78400638CAE /* char.necomedre.walk.b.2.png in Resources */,
 				570757531BF2D78400638CAE /* letterR.png in Resources */,
-				575DA5171BF3EA1D00FE6921 /* wall.gate.nemediqueOpen.png in Resources */,
+				575DA5171BF3EA1D00FE6921 /* wall.gate.nemedique.open.png in Resources */,
 				570756B11BF2D78400638CAE /* char.nestorine.stand.b.png in Resources */,
 				570757B21BF2D78400638CAE /* tile.30.png in Resources */,
-				575DA5181BF3EA1D00FE6921 /* wall.gate.neomineClosed.png in Resources */,
+				575DA5181BF3EA1D00FE6921 /* wall.gate.neomine.close.png in Resources */,
 				570756911BF2D78400638CAE /* char.necomedre.walk.b.1.png in Resources */,
 				570757991BF2D78400638CAE /* tile.5.png in Resources */,
 				570757A21BF2D78400638CAE /* tile.14.png in Resources */,
@@ -2391,7 +2391,7 @@
 				570756BC1BF2D78400638CAE /* event.boss.1.png in Resources */,
 				570756AC1BF2D78400638CAE /* char.nephtaline.walk.b.1.png in Resources */,
 				570757311BF2D78400638CAE /* fx.transform.1.png in Resources */,
-				575DA5121BF3EA1D00FE6921 /* wall.gate.nastazieClosed.png in Resources */,
+				575DA5121BF3EA1D00FE6921 /* wall.gate.nastazie.closed.png in Resources */,
 				570757031BF2D78400638CAE /* event.radio.3.png in Resources */,
 				570756B51BF2D78400638CAE /* char.nestorine.walk.b.1.png in Resources */,
 				570756871BF2D78400638CAE /* char.nastazie.stand.f.3.png in Resources */,

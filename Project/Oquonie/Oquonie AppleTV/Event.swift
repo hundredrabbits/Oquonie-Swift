@@ -10,7 +10,7 @@ class Event : SKNode
 	var sprite:SKSpriteNode!
 	var x:Int!
 	var y:Int!
-	var target:SKNode!
+	var target:Tile!
 	
 	init(x:Int,y:Int)
 	{

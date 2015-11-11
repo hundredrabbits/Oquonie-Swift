@@ -37,12 +37,12 @@ class Stage : SKNode
 	
 	override init()
 	{
-		wall3 = Tile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
-		wall4 = Tile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
-		wall2 = Tile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
-		wall5 = Tile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
-		wall1 = Tile(sprite: Types.wall, orientation:Orientation.r, position: CGPoint(x: -templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
-		wall6 = Tile(sprite: Types.wall, orientation:Orientation.l, position: CGPoint(x:  templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
+		wall3 = Tile(sprite: Types.wall, position: CGPoint(x: -templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
+		wall4 = Tile(sprite: Types.wall, position: CGPoint(x:  templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
+		wall2 = Tile(sprite: Types.wall, position: CGPoint(x: -templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
+		wall5 = Tile(sprite: Types.wall, position: CGPoint(x:  templates.wall.width, y: templates.wall.height * 0.60), size: templates.wall)
+		wall1 = Tile(sprite: Types.wall, position: CGPoint(x: -templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
+		wall6 = Tile(sprite: Types.wall, position: CGPoint(x:  templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
 		
 		floor11 = Tile(sprite: Types.tile, size: templates.floor)
 		floor01 = Tile(sprite: Types.tile, size: templates.floor)
@@ -54,12 +54,12 @@ class Stage : SKNode
 		floor0e = Tile(sprite: Types.tile, size: templates.floor)
 		flooree = Tile(sprite: Types.tile, size: templates.floor)
 		
-		step1 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 1.5, y: -templates.step.height * 0.35), size: templates.step)
-		step2 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
-		step3 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
-		step4 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
-		step5 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
-		step6 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 1.5, y: -templates.step.height * 0.35), size: templates.step)
+		step1 = Tile(sprite: Types.step, position: CGPoint(x: -templates.step.width * 1.5, y: -templates.step.height * 0.35), size: templates.step)
+		step2 = Tile(sprite: Types.step, position: CGPoint(x: -templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
+		step3 = Tile(sprite: Types.step, position: CGPoint(x: -templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
+		step4 = Tile(sprite: Types.step, position: CGPoint(x:  templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
+		step5 = Tile(sprite: Types.step, position: CGPoint(x:  templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
+		step6 = Tile(sprite: Types.step, position: CGPoint(x:  templates.step.width * 1.5, y: -templates.step.height * 0.35), size: templates.step)
 		
 		super.init()
 		
@@ -125,6 +125,10 @@ class Stage : SKNode
 		step4.zPosition =  6
 		step5.zPosition =  4
 		step6.zPosition =  2
+		
+		wall1.xScale = -1
+		wall2.xScale = -1
+		wall3.xScale = -1
 		
 		addChild(room_root)
 		
