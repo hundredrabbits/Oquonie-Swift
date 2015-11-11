@@ -55,6 +55,23 @@ class Tile : SKSpriteNode
 
 		self.texture = texture
 	}
+	
+	override func onRoomEnter()
+	{
+		let targetPosition = self.position
+		
+		let offset = randomBetweenNumbers(0, secondNum: 10)
+		self.alpha = 0
+		self.position = CGPoint(x: position.x, y: position.y - offset)
+		
+		let action_move = SKAction.moveTo(targetPosition, duration: 0.25)
+		let action_fade = SKAction.fadeAlphaTo(1, duration:0.5)
+		let action_group = SKAction.group([action_move,action_fade])
+		
+		action_move.timingMode = .EaseInEaseOut
+		
+		self.runAction(action_group)
+	}
 
 	required init?(coder aDecoder: NSCoder)
 	{

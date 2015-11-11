@@ -86,6 +86,11 @@ enum Theme
 	case pest
 }
 
+func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat
+{
+	return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
+}
+
 /*
 #define dialogIntroduction			@"KIO"
 #define dialogHaveCharacter			@"QIS" // already are the character from that wizard

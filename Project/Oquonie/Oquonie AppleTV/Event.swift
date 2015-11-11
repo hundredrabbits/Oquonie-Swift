@@ -10,6 +10,7 @@ class Event : SKNode
 	var sprite:SKSpriteNode!
 	var x:Int!
 	var y:Int!
+	var target:SKNode!
 	
 	init(x:Int,y:Int)
 	{
@@ -50,6 +51,11 @@ class Event : SKNode
 	{
 		print("hit generic event!")
 		player.isMoving = false
+	}
+	
+	func bind(node:Tile)
+	{
+		print("No bind action")
 	}
 	
 	func remove()

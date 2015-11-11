@@ -17,17 +17,7 @@ class Player : Event
 	{
 		super.init(x:0,y:0)
 		
-		let imageName = "char.necomedre.stand.f.1.png"
-		
-		var image:UIImage!
-		var texture:SKTexture!
-		
-		if UIImage(named: imageName) != nil {
-			image = UIImage(named: imageName)!
-			texture = SKTexture(image: image!)
-		}
-
-		sprite = SKSpriteNode(texture: texture, color: UIColor.clearColor(), size: templates.player)
+		sprite = SKSpriteNode(texture: nil, color: UIColor.clearColor(), size: templates.player)
 		sprite.position = CGPoint(x: 0, y: 100)
 		addChild(sprite)
 		
@@ -35,6 +25,8 @@ class Player : Event
 		marker.fillColor = UIColor.redColor()
 		marker.strokeColor = UIColor.clearColor()
 		addChild(marker)
+		
+		updateSprite()
 	}
 	
 	func move(x:Int, y:Int)
@@ -55,6 +47,7 @@ class Player : Event
 		// Look for event
 		if destination_event != nil {
 			destination_event.collide()
+			bump()
 		}
 		else if destination_x < 2 && destination_x > -2 && destination_y < 2 && destination_y > -2 {
 			walk(destination_x, destination_y:destination_y)
@@ -62,6 +55,11 @@ class Player : Event
 		else{
 			stand()
 		}
+	}
+	
+	func bump()
+	{
+		
 	}
 	
 	func walk(destination_x:Int, destination_y:Int)
@@ -72,7 +70,10 @@ class Player : Event
 		self.x = destination_x
 		self.y = destination_y
 		print("moving: \(x)/\(y) to: \(self.x)/\(self.y)")
-		player.runAction(SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.25), completion: { self.stand() })
+		
+		let action_move = SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.25)
+		action_move.timingMode = .EaseInEaseOut
+		player.runAction(action_move, completion: { self.stand() })
 		stage.parallaxTo(stage.positionAt(self.x,y:self.y).x,y:stage.positionAt(self.x,y:self.y).y)
 	}
 	

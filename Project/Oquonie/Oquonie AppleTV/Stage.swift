@@ -141,6 +141,21 @@ class Stage : SKNode
 		for event in room.events {
 			addEvent(event)
 		}
+		
+		for node in room_root.children {
+			node.onRoomEnter()
+		}
+		
+		// Bind sprites to events
+		for event in events_root.children {
+			let event = event as! Event
+			if event.x == -1 && event.y ==  2 { event.bind(wall1) }
+			if event.x ==  0 && event.y ==  2 { event.bind(wall2) }
+			if event.x ==  1 && event.y ==  2 { event.bind(wall3) }
+			if event.x ==  2 && event.y ==  1 { event.bind(wall4) }
+			if event.x ==  2 && event.y ==  0 { event.bind(wall5) }
+			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
+		}
 	}
 	
 	func updateTiles()
@@ -185,8 +200,8 @@ class Stage : SKNode
 	
 	func parallaxTo(x:CGFloat, y:CGFloat)
 	{
-		let pos_x = CGRectGetMidX(gameScene.frame) + (x * 0.1)
-		let pos_y = CGRectGetMidY(gameScene.frame) + (y * 0.1) - (templates.player.height * 0.5)
+		let pos_x = CGRectGetMidX(gameScene.frame) + (x * 0.025)
+		let pos_y = CGRectGetMidY(gameScene.frame) + (y * 0.025) - (templates.player.height * 0.5)
 		self.runAction(SKAction.moveTo(CGPoint(x:pos_x,y:pos_y), duration: 0.25), completion: { })
 	}
 	

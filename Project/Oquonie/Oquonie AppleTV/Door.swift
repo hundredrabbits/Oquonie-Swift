@@ -2,6 +2,7 @@
 //  Created by Devine Lu Linvega on 2015-11-09.
 //  Copyright © 2015 XXIIVV. All rights reserved.
 
+import SpriteKit
 import Foundation
 
 class Door : Event
@@ -34,6 +35,21 @@ class Door : Event
 	{
 		print("> WARP - \(destination)")
 		player.warp(self.destination,to_x:self.to_x,to_y:self.to_y)
+	}
+	
+	override func bind(node:Tile)
+	{
+		print("Binded to \(node)")
+		target = node
+		
+		if self.requirement != nil {
+			if requirement == player.persona {
+				print("Display:\(requirement) unlocked")
+			}
+			else{
+				print("Display:\(requirement) locked")
+			}
+		}
 	}
 	
 	func collide_gate()

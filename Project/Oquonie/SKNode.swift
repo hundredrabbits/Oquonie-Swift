@@ -23,4 +23,9 @@ extension SKNode
 		}
 		fixedUpdate()
 	}
+	
+	func onRoomEnter()
+	{
+	
+	}
 }
