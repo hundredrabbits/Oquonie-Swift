@@ -129,6 +129,9 @@ class Stage : SKNode
 		wall1.xScale = -1
 		wall2.xScale = -1
 		wall3.xScale = -1
+		step4.xScale = -1
+		step5.xScale = -1
+		step6.xScale = -1
 		
 		addChild(room_root)
 		
