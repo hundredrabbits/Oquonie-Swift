@@ -5,10 +5,14 @@
 import SpriteKit
 
 class GameScene: SKScene
-{	
+{
+	var time:NSTimer!
+
     override func didMoveToView(view: SKView)
 	{
 		start()
+		
+		time = NSTimer.scheduledTimerWithTimeInterval(0.025, target: self, selector: "_fixedUpdate", userInfo: nil, repeats: true)
     }
 	
 	func start()
@@ -26,6 +30,11 @@ class GameScene: SKScene
     override func update(currentTime: CFTimeInterval)
 	{
 		super.update(currentTime)
-		stage._update()
+		stage._fixedUpdate()
+	}
+	
+	override func _fixedUpdate()
+	{
+	
 	}
 }

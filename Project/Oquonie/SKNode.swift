@@ -11,16 +11,16 @@ import Foundation
 
 extension SKNode
 {
-	func update()
+	func fixedUpdate()
 	{
 	
 	}
 	
-	func _update()
+	func _fixedUpdate()
 	{
 		for node in children {
-			node._update()
+			node._fixedUpdate()
 		}
-		update()
+		fixedUpdate()
 	}
 }

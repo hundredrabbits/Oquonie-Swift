@@ -9,6 +9,9 @@ class Player : Event
 {
 	var isMoving:Bool = false
 	var persona:Personas = Personas.necomedre
+	var orientation:Orientation = Orientation.l
+	var direction:Direction = Direction.f
+	var state:States = States.stand
 	
 	init()
 	{
@@ -38,7 +41,13 @@ class Player : Event
 	{
 		if isMoving == true { return }
 		isMoving = true
-		
+		updateSpriteStyle(x,y:y)
+		action(x,y:y)
+		updateSprite()
+	}
+	
+	func action(x:Int, y:Int)
+	{
 		let destination_x:Int = self.x + x
 		let destination_y:Int = self.y + y
 		let destination_event:Event! = stage.eventAtLocation(destination_x,y:destination_y)
@@ -57,6 +66,22 @@ class Player : Event
 			print("disabled: \(destination_x + x)/\(destination_x + y)")
 			self.isMoving = false
 		}
+	}
+	
+	func updateSpriteStyle(x:Int, y:Int)
+	{
+		// Direction
+		if x > 0 || y > 0 { direction = Direction.b }
+		else if x < 0 || y < 0 { direction = Direction.f }
+		
+		// Orientation
+		if x > 0 || y < 0 { orientation = Orientation.r }
+		else if x < 0 || y > 0 { orientation = Orientation.l }
+		
+		// Orientation Fix
+		
+		if orientation == Orientation.r { sprite.xScale = -1.0 }
+		else{ sprite.xScale = 1.0 }
 	}
 	
 	func updatePosition(x:Int,y:Int)
@@ -79,9 +104,29 @@ class Player : Event
 		print("moving: \(destination) -> \(x)/\(y)")
 	}
 	
-	override func update()
+	func updateSprite()
 	{
-		print("test")
+		var imageName = "char.necomedre.\(state).\(direction).1.png"
+		
+		if direction == Direction.b {
+			imageName = "char.necomedre.\(state).\(direction).png"
+		}
+		
+		
+		var image:UIImage!
+		var texture:SKTexture!
+		
+		if UIImage(named: imageName) != nil {
+			image = UIImage(named: imageName)!
+			texture = SKTexture(image: image!)
+		}
+		
+		sprite.texture = texture
+	}
+	
+	override func fixedUpdate()
+	{
+//		print("!")
 	}
 
 	required init?(coder aDecoder: NSCoder)

@@ -5,6 +5,11 @@
 import SpriteKit
 import Foundation
 
+let world = World()
+let templates = Templates()
+let player = Player()
+let stage = Stage()
+
 enum Types
 {
 	case tile
@@ -20,15 +25,22 @@ struct Templates
 	let player:CGSize = CGSize(width: 200, height: 281)
 }
 
-let world = World()
-let templates = Templates()
-let player = Player()
-let stage = Stage()
-
 enum Orientation
 {
 	case l
 	case r
+}
+
+enum Direction
+{
+	case f
+	case b
+}
+
+enum States
+{
+	case stand
+	case walk
 }
 
 enum Personas
