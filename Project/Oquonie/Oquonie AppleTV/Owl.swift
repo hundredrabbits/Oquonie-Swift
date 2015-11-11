@@ -11,7 +11,7 @@ class Owl : Event
 	{
 		super.init(x: x, y: y)
 		
-		updateSprite("event.owl.l.1.png")
+		updateSprite("event.owl.1.png")
 	}
 	
 	override func collide()

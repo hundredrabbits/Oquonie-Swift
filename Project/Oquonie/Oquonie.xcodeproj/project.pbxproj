@@ -547,6 +547,7 @@
 		5755DD041BF2BAD900C5353D /* Red.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCF51BF2BAC200C5353D /* Red.swift */; };
 		5755DD071BF2CC2800C5353D /* TownWarp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DD051BF2CC1F00C5353D /* TownWarp.swift */; };
 		5755DD091BF2CDEA00C5353D /* Kamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DD081BF2CDEA00C5353D /* Kamera.swift */; };
+		576570691BF388B100F563B8 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576570671BF388AD00F563B8 /* SKNode.swift */; };
 		578BFD881BF0E6D8006DAF1C /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* Tile.swift */; };
 		578BFE001BF0EA52006DAF1C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFDFF1BF0EA52006DAF1C /* Settings.swift */; };
 		57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668631BEE98AA007CDD8B /* AppDelegate.swift */; };
@@ -1223,6 +1224,7 @@
 		5755DCF51BF2BAC200C5353D /* Red.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Red.swift; sourceTree = "<group>"; };
 		5755DD051BF2CC1F00C5353D /* TownWarp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TownWarp.swift; sourceTree = "<group>"; };
 		5755DD081BF2CDEA00C5353D /* Kamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kamera.swift; sourceTree = "<group>"; };
+		576570671BF388AD00F563B8 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
 		578BFD871BF0E6D8006DAF1C /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Oquonie AppleTV/Tile.swift"; sourceTree = "<group>"; };
 		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Oquonie AppleTV/Settings.swift"; sourceTree = "<group>"; };
 		57A668111BEE92AE007CDD8B /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
@@ -1966,6 +1968,7 @@
 				57E3D2BE1BF1033A00E4D319 /* World.swift */,
 				57E3D2C01BF1059500E4D319 /* Room.swift */,
 				57F0E2CA1BF13A320067CC94 /* Events */,
+				576570671BF388AD00F563B8 /* SKNode.swift */,
 			);
 			name = "Oquonie Core";
 			sourceTree = "<group>";
@@ -2721,6 +2724,7 @@
 				57C843DB1BF233CB00288847 /* Room.swift in Sources */,
 				5755DCE91BF2970300C5353D /* Map.swift in Sources */,
 				57C843DD1BF233CB00288847 /* AppDelegate.swift in Sources */,
+				576570691BF388B100F563B8 /* SKNode.swift in Sources */,
 				5755DCE71BF2970300C5353D /* Door.swift in Sources */,
 				5755DCEF1BF2982E00C5353D /* Tree.swift in Sources */,
 				5755DCE51BF2970300C5353D /* Pillar.swift in Sources */,

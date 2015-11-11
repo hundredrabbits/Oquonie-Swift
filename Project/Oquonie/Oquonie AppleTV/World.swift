@@ -20,6 +20,12 @@ class World
 		
 		createLobby()
 		createNecomedre()
+		createNephtaline()
+		createNeomine()
+		createNestorine()
+		createNemedique()
+		createNastazie()
+		createSecrets()
 	}
 	
 	func createLobby()
@@ -1112,220 +1118,7 @@ class World
 		all[109] = room
 	}
 	
-	func createSecret()
-	{
-		var room = Room()
-	
-		room = Room()
-		room.floors = [ 1,1,1, 1,1,38, 1,1,38 ]
-		room.walls  = [ 31,30,31, 33,31,33 ]
-		room.steps  = [ 0,0,3, 0,0,0 ]
-		room.audio  = Soundtrack.neomine
-		room.theme  = Theme.black
-		room.addEvent(Blocker(x: -1, y: 1, id:19))
-		room.addEvent(Blocker(x: 1, y: 1, id:19))
-		room.addEvent(Wizard(x: 1, y: 0, spell: Personas.nestorine))
-		room.addEvent(Door(x: 0, y: 2, room:111, to_x: 0, to_y:-1))
-		room.addEvent(Door(x: -2, y: -1, room:60, to_x: -1, to_y:-1))
-		all[110] = room
-		
-		room = Room()
-		room.floors = [ 36,36,36, 36,36,36, 36,36,36 ]
-		room.walls  = [ 31,31,31, 31,31,31 ]
-		room.steps  = [ 0,0,0, 0,3,0 ]
-		room.audio  = Soundtrack.purgatory
-		room.theme  = Theme.black
-//		room.addEvent(Wizard(x: 0, y: 1, spell: petunia))
-		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.catfishbird))
-		room.addEvent(Door(x: 2, y: 0, room:118, to_x: -1, to_y:0))
-		room.addEvent(Door(x: 0, y: -2, room:110, to_x: 0, to_y:1))
-		all[111] = room
-		
-		room = Room()
-		room.floors = [ 32,0,5, 6,0,4, 4,5,30 ]
-		room.walls  = [ 3,0,13, 3,3,3 ]
-		room.steps  = [ 0,0,7, 0,0,0 ]
-		room.audio  = Soundtrack.nephtaline
-		room.theme  = Theme.white
-		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.catfishbird))
-		room.addEvent(Door(x: 1, y: 2, room:41, to_x: 1, to_y:-1))
-//		room.addEvent(Door(x: 2, y: 0, requirement: Personas.catfishbird))
-		room.addEvent(Door(x: -2, y: -1, room:43, to_x: -1, to_y:-1))
-		all[112] = room
-		
-		room = Room()
-		room.floors = [ 1,1,1, 1,1,1, 1,1,1 ]
-		room.walls  = [ 1,1,1, 1,1,1 ]
-		room.steps  = [ 0,1,0, 0,1,0 ]
-		room.audio  = Soundtrack.endless
-		room.theme  = Theme.white
-		room.addEvent(Door(x: 0, y: 2, room:113, to_x: 0, to_y:-1))
-//		room.addEvent(Wizard(x: 2, y: 1, spell: shuffleRoom))
-		room.addEvent(Door(x: 2, y: 0, room:113, to_x: -1, to_y:0))
-		room.addEvent(Door(x: -2, y: 0, room:112, to_x: 1, to_y:0))
-		room.addEvent(Door(x: 0, y: -2, room:113, to_x: 0, to_y:1))
-		all[113] = room
-		
-		// Glitch in nestorine(unused)
-		
-		room = Room()
-		room.floors = [ 99,99,99, 99,99,99, 99,99,99 ]
-		room.walls  = [ 0,0,0, 0,0,0 ]
-		room.steps  = [ 0,0,0, 0,0,0 ]
-		room.audio  = Soundtrack.glitch
-		room.theme  = Theme.white
-		room.addEvent(Door(x: 0, y: -2, room:86, to_x: 0, to_y:1))
-		all[114] = room
-		
-		// Glitch in nemedique
-		
-		room = Room()
-		room.floors = [ 98,97,98, 98,31,97, 97,98,98 ]
-		room.walls  = [ 15,98,1, 98,0,0 ]
-		room.steps  = [ 0,0,0, 0,98,0 ]
-		room.audio  = Soundtrack.play
-		room.theme  = Theme.pest
-		room.addEvent(Door(x: 0, y: -2, room:100, to_x: 0, to_y:1))
-		all[115] = room
-		
-		// Courtyard
-		
-		room = Room()
-		room.floors = [ 4,5,6, 6,33,4, 4,5,5 ]
-		room.walls  = [ 36,13,36, 3,37,3 ]
-		room.steps  = [ 0,0,0, 0,0,0 ]
-		room.audio  = Soundtrack.pillar
-		room.theme  = Theme.white
-		room.addEvent(Wizard(x: 0, y: 0, spell: Personas.catfishbird))
-		room.addEvent(Door(x: 0, y: 2, room:9, to_x: 0, to_y:-1))
-		all[116] = room
-		
-		// Extra Warp Zone
-		
-		room = Room()
-		room.floors = [ 9,10,9, 10,7,10, 9,9,10 ]
-		room.walls  = [ 36,36,36, 36,36,36 ]
-		room.steps  = [ 0,0,0, 0,0,0 ]
-		room.audio  = Soundtrack.pillar
-		room.theme  = Theme.white
-		room.addEvent(TownWarp(x: 0, y: 0))
-		all[117] = room
-		
-		// Daniel Room
-		
-		room = Room()
-		room.floors = [ 31,29,31, 29,50,29, 31,31,29 ]
-		room.walls  = [ 34,37,34, 35,37,35 ]
-		room.steps  = [ 0,7,0, 0,0,0 ]
-		room.audio  = Soundtrack.glitch
-		room.theme  = Theme.red
-//		room.addEvent(Wizard(x: 1, y: 0, spell: daniel))
-		room.addEvent(Door(x: -2, y: 0, room:111, to_x: 1, to_y:0))
-		all[118] = room
-		
-		// Hiversaires Room
-		
-		room = Room()
-		room.floors = [ 109,107,105, 110,0,106, 112,108,111 ]
-		room.walls  = [ 102,103,102, 0,0,0 ]
-		room.steps  = [ 0,0,0, 0,7,0 ]
-		room.audio  = Soundtrack.glitch
-		room.theme  = Theme.void
-		room.addEvent(Blocker(x: 0, y: -1, id:999))
-//		room.addEvent(Wizard(x: 0, y: 0, spell: sauvegarde))
-		room.addEvent(Blocker(x: 1, y: 0, id:29))
-		room.addEvent(Blocker(x: -1, y: -1, id:999))
-		room.addEvent(Blocker(x: -1, y: 0, id:999))
-		room.addEvent(Door(x: 0, y: -2, room:68, to_x: 0, to_y:1))
-		all[148] = room
-		
-		// Photobooth #1 - Lobby
-		
-		room = Room()
-		room.floors = [ 4,5,6, 5,18,4, 6,4,5 ]
-		room.walls  = [ 19,19,36, 36,37,36 ]
-		room.steps  = [ 0,7,0, 0,0,0 ]
-		room.audio  = Soundtrack.photobooth
-		room.theme  = Theme.white
-		room.addEvent(Blocker(x: -1, y: 1, id:30))
-		room.addEvent(Kamera(x: 1, y: 0))
-		room.addEvent(Door(x: -2, y: 0, room:3, to_x: 1, to_y:0))
-		all[149] = room
-		
-		// Photobooth #2 - Necomedre
-		
-		room = Room()
-		room.floors = [ 33,21,21, 21,18,21, 33,21,33 ]
-		room.walls  = [ 20,21,20, 20,21,20 ]
-		room.steps  = [ 0,0,0, 7,0,0 ]
-		room.audio  = Soundtrack.photobooth
-		room.theme  = Theme.white
-		room.addEvent(Kamera(x: 1, y: 0))
-		room.addEvent(Door(x: -1, y: -2, room:37, to_x: 1, to_y:1))
-		all[150] = room
-		
-		// Photobooth #3 - Nephtaline
-		
-		room = Room()
-		room.floors = [ 1,1,1, 1,18,1, 1,1,1 ]
-		room.walls  = [ 25,2,25, 25,31,25 ]
-		room.steps  = [ 0,0,0, 0,8,0 ]
-		room.audio  = Soundtrack.photobooth
-		room.theme  = Theme.void
-		room.addEvent(Kamera(x: 1, y: 0))
-		room.addEvent(Door(x: 0, y: -2, room:46, to_x: 0, to_y:1))
-		all[151] = room
-		
-		// Photobooth #4 - Neomine
-		
-		room = Room()
-		room.floors = [ 36,3,36, 3,18,3, 36,36,3 ]
-		room.walls  = [ 0,0,0, 31,30,31 ]
-		room.steps  = [ 0,0,0, 0,8,0 ]
-		room.audio  = Soundtrack.photobooth
-		room.theme  = Theme.red
-		room.addEvent(Kamera(x: 1, y: 0))
-		room.addEvent(Door(x: 0, y: -2, room:66, to_x: 0, to_y:1))
-		all[152] = room
-		
-		// Photobooth #5 - Nestorine
-		
-		room = Room()
-		room.floors = [ 1,35,34, 35,18,35, 1,34,34 ]
-		room.walls  = [ 35,34,37, 37,34,35 ]
-		room.steps  = [ 0,8,0, 0,0,0 ]
-		room.audio  = Soundtrack.photobooth
-		room.theme  = Theme.black
-		room.addEvent(Kamera(x: 1, y: 0))
-		room.addEvent(Door(x: -2, y: 0, room:89, to_x: 1, to_y:0))
-		all[153] = room
-		
-		// Photobooth #6 - Nemedique
-		
-		room = Room()
-		room.floors = [ 36,32,36, 32,18,32, 36,36,32 ]
-		room.walls  = [ 25,25,25, 2,29,2 ]
-		room.steps  = [ 0,8,0, 0,0,0 ]
-		room.audio  = Soundtrack.photobooth
-		room.theme  = Theme.white
-		room.addEvent(Kamera(x: 1, y: 0))
-		room.addEvent(Door(x: -2, y: 0, room:102, to_x: 1, to_y:0))
-		all[154] = room
-		
-		// Photobooth #7
-		
-		room = Room()
-		room.floors = [ 33,35,35, 33,101,35, 33,35,33 ]
-		room.walls  = [ 101,101,101, 101,100,101 ]
-		room.steps  = [ 0,8,0, 0,0,0 ]
-		room.audio  = Soundtrack.photobooth
-		room.theme  = Theme.void
-		room.addEvent(Kamera(x: 1, y: 0))
-		room.addEvent(Door(x: -2, y: 0, room:142, to_x: 1, to_y:0))
-		all[155] = room
-	}
-	
-	func createWorldNastazie()
+	func createNastazie()
 	{
 		var room = Room()
 	
@@ -1531,5 +1324,218 @@ class World
 		room.addEvent(Pillar(x: 1, y: 0))
 		room.addEvent(Door(x: -2, y: 0, room:130, to_x: 1, to_y:0))
 		all[147] = room
+	}
+	
+	func createSecrets()
+	{
+		var room = Room()
+		
+		room = Room()
+		room.floors = [ 1,1,1, 1,1,38, 1,1,38 ]
+		room.walls  = [ 31,30,31, 33,31,33 ]
+		room.steps  = [ 0,0,3, 0,0,0 ]
+		room.audio  = Soundtrack.neomine
+		room.theme  = Theme.black
+		room.addEvent(Blocker(x: -1, y: 1, id:19))
+		room.addEvent(Blocker(x: 1, y: 1, id:19))
+		room.addEvent(Wizard(x: 1, y: 0, spell: Personas.nestorine))
+		room.addEvent(Door(x: 0, y: 2, room:111, to_x: 0, to_y:-1))
+		room.addEvent(Door(x: -2, y: -1, room:60, to_x: -1, to_y:-1))
+		all[110] = room
+		
+		room = Room()
+		room.floors = [ 36,36,36, 36,36,36, 36,36,36 ]
+		room.walls  = [ 31,31,31, 31,31,31 ]
+		room.steps  = [ 0,0,0, 0,3,0 ]
+		room.audio  = Soundtrack.purgatory
+		room.theme  = Theme.black
+		//		room.addEvent(Wizard(x: 0, y: 1, spell: petunia))
+		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.catfishbird))
+		room.addEvent(Door(x: 2, y: 0, room:118, to_x: -1, to_y:0))
+		room.addEvent(Door(x: 0, y: -2, room:110, to_x: 0, to_y:1))
+		all[111] = room
+		
+		room = Room()
+		room.floors = [ 32,0,5, 6,0,4, 4,5,30 ]
+		room.walls  = [ 3,0,13, 3,3,3 ]
+		room.steps  = [ 0,0,7, 0,0,0 ]
+		room.audio  = Soundtrack.nephtaline
+		room.theme  = Theme.white
+		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.catfishbird))
+		room.addEvent(Door(x: 1, y: 2, room:41, to_x: 1, to_y:-1))
+		//		room.addEvent(Door(x: 2, y: 0, requirement: Personas.catfishbird))
+		room.addEvent(Door(x: -2, y: -1, room:43, to_x: -1, to_y:-1))
+		all[112] = room
+		
+		room = Room()
+		room.floors = [ 1,1,1, 1,1,1, 1,1,1 ]
+		room.walls  = [ 1,1,1, 1,1,1 ]
+		room.steps  = [ 0,1,0, 0,1,0 ]
+		room.audio  = Soundtrack.endless
+		room.theme  = Theme.white
+		room.addEvent(Door(x: 0, y: 2, room:113, to_x: 0, to_y:-1))
+		//		room.addEvent(Wizard(x: 2, y: 1, spell: shuffleRoom))
+		room.addEvent(Door(x: 2, y: 0, room:113, to_x: -1, to_y:0))
+		room.addEvent(Door(x: -2, y: 0, room:112, to_x: 1, to_y:0))
+		room.addEvent(Door(x: 0, y: -2, room:113, to_x: 0, to_y:1))
+		all[113] = room
+		
+		// Glitch in nestorine(unused)
+		
+		room = Room()
+		room.floors = [ 99,99,99, 99,99,99, 99,99,99 ]
+		room.walls  = [ 0,0,0, 0,0,0 ]
+		room.steps  = [ 0,0,0, 0,0,0 ]
+		room.audio  = Soundtrack.glitch
+		room.theme  = Theme.white
+		room.addEvent(Door(x: 0, y: -2, room:86, to_x: 0, to_y:1))
+		all[114] = room
+		
+		// Glitch in nemedique
+		
+		room = Room()
+		room.floors = [ 98,97,98, 98,31,97, 97,98,98 ]
+		room.walls  = [ 15,98,1, 98,0,0 ]
+		room.steps  = [ 0,0,0, 0,98,0 ]
+		room.audio  = Soundtrack.play
+		room.theme  = Theme.pest
+		room.addEvent(Door(x: 0, y: -2, room:100, to_x: 0, to_y:1))
+		all[115] = room
+		
+		// Courtyard
+		
+		room = Room()
+		room.floors = [ 4,5,6, 6,33,4, 4,5,5 ]
+		room.walls  = [ 36,13,36, 3,37,3 ]
+		room.steps  = [ 0,0,0, 0,0,0 ]
+		room.audio  = Soundtrack.pillar
+		room.theme  = Theme.white
+		room.addEvent(Wizard(x: 0, y: 0, spell: Personas.catfishbird))
+		room.addEvent(Door(x: 0, y: 2, room:9, to_x: 0, to_y:-1))
+		all[116] = room
+		
+		// Extra Warp Zone
+		
+		room = Room()
+		room.floors = [ 9,10,9, 10,7,10, 9,9,10 ]
+		room.walls  = [ 36,36,36, 36,36,36 ]
+		room.steps  = [ 0,0,0, 0,0,0 ]
+		room.audio  = Soundtrack.pillar
+		room.theme  = Theme.white
+		room.addEvent(TownWarp(x: 0, y: 0))
+		all[117] = room
+		
+		// Daniel Room
+		
+		room = Room()
+		room.floors = [ 31,29,31, 29,50,29, 31,31,29 ]
+		room.walls  = [ 34,37,34, 35,37,35 ]
+		room.steps  = [ 0,7,0, 0,0,0 ]
+		room.audio  = Soundtrack.glitch
+		room.theme  = Theme.red
+		//		room.addEvent(Wizard(x: 1, y: 0, spell: daniel))
+		room.addEvent(Door(x: -2, y: 0, room:111, to_x: 1, to_y:0))
+		all[118] = room
+		
+		// Hiversaires Room
+		
+		room = Room()
+		room.floors = [ 109,107,105, 110,0,106, 112,108,111 ]
+		room.walls  = [ 102,103,102, 0,0,0 ]
+		room.steps  = [ 0,0,0, 0,7,0 ]
+		room.audio  = Soundtrack.glitch
+		room.theme  = Theme.void
+		room.addEvent(Blocker(x: 0, y: -1, id:999))
+		//		room.addEvent(Wizard(x: 0, y: 0, spell: sauvegarde))
+		room.addEvent(Blocker(x: 1, y: 0, id:29))
+		room.addEvent(Blocker(x: -1, y: -1, id:999))
+		room.addEvent(Blocker(x: -1, y: 0, id:999))
+		room.addEvent(Door(x: 0, y: -2, room:68, to_x: 0, to_y:1))
+		all[148] = room
+		
+		// Photobooth #1 - Lobby
+		
+		room = Room()
+		room.floors = [ 4,5,6, 5,18,4, 6,4,5 ]
+		room.walls  = [ 19,19,36, 36,37,36 ]
+		room.steps  = [ 0,7,0, 0,0,0 ]
+		room.audio  = Soundtrack.photobooth
+		room.theme  = Theme.white
+		room.addEvent(Blocker(x: -1, y: 1, id:30))
+		room.addEvent(Kamera(x: 1, y: 0))
+		room.addEvent(Door(x: -2, y: 0, room:3, to_x: 1, to_y:0))
+		all[149] = room
+		
+		// Photobooth #2 - Necomedre
+		
+		room = Room()
+		room.floors = [ 33,21,21, 21,18,21, 33,21,33 ]
+		room.walls  = [ 20,21,20, 20,21,20 ]
+		room.steps  = [ 0,0,0, 7,0,0 ]
+		room.audio  = Soundtrack.photobooth
+		room.theme  = Theme.white
+		room.addEvent(Kamera(x: 1, y: 0))
+		room.addEvent(Door(x: -1, y: -2, room:37, to_x: 1, to_y:1))
+		all[150] = room
+		
+		// Photobooth #3 - Nephtaline
+		
+		room = Room()
+		room.floors = [ 1,1,1, 1,18,1, 1,1,1 ]
+		room.walls  = [ 25,2,25, 25,31,25 ]
+		room.steps  = [ 0,0,0, 0,8,0 ]
+		room.audio  = Soundtrack.photobooth
+		room.theme  = Theme.void
+		room.addEvent(Kamera(x: 1, y: 0))
+		room.addEvent(Door(x: 0, y: -2, room:46, to_x: 0, to_y:1))
+		all[151] = room
+		
+		// Photobooth #4 - Neomine
+		
+		room = Room()
+		room.floors = [ 36,3,36, 3,18,3, 36,36,3 ]
+		room.walls  = [ 0,0,0, 31,30,31 ]
+		room.steps  = [ 0,0,0, 0,8,0 ]
+		room.audio  = Soundtrack.photobooth
+		room.theme  = Theme.red
+		room.addEvent(Kamera(x: 1, y: 0))
+		room.addEvent(Door(x: 0, y: -2, room:66, to_x: 0, to_y:1))
+		all[152] = room
+		
+		// Photobooth #5 - Nestorine
+		
+		room = Room()
+		room.floors = [ 1,35,34, 35,18,35, 1,34,34 ]
+		room.walls  = [ 35,34,37, 37,34,35 ]
+		room.steps  = [ 0,8,0, 0,0,0 ]
+		room.audio  = Soundtrack.photobooth
+		room.theme  = Theme.black
+		room.addEvent(Kamera(x: 1, y: 0))
+		room.addEvent(Door(x: -2, y: 0, room:89, to_x: 1, to_y:0))
+		all[153] = room
+		
+		// Photobooth #6 - Nemedique
+		
+		room = Room()
+		room.floors = [ 36,32,36, 32,18,32, 36,36,32 ]
+		room.walls  = [ 25,25,25, 2,29,2 ]
+		room.steps  = [ 0,8,0, 0,0,0 ]
+		room.audio  = Soundtrack.photobooth
+		room.theme  = Theme.white
+		room.addEvent(Kamera(x: 1, y: 0))
+		room.addEvent(Door(x: -2, y: 0, room:102, to_x: 1, to_y:0))
+		all[154] = room
+		
+		// Photobooth #7
+		
+		room = Room()
+		room.floors = [ 33,35,35, 33,101,35, 33,35,33 ]
+		room.walls  = [ 101,101,101, 101,100,101 ]
+		room.steps  = [ 0,8,0, 0,0,0 ]
+		room.audio  = Soundtrack.photobooth
+		room.theme  = Theme.void
+		room.addEvent(Kamera(x: 1, y: 0))
+		room.addEvent(Door(x: -2, y: 0, room:142, to_x: 1, to_y:0))
+		all[155] = room
 	}
 }

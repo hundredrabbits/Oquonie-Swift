@@ -78,6 +78,11 @@ class Player : Event
 		
 		print("moving: \(destination) -> \(x)/\(y)")
 	}
+	
+	override func update()
+	{
+		print("test")
+	}
 
 	required init?(coder aDecoder: NSCoder)
 	{

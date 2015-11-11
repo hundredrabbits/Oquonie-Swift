@@ -11,7 +11,7 @@ class Speaker : Event
 	{
 		super.init(x: x, y: y)
 		
-		updateSprite("event.speaker.l.1.png")
+		updateSprite("event.speaker.1.png")
 	}
 	
 	override func collide()

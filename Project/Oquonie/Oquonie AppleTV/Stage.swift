@@ -54,12 +54,12 @@ class Stage : SKNode
 		floor0e = Tile(sprite: Types.tile, size: templates.floor)
 		flooree = Tile(sprite: Types.tile, size: templates.floor)
 		
-		step1 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
+		step1 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 1.5, y: -templates.step.height * 0.35), size: templates.step)
 		step2 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
 		step3 = Tile(sprite: Types.step, orientation:Orientation.l, position: CGPoint(x: -templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
 		step4 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
 		step5 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
-		step6 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 1.5, y: -templates.step.height), size: templates.step)
+		step6 = Tile(sprite: Types.step, orientation:Orientation.r, position: CGPoint(x:  templates.step.width * 1.5, y: -templates.step.height * 0.35), size: templates.step)
 		
 		super.init()
 		
