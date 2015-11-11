@@ -25,15 +25,25 @@ class Door : Event
 	
 	override func collide()
 	{
-		if self.requirement != nil { print("Is: \(player.persona) Required: \(self.requirement)") ; return }
-		
-		print("> WARP: \(destination)")
+		if self.requirement != nil { collide_gate() }
+		else{ collide_normal() }
 		player.isMoving = false
-		
-		stage.enter(world.all[destination])
-		player.x = self.to_x
-		player.y = self.to_y
-		player.updatePosition(to_x,y:to_y)
+	}
+	
+	func collide_normal()
+	{
+		print("> WARP - \(destination)")
+		player.warp(self.destination,to_x:self.to_x,to_y:self.to_y)
+	}
+	
+	func collide_gate()
+	{
+		if player.persona != self.requirement {
+			print("! LOCKED - Is: \(player.persona) Required: \(self.requirement)")
+		}
+		else{
+			player.warp(self.destination,to_x:self.to_x,to_y:self.to_y)
+		}
 	}
 
 	required init?(coder aDecoder: NSCoder)

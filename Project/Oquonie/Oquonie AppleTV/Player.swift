@@ -14,7 +14,7 @@ class Player : Event
 	{
 		super.init(x:0,y:0)
 		
-		let imageName = "char1.stand.l.f.3.png"
+		let imageName = "char.necomedre.stand.f.1.png"
 		
 		var image:UIImage!
 		var texture:SKTexture!
@@ -69,6 +69,14 @@ class Player : Event
 	override func remove()
 	{
 		print("cannot remove player")
+	}
+	
+	func warp(destination:Int,to_x:Int,to_y:Int)
+	{
+		stage.enter(world.all[destination])
+		player.x = to_x
+		player.y = to_y
+		player.updatePosition(to_x,y:to_y)
 	}
 
 	required init?(coder aDecoder: NSCoder)
