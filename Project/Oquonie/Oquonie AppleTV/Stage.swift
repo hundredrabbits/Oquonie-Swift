@@ -183,6 +183,13 @@ class Stage : SKNode
 		events_root.addChild(event)
 	}
 	
+	func parallaxTo(x:CGFloat, y:CGFloat)
+	{
+		let pos_x = CGRectGetMidX(gameScene.frame) + (x * 0.1)
+		let pos_y = CGRectGetMidY(gameScene.frame) + (y * 0.1) - (templates.player.height * 0.5)
+		self.runAction(SKAction.moveTo(CGPoint(x:pos_x,y:pos_y), duration: 0.25), completion: { })
+	}
+	
 	func eventAtLocation(x:Int,y:Int) -> Event!
 	{
 		for event in events_root.children {

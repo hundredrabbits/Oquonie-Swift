@@ -20,7 +20,7 @@ class Event : SKNode
 		
 		self.x = x
 		self.y = y
-		sprite.position = CGPoint(x: 0,y: 100)
+		sprite.position = CGPoint(x: 0,y: templates.player.height * 0.335)
 		
 		position = stage.positionAt(self.x, y: self.y)
 		

@@ -40,7 +40,7 @@ class Player : Event
 	func move(x:Int, y:Int)
 	{
 		if isMoving == true { return }
-		isMoving = true
+		
 		updateSpriteStyle(x,y:y)
 		action(x,y:y)
 		updateSprite()
@@ -57,15 +57,31 @@ class Player : Event
 			destination_event.collide()
 		}
 		else if destination_x < 2 && destination_x > -2 && destination_y < 2 && destination_y > -2 {
-			self.x = destination_x
-			self.y = destination_y
-			print("moving: \(x)/\(y) to: \(self.x)/\(self.y)")
-			player.runAction(SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.25), completion: { self.isMoving = false })
+			walk(destination_x, destination_y:destination_y)
 		}
 		else{
-			print("disabled: \(destination_x + x)/\(destination_x + y)")
-			self.isMoving = false
+			stand()
 		}
+	}
+	
+	func walk(destination_x:Int, destination_y:Int)
+	{
+		isMoving = true
+		self.state = States.walk
+		updateSprite()
+		self.x = destination_x
+		self.y = destination_y
+		print("moving: \(x)/\(y) to: \(self.x)/\(self.y)")
+		player.runAction(SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.25), completion: { self.stand() })
+		stage.parallaxTo(stage.positionAt(self.x,y:self.y).x,y:stage.positionAt(self.x,y:self.y).y)
+	}
+	
+	func stand()
+	{
+		print("stand")
+		self.isMoving = false
+		self.state = States.stand
+		updateSprite()
 	}
 	
 	func updateSpriteStyle(x:Int, y:Int)
@@ -98,9 +114,9 @@ class Player : Event
 	
 	func warp(destination:Int,to_x:Int,to_y:Int)
 	{
-		stage.enter(world.all[destination])
 		player.updatePosition(to_x,y:to_y)
-		
+		stage.enter(world.all[destination])
+		stage.parallaxTo(stage.positionAt(self.x,y:self.y).x,y:stage.positionAt(self.x,y:self.y).y)
 		print("moving: \(destination) -> \(x)/\(y)")
 	}
 	
@@ -108,10 +124,9 @@ class Player : Event
 	{
 		var imageName = "char.necomedre.\(state).\(direction).1.png"
 		
-		if direction == Direction.b {
+		if direction == Direction.b && state == States.stand {
 			imageName = "char.necomedre.\(state).\(direction).png"
 		}
-		
 		
 		var image:UIImage!
 		var texture:SKTexture!
@@ -119,6 +134,9 @@ class Player : Event
 		if UIImage(named: imageName) != nil {
 			image = UIImage(named: imageName)!
 			texture = SKTexture(image: image!)
+		}
+		else{
+			print("missing: \(imageName)")
 		}
 		
 		sprite.texture = texture

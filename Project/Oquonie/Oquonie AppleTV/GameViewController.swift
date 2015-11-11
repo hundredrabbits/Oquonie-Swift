@@ -5,18 +5,19 @@
 import UIKit
 import SpriteKit
 
+var gameScene:SKScene!
+
 class GameViewController: UIViewController
 {
     override func viewDidLoad()
 	{
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed: "GameScene") {
-            let skView = self.view as! SKView
-			scene.size = CGSize(width: 1400, height: 1400)
-			scene.scaleMode = .AspectFill
-            skView.presentScene(scene)
-		}
+		
+		gameScene = GameScene(fileNamed: "GameScene")
+		let skView = self.view as! SKView
+		gameScene.size = CGSize(width: 1400, height: 1400)
+		gameScene.scaleMode = .AspectFill
+		skView.presentScene(gameScene)
 		
 		start()
     }
