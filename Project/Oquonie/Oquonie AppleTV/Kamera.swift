@@ -5,7 +5,7 @@
 import SceneKit
 import Foundation
 
-class Red : Event
+class Kamera : Event
 {
 	override init(x:Int,y:Int)
 	{

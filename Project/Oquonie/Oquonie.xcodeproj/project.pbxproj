@@ -24,6 +24,8 @@
 		5755DCF11BF2994900C5353D /* NoFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCF01BF2994900C5353D /* NoFace.swift */; };
 		5755DCF41BF2B71700C5353D /* Wizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCF21BF2B6A400C5353D /* Wizard.swift */; };
 		5755DD041BF2BAD900C5353D /* Red.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCF51BF2BAC200C5353D /* Red.swift */; };
+		5755DD071BF2CC2800C5353D /* TownWarp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DD051BF2CC1F00C5353D /* TownWarp.swift */; };
+		5755DD091BF2CDEA00C5353D /* Kamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DD081BF2CDEA00C5353D /* Kamera.swift */; };
 		575BE1311A7D6ACB0085179C /* tile.100.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E38B196B15A1002AAFAB /* tile.100.png */; };
 		575BE1321A7D6ACB0085179C /* tile.101.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E38C196B15A1002AAFAB /* tile.101.png */; };
 		575BE1331A7D6ACB0085179C /* tile.102.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C7E38D196B15A1002AAFAB /* tile.102.png */; };
@@ -1619,6 +1621,8 @@
 		5755DCF01BF2994900C5353D /* NoFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoFace.swift; sourceTree = "<group>"; };
 		5755DCF21BF2B6A400C5353D /* Wizard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wizard.swift; sourceTree = "<group>"; };
 		5755DCF51BF2BAC200C5353D /* Red.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Red.swift; sourceTree = "<group>"; };
+		5755DD051BF2CC1F00C5353D /* TownWarp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TownWarp.swift; sourceTree = "<group>"; };
+		5755DD081BF2CDEA00C5353D /* Kamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kamera.swift; sourceTree = "<group>"; };
 		577350971A75BF1D00F1B3DA /* event.37.l.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.1.png; path = en.assets/event.37.l.1.png; sourceTree = "<group>"; };
 		577350981A75BF1D00F1B3DA /* event.37.l.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.2.png; path = en.assets/event.37.l.2.png; sourceTree = "<group>"; };
 		577350991A75BF1D00F1B3DA /* event.37.l.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.37.l.3.png; path = en.assets/event.37.l.3.png; sourceTree = "<group>"; };
@@ -2529,7 +2533,6 @@
 				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
 				57C843E61BF2356300288847 /* Oquonie Core */,
 				571A8C8C1A793CD5008E846E /* Oquonie Core Archive */,
-				57013B8C1A7954E800612048 /* Oquonie Desktop */,
 				57A668481BEE9894007CDD8B /* Oquonie iOS */,
 				57A668621BEE98AA007CDD8B /* Oquonie AppleTV */,
 				038BA0E9188B849B00A3ED4B /* en.sounds */,
@@ -2774,13 +2777,6 @@
 			name = "Sound Effects";
 			sourceTree = "<group>";
 		};
-		57013B8C1A7954E800612048 /* Oquonie Desktop */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Oquonie Desktop";
-			sourceTree = "<group>";
-		};
 		571A8C8C1A793CD5008E846E /* Oquonie Core Archive */ = {
 			isa = PBXGroup;
 			children = (
@@ -2995,6 +2991,8 @@
 				5755DCF01BF2994900C5353D /* NoFace.swift */,
 				5755DCF21BF2B6A400C5353D /* Wizard.swift */,
 				5755DCF51BF2BAC200C5353D /* Red.swift */,
+				5755DD051BF2CC1F00C5353D /* TownWarp.swift */,
+				5755DD081BF2CDEA00C5353D /* Kamera.swift */,
 			);
 			name = Events;
 			path = "Oquonie AppleTV";
@@ -4020,10 +4018,12 @@
 				5755DCE31BF2970300C5353D /* Event.swift in Sources */,
 				57C843D91BF233CB00288847 /* Settings.swift in Sources */,
 				57C843D31BF233CB00288847 /* Tile.swift in Sources */,
+				5755DD091BF2CDEA00C5353D /* Kamera.swift in Sources */,
 				5755DCF11BF2994900C5353D /* NoFace.swift in Sources */,
 				5755DCE41BF2970300C5353D /* Blocker.swift in Sources */,
 				5755DD041BF2BAD900C5353D /* Red.swift in Sources */,
 				57C843D21BF233CB00288847 /* Stage.swift in Sources */,
+				5755DD071BF2CC2800C5353D /* TownWarp.swift in Sources */,
 				5755DCE61BF2970300C5353D /* Gate.swift in Sources */,
 				5755DCEB1BF2970300C5353D /* Speaker.swift in Sources */,
 				57C843DA1BF233CB00288847 /* World.swift in Sources */,

@@ -40,6 +40,8 @@ enum Personas
 	case nestorine
 	case nemedique
 	case nastazie
+	case photobooth
+	case catfishbird
 }
 
 enum Soundtrack
@@ -59,6 +61,8 @@ enum Soundtrack
 	case nepturne
 	case pillar
 	case warp
+	case purgatory
+	case play
 }
 
 enum Theme
@@ -66,4 +70,6 @@ enum Theme
 	case white
 	case black
 	case red
+	case void
+	case pest
 }

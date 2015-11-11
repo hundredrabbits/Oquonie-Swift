@@ -5,7 +5,7 @@
 import SceneKit
 import Foundation
 
-class Red : Event
+class TownWarp : Event
 {
 	override init(x:Int,y:Int)
 	{
