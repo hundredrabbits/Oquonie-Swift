@@ -13,8 +13,7 @@
 		5755DCE31BF2970300C5353D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C21BF108D900E4D319 /* Event.swift */; };
 		5755DCE41BF2970300C5353D /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C41BF1092500E4D319 /* Blocker.swift */; };
 		5755DCE51BF2970300C5353D /* Pillar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C61BF10DCF00E4D319 /* Pillar.swift */; };
-		5755DCE61BF2970300C5353D /* Gate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C81BF10E5E00E4D319 /* Gate.swift */; };
-		5755DCE71BF2970300C5353D /* Warp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2CA1BF10E7B00E4D319 /* Warp.swift */; };
+		5755DCE71BF2970300C5353D /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2CA1BF10E7B00E4D319 /* Door.swift */; };
 		5755DCE81BF2970300C5353D /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F31BF2878300288847 /* Ramen.swift */; };
 		5755DCE91BF2970300C5353D /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843F61BF28A4200288847 /* Map.swift */; };
 		5755DCEA1BF2970300C5353D /* Owl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C843FC1BF292C400288847 /* Owl.swift */; };
@@ -230,7 +229,6 @@
 		57A6686C1BEE98AA007CDD8B /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686B1BEE98AA007CDD8B /* Game.xcassets */; };
 		57A6686F1BEE98AA007CDD8B /* AppleTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686D1BEE98AA007CDD8B /* AppleTV.storyboard */; };
 		57A668711BEE98AA007CDD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
-		57C0E43B1A7C29AB008728C8 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C0E4391A7C29AB008728C8 /* Encounter.m */; };
 		57C1AA0A1AA37397005EFD29 /* dialog_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0375469318A70E5000807397 /* dialog_cat.wav */; };
 		57C1AA0B1AA37397005EFD29 /* dialog_devine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB518A67C0400BFA21E /* dialog_devine.wav */; };
 		57C1AA0C1AA37397005EFD29 /* dialog_noface.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB618A67C0400BFA21E /* dialog_noface.wav */; };
@@ -1649,7 +1647,6 @@
 		57A6686B1BEE98AA007CDD8B /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Game.xcassets; path = "Oquonie AppleTV/Game.xcassets"; sourceTree = "<group>"; };
 		57A6686E1BEE98AA007CDD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppleTV.storyboard; sourceTree = "<group>"; };
 		57A668701BEE98AA007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Oquonie AppleTV/Assets.xcassets"; sourceTree = "<group>"; };
-		57C0E4391A7C29AB008728C8 /* Encounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encounter.m; sourceTree = "<group>"; };
 		57C843E21BF2341100288847 /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
 		57C843E41BF234C200288847 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		57C843EB1BF237A300288847 /* Info iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info iOS.plist"; sourceTree = "<group>"; };
@@ -1671,8 +1668,7 @@
 		57E3D2C21BF108D900E4D319 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		57E3D2C41BF1092500E4D319 /* Blocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blocker.swift; sourceTree = "<group>"; };
 		57E3D2C61BF10DCF00E4D319 /* Pillar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pillar.swift; sourceTree = "<group>"; };
-		57E3D2C81BF10E5E00E4D319 /* Gate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gate.swift; sourceTree = "<group>"; };
-		57E3D2CA1BF10E7B00E4D319 /* Warp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warp.swift; sourceTree = "<group>"; };
+		57E3D2CA1BF10E7B00E4D319 /* Door.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 		57F0E2CE1BF147AC0067CC94 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = "Oquonie AppleTV/Player.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2781,7 +2777,6 @@
 			isa = PBXGroup;
 			children = (
 				571A8C901A793E31008E846E /* xxiivvSettings.h */,
-				57C0E4391A7C29AB008728C8 /* Encounter.m */,
 			);
 			name = "Oquonie Core Archive";
 			sourceTree = "<group>";
@@ -2980,8 +2975,7 @@
 				57E3D2C21BF108D900E4D319 /* Event.swift */,
 				57E3D2C41BF1092500E4D319 /* Blocker.swift */,
 				57E3D2C61BF10DCF00E4D319 /* Pillar.swift */,
-				57E3D2C81BF10E5E00E4D319 /* Gate.swift */,
-				57E3D2CA1BF10E7B00E4D319 /* Warp.swift */,
+				57E3D2CA1BF10E7B00E4D319 /* Door.swift */,
 				57C843F31BF2878300288847 /* Ramen.swift */,
 				57C843F61BF28A4200288847 /* Map.swift */,
 				57C843FC1BF292C400288847 /* Owl.swift */,
@@ -3995,7 +3989,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57C0E43B1A7C29AB008728C8 /* Encounter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4008,7 +4001,7 @@
 				57C843DB1BF233CB00288847 /* Room.swift in Sources */,
 				5755DCE91BF2970300C5353D /* Map.swift in Sources */,
 				57C843DD1BF233CB00288847 /* AppDelegate.swift in Sources */,
-				5755DCE71BF2970300C5353D /* Warp.swift in Sources */,
+				5755DCE71BF2970300C5353D /* Door.swift in Sources */,
 				5755DCEF1BF2982E00C5353D /* Tree.swift in Sources */,
 				5755DCE51BF2970300C5353D /* Pillar.swift in Sources */,
 				5755DCE81BF2970300C5353D /* Ramen.swift in Sources */,
@@ -4024,7 +4017,6 @@
 				5755DD041BF2BAD900C5353D /* Red.swift in Sources */,
 				57C843D21BF233CB00288847 /* Stage.swift in Sources */,
 				5755DD071BF2CC2800C5353D /* TownWarp.swift in Sources */,
-				5755DCE61BF2970300C5353D /* Gate.swift in Sources */,
 				5755DCEB1BF2970300C5353D /* Speaker.swift in Sources */,
 				57C843DA1BF233CB00288847 /* World.swift in Sources */,
 				57C843D01BF233CB00288847 /* GameViewController.swift in Sources */,

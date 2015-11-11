@@ -8,12 +8,13 @@ import Foundation
 class Player : Event
 {
 	var isMoving:Bool = false
+	var persona:Personas = Personas.necomedre
 	
 	init()
 	{
 		super.init(x:0,y:0)
 		
-		let imageName = "char2.stand.l.f.3.png"
+		let imageName = "char1.stand.l.f.3.png"
 		
 		var image:UIImage!
 		var texture:SKTexture!

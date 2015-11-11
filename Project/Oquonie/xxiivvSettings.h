@@ -1,10 +1,3 @@
-//
-//  xxiivvViewController+settings.h
-//  Oquonie
-//
-//  Created by Devine Lu Linvega on 1/9/2014.
-//  Copyright (c) 2014 XXIIVV. All rights reserved.
-//
 
 #import "User.h"
 #import "World.h"
@@ -79,36 +72,8 @@
 #define tagNotifications            490
 #define tagCharacter                495
 
-#define audioNecomedre			@"necomedre"
-#define audioNephtaline			@"nephtaline"
-#define audioNeomine			@"neomine"
-#define audioNestorine			@"nestorine"
-#define audioNemedique			@"nemedique"
-#define audioNepturne			@"nepturne"
-#define audioNastazie			@"nastazie"
-#define audioLobby				@"town1"
-#define audioLobby2				@"town2"
-#define audioLobby3				@"town3"
-#define audioQuiet				@"quiet"
-#define audioPillar				@"pillartree"
-#define audioWarp				@"warp"
-#define audioPurgatory			@"purgatory"
-#define audioEndless			@"endless"
-#define audioGlitch				@"glitch"
-#define audioPlay				@"play"
-#define audioPhotoBooth			@"kamera"
-
 #define audioRekka				@"rekka"
 #define audioDevine				@"devine"
-
-#define characterNecomedre		1
-#define characterNephtaline		2
-#define characterNeomine		3
-#define characterNestorine		4
-#define characterNemedique		5
-#define characterDocument		6
-#define characterCat			7
-#define characterNastazie		8
 
 #define eventNecomedre			@"2"
 #define eventNephtaline			@"3"
@@ -183,18 +148,3 @@
 #define locationNemediqueEnter		100
 #define locationNemediqueRamen		101
 #define locationNemediquePillar		103
-
-#define roomCenter				@"0,0"
-
-#define intStr() [NSString stringWithFormat:@"%d",int]
-
-#define userPositionString		[NSString stringWithFormat:@"%d,%d",[user x],[user y]]
-
-#define MARK	CMLog(@"%s", __PRETTY_FUNCTION__);
-#define CMLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
-
-#define console(x) NSLog(x);
-
-#define test(x) NSLog(@"%@",x);
-
-#define random(min,max) ((arc4random() % (max-min+1)) + min)

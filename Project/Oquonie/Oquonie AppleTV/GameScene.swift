@@ -20,7 +20,7 @@ class GameScene: SKScene
 		player.zPosition = 900
 		stage.events_root.addChild(player)
 		
-		stage.enter(world.all[2])
+		stage.enter(world.all[5])
 	}
 
     override func update(currentTime: CFTimeInterval)

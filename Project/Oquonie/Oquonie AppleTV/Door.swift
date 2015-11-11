@@ -4,13 +4,14 @@
 
 import Foundation
 
-class Warp : Event
+class Door : Event
 {
 	var destination:Int!
 	var to_x:Int!
 	var to_y:Int!
+	var requirement:Personas!
 	
-	init(x:Int,y:Int,room:Int,to_x:Int,to_y:Int)
+	init(x:Int,y:Int,requirement:Personas! = nil,room:Int,to_x:Int,to_y:Int)
 	{
 		super.init(x: x, y: y)
 		
@@ -19,10 +20,13 @@ class Warp : Event
 		self.destination = room
 		self.to_x = to_x
 		self.to_y = to_y
+		self.requirement = requirement
 	}
 	
 	override func collide()
 	{
+		if self.requirement != nil { print("Is: \(player.persona) Required: \(self.requirement)") ; return }
+		
 		print("> WARP: \(destination)")
 		player.isMoving = false
 		
