@@ -145,7 +145,14 @@ class Player : Event
 	
 	override func fixedUpdate()
 	{
-//		print("!")
+	}
+	
+	func hasSpell(spell:Wizard) -> Bool
+	{
+		for spell in spellbook.spells {
+			if spell == spell { return true}
+		}
+		return false
 	}
 
 	required init?(coder aDecoder: NSCoder)

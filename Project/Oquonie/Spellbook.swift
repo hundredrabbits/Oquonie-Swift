@@ -7,7 +7,7 @@ import Foundation
 
 class Spellbook : SKNode
 {
-	var spells:Array<Personas> = []
+	var spells:Array<Wizard> = []
 	
 	var spellSlot1:SKSpriteNode!
 	var spellSlot2:SKSpriteNode!
@@ -32,6 +32,12 @@ class Spellbook : SKNode
 		spellSlot1.zPosition = 9000
 		spellSlot2.zPosition = 9000
 		spellSlot3.zPosition = 9000
+	}
+	
+	func addSpell(spell:Wizard)
+	{
+		print("Added \(spell)")
+		spells.append(spell)
 	}
 
 	required init?(coder aDecoder: NSCoder)

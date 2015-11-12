@@ -24,7 +24,7 @@ class GameScene: SKScene
 		player.zPosition = 900
 		stage.events_root.addChild(player)
 		
-		stage.enter(world.all[5])
+		stage.enter(world.all[33])
 		
 		self.addChild(spellbook)
 		
