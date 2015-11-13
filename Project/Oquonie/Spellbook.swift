@@ -17,15 +17,15 @@ class Spellbook : SKNode
 	{
 		super.init()
 		
-		spellSlot1 = SKSpriteNode(texture: textureWithName("letterSpell1.png"), color: UIColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
+		spellSlot1 = SKSpriteNode(texture: textureWithName("letter.spell.blank.png"), color: UIColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
 		spellSlot1.position = CGPoint(x: CGRectGetMidX(gameScene.frame), y: 0)
 		addChild(spellSlot1)
 		
-		spellSlot2 = SKSpriteNode(texture: textureWithName("letterSpell2.png"), color: UIColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
+		spellSlot2 = SKSpriteNode(texture: textureWithName("letter.spell.blank.png"), color: UIColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
 		spellSlot2.position = CGPoint(x: CGRectGetMidX(gameScene.frame) + (templates.spell.width * 1), y: 0)
 		addChild(spellSlot2)
 		
-		spellSlot3 = SKSpriteNode(texture: textureWithName("letterSpell3.png"), color: UIColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
+		spellSlot3 = SKSpriteNode(texture: textureWithName("letter.spell.blank.png"), color: UIColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
 		spellSlot3.position = CGPoint(x: CGRectGetMidX(gameScene.frame) - (templates.spell.width * 1), y: 0)
 		addChild(spellSlot3)
 		

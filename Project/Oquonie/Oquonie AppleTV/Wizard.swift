@@ -16,7 +16,7 @@ class Wizard : Event
 		self.spell = spell
 		updateSprite("event.\(spell).1.png")
 		
-		addDialog()
+		_dialog()
 	}
 	
 	override func onRoomEnter()
@@ -24,26 +24,24 @@ class Wizard : Event
 		updateDialog()
 	}
 	
-	func addDialog()
+	func _dialog()
 	{
-		let imageName = "notification.blank.png"
-		var image:UIImage!
-		var texture:SKTexture!
-		
-		if UIImage(named: imageName) != nil {
-			image = UIImage(named: imageName)!
-			texture = SKTexture(image: image!)
-		}
-		
-		dialogSprite = SKSpriteNode(texture: texture)
+		dialogSprite = SKSpriteNode(texture: textureWithName("notification.\(spell).png"))
 		dialogSprite.size = templates.player
 		dialogSprite.position = CGPoint(x: 0,y: templates.player.height/2)
 		addChild(dialogSprite)
+		
+		let verticalPos = (templates.player.height/2)
+		let move_up   = SKAction.moveTo(CGPoint(x: 0,y: verticalPos), duration: 1.5)
+		let move_down = SKAction.moveTo(CGPoint(x: 0,y: verticalPos + 5), duration: 1.5)
+		let sequence  = SKAction.sequence([move_up,move_down])
+		let test = SKAction.repeatActionForever(sequence)
+	
+		dialogSprite.runAction(test)
 	}
 	
 	override func collide()
 	{
-		print("Collided with \(spell)")
 		if player.hasSpell(self) == true {
 			removeSpell()
 		}
@@ -52,6 +50,12 @@ class Wizard : Event
 		}
 		player.isMoving = false
 		updateDialog()
+	}
+	
+	override func bump()
+	{
+		sprite.position = CGPoint(x:0,y:sprite_position.y + 5)
+		sprite.runAction( SKAction.moveToY(sprite_position.y, duration: 0.1) )
 	}
 	
 	func castSpell()
@@ -66,7 +70,12 @@ class Wizard : Event
 	
 	func updateDialog()
 	{
-		dialogSprite.alpha = (player.hasSpell(self) == true) ? 0 : 1
+		if player.hasSpell(self) == true {
+			dialogSprite.runAction(SKAction.fadeAlphaTo(0, duration: 0.1))
+		}
+		else{
+			dialogSprite.runAction(SKAction.fadeAlphaTo(1, duration: 0.1))
+		}
 	}
 	
 	required init?(coder aDecoder: NSCoder)

@@ -8,6 +8,7 @@ import Foundation
 class Event : SKNode
 {
 	var sprite:SKSpriteNode!
+	var sprite_position:CGPoint = CGPoint(x: 0,y: templates.player.height * 0.335)
 	var x:Int!
 	var y:Int!
 	var target:Tile!
@@ -21,7 +22,7 @@ class Event : SKNode
 		
 		self.x = x
 		self.y = y
-		sprite.position = CGPoint(x: 0,y: templates.player.height * 0.335)
+		sprite.position = sprite_position
 		
 		position = stage.positionAt(self.x, y: self.y)
 		
@@ -29,6 +30,11 @@ class Event : SKNode
 		marker.fillColor = UIColor.blueColor()
 		marker.strokeColor = UIColor.clearColor()
 		addChild(marker)
+	}
+	
+	func bump()
+	{
+		
 	}
 	
 	func updateSprite(imageName:String)

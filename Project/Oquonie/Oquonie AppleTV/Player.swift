@@ -47,7 +47,7 @@ class Player : Event
 		// Look for event
 		if destination_event != nil {
 			destination_event.collide()
-			bump()
+			destination_event.bump()
 		}
 		else if destination_x < 2 && destination_x > -2 && destination_y < 2 && destination_y > -2 {
 			walk(destination_x, destination_y:destination_y)
@@ -57,7 +57,7 @@ class Player : Event
 		}
 	}
 	
-	func bump()
+	override func bump()
 	{
 		print("bump!")
 	}
