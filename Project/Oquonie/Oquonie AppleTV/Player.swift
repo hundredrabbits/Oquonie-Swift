@@ -149,8 +149,8 @@ class Player : Event
 	
 	func hasSpell(spell:Wizard) -> Bool
 	{
-		for spell in spellbook.spells {
-			if spell == spell { return true}
+		for _spell in spellbook.spells {
+			if spell == _spell { return true}
 		}
 		return false
 	}
