@@ -18,7 +18,7 @@ class Player : Event
 		super.init(x:0,y:0)
 		
 		sprite = SKSpriteNode(texture: nil, color: UIColor.clearColor(), size: templates.player)
-		sprite.position = CGPoint(x: 0, y: 100)
+		sprite.position = sprite_position
 		addChild(sprite)
 		
 		let marker = SKShapeNode(circleOfRadius: 5)
@@ -48,6 +48,7 @@ class Player : Event
 		if destination_event != nil {
 			destination_event.collide()
 			destination_event.bump()
+			bump(destination_event)
 		}
 		else if destination_x < 2 && destination_x > -2 && destination_y < 2 && destination_y > -2 {
 			walk(destination_x, destination_y:destination_y)
@@ -57,9 +58,16 @@ class Player : Event
 		}
 	}
 	
-	override func bump()
+	func bump(event:Event)
 	{
-		print("bump!")
+		if event.position.x < position.x {
+			sprite.position = CGPoint(x:5,y:sprite_position.y)
+			sprite.runAction( SKAction.moveToX(sprite_position.x, duration: 0.1) )
+		}
+		else{
+			sprite.position = CGPoint(x:-5,y:sprite_position.y)
+			sprite.runAction( SKAction.moveToX(sprite_position.x, duration: 0.1) )
+		}
 	}
 	
 	func walk(destination_x:Int, destination_y:Int)

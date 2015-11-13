@@ -34,7 +34,8 @@ class Event : SKNode
 	
 	func bump()
 	{
-		
+		sprite.position = CGPoint(x:0,y:sprite_position.y + 5)
+		sprite.runAction( SKAction.moveToY(sprite_position.y, duration: 0.1) )
 	}
 	
 	func updateSprite(imageName:String)
