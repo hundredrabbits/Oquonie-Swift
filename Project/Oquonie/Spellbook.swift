@@ -36,9 +36,24 @@ class Spellbook : SKNode
 	
 	func update()
 	{
-		spellSlot1.texture = spells.count > 0 ? textureWithName("letter.spell.\(spells[0].spell).png") : textureWithName("letter.spell.blank.png")
-		spellSlot2.texture = spells.count > 1 ? textureWithName("letter.spell.\(spells[1].spell).png") : textureWithName("letter.spell.blank.png")
-		spellSlot3.texture = spells.count > 2 ? textureWithName("letter.spell.\(spells[2].spell).png") : textureWithName("letter.spell.blank.png")
+		spellSlot1.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(gameScene.frame) - (templates.spell.width * 1), y: -10), duration: 0.15), completion: {
+			self.spellSlot1.texture = self.spells.count > 0 ? textureWithName("letter.spell.\(self.spells[0].spell).png") : textureWithName("letter.spell.blank.png")
+			self.spellSlot1.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(gameScene.frame) - (templates.spell.width * 1), y: 0), duration: 0.15))
+			self.spellSlot1.alpha = 0
+			self.spellSlot1.runAction(SKAction.fadeAlphaTo(1, duration: 0.15))
+		})
+		spellSlot2.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(gameScene.frame), y: -10), duration: 0.20), completion: {
+			self.spellSlot2.texture = self.spells.count > 1 ? textureWithName("letter.spell.\(self.spells[1].spell).png") : textureWithName("letter.spell.blank.png")
+			self.spellSlot2.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(gameScene.frame), y: 0), duration: 0.20))
+			self.spellSlot2.alpha = 0
+			self.spellSlot2.runAction(SKAction.fadeAlphaTo(1, duration: 0.20))
+		})
+		spellSlot3.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(gameScene.frame) + (templates.spell.width * 1), y: -10), duration: 0.25), completion: {
+			self.spellSlot3.texture = self.spells.count > 2 ? textureWithName("letter.spell.\(self.spells[2].spell).png") : textureWithName("letter.spell.blank.png")
+			self.spellSlot3.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(gameScene.frame) + (templates.spell.width * 1), y: 0), duration: 0.25))
+			self.spellSlot3.alpha = 0
+			self.spellSlot3.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
+		})
 	}
 	
 	func addSpell(spell:Wizard)
@@ -53,7 +68,7 @@ class Spellbook : SKNode
 		var newSpellbook:Array<Wizard> = []
 		for _spell in spells {
 			if spell == _spell { continue }
-			newSpellbook.append(spell)
+			newSpellbook.append(_spell)
 		}
 		spells = newSpellbook
 		update()

@@ -56,13 +56,11 @@ class Wizard : Event
 	
 	func castSpell()
 	{
-		print("cast spell")
 		spellbook.addSpell(self)
 	}
 	
 	func removeSpell()
 	{
-		print("remove spell")
 		spellbook.removeSpell(self)
 	}
 	
