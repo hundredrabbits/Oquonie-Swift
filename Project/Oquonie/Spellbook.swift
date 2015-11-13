@@ -34,10 +34,29 @@ class Spellbook : SKNode
 		spellSlot3.zPosition = 9000
 	}
 	
+	func update()
+	{
+		spellSlot1.texture = spells.count > 0 ? textureWithName("letter.spell.\(spells[0].spell).png") : textureWithName("letter.spell.blank.png")
+		spellSlot2.texture = spells.count > 1 ? textureWithName("letter.spell.\(spells[1].spell).png") : textureWithName("letter.spell.blank.png")
+		spellSlot3.texture = spells.count > 2 ? textureWithName("letter.spell.\(spells[2].spell).png") : textureWithName("letter.spell.blank.png")
+	}
+	
 	func addSpell(spell:Wizard)
 	{
 		print("Added \(spell)")
 		spells.append(spell)
+		update()
+	}
+	
+	func removeSpell(spell:Wizard)
+	{
+		var newSpellbook:Array<Wizard> = []
+		for _spell in spells {
+			if spell == _spell { continue }
+			newSpellbook.append(spell)
+		}
+		spells = newSpellbook
+		update()
 	}
 
 	required init?(coder aDecoder: NSCoder)

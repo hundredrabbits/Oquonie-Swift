@@ -63,12 +63,7 @@ class Wizard : Event
 	func removeSpell()
 	{
 		print("remove spell")
-		var newSpellbook:Array<Wizard> = []
-		for spell in spellbook.spells {
-			if spell == self { continue }
-			newSpellbook.append(spell)
-		}
-		spellbook.spells = newSpellbook
+		spellbook.removeSpell(self)
 	}
 	
 	func updateDialog()

@@ -264,15 +264,6 @@
 		570757521BF2D78400638CAE /* letterQ.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755451BF2D78200638CAE /* letterQ.png */; };
 		570757531BF2D78400638CAE /* letterR.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755461BF2D78200638CAE /* letterR.png */; };
 		570757541BF2D78400638CAE /* letterS.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755471BF2D78200638CAE /* letterS.png */; };
-		570757551BF2D78400638CAE /* letterSpell0.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755481BF2D78200638CAE /* letterSpell0.png */; };
-		570757561BF2D78400638CAE /* letterSpell1.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755491BF2D78200638CAE /* letterSpell1.png */; };
-		570757571BF2D78400638CAE /* letterSpell2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707554A1BF2D78200638CAE /* letterSpell2.png */; };
-		570757581BF2D78400638CAE /* letterSpell3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707554B1BF2D78200638CAE /* letterSpell3.png */; };
-		570757591BF2D78400638CAE /* letterSpell4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707554C1BF2D78200638CAE /* letterSpell4.png */; };
-		5707575A1BF2D78400638CAE /* letterSpell5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707554D1BF2D78200638CAE /* letterSpell5.png */; };
-		5707575B1BF2D78400638CAE /* letterSpell6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707554E1BF2D78200638CAE /* letterSpell6.png */; };
-		5707575C1BF2D78400638CAE /* letterSpell7.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707554F1BF2D78200638CAE /* letterSpell7.png */; };
-		5707575D1BF2D78400638CAE /* letterSpell8.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755501BF2D78200638CAE /* letterSpell8.png */; };
 		5707575E1BF2D78400638CAE /* letterSpellA.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755511BF2D78200638CAE /* letterSpellA.png */; };
 		5707575F1BF2D78400638CAE /* letterSpellB.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755521BF2D78300638CAE /* letterSpellB.png */; };
 		570757601BF2D78400638CAE /* letterSpellC.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755531BF2D78300638CAE /* letterSpellC.png */; };
@@ -868,15 +859,6 @@
 		570755451BF2D78200638CAE /* letterQ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterQ.png; path = en.assets/letterQ.png; sourceTree = "<group>"; };
 		570755461BF2D78200638CAE /* letterR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterR.png; path = en.assets/letterR.png; sourceTree = "<group>"; };
 		570755471BF2D78200638CAE /* letterS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterS.png; path = en.assets/letterS.png; sourceTree = "<group>"; };
-		570755481BF2D78200638CAE /* letterSpell0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell0.png; path = en.assets/letterSpell0.png; sourceTree = "<group>"; };
-		570755491BF2D78200638CAE /* letterSpell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell1.png; path = en.assets/letterSpell1.png; sourceTree = "<group>"; };
-		5707554A1BF2D78200638CAE /* letterSpell2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell2.png; path = en.assets/letterSpell2.png; sourceTree = "<group>"; };
-		5707554B1BF2D78200638CAE /* letterSpell3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell3.png; path = en.assets/letterSpell3.png; sourceTree = "<group>"; };
-		5707554C1BF2D78200638CAE /* letterSpell4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell4.png; path = en.assets/letterSpell4.png; sourceTree = "<group>"; };
-		5707554D1BF2D78200638CAE /* letterSpell5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell5.png; path = en.assets/letterSpell5.png; sourceTree = "<group>"; };
-		5707554E1BF2D78200638CAE /* letterSpell6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell6.png; path = en.assets/letterSpell6.png; sourceTree = "<group>"; };
-		5707554F1BF2D78200638CAE /* letterSpell7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell7.png; path = en.assets/letterSpell7.png; sourceTree = "<group>"; };
-		570755501BF2D78200638CAE /* letterSpell8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpell8.png; path = en.assets/letterSpell8.png; sourceTree = "<group>"; };
 		570755511BF2D78200638CAE /* letterSpellA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpellA.png; path = en.assets/letterSpellA.png; sourceTree = "<group>"; };
 		570755521BF2D78300638CAE /* letterSpellB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpellB.png; path = en.assets/letterSpellB.png; sourceTree = "<group>"; };
 		570755531BF2D78300638CAE /* letterSpellC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterSpellC.png; path = en.assets/letterSpellC.png; sourceTree = "<group>"; };
@@ -1524,15 +1506,6 @@
 				570755451BF2D78200638CAE /* letterQ.png */,
 				570755461BF2D78200638CAE /* letterR.png */,
 				570755471BF2D78200638CAE /* letterS.png */,
-				570755481BF2D78200638CAE /* letterSpell0.png */,
-				570755491BF2D78200638CAE /* letterSpell1.png */,
-				5707554A1BF2D78200638CAE /* letterSpell2.png */,
-				5707554B1BF2D78200638CAE /* letterSpell3.png */,
-				5707554C1BF2D78200638CAE /* letterSpell4.png */,
-				5707554D1BF2D78200638CAE /* letterSpell5.png */,
-				5707554E1BF2D78200638CAE /* letterSpell6.png */,
-				5707554F1BF2D78200638CAE /* letterSpell7.png */,
-				570755501BF2D78200638CAE /* letterSpell8.png */,
 				570755511BF2D78200638CAE /* letterSpellA.png */,
 				570755521BF2D78300638CAE /* letterSpellB.png */,
 				570755531BF2D78300638CAE /* letterSpellC.png */,
@@ -1895,7 +1868,6 @@
 				570757A51BF2D78400638CAE /* tile.17.png in Resources */,
 				575DA5721BF3EABE00FE6921 /* wall.35.png in Resources */,
 				570757D71BF2D78400638CAE /* tile.112.png in Resources */,
-				570757571BF2D78400638CAE /* letterSpell2.png in Resources */,
 				570757111BF2D78400638CAE /* event.redgirl.3.png in Resources */,
 				570757771BF2D78400638CAE /* notification.E.png in Resources */,
 				570757381BF2D78400638CAE /* game_exist.png in Resources */,
@@ -1956,7 +1928,6 @@
 				570756951BF2D78400638CAE /* char.necomedre.warp.png in Resources */,
 				570757D11BF2D78400638CAE /* tile.106.png in Resources */,
 				5707569F1BF2D78400638CAE /* char.neomine.stand.b.png in Resources */,
-				5707575B1BF2D78400638CAE /* letterSpell6.png in Resources */,
 				570757A61BF2D78400638CAE /* tile.18.png in Resources */,
 				570756E31BF2D78400638CAE /* event.nephtaline.1.png in Resources */,
 				57C1AA311AA38257005EFD29 /* necomedre.mp3 in Resources */,
@@ -1966,7 +1937,6 @@
 				570756E61BF2D78400638CAE /* event.nephtaline.portrait.png in Resources */,
 				570756791BF2D78400638CAE /* char.catfish.walk.f.2.png in Resources */,
 				570756971BF2D78400638CAE /* char.nemedique.stand.f.1.png in Resources */,
-				570757551BF2D78400638CAE /* letterSpell0.png in Resources */,
 				570756A11BF2D78400638CAE /* char.neomine.stand.f.2.png in Resources */,
 				570756EC1BF2D78400638CAE /* event.noface.2.png in Resources */,
 				570757121BF2D78400638CAE /* event.redgirl.portrait.png in Resources */,
@@ -2003,7 +1973,6 @@
 				57C1AA2B1AA38257005EFD29 /* kamera.mp3 in Resources */,
 				570756CA1BF2D78400638CAE /* event.flowerpot.1.png in Resources */,
 				575DA57C1BF3EABE00FE6921 /* wall.101.png in Resources */,
-				570757581BF2D78400638CAE /* letterSpell3.png in Resources */,
 				570757061BF2D78400638CAE /* event.ramen.1.png in Resources */,
 				570756F11BF2D78400638CAE /* event.owl.3.png in Resources */,
 				570757C91BF2D78400638CAE /* tile.99.png in Resources */,
@@ -2035,7 +2004,6 @@
 				57C1AA1E1AA37397005EFD29 /* sfx_spellfull.wav in Resources */,
 				5707567C1BF2D78400638CAE /* char.document.stand.f.1.png in Resources */,
 				570756981BF2D78400638CAE /* char.nemedique.stand.f.2.png in Resources */,
-				5707575C1BF2D78400638CAE /* letterSpell7.png in Resources */,
 				570757C51BF2D78400638CAE /* tile.49.png in Resources */,
 				575DA57A1BF3EABE00FE6921 /* wall.99.png in Resources */,
 				570757001BF2D78400638CAE /* event.pillarrocks.png in Resources */,
@@ -2139,7 +2107,6 @@
 				57C1AA281AA37397005EFD29 /* sfx_dialogopen.wav in Resources */,
 				570757331BF2D78400638CAE /* fx.transform.3.png in Resources */,
 				57C1AA271AA37397005EFD29 /* sfx_dialogclose.wav in Resources */,
-				5707575D1BF2D78400638CAE /* letterSpell8.png in Resources */,
 				570757AD1BF2D78400638CAE /* tile.25.png in Resources */,
 				57C1AA0F1AA37397005EFD29 /* sfx_teleport.wav in Resources */,
 				570756851BF2D78400638CAE /* char.nastazie.stand.f.1.png in Resources */,
@@ -2185,7 +2152,6 @@
 				570757B31BF2D78400638CAE /* tile.31.png in Resources */,
 				57C1AA291AA37397005EFD29 /* sfx_doorlocked.wav in Resources */,
 				570757831BF2D78400638CAE /* step.4.png in Resources */,
-				570757561BF2D78400638CAE /* letterSpell1.png in Resources */,
 				570756A91BF2D78400638CAE /* char.nephtaline.stand.f.1.png in Resources */,
 				570756FF1BF2D78400638CAE /* event.pillaron.3.png in Resources */,
 				570757221BF2D78400638CAE /* fx.background.white.png in Resources */,
@@ -2231,7 +2197,6 @@
 				575DA5851BF3F23800FE6921 /* step.1.png in Resources */,
 				5707565E1BF2D78400638CAE /* blocker.12.png in Resources */,
 				575DA56B1BF3EABE00FE6921 /* wall.27.png in Resources */,
-				5707575A1BF2D78400638CAE /* letterSpell5.png in Resources */,
 				570757A11BF2D78400638CAE /* tile.13.png in Resources */,
 				575DA5551BF3EABE00FE6921 /* wall.3.png in Resources */,
 				570757951BF2D78400638CAE /* tile.1.png in Resources */,
@@ -2265,7 +2230,6 @@
 				57C1AA2F1AA38257005EFD29 /* endless.mp3 in Resources */,
 				570757431BF2D78400638CAE /* letterB.png in Resources */,
 				570756C11BF2D78400638CAE /* event.cat.2.png in Resources */,
-				570757591BF2D78400638CAE /* letterSpell4.png in Resources */,
 				575DA5751BF3EABE00FE6921 /* wall.38.png in Resources */,
 				570757651BF2D78400638CAE /* letterSpellY.png in Resources */,
 				575DA5631BF3EABE00FE6921 /* wall.18.png in Resources */,
