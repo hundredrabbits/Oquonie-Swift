@@ -11,6 +11,13 @@ let player = Player()
 let stage = Stage()
 let spellbook = Spellbook()
 
+enum Progress : Int
+{
+	case tutorial = 1
+	case part1 = 2
+	case part2 = 3
+}
+
 enum Types
 {
 	case tile
@@ -93,8 +100,6 @@ func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat
 	return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
 }
 
-
-
 func textureWithName(imageName:String) -> SKTexture!
 {
 	var image:UIImage!
@@ -109,6 +114,8 @@ func textureWithName(imageName:String) -> SKTexture!
 	}
 	return texture
 }
+
+var pillar_necomedre:Pillar = Pillar(x: 0, y: 0)
 
 /*
 #define dialogIntroduction			@"KIO"

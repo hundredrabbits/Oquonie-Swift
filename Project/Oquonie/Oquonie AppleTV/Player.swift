@@ -168,6 +168,14 @@ class Player : Event
 		}
 		return false
 	}
+	
+	func hasPillar(pillar:Pillar) -> Bool
+	{
+		for collectible in collectibles {
+			if pillar == collectible { return true }
+		}
+		return false
+	}
 
 	required init?(coder aDecoder: NSCoder)
 	{

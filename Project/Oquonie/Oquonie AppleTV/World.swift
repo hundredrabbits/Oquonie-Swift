@@ -21,7 +21,6 @@ class World
 		createLobby()
 		createNecomedre()
 		createNephtaline()
-		createNeomine()
 		createNestorine()
 		createNemedique()
 		createNastazie()
@@ -327,7 +326,7 @@ class World
 		room.steps  = [ 0,6,0, 0,0,0 ]
 		room.audio  = Soundtrack.necomedre
 		room.theme  = Theme.white
-		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nestorine))
+		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nestorine, requiresPillar: true))
 		room.addEvent(Blocker(x: -1, y: 1, id:11))
 		room.addEvent(Door(x: 1, y: 2, requirement: Personas.nestorine, room:120, to_x:1, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:35, to_x: -1, to_y:0))
@@ -366,7 +365,7 @@ class World
 		room.steps  = [ 0,6,0, 0,0,0 ]
 		room.audio  = Soundtrack.necomedre
 		room.theme  = Theme.white
-		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nemedique))
+		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nemedique, requiresPillar: true))
 		room.addEvent(Blocker(x: 0, y: -1, id:23))
 //		room.addEvent(Door(x: -1, y: 2, requirement: Personas.photobooth))
 		room.addEvent(Door(x: 2, y: 0, room:38, to_x: -1, to_y:0))
@@ -401,7 +400,7 @@ class World
 		room.steps  = [ 0,0,0, 0,6,0 ]
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
-		room.addEvent(Pillar(x: 0, y: 0))
+		room.addEvent(pillar_necomedre)
 		room.addEvent(Door(x: 0, y: -2, room:34, to_x: 0, to_y:1))
 		all[120] = room
 	

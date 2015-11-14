@@ -9,10 +9,12 @@ class Wizard : Event
 {
 	var spell:Personas!
 	var dialogSprite:SKSpriteNode!
+	var requiresPillar:Bool = false
 	
-	init(x:Int,y:Int, spell:Personas!)
+	init(x:Int,y:Int, spell:Personas!, requiresPillar:Bool = false)
 	{
 		super.init(x: x, y: y)
+		self.requiresPillar = requiresPillar
 		self.spell = spell
 		updateSprite("event.\(spell).1.png")
 		
@@ -22,6 +24,9 @@ class Wizard : Event
 	override func onRoomEnter()
 	{
 		updateDialog()
+		
+		if requiresPillar == true && player.hasPillar(pillar_necomedre) == false { dialogSprite.texture = textureWithName("test") }
+		else{ dialogSprite.texture = textureWithName("notification.\(spell).png") }
 	}
 	
 	func _dialog()
@@ -42,6 +47,8 @@ class Wizard : Event
 	
 	override func collide()
 	{
+		if requiresPillar == true && player.hasPillar(pillar_necomedre) == false { return }
+		
 		if player.hasSpell(self) == true {
 			removeSpell()
 		}
