@@ -10,7 +10,7 @@ class Wizard : Event
 	var spell:Personas!
 	var dialogSprite:SKSpriteNode!
 	
-	init(x:Int,y:Int, spell:Personas)
+	init(x:Int,y:Int, spell:Personas!)
 	{
 		super.init(x: x, y: y)
 		self.spell = spell

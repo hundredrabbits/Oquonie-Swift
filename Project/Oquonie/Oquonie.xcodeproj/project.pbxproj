@@ -233,7 +233,7 @@
 		579305671BF63FCA005583CE /* event.ramen.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754FA1BF2D78200638CAE /* event.ramen.2.png */; };
 		579305681BF63FCA005583CE /* event.ramen.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754FB1BF2D78200638CAE /* event.ramen.3.png */; };
 		579305691BF63FCA005583CE /* event.ramen.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754FC1BF2D78200638CAE /* event.ramen.portrait.png */; };
-		5793056A1BF63FCA005583CE /* event.ramencushion.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754FD1BF2D78200638CAE /* event.ramencushion.png */; };
+		5793056A1BF63FCA005583CE /* event.ramen.absent.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754FD1BF2D78200638CAE /* event.ramen.absent.png */; };
 		5793056B1BF63FCA005583CE /* event.redghost.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754FE1BF2D78200638CAE /* event.redghost.1.png */; };
 		5793056C1BF63FCA005583CE /* event.redghost.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754FF1BF2D78200638CAE /* event.redghost.2.png */; };
 		5793056D1BF63FCA005583CE /* event.redghost.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755001BF2D78200638CAE /* event.redghost.3.png */; };
@@ -781,7 +781,7 @@
 		570754FA1BF2D78200638CAE /* event.ramen.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.ramen.2.png; path = en.assets/event.ramen.2.png; sourceTree = "<group>"; };
 		570754FB1BF2D78200638CAE /* event.ramen.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.ramen.3.png; path = en.assets/event.ramen.3.png; sourceTree = "<group>"; };
 		570754FC1BF2D78200638CAE /* event.ramen.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.ramen.portrait.png; path = en.assets/event.ramen.portrait.png; sourceTree = "<group>"; };
-		570754FD1BF2D78200638CAE /* event.ramencushion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.ramencushion.png; path = en.assets/event.ramencushion.png; sourceTree = "<group>"; };
+		570754FD1BF2D78200638CAE /* event.ramen.absent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.ramen.absent.png; path = en.assets/event.ramen.absent.png; sourceTree = "<group>"; };
 		570754FE1BF2D78200638CAE /* event.redghost.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.redghost.1.png; path = en.assets/event.redghost.1.png; sourceTree = "<group>"; };
 		570754FF1BF2D78200638CAE /* event.redghost.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.redghost.2.png; path = en.assets/event.redghost.2.png; sourceTree = "<group>"; };
 		570755001BF2D78200638CAE /* event.redghost.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.redghost.3.png; path = en.assets/event.redghost.3.png; sourceTree = "<group>"; };
@@ -1573,7 +1573,7 @@
 				570754FA1BF2D78200638CAE /* event.ramen.2.png */,
 				570754FB1BF2D78200638CAE /* event.ramen.3.png */,
 				570754FC1BF2D78200638CAE /* event.ramen.portrait.png */,
-				570754FD1BF2D78200638CAE /* event.ramencushion.png */,
+				570754FD1BF2D78200638CAE /* event.ramen.absent.png */,
 				570754FE1BF2D78200638CAE /* event.redghost.1.png */,
 				570754FF1BF2D78200638CAE /* event.redghost.2.png */,
 				570755001BF2D78200638CAE /* event.redghost.3.png */,
@@ -1793,9 +1793,9 @@
 				57E3D2C21BF108D900E4D319 /* Event.swift */,
 				57E3D2C41BF1092500E4D319 /* Blocker.swift */,
 				5755DCF21BF2B6A400C5353D /* Wizard.swift */,
+				57C843F31BF2878300288847 /* Ramen.swift */,
 				57E3D2C61BF10DCF00E4D319 /* Pillar.swift */,
 				57E3D2CA1BF10E7B00E4D319 /* Door.swift */,
-				57C843F31BF2878300288847 /* Ramen.swift */,
 				57C843F61BF28A4200288847 /* Map.swift */,
 				57C843FC1BF292C400288847 /* Owl.swift */,
 				5755DCDF1BF296D600C5353D /* Speaker.swift */,
@@ -2236,7 +2236,7 @@
 				579306301BF63FF9005583CE /* char.nemedique.stand.f.3.png in Resources */,
 				57C843DE1BF233CB00288847 /* GameScene.sks in Resources */,
 				579306401BF63FF9005583CE /* char.nephtaline.stand.f.1.png in Resources */,
-				5793056A1BF63FCA005583CE /* event.ramencushion.png in Resources */,
+				5793056A1BF63FCA005583CE /* event.ramen.absent.png in Resources */,
 				579304E71BF63F5E005583CE /* blocker.15.png in Resources */,
 				579304FF1BF63FA9005583CE /* letter7.png in Resources */,
 				579306231BF63FF9005583CE /* char.nastazie.warp.png in Resources */,

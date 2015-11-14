@@ -225,6 +225,20 @@ class Stage : SKNode
 		}
 		return nil
 	}
+	
+	func tileAtLocation(x:Int,y:Int) -> Tile!
+	{
+		if x == 1 && y == 1 { return floor11 }
+		if x == 0 && y == 1 { return floor01 }
+		if x == 1 && y == 0 { return floor10 }
+		if x == -1 && y == 1 { return floore1 }
+		if x == 0 && y == 0 { return floor00 }
+		if x == 1 && y == -1 { return floor1e }
+		if x == -1 && y == 0 { return floore1 }
+		if x == 0 && y == -1 { return floor0e }
+		if x == -1 && y == -1 { return flooree }
+		return nil
+	}
 
 	func positionAt(x:Int,y:Int) -> CGPoint
 	{

@@ -12,6 +12,7 @@ class Player : Event
 	var orientation:Orientation = Orientation.l
 	var direction:Direction = Direction.f
 	var state:States = States.stand
+	var collectibles:Array<Event> = []
 	
 	init()
 	{
@@ -43,18 +44,23 @@ class Player : Event
 		let destination_x:Int = self.x + x
 		let destination_y:Int = self.y + y
 		let destination_event:Event! = stage.eventAtLocation(destination_x,y:destination_y)
+		let destination_tile:Tile! = stage.tileAtLocation(destination_x,y:destination_y)
 		
-		// Look for event
 		if destination_event != nil {
 			destination_event.collide()
 			destination_event.bump()
 			bump(destination_event)
 		}
 		else if destination_x < 2 && destination_x > -2 && destination_y < 2 && destination_y > -2 {
-			walk(destination_x, destination_y:destination_y)
+			if destination_tile != nil && destination_tile.id == 0 {
+				bump()
+			}
+			else{
+				walk(destination_x, destination_y:destination_y)
+			}
 		}
 		else{
-			stand()
+			player.bump()
 		}
 	}
 	
