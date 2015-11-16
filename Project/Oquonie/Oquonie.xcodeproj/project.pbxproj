@@ -464,6 +464,7 @@
 		5793064E1BF63FF9005583CE /* char.nestorine.walk.f.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754AA1BF2D78200638CAE /* char.nestorine.walk.f.1.png */; };
 		5793064F1BF63FF9005583CE /* char.nestorine.walk.f.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754AB1BF2D78200638CAE /* char.nestorine.walk.f.2.png */; };
 		579306501BF63FF9005583CE /* char.nestorine.warp.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754AC1BF2D78200638CAE /* char.nestorine.warp.png */; };
+		57A4A2E81BFA1CBE0027E909 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2E71BFA1CBE0027E909 /* Dialog.swift */; };
 		57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668631BEE98AA007CDD8B /* AppDelegate.swift */; };
 		57A668661BEE98AA007CDD8B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* GameScene.sks */; };
 		57A668681BEE98AA007CDD8B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* GameScene.swift */; };
@@ -1052,6 +1053,7 @@
 		578BFD871BF0E6D8006DAF1C /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Oquonie AppleTV/Tile.swift"; sourceTree = "<group>"; };
 		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Oquonie AppleTV/Settings.swift"; sourceTree = "<group>"; };
 		579304911BF634E6005583CE /* letter.spell.blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.spell.blank.png; path = en.assets/letter.spell.blank.png; sourceTree = "<group>"; };
+		57A4A2E71BFA1CBE0027E909 /* Dialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		57A668471BEE9894007CDD8B /* Oquonie iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A668611BEE98AA007CDD8B /* Oquonie AppleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie AppleTV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A668631BEE98AA007CDD8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Oquonie AppleTV/AppDelegate.swift"; sourceTree = "<group>"; };
@@ -1775,6 +1777,7 @@
 				57A668671BEE98AA007CDD8B /* GameScene.swift */,
 				575DA5861BF3F53900FE6921 /* Spellbook.swift */,
 				57E3D2BC1BF0FE0400E4D319 /* Stage.swift */,
+				57A4A2E71BFA1CBE0027E909 /* Dialog.swift */,
 				57F0E2CE1BF147AC0067CC94 /* Player.swift */,
 				578BFD871BF0E6D8006DAF1C /* Tile.swift */,
 				57E3D2BE1BF1033A00E4D319 /* World.swift */,
@@ -2456,6 +2459,7 @@
 				5755DCE81BF2970300C5353D /* Ramen.swift in Sources */,
 				57C843DC1BF233CB00288847 /* Player.swift in Sources */,
 				5755DCEA1BF2970300C5353D /* Owl.swift in Sources */,
+				57A4A2E81BFA1CBE0027E909 /* Dialog.swift in Sources */,
 				5755DCED1BF2979C00C5353D /* Shark.swift in Sources */,
 				5755DCE31BF2970300C5353D /* Event.swift in Sources */,
 				57C843D91BF233CB00288847 /* Settings.swift in Sources */,

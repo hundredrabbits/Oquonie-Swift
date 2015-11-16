@@ -10,6 +10,7 @@ let templates = Templates()
 let player = Player()
 let stage = Stage()
 let spellbook = Spellbook()
+let dialog = Dialog()
 
 enum Progress : Int
 {
