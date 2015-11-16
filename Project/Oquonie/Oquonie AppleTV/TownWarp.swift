@@ -5,7 +5,7 @@
 import SceneKit
 import Foundation
 
-class TownWarp : Event
+class Teleport : Event
 {
 	override init(x:Int,y:Int)
 	{
@@ -15,8 +15,9 @@ class TownWarp : Event
 	
 	override func collide()
 	{
-		print("Hit blocker")
+		print("Warp pad")
 		player.isMoving = false
+		player.teleport()
 	}
 	
 	required init?(coder aDecoder: NSCoder)

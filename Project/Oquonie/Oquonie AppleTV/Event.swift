@@ -25,7 +25,6 @@ class Event : SKNode
 		sprite.position = sprite_position
 		
 		position = stage.positionAt(self.x, y: self.y)
-	
 	}
 	
 	func bump()

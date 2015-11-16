@@ -13,6 +13,7 @@ class Player : Event
 	var direction:Direction = Direction.f
 	var state:States = States.stand
 	var collectibles:Array<Event> = []
+	var shadow:SKSpriteNode!
 	
 	init()
 	{
@@ -215,6 +216,11 @@ class Player : Event
 			})
 		})
 		print("transform")
+	}
+	
+	func teleport()
+	{
+		
 	}
 
 	required init?(coder aDecoder: NSCoder)
