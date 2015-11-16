@@ -25,11 +25,7 @@ class Event : SKNode
 		sprite.position = sprite_position
 		
 		position = stage.positionAt(self.x, y: self.y)
-		
-		let marker = SKShapeNode(circleOfRadius: 5)
-		marker.fillColor = UIColor.blueColor()
-		marker.strokeColor = UIColor.clearColor()
-		addChild(marker)
+	
 	}
 	
 	func bump()

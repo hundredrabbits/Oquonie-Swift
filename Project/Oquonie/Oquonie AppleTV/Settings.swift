@@ -51,6 +51,7 @@ enum States
 {
 	case stand
 	case walk
+	case warp
 }
 
 enum Personas

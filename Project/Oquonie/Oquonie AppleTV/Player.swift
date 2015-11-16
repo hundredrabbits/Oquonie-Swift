@@ -137,10 +137,13 @@ class Player : Event
 	
 	func updateSprite()
 	{
-		var imageName = "char.necomedre.\(state).\(direction).1.png"
+		var imageName = "char.\(persona).\(state).\(direction).1.png"
 		
 		if direction == Direction.b && state == States.stand {
-			imageName = "char.necomedre.\(state).\(direction).png"
+			imageName = "char.\(persona).\(state).\(direction).png"
+		}
+		if state == States.warp {
+			imageName = "char.\(persona).\(state).png"
 		}
 		
 		var image:UIImage!
@@ -179,6 +182,38 @@ class Player : Event
 	
 	func transform(spell:Personas)
 	{
+		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height * 0.5), duration: 1)
+		action_levitate.timingMode = .EaseIn
+		let action_levitate_down = SKAction.moveToY(sprite_position.y + (templates.floor.height * 0.4), duration: 1.0)
+		action_levitate_down.timingMode = .EaseIn
+		let action_levitate_up = SKAction.moveToY(sprite_position.y + (templates.floor.height * 0.45), duration: 1.5)
+		action_levitate_up.timingMode = .EaseIn
+		let action_levitate_transform = SKAction.fadeAlphaTo(1, duration: 0.5)
+		action_levitate_transform.timingMode = .EaseInEaseOut
+		let action_levitate_land = SKAction.moveToY(sprite_position.y, duration: 2)
+		action_levitate_land.timingMode = .EaseOut
+		
+		state = States.warp
+		updateSprite()
+		
+		sprite.runAction(action_levitate, completion: {
+			self.sprite.runAction(action_levitate_down, completion: {
+				self.sprite.runAction(action_levitate_up, completion: {
+					self.persona = spell
+					self.updateSprite()
+					self.sprite.alpha = 0
+					self.sprite.runAction(action_levitate_transform, completion: {
+						self.updateSprite()
+						self.sprite.runAction(action_levitate_land, completion: {
+							self.state = States.stand
+							self.orientation = Orientation.l
+							self.direction = Direction.f
+							self.updateSprite()
+						})
+					})
+				})
+			})
+		})
 		print("transform")
 	}
 
