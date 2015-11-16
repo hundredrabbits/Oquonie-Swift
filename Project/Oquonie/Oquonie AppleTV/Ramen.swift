@@ -25,16 +25,7 @@ class Ramen : Wizard
 	
 	override func onRoomEnter()
 	{
-		updatePresence()
 		updateDialog()
-	}
-	
-	func updatePresence()
-	{
-		if isKnown == true {
-		}
-		else{
-		}
 	}
 	
 	override func bump()
@@ -44,10 +35,13 @@ class Ramen : Wizard
 	
 	override func collide()
 	{
-		if isKnown == false {
+		if isKnown == false && isWizard == false {
 			let action_fade = SKAction.fadeAlphaTo(0, duration: 1)
 			characterSprite.runAction(action_fade)
 			isKnown = true
+		}
+		else if isWizard == true {
+			print("todo:")
 		}
 	}
 	

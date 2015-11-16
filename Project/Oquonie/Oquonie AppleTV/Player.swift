@@ -176,6 +176,11 @@ class Player : Event
 		}
 		return false
 	}
+	
+	func transform(spell:Personas)
+	{
+		print("transform")
+	}
 
 	required init?(coder aDecoder: NSCoder)
 	{

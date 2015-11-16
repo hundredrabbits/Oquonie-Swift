@@ -56,10 +56,26 @@ class Spellbook : SKNode
 		})
 	}
 	
+	func useSpells()
+	{
+		player.transform(spells[0].spell)
+		NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: "clearSpells", userInfo: nil, repeats: false)	
+	}
+	
+	func clearSpells()
+	{
+		spells.first!.removeSpell()
+		spells.first!.removeSpell()
+		spells.first!.removeSpell()
+	}
+	
 	func addSpell(spell:Wizard)
 	{
 		print("Added \(spell)")
 		spells.append(spell)
+		if hasSequence() == true {
+			useSpells()
+		}
 		update()
 	}
 	
@@ -72,6 +88,17 @@ class Spellbook : SKNode
 		}
 		spells = newSpellbook
 		update()
+	}
+	
+	func hasSequence() -> Bool
+	{
+		if spells.count != 3 { return false }
+		
+		if spells[0].spell == spells[1].spell && spells[1].spell == spells[2].spell {
+			return true
+		}
+		
+		return false
 	}
 
 	required init?(coder aDecoder: NSCoder)

@@ -20,6 +20,10 @@ class GameScene: SKScene
 		_addPlayer()
 		_addSpellbook()
 		_addDialog()
+		
+		// debug
+		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
+		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
 	}
 	
 	func _addPlayer()
@@ -27,7 +31,7 @@ class GameScene: SKScene
 		player.position = CGPoint(x: 0, y: 0)
 		player.zPosition = 90
 		stage.events_root.addChild(player)
-		stage.enter(world.all[35])
+		stage.enter(world.all[38])
 	}
 	
 	func _addStage()
