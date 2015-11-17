@@ -59,6 +59,7 @@
 		57618A481BFBC92A0060E177 /* letter.confusion3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707555C1BF2D78300638CAE /* letter.confusion3.png */; };
 		57618A491BFBC92A0060E177 /* letter.document.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707555D1BF2D78300638CAE /* letter.document.png */; };
 		57618A4A1BFBC92A0060E177 /* letter.pillar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707555E1BF2D78300638CAE /* letter.pillar.png */; };
+		57618A4C1BFBDCB70060E177 /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = 57618A4B1BFBDCB70060E177 /* Todo */; };
 		576570691BF388B100F563B8 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576570671BF388AD00F563B8 /* SKNode.swift */; };
 		578BFD881BF0E6D8006DAF1C /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* Tile.swift */; };
 		578BFE001BF0EA52006DAF1C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFDFF1BF0EA52006DAF1C /* Settings.swift */; };
@@ -1047,6 +1048,7 @@
 		57618A001BFBBA6A0060E177 /* letter.nemedique.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.nemedique.png; path = en.assets/letter.nemedique.png; sourceTree = "<group>"; };
 		57618A011BFBBA6A0060E177 /* letter.necomedre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.necomedre.png; path = en.assets/letter.necomedre.png; sourceTree = "<group>"; };
 		57618A061BFBBB490060E177 /* Dialogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialogs.swift; sourceTree = "<group>"; };
+		57618A4B1BFBDCB70060E177 /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		576570671BF388AD00F563B8 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
 		578BFD871BF0E6D8006DAF1C /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Oquonie AppleTV/Tile.swift"; sourceTree = "<group>"; };
 		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Oquonie AppleTV/Settings.swift"; sourceTree = "<group>"; };
@@ -1141,6 +1143,7 @@
 		03BBFA9F178A9E4E00E79C3D = {
 			isa = PBXGroup;
 			children = (
+				57618A4B1BFBDCB70060E177 /* Todo */,
 				57C843E61BF2356300288847 /* Oquonie Core */,
 				57A668481BEE9894007CDD8B /* Oquonie iOS */,
 				57A668621BEE98AA007CDD8B /* Oquonie AppleTV */,
@@ -2169,6 +2172,7 @@
 				579304C01BF63F2B005583CE /* wall.36.png in Resources */,
 				579305581BF63FCA005583CE /* event.photocopier.2.png in Resources */,
 				579304C41BF63F2B005583CE /* wall.40.png in Resources */,
+				57618A4C1BFBDCB70060E177 /* Todo in Resources */,
 				5793059F1BF63FCA005583CE /* map.1.Neomine.png in Resources */,
 				579305371BF63FCA005583CE /* event.necomedre.1.png in Resources */,
 				579305F91BF63FEF005583CE /* wall.gate.document.open.png in Resources */,
