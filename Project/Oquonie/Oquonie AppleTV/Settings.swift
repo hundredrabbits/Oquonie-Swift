@@ -5,8 +5,8 @@
 import SpriteKit
 import Foundation
 
+var templates = Templates()
 let world = World()
-let templates = Templates()
 let player = Player()
 let stage = Stage()
 let spellbook = Spellbook()
@@ -33,6 +33,7 @@ struct Templates
 	let wall:CGSize = CGSize(width: 200, height: 281)
 	let player:CGSize = CGSize(width: 200, height: 281)
 	let spell:CGSize = CGSize(width: 120, height: 120)
+	var stage:CGPoint = CGPoint()
 }
 
 enum Orientation

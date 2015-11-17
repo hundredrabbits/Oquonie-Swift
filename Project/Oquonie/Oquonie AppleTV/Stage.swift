@@ -14,15 +14,15 @@ class Stage : SKNode
 	let wall5:Tile!
 	let wall6:Tile!
 	
-	let floor11:Tile!
-	let floor10:Tile!
-	let floor01:Tile!
-	let floor1e:Tile!
-	let floor00:Tile!
-	let floore1:Tile!
-	let floor0e:Tile!
-	let floore0:Tile!
-	let flooree:Tile!
+	var floor11:Tile!
+	var floor10:Tile!
+	var floor01:Tile!
+	var floor1e:Tile!
+	var floor00:Tile!
+	var floore1:Tile!
+	var floor0e:Tile!
+	var floore0:Tile!
+	var flooree:Tile!
 	
 	let step1:Tile!
 	let step2:Tile!
@@ -44,16 +44,6 @@ class Stage : SKNode
 		wall1 = Tile(sprite: Types.wall, position: CGPoint(x: -templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
 		wall6 = Tile(sprite: Types.wall, position: CGPoint(x:  templates.wall.width * 1.5, y: templates.wall.height * 0.42), size: templates.wall)
 		
-		floor11 = Tile(sprite: Types.tile, size: templates.floor)
-		floor01 = Tile(sprite: Types.tile, size: templates.floor)
-		floor10 = Tile(sprite: Types.tile, size: templates.floor)
-		floore1 = Tile(sprite: Types.tile, size: templates.floor)
-		floor00 = Tile(sprite: Types.tile, size: templates.floor)
-		floor1e = Tile(sprite: Types.tile, size: templates.floor)
-		floore0 = Tile(sprite: Types.tile, size: templates.floor)
-		floor0e = Tile(sprite: Types.tile, size: templates.floor)
-		flooree = Tile(sprite: Types.tile, size: templates.floor)
-		
 		step1 = Tile(sprite: Types.step, position: CGPoint(x: -templates.step.width * 1.5, y: -templates.step.height * 0.35), size: templates.step)
 		step2 = Tile(sprite: Types.step, position: CGPoint(x: -templates.step.width, y: -templates.step.height * 0.7), size: templates.step)
 		step3 = Tile(sprite: Types.step, position: CGPoint(x: -templates.step.width * 0.5, y: -templates.step.height), size: templates.step)
@@ -63,15 +53,15 @@ class Stage : SKNode
 		
 		super.init()
 		
-		floor11.position = positionAt(1,y: 1)
-		floor01.position = positionAt(0, y: 1)
-		floor10.position = positionAt(1, y: 0)
-		floore1.position = positionAt(-1, y: 1)
-		floor00.position = positionAt(0, y: 0)
-		floor1e.position = positionAt(1, y: -1)
-		floore0.position = positionAt(-1, y: 0)
-		floor0e.position = positionAt(0, y: -1)
-		flooree.position = positionAt(-1, y: -1)
+		floor11 = Tile(sprite: Types.tile, position:positionAt(1,y: 1), size: templates.floor)
+		floor01 = Tile(sprite: Types.tile, position:positionAt(0,y: 1), size: templates.floor)
+		floor10 = Tile(sprite: Types.tile, position:positionAt(1,y: 0), size: templates.floor)
+		floore1 = Tile(sprite: Types.tile, position:positionAt(-1,y: 1), size: templates.floor)
+		floor00 = Tile(sprite: Types.tile, position:positionAt(0,y: 0), size: templates.floor)
+		floor1e = Tile(sprite: Types.tile, position:positionAt(1,y: -1), size: templates.floor)
+		floore0 = Tile(sprite: Types.tile, position:positionAt(-1,y: 0), size: templates.floor)
+		floor0e = Tile(sprite: Types.tile, position:positionAt(0,y: -1), size: templates.floor)
+		flooree = Tile(sprite: Types.tile, position:positionAt(-1,y: -1), size: templates.floor)
 		
 		start()
 	}
@@ -211,9 +201,86 @@ class Stage : SKNode
 	
 	func parallaxTo(x:CGFloat, y:CGFloat)
 	{
-		let pos_x = CGRectGetMidX(gameScene.frame) + (x * 0.025)
-		let pos_y = CGRectGetMidY(gameScene.frame) + (y * 0.025) - (templates.player.height * 0.5)
+		let pos_x = templates.stage.x + (x * 0.025)
+		let pos_y = templates.stage.y + (y * 0.025)
 		self.runAction(SKAction.moveTo(CGPoint(x:pos_x,y:pos_y), duration: 0.25), completion: { })
+	}
+	
+	func teleportIn()
+	{
+		
+		self.room = world.all[1]
+		updateTiles()
+		removeEvents()
+		
+		for event in room.events {
+			addEvent(event)
+		}
+		
+		// Bind sprites to events
+		for event in events_root.children {
+			let event = event as! Event
+			if event.x == -1 && event.y ==  2 { event.bind(wall1) }
+			if event.x ==  0 && event.y ==  2 { event.bind(wall2) }
+			if event.x ==  1 && event.y ==  2 { event.bind(wall3) }
+			if event.x ==  2 && event.y ==  1 { event.bind(wall4) }
+			if event.x ==  2 && event.y ==  0 { event.bind(wall5) }
+			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
+		}
+		
+		for node in room_root.children {
+			node.onRoomTeleportIn()
+		}
+	}
+	
+	func teleportOut()
+	{
+		// Dislocate tiles
+		for node in room_root.children {
+			node.onRoomTeleportOut()
+		}
+		
+		let action_move = SKAction.moveToY(CGRectGetMidY(gameScene.frame) - gameScene.frame.height, duration: 3)
+		action_move.timingMode = .EaseIn
+		
+		self.runAction(action_move, completion: {
+			
+			self.testHome()
+			
+			// DeDislocate tiles
+			for node in self.room_root.children {
+				node.onRoomTeleportIn()
+			}
+			self.position = CGPoint(x: templates.stage.x, y: templates.stage.y * 2.5)
+			let action_move = SKAction.moveToY(templates.stage.y, duration: 3)
+			action_move.timingMode = .EaseOut
+			self.runAction(action_move)
+			
+			player.land()
+			
+		})
+	}
+	
+	func testHome()
+	{
+		self.room = world.all[1]
+		self.updateTiles()
+		self.removeEvents()
+		
+		for event in self.room.events {
+			self.addEvent(event)
+		}
+		
+		// Bind sprites to events
+		for event in self.events_root.children {
+			let event = event as! Event
+			if event.x == -1 && event.y ==  2 { event.bind(wall1) }
+			if event.x ==  0 && event.y ==  2 { event.bind(wall2) }
+			if event.x ==  1 && event.y ==  2 { event.bind(wall3) }
+			if event.x ==  2 && event.y ==  1 { event.bind(wall4) }
+			if event.x ==  2 && event.y ==  0 { event.bind(wall5) }
+			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
+		}
 	}
 	
 	func eventAtLocation(x:Int,y:Int) -> Event!

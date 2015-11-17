@@ -21,12 +21,13 @@ class Player : Event
 		
 		sprite = SKSpriteNode(texture: nil, color: UIColor.clearColor(), size: templates.player)
 		sprite.position = sprite_position
+		sprite.zPosition = 50
 		addChild(sprite)
 		
-		let marker = SKShapeNode(circleOfRadius: 5)
-		marker.fillColor = UIColor.redColor()
-		marker.strokeColor = UIColor.clearColor()
-		addChild(marker)
+		shadow = SKSpriteNode(texture: textureWithName("fx.shadow.png"), color: UIColor.clearColor(), size: templates.player)
+		shadow.position = sprite_position
+		shadow.zPosition = 40
+		addChild(shadow)
 		
 		updateSprite()
 	}
@@ -218,9 +219,42 @@ class Player : Event
 		print("transform")
 	}
 	
+	// MARK: Teleport
+	
+	func teleportTrigger(room:Int)
+	{
+		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "teleport", userInfo: nil, repeats: false)
+	}
+	
 	func teleport()
 	{
+		levitate()
+		stage.teleportOut()
 		
+		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)
+		action_levitate.timingMode = .EaseOut
+		
+		state = States.warp
+		updateSprite()
+	}
+	
+	func levitate()
+	{
+		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)
+		action_levitate.timingMode = .EaseIn
+		state = States.warp
+		updateSprite()
+		self.sprite.runAction(action_levitate)
+	}
+	
+	func land()
+	{
+		let action_land = SKAction.moveToY(self.sprite_position.y, duration: 4)
+		action_land.timingMode = .EaseOut
+		self.sprite.runAction(action_land, completion:{
+			self.state = States.stand
+			self.updateSprite()
+		})
 	}
 
 	required init?(coder aDecoder: NSCoder)

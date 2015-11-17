@@ -17,7 +17,8 @@ class Teleport : Event
 	{
 		print("Warp pad")
 		player.isMoving = false
-		player.teleport()
+		player.walk(x, destination_y: y)
+		player.teleportTrigger(1)
 	}
 	
 	required init?(coder aDecoder: NSCoder)

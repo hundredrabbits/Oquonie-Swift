@@ -20,7 +20,7 @@
 		5755DCF11BF2994900C5353D /* NoFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCF01BF2994900C5353D /* NoFace.swift */; };
 		5755DCF41BF2B71700C5353D /* Wizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCF21BF2B6A400C5353D /* Wizard.swift */; };
 		5755DD041BF2BAD900C5353D /* Red.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DCF51BF2BAC200C5353D /* Red.swift */; };
-		5755DD071BF2CC2800C5353D /* TownWarp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DD051BF2CC1F00C5353D /* TownWarp.swift */; };
+		5755DD071BF2CC2800C5353D /* Teleport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DD051BF2CC1F00C5353D /* Teleport.swift */; };
 		5755DD091BF2CDEA00C5353D /* Kamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755DD081BF2CDEA00C5353D /* Kamera.swift */; };
 		575DA5871BF3F53900FE6921 /* Spellbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575DA5861BF3F53900FE6921 /* Spellbook.swift */; };
 		576570691BF388B100F563B8 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576570671BF388AD00F563B8 /* SKNode.swift */; };
@@ -977,7 +977,7 @@
 		5755DCF01BF2994900C5353D /* NoFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoFace.swift; sourceTree = "<group>"; };
 		5755DCF21BF2B6A400C5353D /* Wizard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wizard.swift; sourceTree = "<group>"; };
 		5755DCF51BF2BAC200C5353D /* Red.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Red.swift; sourceTree = "<group>"; };
-		5755DD051BF2CC1F00C5353D /* TownWarp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TownWarp.swift; sourceTree = "<group>"; };
+		5755DD051BF2CC1F00C5353D /* Teleport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teleport.swift; sourceTree = "<group>"; };
 		5755DD081BF2CDEA00C5353D /* Kamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kamera.swift; sourceTree = "<group>"; };
 		575DA4CA1BF3EA1D00FE6921 /* wall.gate.cat.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.cat.close.png; path = en.assets/wall.gate.cat.close.png; sourceTree = "<group>"; };
 		575DA4CB1BF3EA1D00FE6921 /* wall.gate.cat.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.cat.open.png; path = en.assets/wall.gate.cat.open.png; sourceTree = "<group>"; };
@@ -1797,6 +1797,7 @@
 				57E3D2C41BF1092500E4D319 /* Blocker.swift */,
 				5755DCF21BF2B6A400C5353D /* Wizard.swift */,
 				57C843F31BF2878300288847 /* Ramen.swift */,
+				5755DD051BF2CC1F00C5353D /* Teleport.swift */,
 				57E3D2C61BF10DCF00E4D319 /* Pillar.swift */,
 				57E3D2CA1BF10E7B00E4D319 /* Door.swift */,
 				57C843F61BF28A4200288847 /* Map.swift */,
@@ -1806,7 +1807,6 @@
 				5755DCEE1BF2982E00C5353D /* Tree.swift */,
 				5755DCF01BF2994900C5353D /* NoFace.swift */,
 				5755DCF51BF2BAC200C5353D /* Red.swift */,
-				5755DD051BF2CC1F00C5353D /* TownWarp.swift */,
 				5755DD081BF2CDEA00C5353D /* Kamera.swift */,
 			);
 			name = Events;
@@ -2470,7 +2470,7 @@
 				5755DCE41BF2970300C5353D /* Blocker.swift in Sources */,
 				5755DD041BF2BAD900C5353D /* Red.swift in Sources */,
 				57C843D21BF233CB00288847 /* Stage.swift in Sources */,
-				5755DD071BF2CC2800C5353D /* TownWarp.swift in Sources */,
+				5755DD071BF2CC2800C5353D /* Teleport.swift in Sources */,
 				5755DCEB1BF2970300C5353D /* Speaker.swift in Sources */,
 				57C843DA1BF233CB00288847 /* World.swift in Sources */,
 				57C843D01BF233CB00288847 /* GameViewController.swift in Sources */,

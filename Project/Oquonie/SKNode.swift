@@ -26,6 +26,16 @@ extension SKNode
 	
 	func onRoomEnter()
 	{
+		
+	}
 	
+	func onRoomTeleportIn()
+	{
+		
+	}
+	
+	func onRoomTeleportOut()
+	{
+		
 	}
 }

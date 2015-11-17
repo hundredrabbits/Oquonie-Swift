@@ -10,6 +10,7 @@ class Tile : SKSpriteNode
 	var sprite:Types!
 	var id:Int!
 	var orientation:Orientation!
+	var origin:CGPoint!
 	
 	init(sprite:Types,id:Int! = nil, position:CGPoint = CGPoint(x: 0,y: 0), size: CGSize)
 	{
@@ -33,6 +34,8 @@ class Tile : SKSpriteNode
 		self.id = id
 		self.position = position
 		self.size = size
+		
+		origin = position
 	}
 	
 	func updateSprite(id:Int)
@@ -72,19 +75,36 @@ class Tile : SKSpriteNode
 	
 	override func onRoomEnter()
 	{
-		let targetPosition = self.position
-		
 		let offset = randomBetweenNumbers(0, secondNum: 10)
 		self.alpha = 0
 		self.position = CGPoint(x: position.x, y: position.y - offset)
 		
-		let action_move = SKAction.moveTo(targetPosition, duration: 0.25)
+		let action_move = SKAction.moveTo(origin, duration: 0.25)
 		let action_fade = SKAction.fadeAlphaTo(1, duration:0.5)
 		let action_group = SKAction.group([action_move,action_fade])
 		
 		action_move.timingMode = .EaseInEaseOut
 		
 		self.runAction(action_group)
+	}
+	
+	override func onRoomTeleportOut()
+	{
+		let offset = randomBetweenNumbers(0, secondNum: templates.floor.height * 0.5)
+		
+		let targetPosition = CGPoint(x: position.x, y: position.y - offset)
+		let action_move = SKAction.moveTo(targetPosition, duration: 3)
+		action_move.timingMode = .EaseIn
+		
+		self.runAction(action_move, completion: { })
+	}
+	
+	override func onRoomTeleportIn()
+	{
+		let action_move = SKAction.moveTo(origin, duration: 2)
+		action_move.timingMode = .EaseOut
+		
+		self.runAction(action_move, completion: { })
 	}
 
 	required init?(coder aDecoder: NSCoder)

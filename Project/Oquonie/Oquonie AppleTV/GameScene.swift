@@ -12,6 +12,8 @@ class GameScene: SKScene
 	{
 		start()
 		time = NSTimer.scheduledTimerWithTimeInterval(0.025, target: self, selector: "_fixedUpdate", userInfo: nil, repeats: true)
+		templates.stage = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - (0.5 * templates.wall.height))
+		stage.position = templates.stage
     }
 	
 	func start()
@@ -37,7 +39,7 @@ class GameScene: SKScene
 	
 	func _addStage()
 	{
-		stage.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 150)
+		stage.position = templates.stage
 		addChild(stage)
 	}
 	
