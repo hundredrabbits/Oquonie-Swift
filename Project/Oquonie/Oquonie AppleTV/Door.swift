@@ -53,7 +53,7 @@ class Door : Event
 	func collide_gate()
 	{
 		if player.persona != self.requirement {
-			print("! LOCKED - Is: \(player.persona) Required: \(self.requirement)")
+			dialog.showModal(dialogs.requiresPersona("\(requirement)"),eventName: "owl")
 		}
 		else{
 			player.warp(self.destination,to_x:self.to_x,to_y:self.to_y)

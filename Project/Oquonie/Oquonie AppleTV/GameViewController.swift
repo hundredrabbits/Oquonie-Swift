@@ -40,11 +40,12 @@ class GameViewController: UIViewController
 	
 	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?)
 	{
+		/*
 		if let touch = touches.first {
 			let point = touch.locationInView(self.view)
-			print(point)
 		}
 		super.touchesMoved(touches, withEvent:event)
+		*/
 	}
 	
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?)

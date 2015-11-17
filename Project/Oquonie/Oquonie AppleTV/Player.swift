@@ -184,6 +184,8 @@ class Player : Event
 	
 	func transform(spell:Personas)
 	{
+		dialog.showModal(dialogs.transform("\(spell)"),eventName: "\(spell)")
+		
 		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height * 0.5), duration: 1)
 		action_levitate.timingMode = .EaseIn
 		let action_levitate_down = SKAction.moveToY(sprite_position.y + (templates.floor.height * 0.4), duration: 1.0)

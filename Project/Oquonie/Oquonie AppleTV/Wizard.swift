@@ -50,8 +50,8 @@ class Wizard : Event
 	
 	override func collide()
 	{
-		if requiresPillar == true && player.hasPillar(pillar_necomedre) == false { return }
-		if player.persona == spell { return }
+		if requiresPillar == true && player.hasPillar(pillar_necomedre) == false { dialog.showModal(dialogs.requiresPillar(),eventName: "\(spell)") ; return }
+		if player.persona == spell { dialog.showModal(dialogs.alreadyIsPersona("\(spell)"),eventName: "\(spell)") ; return }
 		
 		if player.hasSpell(self) == true {
 			removeSpell()
@@ -65,7 +65,6 @@ class Wizard : Event
 	
 	func castSpell()
 	{
-		dialog.showModal(dialogs.castSpell("\(spell)"),eventName: "\(spell)")
 		spellbook.addSpell(self)
 	}
 	

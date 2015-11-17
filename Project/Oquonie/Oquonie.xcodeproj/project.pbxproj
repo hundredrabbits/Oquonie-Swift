@@ -1776,16 +1776,16 @@
 				57A668671BEE98AA007CDD8B /* GameScene.swift */,
 				575DA5861BF3F53900FE6921 /* Spellbook.swift */,
 				57E3D2BC1BF0FE0400E4D319 /* Stage.swift */,
-				57A4A2E71BFA1CBE0027E909 /* Dialog.swift */,
 				57F0E2CE1BF147AC0067CC94 /* Player.swift */,
 				578BFD871BF0E6D8006DAF1C /* Tile.swift */,
 				57E3D2BE1BF1033A00E4D319 /* World.swift */,
 				57E3D2C01BF1059500E4D319 /* Room.swift */,
+				57A4A2E71BFA1CBE0027E909 /* Dialog.swift */,
 				57618A061BFBBB490060E177 /* Dialogs.swift */,
 				57F0E2CA1BF13A320067CC94 /* Events */,
+				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
 				576570671BF388AD00F563B8 /* SKNode.swift */,
 				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
-				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
 			);
 			name = "Oquonie Core";
 			sourceTree = "<group>";

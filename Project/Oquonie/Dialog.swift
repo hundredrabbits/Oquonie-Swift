@@ -58,14 +58,23 @@ class Dialog : SKNode
 		letter3.texture = textureWithName("letter.\(letters[2]).png")
 		portrait.texture = textureWithName("event.\(eventName).portrait.png")
 		
-		portrait.alpha = 1
-		background.alpha = 1
-		bubble.alpha = 1
+		let action_fade = SKAction.fadeAlphaTo(1, duration: 0.25)
+		
+		portrait.runAction(action_fade)
+		background.runAction(action_fade)
+		bubble.runAction(action_fade)
+		
 		isActive = true
 	}
 	
 	func hideModal()
 	{
+		let action_fade = SKAction.fadeAlphaTo(0, duration: 0.25)
+		
+		portrait.runAction(action_fade)
+		background.runAction(action_fade)
+		bubble.runAction(action_fade)
+		
 		background.alpha = 0
 		bubble.alpha = 0
 		portrait.alpha = 0
