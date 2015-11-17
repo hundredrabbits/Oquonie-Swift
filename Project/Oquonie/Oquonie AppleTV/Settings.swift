@@ -13,6 +13,7 @@ let spellbook = Spellbook()
 let dialog = Dialog()
 var parallaxFront:SKSpriteNode!
 var parallaxBack:SKSpriteNode!
+let dialogs = Dialogs()
 
 enum Progress : Int
 {
@@ -36,6 +37,36 @@ struct Templates
 	let player:CGSize = CGSize(width: 200, height: 281)
 	let spell:CGSize = CGSize(width: 120, height: 120)
 	var stage:CGPoint = CGPoint()
+	let dialog:CGSize = CGSize(width: 640, height: 390)
+}
+
+enum Letter
+{
+	case nemedique
+	case nestorine
+	case nephtaline
+	case necomedre
+	case neomine
+	case nastazie
+	case door
+	case teleport
+	case correct
+	case incorrect
+	case unlocked
+	case locked
+	case help
+	case sound
+	case guide
+	case inside
+	case outside
+	case key
+	case friend
+	case foe
+	case confusion1
+	case confusion2
+	case confusion3
+	case document
+	case pillar	
 }
 
 enum Orientation

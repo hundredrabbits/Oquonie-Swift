@@ -65,6 +65,7 @@ class Wizard : Event
 	
 	func castSpell()
 	{
+		dialog.showModal(dialogs.castSpell("\(spell)"),eventName: "\(spell)")
 		spellbook.addSpell(self)
 	}
 	

@@ -24,10 +24,10 @@ class GameScene: SKScene
 		_addParalax()
 		
 		// debug
-		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
-		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
-		player.persona = Personas.nephtaline
-		stage.enter(world.all[39])
+//		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
+//		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
+		player.persona = Personas.necomedre
+		stage.enter(world.all[38])
 	}
 	
 	func _addPlayer()
@@ -52,7 +52,7 @@ class GameScene: SKScene
 	
 	func _addDialog()
 	{
-		dialog.position = templates.stage
+		dialog.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
 		dialog.zPosition = 9000
 		self.addChild(dialog)
 	}

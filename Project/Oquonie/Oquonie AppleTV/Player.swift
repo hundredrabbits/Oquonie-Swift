@@ -9,7 +9,6 @@ class Player : Event
 {
 	var isMoving:Bool = false
 	var persona:Personas = Personas.necomedre
-	var orientation:Orientation = Orientation.l
 	var direction:Direction = Direction.f
 	var state:States = States.stand
 	var collectibles:Array<Event> = []
@@ -35,6 +34,7 @@ class Player : Event
 	func move(x:Int, y:Int)
 	{
 		if isMoving == true { return }
+		if dialog.isActive == true { dialog.hideModal() ; return }
 		
 		updateSpriteStyle(x,y:y)
 		action(x,y:y)
