@@ -11,12 +11,14 @@ class Wizard : Event
 	var dialogSprite:SKSpriteNode!
 	var requiresPillar:Bool = false
 	
-	init(x:Int,y:Int, spell:Personas!, requiresPillar:Bool = false)
+	init(x:Int,y:Int, spell:Personas!, requiresPillar:Bool = false, orientation:Orientation = Orientation.l)
 	{
 		super.init(x: x, y: y)
 		self.requiresPillar = requiresPillar
 		self.spell = spell
 		updateSprite("event.\(spell).1.png")
+		
+		if orientation == Orientation.r { sprite.xScale = -1.0 }
 		
 		_dialog()
 	}
@@ -49,6 +51,7 @@ class Wizard : Event
 	override func collide()
 	{
 		if requiresPillar == true && player.hasPillar(pillar_necomedre) == false { return }
+		if player.persona == spell { return }
 		
 		if player.hasSpell(self) == true {
 			removeSpell()

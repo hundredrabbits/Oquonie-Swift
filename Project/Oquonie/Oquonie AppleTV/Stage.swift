@@ -157,6 +157,9 @@ class Stage : SKNode
 			if event.x ==  2 && event.y ==  0 { event.bind(wall5) }
 			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
 		}
+		
+		parallaxFront.alpha = 0
+		parallaxFront.position = CGPoint(x:templates.stage.x + (CGFloat(player.x) * 0.2),y:CGRectGetMidY(gameScene.frame) + (CGFloat(player.y) * 0.2))
 	}
 	
 	func updateTiles()
@@ -207,6 +210,9 @@ class Stage : SKNode
 		
 		parallaxFront.runAction(SKAction.moveTo(CGPoint(x:templates.stage.x + (x * 0.2),y:CGRectGetMidY(gameScene.frame) + (y * 0.2)), duration: 0.25), completion: { })
 		parallaxBack.runAction(SKAction.moveTo(CGPoint(x:templates.stage.x + (x * 0.02),y:CGRectGetMidY(gameScene.frame) + (y * 0.02)), duration: 0.25), completion: { })
+		
+		parallaxBack.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
+		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
 	}
 	
 	func teleportIn()

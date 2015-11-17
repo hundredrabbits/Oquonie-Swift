@@ -11,7 +11,7 @@ class Ramen : Wizard
 	var isWizard:Bool = false
 	var characterSprite:SKSpriteNode!
 	
-	init(x:Int,y:Int,spell:Personas! = nil, isWizard:Bool = false)
+	init(x:Int,y:Int,spell:Personas! = nil, isWizard:Bool = false, orientation:Orientation = Orientation.l)
 	{
 		super.init(x: x, y: y,spell:spell)
 		

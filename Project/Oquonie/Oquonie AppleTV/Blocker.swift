@@ -7,12 +7,14 @@ import Foundation
 
 class Blocker : Event
 {
-	init(x:Int,y:Int,id:Int)
+	init(x:Int,y:Int,id:Int, orientation:Orientation = Orientation.l)
 	{
 		super.init(x: x, y: y)
 		
 		updateSprite("blocker.\(id).png")
 		sprite.color = UIColor.blueColor()
+		
+		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
 	override func collide()

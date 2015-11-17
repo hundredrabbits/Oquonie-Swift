@@ -12,6 +12,7 @@ class Event : SKNode
 	var x:Int!
 	var y:Int!
 	var target:Tile!
+	var orientation:Orientation = Orientation.l
 	
 	init(x:Int,y:Int)
 	{

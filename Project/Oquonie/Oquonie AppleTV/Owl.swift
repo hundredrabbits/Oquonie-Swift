@@ -7,11 +7,13 @@ import Foundation
 
 class Owl : Event
 {
-	override init(x:Int,y:Int)
+	init(x:Int,y:Int, orientation:Orientation = Orientation.l)
 	{
 		super.init(x: x, y: y)
 		
 		updateSprite("event.owl.1.png")
+		
+		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
 	override func collide()
