@@ -27,8 +27,54 @@ class GameViewController: UIViewController
 		installGestures()
 	}
 	
+	var touch_origin:CGPoint!
+	
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
+	{
+		if let touch = touches.first {
+			let point = touch.locationInView(self.view)
+			touch_origin = point
+		}
+		super.touchesBegan(touches, withEvent:event)
+	}
+	
+	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?)
+	{
+		if let touch = touches.first {
+			let point = touch.locationInView(self.view)
+			print(point)
+		}
+		super.touchesMoved(touches, withEvent:event)
+	}
+	
+	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?)
+	{
+		if let touch = touches.first {
+			let point = touch.locationInView(self.view)
+			
+			if distanceBetweenTwoPoints(point, b: touch_origin) > templates.spell.width/2 {
+				if point.y < touch_origin.y && point.x > touch_origin.x { player.move(1, y: 0) }
+				if point.y < touch_origin.y && point.x < touch_origin.x { player.move(0, y: 1) }
+				if point.y > touch_origin.y && point.x > touch_origin.x { player.move(0, y: -1) }
+				if point.y > touch_origin.y && point.x < touch_origin.x { player.move(-1, y: 0) }
+			}
+			else{
+				poke()
+			}
+		}
+		super.touchesEnded(touches, withEvent:event)
+	}
+	
+	func poke()
+	{
+		if dialog.isActive == true {
+			dialog.hideModal()
+		}
+	}
+	
 	func installGestures()
 	{
+		/*
 		let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
 		swipeRight.direction = .Right
 		self.view.addGestureRecognizer(swipeRight)
@@ -44,6 +90,7 @@ class GameViewController: UIViewController
 		let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
 		swipeLeft.direction = .Left
 		self.view.addGestureRecognizer(swipeLeft)
+*/
 	}
 	
 	func respondToSwipeGesture(gesture: UIGestureRecognizer)
