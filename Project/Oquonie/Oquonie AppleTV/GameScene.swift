@@ -10,10 +10,9 @@ class GameScene: SKScene
 
     override func didMoveToView(view: SKView)
 	{
-		start()
 		time = NSTimer.scheduledTimerWithTimeInterval(0.025, target: self, selector: "_fixedUpdate", userInfo: nil, repeats: true)
 		templates.stage = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - (0.5 * templates.wall.height))
-		stage.position = templates.stage
+		start()
     }
 	
 	func start()
@@ -22,6 +21,7 @@ class GameScene: SKScene
 		_addPlayer()
 		_addSpellbook()
 		_addDialog()
+		_addParalax()
 		
 		// debug
 		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
@@ -55,6 +55,19 @@ class GameScene: SKScene
 		dialog.position = CGPoint(x: 0, y: (CGRectGetMidY(self.frame) * 2) - (templates.spell.height + 20) )
 		dialog.zPosition = 9000
 		self.addChild(dialog)
+	}
+	
+	func _addParalax()
+	{
+		parallaxBack = SKSpriteNode(texture: textureWithName("fx.parallax.1.png"), color: UIColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
+		parallaxBack.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
+		parallaxBack.zPosition = -900
+		self.addChild(parallaxBack)
+		
+		parallaxFront = SKSpriteNode(texture: textureWithName("fx.parallax.2.png"), color: UIColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
+		parallaxFront.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
+		parallaxFront.zPosition = 900
+		self.addChild(parallaxFront)
 	}
 
     override func update(currentTime: CFTimeInterval)

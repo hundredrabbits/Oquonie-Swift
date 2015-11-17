@@ -11,6 +11,8 @@ let player = Player()
 let stage = Stage()
 let spellbook = Spellbook()
 let dialog = Dialog()
+var parallaxFront:SKSpriteNode!
+var parallaxBack:SKSpriteNode!
 
 enum Progress : Int
 {
