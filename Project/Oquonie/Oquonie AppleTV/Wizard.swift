@@ -26,6 +26,7 @@ class Wizard : Event
 		updateDialog()
 		
 		if requiresPillar == true && player.hasPillar(pillar_necomedre) == false { dialogSprite.texture = textureWithName("test") }
+		else if player.persona == spell { dialogSprite.texture = textureWithName("test") }
 		else{ dialogSprite.texture = textureWithName("notification.\(spell).png") }
 	}
 	

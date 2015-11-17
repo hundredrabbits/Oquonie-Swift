@@ -45,14 +45,14 @@ class GameScene: SKScene
 	
 	func _addSpellbook()
 	{
-		spellbook.position = CGPoint(x: 0, y: (CGRectGetMidY(self.frame) * 2) - (templates.spell.height + 20) )
-		spellbook.zPosition = 900
-		self.addChild(spellbook)
+		spellbook.position = CGPoint(x: CGRectGetMidX(self.frame), y: self.frame.height - templates.spell.height)
+		spellbook.zPosition = 1000
+		addChild(spellbook)
 	}
 	
 	func _addDialog()
 	{
-		dialog.position = CGPoint(x: 0, y: (CGRectGetMidY(self.frame) * 2) - (templates.spell.height + 20) )
+		dialog.position = templates.stage
 		dialog.zPosition = 9000
 		self.addChild(dialog)
 	}
@@ -66,7 +66,7 @@ class GameScene: SKScene
 		
 		parallaxFront = SKSpriteNode(texture: textureWithName("fx.parallax.2.png"), color: UIColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
 		parallaxFront.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
-		parallaxFront.zPosition = 900
+		parallaxFront.zPosition = 9000
 		self.addChild(parallaxFront)
 	}
 

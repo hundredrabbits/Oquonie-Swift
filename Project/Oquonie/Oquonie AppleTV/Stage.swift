@@ -201,9 +201,12 @@ class Stage : SKNode
 	
 	func parallaxTo(x:CGFloat, y:CGFloat)
 	{
-		let pos_x = templates.stage.x + (x * 0.025)
-		let pos_y = templates.stage.y + (y * 0.025)
+		let pos_x = templates.stage.x + (x * 0.03)
+		let pos_y = templates.stage.y + (y * 0.03)
 		self.runAction(SKAction.moveTo(CGPoint(x:pos_x,y:pos_y), duration: 0.25), completion: { })
+		
+		parallaxFront.runAction(SKAction.moveTo(CGPoint(x:templates.stage.x + (x * 0.2),y:CGRectGetMidY(gameScene.frame) + (y * 0.2)), duration: 0.25), completion: { })
+		parallaxBack.runAction(SKAction.moveTo(CGPoint(x:templates.stage.x + (x * 0.02),y:CGRectGetMidY(gameScene.frame) + (y * 0.02)), duration: 0.25), completion: { })
 	}
 	
 	func teleportIn()
