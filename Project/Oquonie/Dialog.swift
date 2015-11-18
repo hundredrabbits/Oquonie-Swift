@@ -15,17 +15,22 @@ class Dialog : SKNode
 	var letter2:SKSpriteNode!
 	var letter3:SKSpriteNode!
 	
+	var bubble_origin:CGPoint!
+	var portrait_origin:CGPoint!
+	
 	override init()
 	{
 		super.init()
 		
 		bubble = SKSpriteNode(texture: textureWithName("fx.dialog.bubble"), color: UIColor.redColor(), size: templates.dialog)
-		bubble.position = CGPoint(x: 0, y: -gameScene.frame.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
+		bubble_origin = CGPoint(x: 0, y: -gameScene.frame.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
+		bubble.position = bubble_origin
 		bubble.alpha = 0
 		addChild(bubble)
 		
 		portrait = SKSpriteNode(texture: nil, color: UIColor.redColor(), size: templates.dialog)
-		portrait.position = CGPoint(x: 0, y: -gameScene.frame.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
+		portrait_origin = CGPoint(x: 0, y: -gameScene.frame.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
+		portrait.position = portrait_origin
 		portrait.alpha = 0
 		addChild(portrait)
 		
@@ -64,6 +69,11 @@ class Dialog : SKNode
 		background.runAction(action_fade)
 		bubble.runAction(action_fade)
 		isActive = true
+		
+		portrait.position = CGPoint(x: portrait_origin.x, y: portrait_origin.y - 10)
+		portrait.runAction(SKAction.moveToY(portrait_origin.y, duration: 0.25))
+		bubble.position = CGPoint(x: bubble_origin.x + 10, y: bubble_origin.y)
+		bubble.runAction(SKAction.moveToX(bubble_origin.x, duration: 0.25))
 	}
 	
 	func hideModal()
@@ -74,6 +84,9 @@ class Dialog : SKNode
 		background.runAction(action_fade)
 		bubble.runAction(action_fade)
 		isActive = false
+		
+		portrait.runAction(SKAction.moveToY(portrait_origin.y - 10, duration: 0.25))
+		bubble.runAction(SKAction.moveToX(bubble_origin.x + 10, duration: 0.25))
 	}
 	
 	required init?(coder aDecoder: NSCoder)

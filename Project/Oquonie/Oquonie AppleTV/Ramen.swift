@@ -45,6 +45,18 @@ class Ramen : Wizard
 		}
 	}
 	
+	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
+	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
+	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	
+	override func updateSprite()
+	{
+		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; characterSprite.texture = textureWithName("event.ramen.\(activityFrame).png") }
+		if isVisible == false { return }
+		
+		characterSprite.texture = textureWithName("event.ramen.\(activityFrame).png")
+	}
+	
 	required init?(coder aDecoder: NSCoder)
 	{
 		fatalError("init(coder:) has not been implemented")

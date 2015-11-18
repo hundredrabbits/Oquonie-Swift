@@ -89,7 +89,7 @@ class Wizard : Event
 	
 	func updateSprite()
 	{
-		if isVisible == false && activityFrame != 1 { activityFrame = 1 }
+		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; updateSprite("event.\(spell).\(activityFrame).png") }
 		if isVisible == false { return }
 		updateSprite("event.\(spell).\(activityFrame).png")
 	}

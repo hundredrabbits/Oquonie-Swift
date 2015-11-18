@@ -11,8 +11,6 @@ class Owl : Event
 	{
 		super.init(x: x, y: y)
 		
-		updateSprite("event.owl.1.png")
-		
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
@@ -20,6 +18,18 @@ class Owl : Event
 	{
 		print("Hit blocker")
 		player.isMoving = false
+	}
+	
+	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
+	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
+	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	
+	func updateSprite()
+	{
+		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; sprite.texture = textureWithName("event.owl.\(activityFrame).png") }
+		if isVisible == false { return }
+		
+		sprite.texture = textureWithName("event.owl.\(activityFrame).png")
 	}
 	
 	required init?(coder aDecoder: NSCoder)
