@@ -2,7 +2,7 @@
 //  Created by Devine Lu Linvega on 2015-11-09.
 //  Copyright © 2015 XXIIVV. All rights reserved.
 
-import SceneKit
+import SpriteKit
 import Foundation
 
 class Kamera : Event
@@ -10,7 +10,7 @@ class Kamera : Event
 	override init(x:Int,y:Int)
 	{
 		super.init(x: x, y: y)
-		updateSprite("event.wizard.png")
+//		updateSprite("event.wizard.png")
 	}
 	
 	override func collide()

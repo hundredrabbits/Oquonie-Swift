@@ -24,10 +24,10 @@ class GameScene: SKScene
 		_addParalax()
 		
 		// debug
-//		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
-//		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
+		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
+		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
 		player.persona = Personas.necomedre
-		stage.enter(world.all[38])
+		stage.enter(world.all[35])
 	}
 	
 	func _addPlayer()

@@ -217,32 +217,6 @@ class Stage : SKNode
 		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
 	}
 	
-	func teleportIn()
-	{
-		
-		self.room = world.all[1]
-		updateTiles()
-		removeEvents()
-		
-		for event in room.events {
-			addEvent(event)
-		}
-		
-		// Bind sprites to events
-		for event in events_root.children {
-			let event = event as! Event
-			if event.x == -1 && event.y ==  2 { event.bind(wall1) }
-			if event.x ==  0 && event.y ==  2 { event.bind(wall2) }
-			if event.x ==  1 && event.y ==  2 { event.bind(wall3) }
-			if event.x ==  2 && event.y ==  1 { event.bind(wall4) }
-			if event.x ==  2 && event.y ==  0 { event.bind(wall5) }
-			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
-		}
-		
-		for node in room_root.children {
-			node.onRoomTeleportIn()
-		}
-	}
 	
 	func teleportOut()
 	{
@@ -253,6 +227,9 @@ class Stage : SKNode
 		
 		let action_move = SKAction.moveToY(CGRectGetMidY(gameScene.frame) - gameScene.frame.height, duration: 3)
 		action_move.timingMode = .EaseIn
+		
+		parallaxBack.runAction(action_move)
+		parallaxFront.runAction(action_move)
 		
 		self.runAction(action_move, completion: {
 			
@@ -266,11 +243,39 @@ class Stage : SKNode
 			let action_move = SKAction.moveToY(templates.stage.y, duration: 3)
 			action_move.timingMode = .EaseOut
 			self.runAction(action_move)
+			parallaxBack.runAction(action_move)
+			parallaxFront.runAction(action_move)
 			
 			player.land()
 			
 		})
 	}
+	
+//	func teleportIn()
+//	{
+//		self.room = world.all[1]
+//		updateTiles()
+//		removeEvents()
+//		
+//		for event in room.events {
+//			addEvent(event)
+//		}
+//		
+//		// Bind sprites to events
+//		for event in events_root.children {
+//			let event = event as! Event
+//			if event.x == -1 && event.y ==  2 { event.bind(wall1) }
+//			if event.x ==  0 && event.y ==  2 { event.bind(wall2) }
+//			if event.x ==  1 && event.y ==  2 { event.bind(wall3) }
+//			if event.x ==  2 && event.y ==  1 { event.bind(wall4) }
+//			if event.x ==  2 && event.y ==  0 { event.bind(wall5) }
+//			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
+//		}
+//		
+//		for node in room_root.children {
+//			node.onRoomTeleportIn()
+//		}
+//	}
 	
 	func testHome()
 	{

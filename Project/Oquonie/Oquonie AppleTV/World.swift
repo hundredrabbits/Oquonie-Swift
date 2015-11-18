@@ -39,7 +39,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: 1, y: 1, id: 10))
 		room.addEvent(Pillar(x: 1, y: -1))
-		room.addEvent(Door(x: 0, y: 2, requirement:Personas.nephtaline, room:40, to_x:0, to_y:-1))
+		room.addEvent(Door(x: 0, y: 2, requirement:Personas.nephtaline, room:40, to_x:-1, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:2, to_x: -1, to_y:0))
 		all[1] = room
 		
@@ -418,7 +418,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Red(x: -1, y: 0))
 		room.addEvent(Door(x: 2, y: 1, room:41, to_x: -1, to_y:1))
-		room.addEvent(Door(x: -1, y: -2, requirement: Personas.nephtaline, room:1, to_x:1, to_y:1))
+		room.addEvent(Door(x: -1, y: -2, requirement: Personas.nephtaline, room:1, to_x:0, to_y:1))
 		all[40] = room
 		
 		room = Room()
@@ -1349,7 +1349,7 @@ class World
 		room.audio  = Soundtrack.purgatory
 		room.theme  = Theme.black
 		//		room.addEvent(Wizard(x: 0, y: 1, spell: petunia))
-		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.catfishbird))
+//		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.catfishbird))
 		room.addEvent(Door(x: 2, y: 0, room:118, to_x: -1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:110, to_x: 0, to_y:1))
 		all[111] = room
@@ -1360,7 +1360,7 @@ class World
 		room.steps  = [ 0,0,7, 0,0,0 ]
 		room.audio  = Soundtrack.nephtaline
 		room.theme  = Theme.white
-		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.catfishbird))
+//		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.catfishbird))
 		room.addEvent(Door(x: 1, y: 2, room:41, to_x: 1, to_y:-1))
 		//		room.addEvent(Door(x: 2, y: 0, requirement: Personas.catfishbird))
 		room.addEvent(Door(x: -2, y: -1, room:43, to_x: -1, to_y:-1))
@@ -1409,7 +1409,7 @@ class World
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.white
-		room.addEvent(Wizard(x: 0, y: 0, spell: Personas.catfishbird))
+//		room.addEvent(Wizard(x: 0, y: 0, spell: Personas.catfishbird))
 		room.addEvent(Door(x: 0, y: 2, room:9, to_x: 0, to_y:-1))
 		all[116] = room
 		

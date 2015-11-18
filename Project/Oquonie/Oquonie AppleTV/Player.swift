@@ -8,6 +8,7 @@ import Foundation
 class Player : Event
 {
 	var isMoving:Bool = false
+	var isLocked:Bool = false
 	var persona:Personas = Personas.necomedre
 	var direction:Direction = Direction.f
 	var state:States = States.stand
@@ -36,6 +37,7 @@ class Player : Event
 	
 	func move(x:Int, y:Int)
 	{
+		if isLocked == true { return }
 		if isMoving == true { return }
 		if dialog.isActive == true { dialog.hideModal() ; return }
 		
@@ -103,6 +105,16 @@ class Player : Event
 		self.isMoving = false
 		self.state = States.stand
 		updateSprite()
+	}
+	
+	func lock()
+	{
+		isLocked = true
+	}
+	
+	func unlock()
+	{
+		isLocked = false
 	}
 	
 	func updateSpriteStyle(x:Int, y:Int)
@@ -240,7 +252,7 @@ class Player : Event
 		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)
 		action_levitate.timingMode = .EaseOut
 		
-		state = States.warp
+		state = .warp
 		updateSprite()
 	}
 	
@@ -248,7 +260,7 @@ class Player : Event
 	{
 		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)
 		action_levitate.timingMode = .EaseIn
-		state = States.warp
+		state = .warp
 		updateSprite()
 		self.sprite.runAction(action_levitate)
 	}
@@ -258,7 +270,8 @@ class Player : Event
 		let action_land = SKAction.moveToY(self.sprite_position.y, duration: 4)
 		action_land.timingMode = .EaseOut
 		self.sprite.runAction(action_land, completion:{
-			self.state = States.stand
+			self.state = .stand
+			self.direction = .f
 			self.updateSprite()
 		})
 	}
