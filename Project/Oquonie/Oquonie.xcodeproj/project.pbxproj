@@ -1799,6 +1799,7 @@
 				57C843F31BF2878300288847 /* Ramen.swift */,
 				5755DD051BF2CC1F00C5353D /* Teleport.swift */,
 				5755DCF51BF2BAC200C5353D /* Red.swift */,
+				5755DCF01BF2994900C5353D /* NoFace.swift */,
 				57E3D2C61BF10DCF00E4D319 /* Pillar.swift */,
 				57E3D2CA1BF10E7B00E4D319 /* Door.swift */,
 				57C843F61BF28A4200288847 /* Map.swift */,
@@ -1806,7 +1807,6 @@
 				5755DCDF1BF296D600C5353D /* Speaker.swift */,
 				5755DCEC1BF2979C00C5353D /* Shark.swift */,
 				5755DCEE1BF2982E00C5353D /* Tree.swift */,
-				5755DCF01BF2994900C5353D /* NoFace.swift */,
 				5755DD081BF2CDEA00C5353D /* Kamera.swift */,
 			);
 			name = Events;

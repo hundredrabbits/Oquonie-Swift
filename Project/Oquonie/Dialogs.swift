@@ -35,6 +35,11 @@ class Dialogs
 		return ["\(Letter.friend)","\(Letter.outside)",persona]
 	}
 	
+	func confusion() -> Array<String>
+	{
+		return ["\(Letter.confusion1)","\(Letter.confusion1)","\(Letter.confusion3)"]
+	}
+	
 	func music(toggle:Bool) -> Array<String>
 	{
 		if toggle == true {

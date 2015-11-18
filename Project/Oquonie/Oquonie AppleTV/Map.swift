@@ -19,9 +19,8 @@ class Map : Event
 	override func collide()
 	{
 		player.isMoving = false
-		player.showOverlay("map.necomedre.png")
+		player.showOverlay("map.\(world).png")
 	}
-	
 	
 	required init?(coder aDecoder: NSCoder)
 	{

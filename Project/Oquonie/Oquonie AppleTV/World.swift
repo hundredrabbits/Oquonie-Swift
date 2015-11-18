@@ -149,7 +149,7 @@ class World
 		room.steps  = [ 0,0,0, 0,7,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
-		room.addEvent(NoFace(x: 0, y: 1))
+		room.addEvent(NoFace(x: 0, y: 1, orientation: Orientation.r))
 		room.addEvent(Door(x: 0, y: -2, room:4, to_x: 0, to_y:1))
 		all[14] = room
 	}
@@ -302,7 +302,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:23))
 		room.addEvent(Owl(x: 1, y: 1))
-		room.addEvent(Map(x: 0, y: 2, world: "necomdre"))
+		room.addEvent(Map(x: 0, y: 2, world: "necomedre"))
 		room.addEvent(Door(x: 2, y: 0, room:33, to_x: -1, to_y:0))
 		room.addEvent(Door(x: -2, y: 0, requirement: Personas.necomedre, room:5, to_x:1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:35, to_x: 0, to_y:1))
