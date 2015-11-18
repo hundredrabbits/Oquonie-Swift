@@ -15,6 +15,7 @@ class Player : Event
 	var collectibles:Array<Event> = []
 	var shadow:SKSpriteNode!
 	var animationFrame:Int = 0
+	var hasOverlay:Bool = false
 	
 	init()
 	{
@@ -42,6 +43,7 @@ class Player : Event
 		if isLocked == true { return }
 		if isMoving == true { return }
 		if dialog.isActive == true { dialog.hideModal() ; return }
+		if hasOverlay == true { hideOverlay() ; return }
 		
 		updateSpriteStyle(x,y:y)
 		action(x,y:y)
@@ -284,6 +286,29 @@ class Player : Event
 	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
 	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
 	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	
+	// MARK: Overlay -
+	
+	func showOverlay(textureName:String)
+	{
+		hasOverlay = true
+		overlay.alpha = 0
+		overlay_image.alpha = 0
+		
+		overlay_image.texture = textureWithName(textureName)
+		
+		overlay.runAction(SKAction.fadeAlphaTo(1, duration: 0.25), completion:{
+			overlay_image.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
+		})
+	}
+	func hideOverlay()
+	{
+		overlay_image.runAction(SKAction.fadeAlphaTo(0, duration: 0.25), completion:{
+			overlay.runAction(SKAction.fadeAlphaTo(0, duration: 0.25), completion:{
+				self.hasOverlay = false
+			})
+		})
+	}
 	
 	override func remove()
 	{

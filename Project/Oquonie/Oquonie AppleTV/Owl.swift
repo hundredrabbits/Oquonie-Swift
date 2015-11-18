@@ -10,7 +10,6 @@ class Owl : Event
 	init(x:Int,y:Int, orientation:Orientation = Orientation.l)
 	{
 		super.init(x: x, y: y)
-		
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
@@ -28,7 +27,6 @@ class Owl : Event
 	{
 		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; sprite.texture = textureWithName("event.owl.\(activityFrame).png") }
 		if isVisible == false { return }
-		
 		sprite.texture = textureWithName("event.owl.\(activityFrame).png")
 	}
 	

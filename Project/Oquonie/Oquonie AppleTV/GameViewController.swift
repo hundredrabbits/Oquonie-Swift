@@ -71,6 +71,9 @@ class GameViewController: UIViewController
 		if dialog.isActive == true {
 			dialog.hideModal()
 		}
+		if overlay.alpha > 0 {
+			player.hideOverlay()
+		}
 	}
 	
 	func installGestures()

@@ -26,6 +26,39 @@ class Ramen : Wizard
 	override func onRoomEnter()
 	{
 		updateDialog()
+		
+		if player.hasPillar(pillar_nemedique) == false {
+			characterSprite.alpha = 0
+		}
+		if wizardSpell() != nil {
+			dialogSprite.texture = textureWithName("notification.\(wizardSpell()).png")
+		}
+	}
+	
+	func wizardSpell() -> Personas!
+	{
+		if isWizard == true {
+			characterSprite.alpha = 0
+			if player.hasPillar(pillar_nemedique) == true {
+				if ramen_necomedre.isKnown == true && player.persona == Personas.necomedre { return Personas.nastazie }
+				if ramen_nephtaline.isKnown == true && player.persona == Personas.nephtaline { return Personas.nastazie }
+				if ramen_neomine.isKnown == true && player.persona == Personas.neomine { return Personas.nastazie }
+				if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine { return Personas.nastazie }
+				if ramen_nemedique.isKnown == true && player.persona == Personas.nemedique { return Personas.nastazie }
+			}
+		}
+		return nil
+	}
+	
+	
+	override func updateDialog()
+	{
+		if isWizard == true {
+			dialogSprite.runAction(SKAction.fadeAlphaTo(0, duration: 0.1))
+		}
+		else{
+			dialogSprite.runAction(SKAction.fadeAlphaTo(1, duration: 0.1))
+		}
 	}
 	
 	override func bump()
@@ -35,13 +68,14 @@ class Ramen : Wizard
 	
 	override func collide()
 	{
+		if isWizard && player.hasPillar(pillar_nemedique) == false {
+			return
+		}
+		
 		if isKnown == false && isWizard == false {
 			let action_fade = SKAction.fadeAlphaTo(0, duration: 1)
 			characterSprite.runAction(action_fade)
 			isKnown = true
-		}
-		else if isWizard == true {
-			print("todo:")
 		}
 	}
 	

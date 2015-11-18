@@ -14,6 +14,8 @@ let dialog = Dialog()
 var parallaxFront:SKSpriteNode!
 var parallaxBack:SKSpriteNode!
 let dialogs = Dialogs()
+var overlay:SKSpriteNode!
+var overlay_image:SKSpriteNode!
 
 enum Progress : Int
 {
@@ -156,9 +158,15 @@ func textureWithName(imageName:String) -> SKTexture!
 	return texture
 }
 
-var pillar_necomedre:Pillar = Pillar(x: 0, y: 0)
-var pillar_nephtaline:Pillar = Pillar(x: 0, y: 0)
-var pillar_neomine:Pillar = Pillar(x: 0, y: 0)
-var pillar_nestorine:Pillar = Pillar(x: 0, y: 0)
-var pillar_nemedique:Pillar = Pillar(x: 0, y: 0)
-var pillar_nastazie:Pillar = Pillar(x: 0, y: 0)
+var pillar_necomedre = Pillar(x: 0, y: 0)
+var pillar_nephtaline = Pillar(x: 0, y: 0)
+var pillar_neomine = Pillar(x: 0, y: 0)
+var pillar_nestorine = Pillar(x: 0, y: 0)
+var pillar_nemedique = Pillar(x: 0, y: 0)
+var pillar_nastazie = Pillar(x: 0, y: 0)
+
+var ramen_necomedre = Ramen(x: 1, y: 1)
+var ramen_nephtaline = Ramen(x: 1, y: 1)
+var ramen_neomine = Ramen(x: -1, y: 1)
+var ramen_nestorine = Ramen(x: 1, y: 1)
+var ramen_nemedique = Ramen(x: 1, y: 1)

@@ -7,16 +7,21 @@ import Foundation
 
 class Map : Event
 {
-	override init(x:Int,y:Int)
+	var world:String!
+	
+	init(x:Int,y:Int,world:String)
 	{
 		super.init(x: x, y: y)
+		
+		self.world = world
 	}
 	
 	override func collide()
 	{
-		print("Hit map")
 		player.isMoving = false
+		player.showOverlay("map.necomedre.png")
 	}
+	
 	
 	required init?(coder aDecoder: NSCoder)
 	{

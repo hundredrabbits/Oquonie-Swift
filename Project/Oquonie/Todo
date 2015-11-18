@@ -7,17 +7,14 @@
 - zPosition of player & events
 - Tutorial world
 - Add vignette to transformation
-- animate parallax on teleport
 - Add sound
 - Add music
-- Implement Photobooths
 - Add End Sequence
 
 - Add Tree Event in Lobby
-- Add Shark Event
 - Add pillar Event
-- Add Ramen in Lobby
 - Add Map events
+- Add speaker events
 
 - Test Necomedre
 - Test Nephtaline
@@ -25,3 +22,5 @@
 - Test Nemedique
 - Test Nestorine
 - Test Nastazie
+
+- Implement Photobooths

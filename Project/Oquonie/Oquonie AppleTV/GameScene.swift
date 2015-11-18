@@ -22,12 +22,13 @@ class GameScene: SKScene
 		_addSpellbook()
 		_addDialog()
 		_addParalax()
+		_addOverlay()
 		
 		// debug
 		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
 		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
 		player.persona = Personas.necomedre
-		stage.enter(world.all[38])
+		stage.enter(world.all[32])
 	}
 	
 	func _addPlayer()
@@ -68,6 +69,19 @@ class GameScene: SKScene
 		parallaxFront.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		parallaxFront.zPosition = 9000
 		self.addChild(parallaxFront)
+	}
+	
+	func _addOverlay()
+	{
+		overlay = SKSpriteNode(color: UIColor.whiteColor(), size: CGSize(width: gameScene.size.width, height: gameScene.size.width))
+		overlay.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
+		overlay.zPosition = 1500
+		overlay_image = SKSpriteNode(texture: nil, color: UIColor.blueColor(), size: CGSize(width: overlay.size.width/2, height: gameScene.size.width/2))
+		overlay_image.position = CGPoint(x: 0,y: 0)
+		overlay_image.zPosition = 1600
+		overlay.addChild(overlay_image)
+		overlay.alpha = 0
+		self.addChild(overlay)
 	}
 
     override func update(currentTime: CFTimeInterval)

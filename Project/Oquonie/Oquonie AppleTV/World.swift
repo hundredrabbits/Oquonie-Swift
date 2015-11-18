@@ -51,7 +51,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: 1, y: 1, id: 24))
 		room.addEvent(Ramen(x: 1, y: 0))
-		room.addEvent(Map(x: -1, y: 2))
+		room.addEvent(Map(x: -1, y: 2, world: "lobby"))
 		room.addEvent(Door(x: -2, y: 0, room:1, to_x: 1, to_y:0))
 		room.addEvent(Door(x: 0, y: 2, room:3, to_x: 0, to_y:-1))
 		all[2] = room
@@ -302,7 +302,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:23))
 		room.addEvent(Owl(x: 1, y: 1))
-		room.addEvent(Map(x: 0, y: 2))
+		room.addEvent(Map(x: 0, y: 2, world: "necomdre"))
 		room.addEvent(Door(x: 2, y: 0, room:33, to_x: -1, to_y:0))
 		room.addEvent(Door(x: -2, y: 0, requirement: Personas.necomedre, room:5, to_x:1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:35, to_x: 0, to_y:1))
@@ -529,7 +529,7 @@ class World
 		room.addEvent(Owl(x: 1, y: 1))
 		room.addEvent(Blocker(x: -1, y: 0, id:21))
 		room.addEvent(Door(x: 0, y: 2, requirement: Personas.nemedique, room:121, to_x:0, to_y:-1))
-		room.addEvent(Map(x: 2, y: 0))
+		room.addEvent(Map(x: 2, y: 0, world: "nephtaline"))
 		room.addEvent(Door(x: -2, y: 0, room:47, to_x: 1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:55, to_x: 0, to_y:1))
 		all[50] = room
@@ -604,7 +604,7 @@ class World
 		room.steps  = [ 0,0,0, 0,7,0 ]
 		room.audio  = Soundtrack.nephtaline
 		room.theme  = Theme.white
-		room.addEvent(Ramen(x: 1, y: 1))
+		room.addEvent(ramen_nephtaline)
 		room.addEvent(Door(x: 2, y: 0, room:58, to_x: -1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:56, to_x: 0, to_y:1))
 		all[57] = room
@@ -653,7 +653,7 @@ class World
 		room.theme  = Theme.black
 		room.addEvent(Blocker(x: 0, y: 1, id:13))
 		room.addEvent(Door(x: 2, y: 1, room:62, to_x: -1, to_y:1))
-		room.addEvent(Map(x: 2, y: 0))
+		room.addEvent(Map(x: 2, y: 0, world: "neomine"))
 //		room.addEvent(Wizard(x: 2, y: -1, spell: petuniaFork))
 		room.addEvent(Door(x: 0, y: -2, requirement: Personas.neomine, room:3, to_x:0, to_y:1))
 		all[60] = room
@@ -689,7 +689,7 @@ class World
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = Soundtrack.neomine
 		room.theme  = Theme.black
-		room.addEvent(Ramen(x: -1, y: 1))
+		room.addEvent(ramen_neomine)
 		room.addEvent(Blocker(x: 0, y: 0, id:9))
 		room.addEvent(Door(x: 2, y: 1, room:66, to_x: -1, to_y:1))
 		room.addEvent(Door(x: 2, y: 0, room:64, to_x: -1, to_y:0))
@@ -862,7 +862,7 @@ class World
 		room.audio  = Soundtrack.nestorine
 		room.theme  = Theme.white
 		room.addEvent(Red(x: 1, y: 0))
-		room.addEvent(Map(x: 2, y: 0))
+		room.addEvent(Map(x: 2, y: 0, world: "nestorine"))
 		room.addEvent(Door(x: -2, y: 0, room:88, to_x: 1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:89, to_x: 0, to_y:1))
 		all[85] = room
@@ -892,7 +892,7 @@ class World
 		room.steps  = [ 0,1,0, 0,0,0 ]
 		room.audio  = Soundtrack.nestorine
 		room.theme  = Theme.white
-		room.addEvent(Ramen(x: 1, y: 1))
+		room.addEvent(ramen_nestorine)
 		room.addEvent(Door(x: -2, y: 0, room:91, to_x: 1, to_y:0))
 		all[88] = room
 		
@@ -1017,7 +1017,7 @@ class World
 		room.steps  = [ 0,7,0, 0,0,0 ]
 		room.audio  = Soundtrack.nemedique
 		room.theme  = Theme.white
-		room.addEvent(Ramen(x: 1, y: 1))
+		room.addEvent(ramen_nemedique)
 		room.addEvent(Door(x: 0, y: 2, room:102, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, requirement: Personas.necomedre, room:103, to_x:-1, to_y:0))
 		room.addEvent(Door(x: -2, y: 0, room:100, to_x: 1, to_y:0))

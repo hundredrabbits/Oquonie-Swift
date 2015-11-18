@@ -35,6 +35,13 @@ class Dialogs
 		return ["\(Letter.friend)","\(Letter.outside)",persona]
 	}
 	
+	func shark() -> Array<String>
+	{
+		if player.hasPillar(pillar_nemedique) == false { return ["\(Letter.foe)","\(Letter.locked)","\(Letter.pillar)"] }
+		if player.persona == Personas.necomedre { return ["\(Letter.friend)","\(Letter.unlocked)","\(Letter.necomedre)"] }
+		return ["\(Letter.friend)","\(Letter.outside)","\(Letter.necomedre)"]
+	}
+	
 	func owl() -> Array<String>
 	{
 		// First chapter
