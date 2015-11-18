@@ -27,7 +27,7 @@ class GameScene: SKScene
 		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
 		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
 		player.persona = Personas.necomedre
-		stage.enter(world.all[35])
+		stage.enter(world.all[38])
 	}
 	
 	func _addPlayer()

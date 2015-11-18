@@ -50,6 +50,18 @@ class Door : Event
 		}
 	}
 	
+	override func onPlayerTransformed()
+	{
+		if self.requirement != nil {
+			if requirement == player.persona {
+				target.updateSpriteWithName("wall.gate.\(requirement).open.png")
+			}
+			else{
+				target.updateSpriteWithName("wall.gate.\(requirement).close.png")
+			}
+		}
+	}
+	
 	func collide_gate()
 	{
 		if player.persona != self.requirement {

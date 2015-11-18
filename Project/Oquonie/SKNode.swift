@@ -24,6 +24,11 @@ extension SKNode
 		fixedUpdate()
 	}
 	
+	func onPlayerTransformed()
+	{
+		
+	}
+	
 	func onRoomEnter()
 	{
 		

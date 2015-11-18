@@ -224,6 +224,7 @@ class Player : Event
 					self.persona = spell
 					self.updateSprite()
 					self.sprite.alpha = 0
+					stage.onPlayerTransformed()
 					self.sprite.runAction(action_levitate_transform, completion: {
 						self.updateSprite()
 						self.sprite.runAction(action_levitate_land, completion: {
@@ -243,6 +244,7 @@ class Player : Event
 	
 	func teleportTrigger(room:Int)
 	{
+		player.lock()
 		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "teleport", userInfo: nil, repeats: false)
 	}
 	
@@ -275,6 +277,7 @@ class Player : Event
 			self.state = .stand
 			self.direction = .f
 			self.updateSprite()
+			player.unlock()
 		})
 	}
 	

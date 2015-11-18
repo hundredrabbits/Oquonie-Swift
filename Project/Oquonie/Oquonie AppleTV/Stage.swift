@@ -217,7 +217,6 @@ class Stage : SKNode
 		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
 	}
 	
-	
 	func teleportOut()
 	{
 		// Dislocate tiles
@@ -251,31 +250,12 @@ class Stage : SKNode
 		})
 	}
 	
-//	func teleportIn()
-//	{
-//		self.room = world.all[1]
-//		updateTiles()
-//		removeEvents()
-//		
-//		for event in room.events {
-//			addEvent(event)
-//		}
-//		
-//		// Bind sprites to events
-//		for event in events_root.children {
-//			let event = event as! Event
-//			if event.x == -1 && event.y ==  2 { event.bind(wall1) }
-//			if event.x ==  0 && event.y ==  2 { event.bind(wall2) }
-//			if event.x ==  1 && event.y ==  2 { event.bind(wall3) }
-//			if event.x ==  2 && event.y ==  1 { event.bind(wall4) }
-//			if event.x ==  2 && event.y ==  0 { event.bind(wall5) }
-//			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
-//		}
-//		
-//		for node in room_root.children {
-//			node.onRoomTeleportIn()
-//		}
-//	}
+	override func onPlayerTransformed()
+	{
+		for node in events_root.children {
+			node.onPlayerTransformed()
+		}
+	}
 	
 	func testHome()
 	{
