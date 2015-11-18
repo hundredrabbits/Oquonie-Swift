@@ -63,7 +63,6 @@ class Dialog : SKNode
 		portrait.runAction(action_fade)
 		background.runAction(action_fade)
 		bubble.runAction(action_fade)
-		
 		isActive = true
 	}
 	
@@ -74,10 +73,6 @@ class Dialog : SKNode
 		portrait.runAction(action_fade)
 		background.runAction(action_fade)
 		bubble.runAction(action_fade)
-		
-		background.alpha = 0
-		bubble.alpha = 0
-		portrait.alpha = 0
 		isActive = false
 	}
 	

@@ -13,6 +13,8 @@ class Spellbook : SKNode
 	var spellSlot2:SKSpriteNode!
 	var spellSlot3:SKSpriteNode!
 	
+	var activity:NSTimer!
+	
 	override init()
 	{
 		super.init()
@@ -32,6 +34,27 @@ class Spellbook : SKNode
 		spellSlot1.zPosition = 9000
 		spellSlot2.zPosition = 9000
 		spellSlot3.zPosition = 9000
+		
+		startActivity()
+	}
+	
+	func startActivity()
+	{
+		if activity != nil { activity.invalidate() }
+		activity = NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "closeSpellbook", userInfo: nil, repeats: false)
+	}
+	
+	func closeSpellbook()
+	{
+		if spells.count != 0 { return }
+		
+		spellSlot1.runAction(SKAction.fadeAlphaTo(0, duration: 0.15))
+		spellSlot2.runAction(SKAction.fadeAlphaTo(0, duration: 0.20))
+		spellSlot3.runAction(SKAction.fadeAlphaTo(0, duration: 0.25))
+		
+		spellSlot1.runAction(SKAction.moveTo(CGPoint(x: -(templates.spell.width * 1), y: -10), duration: 0.15))
+		spellSlot2.runAction(SKAction.moveTo(CGPoint(x: 0, y: -10), duration: 0.20))
+		spellSlot3.runAction(SKAction.moveTo(CGPoint(x: (templates.spell.width * 1), y: -10), duration: 0.25))
 	}
 	
 	func update()
@@ -77,6 +100,7 @@ class Spellbook : SKNode
 			useSpells()
 		}
 		update()
+		startActivity()
 	}
 	
 	func removeSpell(spell:Wizard)
@@ -88,6 +112,7 @@ class Spellbook : SKNode
 		}
 		spells = newSpellbook
 		update()
+		startActivity()
 	}
 	
 	func hasSequence() -> Bool
