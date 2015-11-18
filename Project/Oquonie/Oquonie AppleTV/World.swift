@@ -38,7 +38,7 @@ class World
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: 1, y: 1, id: 10))
-		room.addEvent(Pillar(x: 1, y: -1))
+		room.addEvent(Pillar(x: 1, y: -1, display:pillar_nephtaline))
 		room.addEvent(Door(x: 0, y: 2, requirement:Personas.nephtaline, room:40, to_x:-1, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:2, to_x: -1, to_y:0))
 		all[1] = room
@@ -62,7 +62,7 @@ class World
 		room.steps  = [ 0,7,0, 0,7,0]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
-		room.addEvent(Pillar(x: -1, y: 1))
+		room.addEvent(Pillar(x: -1, y: 1, display:pillar_neomine))
 		room.addEvent(Owl(x: 1, y: 1, orientation:Orientation.r))
 		room.addEvent(Blocker(x: -1, y: -1, id:1))
 		room.addEvent(Door(x: 0, y: 2, requirement:Personas.neomine, room:60, to_x:0, to_y:-1))
@@ -89,7 +89,7 @@ class World
 		room.steps  = [ 0,7,0, 0,7,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
-		room.addEvent(Pillar(x: 1, y: 1))
+		room.addEvent(Pillar(x: 1, y: 1, display:pillar_necomedre))
 		room.addEvent(Blocker(x: -1, y: 1, id:30))
 		room.addEvent(Door(x: 0, y: 2, room:4, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, requirement:Personas.necomedre, room:32, to_x:-1, to_y:0))
@@ -115,7 +115,7 @@ class World
 		room.steps  = [ 0,7,0, 0,0,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
-		room.addEvent(Pillar(x: -1, y: -1))
+		room.addEvent(Pillar(x: -1, y: -1, display:pillar_nestorine))
 		room.addEvent(Blocker(x: 0, y: 1, id:11))
 		room.addEvent(Door(x: 2, y: 0, requirement:Personas.nestorine, room:96, to_x:-1, to_y:0))
 		room.addEvent(Door(x: -2, y: 0, room:6, to_x: 1, to_y:0))
@@ -127,7 +127,7 @@ class World
 		room.steps  = [ 0,0,0, 0,7,0 ]
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
-		room.addEvent(Pillar(x: -1, y: 1))
+		room.addEvent(Pillar(x: -1, y: 1, display:pillar_nemedique))
 		room.addEvent(Door(x: 0, y: 2, requirement:Personas.nemedique, room:100, to_x:0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:5, to_x: -1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:11, to_x: 0, to_y:1))

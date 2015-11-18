@@ -6,10 +6,20 @@ import Foundation
 
 class Pillar : Event
 {
-	override init(x:Int,y:Int)
+	var display:Pillar!
+	
+	init(x:Int,y:Int, display:Pillar! = nil)
 	{
 		super.init(x: x, y: y)
+		
+		self.display = display
+		
 		updateSprite("event.pillar.base.png")
+	}
+	
+	override func collide()
+	{
+		print("touched pillar")
 	}
 
 	required init?(coder aDecoder: NSCoder)
