@@ -35,6 +35,8 @@ class Player : Event
 		startActivity()
 	}
 	
+	// MARK: Action -
+	
 	func move(x:Int, y:Int)
 	{
 		if isLocked == true { return }

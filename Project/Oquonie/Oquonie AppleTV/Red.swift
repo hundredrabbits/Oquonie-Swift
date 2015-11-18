@@ -15,16 +15,27 @@ class Red : Event
 		updateSprite("event.redghost.1.png")
 	}
 	
-	override func collide()
-	{
-		print("Hit blocker")
-		player.isMoving = false
-	}
-	
 	override func onRoomEnter()
 	{
+		if isSeen == true { return }
 		player.lock()
-		self.runAction(SKAction.fadeAlphaTo(0, duration: 1), completion:{ self.isSeen = true ; player.unlock() })
+		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "disapear", userInfo: nil, repeats: false)
+	}
+	
+	override func collide()
+	{
+		player.walk(x, destination_y:y)
+	}
+	
+	func disapear()
+	{
+		let action_move = SKAction.moveToY(sprite.position.y + (templates.floor.height * 0.5), duration: 3)
+		let action_fade = SKAction.fadeAlphaTo(0, duration: 3)
+		let action_group = SKAction.group([action_move,action_fade])
+		
+		action_move.timingMode = .EaseInEaseOut
+		
+		sprite.runAction(action_group, completion:{ self.isSeen = true ; player.unlock() })
 	}
 	
 	required init?(coder aDecoder: NSCoder)
