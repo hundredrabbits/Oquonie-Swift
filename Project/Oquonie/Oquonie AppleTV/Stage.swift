@@ -297,7 +297,7 @@ class Stage : SKNode
 		if x == -1 && y == 1 { return floore1 }
 		if x == 0 && y == 0 { return floor00 }
 		if x == 1 && y == -1 { return floor1e }
-		if x == -1 && y == 0 { return floore1 }
+		if x == -1 && y == 0 { return floore0 }
 		if x == 0 && y == -1 { return floor0e }
 		if x == -1 && y == -1 { return flooree }
 		return nil

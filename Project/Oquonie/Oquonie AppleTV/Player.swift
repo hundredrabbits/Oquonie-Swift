@@ -66,6 +66,7 @@ class Player : Event
 		}
 		else if destination_x < 2 && destination_x > -2 && destination_y < 2 && destination_y > -2 {
 			if destination_tile != nil && destination_tile.id == 0 {
+				print("!! \(destination_tile.id) (\(destination_x)/\(destination_y))")
 				bump()
 			}
 			else{

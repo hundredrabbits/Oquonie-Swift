@@ -40,6 +40,11 @@ class Dialogs
 		return ["\(Letter.confusion1)","\(Letter.confusion1)","\(Letter.confusion3)"]
 	}
 	
+	func spellbookFull() -> Array<String>
+	{
+		return ["\(Letter.guide)","\(Letter.unlocked)","\(Letter.help)"]
+	}
+	
 	func music(toggle:Bool) -> Array<String>
 	{
 		if toggle == true {

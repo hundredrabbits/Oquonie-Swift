@@ -77,7 +77,7 @@ class World
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: 1, y: 1, id:9))
-		room.addEvent(Speaker(x: 1, y: 1))
+		room.addEvent(Speaker(x: -1, y: 1))
 		room.addEvent(Door(x: 0, y: 2, room:14, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:3, to_x: -1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:5, to_x: 0, to_y:1))
@@ -416,17 +416,17 @@ class World
 		room.steps  = [ 0,0,0, 6,0,0 ]
 		room.audio  = Soundtrack.nephtaline
 		room.theme  = Theme.white
-		room.addEvent(Red(x: -1, y: 0))
+		room.addEvent(Red(x: 1, y: -1))
 		room.addEvent(Door(x: 2, y: 1, room:41, to_x: -1, to_y:1))
-		room.addEvent(Door(x: -1, y: -2, requirement: Personas.nephtaline, room:1, to_x:0, to_y:1))
+		room.addEvent(Door(x: -1, y: -2, requirement: .nephtaline, room:1, to_x:0, to_y:1))
 		all[40] = room
 		
 		room = Room()
 		room.floors = [ 4,5,19, 30,0,6, 32,5,0 ]
 		room.walls  = [ 0,0,0, 0,0,0 ]
 		room.steps  = [ 7,0,0, 0,0,7 ]
-		room.audio  = Soundtrack.nephtaline
-		room.theme  = Theme.white
+		room.audio  = .nephtaline
+		room.theme  = .white
 		room.addEvent(Door(x: -2, y: 1, room:40, to_x: 1, to_y:1))
 		room.addEvent(Door(x: 1, y: -2, room:42, to_x: 1, to_y:1))
 		all[41] = room
@@ -435,11 +435,11 @@ class World
 		room.floors = [ 32,0,5, 6,0,4, 4,17,30 ]
 		room.walls  = [ 3,0,13, 0,0,0 ]
 		room.steps  = [ 0,0,7, 0,0,0 ]
-		room.audio  = Soundtrack.nephtaline
-		room.theme  = Theme.white
-		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.nemedique))
+		room.audio  = .nephtaline
+		room.theme  = .white
+		room.addEvent(Wizard(x: -1, y: 1, spell: .nemedique, requiresPillar: true, orientation: .r))
 		room.addEvent(Door(x: 1, y: 2, room:41, to_x: 1, to_y:-1))
-		room.addEvent(Door(x: -2, y: -1, room:43, to_x: -1, to_y:-1))
+		room.addEvent(Door(x: -2, y: -1, room:43, to_x: 1, to_y:-1))
 		all[42] = room
 		
 		room = Room()
@@ -457,11 +457,11 @@ class World
 		room.floors = [ 18,4,4, 0,0,30, 4,32,4 ]
 		room.walls  = [ 0,0,0, 12,0,0 ]
 		room.steps  = [ 0,0,0, 7,0,0 ]
-		room.audio  = Soundtrack.nephtaline
-		room.theme  = Theme.white
-		room.addEvent(Wizard(x: -1, y: 0, spell: Personas.neomine))
+		room.audio  = .nephtaline
+		room.theme  = .white
+		room.addEvent(Wizard(x: 1, y: -1, spell: .neomine))
 		room.addEvent(Door(x: 2, y: 1, room:45, to_x: -1, to_y:1))
-		room.addEvent(Door(x: -1, y: -2, room:43, to_x: 1, to_y:1))
+		room.addEvent(Door(x: -1, y: -2, room:43, to_x: -1, to_y:1))
 		all[44] = room
 		
 		room = Room()
@@ -482,7 +482,7 @@ class World
 		room.audio  = Soundtrack.nephtaline
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:13))
-		room.addEvent(Wizard(x: -1, y: 0, spell: Personas.neomine))
+		room.addEvent(Wizard(x: 1, y: 0, spell: Personas.neomine))
 //		room.addEvent(Door(x: 0, y: 2, requirement: Personas.photobooth))
 		room.addEvent(Door(x: 2, y: 1, room:41, to_x: -1, to_y:1))
 		room.addEvent(Door(x: -2, y: 0, room:47, to_x: 1, to_y:0))
@@ -495,7 +495,7 @@ class World
 		room.steps  = [ 0,0,0, 0,7,0 ]
 		room.audio  = Soundtrack.nephtaline
 		room.theme  = Theme.white
-		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.necomedre))
+		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.necomedre, requiresPillar: true, orientation: .r))
 		room.addEvent(Door(x: 2, y: 0, room:46, to_x: -1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:48, to_x: 0, to_y:1))
 		all[47] = room
@@ -527,7 +527,7 @@ class World
 		room.audio  = Soundtrack.nephtaline
 		room.theme  = Theme.white
 		room.addEvent(Owl(x: 1, y: 1))
-		room.addEvent(Blocker(x: -1, y: 0, id:21))
+		room.addEvent(Blocker(x: 1, y: 0, id:21))
 		room.addEvent(Door(x: 0, y: 2, requirement: Personas.nemedique, room:121, to_x:0, to_y:-1))
 		room.addEvent(Map(x: 2, y: 0, world: "nephtaline"))
 		room.addEvent(Door(x: -2, y: 0, room:47, to_x: 1, to_y:0))
@@ -582,8 +582,8 @@ class World
 		room.floors = [ 0,5,0, 0,10,0, 0,0,5 ]
 		room.walls  = [ 0,13,0, 0,0,0 ]
 		room.steps  = [ 0,7,0, 0,0,0 ]
-		room.audio  = Soundtrack.nephtaline
-		room.theme  = Theme.white
+		room.audio  = .nephtaline
+		room.theme  = .white
 		room.addEvent(Door(x: 0, y: 2, room:50, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: -2, y: 0, room:56, to_x: 1, to_y:0))
 		all[55] = room
