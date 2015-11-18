@@ -16,7 +16,7 @@ class Owl : Event
 	
 	override func collide()
 	{
-		print("Hit blocker")
+		dialog.showModal(dialogs.owl(), eventName: "owl")
 		player.isMoving = false
 	}
 	

@@ -34,4 +34,17 @@ class Dialogs
 	{
 		return ["\(Letter.friend)","\(Letter.outside)",persona]
 	}
+	
+	func owl() -> Array<String>
+	{
+		// First chapter
+		if player.hasPillar(pillar_nemedique) == false {
+			if player.persona == Personas.necomedre { return ["\(Letter.guide)","\(Letter.locked)","\(Letter.nephtaline)"] }
+			else if player.persona == Personas.nephtaline { return ["\(Letter.guide)","\(Letter.locked)","\(Letter.neomine)"] }
+			else if player.persona == Personas.neomine { return ["\(Letter.guide)","\(Letter.locked)","\(Letter.nestorine)"] }
+			else if player.persona == Personas.nestorine { return ["\(Letter.guide)","\(Letter.locked)","\(Letter.nemedique)"] }
+			else if player.persona == Personas.nemedique { return ["\(Letter.guide)","\(Letter.locked)","\(Letter.pillar)"] }
+		}
+		return ["\(Letter.guide)","\(Letter.locked)","\(Letter.pillar)"]
+	}
 }
