@@ -35,6 +35,14 @@ class Dialogs
 		return ["\(Letter.friend)","\(Letter.outside)",persona]
 	}
 	
+	func music(toggle:Bool) -> Array<String>
+	{
+		if toggle == true {
+			return ["\(Letter.guide)","\(Letter.unlocked)","\(Letter.sound)"]
+		}
+		return ["\(Letter.guide)","\(Letter.locked)","\(Letter.sound)"]
+	}
+	
 	func shark() -> Array<String>
 	{
 		if player.hasPillar(pillar_nemedique) == false { return ["\(Letter.foe)","\(Letter.locked)","\(Letter.pillar)"] }

@@ -7,17 +7,48 @@ import Foundation
 
 class Speaker : Event
 {
-	override init(x:Int,y:Int)
+	init(x:Int,y:Int, orientation:Orientation = Orientation.l)
 	{
 		super.init(x: x, y: y)
 		
-		updateSprite("event.speaker.1.png")
+		updateSprite("event.music.1.png")
+		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
 	override func collide()
 	{
-		print("Hit blocker")
+		if player.hasMusic == true {
+			turnOff()
+		}
+		else{
+			turnOn()
+		}
 		player.isMoving = false
+		updateSprite()
+	}
+	
+	func turnOn()
+	{
+		player.hasMusic = true
+		dialog.showModal(dialogs.music(true), eventName: "music")
+	}
+	
+	func turnOff()
+	{
+		player.hasMusic = false
+		dialog.showModal(dialogs.music(false), eventName: "music")
+	}
+	
+	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
+	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
+	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	
+	func updateSprite()
+	{
+		if isVisible == true && player.hasMusic == true { sprite.texture = textureWithName("event.music.off.png") ; return }
+		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; sprite.texture = textureWithName("event.music.\(activityFrame).png") ; return }
+		if isVisible == false { return }
+		sprite.texture = textureWithName("event.music.\(activityFrame).png")
 	}
 	
 	required init?(coder aDecoder: NSCoder)

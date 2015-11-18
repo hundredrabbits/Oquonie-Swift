@@ -340,7 +340,7 @@ class World
 		room.audio  = Soundtrack.necomedre
 		room.theme  = Theme.white
 		room.addEvent(Ramen(x: 1, y: 1))
-		room.addEvent(Speaker(x: -1, y: 1))
+		room.addEvent(Speaker(x: -1, y: 1, orientation: Orientation.r))
 		room.addEvent(Door(x: 0, y: 2, room:32, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:36, to_x: -1, to_y:0))
 		room.addEvent(Door(x: -2, y: 0, room:34, to_x: 1, to_y:0))

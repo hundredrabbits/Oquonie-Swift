@@ -181,7 +181,7 @@
 		5793052F1BF63FCA005583CE /* event.music.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754C21BF2D78200638CAE /* event.music.2.png */; };
 		579305301BF63FCA005583CE /* event.music.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754C31BF2D78200638CAE /* event.music.3.png */; };
 		579305311BF63FCA005583CE /* event.music.portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754C41BF2D78200638CAE /* event.music.portrait.png */; };
-		579305321BF63FCA005583CE /* event.musicoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754C51BF2D78200638CAE /* event.musicoff.png */; };
+		579305321BF63FCA005583CE /* event.music.off.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754C51BF2D78200638CAE /* event.music.off.png */; };
 		579305331BF63FCA005583CE /* event.nastazie.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754C61BF2D78200638CAE /* event.nastazie.1.png */; };
 		579305341BF63FCA005583CE /* event.nastazie.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754C71BF2D78200638CAE /* event.nastazie.2.png */; };
 		579305351BF63FCA005583CE /* event.nastazie.3.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754C81BF2D78200638CAE /* event.nastazie.3.png */; };
@@ -726,7 +726,7 @@
 		570754C21BF2D78200638CAE /* event.music.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.music.2.png; path = en.assets/event.music.2.png; sourceTree = "<group>"; };
 		570754C31BF2D78200638CAE /* event.music.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.music.3.png; path = en.assets/event.music.3.png; sourceTree = "<group>"; };
 		570754C41BF2D78200638CAE /* event.music.portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.music.portrait.png; path = en.assets/event.music.portrait.png; sourceTree = "<group>"; };
-		570754C51BF2D78200638CAE /* event.musicoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.musicoff.png; path = en.assets/event.musicoff.png; sourceTree = "<group>"; };
+		570754C51BF2D78200638CAE /* event.music.off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.music.off.png; path = en.assets/event.music.off.png; sourceTree = "<group>"; };
 		570754C61BF2D78200638CAE /* event.nastazie.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.nastazie.1.png; path = en.assets/event.nastazie.1.png; sourceTree = "<group>"; };
 		570754C71BF2D78200638CAE /* event.nastazie.2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.nastazie.2.png; path = en.assets/event.nastazie.2.png; sourceTree = "<group>"; };
 		570754C81BF2D78200638CAE /* event.nastazie.3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = event.nastazie.3.png; path = en.assets/event.nastazie.3.png; sourceTree = "<group>"; };
@@ -1518,7 +1518,7 @@
 				570754C21BF2D78200638CAE /* event.music.2.png */,
 				570754C31BF2D78200638CAE /* event.music.3.png */,
 				570754C41BF2D78200638CAE /* event.music.portrait.png */,
-				570754C51BF2D78200638CAE /* event.musicoff.png */,
+				570754C51BF2D78200638CAE /* event.music.off.png */,
 				570754C61BF2D78200638CAE /* event.nastazie.1.png */,
 				570754C71BF2D78200638CAE /* event.nastazie.2.png */,
 				570754C81BF2D78200638CAE /* event.nastazie.3.png */,
@@ -1803,8 +1803,8 @@
 				57E3D2CA1BF10E7B00E4D319 /* Door.swift */,
 				57C843F61BF28A4200288847 /* Map.swift */,
 				57C843FC1BF292C400288847 /* Owl.swift */,
-				5755DCEC1BF2979C00C5353D /* Shark.swift */,
 				5755DCDF1BF296D600C5353D /* Speaker.swift */,
+				5755DCEC1BF2979C00C5353D /* Shark.swift */,
 				5755DCEE1BF2982E00C5353D /* Tree.swift */,
 				5755DCF01BF2994900C5353D /* NoFace.swift */,
 				5755DD081BF2CDEA00C5353D /* Kamera.swift */,
@@ -2313,7 +2313,7 @@
 				579305281BF63FCA005583CE /* event.devine.png in Resources */,
 				579305E41BF63FCA005583CE /* tile.97.png in Resources */,
 				5793059E1BF63FCA005583CE /* map.necomedre.png in Resources */,
-				579305321BF63FCA005583CE /* event.musicoff.png in Resources */,
+				579305321BF63FCA005583CE /* event.music.off.png in Resources */,
 				57618A471BFBC92A0060E177 /* letter.confusion2.png in Resources */,
 				579304F61BF63F5E005583CE /* blocker.30.png in Resources */,
 				579304D81BF63F34005583CE /* notification.nastazie.png in Resources */,

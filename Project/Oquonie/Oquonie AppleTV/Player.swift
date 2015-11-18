@@ -16,6 +16,7 @@ class Player : Event
 	var shadow:SKSpriteNode!
 	var animationFrame:Int = 0
 	var hasOverlay:Bool = false
+	var hasMusic:Bool = true
 	
 	init()
 	{
