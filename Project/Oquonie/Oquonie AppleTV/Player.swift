@@ -13,6 +13,7 @@ class Player : Event
 	var state:States = States.stand
 	var collectibles:Array<Event> = []
 	var shadow:SKSpriteNode!
+	var animationFrame:Int = 0
 	
 	init()
 	{
@@ -29,6 +30,8 @@ class Player : Event
 		addChild(shadow)
 		
 		updateSprite()
+		
+		startActivity()
 	}
 	
 	func move(x:Int, y:Int)
@@ -39,6 +42,7 @@ class Player : Event
 		updateSpriteStyle(x,y:y)
 		action(x,y:y)
 		updateSprite()
+		startActivity()
 	}
 	
 	func action(x:Int, y:Int)
@@ -124,11 +128,6 @@ class Player : Event
 		self.position = stage.positionAt(self.x,y:self.y)
 	}
 	
-	override func remove()
-	{
-		// Disable the removal of the player SKNode
-	}
-	
 	func warp(destination:Int,to_x:Int,to_y:Int)
 	{
 		player.updatePosition(to_x,y:to_y)
@@ -139,7 +138,7 @@ class Player : Event
 	
 	func updateSprite()
 	{
-		var imageName = "char.\(persona).\(state).\(direction).1.png"
+		var imageName = "char.\(persona).\(state).\(direction).\(activityFrame).png"
 		
 		if direction == Direction.b && state == States.stand {
 			imageName = "char.\(persona).\(state).\(direction).png"
@@ -162,10 +161,6 @@ class Player : Event
 		sprite.texture = texture
 	}
 	
-	override func fixedUpdate()
-	{
-	}
-	
 	func hasSpell(spell:Wizard) -> Bool
 	{
 		for _spell in spellbook.spells {
@@ -181,6 +176,15 @@ class Player : Event
 		}
 		return false
 	}
+	
+	
+	// MARK: Animation -
+	
+	override func fixedUpdate()
+	{
+	}
+	
+	// MARK: Transform -
 	
 	func transform(spell:Personas)
 	{
@@ -221,7 +225,7 @@ class Player : Event
 		print("transform")
 	}
 	
-	// MARK: Teleport
+	// MARK: Teleport -
 	
 	func teleportTrigger(room:Int)
 	{
@@ -257,6 +261,15 @@ class Player : Event
 			self.state = States.stand
 			self.updateSprite()
 		})
+	}
+	
+	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
+	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
+	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	
+	override func remove()
+	{
+		// Disable the removal of the player SKNode
 	}
 
 	required init?(coder aDecoder: NSCoder)

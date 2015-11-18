@@ -83,6 +83,17 @@ class Wizard : Event
 		}
 	}
 	
+	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
+	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
+	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	
+	func updateSprite()
+	{
+		if isVisible == false && activityFrame != 1 { activityFrame = 1 }
+		if isVisible == false { return }
+		updateSprite("event.\(spell).\(activityFrame).png")
+	}
+	
 	required init?(coder aDecoder: NSCoder)
 	{
 		fatalError("init(coder:) has not been implemented")

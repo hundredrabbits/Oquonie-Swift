@@ -193,12 +193,14 @@ class Stage : SKNode
 	{
 		for event in events_root.children {
 			let event = event as! Event
+			event.isVisible = false
 			event.remove()
 		}
 	}
 	
 	func addEvent(event:Event)
 	{
+		event.isVisible = true
 		events_root.addChild(event)
 	}
 	

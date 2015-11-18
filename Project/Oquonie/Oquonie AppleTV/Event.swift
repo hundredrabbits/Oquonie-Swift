@@ -14,6 +14,10 @@ class Event : SKNode
 	var target:Tile!
 	var orientation:Orientation = Orientation.l
 	
+	var isVisible:Bool = false
+	var activity:NSTimer!
+	var activityFrame:Int = 1
+	
 	init(x:Int,y:Int)
 	{
 		super.init()
@@ -26,7 +30,30 @@ class Event : SKNode
 		sprite.position = sprite_position
 		
 		position = stage.positionAt(self.x, y: self.y)
+		
+		startActivity()
 	}
+	
+	// MARK: Animation -
+	
+	func startActivity()
+	{
+		if activity != nil { activity.invalidate() }
+		activity = NSTimer.scheduledTimerWithTimeInterval(4.5, target: self, selector: "animateIdle", userInfo: nil, repeats: true)
+	}
+	
+	func animateIdle()
+	{
+		NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "animateFrame1", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: "animateFrame2", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(0.7, target: self, selector: "animateFrame3", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: "animateFrame2", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(0.9, target: self, selector: "animateFrame1", userInfo: nil, repeats: false)
+	}
+	
+	func animateFrame1() { }
+	func animateFrame2() { }
+	func animateFrame3() { }
 	
 	func bump()
 	{
