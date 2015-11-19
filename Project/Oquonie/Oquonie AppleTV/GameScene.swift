@@ -25,10 +25,10 @@ class GameScene: SKScene
 		_addOverlay()
 		
 		// debug
-		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
-		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
-		player.persona = .nephtaline
-		stage.enter(world.all[55])
+//		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
+//		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
+		player.persona = .neomine
+		stage.enter(world.all[3])
 	}
 	
 	func _addPlayer()
