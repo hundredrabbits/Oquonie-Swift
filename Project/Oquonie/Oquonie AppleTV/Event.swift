@@ -61,7 +61,7 @@ class Event : SKNode
 		sprite.runAction( SKAction.moveToY(sprite_position.y, duration: 0.1) )
 	}
 	
-	func updateSprite(imageName:String)
+	func updateSprite(imageName:String! = nil)
 	{
 		var image:UIImage!
 		var texture:SKTexture!
