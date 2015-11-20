@@ -32,8 +32,10 @@ class Stage : SKNode
 	let step6:Tile!
 	
 	let events_root = SKNode()
+	
 	var room:Room!
 	var room_root = SKNode()
+	var roomId:Int!
 	
 	override init()
 	{
@@ -129,9 +131,12 @@ class Stage : SKNode
 		events_root.zPosition = 900
 	}
 	
-	func enter(room:Room)
+	func enter(roomId:Int)
 	{
-		self.room = room
+		self.roomId = roomId
+		
+		room = world.all[roomId]
+
 		updateTiles()
 		removeEvents()
 		
@@ -241,7 +246,7 @@ class Stage : SKNode
 			for node in self.room_root.children {
 				node.onRoomTeleportIn()
 			}
-			self.position = CGPoint(x: templates.stage.x, y: templates.stage.y * 2.5)
+			self.position = CGPoint(x: templates.stage.x, y: templates.stage.y * 3)
 			let action_move = SKAction.moveToY(templates.stage.y, duration: 3)
 			action_move.timingMode = .EaseOut
 			self.runAction(action_move)

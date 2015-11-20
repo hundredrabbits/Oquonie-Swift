@@ -7,17 +7,26 @@ import Foundation
 
 class Shark : Event
 {
-	override init(x:Int,y:Int)
+	init(x:Int,y:Int, orientation:Orientation = Orientation.l)
 	{
 		super.init(x: x, y: y)
 		updateSprite("event.shark.1.png")
+		
+		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
 	override func collide()
 	{
 		player.isMoving = false
-		dialog.showModal(dialogs.shark(), eventName: "owl")
-		if player.hasPillar(pillar_nemedique) == true && player.persona != Personas.necomedre { player.transform(Personas.necomedre) }
+		if player.hasPillar(pillar_nemedique) == true && player.persona != Personas.necomedre {
+			player.transform(Personas.necomedre)
+		}
+		else if stage.roomId == 102 && player.persona != .necomedre {
+			player.transform(Personas.necomedre)
+		}
+		else {
+			dialog.showModal(dialogs.shark(), eventName: "owl")
+		}
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; updateSprite() }

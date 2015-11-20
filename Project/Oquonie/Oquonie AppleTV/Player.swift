@@ -151,7 +151,7 @@ class Player : Event
 	func warp(destination:Int,to_x:Int,to_y:Int)
 	{
 		player.updatePosition(to_x,y:to_y)
-		stage.enter(world.all[destination])
+		stage.enter(destination)
 		stage.parallaxTo(stage.positionAt(self.x,y:self.y).x,y:stage.positionAt(self.x,y:self.y).y)
 		print("moving: \(destination) -> \(x)/\(y)")
 	}
