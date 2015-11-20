@@ -7,9 +7,12 @@ import Foundation
 
 class Teleport : Event
 {
-	override init(x:Int,y:Int)
+	var destination:Int!
+	
+	init(x:Int,y:Int, destination:Int = 1)
 	{
 		super.init(x: x, y: y)
+		self.destination = destination
 	}
 	
 	override func collide()
@@ -17,7 +20,7 @@ class Teleport : Event
 		print("Warp pad")
 		player.isMoving = false
 		player.walk(x, destination_y: y)
-		player.teleportTrigger(1)
+		player.teleportTrigger(destination)
 	}
 	
 	required init?(coder aDecoder: NSCoder)

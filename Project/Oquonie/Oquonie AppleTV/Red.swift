@@ -9,10 +9,11 @@ class Red : Event
 {
 	var isSeen:Bool = false
 	
-	override init(x:Int,y:Int)
+	init(x:Int,y:Int,orientation:Orientation = .l)
 	{
 		super.init(x: x, y: y)
 		updateSprite("event.redghost.1.png")
+		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
 	override func onRoomEnter()

@@ -18,6 +18,8 @@ class Player : Event
 	var hasOverlay:Bool = false
 	var hasMusic:Bool = true
 	
+	var teleportDestination:Int!
+	
 	init()
 	{
 		super.init(x:0,y:0)
@@ -248,6 +250,7 @@ class Player : Event
 	
 	func teleportTrigger(room:Int)
 	{
+		teleportDestination = room
 		player.lock()
 		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "teleport", userInfo: nil, repeats: false)
 	}
@@ -255,7 +258,7 @@ class Player : Event
 	func teleport()
 	{
 		levitate()
-		stage.teleportOut()
+		stage.teleportOut(teleportDestination)
 		
 		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)
 		action_levitate.timingMode = .EaseOut
@@ -271,6 +274,8 @@ class Player : Event
 		state = .warp
 		updateSprite()
 		self.sprite.runAction(action_levitate)
+		
+		self.shadow.runAction(SKAction.fadeAlphaTo(0, duration: 2))
 	}
 	
 	func land()
@@ -283,6 +288,7 @@ class Player : Event
 			self.updateSprite()
 			player.unlock()
 		})
+		self.shadow.runAction(SKAction.fadeAlphaTo(1, duration: 2))
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; updateSprite() }

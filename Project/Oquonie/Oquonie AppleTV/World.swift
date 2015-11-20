@@ -61,12 +61,12 @@ class World
 		room.floors = [ 1,23,1, 6,5,1, 1,1,4 ]
 		room.walls  = [ 1,7,1, 1,104,1 ]
 		room.steps  = [ 0,7,0, 0,7,0]
-		room.audio  = Soundtrack.lobby
-		room.theme  = Theme.white
+		room.audio  = .lobby
+		room.theme  = .white
 		room.addEvent(Pillar(x: -1, y: 1, display:pillar_neomine))
-		room.addEvent(Owl(x: 1, y: 1, orientation:Orientation.r))
+		room.addEvent(Owl(x: 1, y: 1, orientation:.r))
 		room.addEvent(Blocker(x: -1, y: -1, id:1))
-		room.addEvent(Door(x: 0, y: 2, requirement:Personas.neomine, room:60, to_x:0, to_y:-1))
+		room.addEvent(Door(x: 0, y: 2, requirement:.neomine, room:60, to_x:0, to_y:-1))
 		room.addEvent(Door(x: -2, y: 0, room:4, to_x: 1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:2, to_x: 0, to_y:1))
 		all[3] = room
@@ -75,10 +75,10 @@ class World
 		room.floors = [ 1,1,1, 6,5,6, 1,1,1 ]
 		room.walls  = [ 26,14,26,1,12,1 ]
 		room.steps  = [ 0,0,0, 0,7,0 ]
-		room.audio  = Soundtrack.lobby
-		room.theme  = Theme.white
+		room.audio  = .lobby
+		room.theme  = .white
 		room.addEvent(Blocker(x: 1, y: 1, id:9))
-		room.addEvent(Speaker(x: -1, y: 1))
+		room.addEvent(Speaker(x: -1, y: 1, orientation: .r))
 		room.addEvent(Door(x: 0, y: 2, room:14, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:3, to_x: -1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:5, to_x: 0, to_y:1))
@@ -678,9 +678,9 @@ class World
 		room.steps  = [ 3,0,3, 0,0,0 ]
 		room.audio  = Soundtrack.neomine
 		room.theme  = Theme.black
-		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.necomedre, requiresPillar:true))
+		room.addEvent(Wizard(x: 1, y: 1, spell: .necomedre, requiresPillar:true))
 		room.addEvent(Blocker(x: 1, y: -1, id:23))
-		room.addEvent(Door(x: 2, y: 0, requirement: Personas.necomedre, room:71, to_x:-1, to_y:0))
+		room.addEvent(Door(x: 2, y: 0, requirement: .necomedre, room:71, to_x:-1, to_y:0))
 		room.addEvent(Door(x: -2, y: 1, room:60, to_x: 1, to_y:1))
 		room.addEvent(Door(x: -2, y: -1, room:63, to_x: 1, to_y:-1))
 		all[62] = room
@@ -702,10 +702,10 @@ class World
 		room.floors = [ 39,1,39, 36,32,36, 39,1,36 ]
 		room.walls  = [ 33,33,33, 31,31,15 ]
 		room.steps  = [ 3,3,3, 0,0,0 ]
-		room.audio  = Soundtrack.neomine
-		room.theme  = Theme.black
+		room.audio  = .neomine
+		room.theme  = .black
 		room.addEvent(Blocker(x: 1, y: 1, id:21))
-		room.addEvent(Wizard(x: 1, y: 0, spell: Personas.nephtaline))
+		room.addEvent(Wizard(x: 1, y: 0, spell: .nephtaline, requiresPillar:true))
 		room.addEvent(Door(x: -2, y: 1, room:68, to_x: 1, to_y:1))
 		room.addEvent(Door(x: -2, y: 0, room:63, to_x: 1, to_y:0))
 		room.addEvent(Door(x: -2, y: -1, room:65, to_x: 1, to_y:-1))
@@ -750,9 +750,9 @@ class World
 		room.floors = [ 38,10,38, 6,9,10, 5,10,4 ]
 		room.walls  = [ 35,38,20, 30,30,30 ]
 		room.steps  = [ 0,0,0, 0,0,0 ]
-		room.audio  = Soundtrack.neomine
-		room.theme  = Theme.black
-		room.addEvent(Red(x: -1, y: 1))
+		room.audio  = .neomine
+		room.theme  = .black
+		room.addEvent(Red(x: -1, y: 1, orientation: .r))
 //		room.addEvent(Door(x: 0, y: 2, requirement: Personas.Hiversaires))
 		room.addEvent(Door(x: 2, y: 1, room:64, to_x: -1, to_y:1))
 		room.addEvent(Door(x: 2, y: 0, room:69, to_x: -1, to_y:0))
@@ -808,7 +808,7 @@ class World
 		room.audio  = Soundtrack.nestorine
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:23))
-		room.addEvent(Teleport(x: 1, y: 1))
+		room.addEvent(Teleport(x: 1, y: 1,destination:7))
 		room.addEvent(Door(x: -2, y: 0, room:81, to_x: 1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, room:82, to_x: 0, to_y:1))
 		all[80] = room
@@ -982,8 +982,8 @@ class World
 		room.steps  = [ 0,1,0, 0,0,0 ]
 		room.audio  = Soundtrack.warp
 		room.theme  = Theme.white
-//		room.addEvent(Wizard(x: 0, y: 0, spell: warpNestorine))
-		room.addEvent(Door(x: -2, y: 0, requirement: Personas.nestorine, room:7, to_x:1, to_y:0))
+		room.addEvent(Teleport(x: 0, y: 0, destination: 80))
+		room.addEvent(Door(x: -2, y: 0, requirement: .nestorine, room:7, to_x:1, to_y:0))
 		all[96] = room
 		
 		room = Room()
@@ -994,7 +994,6 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Door(x: 0, y: 2, room:94, to_x: 0, to_y:-1))
 		all[97] = room
-	
 	}
 	
 	func createNemedique()

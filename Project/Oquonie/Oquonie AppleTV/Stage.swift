@@ -217,7 +217,7 @@ class Stage : SKNode
 		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
 	}
 	
-	func teleportOut()
+	func teleportOut(room:Int)
 	{
 		// Dislocate tiles
 		for node in room_root.children {
@@ -232,7 +232,10 @@ class Stage : SKNode
 		
 		self.runAction(action_move, completion: {
 			
-			self.testHome()
+			self.teleportDestination(room)
+			player.orientation = .r
+			player.direction = .f
+			player.position = stage.positionAt(0,y:0)
 			
 			// DeDislocate tiles
 			for node in self.room_root.children {
@@ -257,9 +260,9 @@ class Stage : SKNode
 		}
 	}
 	
-	func testHome()
+	func teleportDestination(room:Int)
 	{
-		self.room = world.all[1]
+		self.room = world.all[room]
 		self.updateTiles()
 		self.removeEvents()
 		
