@@ -637,7 +637,7 @@ class World
 		room.steps  = [ 0,0,0, 0,3,0 ]
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
-		room.addEvent(Pillar(x: 0, y: 0))
+		room.addEvent(pillar_nephtaline)
 		room.addEvent(Door(x: 0, y: -2, requirement: Personas.nemedique, room:50, to_x:0, to_y:1))
 		all[121] = room
 	}
@@ -792,7 +792,7 @@ class World
 		room.steps  = [ 0,3,0, 0,0,0 ]
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
-		room.addEvent(Pillar(x: 0, y: 0))
+		room.addEvent(pillar_neomine)
 		room.addEvent(Door(x: -2, y: 0, requirement: Personas.necomedre, room:62, to_x:1, to_y:0))
 		all[71] = room
 	}
@@ -914,7 +914,7 @@ class World
 		room.steps  = [ 0,0,0, 0,6,0 ]
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
-		room.addEvent(Pillar(x: 0, y: 0))
+		room.addEvent(pillar_nestorine)
 		room.addEvent(Door(x: 0, y: -2, requirement: Personas.nephtaline, room:93, to_x:0, to_y:1))
 		all[90] = room
 		
@@ -1041,7 +1041,7 @@ class World
 		room.steps  = [ 0,6,0, 0,0,0 ]
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
-		room.addEvent(Pillar(x: 0, y: 0))
+		room.addEvent(pillar_nemedique)
 		room.addEvent(Door(x: -2, y: 0, requirement: Personas.necomedre, room:101, to_x:1, to_y:0))
 		all[103] = room
 		
@@ -1321,7 +1321,7 @@ class World
 		room.steps  = [ 0,8,0, 0,0,0 ]
 		room.audio  = Soundtrack.glitch
 		room.theme  = Theme.red
-		room.addEvent(Pillar(x: 1, y: 0))
+		room.addEvent(pillar_nastazie)
 		room.addEvent(Door(x: -2, y: 0, room:130, to_x: 1, to_y:0))
 		all[147] = room
 	}

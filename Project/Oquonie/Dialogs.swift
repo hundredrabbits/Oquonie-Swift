@@ -65,6 +65,12 @@ class Dialogs
 		return ["\(Letter.friend)","\(Letter.outside)","\(Letter.necomedre)"]
 	}
 	
+	func pillarSocket(pillar:Pillar) -> Array<String>
+	{
+		if player.hasPillar(pillar) == true { return ["\(Letter.guide)","\(Letter.unlocked)","\(pillar.persona)"] }
+		else { return ["\(Letter.guide)","\(Letter.locked)","\(pillar.persona)"]  }
+	}
+	
 	func owl() -> Array<String>
 	{
 		// First chapter

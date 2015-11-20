@@ -158,12 +158,12 @@ func textureWithName(imageName:String) -> SKTexture!
 	return texture
 }
 
-var pillar_necomedre = Pillar(x: 0, y: 0)
-var pillar_nephtaline = Pillar(x: 0, y: 0)
-var pillar_neomine = Pillar(x: 0, y: 0)
-var pillar_nestorine = Pillar(x: 0, y: 0)
-var pillar_nemedique = Pillar(x: 0, y: 0)
-var pillar_nastazie = Pillar(x: 0, y: 0)
+var pillar_necomedre = Pillar(x: 0, y: 0, persona: Personas.necomedre)
+var pillar_nephtaline = Pillar(x: 0, y: 0, persona: Personas.nephtaline)
+var pillar_neomine = Pillar(x: 0, y: 0, persona: Personas.neomine)
+var pillar_nestorine = Pillar(x: 0, y: 0, persona: Personas.nestorine)
+var pillar_nemedique = Pillar(x: 0, y: 0, persona: Personas.nemedique)
+var pillar_nastazie = Pillar(x: 0, y: 0, persona: Personas.nastazie)
 
 var ramen_necomedre = Ramen(x: 1, y: 1)
 var ramen_nephtaline = Ramen(x: 1, y: 1)

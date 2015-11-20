@@ -12,13 +12,14 @@ class Player : Event
 	var persona:Personas = Personas.necomedre
 	var direction:Direction = Direction.f
 	var state:States = States.stand
-	var collectibles:Array<Event> = []
 	var shadow:SKSpriteNode!
 	var animationFrame:Int = 0
 	var hasOverlay:Bool = false
 	var hasMusic:Bool = true
 	
 	var teleportDestination:Int!
+	
+	var collectibles:Array<Event> = []
 	
 	init()
 	{

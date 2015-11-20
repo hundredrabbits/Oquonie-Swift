@@ -7,21 +7,56 @@ import Foundation
 class Pillar : Event
 {
 	var display:Pillar!
+	var persona:Personas!
 	
-	init(x:Int,y:Int, display:Pillar! = nil)
+	init(x:Int,y:Int, display:Pillar! = nil, persona:Personas! = nil)
 	{
 		super.init(x: x, y: y)
 		
 		self.display = display
+		self.persona = persona
 		
 		updateSprite("event.pillar.base.png")
 	}
 	
+	override func onRoomEnter()
+	{
+		if display != nil {
+			print(display)
+			if player.hasPillar(display) { updateSprite("event.pillar.active.1.png") }
+			else{ updateSprite("event.pillar.base.png") }
+		}
+		else if stage.roomId == 103 && player.hasPillar(pillar_nemedique) { updateSprite("event.pillar.gone.png") }
+		else {
+			 updateSprite("event.pillar.png")
+		}
+	}
+	
 	override func collide()
 	{
-		print("touched pillar")
+		if display != nil {
+			dialog.showModal(dialogs.pillarSocket(display), eventName: "owl")
+			return
+		}
+		if !player.hasPillar(self) {
+			collect()
+		}
 	}
 
+	override func bump()
+	{
+	
+	}
+	
+	func collect()
+	{
+		player.collectibles.append(self)
+		updateSprite("event.pillar.gone.png")
+		
+		if persona == Personas.nemedique { player.teleportTrigger(9) }
+		else{ print("\(self.persona)") }
+	}
+	
 	required init?(coder aDecoder: NSCoder)
 	{
 	    fatalError("init(coder:) has not been implemented")

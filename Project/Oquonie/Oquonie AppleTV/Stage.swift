@@ -275,6 +275,14 @@ class Stage : SKNode
 			self.addEvent(event)
 		}
 		
+		for node in room_root.children {
+			node.onRoomEnter()
+		}
+		
+		for node in events_root.children {
+			node.onRoomEnter()
+		}
+		
 		// Bind sprites to events
 		for event in self.events_root.children {
 			let event = event as! Event

@@ -27,8 +27,8 @@ class GameScene: SKScene
 		// debug
 //		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
 //		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
-		player.persona = .nemedique
-		stage.enter(102)
+		player.persona = .necomedre
+		stage.enter(101)
 	}
 	
 	func _addPlayer()
