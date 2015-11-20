@@ -53,6 +53,11 @@ class Dialogs
 		return ["\(Letter.guide)","\(Letter.locked)","\(Letter.sound)"]
 	}
 	
+	func tree(pillarsCount:Int) -> Array<String>
+	{
+		return ["\(Letter.foe)","\(Letter.locked)","\(Letter.pillar)"]
+	}
+	
 	func shark() -> Array<String>
 	{
 		if player.hasPillar(pillar_nemedique) == false { return ["\(Letter.foe)","\(Letter.locked)","\(Letter.pillar)"] }

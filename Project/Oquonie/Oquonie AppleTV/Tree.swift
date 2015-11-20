@@ -29,11 +29,24 @@ class Tree : Event
 		else if pillarsCount == 3 { updateSprite("event.tree.3.png") }
 		else if pillarsCount == 4 { updateSprite("event.tree.4.png") }
 		else if pillarsCount == 5 { updateSprite("event.tree.5.png") }
-		
 	}
 	
 	override func collide()
 	{
+		var pillarsCount = 0
+		if player.hasPillar(pillar_necomedre) { pillarsCount += 1 }
+		if player.hasPillar(pillar_nephtaline) { pillarsCount += 1 }
+		if player.hasPillar(pillar_neomine) { pillarsCount += 1 }
+		if player.hasPillar(pillar_nestorine) { pillarsCount += 1 }
+		if player.hasPillar(pillar_nemedique) { pillarsCount += 1 }
+		
+		if pillarsCount == 0 {
+			player.walk(0, destination_y: 0)
+		}
+		else{
+			dialog.showModal(dialogs.tree(pillarsCount), eventName:"owl")
+		}
+		
 		print("Hit blocker")
 		player.isMoving = false
 	}

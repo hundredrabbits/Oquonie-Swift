@@ -12,7 +12,7 @@ class Event : SKNode
 	var x:Int!
 	var y:Int!
 	var target:Tile!
-	var orientation:Orientation = Orientation.l
+	var orientation:Orientation = .l
 	
 	var isVisible:Bool = false
 	var activity:NSTimer!
@@ -22,7 +22,7 @@ class Event : SKNode
 	{
 		super.init()
 		
-		sprite = SKSpriteNode(texture: nil, color: UIColor.clearColor(), size: templates.player)
+		sprite = SKSpriteNode(texture: nil, color: .clearColor(), size: templates.player)
 		addChild(sprite)
 		
 		self.x = x
@@ -61,8 +61,10 @@ class Event : SKNode
 		sprite.runAction( SKAction.moveToY(sprite_position.y, duration: 0.1) )
 	}
 	
-	func updateSprite(imageName:String! = nil)
+	func updateSprite(imageName:String!)
 	{
+		if imageName == nil { sprite.texture = nil ; return }
+		
 		var image:UIImage!
 		var texture:SKTexture!
 		
