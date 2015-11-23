@@ -17,6 +17,11 @@ let dialogs = Dialogs()
 var overlay:SKSpriteNode!
 var overlay_image:SKSpriteNode!
 
+enum Waypoints : Int
+{
+	case spawn = 29
+}
+
 enum Progress : Int
 {
 	case tutorial = 1
@@ -92,7 +97,7 @@ enum States
 
 enum Personas
 {
-	case photocopier
+	case document
 	case necomedre
 	case nephtaline
 	case neomine

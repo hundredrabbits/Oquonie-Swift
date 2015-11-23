@@ -7,11 +7,15 @@ import Foundation
 
 class Speaker : Event
 {
-	init(x:Int,y:Int, orientation:Orientation = Orientation.l)
+	var spriteName:String!
+	
+	init(x:Int,y:Int, orientation:Orientation = Orientation.l, special:Bool = false)
 	{
 		super.init(x: x, y: y)
 		
-		updateSprite("event.music.1.png")
+		spriteName = special == true ? "radio" : "music"
+		
+		updateSprite("event.\(spriteName).1.png")
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
@@ -45,10 +49,10 @@ class Speaker : Event
 	
 	func updateSprite()
 	{
-		if isVisible == true && player.hasMusic == true { sprite.texture = textureWithName("event.music.off.png") ; return }
-		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; sprite.texture = textureWithName("event.music.\(activityFrame).png") ; return }
+		if isVisible == true && player.hasMusic == true { sprite.texture = textureWithName("event.\(spriteName).off.png") ; return }
+		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; sprite.texture = textureWithName("event.\(spriteName).\(activityFrame).png") ; return }
 		if isVisible == false { return }
-		sprite.texture = textureWithName("event.music.\(activityFrame).png")
+		sprite.texture = textureWithName("event.\(spriteName).\(activityFrame).png")
 	}
 	
 	required init?(coder aDecoder: NSCoder)

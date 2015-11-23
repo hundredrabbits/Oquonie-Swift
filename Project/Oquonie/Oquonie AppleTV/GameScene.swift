@@ -29,7 +29,7 @@ class GameScene: SKScene
 //		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
 		player.persona = .necomedre
 		player.collectibles.append(pillar_nemedique)
-		stage.enter(5)
+		stage.enter(Waypoints.spawn.rawValue)
 	}
 	
 	func _addPlayer()
