@@ -34,13 +34,13 @@ class Speaker : Event
 	func turnOn()
 	{
 		player.hasMusic = true
-		dialog.showModal(dialogs.music(true), eventName: "music")
+		dialog.showModal(dialogs.music(true), eventName: spriteName)
 	}
 	
 	func turnOff()
 	{
 		player.hasMusic = false
-		dialog.showModal(dialogs.music(false), eventName: "music")
+		dialog.showModal(dialogs.music(false), eventName: spriteName)
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; updateSprite() }

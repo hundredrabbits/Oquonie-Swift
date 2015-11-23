@@ -136,6 +136,7 @@ enum Theme
 	case red
 	case void
 	case pest
+	case glitch
 }
 
 func distanceBetweenTwoPoints(a:CGPoint,b:CGPoint)->CGFloat

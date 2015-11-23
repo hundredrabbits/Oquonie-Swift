@@ -279,10 +279,10 @@ class World
 		room.audio  = Soundtrack.quiet
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:16))
-		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.document))
-		room.addEvent(Blocker(x: -1, y: 0, id:1))
+		room.addEvent(Blocker(x: 1, y: -1, id:1))
+		room.addEvent(Boss(x: 1, y: 0, orientation: .r))
 		room.addEvent(Door(x: 0, y: 2, room:31, to_x: 0, to_y:-1))
-		room.addEvent(Door(x: -2, y: 0, requirement: Personas.document, room:29, to_x:1, to_y:0))
+		room.addEvent(Door(x: -2, y: 0, room:29, to_x:1, to_y:0))
 		all[30] = room
 		
 		room = Room()
@@ -1445,11 +1445,11 @@ class World
 		room.steps  = [ 0,0,0, 0,7,0 ]
 		room.audio  = Soundtrack.glitch
 		room.theme  = Theme.void
-		room.addEvent(Blocker(x: 0, y: -1, id:999))
+//		room.addEvent(Blocker(x: 0, y: -1, id:999))
 		//		room.addEvent(Wizard(x: 0, y: 0, spell: sauvegarde))
 		room.addEvent(Blocker(x: 1, y: 0, id:29))
-		room.addEvent(Blocker(x: -1, y: -1, id:999))
-		room.addEvent(Blocker(x: -1, y: 0, id:999))
+//		room.addEvent(Blocker(x: -1, y: -1, id:999))
+//		room.addEvent(Blocker(x: -1, y: 0, id:999))
 		room.addEvent(Door(x: 0, y: -2, room:68, to_x: 0, to_y:1))
 		all[148] = room
 		

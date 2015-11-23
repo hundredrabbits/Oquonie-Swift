@@ -37,6 +37,8 @@ class Stage : SKNode
 	var room_root = SKNode()
 	var roomId:Int!
 	
+	var theme:Theme!
+	
 	override init()
 	{
 		wall3 = Tile(sprite: Types.wall, position: CGPoint(x: -templates.wall.width * 0.5, y: templates.wall.height * 0.77), size: templates.wall)
@@ -163,8 +165,40 @@ class Stage : SKNode
 			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
 		}
 		
+		applyTheme(room.theme)
+		
 		parallaxFront.alpha = 0
 		parallaxFront.position = CGPoint(x:templates.stage.x + (CGFloat(player.x) * 0.2),y:CGRectGetMidY(gameScene.frame) + (CGFloat(player.y) * 0.2))
+	}
+	
+	func applyTheme(newTheme:Theme)
+	{
+		if self.theme == newTheme { return }
+		
+		print("Applying new theme \(newTheme), from \(self.theme)")
+		
+		if newTheme == Theme.white {
+			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.9, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			parallaxFront.texture = textureWithName("fx.parallax.2.png")
+			parallaxBack.texture = textureWithName("fx.parallax.1.png")
+		}
+		else if newTheme == Theme.black {
+			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			parallaxFront.texture = textureWithName("fx.parallax.3.png")
+			parallaxBack.texture = textureWithName("fx.parallax.4.png")
+		}
+		else if newTheme == Theme.glitch {
+			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.7, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			parallaxFront.texture = textureWithName("fx.parallax.6.png")
+			parallaxBack.texture = textureWithName("fx.parallax.7.png")
+		}
+		else if newTheme == Theme.pest {
+			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.4, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			parallaxFront.texture = textureWithName("fx.parallax.5.png")
+			parallaxBack.texture = textureWithName("fx.parallax.2.png")
+		}
+		
+		self.theme = newTheme
 	}
 	
 	func updateTiles()
@@ -209,6 +243,13 @@ class Stage : SKNode
 		events_root.addChild(event)
 	}
 	
+	override func onPlayerTransformed()
+	{
+		for node in events_root.children {
+			node.onPlayerTransformed()
+		}
+	}
+	
 	func parallaxTo(x:CGFloat, y:CGFloat)
 	{
 		let pos_x = templates.stage.x + (x * 0.03)
@@ -221,6 +262,8 @@ class Stage : SKNode
 		parallaxBack.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
 		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
 	}
+	
+	// MARK: Teleport -
 	
 	func teleportOut(room:Int)
 	{
@@ -258,13 +301,6 @@ class Stage : SKNode
 		})
 	}
 	
-	override func onPlayerTransformed()
-	{
-		for node in events_root.children {
-			node.onPlayerTransformed()
-		}
-	}
-	
 	func teleportDestination(room:Int)
 	{
 		self.room = world.all[room]
@@ -294,6 +330,8 @@ class Stage : SKNode
 			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
 		}
 	}
+	
+	// MARK: Tools -
 	
 	func eventAtLocation(x:Int,y:Int) -> Event!
 	{
@@ -332,6 +370,74 @@ class Stage : SKNode
 		if x == 0 && y == -1 { return  CGPoint(x: templates.floor.width/2, y: -templates.floor.height/2 * offset) }
 		if x == -1 && y == -1 { return  CGPoint(x: 0, y: -templates.floor.height * offset) }
 		return CGPoint(x: 0, y: -300)
+	}
+	
+	// MARK: Destroy -
+	
+	func destroyTrigger()
+	{
+		NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "destroy", userInfo: nil, repeats: false)
+	}
+	
+	func destroy()
+	{
+		player.lock()
+		
+		shake()
+		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "destroy1", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "destroy2", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "destroy3", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(3.5, target: self, selector: "destroy4", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "destroy5", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(4.5, target: self, selector: "destroy6", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "destroy7", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(5.25, target: self, selector: "destroy8", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(5.5, target: self, selector: "destroy9", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "destroy10", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: "destroyEnd", userInfo: nil, repeats: false)
+	}
+	
+	func destroy1(){ floor10.updateSprite(1) ; wall6.updateSprite(26) }
+	func destroy2(){ wall1.updateSprite(15) ; floor11.updateSprite(1) ; step2.updateSprite(0) }
+	func destroy3(){ floor00.updateSprite(4) }
+	func destroy4(){ wall3.updateSprite(19) ; floor1e.updateSprite(5) ; let exit = eventAtLocation(-2, y: 0) as! Door ; exit.remove() }
+	func destroy5(){ floor01.updateSprite(5) }
+	func destroy6(){ wall5.updateSprite(26) ; flooree.updateSprite(0) ; let table = eventAtLocation(1, y: -1) as! Blocker ; table.remove() }
+	func destroy7(){ floore0.updateSprite(6) }
+	func destroy8(){ wall2.updateSprite(26) ; floore1.updateSprite(6) ; let desk = eventAtLocation(-1, y: 1) as! Blocker ; desk.remove() }
+	func destroy9(){ floor0e.updateSprite(1) }
+	func destroy10(){ wall4.updateSprite(26) ; shakeTimer.invalidate() ; stage.position = templates.stage ; stage.applyTheme(Theme.black) }
+	
+	func destroyEnd()
+	{
+		let boss = eventAtLocation(1, y: 0) as! Boss
+		boss.remove()
+		
+		let red = Red(x: 1, y: 0)
+		addEvent(red)
+		red.disapear()
+		player.unlock()
+		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "destroyTeleport", userInfo: nil, repeats: false)
+	}
+	
+	func destroyTeleport()
+	{
+		player.teleportTrigger(1)
+	}
+	
+	var shakeStrenght:CGFloat = 0.1
+	var shakeTimer:NSTimer!
+	
+	func shake()
+	{
+		if shakeStrenght < 15 { shakeStrenght += 0.1 }
+		
+		let rand1 = randomBetweenNumbers(0,secondNum: shakeStrenght)
+		let rand2 = randomBetweenNumbers(0,secondNum: shakeStrenght)
+		
+		stage.position = CGPoint(x:templates.stage.x + rand1 - (2 * rand1),y:templates.stage.y + rand2 - (2 * rand2))
+		
+		shakeTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "shake", userInfo: nil, repeats: false)
 	}
 	
 	required init?(coder aDecoder: NSCoder)
