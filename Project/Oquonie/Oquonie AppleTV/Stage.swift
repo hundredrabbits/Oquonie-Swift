@@ -240,6 +240,7 @@ class Stage : SKNode
 	func addEvent(event:Event)
 	{
 		event.isVisible = true
+		event.zPosition = eventDepthAtPosition(event.x,y:event.y)
 		events_root.addChild(event)
 	}
 	
@@ -332,6 +333,22 @@ class Stage : SKNode
 	}
 	
 	// MARK: Tools -
+	
+	func eventDepthAtPosition(x:Int,y:Int) -> CGFloat
+	{
+		var newDepth:CGFloat = 0
+		
+		if x == -1 && y == -1 { newDepth = 110 }
+		if x == 0 && y == -1 { newDepth = 108 }
+		if x == -1 && y == 0 { newDepth = 108 }
+		if x == 0 && y == 0 { newDepth = 106 }
+		if x == 1 && y == -1 { newDepth = 106 }
+		if x == -1 && y == 1 { newDepth = 106 }
+		if x == 1 && y == 0 { newDepth = 104 }
+		if x == 0 && y == 1 { newDepth = 104 }
+		if x == 1 && y == 1 { newDepth = 102 }
+		return newDepth
+	}
 	
 	func eventAtLocation(x:Int,y:Int) -> Event!
 	{

@@ -27,7 +27,6 @@ class Player : Event
 		
 		sprite = SKSpriteNode(texture: nil, color: UIColor.clearColor(), size: templates.player)
 		sprite.position = sprite_position
-		sprite.zPosition = 50
 		addChild(sprite)
 		
 		shadow = SKSpriteNode(texture: textureWithName("fx.shadow.png"), color: UIColor.clearColor(), size: templates.player)
@@ -106,6 +105,8 @@ class Player : Event
 		action_move.timingMode = .EaseInEaseOut
 		player.runAction(action_move, completion: { self.stand() })
 		stage.parallaxTo(stage.positionAt(self.x,y:self.y).x,y:stage.positionAt(self.x,y:self.y).y)
+		
+		player.zPosition = stage.eventDepthAtPosition(destination_x, y: destination_y)
 	}
 	
 	func stand()
@@ -203,6 +204,7 @@ class Player : Event
 	
 	override func fixedUpdate()
 	{
+		player.zPosition = stage.eventDepthAtPosition(x, y: y)
 	}
 	
 	// MARK: Transform -

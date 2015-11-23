@@ -35,7 +35,7 @@ class GameScene: SKScene
 	func _addPlayer()
 	{
 		player.position = CGPoint(x: 0, y: 0)
-		player.zPosition = 90
+		player.zPosition = stage.eventDepthAtPosition(0, y: 0)
 		stage.events_root.addChild(player)
 	}
 	
