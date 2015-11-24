@@ -179,23 +179,23 @@ class Stage : SKNode
 		
 		if newTheme == Theme.white {
 			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.9, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
-			parallaxFront.texture = textureWithName("fx.parallax.2.png")
-			parallaxBack.texture = textureWithName("fx.parallax.1.png")
+			parallaxFront.texture = textureWithName("parallax.2.png")
+			parallaxBack.texture = textureWithName("parallax.1.png")
 		}
 		else if newTheme == Theme.black {
 			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
-			parallaxFront.texture = textureWithName("fx.parallax.3.png")
-			parallaxBack.texture = textureWithName("fx.parallax.4.png")
+			parallaxFront.texture = textureWithName("parallax.3.png")
+			parallaxBack.texture = textureWithName("parallax.4.png")
 		}
 		else if newTheme == Theme.glitch {
 			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.7, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
-			parallaxFront.texture = textureWithName("fx.parallax.6.png")
-			parallaxBack.texture = textureWithName("fx.parallax.7.png")
+			parallaxFront.texture = textureWithName("parallax.6.png")
+			parallaxBack.texture = textureWithName("parallax.7.png")
 		}
 		else if newTheme == Theme.pest {
 			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.4, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
-			parallaxFront.texture = textureWithName("fx.parallax.5.png")
-			parallaxBack.texture = textureWithName("fx.parallax.2.png")
+			parallaxFront.texture = textureWithName("parallax.5.png")
+			parallaxBack.texture = textureWithName("parallax.2.png")
 		}
 		
 		self.theme = newTheme
@@ -249,6 +249,13 @@ class Stage : SKNode
 		for node in events_root.children {
 			node.onPlayerTransformed()
 		}
+	}
+	
+	func showFx(spriteName:String)
+	{
+		fx.alpha = 1
+		fx.texture = textureWithName(spriteName)
+		fx.runAction(SKAction.fadeAlphaTo(0, duration: 1))
 	}
 	
 	func parallaxTo(x:CGFloat, y:CGFloat)

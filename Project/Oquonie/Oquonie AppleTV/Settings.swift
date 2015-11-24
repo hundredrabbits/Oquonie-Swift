@@ -16,10 +16,15 @@ var parallaxBack:SKSpriteNode!
 let dialogs = Dialogs()
 var overlay:SKSpriteNode!
 var overlay_image:SKSpriteNode!
+var fx:SKSpriteNode!
+var fx_image:SKSpriteNode!
 
 enum Waypoints : Int
 {
 	case spawn = 29
+	case lobby = 1
+	case necomedre = 32
+	case nephtaline = 40
 }
 
 enum Progress : Int

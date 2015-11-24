@@ -57,6 +57,19 @@ class Pillar : Event
 		else{ print("\(self.persona)") }
 	}
 	
+	override func animateFrame1() { activityFrame = 1 ; updateSpriteReview() }
+	override func animateFrame2() { activityFrame = 2 ; updateSpriteReview() }
+	override func animateFrame3() { activityFrame = 3 ; updateSpriteReview() }
+	
+	func updateSpriteReview()
+	{
+		if display == nil { return }
+		if player.hasPillar(display) == false { return }
+		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; sprite.texture = textureWithName("event.pillar.active.\(activityFrame).png") }
+		if isVisible == false { return }
+		sprite.texture = textureWithName("event.pillar.active.\(activityFrame).png")
+	}
+	
 	required init?(coder aDecoder: NSCoder)
 	{
 	    fatalError("init(coder:) has not been implemented")

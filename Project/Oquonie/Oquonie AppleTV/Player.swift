@@ -29,7 +29,7 @@ class Player : Event
 		sprite.position = sprite_position
 		addChild(sprite)
 		
-		shadow = SKSpriteNode(texture: textureWithName("fx.shadow.png"), color: UIColor.clearColor(), size: templates.player)
+		shadow = SKSpriteNode(texture: textureWithName("char.shadow.png"), color: UIColor.clearColor(), size: templates.player)
 		shadow.position = sprite_position
 		shadow.zPosition = 40
 		addChild(shadow)
@@ -236,6 +236,7 @@ class Player : Event
 					stage.onPlayerTransformed()
 					self.sprite.runAction(action_levitate_transform, completion: {
 						self.updateSprite()
+						stage.showFx("fx.1.vertical.png")
 						self.sprite.runAction(action_levitate_land, completion: {
 							self.state = States.stand
 							self.orientation = Orientation.l

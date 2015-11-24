@@ -23,13 +23,14 @@ class GameScene: SKScene
 		_addDialog()
 		_addParalax()
 		_addOverlay()
+		_addFx()
 		
 		// debug
-//		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
-//		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
+		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
+		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
 		player.persona = .document
 		player.collectibles.append(pillar_nemedique)
-		stage.enter(Waypoints.spawn.rawValue)
+		stage.enter(Waypoints.necomedre.rawValue)
 	}
 	
 	func _addPlayer()
@@ -61,12 +62,12 @@ class GameScene: SKScene
 	
 	func _addParalax()
 	{
-		parallaxBack = SKSpriteNode(texture: textureWithName("fx.parallax.1.png"), color: UIColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
+		parallaxBack = SKSpriteNode(texture: textureWithName("parallax.1.png"), color: UIColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
 		parallaxBack.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		parallaxBack.zPosition = -900
 		self.addChild(parallaxBack)
 		
-		parallaxFront = SKSpriteNode(texture: textureWithName("fx.parallax.2.png"), color: UIColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
+		parallaxFront = SKSpriteNode(texture: textureWithName("parallax.2.png"), color: UIColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
 		parallaxFront.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		parallaxFront.zPosition = 9000
 		self.addChild(parallaxFront)
@@ -83,6 +84,15 @@ class GameScene: SKScene
 		overlay.addChild(overlay_image)
 		overlay.alpha = 0
 		self.addChild(overlay)
+	}
+	
+	func _addFx()
+	{
+		fx = SKSpriteNode(color: UIColor.redColor(), size: self.frame.size)
+		fx.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
+		fx.zPosition = 1200
+		fx.alpha = 0
+		self.addChild(fx)
 	}
 
     override func update(currentTime: CFTimeInterval)
