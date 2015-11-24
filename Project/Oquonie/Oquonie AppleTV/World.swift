@@ -51,7 +51,7 @@ class World
 		room.audio  = Soundtrack.lobby
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: 1, y: 1, id: 24))
-		room.addEvent(Ramen(x: 1, y: 0))
+		room.addEvent(Ramen(x: 1, y: 0, isWizard:true))
 		room.addEvent(Map(x: -1, y: 2, world: "lobby"))
 		room.addEvent(Door(x: -2, y: 0, room:1, to_x: 1, to_y:0))
 		room.addEvent(Door(x: 0, y: 2, room:3, to_x: 0, to_y:-1))

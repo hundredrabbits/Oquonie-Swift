@@ -26,11 +26,12 @@ class GameScene: SKScene
 		_addFx()
 		
 		// debug
-		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
-		spellbook.addSpell(Wizard(x:0,y:0,spell:Personas.nephtaline))
-		player.persona = .document
+		ramen_necomedre.isKnown = true
+		ramen_nephtaline.isKnown = true
+		player.persona = .nephtaline
 		player.collectibles.append(pillar_nemedique)
-		stage.enter(Waypoints.necomedre.rawValue)
+		player.collectibles.append(pillar_nephtaline)
+		stage.enter(Waypoints.lobby.rawValue)
 	}
 	
 	func _addPlayer()

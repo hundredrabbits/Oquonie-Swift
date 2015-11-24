@@ -37,6 +37,8 @@ class Red : Event
 		action_move.timingMode = .EaseInEaseOut
 		
 		sprite.runAction(action_group, completion:{ self.isSeen = true ; player.unlock() })
+		
+		stage.showFx("fx.1.vertical.png",duration:2)
 	}
 	
 	required init?(coder aDecoder: NSCoder)

@@ -236,7 +236,7 @@ class Player : Event
 					stage.onPlayerTransformed()
 					self.sprite.runAction(action_levitate_transform, completion: {
 						self.updateSprite()
-						stage.showFx("fx.1.vertical.png")
+						stage.showFx("fx.1.vertical.png", duration:1)
 						self.sprite.runAction(action_levitate_land, completion: {
 							self.state = States.stand
 							self.orientation = Orientation.l

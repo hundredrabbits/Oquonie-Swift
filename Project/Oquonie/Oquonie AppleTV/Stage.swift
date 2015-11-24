@@ -251,11 +251,11 @@ class Stage : SKNode
 		}
 	}
 	
-	func showFx(spriteName:String)
+	func showFx(spriteName:String, duration:Double)
 	{
 		fx.alpha = 1
 		fx.texture = textureWithName(spriteName)
-		fx.runAction(SKAction.fadeAlphaTo(0, duration: 1))
+		fx.runAction(SKAction.fadeAlphaTo(0, duration: duration))
 	}
 	
 	func parallaxTo(x:CGFloat, y:CGFloat)
@@ -430,7 +430,7 @@ class Stage : SKNode
 	func destroy7(){ floore0.updateSprite(6) }
 	func destroy8(){ wall2.updateSprite(26) ; floore1.updateSprite(6) ; let desk = eventAtLocation(-1, y: 1) as! Blocker ; desk.remove() }
 	func destroy9(){ floor0e.updateSprite(1) }
-	func destroy10(){ wall4.updateSprite(26) ; shakeTimer.invalidate() ; stage.position = templates.stage ; stage.applyTheme(Theme.black) }
+	func destroy10(){ wall4.updateSprite(26) ; shakeTimer.invalidate() ; stage.position = templates.stage ; stage.applyTheme(Theme.black) ; stage.showFx("fx.1.vertical.png", duration:2) }
 	
 	func destroyEnd()
 	{

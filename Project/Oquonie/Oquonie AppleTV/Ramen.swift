@@ -23,41 +23,57 @@ class Ramen : Wizard
 		updateSprite("event.ramen.absent")
 	}
 	
+	func updateSpell()
+	{
+		spell = nil
+		
+		if isWizard == false { return }
+		if !player.hasPillar(pillar_nemedique) { return }
+		
+		if ramen_necomedre.isKnown == true && player.persona == Personas.necomedre {
+			spell = .nephtaline
+		}
+		if ramen_nephtaline.isKnown == true && player.persona == Personas.nephtaline {
+			spell = .nephtaline
+		}
+		if ramen_neomine.isKnown == true && player.persona == Personas.neomine {
+			spell = .nephtaline
+		}
+		if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine {
+			spell = .nephtaline
+		}
+		if ramen_nemedique.isKnown == true && player.persona == Personas.nemedique {
+			spell = .nephtaline
+		}
+	}
+	
 	override func onRoomEnter()
 	{
+		updateSpell()
 		updateDialog()
 		
-		if player.hasPillar(pillar_nemedique) == false {
-			characterSprite.alpha = 0
-		}
-		if wizardSpell() != nil {
-			dialogSprite.texture = textureWithName("notification.\(wizardSpell()).png")
-		}
-	}
-	
-	func wizardSpell() -> Personas!
-	{
+		characterSprite.alpha = 0
+		dialogSprite.alpha = 0
+		
+		// Lobby
 		if isWizard == true {
-			characterSprite.alpha = 0
-			if player.hasPillar(pillar_nemedique) == true {
-				if ramen_necomedre.isKnown == true && player.persona == Personas.necomedre { return Personas.nastazie }
-				if ramen_nephtaline.isKnown == true && player.persona == Personas.nephtaline { return Personas.nastazie }
-				if ramen_neomine.isKnown == true && player.persona == Personas.neomine { return Personas.nastazie }
-				if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine { return Personas.nastazie }
-				if ramen_nemedique.isKnown == true && player.persona == Personas.nemedique { return Personas.nastazie }
-			}
+			characterSprite.alpha = 1
 		}
-		return nil
+		// In Levels
+		else if isWizard == false && isKnown == false {
+			characterSprite.alpha = 1
+		}
 	}
-	
 	
 	override func updateDialog()
 	{
-		if isWizard == true {
-			dialogSprite.runAction(SKAction.fadeAlphaTo(0, duration: 0.1))
-		}
-		else{
+		dialogSprite.alpha = 0
+		
+		if isWizard == false { return }
+		
+		if player.hasSpell(self) == false {
 			dialogSprite.runAction(SKAction.fadeAlphaTo(1, duration: 0.1))
+			dialogSprite.texture = textureWithName("notification.\(spell).png")
 		}
 	}
 	
@@ -68,15 +84,29 @@ class Ramen : Wizard
 	
 	override func collide()
 	{
-		if isWizard && player.hasPillar(pillar_nemedique) == false {
-			return
+		if isWizard == true && player.hasPillar(pillar_nemedique) {
+			if ramen_necomedre.isKnown == true && player.persona == Personas.necomedre {
+				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+			}
+			if ramen_nephtaline.isKnown == true && player.persona == Personas.nephtaline {
+				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+			}
+			if ramen_neomine.isKnown == true && player.persona == Personas.neomine {
+				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+			}
+			if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine {
+				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+			}
+			if ramen_nemedique.isKnown == true && player.persona == Personas.nemedique {
+				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+			}
 		}
-		
-		if isKnown == false && isWizard == false {
+		else if isWizard == false && isKnown == false {
 			let action_fade = SKAction.fadeAlphaTo(0, duration: 1)
 			characterSprite.runAction(action_fade)
 			isKnown = true
 		}
+		updateDialog()
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
