@@ -31,9 +31,9 @@ class GameScene: SKScene
 		ramen_neomine.isKnown = true
 		ramen_nemedique.isKnown = true
 		ramen_nestorine.isKnown = true
-		player.persona = .necomedre
+		player.persona = .nestorine
 		player.collectibles.append(pillar_nemedique)
-		stage.enter(Waypoints.lobby.rawValue)
+		stage.enter(Waypoints.nestorine_pillar.rawValue)
 	}
 	
 	func _addPlayer()

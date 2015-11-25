@@ -35,12 +35,23 @@ class Pillar : Event
 	override func collide()
 	{
 		print("touched pillar(\(player.hasPillar(self)))")
+		
 		if display != nil {
 			dialog.showModal(dialogs.pillarSocket(display), eventName: "owl")
 			return
 		}
+		
+		if player.hasPillar(self) { player.walk(x, destination_y: y) } ;
+		
 		if !player.hasPillar(self) {
 			collect()
+		}
+		else{
+			if stage.roomId == Waypoints.nephtaline_pillar.rawValue { player.teleportTrigger(1) }
+			else if stage.roomId == Waypoints.nestorine_pillar.rawValue { player.teleportTrigger(7) }
+			else if stage.roomId == Waypoints.neomine_pillar.rawValue { player.teleportTrigger(3) }
+			else if stage.roomId == Waypoints.nemedique_pillar.rawValue { player.teleportTrigger(9) }
+			else{ print("!!!!\(self.persona)") }
 		}
 	}
 
@@ -53,12 +64,6 @@ class Pillar : Event
 	{
 		player.collectibles.append(self)
 		updateSprite("event.pillar.gone.png")
-		
-		if persona == Personas.nemedique { player.teleportTrigger(9) }
-		else if stage.roomId == Waypoints.nephtaline_pillar.rawValue { player.teleportTrigger(1) }
-		else if stage.roomId == Waypoints.nestorine_pillar.rawValue { player.teleportTrigger(7) }
-		else if stage.roomId == Waypoints.neomine_pillar.rawValue { player.teleportTrigger(3) }
-		else{ print("\(self.persona)") }
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; updateSpriteReview() }

@@ -329,7 +329,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nestorine, requiresPillar: true, orientation:Orientation.r))
 		room.addEvent(Blocker(x: -1, y: 1, id:11))
-		room.addEvent(Door(x: 1, y: 2, requirement: Personas.nestorine, room:120, to_x:1, to_y:-1))
+		room.addEvent(Door(x: 1, y: 2, requirement: Personas.nestorine, room:120, to_x:0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:35, to_x: -1, to_y:0))
 		room.addEvent(Door(x: -2, y: 0, room:33, to_x: 1, to_y:0))
 		all[34] = room
@@ -396,13 +396,13 @@ class World
 		all[39] = room
 		
 		room = Room()
-		room.floors = [ 4,9,5, 9,32,9, 5,6,9 ]
+		room.floors = [ 4,9,5, 9,8,9, 5,6,9 ]
 		room.walls  = [ 36,37,36, 36,37,36 ]
 		room.steps  = [ 0,0,0, 0,6,0 ]
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.red
 		room.addEvent(pillar_necomedre)
-		room.addEvent(Door(x: 0, y: -2, room:34, to_x: 0, to_y:1))
+		room.addEvent(Door(x: 0, y: -2, room:34, to_x: 1, to_y:1))
 		all[120] = room
 	
 	}
@@ -632,7 +632,7 @@ class World
 		all[59] = room
 		
 		room = Room()
-		room.floors = [ 97,31,97, 31,4,31, 98,98,31 ]
+		room.floors = [ 97,31,97, 31,8,31, 98,98,31 ]
 		room.walls  = [ 25,18,25, 25,18,25 ]
 		room.steps  = [ 0,0,0, 0,3,0 ]
 		room.audio  = Soundtrack.pillar
@@ -787,7 +787,7 @@ class World
 		all[70] = room
 		
 		room = Room()
-		room.floors = [ 1,29,1, 29,37,29, 1,1,29 ]
+		room.floors = [ 1,29,1, 29,8,29, 1,1,29 ]
 		room.walls  = [ 18,17,18, 18,17,18 ]
 		room.steps  = [ 0,3,0, 0,0,0 ]
 		room.audio  = Soundtrack.pillar
@@ -909,7 +909,7 @@ class World
 		all[89] = room
 		
 		room = Room()
-		room.floors = [ 35,34,35, 34,38,34, 35,35,34 ]
+		room.floors = [ 35,34,35, 34,8,34, 35,35,34 ]
 		room.walls  = [ 0,0,0, 0,0,0 ]
 		room.steps  = [ 0,0,0, 0,6,0 ]
 		room.audio  = Soundtrack.pillar
@@ -1036,7 +1036,7 @@ class World
 		all[102] = room
 		
 		room = Room()
-		room.floors = [ 33,2,33, 2,4,2, 33,33,2 ]
+		room.floors = [ 33,2,33, 2,8,2, 33,33,2 ]
 		room.walls  = [ 3,31,3, 3,31,3 ]
 		room.steps  = [ 0,6,0, 0,0,0 ]
 		room.audio  = Soundtrack.pillar
@@ -1316,7 +1316,7 @@ class World
 		all[146] = room
 		
 		room = Room()
-		room.floors = [ 101,39,101, 39,1,1, 101,101,1 ]
+		room.floors = [ 101,39,101, 39,8,1, 101,101,1 ]
 		room.walls  = [ 99,99,99, 99,100,99 ]
 		room.steps  = [ 0,8,0, 0,0,0 ]
 		room.audio  = Soundtrack.glitch

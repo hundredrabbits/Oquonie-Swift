@@ -39,12 +39,9 @@ class Ramen : Wizard
 		else if ramen_neomine.isKnown == true && player.persona == Personas.nestorine {
 			spell = .nephtaline
 		}
-//		else if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine {
-//			spell = .nephtaline
-//		}
-//		else if ramen_nemedique.isKnown == true && player.persona == Personas.nemedique {
-//			spell = .nephtaline
-//		}
+		else if ramen_neomine.isKnown == true && player.persona == Personas.necomedre {
+			spell = .nestorine
+		}
 	}
 	
 	override func onRoomEnter()

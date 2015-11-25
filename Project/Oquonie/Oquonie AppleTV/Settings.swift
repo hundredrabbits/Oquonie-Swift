@@ -29,6 +29,7 @@ enum Waypoints : Int
 	case nephtaline_pillar = 121
 	case neomine_pillar = 71
 	case nestorine_pillar = 90
+	case nemedique_pillar = 103
 }
 
 enum Progress : Int
