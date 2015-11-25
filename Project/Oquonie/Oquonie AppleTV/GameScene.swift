@@ -28,9 +28,11 @@ class GameScene: SKScene
 		// debug
 		ramen_necomedre.isKnown = true
 		ramen_nephtaline.isKnown = true
-		player.persona = .nephtaline
+		ramen_neomine.isKnown = true
+		ramen_nemedique.isKnown = true
+		ramen_nestorine.isKnown = true
+		player.persona = .necomedre
 		player.collectibles.append(pillar_nemedique)
-		player.collectibles.append(pillar_nephtaline)
 		stage.enter(Waypoints.lobby.rawValue)
 	}
 	

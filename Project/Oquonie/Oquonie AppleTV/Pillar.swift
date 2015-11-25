@@ -34,6 +34,7 @@ class Pillar : Event
 	
 	override func collide()
 	{
+		print("touched pillar(\(player.hasPillar(self)))")
 		if display != nil {
 			dialog.showModal(dialogs.pillarSocket(display), eventName: "owl")
 			return
@@ -54,6 +55,9 @@ class Pillar : Event
 		updateSprite("event.pillar.gone.png")
 		
 		if persona == Personas.nemedique { player.teleportTrigger(9) }
+		else if stage.roomId == Waypoints.nephtaline_pillar.rawValue { player.teleportTrigger(1) }
+		else if stage.roomId == Waypoints.nestorine_pillar.rawValue { player.teleportTrigger(7) }
+		else if stage.roomId == Waypoints.neomine_pillar.rawValue { player.teleportTrigger(3) }
 		else{ print("\(self.persona)") }
 	}
 	

@@ -25,6 +25,10 @@ enum Waypoints : Int
 	case lobby = 1
 	case necomedre = 32
 	case nephtaline = 40
+	case neomine = 60
+	case nephtaline_pillar = 121
+	case neomine_pillar = 71
+	case nestorine_pillar = 90
 }
 
 enum Progress : Int

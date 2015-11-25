@@ -30,21 +30,21 @@ class Ramen : Wizard
 		if isWizard == false { return }
 		if !player.hasPillar(pillar_nemedique) { return }
 		
-		if ramen_necomedre.isKnown == true && player.persona == Personas.necomedre {
+		if ramen_necomedre.isKnown == true && player.persona == Personas.nephtaline {
+			spell = .nemedique
+		}
+		else if ramen_nephtaline.isKnown == true && player.persona == Personas.neomine {
+			spell = .necomedre
+		}
+		else if ramen_neomine.isKnown == true && player.persona == Personas.nestorine {
 			spell = .nephtaline
 		}
-		if ramen_nephtaline.isKnown == true && player.persona == Personas.nephtaline {
-			spell = .nephtaline
-		}
-		if ramen_neomine.isKnown == true && player.persona == Personas.neomine {
-			spell = .nephtaline
-		}
-		if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine {
-			spell = .nephtaline
-		}
-		if ramen_nemedique.isKnown == true && player.persona == Personas.nemedique {
-			spell = .nephtaline
-		}
+//		else if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine {
+//			spell = .nephtaline
+//		}
+//		else if ramen_nemedique.isKnown == true && player.persona == Personas.nemedique {
+//			spell = .nephtaline
+//		}
 	}
 	
 	override func onRoomEnter()
@@ -56,7 +56,7 @@ class Ramen : Wizard
 		dialogSprite.alpha = 0
 		
 		// Lobby
-		if isWizard == true {
+		if isWizard == true && spell != nil {
 			characterSprite.alpha = 1
 		}
 		// In Levels
