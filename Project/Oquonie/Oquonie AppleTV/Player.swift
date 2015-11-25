@@ -271,6 +271,27 @@ class Player : Event
 		updateSprite()
 	}
 	
+	func appear()
+	{
+		player.lock()
+		self.sprite.alpha = 0
+		self.shadow.alpha = 0
+		state = .warp
+		updateSprite()
+		sprite.position = CGPoint(x: self.sprite_position.x, y: self.sprite_position.y + (templates.floor.height))
+		
+		let action_land = SKAction.moveToY(self.sprite_position.y, duration: 4)
+		action_land.timingMode = .EaseOut
+		self.sprite.runAction(action_land, completion:{
+			self.state = .stand
+			self.direction = .f
+			self.updateSprite()
+			player.unlock()
+		})
+		self.shadow.runAction(SKAction.fadeAlphaTo(1, duration: 2))
+		self.sprite.runAction(SKAction.fadeAlphaTo(1, duration: 1))
+	}
+	
 	func levitate()
 	{
 		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)

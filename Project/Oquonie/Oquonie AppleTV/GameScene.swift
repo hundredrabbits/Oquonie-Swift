@@ -31,16 +31,23 @@ class GameScene: SKScene
 		ramen_neomine.isKnown = true
 		ramen_nemedique.isKnown = true
 		ramen_nestorine.isKnown = true
-		player.persona = .nestorine
+		player.collectibles.append(pillar_necomedre)
+		player.collectibles.append(pillar_nephtaline)
+		player.collectibles.append(pillar_neomine)
+		player.collectibles.append(pillar_nestorine)
 		player.collectibles.append(pillar_nemedique)
-		stage.enter(Waypoints.nestorine_pillar.rawValue)
+		player.persona = .nastazie
+		stage.enter(4)
 	}
 	
 	func _addPlayer()
 	{
+		player.persona = .necomedre
 		player.position = CGPoint(x: 0, y: 0)
 		player.zPosition = stage.eventDepthAtPosition(0, y: 0)
 		stage.events_root.addChild(player)
+		
+		player.appear()
 	}
 	
 	func _addStage()

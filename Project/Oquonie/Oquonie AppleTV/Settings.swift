@@ -26,6 +26,7 @@ enum Waypoints : Int
 	case necomedre = 32
 	case nephtaline = 40
 	case neomine = 60
+	case nastazie = 130
 	case nephtaline_pillar = 121
 	case neomine_pillar = 71
 	case nestorine_pillar = 90

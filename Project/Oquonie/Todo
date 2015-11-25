@@ -4,11 +4,12 @@
 - Add splash
 - Test on different devices
 
-- Add sound
-- Add music
-- Add End Sequence
+- Add sound/music
 
 - Implement Photobooths
 
 - Pillar indicators above doors/gates.
-- Landing animation on game launch
+- Test Nastazie
+- Animate end sequence
+- Add credits
+- Invert themes on completion

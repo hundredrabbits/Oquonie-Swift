@@ -17,12 +17,12 @@ class NoFace : Event
 	
 	override func collide()
 	{
-		if player.persona != Personas.catfishbird {
+		if !player.hasPillar(pillar_necomedre) || !player.hasPillar(pillar_nephtaline) || !player.hasPillar(pillar_neomine) || !player.hasPillar(pillar_nestorine) || !player.hasPillar(pillar_nemedique) {
 			dialog.showModal(dialogs.confusion(), eventName: "noface")
 			return
 		}
-		print("Hit blocker")
-		player.isMoving = false
+		dialog.showModal(dialogs.friendFriendFriend(), eventName: "noface")
+		player.teleportTrigger(Waypoints.nastazie.rawValue)
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; updateSprite() }

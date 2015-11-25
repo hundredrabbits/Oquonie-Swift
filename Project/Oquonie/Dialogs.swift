@@ -40,6 +40,11 @@ class Dialogs
 		return ["\(Letter.confusion1)","\(Letter.confusion1)","\(Letter.confusion3)"]
 	}
 	
+	func friendFriendFriend() -> Array<String>
+	{
+		return ["\(Letter.friend)","\(Letter.friend)","\(Letter.friend)"]
+	}
+	
 	func spellbookFull() -> Array<String>
 	{
 		return ["\(Letter.guide)","\(Letter.unlocked)","\(Letter.help)"]

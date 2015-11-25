@@ -1128,9 +1128,9 @@ class World
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = Soundtrack.nastazie
 		room.theme  = Theme.black
-		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nastazie))
+		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nastazie, orientation: .r))
 		room.addEvent(Door(x: -1, y: 2, room:131, to_x: -1, to_y:-1))
-//		room.addEvent(Door(x: 2, y: 0, requirement: Personas.nastazie))
+		room.addEvent(Door(x: 2, y: 0, requirement: Personas.nastazie, room: 147, to_x:-1, to_y: 0))
 		all[130] = room
 		
 		room = Room()
@@ -1184,7 +1184,7 @@ class World
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = Soundtrack.nastazie
 		room.theme  = Theme.black
-		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nemedique))
+		room.addEvent(Wizard(x: 0, y: 1, spell: Personas.nemedique, orientation: .r))
 		room.addEvent(Door(x: 1, y: 2, room:143, to_x: 1, to_y:-1))
 		room.addEvent(Door(x: 2, y: -1, room:134, to_x: -1, to_y:-1))
 		all[135] = room
@@ -1257,7 +1257,7 @@ class World
 		room.addEvent(Blocker(x: 1, y: 1, id:30))
 		room.addEvent(Door(x: 0, y: 2, requirement: Personas.nephtaline, room:144, to_x:0, to_y:-1))
 		room.addEvent(Door(x: -2, y: 1, room:140, to_x: 1, to_y:1))
-		room.addEvent(Door(x: -1, y: -2, room:137, to_x: 1, to_y:1))
+		room.addEvent(Door(x: -1, y: -2, room:137, to_x: -1, to_y:1))
 		all[141] = room
 		
 		room = Room()
@@ -1281,7 +1281,7 @@ class World
 		room.theme  = Theme.black
 		room.addEvent(Blocker(x: 1, y: 1, id:30))
 		room.addEvent(Door(x: 0, y: 2, requirement: Personas.nemedique, room:146, to_x:0, to_y:-1))
-		room.addEvent(Door(x: -2, y: -1, room:138, to_x: -1, to_y:-1))
+		room.addEvent(Door(x: -2, y: -1, room:138, to_x: 1, to_y:-1))
 		room.addEvent(Door(x: 1, y: -2, room:135, to_x: 1, to_y:1))
 		all[143] = room
 		

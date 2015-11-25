@@ -306,6 +306,8 @@ class Stage : SKNode
 			
 			player.land()
 			
+			self.applyTheme(self.room.theme)
+			
 		})
 	}
 	
