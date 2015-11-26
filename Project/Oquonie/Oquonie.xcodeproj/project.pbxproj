@@ -533,6 +533,8 @@
 		57C843E51BF234C200288847 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C843E41BF234C200288847 /* Default-568h@2x.png */; };
 		57C843EC1BF237A300288847 /* Info iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C843EB1BF237A300288847 /* Info iOS.plist */; };
 		57C843EE1BF237B200288847 /* Info AppleTV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57C843ED1BF237B200288847 /* Info AppleTV.plist */; };
+		57D81EF21C077DB3008FAE67 /* DoorRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81EF11C077DB3008FAE67 /* DoorRed.swift */; };
+		57D81EF41C07A186008FAE67 /* RedEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81EF31C07A186008FAE67 /* RedEnd.swift */; };
 		57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
 		57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BE1BF1033A00E4D319 /* World.swift */; };
 		57E3D2C11BF1059500E4D319 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
@@ -1059,6 +1061,8 @@
 		57C843F31BF2878300288847 /* Ramen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ramen.swift; sourceTree = "<group>"; };
 		57C843F61BF28A4200288847 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		57C843FC1BF292C400288847 /* Owl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owl.swift; sourceTree = "<group>"; };
+		57D81EF11C077DB3008FAE67 /* DoorRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoorRed.swift; path = ../DoorRed.swift; sourceTree = "<group>"; };
+		57D81EF31C07A186008FAE67 /* RedEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedEnd.swift; sourceTree = "<group>"; };
 		57E3D2BC1BF0FE0400E4D319 /* Stage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stage.swift; path = "Oquonie AppleTV/Stage.swift"; sourceTree = "<group>"; };
 		57E3D2BE1BF1033A00E4D319 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = World.swift; path = "Oquonie AppleTV/World.swift"; sourceTree = "<group>"; };
 		57E3D2C01BF1059500E4D319 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = "Oquonie AppleTV/Room.swift"; sourceTree = "<group>"; };
@@ -1792,9 +1796,11 @@
 				57C843F31BF2878300288847 /* Ramen.swift */,
 				5755DD051BF2CC1F00C5353D /* Teleport.swift */,
 				5755DCF51BF2BAC200C5353D /* Red.swift */,
+				57D81EF31C07A186008FAE67 /* RedEnd.swift */,
 				5755DCF01BF2994900C5353D /* NoFace.swift */,
 				57E3D2C61BF10DCF00E4D319 /* Pillar.swift */,
 				57E3D2CA1BF10E7B00E4D319 /* Door.swift */,
+				57D81EF11C077DB3008FAE67 /* DoorRed.swift */,
 				57C843F61BF28A4200288847 /* Map.swift */,
 				57C843FC1BF292C400288847 /* Owl.swift */,
 				5755DCDF1BF296D600C5353D /* Speaker.swift */,
@@ -2442,6 +2448,7 @@
 				576570691BF388B100F563B8 /* SKNode.swift in Sources */,
 				5755DCE71BF2970300C5353D /* Door.swift in Sources */,
 				5755DCEF1BF2982E00C5353D /* Tree.swift in Sources */,
+				57D81EF21C077DB3008FAE67 /* DoorRed.swift in Sources */,
 				5755DCE51BF2970300C5353D /* Pillar.swift in Sources */,
 				5755DCE81BF2970300C5353D /* Ramen.swift in Sources */,
 				57C843DC1BF233CB00288847 /* Player.swift in Sources */,
@@ -2459,6 +2466,7 @@
 				5755DD041BF2BAD900C5353D /* Red.swift in Sources */,
 				57C843D21BF233CB00288847 /* Stage.swift in Sources */,
 				5755DD071BF2CC2800C5353D /* Teleport.swift in Sources */,
+				57D81EF41C07A186008FAE67 /* RedEnd.swift in Sources */,
 				5755DCEB1BF2970300C5353D /* Speaker.swift in Sources */,
 				57C843DA1BF233CB00288847 /* World.swift in Sources */,
 				57C843D01BF233CB00288847 /* GameViewController.swift in Sources */,

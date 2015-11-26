@@ -88,4 +88,14 @@ class Dialogs
 		}
 		return ["\(Letter.guide)","\(Letter.locked)","\(Letter.pillar)"]
 	}
+	
+	func end1() -> Array<String>
+	{
+		return ["\(Letter.foe)","\(Letter.inside)","\(Letter.key)"]
+	}
+	
+	func end2() -> Array<String>
+	{
+		return ["\(Letter.friend)","\(Letter.inside)","\(Letter.key)"]
+	}
 }

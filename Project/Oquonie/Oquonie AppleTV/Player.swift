@@ -158,6 +158,14 @@ class Player : Event
 		print("moving: \(destination) -> \(x)/\(y)")
 	}
 	
+	func slowWarpTo(roomId:Int,to_x:Int,to_y:Int)
+	{
+		player.lock()
+		sprite.runAction(SKAction.fadeAlphaTo(0, duration: 2),completion:{
+			stage.fadeTransition(roomId,to_x:to_x,to_y:to_y)
+		})
+	}
+	
 	func updateSprite()
 	{
 		var imageName = "char.\(persona).\(state).\(direction).\(activityFrame).png"

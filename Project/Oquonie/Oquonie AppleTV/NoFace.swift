@@ -17,7 +17,7 @@ class NoFace : Event
 	
 	override func collide()
 	{
-		if !player.hasPillar(pillar_necomedre) || !player.hasPillar(pillar_nephtaline) || !player.hasPillar(pillar_neomine) || !player.hasPillar(pillar_nestorine) || !player.hasPillar(pillar_nemedique) {
+		if player.persona != .catfishbird {
 			dialog.showModal(dialogs.confusion(), eventName: "noface")
 			return
 		}

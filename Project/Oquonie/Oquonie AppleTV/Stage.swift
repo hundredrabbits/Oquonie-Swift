@@ -271,6 +271,24 @@ class Stage : SKNode
 		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
 	}
 	
+	func fadeTransition(room:Int, to_x:Int, to_y:Int)
+	{
+		self.runAction(SKAction.moveToY(templates.stage.y + (templates.floor.height * 0.2), duration: 2))
+		self.runAction(SKAction.fadeAlphaTo(0, duration: 2),completion:{
+			self.teleportDestination(room)
+			player.x = to_x
+			player.y = to_y
+			player.position = stage.positionAt(to_x,y:to_y)
+			self.applyTheme(self.room.theme)
+			self.runAction(SKAction.fadeAlphaTo(1, duration: 2),completion:{})
+			self.runAction(SKAction.moveToY(templates.stage.y, duration: 3), completion:{
+				player.sprite.runAction(SKAction.fadeAlphaTo(1, duration: 8), completion:{
+					player.unlock()
+				})
+			})
+		})
+	}
+	
 	// MARK: Teleport -
 	
 	func teleportOut(room:Int)

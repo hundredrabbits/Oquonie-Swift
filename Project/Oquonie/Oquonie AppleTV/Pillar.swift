@@ -26,10 +26,8 @@ class Pillar : Event
 			if player.hasPillar(display) { updateSprite("event.pillar.active.1.png") }
 			else{ updateSprite("event.pillar.base.png") }
 		}
-		else if stage.roomId == 103 && player.hasPillar(pillar_nemedique) { updateSprite("event.pillar.gone.png") }
-		else {
-			 updateSprite("event.pillar.png")
-		}
+		else if player.hasPillar(self) { updateSprite("event.pillar.gone.png") }
+		else { updateSprite("event.pillar.png") }
 	}
 	
 	override func collide()

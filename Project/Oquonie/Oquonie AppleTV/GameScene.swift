@@ -36,8 +36,8 @@ class GameScene: SKScene
 		player.collectibles.append(pillar_neomine)
 		player.collectibles.append(pillar_nestorine)
 		player.collectibles.append(pillar_nemedique)
-		player.persona = .nastazie
-		stage.enter(4)
+		player.persona = .nemedique
+		stage.enter(9)
 	}
 	
 	func _addPlayer()
