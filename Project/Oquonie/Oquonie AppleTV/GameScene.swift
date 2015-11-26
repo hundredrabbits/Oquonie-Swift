@@ -37,7 +37,7 @@ class GameScene: SKScene
 		player.collectibles.append(pillar_nestorine)
 		player.collectibles.append(pillar_nemedique)
 		player.persona = .nemedique
-		stage.enter(9)
+		stage.enter(106)
 	}
 	
 	func _addPlayer()

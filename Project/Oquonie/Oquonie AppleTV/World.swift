@@ -1084,7 +1084,7 @@ class World
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = Soundtrack.nepturne
 		room.theme  = Theme.black
-//		room.addEvent(Wizard(x: 0, y: 0, spell: credit1))
+		room.addEvent(Credit(x: 0, y: 0, id:1))
 		room.addEvent(Door(x: -1, y: 2, room:108, to_x: -1, to_y:-1))
 		room.addEvent(Door(x: 0, y: 2, room:108, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 1, y: 2, room:108, to_x: 1, to_y:-1))
@@ -1099,7 +1099,7 @@ class World
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = Soundtrack.nepturne
 		room.theme  = Theme.black
-//		room.addEvent(Wizard(x: 0, y: 0, spell: credit2))
+		room.addEvent(Credit(x: 0, y: 0, id:2))
 		room.addEvent(Door(x: -1, y: 2, room:109, to_x: -1, to_y:-1))
 		room.addEvent(Door(x: 0, y: 2, room:109, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 1, y: 2, room:109, to_x: 1, to_y:-1))
@@ -1114,7 +1114,7 @@ class World
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = Soundtrack.nepturne
 		room.theme  = Theme.white
-//		room.addEvent(Wizard(x: 0, y: 0, spell: endReset))
+		room.addEvent(EndTree(x: 0, y: 0))
 		all[109] = room
 	}
 	
