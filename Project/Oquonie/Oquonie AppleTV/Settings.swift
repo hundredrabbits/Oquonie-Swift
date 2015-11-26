@@ -32,6 +32,8 @@ enum Waypoints : Int
 	case nestorine_pillar = 90
 	case nemedique_pillar = 103
 	case nastazie_pillar = 147
+	
+	case cat_wizard1 = 110
 }
 
 enum Progress : Int
@@ -85,7 +87,8 @@ enum Letter
 	case confusion2
 	case confusion3
 	case document
-	case pillar	
+	case pillar
+	case blank
 }
 
 enum Orientation

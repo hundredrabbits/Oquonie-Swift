@@ -20,9 +20,13 @@ class Shark : Event
 		player.isMoving = false
 		if player.hasPillar(pillar_nemedique) == true && player.persona != Personas.necomedre {
 			player.transform(Personas.necomedre)
+			spellbook.clearSpells()
+			spellbook.update()
 		}
 		else if stage.roomId == 102 && player.persona != .necomedre {
 			player.transform(Personas.necomedre)
+			spellbook.clearSpells()
+			spellbook.update()
 		}
 		else {
 			dialog.showModal(dialogs.shark(), eventName: "owl")

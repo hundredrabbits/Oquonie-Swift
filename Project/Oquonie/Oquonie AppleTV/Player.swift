@@ -16,6 +16,9 @@ class Player : Event
 	var animationFrame:Int = 0
 	var hasOverlay:Bool = false
 	var hasMusic:Bool = true
+	var isFinishedPart1:Bool = false
+	var isFinishedPart2:Bool = false
+	var isFinishedPart3:Bool = false
 	
 	var teleportDestination:Int!
 	

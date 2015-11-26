@@ -94,6 +94,11 @@ class Dialogs
 		return ["\(Letter.foe)","\(Letter.inside)","\(Letter.key)"]
 	}
 	
+	func blank() -> Array<String>
+	{
+		return ["\(Letter.blank)","\(Letter.blank)","\(Letter.blank)"]
+	}
+	
 	func end2() -> Array<String>
 	{
 		return ["\(Letter.friend)","\(Letter.inside)","\(Letter.key)"]

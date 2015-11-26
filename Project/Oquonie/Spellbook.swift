@@ -87,9 +87,9 @@ class Spellbook : SKNode
 	
 	func clearSpells()
 	{
-		spells.first!.removeSpell()
-		spells.first!.removeSpell()
-		spells.first!.removeSpell()
+		if spells.first != nil { spells.first!.removeSpell() }
+		if spells.first != nil { spells.first!.removeSpell() }
+		if spells.first != nil { spells.first!.removeSpell() }
 	}
 	
 	func addSpell(spell:Wizard)

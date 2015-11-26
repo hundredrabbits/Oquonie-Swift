@@ -36,8 +36,9 @@ class GameScene: SKScene
 		player.collectibles.append(pillar_neomine)
 		player.collectibles.append(pillar_nestorine)
 		player.collectibles.append(pillar_nemedique)
-		player.persona = .nemedique
-		stage.enter(106)
+		player.persona = .catfishbird
+		player.isFinishedPart1 = true
+		stage.enter(142)
 	}
 	
 	func _addPlayer()

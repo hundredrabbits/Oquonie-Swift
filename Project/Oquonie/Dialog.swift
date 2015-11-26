@@ -22,7 +22,7 @@ class Dialog : SKNode
 	{
 		super.init()
 		
-		bubble = SKSpriteNode(texture: textureWithName("fx.dialog.bubble"), color: UIColor.redColor(), size: templates.dialog)
+		bubble = SKSpriteNode(texture: textureWithName("dialog.bubble"), color: UIColor.redColor(), size: templates.dialog)
 		bubble_origin = CGPoint(x: 0, y: -gameScene.frame.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
 		bubble.position = bubble_origin
 		bubble.alpha = 0

@@ -7,30 +7,27 @@ import Foundation
 
 class Credit : Event
 {
-	init(x:Int,y:Int,id:Int,orientation:Orientation = .l)
+	var who:String!
+	
+	init(x:Int,y:Int,who:String,orientation:Orientation = .l)
 	{
 		super.init(x: x, y: y)
-		if id == 1 { updateSprite("event.rekka.png") } else{ updateSprite("event.devine.png") }
+		
+		self.who = who
+		
+		updateSprite("event.\(who).png")
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
 	override func onRoomEnter()
 	{
+		player.isFinishedPart1 = true
 	}
 	
 	override func collide()
 	{
-		
-	}
-	
-	func dialog2()
-	{
-		
-	}
-	
-	func leave()
-	{
-		
+		dialog.bubble.texture = textureWithName("dialog.bubble.\(who).png")
+		dialog.showModal(dialogs.blank(), eventName: who)
 	}
 	
 	func disapear()

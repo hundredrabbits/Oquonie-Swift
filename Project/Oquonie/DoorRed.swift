@@ -42,7 +42,12 @@ class DoorRed : Door
 		if !player.hasPillar(pillar_nestorine) { dialog.showModal(dialogs.owl(),eventName: "owl") ; return }
 		if !player.hasPillar(pillar_nemedique) { dialog.showModal(dialogs.owl(),eventName: "owl") ; return }
 		
-		player.slowWarpTo(self.destination,to_x:self.to_x,to_y:self.to_y)
+		if player.isFinishedPart1 == true {
+			player.warp(109, to_x: 0, to_y: -1)
+		}
+		else{
+			player.slowWarpTo(self.destination,to_x:self.to_x,to_y:self.to_y)
+		}
 	}
 
 	required init?(coder aDecoder: NSCoder)
