@@ -51,6 +51,7 @@ class Pillar : Event
 			else if stage.roomId == Waypoints.nestorine_pillar.rawValue { player.teleportTrigger(7) }
 			else if stage.roomId == Waypoints.neomine_pillar.rawValue { player.teleportTrigger(3) }
 			else if stage.roomId == Waypoints.nemedique_pillar.rawValue { player.teleportTrigger(9) }
+			else if stage.roomId == Waypoints.nastazie_pillar.rawValue { player.teleportTrigger(14) }
 			else{ print("!!!!\(self.persona)") }
 		}
 	}

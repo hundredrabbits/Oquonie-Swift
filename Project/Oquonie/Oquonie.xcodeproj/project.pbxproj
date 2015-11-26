@@ -373,7 +373,7 @@
 		579305F81BF63FEF005583CE /* wall.gate.cat.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CB1BF3EA1D00FE6921 /* wall.gate.cat.open.png */; };
 		579305F91BF63FEF005583CE /* wall.gate.document.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CC1BF3EA1D00FE6921 /* wall.gate.document.open.png */; };
 		579305FA1BF63FEF005583CE /* wall.gate.document.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CD1BF3EA1D00FE6921 /* wall.gate.document.close.png */; };
-		579305FB1BF63FEF005583CE /* wall.gate.nastazie.closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazie.closed.png */; };
+		579305FB1BF63FEF005583CE /* wall.gate.nastazie.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazie.close.png */; };
 		579305FC1BF63FEF005583CE /* wall.gate.nastazie.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4CF1BF3EA1D00FE6921 /* wall.gate.nastazie.open.png */; };
 		579305FD1BF63FEF005583CE /* wall.gate.necomedre.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D01BF3EA1D00FE6921 /* wall.gate.necomedre.close.png */; };
 		579305FE1BF63FEF005583CE /* wall.gate.necomedre.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D11BF3EA1D00FE6921 /* wall.gate.necomedre.open.png */; };
@@ -967,7 +967,7 @@
 		575DA4CB1BF3EA1D00FE6921 /* wall.gate.cat.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.cat.open.png; path = en.assets/wall.gate.cat.open.png; sourceTree = "<group>"; };
 		575DA4CC1BF3EA1D00FE6921 /* wall.gate.document.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.document.open.png; path = en.assets/wall.gate.document.open.png; sourceTree = "<group>"; };
 		575DA4CD1BF3EA1D00FE6921 /* wall.gate.document.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.document.close.png; path = en.assets/wall.gate.document.close.png; sourceTree = "<group>"; };
-		575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazie.closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nastazie.closed.png; path = en.assets/wall.gate.nastazie.closed.png; sourceTree = "<group>"; };
+		575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazie.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nastazie.close.png; path = en.assets/wall.gate.nastazie.close.png; sourceTree = "<group>"; };
 		575DA4CF1BF3EA1D00FE6921 /* wall.gate.nastazie.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nastazie.open.png; path = en.assets/wall.gate.nastazie.open.png; sourceTree = "<group>"; };
 		575DA4D01BF3EA1D00FE6921 /* wall.gate.necomedre.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.necomedre.close.png; path = en.assets/wall.gate.necomedre.close.png; sourceTree = "<group>"; };
 		575DA4D11BF3EA1D00FE6921 /* wall.gate.necomedre.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.necomedre.open.png; path = en.assets/wall.gate.necomedre.open.png; sourceTree = "<group>"; };
@@ -1338,7 +1338,7 @@
 				575DA4CB1BF3EA1D00FE6921 /* wall.gate.cat.open.png */,
 				575DA4CC1BF3EA1D00FE6921 /* wall.gate.document.open.png */,
 				575DA4CD1BF3EA1D00FE6921 /* wall.gate.document.close.png */,
-				575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazie.closed.png */,
+				575DA4CE1BF3EA1D00FE6921 /* wall.gate.nastazie.close.png */,
 				575DA4CF1BF3EA1D00FE6921 /* wall.gate.nastazie.open.png */,
 				575DA4D01BF3EA1D00FE6921 /* wall.gate.necomedre.close.png */,
 				575DA4D11BF3EA1D00FE6921 /* wall.gate.necomedre.open.png */,
@@ -2379,7 +2379,7 @@
 				5793055D1BF63FCA005583CE /* event.pillar.active.1.png in Resources */,
 				579305F21BF63FCA005583CE /* tile.110.png in Resources */,
 				579304D91BF63F34005583CE /* notification.document.png in Resources */,
-				579305FB1BF63FEF005583CE /* wall.gate.nastazie.closed.png in Resources */,
+				579305FB1BF63FEF005583CE /* wall.gate.nastazie.close.png in Resources */,
 				5793063E1BF63FF9005583CE /* char.neomine.warp.png in Resources */,
 				5793056E1BF63FCA005583CE /* event.redghost.portrait.png in Resources */,
 				579304DB1BF63F5E005583CE /* blocker.0.png in Resources */,
