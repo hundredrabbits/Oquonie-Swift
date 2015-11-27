@@ -7,12 +7,20 @@ import Foundation
 
 class Blocker : Event
 {
-	init(x:Int,y:Int,id:Int, orientation:Orientation = Orientation.l)
+	var newDialog:Array<String>! = nil
+	var eventName:String! = nil
+	
+	init(x:Int,y:Int,id:Int! = nil, eventName:String! = nil, newDialog:Array<String>! = nil, orientation:Orientation = Orientation.l)
 	{
 		super.init(x: x, y: y)
 		
-		updateSprite("blocker.\(id).png")
-		sprite.color = UIColor.blueColor()
+		self.newDialog = newDialog
+		self.eventName = eventName
+		
+		if eventName != nil { updateSprite("event.\(self.eventName).png") }
+		else { updateSprite("blocker.\(id).png") }
+		
+//		sprite.color = UIColor.blueColor()
 		
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
@@ -20,6 +28,9 @@ class Blocker : Event
 	override func collide()
 	{
 		print("Hit blocker")
+		
+		if newDialog != nil { dialog.showModal(newDialog, eventName: self.eventName) }
+		
 		player.isMoving = false
 	}
 

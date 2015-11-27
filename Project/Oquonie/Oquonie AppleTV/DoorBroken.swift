@@ -33,6 +33,10 @@ class DoorBroken : Door
 			if player.isFinishedPart1 == true { target.updateSpriteWithName("wall.1.broken.png") }
 			else{ target.updateSpriteWithName("wall.1.png") }
 		}
+		else if stage.roomId == 68 {
+			if player.isFinishedPart1 == true { target.updateSpriteWithName("wall.38.png") }
+			else{ target.updateSpriteWithName("wall.38.png") }
+		}
 		else if stage.roomId == 142 {
 			if player.isFinishedPart1 == true { target.updateSpriteWithName("wall.99.broken.png") }
 			else{ target.updateSpriteWithName("wall.99.png") }

@@ -754,7 +754,7 @@ class World
 		room.audio  = .neomine
 		room.theme  = .black
 		room.addEvent(Red(x: -1, y: 1, orientation: .r))
-//		room.addEvent(Door(x: 0, y: 2, requirement: Personas.Hiversaires))
+		room.addEvent(DoorBroken(x: 0, y: 2, room:113, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 1, room:64, to_x: -1, to_y:1))
 		room.addEvent(Door(x: 2, y: 0, room:69, to_x: -1, to_y:0))
 		room.addEvent(Door(x: 2, y: -1, room:66, to_x: -1, to_y:-1))
@@ -1370,7 +1370,6 @@ class World
 		room.addEvent(Petunia(x:1,y:0))
 		all[112] = room
 		
-		/*
 		
 		// Hiversaires Room
 		
@@ -1382,11 +1381,14 @@ class World
 		room.theme  = Theme.void
 //		room.addEvent(Blocker(x: 0, y: -1, id:999))
 		//		room.addEvent(Wizard(x: 0, y: 0, spell: sauvegarde))
-		room.addEvent(Blocker(x: 1, y: 0, id:29))
+//		room.addEvent(Blocker(x: 1, y: 0, id:29))
 //		room.addEvent(Blocker(x: -1, y: -1, id:999))
 //		room.addEvent(Blocker(x: -1, y: 0, id:999))
 		room.addEvent(Door(x: 0, y: -2, room:68, to_x: 0, to_y:1))
-		all[148] = room
+		room.addEvent(Blocker(x: 0, y: 0, eventName: "sauvegarde", newDialog:dialogs.sauveguarde()))
+		all[113] = room
+		
+		/*
 		
 		// Photobooth #1 - Lobby
 		

@@ -38,7 +38,7 @@ class GameScene: SKScene
 		player.collectibles.append(pillar_nemedique)
 		player.persona = .catfishbird
 		player.isFinishedPart1 = true
-		stage.enter(142)
+		stage.enter(68)
 	}
 	
 	func _addPlayer()

@@ -26,9 +26,9 @@
 		575DA5871BF3F53900FE6921 /* Spellbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575DA5861BF3F53900FE6921 /* Spellbook.swift */; };
 		57618A081BFBBB4C0060E177 /* Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57618A061BFBBB490060E177 /* Dialogs.swift */; };
 		57618A2A1BFBC92A0060E177 /* letter.7.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754471BF2D78200638CAE /* letter.7.png */; };
-		57618A2B1BFBC92A0060E177 /* letter1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707552E1BF2D78200638CAE /* letter1.png */; };
-		57618A2C1BFBC92A0060E177 /* letter2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707552F1BF2D78200638CAE /* letter2.png */; };
-		57618A2D1BFBC92A0060E177 /* letter3.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755301BF2D78200638CAE /* letter3.png */; };
+		57618A2B1BFBC92A0060E177 /* letter.hiversaires1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707552E1BF2D78200638CAE /* letter.hiversaires1.png */; };
+		57618A2C1BFBC92A0060E177 /* letter.hiversaires2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707552F1BF2D78200638CAE /* letter.hiversaires2.png */; };
+		57618A2D1BFBC92A0060E177 /* letter.hiversaires3.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755301BF2D78200638CAE /* letter.hiversaires3.png */; };
 		57618A2E1BFBC92A0060E177 /* letter.catfishbird.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755311BF2D78200638CAE /* letter.catfishbird.png */; };
 		57618A2F1BFBC92A0060E177 /* letter7.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755321BF2D78200638CAE /* letter7.png */; };
 		57618A301BFBC92A0060E177 /* letter8.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755331BF2D78200638CAE /* letter8.png */; };
@@ -827,9 +827,9 @@
 		570755271BF2D78200638CAE /* fx.vignette.1.horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.vignette.1.horizontal.png; path = en.assets/fx.vignette.1.horizontal.png; sourceTree = "<group>"; };
 		570755281BF2D78200638CAE /* fx.1.vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.1.vertical.png; path = en.assets/fx.1.vertical.png; sourceTree = "<group>"; };
 		570755291BF2D78200638CAE /* fx.2.vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fx.2.vertical.png; path = en.assets/fx.2.vertical.png; sourceTree = "<group>"; };
-		5707552E1BF2D78200638CAE /* letter1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter1.png; path = en.assets/letter1.png; sourceTree = "<group>"; };
-		5707552F1BF2D78200638CAE /* letter2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter2.png; path = en.assets/letter2.png; sourceTree = "<group>"; };
-		570755301BF2D78200638CAE /* letter3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter3.png; path = en.assets/letter3.png; sourceTree = "<group>"; };
+		5707552E1BF2D78200638CAE /* letter.hiversaires1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.hiversaires1.png; path = en.assets/letter.hiversaires1.png; sourceTree = "<group>"; };
+		5707552F1BF2D78200638CAE /* letter.hiversaires2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.hiversaires2.png; path = en.assets/letter.hiversaires2.png; sourceTree = "<group>"; };
+		570755301BF2D78200638CAE /* letter.hiversaires3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.hiversaires3.png; path = en.assets/letter.hiversaires3.png; sourceTree = "<group>"; };
 		570755311BF2D78200638CAE /* letter.catfishbird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.catfishbird.png; path = en.assets/letter.catfishbird.png; sourceTree = "<group>"; };
 		570755321BF2D78200638CAE /* letter7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter7.png; path = en.assets/letter7.png; sourceTree = "<group>"; };
 		570755331BF2D78200638CAE /* letter8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter8.png; path = en.assets/letter8.png; sourceTree = "<group>"; };
@@ -1600,11 +1600,11 @@
 		5793051B1BF63FAB005583CE /* letter */ = {
 			isa = PBXGroup;
 			children = (
+				5707552E1BF2D78200638CAE /* letter.hiversaires1.png */,
+				5707552F1BF2D78200638CAE /* letter.hiversaires2.png */,
+				570755301BF2D78200638CAE /* letter.hiversaires3.png */,
 				57D81F0A1C07B7B1008FAE67 /* letter.blank.png */,
 				570754471BF2D78200638CAE /* letter.7.png */,
-				5707552E1BF2D78200638CAE /* letter1.png */,
-				5707552F1BF2D78200638CAE /* letter2.png */,
-				570755301BF2D78200638CAE /* letter3.png */,
 				570755311BF2D78200638CAE /* letter.catfishbird.png */,
 				570755321BF2D78200638CAE /* letter7.png */,
 				570755331BF2D78200638CAE /* letter8.png */,
@@ -2115,14 +2115,14 @@
 				57618A3D1BFBC92A0060E177 /* letter.locked.png in Resources */,
 				579306241BF63FF9005583CE /* char.necomedre.stand.b.png in Resources */,
 				579304A11BF63F2B005583CE /* wall.2.png in Resources */,
-				57618A2C1BFBC92A0060E177 /* letter2.png in Resources */,
+				57618A2C1BFBC92A0060E177 /* letter.hiversaires2.png in Resources */,
 				579304E11BF63F5E005583CE /* blocker.9.png in Resources */,
 				579305C31BF63FCA005583CE /* tile.18.png in Resources */,
 				579306271BF63FF9005583CE /* char.necomedre.stand.f.3.png in Resources */,
 				5793063B1BF63FF9005583CE /* char.neomine.walk.b.2.png in Resources */,
 				579305331BF63FCA005583CE /* event.nastazie.1.png in Resources */,
 				5793053C1BF63FCA005583CE /* event.nemedique.2.png in Resources */,
-				57618A2B1BFBC92A0060E177 /* letter1.png in Resources */,
+				57618A2B1BFBC92A0060E177 /* letter.hiversaires1.png in Resources */,
 				5793054D1BF63FCA005583CE /* event.noface.3.png in Resources */,
 				579305AC1BF63FCA005583CE /* step.8.png in Resources */,
 				579304991BF635D0005583CE /* letter.spell.nastazie.png in Resources */,
@@ -2390,7 +2390,7 @@
 				579304A61BF63F2B005583CE /* wall.8.png in Resources */,
 				579305B91BF63FCA005583CE /* tile.8.png in Resources */,
 				579305621BF63FCA005583CE /* event.radio.2.png in Resources */,
-				57618A2D1BFBC92A0060E177 /* letter3.png in Resources */,
+				57618A2D1BFBC92A0060E177 /* letter.hiversaires3.png in Resources */,
 				579305C91BF63FCA005583CE /* tile.24.png in Resources */,
 				579304D71BF63F34005583CE /* notification.neomine.png in Resources */,
 				579305871BF63FCA005583CE /* fx.indicator.f.l.png in Resources */,

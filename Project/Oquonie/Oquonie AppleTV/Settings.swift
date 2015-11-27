@@ -89,6 +89,9 @@ enum Letter
 	case document
 	case pillar
 	case blank
+	case hiversaires1
+	case hiversaires2
+	case hiversaires3
 }
 
 enum Orientation

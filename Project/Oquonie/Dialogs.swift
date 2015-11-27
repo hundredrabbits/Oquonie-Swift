@@ -89,6 +89,11 @@ class Dialogs
 		return ["\(Letter.guide)","\(Letter.locked)","\(Letter.pillar)"]
 	}
 	
+	func sauveguarde() -> Array<String>
+	{
+		return ["\(Letter.hiversaires1)","\(Letter.hiversaires2)","\(Letter.hiversaires3)"]
+	}
+	
 	func end1() -> Array<String>
 	{
 		return ["\(Letter.foe)","\(Letter.inside)","\(Letter.key)"]
