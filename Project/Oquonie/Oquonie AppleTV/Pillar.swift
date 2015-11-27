@@ -61,7 +61,7 @@ class Pillar : Event
 	
 	func collect()
 	{
-		player.collectibles.append(self)
+		self.isKnown = true
 		updateSprite("event.pillar.gone.png")
 	}
 	

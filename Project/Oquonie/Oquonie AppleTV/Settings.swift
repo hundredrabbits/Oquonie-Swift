@@ -181,6 +181,33 @@ func textureWithName(imageName:String) -> SKTexture!
 	return texture
 }
 
+func saveGame()
+{
+	print("! SAVE - Saving..")
+	NSUserDefaults.standardUserDefaults().setObject(stage.roomId, forKey: "location")
+	
+	NSUserDefaults.standardUserDefaults().setObject(pillar_necomedre.isKnown, forKey: "pillar_necomedre")
+	NSUserDefaults.standardUserDefaults().setObject(pillar_nephtaline.isKnown, forKey: "pillar_nephtaline")
+	NSUserDefaults.standardUserDefaults().setObject(pillar_neomine.isKnown, forKey: "pillar_neomine")
+	NSUserDefaults.standardUserDefaults().setObject(pillar_nestorine.isKnown, forKey: "pillar_nestorine")
+	NSUserDefaults.standardUserDefaults().setObject(pillar_nemedique.isKnown, forKey: "pillar_nemedique")
+	NSUserDefaults.standardUserDefaults().setObject(pillar_nastazie.isKnown, forKey: "pillar_nastazie")
+	
+	NSUserDefaults.standardUserDefaults().setObject(ramen_necomedre.isKnown, forKey: "ramen_necomedre")
+	NSUserDefaults.standardUserDefaults().setObject(ramen_nephtaline.isKnown, forKey: "ramen_nephtaline")
+	NSUserDefaults.standardUserDefaults().setObject(ramen_neomine.isKnown, forKey: "ramen_neomine")
+	NSUserDefaults.standardUserDefaults().setObject(ramen_nestorine.isKnown, forKey: "ramen_nestorine")
+	NSUserDefaults.standardUserDefaults().setObject(ramen_nemedique.isKnown, forKey: "ramen_nemedique")
+	
+	NSUserDefaults.standardUserDefaults().synchronize()
+	print("! SAVE - Saved.")
+}
+
+func loadGame()
+{
+	
+}
+
 var pillar_necomedre = Pillar(x: 0, y: 0, persona: Personas.necomedre)
 var pillar_nephtaline = Pillar(x: 0, y: 0, persona: Personas.nephtaline)
 var pillar_neomine = Pillar(x: 0, y: 0, persona: Personas.neomine)

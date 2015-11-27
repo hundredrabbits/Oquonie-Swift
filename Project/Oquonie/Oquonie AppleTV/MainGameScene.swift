@@ -46,11 +46,6 @@ class MainGameScene: SKScene
 		ramen_neomine.isKnown = true
 		ramen_nemedique.isKnown = true
 		ramen_nestorine.isKnown = true
-		player.collectibles.append(pillar_necomedre)
-		player.collectibles.append(pillar_nephtaline)
-		player.collectibles.append(pillar_neomine)
-		player.collectibles.append(pillar_nestorine)
-		player.collectibles.append(pillar_nemedique)
 		player.persona = .necomedre
 		player.isFinishedPart1 = true
 		stage.enter(1)

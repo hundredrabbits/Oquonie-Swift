@@ -7,7 +7,6 @@ import Foundation
 
 class Ramen : Wizard
 {
-	var isKnown:Bool = false
 	var isWizard:Bool = false
 	var characterSprite = SKSpriteNode(texture: textureWithName("event.ramen.1.png"), color: UIColor.redColor(), size: CGSize(width: 0,height: 0))
 	

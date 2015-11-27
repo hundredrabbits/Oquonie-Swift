@@ -14,6 +14,7 @@ class Event : SKNode
 	var target:Tile!
 	var orientation:Orientation = .l
 	
+	var isKnown:Bool = false
 	var isVisible:Bool = false
 	var activity:NSTimer!
 	var activityFrame:Int = 1

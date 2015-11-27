@@ -13,6 +13,12 @@ class Owl : Event
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
+	override func onRoomEnter()
+	{
+		saveGame()
+		refreshSprite()
+	}
+	
 	override func collide()
 	{
 		dialog.showModal(dialogs.owl(), eventName: "owl")

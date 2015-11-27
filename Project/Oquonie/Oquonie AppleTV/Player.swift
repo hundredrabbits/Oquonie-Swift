@@ -7,22 +7,20 @@ import Foundation
 
 class Player : Event
 {
-	var isMoving:Bool = false
-	var isLocked:Bool = false
-	var persona:Personas = Personas.necomedre
-	var direction:Direction = Direction.f
-	var state:States = States.stand
-	var shadow:SKSpriteNode!
-	var animationFrame:Int = 0
 	var hasOverlay:Bool = false
 	var hasMusic:Bool = true
 	var isFinishedPart1:Bool = false
 	var isFinishedPart2:Bool = false
 	var isFinishedPart3:Bool = false
-	
+	var isMoving:Bool = false
+	var isLocked:Bool = false
+	var animationFrame:Int = 0
 	var teleportDestination:Int!
 	
-	var collectibles:Array<Event> = []
+	var persona:Personas = Personas.necomedre
+	var direction:Direction = Direction.f
+	var state:States = States.stand
+	var shadow:SKSpriteNode!
 	
 	init()
 	{
@@ -206,12 +204,8 @@ class Player : Event
 	
 	func hasPillar(pillar:Pillar) -> Bool
 	{
-		for collectible in collectibles {
-			if pillar == collectible { return true }
-		}
-		return false
+		return pillar.isKnown
 	}
-	
 	
 	// MARK: Animation -
 	
