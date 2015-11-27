@@ -12,12 +12,10 @@ class SplashGameScene: SKScene
 {
     override func didMoveToView(view: SKView)
 	{
-		
 	}
 	
 	func start()
 	{
-		print("GameScene")
 		var x = 0
 		var y = 0
 		while x < 10 {

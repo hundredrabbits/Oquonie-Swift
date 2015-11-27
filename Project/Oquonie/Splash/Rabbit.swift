@@ -8,7 +8,7 @@ import SpriteKit
 let black = UIColor.blackColor()
 let white = UIColor.whiteColor()
 
-let rabbitSize:CGFloat = 20
+let rabbitSize:CGFloat = 15
 
 class Rabbit : SKNode
 {

@@ -28,5 +28,9 @@
 	<array>
 		<string>arm64</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AlteHaasGroteskBold.ttf</string>
+	</array>
 </dict>
 </plist>

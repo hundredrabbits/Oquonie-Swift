@@ -10,8 +10,8 @@ class SplashViewController: UIViewController
     override func viewDidLoad()
 	{
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed:"GameScene"){
+		
+        if let scene = SplashGameScene(fileNamed:"splash"){
             let skView = self.view as! SKView
             scene.scaleMode = .AspectFill
 			skView.presentScene(scene)

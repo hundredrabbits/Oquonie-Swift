@@ -545,6 +545,7 @@
 		57D81F221C07E95D008FAE67 /* SplashGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */; };
 		57D81F231C07E95D008FAE67 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F201C07E95D008FAE67 /* SplashViewController.swift */; };
 		57D81F251C07E97E008FAE67 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F241C07E97E008FAE67 /* Rabbit.swift */; };
+		57D81F271C07EEE6008FAE67 /* splash.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57D81F261C07EEE6008FAE67 /* splash.sks */; };
 		57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
 		57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BE1BF1033A00E4D319 /* World.swift */; };
 		57E3D2C11BF1059500E4D319 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
@@ -1083,6 +1084,7 @@
 		57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashGameScene.swift; path = Splash/SplashGameScene.swift; sourceTree = "<group>"; };
 		57D81F201C07E95D008FAE67 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = Splash/SplashViewController.swift; sourceTree = "<group>"; };
 		57D81F241C07E97E008FAE67 /* Rabbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Splash/Rabbit.swift; sourceTree = "<group>"; };
+		57D81F261C07EEE6008FAE67 /* splash.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = splash.sks; path = Splash/splash.sks; sourceTree = "<group>"; };
 		57E3D2BC1BF0FE0400E4D319 /* Stage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stage.swift; path = "Oquonie AppleTV/Stage.swift"; sourceTree = "<group>"; };
 		57E3D2BE1BF1033A00E4D319 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = World.swift; path = "Oquonie AppleTV/World.swift"; sourceTree = "<group>"; };
 		57E3D2C01BF1059500E4D319 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = "Oquonie AppleTV/Room.swift"; sourceTree = "<group>"; };
@@ -1792,8 +1794,9 @@
 		57C843E61BF2356300288847 /* Oquonie Core */ = {
 			isa = PBXGroup;
 			children = (
-				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
+				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
 				57A668671BEE98AA007CDD8B /* GameScene.swift */,
+				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
 				575DA5861BF3F53900FE6921 /* Spellbook.swift */,
 				57E3D2BC1BF0FE0400E4D319 /* Stage.swift */,
 				57F0E2CE1BF147AC0067CC94 /* Player.swift */,
@@ -1803,7 +1806,6 @@
 				57A4A2E71BFA1CBE0027E909 /* Dialog.swift */,
 				57618A061BFBBB490060E177 /* Dialogs.swift */,
 				57F0E2CA1BF13A320067CC94 /* Events */,
-				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
 				576570671BF388AD00F563B8 /* SKNode.swift */,
 				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
 			);
@@ -1813,10 +1815,11 @@
 		57D81F1D1C07E92B008FAE67 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				57D81F241C07E97E008FAE67 /* Rabbit.swift */,
-				57D81F1E1C07E95D008FAE67 /* AlteHaasGroteskBold.ttf */,
-				57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */,
 				57D81F201C07E95D008FAE67 /* SplashViewController.swift */,
+				57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */,
+				57D81F241C07E97E008FAE67 /* Rabbit.swift */,
+				57D81F261C07EEE6008FAE67 /* splash.sks */,
+				57D81F1E1C07E95D008FAE67 /* AlteHaasGroteskBold.ttf */,
 			);
 			name = Splash;
 			sourceTree = "<group>";
@@ -2353,6 +2356,7 @@
 				5793063D1BF63FF9005583CE /* char.neomine.walk.f.2.png in Resources */,
 				579305931BF63FCA005583CE /* fx.transform.1.png in Resources */,
 				579305A11BF63FCA005583CE /* map.nestorine.png in Resources */,
+				57D81F271C07EEE6008FAE67 /* splash.sks in Resources */,
 				5793062C1BF63FF9005583CE /* char.necomedre.warp.png in Resources */,
 				579305631BF63FCA005583CE /* event.radio.3.png in Resources */,
 				579304C21BF63F2B005583CE /* wall.38.png in Resources */,
