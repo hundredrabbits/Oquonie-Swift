@@ -40,15 +40,7 @@ class MainGameScene: SKScene
 		_addOverlay()
 		_addFx()
 		
-		// debug
-		ramen_necomedre.isKnown = true
-		ramen_nephtaline.isKnown = true
-		ramen_neomine.isKnown = true
-		ramen_nemedique.isKnown = true
-		ramen_nestorine.isKnown = true
-		player.persona = .necomedre
-		player.isFinishedPart1 = true
-		stage.enter(1)
+		stage.enter(loadGame())
 	}
 	
 	func _addPlayer()

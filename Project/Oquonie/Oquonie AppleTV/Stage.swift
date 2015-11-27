@@ -179,7 +179,7 @@ class Stage : SKNode
 		
 		print(" THEME - \(newTheme), from \(self.theme)")
 		
-		if player.isFinishedPart1 == true && stage.roomId < 15 {
+		if player.isCompleted == true && stage.roomId < 15 {
 			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.3.png")
 			parallaxBack.texture = textureWithName("parallax.4.png")

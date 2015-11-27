@@ -21,7 +21,7 @@ class Credit : Event
 	
 	override func onRoomEnter()
 	{
-		player.isFinishedPart1 = true
+		player.isCompleted = true
 		refreshSprite()
 	}
 	

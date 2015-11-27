@@ -9,9 +9,7 @@ class Player : Event
 {
 	var hasOverlay:Bool = false
 	var hasMusic:Bool = true
-	var isFinishedPart1:Bool = false
-	var isFinishedPart2:Bool = false
-	var isFinishedPart3:Bool = false
+	var isCompleted:Bool = false
 	var isMoving:Bool = false
 	var isLocked:Bool = false
 	var animationFrame:Int = 0

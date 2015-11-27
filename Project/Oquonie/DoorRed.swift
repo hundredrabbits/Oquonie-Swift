@@ -37,7 +37,7 @@ class DoorRed : Door
 		if !player.hasPillar(pillar_nestorine) { dialog.showModal(dialogs.owl(),eventName: "owl") ; return }
 		if !player.hasPillar(pillar_nemedique) { dialog.showModal(dialogs.owl(),eventName: "owl") ; return }
 		
-		if player.isFinishedPart1 == true {
+		if player.isCompleted == true {
 			player.warp(109, to_x: 0, to_y: -1)
 		}
 		else{

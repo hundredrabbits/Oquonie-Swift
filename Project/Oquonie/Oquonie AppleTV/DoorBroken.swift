@@ -21,26 +21,26 @@ class DoorBroken : Door
 	{
 		target = node
 		if stage.roomId == 102 {
-			if player.isFinishedPart1 == true { target.updateSpriteWithName("wall.18.broken.png") }
+			if player.isCompleted == true { target.updateSpriteWithName("wall.18.broken.png") }
 			else{ target.updateSpriteWithName("wall.18.png") }
 		}
 		else if stage.roomId == 3 {
-			if player.isFinishedPart1 == true { target.updateSpriteWithName("wall.1.broken.png") }
+			if player.isCompleted == true { target.updateSpriteWithName("wall.1.broken.png") }
 			else{ target.updateSpriteWithName("wall.1.png") }
 		}
 		else if stage.roomId == 68 {
-			if player.isFinishedPart1 == true { target.updateSpriteWithName("wall.38.png") }
+			if player.isCompleted == true { target.updateSpriteWithName("wall.38.png") }
 			else{ target.updateSpriteWithName("wall.38.png") }
 		}
 		else if stage.roomId == 142 {
-			if player.isFinishedPart1 == true { target.updateSpriteWithName("wall.99.broken.png") }
+			if player.isCompleted == true { target.updateSpriteWithName("wall.99.broken.png") }
 			else{ target.updateSpriteWithName("wall.99.png") }
 		}
 	}
 	
 	override func collide()
 	{
-		if player.isFinishedPart1 == false { return }
+		if player.isCompleted == false { return }
 		player.warp(self.destination, to_x: self.to_x, to_y: self.to_y)
 	}
 	
