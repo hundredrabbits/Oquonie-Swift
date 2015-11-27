@@ -16,6 +16,16 @@ class MainGameScene: SKScene
 	
 	func start()
 	{
+		let scale:CGFloat = 0.5
+		templates.floor = CGSize(width: 200 * scale, height: 141 * scale)
+		templates.step = CGSize(width: 200 * scale, height: 141 * scale)
+		templates.wall = CGSize(width: 200 * scale, height: 281 * scale)
+		templates.player = CGSize(width: 200 * scale, height: 281 * scale)
+		templates.spell = CGSize(width: 120 * scale, height: 120 * scale)
+		templates.dialog = CGSize(width: 640 * scale, height: 390 * scale)
+		
+		//
+			
 		time = NSTimer.scheduledTimerWithTimeInterval(0.025, target: self, selector: "_fixedUpdate", userInfo: nil, repeats: true)
 		templates.screen = self.frame
 		templates.stage = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - (0.5 * templates.wall.height))
@@ -39,9 +49,9 @@ class MainGameScene: SKScene
 		player.collectibles.append(pillar_neomine)
 		player.collectibles.append(pillar_nestorine)
 		player.collectibles.append(pillar_nemedique)
-		player.persona = .catfishbird
+		player.persona = .necomedre
 		player.isFinishedPart1 = true
-		stage.enter(68)
+		stage.enter(1)
 	}
 	
 	func _addPlayer()

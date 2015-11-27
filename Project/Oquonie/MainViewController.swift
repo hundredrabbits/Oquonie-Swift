@@ -135,26 +135,26 @@ class MainViewController: UIViewController
 			}
 		}
 	}
-	
-	override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?)
-	{
-		super.pressesEnded(presses, withEvent: event)
-		for press in presses
-		{
-			switch press.type {
-			case UIPressType.LeftArrow:
-				player.move(-1, y: 0)
-			case UIPressType.RightArrow:
-				player.move(1, y: 0)
-			case UIPressType.UpArrow:
-				player.move(0, y: 1)
-			case UIPressType.DownArrow:
-				player.move(0, y: -1)
-			default:
-				break
-			}
-		}
-	}
+//	
+//	override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?)
+//	{
+//		super.pressesEnded(presses, withEvent: event)
+//		for press in presses
+//		{
+//			switch press.type {
+//			case UIPressType.LeftArrow:
+//				player.move(-1, y: 0)
+//			case UIPressType.RightArrow:
+//				player.move(1, y: 0)
+//			case UIPressType.UpArrow:
+//				player.move(0, y: 1)
+//			case UIPressType.DownArrow:
+//				player.move(0, y: -1)
+//			default:
+//				break
+//			}
+//		}
+//	}
 	
 	// MARK: Defaults -
 	
