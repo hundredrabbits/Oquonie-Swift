@@ -82,13 +82,13 @@ class MainViewController: UIViewController
 				if point.y > touch_origin.y && point.x < touch_origin.x { player.move(-1, y: 0) }
 			}
 			else{
-				poke()
+				poke(point)
 			}
 		}
 		super.touchesEnded(touches, withEvent:event)
 	}
 	
-	func poke()
+	func poke(point:CGPoint)
 	{
 		if dialog.isActive == true {
 			dialog.hideModal()
@@ -96,6 +96,13 @@ class MainViewController: UIViewController
 		if overlay.alpha > 0 {
 			player.hideOverlay()
 		}
+		
+		// Poke Controls
+		
+		if point.x < view.frame.size.width * 0.33 && point.y < view.frame.size.height * 0.33 { player.move(0, y: 1) }
+		else if point.x > view.frame.size.width * 0.33 && point.y < view.frame.size.height * 0.33 { player.move(1, y: 0) }
+		else if point.x < view.frame.size.width * 0.33 && point.y > view.frame.size.height * 0.33 { player.move(-1, y: 0) }
+		else if point.x > view.frame.size.width * 0.33 && point.y > view.frame.size.height * 0.33 { player.move(0, y: -1) }
 	}
 	
 	func installGestures()
