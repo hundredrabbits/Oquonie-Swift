@@ -153,10 +153,7 @@ enum Theme
 {
 	case white
 	case black
-	case red
-	case void
-	case pest
-	case glitch
+	case pillar
 }
 
 func distanceBetweenTwoPoints(a:CGPoint,b:CGPoint)->CGFloat

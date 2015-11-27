@@ -189,15 +189,10 @@ class Stage : SKNode
 			parallaxFront.texture = textureWithName("parallax.3.png")
 			parallaxBack.texture = textureWithName("parallax.4.png")
 		}
-		else if newTheme == Theme.glitch {
+		else if newTheme == Theme.pillar {
 			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.7, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.6.png")
 			parallaxBack.texture = textureWithName("parallax.7.png")
-		}
-		else if newTheme == Theme.pest {
-			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.4, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
-			parallaxFront.texture = textureWithName("parallax.5.png")
-			parallaxBack.texture = textureWithName("parallax.2.png")
 		}
 		
 		self.theme = newTheme

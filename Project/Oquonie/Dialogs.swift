@@ -94,6 +94,11 @@ class Dialogs
 		return ["\(Letter.hiversaires1)","\(Letter.hiversaires2)","\(Letter.hiversaires3)"]
 	}
 	
+	func ramen() -> Array<String>
+	{
+		return ["\(Letter.outside)","\(Letter.teleport)","\(Letter.guide)"]
+	}
+
 	func end1() -> Array<String>
 	{
 		return ["\(Letter.foe)","\(Letter.inside)","\(Letter.key)"]

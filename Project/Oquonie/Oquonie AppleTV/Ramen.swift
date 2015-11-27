@@ -15,7 +15,9 @@ class Ramen : Wizard
 	{
 		super.init(x: x, y: y,spell:spell)
 		
-		characterSprite = SKSpriteNode(texture: textureWithName("event.ramen.1.png"), color: UIColor.redColor(), size: sprite.size)
+		sprite.texture = textureWithName("event.ramen.absent.png")
+		
+		characterSprite = SKSpriteNode(texture: nil, color: UIColor.redColor(), size: sprite.size)
 		characterSprite.size = sprite.size
 		characterSprite.position = sprite_position
 		addChild(characterSprite)
@@ -104,6 +106,7 @@ class Ramen : Wizard
 			let action_fade = SKAction.fadeAlphaTo(0, duration: 1)
 			characterSprite.runAction(action_fade)
 			isKnown = true
+			dialog.showModal(dialogs.ramen(), eventName: "ramen")
 		}
 		updateDialog()
 	}
