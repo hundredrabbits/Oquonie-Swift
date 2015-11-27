@@ -541,6 +541,10 @@
 		57D81F161C07BC44008FAE67 /* letter.spell.nestronie.png in Resources */ = {isa = PBXBuildFile; fileRef = 576189FF1BFBBA6A0060E177 /* letter.spell.nestronie.png */; };
 		57D81F181C07C186008FAE67 /* DoorBroken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F171C07C186008FAE67 /* DoorBroken.swift */; };
 		57D81F1A1C07C787008FAE67 /* Petunia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F191C07C787008FAE67 /* Petunia.swift */; };
+		57D81F211C07E95D008FAE67 /* AlteHaasGroteskBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57D81F1E1C07E95D008FAE67 /* AlteHaasGroteskBold.ttf */; };
+		57D81F221C07E95D008FAE67 /* SplashGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */; };
+		57D81F231C07E95D008FAE67 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F201C07E95D008FAE67 /* SplashViewController.swift */; };
+		57D81F251C07E97E008FAE67 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F241C07E97E008FAE67 /* Rabbit.swift */; };
 		57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
 		57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BE1BF1033A00E4D319 /* World.swift */; };
 		57E3D2C11BF1059500E4D319 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
@@ -1075,6 +1079,10 @@
 		57D81F0A1C07B7B1008FAE67 /* letter.blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.blank.png; path = en.assets/letter.blank.png; sourceTree = "<group>"; };
 		57D81F171C07C186008FAE67 /* DoorBroken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorBroken.swift; sourceTree = "<group>"; };
 		57D81F191C07C787008FAE67 /* Petunia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Petunia.swift; sourceTree = "<group>"; };
+		57D81F1E1C07E95D008FAE67 /* AlteHaasGroteskBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AlteHaasGroteskBold.ttf; path = Splash/AlteHaasGroteskBold.ttf; sourceTree = "<group>"; };
+		57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashGameScene.swift; path = Splash/SplashGameScene.swift; sourceTree = "<group>"; };
+		57D81F201C07E95D008FAE67 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = Splash/SplashViewController.swift; sourceTree = "<group>"; };
+		57D81F241C07E97E008FAE67 /* Rabbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Splash/Rabbit.swift; sourceTree = "<group>"; };
 		57E3D2BC1BF0FE0400E4D319 /* Stage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stage.swift; path = "Oquonie AppleTV/Stage.swift"; sourceTree = "<group>"; };
 		57E3D2BE1BF1033A00E4D319 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = World.swift; path = "Oquonie AppleTV/World.swift"; sourceTree = "<group>"; };
 		57E3D2C01BF1059500E4D319 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = "Oquonie AppleTV/Room.swift"; sourceTree = "<group>"; };
@@ -1150,6 +1158,7 @@
 			isa = PBXGroup;
 			children = (
 				57618A4B1BFBDCB70060E177 /* Todo */,
+				57D81F1D1C07E92B008FAE67 /* Splash */,
 				57C843E61BF2356300288847 /* Oquonie Core */,
 				57A668481BEE9894007CDD8B /* Oquonie iOS */,
 				57A668621BEE98AA007CDD8B /* Oquonie AppleTV */,
@@ -1801,6 +1810,17 @@
 			name = "Oquonie Core";
 			sourceTree = "<group>";
 		};
+		57D81F1D1C07E92B008FAE67 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				57D81F241C07E97E008FAE67 /* Rabbit.swift */,
+				57D81F1E1C07E95D008FAE67 /* AlteHaasGroteskBold.ttf */,
+				57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */,
+				57D81F201C07E95D008FAE67 /* SplashViewController.swift */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
 		57F0E2CA1BF13A320067CC94 /* Events */ = {
 			isa = PBXGroup;
 			children = (
@@ -2415,6 +2435,7 @@
 				579304BE1BF63F2B005583CE /* wall.34.png in Resources */,
 				57618A381BFBC92A0060E177 /* letter.door.png in Resources */,
 				5793060E1BF63FF9005583CE /* char.catfishbird.walk.b.2.png in Resources */,
+				57D81F211C07E95D008FAE67 /* AlteHaasGroteskBold.ttf in Resources */,
 				5793055C1BF63FCA005583CE /* event.pillar.base.png in Resources */,
 				579305C01BF63FCA005583CE /* tile.15.png in Resources */,
 				579306171BF63FF9005583CE /* char.document.walk.b.2.png in Resources */,
@@ -2463,6 +2484,7 @@
 				5755DCF41BF2B71700C5353D /* Wizard.swift in Sources */,
 				574C7BE61C0392AE000A3B24 /* Boss.swift in Sources */,
 				57D81EF61C07AA4F008FAE67 /* Credit.swift in Sources */,
+				57D81F231C07E95D008FAE67 /* SplashViewController.swift in Sources */,
 				57C843D11BF233CB00288847 /* GameScene.swift in Sources */,
 				57C843DB1BF233CB00288847 /* Room.swift in Sources */,
 				5755DCE91BF2970300C5353D /* Map.swift in Sources */,
@@ -2470,11 +2492,13 @@
 				576570691BF388B100F563B8 /* SKNode.swift in Sources */,
 				5755DCE71BF2970300C5353D /* Door.swift in Sources */,
 				57D81F181C07C186008FAE67 /* DoorBroken.swift in Sources */,
+				57D81F251C07E97E008FAE67 /* Rabbit.swift in Sources */,
 				5755DCEF1BF2982E00C5353D /* Tree.swift in Sources */,
 				57D81EF21C077DB3008FAE67 /* DoorRed.swift in Sources */,
 				5755DCE51BF2970300C5353D /* Pillar.swift in Sources */,
 				5755DCE81BF2970300C5353D /* Ramen.swift in Sources */,
 				57C843DC1BF233CB00288847 /* Player.swift in Sources */,
+				57D81F221C07E95D008FAE67 /* SplashGameScene.swift in Sources */,
 				5755DCEA1BF2970300C5353D /* Owl.swift in Sources */,
 				57D81F1A1C07C787008FAE67 /* Petunia.swift in Sources */,
 				57A4A2E81BFA1CBE0027E909 /* Dialog.swift in Sources */,
