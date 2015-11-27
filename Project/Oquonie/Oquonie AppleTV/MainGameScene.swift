@@ -12,11 +12,14 @@ class MainGameScene: SKScene
 
     override func didMoveToView(view: SKView)
 	{
+		
     }
 	
 	func start()
 	{
-		let scale:CGFloat = 0.5
+		let scale:CGFloat = self.view!.frame.width/720
+		print("\(self.view!.frame.width) -> \(self.frame.width) = \(self.frame.width/self.view!.frame.width) (\(scale))")
+		
 		templates.floor = CGSize(width: 200 * scale, height: 141 * scale)
 		templates.step = CGSize(width: 200 * scale, height: 141 * scale)
 		templates.wall = CGSize(width: 200 * scale, height: 281 * scale)
@@ -51,7 +54,7 @@ class MainGameScene: SKScene
 		player.collectibles.append(pillar_nemedique)
 		player.persona = .necomedre
 		player.isFinishedPart1 = true
-		stage.enter(1)
+		stage.enter(35)
 	}
 	
 	func _addPlayer()
@@ -100,10 +103,10 @@ class MainGameScene: SKScene
 	
 	func _addOverlay()
 	{
-		overlay = SKSpriteNode(color: UIColor.whiteColor(), size: CGSize(width: self.size.width, height: self.size.width))
+		overlay = SKSpriteNode(color: UIColor.whiteColor(), size: self.size)
 		overlay.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		overlay.zPosition = 1500
-		overlay_image = SKSpriteNode(texture: nil, color: UIColor.blueColor(), size: CGSize(width: overlay.size.width/2, height: self.size.width/2))
+		overlay_image = SKSpriteNode(texture: nil, color: UIColor.blueColor(), size: CGSize(width: overlay.size.width, height: self.size.width))
 		overlay_image.position = CGPoint(x: 0,y: 0)
 		overlay_image.zPosition = 1600
 		overlay.addChild(overlay_image)
@@ -113,7 +116,7 @@ class MainGameScene: SKScene
 	
 	func _addFx()
 	{
-		fx = SKSpriteNode(color: UIColor.redColor(), size: self.frame.size)
+		fx = SKSpriteNode(color: UIColor.redColor(), size: frame.size)
 		fx.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		fx.zPosition = 1200
 		fx.alpha = 0

@@ -53,6 +53,7 @@ class SplashGameScene: SKScene
 		}
 		addChild(rabbits)
 		rabbits.position = CGPoint(x:CGRectGetMidX(self.frame),y:CGRectGetMidY(self.frame))
+		rabbits.alpha = 0
 		
 		scare()
 		scare()
@@ -70,6 +71,7 @@ class SplashGameScene: SKScene
 	
 	func _appear()
 	{
+		rabbits.alpha = 1
 		var count = 1
 		for case let rabbit as Rabbit in rabbits.children {
 			rabbit.appear(count)

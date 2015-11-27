@@ -35,7 +35,8 @@ class MainViewController: UIViewController
 		if let scene = MainGameScene(fileNamed:"splash"){
 			let skView = self.view as! SKView
 			scene.viewController = self
-			scene.scaleMode = .AspectFill
+			scene.size = self.view.frame.size
+			scene.scaleMode = .AspectFit
 			skView.presentScene(scene)
 			scene.start()
 		}

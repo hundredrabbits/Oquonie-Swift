@@ -60,6 +60,7 @@ struct Templates
 	var player:CGSize!
 	var spell:CGSize!
 	var dialog:CGSize!
+	var scale:CGFloat!
 }
 
 enum Letter
