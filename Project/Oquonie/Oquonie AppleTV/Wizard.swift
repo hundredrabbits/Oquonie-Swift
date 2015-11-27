@@ -16,7 +16,7 @@ class Wizard : Event
 		super.init(x: x, y: y)
 		self.requiresPillar = requiresPillar
 		self.spell = spell
-		updateSprite("event.\(spell).1.png")
+		refreshSprite()
 		
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 		
@@ -29,12 +29,15 @@ class Wizard : Event
 		
 		if requiresPillar == true && player.hasPillar(pillar_nemedique) == false { dialogSprite.texture = textureWithName("test") }
 		else if player.persona == spell { dialogSprite.texture = textureWithName("test") }
-		else{ dialogSprite.texture = textureWithName("notification.\(spell).png") }
+		else if spell != nil { dialogSprite.texture = textureWithName("notification.\(spell).png") }
+		
+		refreshSprite()
 	}
 	
 	func _dialog()
 	{
-		dialogSprite = SKSpriteNode(texture: textureWithName("notification.\(spell).png"))
+		let texture = ( spell != nil ) ? textureWithName("notification.\(spell).png") : nil
+		dialogSprite = SKSpriteNode(texture:texture)
 		dialogSprite.size = templates.player
 		dialogSprite.position = CGPoint(x: 0,y: templates.player.height/2)
 		addChild(dialogSprite)
@@ -84,14 +87,12 @@ class Wizard : Event
 		}
 	}
 	
-	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
-	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
-	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }
+	override func animateFrame2() { activityFrame = 2 ; refreshSprite() }
+	override func animateFrame3() { activityFrame = 3 ; refreshSprite() }
 	
-	func updateSprite()
+	override func refreshSprite()
 	{
-		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; updateSprite("event.\(spell).\(activityFrame).png") }
-		if isVisible == false { return }
 		updateSprite("event.\(spell).\(activityFrame).png")
 	}
 	

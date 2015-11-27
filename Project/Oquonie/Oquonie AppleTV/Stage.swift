@@ -177,7 +177,7 @@ class Stage : SKNode
 	{
 		if self.theme == newTheme { return }
 		
-		print("Applying new theme \(newTheme), from \(self.theme)")
+		print(" THEME - \(newTheme), from \(self.theme)")
 		
 		if newTheme == Theme.white {
 			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.9, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))

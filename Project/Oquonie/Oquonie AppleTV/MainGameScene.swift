@@ -17,8 +17,7 @@ class MainGameScene: SKScene
 	
 	func start()
 	{
-		let scale:CGFloat = self.view!.frame.width/720
-		print("\(self.view!.frame.width) -> \(self.frame.width) = \(self.frame.width/self.view!.frame.width) (\(scale))")
+		let scale:CGFloat = self.view!.frame.width/720 ; print("  SIZE - \(scale)")
 		
 		templates.floor = CGSize(width: 200 * scale, height: 141 * scale)
 		templates.step = CGSize(width: 200 * scale, height: 141 * scale)

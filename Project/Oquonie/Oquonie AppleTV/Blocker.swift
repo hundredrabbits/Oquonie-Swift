@@ -27,10 +27,7 @@ class Blocker : Event
 	
 	override func collide()
 	{
-		print("Hit blocker")
-		
 		if newDialog != nil { dialog.showModal(newDialog, eventName: self.eventName) }
-		
 		player.isMoving = false
 	}
 

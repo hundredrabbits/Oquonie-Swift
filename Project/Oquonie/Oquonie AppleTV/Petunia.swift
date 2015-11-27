@@ -44,15 +44,12 @@ class Petunia : Event
 		player.isMoving = false
 	}
 	
-	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
-	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
-	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }
+	override func animateFrame2() { activityFrame = 2 ; refreshSprite() }
+	override func animateFrame3() { activityFrame = 3 ; refreshSprite() }
 	
-	func updateSprite()
+	override func refreshSprite()
 	{
-		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; sprite.texture = textureWithName("event.petunia.\(activityFrame).png") }
-		if isVisible == false { return }
-		
 		sprite.texture = textureWithName("event.petunia.\(activityFrame).png")
 	}
 	

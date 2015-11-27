@@ -15,7 +15,7 @@ class Speaker : Event
 		
 		spriteName = special == true ? "radio" : "music"
 		
-		updateSprite("event.\(spriteName).1.png")
+		refreshSprite()
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	
@@ -28,7 +28,7 @@ class Speaker : Event
 			turnOn()
 		}
 		player.isMoving = false
-		updateSprite()
+		refreshSprite()
 	}
 	
 	func turnOn()
@@ -43,15 +43,13 @@ class Speaker : Event
 		dialog.showModal(dialogs.music(false), eventName: spriteName)
 	}
 	
-	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
-	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
-	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }
+	override func animateFrame2() { activityFrame = 2 ; refreshSprite() }
+	override func animateFrame3() { activityFrame = 3 ; refreshSprite() }
 	
-	func updateSprite()
+	override func refreshSprite()
 	{
-		if isVisible == true && player.hasMusic == true { sprite.texture = textureWithName("event.\(spriteName).off.png") ; return }
-		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; sprite.texture = textureWithName("event.\(spriteName).\(activityFrame).png") ; return }
-		if isVisible == false { return }
+		if player.hasMusic == true { sprite.texture = textureWithName("event.\(spriteName).off.png") ; return }
 		sprite.texture = textureWithName("event.\(spriteName).\(activityFrame).png")
 	}
 	

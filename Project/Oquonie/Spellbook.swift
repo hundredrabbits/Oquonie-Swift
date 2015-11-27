@@ -94,7 +94,6 @@ class Spellbook : SKNode
 	
 	func addSpell(spell:Wizard)
 	{
-		print("Added \(spell)")
 		spells.append(spell)
 		if hasSequence() == true {
 			useSpells()

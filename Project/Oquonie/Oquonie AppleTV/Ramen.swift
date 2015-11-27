@@ -9,18 +9,19 @@ class Ramen : Wizard
 {
 	var isKnown:Bool = false
 	var isWizard:Bool = false
-	var characterSprite:SKSpriteNode!
+	var characterSprite = SKSpriteNode(texture: textureWithName("event.ramen.1.png"), color: UIColor.redColor(), size: CGSize(width: 0,height: 0))
 	
 	init(x:Int,y:Int,spell:Personas! = nil, isWizard:Bool = false, orientation:Orientation = Orientation.l)
 	{
 		super.init(x: x, y: y,spell:spell)
 		
 		characterSprite = SKSpriteNode(texture: textureWithName("event.ramen.1.png"), color: UIColor.redColor(), size: sprite.size)
+		characterSprite.size = sprite.size
 		characterSprite.position = sprite_position
 		addChild(characterSprite)
 		
 		self.isWizard = isWizard
-		updateSprite("event.ramen.absent")
+		refreshSprite()
 	}
 	
 	func updateSpell()
@@ -60,6 +61,7 @@ class Ramen : Wizard
 		else if isWizard == false && isKnown == false {
 			characterSprite.alpha = 1
 		}
+		refreshSprite()
 	}
 	
 	override func updateDialog()
@@ -68,7 +70,7 @@ class Ramen : Wizard
 		
 		if isWizard == false { return }
 		
-		if player.hasSpell(self) == false {
+		if player.hasSpell(self) == false  {
 			dialogSprite.runAction(SKAction.fadeAlphaTo(1, duration: 0.1))
 			dialogSprite.texture = textureWithName("notification.\(spell).png")
 		}
@@ -106,15 +108,12 @@ class Ramen : Wizard
 		updateDialog()
 	}
 	
-	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
-	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
-	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }
+	override func animateFrame2() { activityFrame = 2 ; refreshSprite() }
+	override func animateFrame3() { activityFrame = 3 ; refreshSprite() }
 	
-	override func updateSprite()
-	{
-		if isVisible == false && activityFrame != 1 { activityFrame = 1 ; characterSprite.texture = textureWithName("event.ramen.\(activityFrame).png") }
-		if isVisible == false { return }
-		
+	override func refreshSprite()
+	{		
 		characterSprite.texture = textureWithName("event.ramen.\(activityFrame).png")
 	}
 	

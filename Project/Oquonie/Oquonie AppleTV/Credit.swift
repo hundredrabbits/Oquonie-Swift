@@ -22,6 +22,7 @@ class Credit : Event
 	override func onRoomEnter()
 	{
 		player.isFinishedPart1 = true
+		refreshSprite()
 	}
 	
 	override func collide()

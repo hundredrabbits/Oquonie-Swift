@@ -37,7 +37,7 @@ class Player : Event
 		shadow.zPosition = 40
 		addChild(shadow)
 		
-		updateSprite()
+		refreshSprite()
 		
 		startActivity()
 	}
@@ -53,7 +53,7 @@ class Player : Event
 		
 		updateSpriteStyle(x,y:y)
 		action(x,y:y)
-		updateSprite()
+		refreshSprite()
 		startActivity()
 	}
 	
@@ -99,10 +99,10 @@ class Player : Event
 	{
 		isMoving = true
 		self.state = States.walk
-		updateSprite()
+		refreshSprite()
 		self.x = destination_x
 		self.y = destination_y
-		print("moving: \(x)/\(y) to: \(self.x)/\(self.y)")
+		print("  MOVE - \(self.x),\(self.y)")
 		
 		let action_move = SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.25)
 		action_move.timingMode = .EaseInEaseOut
@@ -114,10 +114,10 @@ class Player : Event
 	
 	func stand()
 	{
-		print("stand")
+		print("  STOP")
 		self.isMoving = false
 		self.state = States.stand
-		updateSprite()
+		refreshSprite()
 	}
 	
 	func lock()
@@ -158,7 +158,7 @@ class Player : Event
 		player.updatePosition(to_x,y:to_y)
 		stage.enter(destination)
 		stage.parallaxTo(stage.positionAt(self.x,y:self.y).x,y:stage.positionAt(self.x,y:self.y).y)
-		print("moving: \(destination) -> \(x)/\(y)")
+		print("! MOVE - \(destination) -> \(x)/\(y)")
 	}
 	
 	func slowWarpTo(roomId:Int,to_x:Int,to_y:Int)
@@ -169,8 +169,10 @@ class Player : Event
 		})
 	}
 	
-	func updateSprite()
+	override func refreshSprite()
 	{
+		if state == States.walk && activityFrame == 3 { activityFrame = 2 }
+		
 		var imageName = "char.\(persona).\(state).\(direction).\(activityFrame).png"
 		
 		if direction == Direction.b && state == States.stand {
@@ -188,7 +190,7 @@ class Player : Event
 			texture = SKTexture(image: image!)
 		}
 		else{
-			print("missing: \(imageName)")
+			print("!ERROR - Player.unknown: \(imageName)")
 		}
 		
 		sprite.texture = texture
@@ -236,23 +238,23 @@ class Player : Event
 		action_levitate_land.timingMode = .EaseOut
 		
 		state = States.warp
-		updateSprite()
+		refreshSprite()
 		
 		sprite.runAction(action_levitate, completion: {
 			self.sprite.runAction(action_levitate_down, completion: {
 				self.sprite.runAction(action_levitate_up, completion: {
 					self.persona = spell
-					self.updateSprite()
+					self.refreshSprite()
 					self.sprite.alpha = 0
 					stage.onPlayerTransformed()
 					self.sprite.runAction(action_levitate_transform, completion: {
-						self.updateSprite()
+						self.refreshSprite()
 						stage.showFx("fx.1.vertical.png", duration:1)
 						self.sprite.runAction(action_levitate_land, completion: {
 							self.state = States.stand
 							self.orientation = Orientation.l
 							self.direction = Direction.f
-							self.updateSprite()
+							self.refreshSprite()
 						})
 					})
 				})
@@ -279,7 +281,7 @@ class Player : Event
 		action_levitate.timingMode = .EaseOut
 		
 		state = .warp
-		updateSprite()
+		refreshSprite()
 	}
 	
 	func appear()
@@ -288,7 +290,7 @@ class Player : Event
 		self.sprite.alpha = 0
 		self.shadow.alpha = 0
 		state = .warp
-		updateSprite()
+		refreshSprite()
 		sprite.position = CGPoint(x: self.sprite_position.x, y: self.sprite_position.y + (templates.floor.height))
 		
 		let action_land = SKAction.moveToY(self.sprite_position.y, duration: 4)
@@ -296,7 +298,7 @@ class Player : Event
 		self.sprite.runAction(action_land, completion:{
 			self.state = .stand
 			self.direction = .f
-			self.updateSprite()
+			self.refreshSprite()
 			player.unlock()
 		})
 		self.shadow.runAction(SKAction.fadeAlphaTo(1, duration: 2))
@@ -308,7 +310,7 @@ class Player : Event
 		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)
 		action_levitate.timingMode = .EaseIn
 		state = .warp
-		updateSprite()
+		refreshSprite()
 		self.sprite.runAction(action_levitate)
 		
 		self.shadow.runAction(SKAction.fadeAlphaTo(0, duration: 2))
@@ -321,15 +323,15 @@ class Player : Event
 		self.sprite.runAction(action_land, completion:{
 			self.state = .stand
 			self.direction = .f
-			self.updateSprite()
+			self.refreshSprite()
 			player.unlock()
 		})
 		self.shadow.runAction(SKAction.fadeAlphaTo(1, duration: 2))
 	}
 	
-	override func animateFrame1() { activityFrame = 1 ; updateSprite() }
-	override func animateFrame2() { activityFrame = 2 ; updateSprite() }
-	override func animateFrame3() { activityFrame = 3 ; updateSprite() }
+	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }
+	override func animateFrame2() { activityFrame = 2 ; refreshSprite() }
+	override func animateFrame3() { activityFrame = 3 ; refreshSprite() }
 	
 	// MARK: Overlay -
 	

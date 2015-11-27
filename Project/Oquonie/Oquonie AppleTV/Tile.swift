@@ -52,7 +52,7 @@ class Tile : SKSpriteNode
 			texture = SKTexture(image: image!)
 		}
 		else if id > 0 {
-			print("not found \(imageName)")
+			print("!ERROR - Tile.unknown: \(imageName)")
 		}
 
 		self.texture = texture
@@ -68,7 +68,7 @@ class Tile : SKSpriteNode
 			texture = SKTexture(image: image!)
 		}
 		else if id > 0 {
-			print("not found \(imageName)")
+			print("!ERROR - Tile.unknown: \(imageName)")
 		}
 		self.texture = texture
 	}

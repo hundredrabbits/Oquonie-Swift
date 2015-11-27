@@ -34,6 +34,13 @@ class Event : SKNode
 		startActivity()
 	}
 	
+	// MARK: Triggers -
+	
+	override func onRoomEnter()
+	{
+		refreshSprite()
+	}
+	
 	// MARK: Animation -
 	
 	func startActivity()
@@ -44,6 +51,7 @@ class Event : SKNode
 	
 	func animateIdle()
 	{
+		if isVisible == false { return }
 		NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "animateFrame1", userInfo: nil, repeats: false)
 		NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: "animateFrame2", userInfo: nil, repeats: false)
 		NSTimer.scheduledTimerWithTimeInterval(0.7, target: self, selector: "animateFrame3", userInfo: nil, repeats: false)
@@ -61,6 +69,11 @@ class Event : SKNode
 		sprite.runAction( SKAction.moveToY(sprite_position.y, duration: 0.1) )
 	}
 	
+	func refreshSprite()
+	{
+	
+	}
+	
 	func updateSprite(imageName:String!)
 	{
 		if imageName == nil { sprite.texture = nil ; return }
@@ -73,7 +86,7 @@ class Event : SKNode
 			texture = SKTexture(image: image!)
 		}
 		else{
-			print("missing: \(imageName)")
+			print("!ERROR - Event.unknown: \(imageName)")
 		}
 		
 		sprite.texture = texture

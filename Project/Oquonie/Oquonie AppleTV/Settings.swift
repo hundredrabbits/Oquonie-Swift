@@ -179,7 +179,7 @@ func textureWithName(imageName:String) -> SKTexture!
 		texture = SKTexture(image: image!)
 	}
 	else {
-		print("! not found \(imageName)")
+		print("!ERROR - Settings.unknown: \(imageName)")
 	}
 	return texture
 }

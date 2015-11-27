@@ -17,11 +17,6 @@ class DoorRed : Door
 		self.to_y = to_y
 	}
 	
-	override func onRoomEnter()
-	{
-		
-	}
-	
 	override func bind(node:Tile)
 	{
 		target = node
