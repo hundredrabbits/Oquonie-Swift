@@ -10,11 +10,35 @@ var steps = 0
 
 class SplashGameScene: SKScene
 {
+	var viewController: MainViewController!
+	
     override func didMoveToView(view: SKView)
 	{
 	}
 	
 	func start()
+	{
+		self.backgroundColor = black
+		
+		createLogo()
+		createRabbits()
+		
+		NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "_appear", userInfo: nil, repeats: false)
+		NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "_call", userInfo: nil, repeats: true)
+	}
+	
+	func createLogo()
+	{
+		logo = SKLabelNode(fontNamed: "Alte Haas Grotesk Bold")
+		logo.position = CGPoint(x:CGRectGetMidX(self.frame),y:CGRectGetMidY(self.frame) - (rabbitSize * 8))
+		logo.horizontalAlignmentMode = .Center
+		logo.text = "hundredrabbits"
+		logo.fontSize = 20
+		logo.alpha = 0
+		addChild(logo)
+	}
+	
+	func createRabbits()
 	{
 		var x = 0
 		var y = 0
@@ -27,8 +51,6 @@ class SplashGameScene: SKScene
 			}
 			x += 1
 		}
-		
-		print("screen size: \(self.frame)")
 		addChild(rabbits)
 		rabbits.position = CGPoint(x:CGRectGetMidX(self.frame),y:CGRectGetMidY(self.frame))
 		
@@ -38,18 +60,6 @@ class SplashGameScene: SKScene
 		scare()
 		scare()
 		scare()
-		
-		NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "call", userInfo: nil, repeats: true)
-		
-		logo = SKLabelNode(fontNamed: "Alte Haas Grotesk Bold")
-		logo.position = CGPoint(x:CGRectGetMidX(self.frame),y:CGRectGetMidY(self.frame) - (rabbitSize * 8))
-		logo.horizontalAlignmentMode = .Center
-		logo.text = "hundredrabbits"
-		logo.fontSize = 20
-		logo.alpha = 0
-		addChild(logo)
-		
-		self.backgroundColor = black
 	}
 	
 	func displayLogo()
@@ -58,14 +68,16 @@ class SplashGameScene: SKScene
 		logo.runAction(action_fade)
 	}
 	
-	func scare()
+	func _appear()
 	{
+		var count = 1
 		for case let rabbit as Rabbit in rabbits.children {
-			rabbit.flee()
+			rabbit.appear(count)
+			count += 1
 		}
 	}
 	
-	func call()
+	func _call()
 	{
 		steps += 1
 		for case let rabbit as Rabbit in rabbits.children {
@@ -74,6 +86,21 @@ class SplashGameScene: SKScene
 		
 		if steps == 8 {
 			displayLogo()
+		}
+		if steps == 14 {
+			exit()
+		}
+	}
+	
+	func exit()
+	{
+		viewController.splash_exited()
+	}
+	
+	func scare()
+	{
+		for case let rabbit as Rabbit in rabbits.children {
+			rabbit.flee()
 		}
 	}
 	

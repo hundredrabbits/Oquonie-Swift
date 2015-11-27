@@ -8,7 +8,7 @@ import Foundation
 class Dialog : SKNode
 {
 	var isActive:Bool = false
-	let background = SKShapeNode(rectOfSize: CGSize(width: gameScene.frame.width, height: gameScene.frame.height))
+	let background = SKShapeNode(rectOfSize: CGSize(width: templates.screen.width, height: templates.screen.height))
 	var bubble:SKSpriteNode!
 	var portrait:SKSpriteNode!
 	var letter1:SKSpriteNode!
@@ -23,13 +23,13 @@ class Dialog : SKNode
 		super.init()
 		
 		bubble = SKSpriteNode(texture: textureWithName("dialog.bubble"), color: UIColor.redColor(), size: templates.dialog)
-		bubble_origin = CGPoint(x: 0, y: -gameScene.frame.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
+		bubble_origin = CGPoint(x: 0, y: -templates.screen.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
 		bubble.position = bubble_origin
 		bubble.alpha = 0
 		addChild(bubble)
 		
 		portrait = SKSpriteNode(texture: nil, color: UIColor.redColor(), size: templates.dialog)
-		portrait_origin = CGPoint(x: 0, y: -gameScene.frame.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
+		portrait_origin = CGPoint(x: 0, y: -templates.screen.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
 		portrait.position = portrait_origin
 		portrait.alpha = 0
 		addChild(portrait)

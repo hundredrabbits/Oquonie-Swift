@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--Splash View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="Wxz-7E-IgJ">
             <objects>
-                <viewController id="TLl-Lq-f40" customClass="SplashViewController" customModule="Oquonie_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TLl-Lq-f40" customClass="MainViewController" customModule="Oquonie_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uCd-gD-PgH" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,6 @@
         <!--Game View Controller-->
         <scene sceneID="1mB-sf-Xvd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="80S-El-DKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ZCX-1U-Rgx" customClass="GameViewController" customModule="Oquonie_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HrK-gI-CX8" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -31,7 +30,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3bO-7x-5NE"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="80S-El-DKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="124.8" y="213.94666666666666"/>
         </scene>

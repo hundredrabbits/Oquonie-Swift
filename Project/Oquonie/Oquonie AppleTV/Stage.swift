@@ -7,6 +7,8 @@ import Foundation
 
 class Stage : SKNode
 {
+	var gameScene:MainGameScene!
+	
 	let wall1:Tile!
 	let wall2:Tile!
 	let wall3:Tile!
@@ -168,7 +170,7 @@ class Stage : SKNode
 		applyTheme(room.theme)
 		
 		parallaxFront.alpha = 0
-		parallaxFront.position = CGPoint(x:templates.stage.x + (CGFloat(player.x) * 0.2),y:CGRectGetMidY(gameScene.frame) + (CGFloat(player.y) * 0.2))
+		parallaxFront.position = CGPoint(x:templates.stage.x + (CGFloat(player.x) * 0.2),y:CGRectGetMidY(templates.screen) + (CGFloat(player.y) * 0.2))
 	}
 	
 	func applyTheme(newTheme:Theme)

@@ -4,19 +4,22 @@
 
 import SpriteKit
 
-class GameScene: SKScene
+class MainGameScene: SKScene
 {
+	var viewController: MainViewController!
+	
 	var time:NSTimer!
 
     override func didMoveToView(view: SKView)
 	{
-		time = NSTimer.scheduledTimerWithTimeInterval(0.025, target: self, selector: "_fixedUpdate", userInfo: nil, repeats: true)
-		templates.stage = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - (0.5 * templates.wall.height))
-		start()
     }
 	
 	func start()
 	{
+		time = NSTimer.scheduledTimerWithTimeInterval(0.025, target: self, selector: "_fixedUpdate", userInfo: nil, repeats: true)
+		templates.screen = self.frame
+		templates.stage = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - (0.5 * templates.wall.height))
+		
 		_addStage()
 		_addPlayer()
 		_addSpellbook()
@@ -54,6 +57,7 @@ class GameScene: SKScene
 	func _addStage()
 	{
 		stage.position = templates.stage
+		stage.gameScene = self
 		addChild(stage)
 	}
 	
@@ -86,10 +90,10 @@ class GameScene: SKScene
 	
 	func _addOverlay()
 	{
-		overlay = SKSpriteNode(color: UIColor.whiteColor(), size: CGSize(width: gameScene.size.width, height: gameScene.size.width))
+		overlay = SKSpriteNode(color: UIColor.whiteColor(), size: CGSize(width: self.size.width, height: self.size.width))
 		overlay.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		overlay.zPosition = 1500
-		overlay_image = SKSpriteNode(texture: nil, color: UIColor.blueColor(), size: CGSize(width: overlay.size.width/2, height: gameScene.size.width/2))
+		overlay_image = SKSpriteNode(texture: nil, color: UIColor.blueColor(), size: CGSize(width: overlay.size.width/2, height: self.size.width/2))
 		overlay_image.position = CGPoint(x: 0,y: 0)
 		overlay_image.zPosition = 1600
 		overlay.addChild(overlay_image)

@@ -1,31 +1,52 @@
 
-//  Created by Devine Lu Linvega on 2015-11-07.
-//  Copyright (c) 2015 XXIIVV. All rights reserved.
+//  Created by Devine Lu Linvega on 2015-11-22.
+//  Copyright (c) 2015 Devine Lu Linvega. All rights reserved.
 
-import UIKit
 import SpriteKit
 
-var gameScene:SKScene!
-
-class GameViewController: UIViewController
+class MainViewController: UIViewController
 {
-    override func viewDidLoad()
+	override func viewDidLoad()
 	{
-        super.viewDidLoad()
-		
-		gameScene = GameScene(fileNamed: "GameScene")
-		let skView = self.view as! SKView
-		gameScene.size = CGSize(width: 1400, height: 1400)
-		gameScene.scaleMode = .AspectFill
-		skView.presentScene(gameScene)
-		
-		start()
-    }
-	
-	func start()
-	{
-		installGestures()
+		super.viewDidLoad()
+		splash_load()
 	}
+	
+	// MARK: Flow -
+	
+	func splash_load()
+	{
+		if let scene = SplashGameScene(fileNamed:"splash"){
+			let skView = self.view as! SKView
+			scene.viewController = self
+			scene.scaleMode = .AspectFill
+			skView.presentScene(scene)
+			scene.start()
+		}
+	}
+	
+	func splash_exited()
+	{
+		game_load()
+	}
+	
+	func game_load()
+	{
+		if let scene = MainGameScene(fileNamed:"splash"){
+			let skView = self.view as! SKView
+			scene.viewController = self
+			scene.scaleMode = .AspectFill
+			skView.presentScene(scene)
+			scene.start()
+		}
+	}
+	
+	func game_exit()
+	{
+		
+	}
+	
+	// MARK: Controls -
 	
 	var touch_origin:CGPoint!
 	
@@ -42,7 +63,7 @@ class GameViewController: UIViewController
 	{
 		/*
 		if let touch = touches.first {
-			let point = touch.locationInView(self.view)
+		let point = touch.locationInView(self.view)
 		}
 		super.touchesMoved(touches, withEvent:event)
 		*/
@@ -94,7 +115,7 @@ class GameViewController: UIViewController
 		let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
 		swipeLeft.direction = .Left
 		self.view.addGestureRecognizer(swipeLeft)
-*/
+		*/
 	}
 	
 	func respondToSwipeGesture(gesture: UIGestureRecognizer)
@@ -135,13 +156,29 @@ class GameViewController: UIViewController
 		}
 	}
 	
-	override func prefersStatusBarHidden() -> Bool
+	// MARK: Defaults -
+	
+	override func shouldAutorotate() -> Bool
 	{
 		return true
 	}
 	
-    override func didReceiveMemoryWarning()
+	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
 	{
-        super.didReceiveMemoryWarning()
-    }
+		if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+			return .AllButUpsideDown
+		} else {
+			return .All
+		}
+	}
+	
+	override func didReceiveMemoryWarning()
+	{
+		super.didReceiveMemoryWarning()
+	}
+	
+	override func prefersStatusBarHidden() -> Bool
+	{
+		return true
+	}
 }

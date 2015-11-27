@@ -34,15 +34,15 @@ class Rabbit : SKNode
 	
 	func flee()
 	{
-		let direction = _Direction.random()
+		let direction = Direction.random()
 		
 		var test_x = 0
 		var test_y = 0
 		
-		if direction == _Direction.Right { test_x = 1  }
-		if direction == _Direction.Left  { test_x = -1 }
-		if direction == _Direction.Up    { test_y = 1  }
-		if direction == _Direction.Down  { test_y = -1 }
+		if direction == Direction.Right { test_x = 1  }
+		if direction == Direction.Left  { test_x = -1 }
+		if direction == Direction.Up    { test_y = 1  }
+		if direction == Direction.Down  { test_y = -1 }
 		
 		var canMove:Bool = true
 		
@@ -69,24 +69,37 @@ class Rabbit : SKNode
 		
 		moves.removeLast()
 	}
+	
+	func appear(rank:Int)
+	{
+		let action_scale0 = SKAction.scaleTo(0, duration: 0)
+		let action_wait = SKAction.waitForDuration(0.03 * Double(rank))
+		let action_scale1 = SKAction.scaleTo(1, duration: 0.5)
+		
+		let sequence = SKAction.sequence([action_scale0, action_wait, action_scale1])
+		self.sprite.runAction(sequence)
+	}
+	
+	// MARK: Tools -
+
+	enum Direction: UInt32
+	{
+		case Up
+		case Down
+		case Left
+		case Right
+		
+		static func random() -> Direction
+		{
+			let rand = arc4random_uniform(Right.rawValue+1)
+			return Direction(rawValue: rand)!
+		}
+	}
+	
+	// MARK: Default -
 
 	required init?(coder aDecoder: NSCoder)
 	{
 	    fatalError("init(coder:) has not been implemented")
 	}
 }
-
-enum _Direction: UInt32
-{
-	case Up
-	case Down
-	case Left
-	case Right
-	
-	static func random() -> _Direction
-	{
-		let rand = arc4random_uniform(Right.rawValue+1)
-		return _Direction(rawValue: rand)!
-	}
-}
-

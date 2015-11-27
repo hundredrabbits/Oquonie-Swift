@@ -60,6 +60,7 @@
 		57618A4A1BFBC92A0060E177 /* letter.pillar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5707555E1BF2D78300638CAE /* letter.pillar.png */; };
 		57618A4C1BFBDCB70060E177 /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = 57618A4B1BFBDCB70060E177 /* Todo */; };
 		576570691BF388B100F563B8 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576570671BF388AD00F563B8 /* SKNode.swift */; };
+		5770E39D1C08B41800297E89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770E39C1C08B41800297E89 /* MainViewController.swift */; };
 		578BFD881BF0E6D8006DAF1C /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* Tile.swift */; };
 		578BFE001BF0EA52006DAF1C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFDFF1BF0EA52006DAF1C /* Settings.swift */; };
 		579304921BF634E6005583CE /* letter.spell.blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 579304911BF634E6005583CE /* letter.spell.blank.png */; };
@@ -459,9 +460,8 @@
 		579306501BF63FF9005583CE /* char.nestorine.warp.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754AC1BF2D78200638CAE /* char.nestorine.warp.png */; };
 		57A4A2E81BFA1CBE0027E909 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2E71BFA1CBE0027E909 /* Dialog.swift */; };
 		57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668631BEE98AA007CDD8B /* AppDelegate.swift */; };
-		57A668661BEE98AA007CDD8B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* GameScene.sks */; };
-		57A668681BEE98AA007CDD8B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* GameScene.swift */; };
-		57A6686A1BEE98AA007CDD8B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668691BEE98AA007CDD8B /* GameViewController.swift */; };
+		57A668661BEE98AA007CDD8B /* game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* game.sks */; };
+		57A668681BEE98AA007CDD8B /* MainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* MainGameScene.swift */; };
 		57A6686F1BEE98AA007CDD8B /* AppleTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686D1BEE98AA007CDD8B /* AppleTV.storyboard */; };
 		57A668711BEE98AA007CDD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
 		57C1AA0A1AA37397005EFD29 /* dialog_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0375469318A70E5000807397 /* dialog_cat.wav */; };
@@ -516,8 +516,7 @@
 		57C1AA3B1AA38257005EFD29 /* town2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9918A26BE500206675 /* town2.mp3 */; };
 		57C1AA3C1AA38257005EFD29 /* town3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9A18A26BE500206675 /* town3.mp3 */; };
 		57C1AA3D1AA38257005EFD29 /* warp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9B18A26BE500206675 /* warp.mp3 */; };
-		57C843D01BF233CB00288847 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668691BEE98AA007CDD8B /* GameViewController.swift */; };
-		57C843D11BF233CB00288847 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* GameScene.swift */; };
+		57C843D11BF233CB00288847 /* MainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* MainGameScene.swift */; };
 		57C843D21BF233CB00288847 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
 		57C843D31BF233CB00288847 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* Tile.swift */; };
 		57C843D91BF233CB00288847 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFDFF1BF0EA52006DAF1C /* Settings.swift */; };
@@ -525,7 +524,7 @@
 		57C843DB1BF233CB00288847 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
 		57C843DC1BF233CB00288847 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0E2CE1BF147AC0067CC94 /* Player.swift */; };
 		57C843DD1BF233CB00288847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668631BEE98AA007CDD8B /* AppDelegate.swift */; };
-		57C843DE1BF233CB00288847 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* GameScene.sks */; };
+		57C843DE1BF233CB00288847 /* game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* game.sks */; };
 		57C843E01BF233CB00288847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
 		57C843E31BF2341100288847 /* iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C843E21BF2341100288847 /* iOS.storyboard */; };
 		57C843E51BF234C200288847 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C843E41BF234C200288847 /* Default-568h@2x.png */; };
@@ -543,7 +542,6 @@
 		57D81F1A1C07C787008FAE67 /* Petunia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F191C07C787008FAE67 /* Petunia.swift */; };
 		57D81F211C07E95D008FAE67 /* AlteHaasGroteskBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57D81F1E1C07E95D008FAE67 /* AlteHaasGroteskBold.ttf */; };
 		57D81F221C07E95D008FAE67 /* SplashGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */; };
-		57D81F231C07E95D008FAE67 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F201C07E95D008FAE67 /* SplashViewController.swift */; };
 		57D81F251C07E97E008FAE67 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F241C07E97E008FAE67 /* Rabbit.swift */; };
 		57D81F271C07EEE6008FAE67 /* splash.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57D81F261C07EEE6008FAE67 /* splash.sks */; };
 		57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
@@ -1053,6 +1051,7 @@
 		57618A061BFBBB490060E177 /* Dialogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialogs.swift; sourceTree = "<group>"; };
 		57618A4B1BFBDCB70060E177 /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		576570671BF388AD00F563B8 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
+		5770E39C1C08B41800297E89 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		578BFD871BF0E6D8006DAF1C /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Oquonie AppleTV/Tile.swift"; sourceTree = "<group>"; };
 		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Oquonie AppleTV/Settings.swift"; sourceTree = "<group>"; };
 		579304911BF634E6005583CE /* letter.spell.blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.spell.blank.png; path = en.assets/letter.spell.blank.png; sourceTree = "<group>"; };
@@ -1060,9 +1059,8 @@
 		57A668471BEE9894007CDD8B /* Oquonie iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A668611BEE98AA007CDD8B /* Oquonie AppleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie AppleTV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A668631BEE98AA007CDD8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Oquonie AppleTV/AppDelegate.swift"; sourceTree = "<group>"; };
-		57A668651BEE98AA007CDD8B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		57A668671BEE98AA007CDD8B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "Oquonie AppleTV/GameScene.swift"; sourceTree = "<group>"; };
-		57A668691BEE98AA007CDD8B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = "Oquonie AppleTV/GameViewController.swift"; sourceTree = "<group>"; };
+		57A668651BEE98AA007CDD8B /* game.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = game.sks; path = "Oquonie AppleTV/game.sks"; sourceTree = "<group>"; };
+		57A668671BEE98AA007CDD8B /* MainGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainGameScene.swift; path = "Oquonie AppleTV/MainGameScene.swift"; sourceTree = "<group>"; };
 		57A6686E1BEE98AA007CDD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppleTV.storyboard; sourceTree = "<group>"; };
 		57A668701BEE98AA007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Oquonie AppleTV/Assets.xcassets"; sourceTree = "<group>"; };
 		57C843E21BF2341100288847 /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
@@ -1082,7 +1080,6 @@
 		57D81F191C07C787008FAE67 /* Petunia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Petunia.swift; sourceTree = "<group>"; };
 		57D81F1E1C07E95D008FAE67 /* AlteHaasGroteskBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AlteHaasGroteskBold.ttf; path = Splash/AlteHaasGroteskBold.ttf; sourceTree = "<group>"; };
 		57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashGameScene.swift; path = Splash/SplashGameScene.swift; sourceTree = "<group>"; };
-		57D81F201C07E95D008FAE67 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = Splash/SplashViewController.swift; sourceTree = "<group>"; };
 		57D81F241C07E97E008FAE67 /* Rabbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Splash/Rabbit.swift; sourceTree = "<group>"; };
 		57D81F261C07EEE6008FAE67 /* splash.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = splash.sks; path = Splash/splash.sks; sourceTree = "<group>"; };
 		57E3D2BC1BF0FE0400E4D319 /* Stage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stage.swift; path = "Oquonie AppleTV/Stage.swift"; sourceTree = "<group>"; };
@@ -1160,6 +1157,8 @@
 			isa = PBXGroup;
 			children = (
 				57618A4B1BFBDCB70060E177 /* Todo */,
+				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
+				5770E39C1C08B41800297E89 /* MainViewController.swift */,
 				57D81F1D1C07E92B008FAE67 /* Splash */,
 				57C843E61BF2356300288847 /* Oquonie Core */,
 				57A668481BEE9894007CDD8B /* Oquonie iOS */,
@@ -1772,7 +1771,6 @@
 			children = (
 				57C843ED1BF237B200288847 /* Info AppleTV.plist */,
 				57A6686D1BEE98AA007CDD8B /* AppleTV.storyboard */,
-				57A668651BEE98AA007CDD8B /* GameScene.sks */,
 			);
 			path = "Oquonie AppleTV";
 			sourceTree = "<group>";
@@ -1794,8 +1792,8 @@
 		57C843E61BF2356300288847 /* Oquonie Core */ = {
 			isa = PBXGroup;
 			children = (
-				57A668691BEE98AA007CDD8B /* GameViewController.swift */,
-				57A668671BEE98AA007CDD8B /* GameScene.swift */,
+				57A668651BEE98AA007CDD8B /* game.sks */,
+				57A668671BEE98AA007CDD8B /* MainGameScene.swift */,
 				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
 				575DA5861BF3F53900FE6921 /* Spellbook.swift */,
 				57E3D2BC1BF0FE0400E4D319 /* Stage.swift */,
@@ -1807,7 +1805,6 @@
 				57618A061BFBBB490060E177 /* Dialogs.swift */,
 				57F0E2CA1BF13A320067CC94 /* Events */,
 				576570671BF388AD00F563B8 /* SKNode.swift */,
-				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
 			);
 			name = "Oquonie Core";
 			sourceTree = "<group>";
@@ -1815,7 +1812,6 @@
 		57D81F1D1C07E92B008FAE67 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				57D81F201C07E95D008FAE67 /* SplashViewController.swift */,
 				57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */,
 				57D81F241C07E97E008FAE67 /* Rabbit.swift */,
 				57D81F261C07EEE6008FAE67 /* splash.sks */,
@@ -2275,7 +2271,7 @@
 				579305501BF63FCA005583CE /* event.owl.2.png in Resources */,
 				5793064A1BF63FF9005583CE /* char.nestorine.stand.f.2.png in Resources */,
 				579306301BF63FF9005583CE /* char.nemedique.stand.f.3.png in Resources */,
-				57C843DE1BF233CB00288847 /* GameScene.sks in Resources */,
+				57C843DE1BF233CB00288847 /* game.sks in Resources */,
 				579306401BF63FF9005583CE /* char.nephtaline.stand.f.1.png in Resources */,
 				5793056A1BF63FCA005583CE /* event.ramen.absent.png in Resources */,
 				579304E71BF63F5E005583CE /* blocker.15.png in Resources */,
@@ -2465,7 +2461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A6686F1BEE98AA007CDD8B /* AppleTV.storyboard in Resources */,
-				57A668661BEE98AA007CDD8B /* GameScene.sks in Resources */,
+				57A668661BEE98AA007CDD8B /* game.sks in Resources */,
 				57A668711BEE98AA007CDD8B /* Assets.xcassets in Resources */,
 				57C843EE1BF237B200288847 /* Info AppleTV.plist in Resources */,
 			);
@@ -2488,8 +2484,8 @@
 				5755DCF41BF2B71700C5353D /* Wizard.swift in Sources */,
 				574C7BE61C0392AE000A3B24 /* Boss.swift in Sources */,
 				57D81EF61C07AA4F008FAE67 /* Credit.swift in Sources */,
-				57D81F231C07E95D008FAE67 /* SplashViewController.swift in Sources */,
-				57C843D11BF233CB00288847 /* GameScene.swift in Sources */,
+				57C843D11BF233CB00288847 /* MainGameScene.swift in Sources */,
+				5770E39D1C08B41800297E89 /* MainViewController.swift in Sources */,
 				57C843DB1BF233CB00288847 /* Room.swift in Sources */,
 				5755DCE91BF2970300C5353D /* Map.swift in Sources */,
 				57C843DD1BF233CB00288847 /* AppDelegate.swift in Sources */,
@@ -2521,7 +2517,6 @@
 				57D81EF41C07A186008FAE67 /* RedEnd.swift in Sources */,
 				5755DCEB1BF2970300C5353D /* Speaker.swift in Sources */,
 				57C843DA1BF233CB00288847 /* World.swift in Sources */,
-				57C843D01BF233CB00288847 /* GameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2529,11 +2524,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A668681BEE98AA007CDD8B /* GameScene.swift in Sources */,
+				57A668681BEE98AA007CDD8B /* MainGameScene.swift in Sources */,
 				578BFD881BF0E6D8006DAF1C /* Tile.swift in Sources */,
 				57F0E2CF1BF147AC0067CC94 /* Player.swift in Sources */,
 				57E3D2C11BF1059500E4D319 /* Room.swift in Sources */,
-				57A6686A1BEE98AA007CDD8B /* GameViewController.swift in Sources */,
 				57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */,
 				57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */,
 				57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */,

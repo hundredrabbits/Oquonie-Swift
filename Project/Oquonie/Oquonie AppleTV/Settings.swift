@@ -52,12 +52,13 @@ enum Types
 
 struct Templates
 {
+	var screen:CGRect!
+	var stage:CGPoint!
 	let floor:CGSize = CGSize(width: 200, height: 141)
 	let step:CGSize = CGSize(width: 200, height: 141)
 	let wall:CGSize = CGSize(width: 200, height: 281)
 	let player:CGSize = CGSize(width: 200, height: 281)
 	let spell:CGSize = CGSize(width: 120, height: 120)
-	var stage:CGPoint = CGPoint()
 	let dialog:CGSize = CGSize(width: 640, height: 390)
 }
 
