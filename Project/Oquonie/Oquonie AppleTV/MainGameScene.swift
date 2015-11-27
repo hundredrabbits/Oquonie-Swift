@@ -53,7 +53,7 @@ class MainGameScene: SKScene
 		player.collectibles.append(pillar_nemedique)
 		player.persona = .necomedre
 		player.isFinishedPart1 = true
-		stage.enter(35)
+		stage.enter(1)
 	}
 	
 	func _addPlayer()

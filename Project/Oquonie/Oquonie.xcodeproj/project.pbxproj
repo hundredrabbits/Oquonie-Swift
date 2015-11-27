@@ -61,8 +61,6 @@
 		57618A4C1BFBDCB70060E177 /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = 57618A4B1BFBDCB70060E177 /* Todo */; };
 		576570691BF388B100F563B8 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576570671BF388AD00F563B8 /* SKNode.swift */; };
 		5770E39D1C08B41800297E89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770E39C1C08B41800297E89 /* MainViewController.swift */; };
-		578BFD881BF0E6D8006DAF1C /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* Tile.swift */; };
-		578BFE001BF0EA52006DAF1C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFDFF1BF0EA52006DAF1C /* Settings.swift */; };
 		579304921BF634E6005583CE /* letter.spell.blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 579304911BF634E6005583CE /* letter.spell.blank.png */; };
 		579304941BF635D0005583CE /* letter.spell.nemedique.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755511BF2D78200638CAE /* letter.spell.nemedique.png */; };
 		579304951BF635D0005583CE /* letter.spell.nestorine.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755521BF2D78300638CAE /* letter.spell.nestorine.png */; };
@@ -459,63 +457,9 @@
 		5793064F1BF63FF9005583CE /* char.nestorine.walk.f.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754AB1BF2D78200638CAE /* char.nestorine.walk.f.2.png */; };
 		579306501BF63FF9005583CE /* char.nestorine.warp.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754AC1BF2D78200638CAE /* char.nestorine.warp.png */; };
 		57A4A2E81BFA1CBE0027E909 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2E71BFA1CBE0027E909 /* Dialog.swift */; };
-		57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668631BEE98AA007CDD8B /* AppDelegate.swift */; };
 		57A668661BEE98AA007CDD8B /* game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* game.sks */; };
-		57A668681BEE98AA007CDD8B /* MainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* MainGameScene.swift */; };
 		57A6686F1BEE98AA007CDD8B /* AppleTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686D1BEE98AA007CDD8B /* AppleTV.storyboard */; };
 		57A668711BEE98AA007CDD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
-		57C1AA0A1AA37397005EFD29 /* dialog_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0375469318A70E5000807397 /* dialog_cat.wav */; };
-		57C1AA0B1AA37397005EFD29 /* dialog_devine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB518A67C0400BFA21E /* dialog_devine.wav */; };
-		57C1AA0C1AA37397005EFD29 /* dialog_noface.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB618A67C0400BFA21E /* dialog_noface.wav */; };
-		57C1AA0D1AA37397005EFD29 /* dialog_petunia.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB718A67C0400BFA21E /* dialog_petunia.wav */; };
-		57C1AA0E1AA37397005EFD29 /* dialog_rekka.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB818A67C0400BFA21E /* dialog_rekka.wav */; };
-		57C1AA0F1AA37397005EFD29 /* sfx_teleport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124DD18A32DB300388D2F /* sfx_teleport.wav */; };
-		57C1AA101AA37397005EFD29 /* dialog_ghost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D718A327D100388D2F /* dialog_ghost.wav */; };
-		57C1AA111AA37397005EFD29 /* dialog_red.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D818A327D100388D2F /* dialog_red.wav */; };
-		57C1AA121AA37397005EFD29 /* dialog_shark.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D918A327D100388D2F /* dialog_shark.wav */; };
-		57C1AA131AA37397005EFD29 /* dialog_speakerphone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D518A31E4300388D2F /* dialog_speakerphone.wav */; };
-		57C1AA141AA37397005EFD29 /* dialog_photocopier.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D118A31DC000388D2F /* dialog_photocopier.wav */; };
-		57C1AA151AA37397005EFD29 /* dialog_ramen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124D218A31DC000388D2F /* dialog_ramen.wav */; };
-		57C1AA161AA37397005EFD29 /* dialog_necomedre.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C318A31B9300388D2F /* dialog_necomedre.wav */; };
-		57C1AA171AA37397005EFD29 /* dialog_nemedique.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C418A31B9300388D2F /* dialog_nemedique.wav */; };
-		57C1AA181AA37397005EFD29 /* dialog_neomine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C518A31B9300388D2F /* dialog_neomine.wav */; };
-		57C1AA191AA37397005EFD29 /* dialog_nephtaline.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C618A31B9300388D2F /* dialog_nephtaline.wav */; };
-		57C1AA1A1AA37397005EFD29 /* dialog_nepturne.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C718A31B9300388D2F /* dialog_nepturne.wav */; };
-		57C1AA1B1AA37397005EFD29 /* dialog_nestorine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C818A31B9300388D2F /* dialog_nestorine.wav */; };
-		57C1AA1C1AA37397005EFD29 /* dialog_owl.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C118A31A0400388D2F /* dialog_owl.wav */; };
-		57C1AA1D1AA37397005EFD29 /* sfx_transform.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124BF18A313E500388D2F /* sfx_transform.wav */; };
-		57C1AA1E1AA37397005EFD29 /* sfx_spellfull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124BD18A312D700388D2F /* sfx_spellfull.wav */; };
-		57C1AA1F1AA37397005EFD29 /* sfx_spellgain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124B918A311EC00388D2F /* sfx_spellgain.wav */; };
-		57C1AA201AA37397005EFD29 /* sfx_spelllost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124BA18A311EC00388D2F /* sfx_spelllost.wav */; };
-		57C1AA211AA37397005EFD29 /* sfx_warp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124B718A30F8B00388D2F /* sfx_warp.wav */; };
-		57C1AA221AA37397005EFD29 /* sfx_walk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124B518A30EEB00388D2F /* sfx_walk.wav */; };
-		57C1AA231AA37397005EFD29 /* sfx_ambienttoggleoff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DA918A2764500206675 /* sfx_ambienttoggleoff.wav */; };
-		57C1AA241AA37397005EFD29 /* sfx_ambienttoggleon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAA18A2764500206675 /* sfx_ambienttoggleon.wav */; };
-		57C1AA251AA37397005EFD29 /* sfx_bump1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAB18A2764500206675 /* sfx_bump1.wav */; };
-		57C1AA261AA37397005EFD29 /* sfx_click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAC18A2764500206675 /* sfx_click1.wav */; };
-		57C1AA271AA37397005EFD29 /* sfx_dialogclose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAD18A2764500206675 /* sfx_dialogclose.wav */; };
-		57C1AA281AA37397005EFD29 /* sfx_dialogopen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAE18A2764500206675 /* sfx_dialogopen.wav */; };
-		57C1AA291AA37397005EFD29 /* sfx_doorlocked.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAF18A2764500206675 /* sfx_doorlocked.wav */; };
-		57C1AA2A1AA37397005EFD29 /* sfx_bump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DB018A2764500206675 /* sfx_bump.wav */; };
-		57C1AA2B1AA38257005EFD29 /* kamera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57255E151A76DD1500388B48 /* kamera.mp3 */; };
-		57C1AA2C1AA38257005EFD29 /* nastazie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03A9D623196D8156005EB95C /* nastazie.mp3 */; };
-		57C1AA2D1AA38257005EFD29 /* play.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BC518A685DF00BFA21E /* play.mp3 */; };
-		57C1AA2E1AA38257005EFD29 /* glitch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BC318A6807600BFA21E /* glitch.mp3 */; };
-		57C1AA2F1AA38257005EFD29 /* endless.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB918A67C0400BFA21E /* endless.mp3 */; };
-		57C1AA301AA38257005EFD29 /* purgatory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BBA18A67C0400BFA21E /* purgatory.mp3 */; };
-		57C1AA311AA38257005EFD29 /* necomedre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D8F18A26BE400206675 /* necomedre.mp3 */; };
-		57C1AA321AA38257005EFD29 /* nemedique.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9018A26BE400206675 /* nemedique.mp3 */; };
-		57C1AA331AA38257005EFD29 /* neomine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9118A26BE400206675 /* neomine.mp3 */; };
-		57C1AA341AA38257005EFD29 /* nephtaline.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9218A26BE500206675 /* nephtaline.mp3 */; };
-		57C1AA351AA38257005EFD29 /* nepturne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9318A26BE500206675 /* nepturne.mp3 */; };
-		57C1AA361AA38257005EFD29 /* nestorine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9418A26BE500206675 /* nestorine.mp3 */; };
-		57C1AA371AA38257005EFD29 /* pillartree.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9518A26BE500206675 /* pillartree.mp3 */; };
-		57C1AA381AA38257005EFD29 /* quiet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9618A26BE500206675 /* quiet.mp3 */; };
-		57C1AA391AA38257005EFD29 /* secret.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9718A26BE500206675 /* secret.mp3 */; };
-		57C1AA3A1AA38257005EFD29 /* town1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9818A26BE500206675 /* town1.mp3 */; };
-		57C1AA3B1AA38257005EFD29 /* town2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9918A26BE500206675 /* town2.mp3 */; };
-		57C1AA3C1AA38257005EFD29 /* town3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9A18A26BE500206675 /* town3.mp3 */; };
-		57C1AA3D1AA38257005EFD29 /* warp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9B18A26BE500206675 /* warp.mp3 */; };
 		57C843D11BF233CB00288847 /* MainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* MainGameScene.swift */; };
 		57C843D21BF233CB00288847 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
 		57C843D31BF233CB00288847 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* Tile.swift */; };
@@ -544,10 +488,6 @@
 		57D81F221C07E95D008FAE67 /* SplashGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */; };
 		57D81F251C07E97E008FAE67 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F241C07E97E008FAE67 /* Rabbit.swift */; };
 		57D81F271C07EEE6008FAE67 /* splash.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57D81F261C07EEE6008FAE67 /* splash.sks */; };
-		57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
-		57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BE1BF1033A00E4D319 /* World.swift */; };
-		57E3D2C11BF1059500E4D319 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
-		57F0E2CF1BF147AC0067CC94 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0E2CE1BF147AC0067CC94 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -606,7 +546,6 @@
 		03FE0DAE18A2764500206675 /* sfx_dialogopen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_dialogopen.wav; path = en.sounds/sfx_dialogopen.wav; sourceTree = "<group>"; };
 		03FE0DAF18A2764500206675 /* sfx_doorlocked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_doorlocked.wav; path = en.sounds/sfx_doorlocked.wav; sourceTree = "<group>"; };
 		03FE0DB018A2764500206675 /* sfx_bump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sfx_bump.wav; path = en.sounds/sfx_bump.wav; sourceTree = "<group>"; };
-		57013B8B1A7954E800612048 /* Oquonie Desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie Desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		570754471BF2D78200638CAE /* letter.7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.7.png; path = en.assets/letter.7.png; sourceTree = "<group>"; };
 		570754481BF2D78200638CAE /* blocker.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.0.png; path = en.assets/blocker.0.png; sourceTree = "<group>"; };
 		570754491BF2D78200638CAE /* blocker.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.1.png; path = en.assets/blocker.1.png; sourceTree = "<group>"; };
@@ -1093,13 +1032,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		57013B881A7954E800612048 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		57A668441BEE9894007CDD8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1174,7 +1106,6 @@
 		03BBFAA9178A9E4E00E79C3D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57013B8B1A7954E800612048 /* Oquonie Desktop.app */,
 				57A668471BEE9894007CDD8B /* Oquonie iOS.app */,
 				57A668611BEE98AA007CDD8B /* Oquonie AppleTV.app */,
 			);
@@ -1812,9 +1743,9 @@
 		57D81F1D1C07E92B008FAE67 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				57D81F261C07EEE6008FAE67 /* splash.sks */,
 				57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */,
 				57D81F241C07E97E008FAE67 /* Rabbit.swift */,
-				57D81F261C07EEE6008FAE67 /* splash.sks */,
 				57D81F1E1C07E95D008FAE67 /* AlteHaasGroteskBold.ttf */,
 			);
 			name = Splash;
@@ -1852,23 +1783,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		57013B8A1A7954E800612048 /* Oquonie Desktop */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 57013BA81A7954E900612048 /* Build configuration list for PBXNativeTarget "Oquonie Desktop" */;
-			buildPhases = (
-				57013B871A7954E800612048 /* Sources */,
-				57013B881A7954E800612048 /* Frameworks */,
-				57013B891A7954E800612048 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Oquonie Desktop";
-			productName = "Oquonie Desktop";
-			productReference = 57013B8B1A7954E800612048 /* Oquonie Desktop.app */;
-			productType = "com.apple.product-type.application";
-		};
 		57A668461BEE9894007CDD8B /* Oquonie iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57A6685A1BEE9894007CDD8B /* Build configuration list for PBXNativeTarget "Oquonie iOS" */;
@@ -1914,10 +1828,6 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = XXIIVV;
 				TargetAttributes = {
-					57013B8A1A7954E800612048 = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = B948MFAE5C;
-					};
 					57A668461BEE9894007CDD8B = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = B948MFAE5C;
@@ -1941,7 +1851,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				57013B8A1A7954E800612048 /* Oquonie Desktop */,
 				57A668461BEE9894007CDD8B /* Oquonie iOS */,
 				57A668601BEE98AA007CDD8B /* Oquonie AppleTV */,
 			);
@@ -1949,65 +1858,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		57013B891A7954E800612048 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57C1AA2A1AA37397005EFD29 /* sfx_bump.wav in Resources */,
-				57C1AA181AA37397005EFD29 /* dialog_neomine.wav in Resources */,
-				57C1AA331AA38257005EFD29 /* neomine.mp3 in Resources */,
-				57C1AA201AA37397005EFD29 /* sfx_spelllost.wav in Resources */,
-				57C1AA251AA37397005EFD29 /* sfx_bump1.wav in Resources */,
-				57C1AA161AA37397005EFD29 /* dialog_necomedre.wav in Resources */,
-				57C1AA121AA37397005EFD29 /* dialog_shark.wav in Resources */,
-				57C1AA171AA37397005EFD29 /* dialog_nemedique.wav in Resources */,
-				57C1AA311AA38257005EFD29 /* necomedre.mp3 in Resources */,
-				57C1AA1A1AA37397005EFD29 /* dialog_nepturne.wav in Resources */,
-				57C1AA141AA37397005EFD29 /* dialog_photocopier.wav in Resources */,
-				57C1AA301AA38257005EFD29 /* purgatory.mp3 in Resources */,
-				57C1AA2B1AA38257005EFD29 /* kamera.mp3 in Resources */,
-				57C1AA1D1AA37397005EFD29 /* sfx_transform.wav in Resources */,
-				57C1AA231AA37397005EFD29 /* sfx_ambienttoggleoff.wav in Resources */,
-				57C1AA1C1AA37397005EFD29 /* dialog_owl.wav in Resources */,
-				57C1AA1E1AA37397005EFD29 /* sfx_spellfull.wav in Resources */,
-				57C1AA0A1AA37397005EFD29 /* dialog_cat.wav in Resources */,
-				57C1AA0C1AA37397005EFD29 /* dialog_noface.wav in Resources */,
-				57C1AA3D1AA38257005EFD29 /* warp.mp3 in Resources */,
-				57C1AA371AA38257005EFD29 /* pillartree.mp3 in Resources */,
-				57C1AA391AA38257005EFD29 /* secret.mp3 in Resources */,
-				57C1AA191AA37397005EFD29 /* dialog_nephtaline.wav in Resources */,
-				57C1AA351AA38257005EFD29 /* nepturne.mp3 in Resources */,
-				57C1AA1F1AA37397005EFD29 /* sfx_spellgain.wav in Resources */,
-				57C1AA2D1AA38257005EFD29 /* play.mp3 in Resources */,
-				57C1AA341AA38257005EFD29 /* nephtaline.mp3 in Resources */,
-				57C1AA221AA37397005EFD29 /* sfx_walk.wav in Resources */,
-				57C1AA241AA37397005EFD29 /* sfx_ambienttoggleon.wav in Resources */,
-				57C1AA321AA38257005EFD29 /* nemedique.mp3 in Resources */,
-				57C1AA2E1AA38257005EFD29 /* glitch.mp3 in Resources */,
-				57C1AA281AA37397005EFD29 /* sfx_dialogopen.wav in Resources */,
-				57C1AA271AA37397005EFD29 /* sfx_dialogclose.wav in Resources */,
-				57C1AA0F1AA37397005EFD29 /* sfx_teleport.wav in Resources */,
-				57C1AA2C1AA38257005EFD29 /* nastazie.mp3 in Resources */,
-				57C1AA381AA38257005EFD29 /* quiet.mp3 in Resources */,
-				57C1AA261AA37397005EFD29 /* sfx_click1.wav in Resources */,
-				57C1AA131AA37397005EFD29 /* dialog_speakerphone.wav in Resources */,
-				57C1AA291AA37397005EFD29 /* sfx_doorlocked.wav in Resources */,
-				57C1AA0B1AA37397005EFD29 /* dialog_devine.wav in Resources */,
-				57C1AA0E1AA37397005EFD29 /* dialog_rekka.wav in Resources */,
-				57C1AA111AA37397005EFD29 /* dialog_red.wav in Resources */,
-				57C1AA2F1AA38257005EFD29 /* endless.mp3 in Resources */,
-				57C1AA3C1AA38257005EFD29 /* town3.mp3 in Resources */,
-				57C1AA211AA37397005EFD29 /* sfx_warp.wav in Resources */,
-				57C1AA3A1AA38257005EFD29 /* town1.mp3 in Resources */,
-				57C1AA3B1AA38257005EFD29 /* town2.mp3 in Resources */,
-				57C1AA101AA37397005EFD29 /* dialog_ghost.wav in Resources */,
-				57C1AA1B1AA37397005EFD29 /* dialog_nestorine.wav in Resources */,
-				57C1AA0D1AA37397005EFD29 /* dialog_petunia.wav in Resources */,
-				57C1AA361AA38257005EFD29 /* nestorine.mp3 in Resources */,
-				57C1AA151AA37397005EFD29 /* dialog_ramen.wav in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		57A668451BEE9894007CDD8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2470,13 +2320,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		57013B871A7954E800612048 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		57A668431BEE9894007CDD8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2524,14 +2367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A668681BEE98AA007CDD8B /* MainGameScene.swift in Sources */,
-				578BFD881BF0E6D8006DAF1C /* Tile.swift in Sources */,
-				57F0E2CF1BF147AC0067CC94 /* Player.swift in Sources */,
-				57E3D2C11BF1059500E4D319 /* Room.swift in Sources */,
-				57A668641BEE98AA007CDD8B /* AppDelegate.swift in Sources */,
-				57E3D2BD1BF0FE0400E4D319 /* Stage.swift in Sources */,
-				57E3D2BF1BF1033A00E4D319 /* World.swift in Sources */,
-				578BFE001BF0EA52006DAF1C /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2603,71 +2438,6 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		57013BA91A7954E900612048 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Desktop Icons";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Oquonie Desktop/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxiivv.oquonie.desktop;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		57013BAA1A7954E900612048 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Desktop Icons";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Oquonie Desktop/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxiivv.oquonie.desktop;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -2797,15 +2567,6 @@
 			buildConfigurations = (
 				03BBFAC9178A9E4E00E79C3D /* Debug */,
 				03BBFACA178A9E4E00E79C3D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		57013BA81A7954E900612048 /* Build configuration list for PBXNativeTarget "Oquonie Desktop" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				57013BA91A7954E900612048 /* Debug */,
-				57013BAA1A7954E900612048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
