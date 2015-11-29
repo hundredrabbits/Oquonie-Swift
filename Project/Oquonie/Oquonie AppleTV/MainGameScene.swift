@@ -40,7 +40,7 @@ class MainGameScene: SKScene
 		_addOverlay()
 		_addFx()
 		
-		stage.enter(loadGame())
+		stage.enter(newGame())
 	}
 	
 	func _addPlayer()

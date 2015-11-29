@@ -48,13 +48,15 @@ extension MainViewController
 	
 	func poke(point:CGPoint)
 	{
-		if dialog.isActive == true {
-			dialog.hideModal()
-		}
+		
 		if overlay.alpha > 0 {
 			player.hideOverlay()
 		}
 		
+		if dialog.isActive == true {
+			dialog.hideModal()
+			return
+		}
 		// Poke Controls
 		
 		if point.x < view.frame.size.width * 0.33 && point.y < view.frame.size.height * 0.33 { player.move(0, y: 1) }

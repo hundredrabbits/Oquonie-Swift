@@ -180,9 +180,34 @@ func textureWithName(imageName:String) -> SKTexture!
 	return texture
 }
 
+func newGame() -> Int
+{
+	print("! GAME - Starting..")
+	
+	pillar_necomedre.isKnown = false
+	pillar_nephtaline.isKnown = false
+	pillar_neomine.isKnown = false
+	pillar_nestorine.isKnown = false
+	pillar_nemedique.isKnown = false
+	pillar_nastazie.isKnown = false
+	
+	ramen_necomedre.isKnown = false
+	ramen_nephtaline.isKnown = false
+	ramen_neomine.isKnown = false
+	ramen_nestorine.isKnown = false
+	ramen_nemedique.isKnown = false
+	
+	player.persona = .necomedre
+	player.isCompleted = false
+	
+	print("! GAME - Started.")
+	
+	return Waypoints.spawn.rawValue
+}
+
 func saveGame()
 {
-	print("! SAVE - Saving..")
+	print("! GAME - Saving..")
 	
 	let storage = NSUserDefaults.standardUserDefaults()
 	
@@ -207,12 +232,12 @@ func saveGame()
 
 	storage.synchronize()
 	
-	print("! SAVE - Saved.")
+	print("! GAME - Saved.")
 }
 
 func loadGame() -> Int
 {
-	print("! LOAD - Loading..")
+	print("! GAME - Loading..")
 	
 	let storage = NSUserDefaults.standardUserDefaults()
 	
@@ -239,7 +264,7 @@ func loadGame() -> Int
 	
 	player.isCompleted = storage.valueForKey("completed") as! Bool
 	
-	print("! LOAD - Loaded.")
+	print("! GAME - Loaded.")
 	
 	return storage.valueForKey("room") as! Int
 }
