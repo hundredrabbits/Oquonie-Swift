@@ -5,8 +5,8 @@
 import Foundation
 import SpriteKit
 
-let black = UIColor.blackColor()
-let white = UIColor.whiteColor()
+let black = SKColor.blackColor()
+let white = SKColor.whiteColor()
 
 let rabbitSize:CGFloat = 15
 

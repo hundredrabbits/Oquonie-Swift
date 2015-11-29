@@ -28,7 +28,7 @@ class Tile : SKSpriteNode
 			texture = nil
 		}
 		
-		super.init(texture: texture, color: UIColor.clearColor(), size: size)
+		super.init(texture: texture, color: SKColor.clearColor(), size: size)
 		
 		self.sprite = sprite
 		self.id = id

@@ -22,31 +22,31 @@ class Dialog : SKNode
 	{
 		super.init()
 		
-		bubble = SKSpriteNode(texture: textureWithName("dialog.bubble"), color: UIColor.redColor(), size: templates.dialog)
+		bubble = SKSpriteNode(texture: textureWithName("dialog.bubble"), color: SKColor.redColor(), size: templates.dialog)
 		bubble_origin = CGPoint(x: 0, y: -templates.screen.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
 		bubble.position = bubble_origin
 		bubble.alpha = 0
 		addChild(bubble)
 		
-		portrait = SKSpriteNode(texture: nil, color: UIColor.redColor(), size: templates.dialog)
+		portrait = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: templates.dialog)
 		portrait_origin = CGPoint(x: 0, y: -templates.screen.height/2 + templates.dialog.height/2 + templates.spell.height/2 )
 		portrait.position = portrait_origin
 		portrait.alpha = 0
 		addChild(portrait)
 		
-		background.fillColor = UIColor(white: 0, alpha: 0.4)
+		background.fillColor = SKColor(white: 0, alpha: 0.4)
 		background.alpha = 0
 		addChild(background)
 		
-		letter1 = SKSpriteNode(texture: nil, color: UIColor.redColor(), size: templates.spell)
+		letter1 = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: templates.spell)
 		letter1.position = CGPoint(x: -templates.spell.width * 1.825, y: -templates.spell.height * 0.65)
 		bubble.addChild(letter1)
 		
-		letter2 = SKSpriteNode(texture: nil, color: UIColor.redColor(), size: templates.spell)
+		letter2 = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: templates.spell)
 		letter2.position = CGPoint(x: -templates.spell.width * 0.975, y: -templates.spell.height * 0.65)
 		bubble.addChild(letter2)
 		
-		letter3 = SKSpriteNode(texture: nil, color: UIColor.redColor(), size: templates.spell)
+		letter3 = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: templates.spell)
 		letter3.position = CGPoint(x: -templates.spell.width * 0.125, y: -templates.spell.height * 0.65)
 		bubble.addChild(letter3)
 		

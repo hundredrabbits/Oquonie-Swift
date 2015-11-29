@@ -20,8 +20,6 @@ class Blocker : Event
 		if eventName != nil { updateSprite("event.\(self.eventName).png") }
 		else { updateSprite("blocker.\(id).png") }
 		
-//		sprite.color = UIColor.blueColor()
-		
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
 	

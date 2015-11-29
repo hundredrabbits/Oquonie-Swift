@@ -19,15 +19,15 @@ class Spellbook : SKNode
 	{
 		super.init()
 		
-		spellSlot1 = SKSpriteNode(texture: textureWithName("letter.spell.blank.png"), color: UIColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
+		spellSlot1 = SKSpriteNode(texture: textureWithName("letter.spell.blank.png"), color: SKColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
 		spellSlot1.position = CGPoint(x: -(templates.spell.width), y: 0)
 		addChild(spellSlot1)
 		
-		spellSlot2 = SKSpriteNode(texture: textureWithName("letter.spell.blank.png"), color: UIColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
+		spellSlot2 = SKSpriteNode(texture: textureWithName("letter.spell.blank.png"), color: SKColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
 		spellSlot2.position = CGPoint(x: 0, y: 0)
 		addChild(spellSlot2)
 		
-		spellSlot3 = SKSpriteNode(texture: textureWithName("letter.spell.blank.png"), color: UIColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
+		spellSlot3 = SKSpriteNode(texture: textureWithName("letter.spell.blank.png"), color: SKColor.redColor(), size: CGSize(width: templates.spell.width, height: templates.spell.height))
 		spellSlot3.position = CGPoint(x: (templates.spell.width), y: 0)
 		addChild(spellSlot3)
 		

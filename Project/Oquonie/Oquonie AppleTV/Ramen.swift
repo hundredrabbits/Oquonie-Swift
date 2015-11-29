@@ -8,7 +8,7 @@ import Foundation
 class Ramen : Wizard
 {
 	var isWizard:Bool = false
-	var characterSprite = SKSpriteNode(texture: textureWithName("event.ramen.1.png"), color: UIColor.redColor(), size: CGSize(width: 0,height: 0))
+	var characterSprite = SKSpriteNode(texture: textureWithName("event.ramen.1.png"), color: SKColor.redColor(), size: CGSize(width: 0,height: 0))
 	
 	init(x:Int,y:Int,spell:Personas! = nil, isWizard:Bool = false, orientation:Orientation = Orientation.l)
 	{
@@ -16,7 +16,7 @@ class Ramen : Wizard
 		
 		sprite.texture = textureWithName("event.ramen.absent.png")
 		
-		characterSprite = SKSpriteNode(texture: nil, color: UIColor.redColor(), size: sprite.size)
+		characterSprite = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: sprite.size)
 		characterSprite.size = sprite.size
 		characterSprite.position = sprite_position
 		addChild(characterSprite)

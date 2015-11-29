@@ -76,12 +76,12 @@ class MainGameScene: SKScene
 	
 	func _addParalax()
 	{
-		parallaxBack = SKSpriteNode(texture: textureWithName("parallax.1.png"), color: UIColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
+		parallaxBack = SKSpriteNode(texture: textureWithName("parallax.1.png"), color: SKColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
 		parallaxBack.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		parallaxBack.zPosition = -900
 		self.addChild(parallaxBack)
 		
-		parallaxFront = SKSpriteNode(texture: textureWithName("parallax.2.png"), color: UIColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
+		parallaxFront = SKSpriteNode(texture: textureWithName("parallax.2.png"), color: SKColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
 		parallaxFront.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		parallaxFront.zPosition = 9000
 		self.addChild(parallaxFront)
@@ -92,7 +92,7 @@ class MainGameScene: SKScene
 		overlay = SKSpriteNode(color: UIColor.whiteColor(), size: self.size)
 		overlay.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		overlay.zPosition = 1500
-		overlay_image = SKSpriteNode(texture: nil, color: UIColor.blueColor(), size: CGSize(width: overlay.size.width, height: self.size.width))
+		overlay_image = SKSpriteNode(texture: nil, color: SKColor.blueColor(), size: CGSize(width: overlay.size.width, height: self.size.width))
 		overlay_image.position = CGPoint(x: 0,y: 0)
 		overlay_image.zPosition = 1600
 		overlay.addChild(overlay_image)
@@ -102,7 +102,7 @@ class MainGameScene: SKScene
 	
 	func _addFx()
 	{
-		fx = SKSpriteNode(color: UIColor.redColor(), size: frame.size)
+		fx = SKSpriteNode(color: SKColor.redColor(), size: frame.size)
 		fx.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		fx.zPosition = 1200
 		fx.alpha = 0

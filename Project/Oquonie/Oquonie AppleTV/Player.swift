@@ -24,11 +24,11 @@ class Player : Event
 	{
 		super.init(x:0,y:0)
 		
-		sprite = SKSpriteNode(texture: nil, color: UIColor.clearColor(), size: templates.player)
+		sprite = SKSpriteNode(texture: nil, color: SKColor.clearColor(), size: templates.player)
 		sprite.position = sprite_position
 		addChild(sprite)
 		
-		shadow = SKSpriteNode(texture: textureWithName("char.shadow.png"), color: UIColor.clearColor(), size: templates.player)
+		shadow = SKSpriteNode(texture: textureWithName("char.shadow.png"), color: SKColor.clearColor(), size: templates.player)
 		shadow.position = sprite_position
 		shadow.zPosition = 40
 		addChild(shadow)
