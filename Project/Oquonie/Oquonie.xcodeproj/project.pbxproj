@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		573697DF1C0B50FE006B9A74 /* Controls_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573697DE1C0B50FE006B9A74 /* Controls_iOS.swift */; };
+		573697E11C0B5165006B9A74 /* Controls_AppleTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */; };
+		573697E31C0B51A7006B9A74 /* Controls_Desktop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573697E21C0B51A7006B9A74 /* Controls_Desktop.swift */; };
 		574C7BE61C0392AE000A3B24 /* Boss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C7BE41C0392AA000A3B24 /* Boss.swift */; };
 		5755DCE31BF2970300C5353D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C21BF108D900E4D319 /* Event.swift */; };
 		5755DCE41BF2970300C5353D /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C41BF1092500E4D319 /* Blocker.swift */; };
@@ -904,6 +907,9 @@
 		570755CC1BF2D78300638CAE /* tile.E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.E.png; path = en.assets/tile.E.png; sourceTree = "<group>"; };
 		57255E151A76DD1500388B48 /* kamera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kamera.mp3; path = en.sounds/kamera.mp3; sourceTree = "<group>"; };
 		57255E171A7710AC00388B48 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		573697DE1C0B50FE006B9A74 /* Controls_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls_iOS.swift; sourceTree = "<group>"; };
+		573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls_AppleTV.swift; sourceTree = "<group>"; };
+		573697E21C0B51A7006B9A74 /* Controls_Desktop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls_Desktop.swift; sourceTree = "<group>"; };
 		574C7BE41C0392AA000A3B24 /* Boss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boss.swift; sourceTree = "<group>"; };
 		5755DCDF1BF296D600C5353D /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		5755DCEC1BF2979C00C5353D /* Shark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shark.swift; sourceTree = "<group>"; };
@@ -1091,6 +1097,9 @@
 				57618A4B1BFBDCB70060E177 /* Todo */,
 				57A668631BEE98AA007CDD8B /* AppDelegate.swift */,
 				5770E39C1C08B41800297E89 /* MainViewController.swift */,
+				573697DE1C0B50FE006B9A74 /* Controls_iOS.swift */,
+				573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */,
+				573697E21C0B51A7006B9A74 /* Controls_Desktop.swift */,
 				57D81F1D1C07E92B008FAE67 /* Splash */,
 				57C843E61BF2356300288847 /* Oquonie Core */,
 				57A668481BEE9894007CDD8B /* Oquonie iOS */,
@@ -2342,6 +2351,7 @@
 				5755DCE81BF2970300C5353D /* Ramen.swift in Sources */,
 				57C843DC1BF233CB00288847 /* Player.swift in Sources */,
 				57D81F221C07E95D008FAE67 /* SplashGameScene.swift in Sources */,
+				573697E11C0B5165006B9A74 /* Controls_AppleTV.swift in Sources */,
 				5755DCEA1BF2970300C5353D /* Owl.swift in Sources */,
 				57D81F1A1C07C787008FAE67 /* Petunia.swift in Sources */,
 				57A4A2E81BFA1CBE0027E909 /* Dialog.swift in Sources */,
@@ -2354,11 +2364,13 @@
 				5755DD091BF2CDEA00C5353D /* Kamera.swift in Sources */,
 				5755DCF11BF2994900C5353D /* NoFace.swift in Sources */,
 				5755DCE41BF2970300C5353D /* Blocker.swift in Sources */,
+				573697DF1C0B50FE006B9A74 /* Controls_iOS.swift in Sources */,
 				5755DD041BF2BAD900C5353D /* Red.swift in Sources */,
 				57C843D21BF233CB00288847 /* Stage.swift in Sources */,
 				5755DD071BF2CC2800C5353D /* Teleport.swift in Sources */,
 				57D81EF41C07A186008FAE67 /* RedEnd.swift in Sources */,
 				5755DCEB1BF2970300C5353D /* Speaker.swift in Sources */,
+				573697E31C0B51A7006B9A74 /* Controls_Desktop.swift in Sources */,
 				57C843DA1BF233CB00288847 /* World.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
