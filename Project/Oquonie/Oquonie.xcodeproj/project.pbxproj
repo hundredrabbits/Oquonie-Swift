@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572E93D61C0B923600A8037A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572E93D51C0B923600A8037A /* Game.swift */; };
 		573697DF1C0B50FE006B9A74 /* Controls_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573697DE1C0B50FE006B9A74 /* Controls_iOS.swift */; };
 		573697E11C0B5165006B9A74 /* Controls_AppleTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */; };
 		573697E31C0B51A7006B9A74 /* Controls_Desktop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573697E21C0B51A7006B9A74 /* Controls_Desktop.swift */; };
@@ -385,7 +386,7 @@
 		579306041BF63FEF005583CE /* wall.gate.nephtaline.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D71BF3EA1D00FE6921 /* wall.gate.nephtaline.open.png */; };
 		579306051BF63FEF005583CE /* wall.gate.nestorine.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D81BF3EA1D00FE6921 /* wall.gate.nestorine.close.png */; };
 		579306061BF63FEF005583CE /* wall.gate.nestorine.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4D91BF3EA1D00FE6921 /* wall.gate.nestorine.open.png */; };
-		579306071BF63FEF005583CE /* wall.gate.red.closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4DA1BF3EA1D00FE6921 /* wall.gate.red.closed.png */; };
+		579306071BF63FEF005583CE /* wall.gate.red.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4DA1BF3EA1D00FE6921 /* wall.gate.red.close.png */; };
 		579306081BF63FEF005583CE /* wall.gate.red.open.png in Resources */ = {isa = PBXBuildFile; fileRef = 575DA4DB1BF3EA1D00FE6921 /* wall.gate.red.open.png */; };
 		579306091BF63FF9005583CE /* char.catfishbird.stand.b.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754651BF2D78200638CAE /* char.catfishbird.stand.b.png */; };
 		5793060A1BF63FF9005583CE /* char.catfishbird.stand.f.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754661BF2D78200638CAE /* char.catfishbird.stand.f.1.png */; };
@@ -907,6 +908,7 @@
 		570755CC1BF2D78300638CAE /* tile.E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.E.png; path = en.assets/tile.E.png; sourceTree = "<group>"; };
 		57255E151A76DD1500388B48 /* kamera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kamera.mp3; path = en.sounds/kamera.mp3; sourceTree = "<group>"; };
 		57255E171A7710AC00388B48 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		572E93D51C0B923600A8037A /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		573697DE1C0B50FE006B9A74 /* Controls_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls_iOS.swift; sourceTree = "<group>"; };
 		573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls_AppleTV.swift; sourceTree = "<group>"; };
 		573697E21C0B51A7006B9A74 /* Controls_Desktop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls_Desktop.swift; sourceTree = "<group>"; };
@@ -935,7 +937,7 @@
 		575DA4D71BF3EA1D00FE6921 /* wall.gate.nephtaline.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nephtaline.open.png; path = en.assets/wall.gate.nephtaline.open.png; sourceTree = "<group>"; };
 		575DA4D81BF3EA1D00FE6921 /* wall.gate.nestorine.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nestorine.close.png; path = en.assets/wall.gate.nestorine.close.png; sourceTree = "<group>"; };
 		575DA4D91BF3EA1D00FE6921 /* wall.gate.nestorine.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.nestorine.open.png; path = en.assets/wall.gate.nestorine.open.png; sourceTree = "<group>"; };
-		575DA4DA1BF3EA1D00FE6921 /* wall.gate.red.closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.red.closed.png; path = en.assets/wall.gate.red.closed.png; sourceTree = "<group>"; };
+		575DA4DA1BF3EA1D00FE6921 /* wall.gate.red.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.red.close.png; path = en.assets/wall.gate.red.close.png; sourceTree = "<group>"; };
 		575DA4DB1BF3EA1D00FE6921 /* wall.gate.red.open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.gate.red.open.png; path = en.assets/wall.gate.red.open.png; sourceTree = "<group>"; };
 		575DA5201BF3EABE00FE6921 /* wall.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.0.png; path = en.assets/wall.0.png; sourceTree = "<group>"; };
 		575DA5211BF3EABE00FE6921 /* wall.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wall.1.png; path = en.assets/wall.1.png; sourceTree = "<group>"; };
@@ -1318,7 +1320,7 @@
 				575DA4D71BF3EA1D00FE6921 /* wall.gate.nephtaline.open.png */,
 				575DA4D81BF3EA1D00FE6921 /* wall.gate.nestorine.close.png */,
 				575DA4D91BF3EA1D00FE6921 /* wall.gate.nestorine.open.png */,
-				575DA4DA1BF3EA1D00FE6921 /* wall.gate.red.closed.png */,
+				575DA4DA1BF3EA1D00FE6921 /* wall.gate.red.close.png */,
 				575DA4DB1BF3EA1D00FE6921 /* wall.gate.red.open.png */,
 			);
 			name = wall.gate;
@@ -1735,6 +1737,7 @@
 				57A668651BEE98AA007CDD8B /* game.sks */,
 				57A668671BEE98AA007CDD8B /* MainGameScene.swift */,
 				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
+				572E93D51C0B923600A8037A /* Game.swift */,
 				575DA5861BF3F53900FE6921 /* Spellbook.swift */,
 				57E3D2BC1BF0FE0400E4D319 /* Stage.swift */,
 				57F0E2CE1BF147AC0067CC94 /* Player.swift */,
@@ -2088,7 +2091,7 @@
 				579305DC1BF63FCA005583CE /* tile.43.png in Resources */,
 				579306431BF63FF9005583CE /* char.nephtaline.walk.b.1.png in Resources */,
 				579305881BF63FCA005583CE /* fx.indicator.f.r.png in Resources */,
-				579306071BF63FEF005583CE /* wall.gate.red.closed.png in Resources */,
+				579306071BF63FEF005583CE /* wall.gate.red.close.png in Resources */,
 				579305AF1BF63FCA005583CE /* step.11.png in Resources */,
 				579304D01BF63F2B005583CE /* wall.E.png in Resources */,
 				579304F21BF63F5E005583CE /* blocker.26.png in Resources */,
@@ -2364,6 +2367,7 @@
 				5755DD091BF2CDEA00C5353D /* Kamera.swift in Sources */,
 				5755DCF11BF2994900C5353D /* NoFace.swift in Sources */,
 				5755DCE41BF2970300C5353D /* Blocker.swift in Sources */,
+				572E93D61C0B923600A8037A /* Game.swift in Sources */,
 				573697DF1C0B50FE006B9A74 /* Controls_iOS.swift in Sources */,
 				5755DD041BF2BAD900C5353D /* Red.swift in Sources */,
 				57C843D21BF233CB00288847 /* Stage.swift in Sources */,

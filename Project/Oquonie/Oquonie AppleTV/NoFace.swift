@@ -22,7 +22,7 @@ class NoFace : Event
 			return
 		}
 		dialog.showModal(dialogs.friendFriendFriend(), eventName: "noface")
-		player.teleportTrigger(Waypoints.nastazie.rawValue)
+		player.teleportTrigger(Waypoints.nastazie.rawValue,to_x: 0,to_y: 0)
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }

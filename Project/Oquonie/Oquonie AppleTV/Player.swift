@@ -13,7 +13,9 @@ class Player : Event
 	var isMoving:Bool = false
 	var isLocked:Bool = false
 	var animationFrame:Int = 0
-	var teleportDestination:Int!
+	var teleport_room:Int!
+	var teleport_x:Int!
+	var teleport_y:Int!
 	
 	var persona:Personas = Personas.necomedre
 	var direction:Direction = Direction.f
@@ -257,9 +259,11 @@ class Player : Event
 	
 	// MARK: Teleport -
 	
-	func teleportTrigger(room:Int)
+	func teleportTrigger(room:Int,to_x:Int,to_y:Int)
 	{
-		teleportDestination = room
+		teleport_room = room
+		teleport_x = to_x
+		teleport_y = to_y
 		player.lock()
 		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "teleport", userInfo: nil, repeats: false)
 	}
@@ -267,7 +271,7 @@ class Player : Event
 	func teleport()
 	{
 		levitate()
-		stage.teleportOut(teleportDestination)
+		stage.teleportOut(teleport_room, to_x:teleport_x, to_y:teleport_y)
 		
 		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)
 		action_levitate.timingMode = .EaseOut

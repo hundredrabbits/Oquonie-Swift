@@ -293,7 +293,7 @@ class Stage : SKNode
 	
 	// MARK: Teleport -
 	
-	func teleportOut(room:Int)
+	func teleportOut(room:Int, to_x:Int, to_y:Int)
 	{
 		// Dislocate tiles
 		for node in room_root.children {
@@ -468,7 +468,7 @@ class Stage : SKNode
 	
 	func destroyTeleport()
 	{
-		player.teleportTrigger(1)
+		player.teleportTrigger(1,to_x: 0,to_y: 0)
 	}
 	
 	var shakeStrenght:CGFloat = 0.1

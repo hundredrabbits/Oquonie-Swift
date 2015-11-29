@@ -26,6 +26,7 @@ enum Waypoints : Int
 	case necomedre = 32
 	case nephtaline = 40
 	case neomine = 60
+	case nestorine = 80
 	case nastazie = 130
 	case nephtaline_pillar = 121
 	case neomine_pillar = 71
@@ -180,95 +181,6 @@ func textureWithName(imageName:String) -> SKTexture!
 	return texture
 }
 
-func newGame() -> Int
-{
-	print("! GAME - Starting..")
-	
-	pillar_necomedre.isKnown = false
-	pillar_nephtaline.isKnown = false
-	pillar_neomine.isKnown = false
-	pillar_nestorine.isKnown = false
-	pillar_nemedique.isKnown = false
-	pillar_nastazie.isKnown = false
-	
-	ramen_necomedre.isKnown = false
-	ramen_nephtaline.isKnown = false
-	ramen_neomine.isKnown = false
-	ramen_nestorine.isKnown = false
-	ramen_nemedique.isKnown = false
-	
-	player.persona = .necomedre
-	player.isCompleted = false
-	
-	print("! GAME - Started.")
-	
-	return Waypoints.spawn.rawValue
-}
-
-func saveGame()
-{
-	print("! GAME - Saving..")
-	
-	let storage = NSUserDefaults.standardUserDefaults()
-	
-	storage.setObject("\(player.persona)", forKey: "location")
-	
-	storage.setObject(pillar_necomedre.isKnown, forKey: "pillar_necomedre")
-	storage.setObject(pillar_nephtaline.isKnown, forKey: "pillar_nephtaline")
-	storage.setObject(pillar_neomine.isKnown, forKey: "pillar_neomine")
-	storage.setObject(pillar_nestorine.isKnown, forKey: "pillar_nestorine")
-	storage.setObject(pillar_nemedique.isKnown, forKey: "pillar_nemedique")
-	storage.setObject(pillar_nastazie.isKnown, forKey: "pillar_nastazie")
-	
-	storage.setObject(ramen_necomedre.isKnown, forKey: "ramen_necomedre")
-	storage.setObject(ramen_nephtaline.isKnown, forKey: "ramen_nephtaline")
-	storage.setObject(ramen_neomine.isKnown, forKey: "ramen_neomine")
-	storage.setObject(ramen_nestorine.isKnown, forKey: "ramen_nestorine")
-	storage.setObject(ramen_nemedique.isKnown, forKey: "ramen_nemedique")
-	
-	storage.setObject("\(player.persona)", forKey: "persona")
-	storage.setObject(player.isCompleted, forKey: "completed")
-	storage.setObject(stage.roomId, forKey: "room")
-
-	storage.synchronize()
-	
-	print("! GAME - Saved.")
-}
-
-func loadGame() -> Int
-{
-	print("! GAME - Loading..")
-	
-	let storage = NSUserDefaults.standardUserDefaults()
-	
-	pillar_necomedre.isKnown = storage.valueForKey("pillar_necomedre") as! Bool
-	pillar_nephtaline.isKnown = storage.valueForKey("pillar_nephtaline") as! Bool
-	pillar_neomine.isKnown = storage.valueForKey("pillar_neomine") as! Bool
-	pillar_nestorine.isKnown = storage.valueForKey("pillar_nestorine") as! Bool
-	pillar_nemedique.isKnown = storage.valueForKey("pillar_nemedique") as! Bool
-	pillar_nastazie.isKnown = storage.valueForKey("pillar_nastazie") as! Bool
-	
-	ramen_necomedre.isKnown = storage.valueForKey("ramen_necomedre") as! Bool
-	ramen_nephtaline.isKnown = storage.valueForKey("ramen_nephtaline") as! Bool
-	ramen_neomine.isKnown = storage.valueForKey("ramen_neomine") as! Bool
-	ramen_nestorine.isKnown = storage.valueForKey("ramen_nestorine") as! Bool
-	ramen_nemedique.isKnown = storage.valueForKey("ramen_nemedique") as! Bool
-	
-	if "\(storage.valueForKey("persona"))" == "\(Personas.necomedre)" { player.persona = Personas.necomedre }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.nephtaline)" { player.persona = Personas.nephtaline }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.neomine)" { player.persona = Personas.neomine }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.nestorine)" { player.persona = Personas.nestorine }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.nemedique)" { player.persona = Personas.nemedique }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.catfishbird)" { player.persona = Personas.catfishbird }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.nastazie)" { player.persona = Personas.nastazie }
-	
-	player.isCompleted = storage.valueForKey("completed") as! Bool
-	
-	print("! GAME - Loaded.")
-	
-	return storage.valueForKey("room") as! Int
-}
-
 var pillar_necomedre = Pillar(x: 0, y: 0, persona: Personas.necomedre)
 var pillar_nephtaline = Pillar(x: 0, y: 0, persona: Personas.nephtaline)
 var pillar_neomine = Pillar(x: 0, y: 0, persona: Personas.neomine)
@@ -277,7 +189,7 @@ var pillar_nemedique = Pillar(x: 0, y: 0, persona: Personas.nemedique)
 var pillar_nastazie = Pillar(x: 0, y: 0, persona: Personas.nastazie)
 
 var ramen_necomedre = Ramen(x: 1, y: 1)
-var ramen_nephtaline = Ramen(x: 1, y: 1)
-var ramen_neomine = Ramen(x: -1, y: 1)
+var ramen_nephtaline = Ramen(x: 1, y: 1, orientation: .r)
+var ramen_neomine = Ramen(x: -1, y: 1, orientation: .r)
 var ramen_nestorine = Ramen(x: 1, y: 1)
 var ramen_nemedique = Ramen(x: 1, y: 1)

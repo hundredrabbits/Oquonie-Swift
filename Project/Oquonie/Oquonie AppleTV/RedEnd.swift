@@ -40,7 +40,7 @@ class RedEnd : Event
 	
 	func leave()
 	{
-		player.teleportTrigger(106)
+		player.teleportTrigger(106,to_x: 0,to_y: 0)
 	}
 	
 	func disapear()

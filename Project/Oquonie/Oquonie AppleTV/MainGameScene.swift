@@ -17,7 +17,7 @@ class MainGameScene: SKScene
 	
 	func start()
 	{
-		let scale:CGFloat = self.view!.frame.width/720 ; print("  SIZE - \(scale)")
+		let scale:CGFloat = self.view!.frame.width/760 ; print("  SIZE - \(scale)")
 		
 		templates.floor = CGSize(width: 200 * scale, height: 141 * scale)
 		templates.step = CGSize(width: 200 * scale, height: 141 * scale)
@@ -40,7 +40,7 @@ class MainGameScene: SKScene
 		_addOverlay()
 		_addFx()
 		
-		stage.enter(newGame())
+		stage.enter(debugGame())
 	}
 	
 	func _addPlayer()

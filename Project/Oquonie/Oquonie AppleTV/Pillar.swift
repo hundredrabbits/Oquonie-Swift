@@ -45,11 +45,11 @@ class Pillar : Event
 			collect()
 		}
 		else{
-			if stage.roomId == Waypoints.nephtaline_pillar.rawValue { player.teleportTrigger(1) }
-			else if stage.roomId == Waypoints.nestorine_pillar.rawValue { player.teleportTrigger(7) }
-			else if stage.roomId == Waypoints.neomine_pillar.rawValue { player.teleportTrigger(3) }
-			else if stage.roomId == Waypoints.nemedique_pillar.rawValue { player.teleportTrigger(9) }
-			else if stage.roomId == Waypoints.nastazie_pillar.rawValue { player.teleportTrigger(14) }
+			if stage.roomId == Waypoints.nephtaline_pillar.rawValue { player.teleportTrigger(1,to_x: 0,to_y: 0) }
+			else if stage.roomId == Waypoints.nestorine_pillar.rawValue { player.teleportTrigger(7,to_x: 0,to_y: 0) }
+			else if stage.roomId == Waypoints.neomine_pillar.rawValue { player.teleportTrigger(3,to_x: 0,to_y: 0) }
+			else if stage.roomId == Waypoints.nemedique_pillar.rawValue { player.teleportTrigger(9,to_x: 0,to_y: 0) }
+			else if stage.roomId == Waypoints.nastazie_pillar.rawValue { player.teleportTrigger(14,to_x: 0,to_y: 0) }
 			else{ print("!!!!\(self.persona)") }
 		}
 	}
@@ -62,6 +62,7 @@ class Pillar : Event
 	func collect()
 	{
 		self.isKnown = true
+		dialog.showModal(dialogs.pillarSocket(self), eventName: "owl")
 		updateSprite("event.pillar.gone.png")
 	}
 	
