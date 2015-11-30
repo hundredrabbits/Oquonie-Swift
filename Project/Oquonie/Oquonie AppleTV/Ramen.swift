@@ -90,18 +90,23 @@ class Ramen : Wizard
 		if isWizard == true && player.hasPillar(pillar_nemedique) {
 			if ramen_necomedre.isKnown == true && player.persona == Personas.necomedre {
 				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+				audio.play(.dialog, name: "ramen")
 			}
 			if ramen_nephtaline.isKnown == true && player.persona == Personas.nephtaline {
 				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+				audio.play(.dialog, name: "ramen")
 			}
 			if ramen_neomine.isKnown == true && player.persona == Personas.neomine {
 				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+				audio.play(.dialog, name: "ramen")
 			}
 			if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine {
 				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+				audio.play(.dialog, name: "ramen")
 			}
 			if ramen_nemedique.isKnown == true && player.persona == Personas.nemedique {
 				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
+				audio.play(.dialog, name: "ramen")
 			}
 		}
 		else if isWizard == false && isKnown == false {
@@ -109,6 +114,7 @@ class Ramen : Wizard
 			characterSprite.runAction(action_fade)
 			isKnown = true
 			dialog.showModal(dialogs.ramen(), eventName: "ramen")
+			audio.play(.dialog, name: "ramen")
 		}
 		updateDialog()
 	}

@@ -33,6 +33,8 @@ class Tree : Event
 	
 	override func collide()
 	{
+		audio.play(.dialog, name: "owl")
+		
 		var pillarsCount = 0
 		if player.hasPillar(pillar_necomedre) { pillarsCount += 1 }
 		if player.hasPillar(pillar_nephtaline) { pillarsCount += 1 }

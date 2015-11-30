@@ -17,6 +17,8 @@ class Shark : Event
 	
 	override func collide()
 	{
+		audio.play(.dialog, name: "shark")
+		
 		player.isMoving = false
 		if player.hasPillar(pillar_nemedique) == true && player.persona != Personas.necomedre {
 			player.transform(Personas.necomedre)

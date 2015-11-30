@@ -23,6 +23,7 @@ class Owl : Event
 	{
 		dialog.showModal(dialogs.owl(), eventName: "owl")
 		player.isMoving = false
+		audio.play(.dialog, name: "owl")
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }

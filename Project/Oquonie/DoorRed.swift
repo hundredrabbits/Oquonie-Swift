@@ -43,6 +43,7 @@ class DoorRed : Door
 		else{
 			player.slowWarpTo(self.destination,to_x:self.to_x,to_y:self.to_y)
 		}
+		audio.play(.effect, name: "teleport")
 	}
 
 	required init?(coder aDecoder: NSCoder)

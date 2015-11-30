@@ -28,6 +28,7 @@ class Teleport : Event
 		player.y = to_y
 		player.zPosition = stage.eventDepthAtPosition(to_x, y: to_y)
 		player.teleportTrigger(destination,to_x: 0,to_y: 0)
+		audio.play(.effect, name: "teleport")
 	}
 	
 	required init?(coder aDecoder: NSCoder)

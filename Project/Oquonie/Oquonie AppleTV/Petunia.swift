@@ -14,6 +14,8 @@ class Petunia : Event
 	
 	override func collide()
 	{
+		audio.play(.dialog, name: "ghost")
+		
 		let value1 = Int(randomBetweenNumbers(2,secondNum: 50))
 		let value2 = Int(randomBetweenNumbers(2,secondNum: 50))
 		let value3 = Int(randomBetweenNumbers(2,secondNum: 50))

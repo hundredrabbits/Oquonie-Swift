@@ -26,8 +26,8 @@ class Door : Event
 	
 	override func collide()
 	{
-		if self.requirement != nil { collide_gate() }
-		else{ collide_normal() }
+		if self.requirement != nil { collide_gate() ; audio.play(.effect, name: "bump.1") }
+		else{ collide_normal() ; audio.play(.effect, name: "bump.2") }
 		player.isMoving = false
 	}
 	

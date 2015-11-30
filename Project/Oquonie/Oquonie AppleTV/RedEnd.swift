@@ -31,6 +31,7 @@ class RedEnd : Event
 				NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "leave", userInfo: nil, repeats: false)
 			})
 		})
+		audio.play(.dialog, name: "nepturne")
 	}
 	
 	func dialog2()

@@ -17,6 +17,8 @@ class NoFace : Event
 	
 	override func collide()
 	{
+		audio.play(.dialog, name: "noface")
+		
 		if player.persona != .catfishbird {
 			dialog.showModal(dialogs.confusion(), eventName: "noface")
 			return

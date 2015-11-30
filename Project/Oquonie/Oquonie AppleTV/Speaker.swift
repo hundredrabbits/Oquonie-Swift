@@ -21,6 +21,8 @@ class Speaker : Event
 	
 	override func collide()
 	{
+		audio.play(.dialog, name: "speaker")
+		
 		if player.hasMusic == true {
 			turnOff()
 		}

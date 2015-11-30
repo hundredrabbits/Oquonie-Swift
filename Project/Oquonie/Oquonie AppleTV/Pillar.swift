@@ -32,7 +32,7 @@ class Pillar : Event
 	
 	override func collide()
 	{
-		print("touched pillar(\(player.hasPillar(self)))")
+		audio.play(.dialog, name: "owl")
 		
 		if display != nil {
 			dialog.showModal(dialogs.pillarSocket(display), eventName: "owl")

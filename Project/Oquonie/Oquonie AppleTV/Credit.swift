@@ -27,6 +27,7 @@ class Credit : Event
 	
 	override func collide()
 	{
+		audio.play(.dialog, name: "\(who)")
 		dialog.bubble.texture = textureWithName("dialog.bubble.\(who).png")
 		dialog.showModal(dialogs.blank(), eventName: who)
 	}

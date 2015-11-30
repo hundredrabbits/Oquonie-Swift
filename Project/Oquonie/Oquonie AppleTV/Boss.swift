@@ -21,6 +21,8 @@ class Boss : Event
 	
 	override func collide()
 	{
+		audio.play(.dialog, name: "noface")
+		
 		dialogSprite.alpha = 0
 		
 		player.transform(.necomedre)

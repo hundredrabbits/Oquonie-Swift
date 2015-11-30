@@ -20,6 +20,8 @@ class Map : Event
 	{
 		player.isMoving = false
 		player.showOverlay("map.\(world).png")
+		
+		audio.play(.dialog, name: "owl")
 	}
 	
 	required init?(coder aDecoder: NSCoder)
