@@ -628,7 +628,7 @@ class World
 		room.steps  = [ 0,0,0, 0,4,0 ]
 		room.audio  = Soundtrack.warp
 		room.theme  = Theme.white
-		room.addEvent(Teleport(x: 0, y: 0, to_x: 1, to_y:0))
+		room.addEvent(Teleport(x: 0, y: 0, to_x: 0, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, requirement: Personas.neomine, room:58, to_x:0, to_y:1))
 		all[59] = room
 		
