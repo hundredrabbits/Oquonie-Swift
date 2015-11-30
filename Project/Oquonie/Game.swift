@@ -21,7 +21,7 @@ func debugGame() -> Int
 	ramen_nestorine.isKnown = true
 	ramen_nemedique.isKnown = true
 	
-	player.persona = .nephtaline
+	player.persona = .necomedre
 	player.isCompleted = false
 	
 	print("! GAME - Started(debug).")

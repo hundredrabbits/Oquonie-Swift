@@ -21,6 +21,7 @@ class Red : Event
 		if isSeen == true { return }
 		player.lock()
 		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "disapear", userInfo: nil, repeats: false)
+		
 	}
 	
 	override func collide()
@@ -39,6 +40,7 @@ class Red : Event
 		sprite.runAction(action_group, completion:{ self.isSeen = true ; if stage.roomId != 30 { player.unlock() } })
 		
 		stage.showFx("fx.1.vertical.png",duration:2)
+		audio.play(.effect, name: "transform")
 	}
 	
 	required init?(coder aDecoder: NSCoder)

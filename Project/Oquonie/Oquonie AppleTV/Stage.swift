@@ -168,6 +168,7 @@ class Stage : SKNode
 		}
 		
 		applyTheme(room.theme)
+		audio.play_ambient(room.audio)
 		
 		parallaxFront.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame)), duration: 0.2))
 		parallaxBack.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame)), duration: 0.2))
@@ -179,7 +180,7 @@ class Stage : SKNode
 	{
 		if self.theme == newTheme { return }
 		
-		print(" THEME - \(newTheme), from \(self.theme)")
+		print("!THEME - \(newTheme), from \(self.theme)")
 		
 		if player.isCompleted == true && stage.roomId < 15 {
 			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
@@ -328,7 +329,6 @@ class Stage : SKNode
 			player.land()
 			self.applyTheme(self.room.theme)
 		})
-		audio.play(.effect, name: "teleport")
 	}
 	
 	func teleportDestination(room:Int)

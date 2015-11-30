@@ -289,6 +289,8 @@ class Player : Event
 	
 	func appear()
 	{
+		audio.play(.effect, name: "warp")
+		
 		player.lock()
 		self.sprite.alpha = 0
 		self.shadow.alpha = 0
@@ -303,6 +305,7 @@ class Player : Event
 			self.direction = .f
 			self.refreshSprite()
 			player.unlock()
+			audio.play(.effect, name: "bump.2")
 		})
 		self.shadow.runAction(SKAction.fadeAlphaTo(1, duration: 2))
 		self.sprite.runAction(SKAction.fadeAlphaTo(1, duration: 1))

@@ -512,6 +512,25 @@
 		57CB62FA1C0CE811000F045F /* dialog.nepturne.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C718A31B9300388D2F /* dialog.nepturne.wav */; };
 		57CB62FB1C0CE811000F045F /* dialog.nestorine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C818A31B9300388D2F /* dialog.nestorine.wav */; };
 		57CB62FC1C0CE811000F045F /* dialog.owl.wav in Resources */ = {isa = PBXBuildFile; fileRef = 033124C118A31A0400388D2F /* dialog.owl.wav */; };
+		57CB62FD1C0CEDBC000F045F /* ambient.kamera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57255E151A76DD1500388B48 /* ambient.kamera.mp3 */; };
+		57CB62FE1C0CEDBC000F045F /* ambient.nastazie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03A9D623196D8156005EB95C /* ambient.nastazie.mp3 */; };
+		57CB62FF1C0CEDBC000F045F /* ambient.play.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BC518A685DF00BFA21E /* ambient.play.mp3 */; };
+		57CB63001C0CEDBC000F045F /* ambient.glitch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BC318A6807600BFA21E /* ambient.glitch.mp3 */; };
+		57CB63011C0CEDBC000F045F /* ambient.endless.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB918A67C0400BFA21E /* ambient.endless.mp3 */; };
+		57CB63021C0CEDBC000F045F /* ambient.purgatory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BBA18A67C0400BFA21E /* ambient.purgatory.mp3 */; };
+		57CB63031C0CEDBC000F045F /* ambient.necomedre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D8F18A26BE400206675 /* ambient.necomedre.mp3 */; };
+		57CB63041C0CEDBC000F045F /* ambient.nemedique.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9018A26BE400206675 /* ambient.nemedique.mp3 */; };
+		57CB63051C0CEDBC000F045F /* ambient.neomine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9118A26BE400206675 /* ambient.neomine.mp3 */; };
+		57CB63061C0CEDBC000F045F /* ambient.nephtaline.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9218A26BE500206675 /* ambient.nephtaline.mp3 */; };
+		57CB63071C0CEDBC000F045F /* ambient.nepturne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9318A26BE500206675 /* ambient.nepturne.mp3 */; };
+		57CB63081C0CEDBC000F045F /* ambient.nestorine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9418A26BE500206675 /* ambient.nestorine.mp3 */; };
+		57CB63091C0CEDBC000F045F /* ambient.pillartree.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9518A26BE500206675 /* ambient.pillartree.mp3 */; };
+		57CB630A1C0CEDBC000F045F /* ambient.quiet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9618A26BE500206675 /* ambient.quiet.mp3 */; };
+		57CB630B1C0CEDBC000F045F /* ambient.secret.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9718A26BE500206675 /* ambient.secret.mp3 */; };
+		57CB630C1C0CEDBC000F045F /* ambient.lobby.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9818A26BE500206675 /* ambient.lobby.mp3 */; };
+		57CB630D1C0CEDBC000F045F /* ambient.town2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9918A26BE500206675 /* ambient.town2.mp3 */; };
+		57CB630E1C0CEDBC000F045F /* ambient.town3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9A18A26BE500206675 /* ambient.town3.mp3 */; };
+		57CB630F1C0CEDBC000F045F /* ambient.warp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9B18A26BE500206675 /* ambient.warp.mp3 */; };
 		57D81EF21C077DB3008FAE67 /* DoorRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81EF11C077DB3008FAE67 /* DoorRed.swift */; };
 		57D81EF41C07A186008FAE67 /* RedEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81EF31C07A186008FAE67 /* RedEnd.swift */; };
 		57D81EF61C07AA4F008FAE67 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81EF51C07AA4F008FAE67 /* Credit.swift */; };
@@ -551,7 +570,7 @@
 		033124DD18A32DB300388D2F /* effect.teleport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = effect.teleport.wav; path = en.sounds/effect.teleport.wav; sourceTree = "<group>"; };
 		033D9D53188B91ED00B36C93 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0375469318A70E5000807397 /* dialog.cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog.cat.wav; path = en.sounds/dialog.cat.wav; sourceTree = "<group>"; };
-		03A9D623196D8156005EB95C /* nastazie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nastazie.mp3; path = en.sounds/nastazie.mp3; sourceTree = "<group>"; };
+		03A9D623196D8156005EB95C /* ambient.nastazie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.nastazie.mp3; path = en.sounds/ambient.nastazie.mp3; sourceTree = "<group>"; };
 		03BBFAAB178A9E4E00E79C3D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03BBFAAD178A9E4E00E79C3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		03BBFAAF178A9E4E00E79C3D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -559,23 +578,23 @@
 		03DD5BB618A67C0400BFA21E /* dialog.noface.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog.noface.wav; path = en.sounds/dialog.noface.wav; sourceTree = "<group>"; };
 		03DD5BB718A67C0400BFA21E /* dialog.petunia.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog.petunia.wav; path = en.sounds/dialog.petunia.wav; sourceTree = "<group>"; };
 		03DD5BB818A67C0400BFA21E /* dialog.rekka.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog.rekka.wav; path = en.sounds/dialog.rekka.wav; sourceTree = "<group>"; };
-		03DD5BB918A67C0400BFA21E /* endless.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = endless.mp3; path = en.sounds/endless.mp3; sourceTree = "<group>"; };
-		03DD5BBA18A67C0400BFA21E /* purgatory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = purgatory.mp3; path = en.sounds/purgatory.mp3; sourceTree = "<group>"; };
-		03DD5BC318A6807600BFA21E /* glitch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = glitch.mp3; path = en.sounds/glitch.mp3; sourceTree = "<group>"; };
-		03DD5BC518A685DF00BFA21E /* play.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = play.mp3; path = en.sounds/play.mp3; sourceTree = "<group>"; };
-		03FE0D8F18A26BE400206675 /* necomedre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = necomedre.mp3; path = en.sounds/necomedre.mp3; sourceTree = "<group>"; };
-		03FE0D9018A26BE400206675 /* nemedique.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nemedique.mp3; path = en.sounds/nemedique.mp3; sourceTree = "<group>"; };
-		03FE0D9118A26BE400206675 /* neomine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = neomine.mp3; path = en.sounds/neomine.mp3; sourceTree = "<group>"; };
-		03FE0D9218A26BE500206675 /* nephtaline.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nephtaline.mp3; path = en.sounds/nephtaline.mp3; sourceTree = "<group>"; };
-		03FE0D9318A26BE500206675 /* nepturne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nepturne.mp3; path = en.sounds/nepturne.mp3; sourceTree = "<group>"; };
-		03FE0D9418A26BE500206675 /* nestorine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nestorine.mp3; path = en.sounds/nestorine.mp3; sourceTree = "<group>"; };
-		03FE0D9518A26BE500206675 /* pillartree.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pillartree.mp3; path = en.sounds/pillartree.mp3; sourceTree = "<group>"; };
-		03FE0D9618A26BE500206675 /* quiet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = quiet.mp3; path = en.sounds/quiet.mp3; sourceTree = "<group>"; };
-		03FE0D9718A26BE500206675 /* secret.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = secret.mp3; path = en.sounds/secret.mp3; sourceTree = "<group>"; };
-		03FE0D9818A26BE500206675 /* town1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = town1.mp3; path = en.sounds/town1.mp3; sourceTree = "<group>"; };
-		03FE0D9918A26BE500206675 /* town2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = town2.mp3; path = en.sounds/town2.mp3; sourceTree = "<group>"; };
-		03FE0D9A18A26BE500206675 /* town3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = town3.mp3; path = en.sounds/town3.mp3; sourceTree = "<group>"; };
-		03FE0D9B18A26BE500206675 /* warp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = warp.mp3; path = en.sounds/warp.mp3; sourceTree = "<group>"; };
+		03DD5BB918A67C0400BFA21E /* ambient.endless.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.endless.mp3; path = en.sounds/ambient.endless.mp3; sourceTree = "<group>"; };
+		03DD5BBA18A67C0400BFA21E /* ambient.purgatory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.purgatory.mp3; path = en.sounds/ambient.purgatory.mp3; sourceTree = "<group>"; };
+		03DD5BC318A6807600BFA21E /* ambient.glitch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.glitch.mp3; path = en.sounds/ambient.glitch.mp3; sourceTree = "<group>"; };
+		03DD5BC518A685DF00BFA21E /* ambient.play.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.play.mp3; path = en.sounds/ambient.play.mp3; sourceTree = "<group>"; };
+		03FE0D8F18A26BE400206675 /* ambient.necomedre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.necomedre.mp3; path = en.sounds/ambient.necomedre.mp3; sourceTree = "<group>"; };
+		03FE0D9018A26BE400206675 /* ambient.nemedique.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.nemedique.mp3; path = en.sounds/ambient.nemedique.mp3; sourceTree = "<group>"; };
+		03FE0D9118A26BE400206675 /* ambient.neomine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.neomine.mp3; path = en.sounds/ambient.neomine.mp3; sourceTree = "<group>"; };
+		03FE0D9218A26BE500206675 /* ambient.nephtaline.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.nephtaline.mp3; path = en.sounds/ambient.nephtaline.mp3; sourceTree = "<group>"; };
+		03FE0D9318A26BE500206675 /* ambient.nepturne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.nepturne.mp3; path = en.sounds/ambient.nepturne.mp3; sourceTree = "<group>"; };
+		03FE0D9418A26BE500206675 /* ambient.nestorine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.nestorine.mp3; path = en.sounds/ambient.nestorine.mp3; sourceTree = "<group>"; };
+		03FE0D9518A26BE500206675 /* ambient.pillartree.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.pillartree.mp3; path = en.sounds/ambient.pillartree.mp3; sourceTree = "<group>"; };
+		03FE0D9618A26BE500206675 /* ambient.quiet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.quiet.mp3; path = en.sounds/ambient.quiet.mp3; sourceTree = "<group>"; };
+		03FE0D9718A26BE500206675 /* ambient.secret.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.secret.mp3; path = en.sounds/ambient.secret.mp3; sourceTree = "<group>"; };
+		03FE0D9818A26BE500206675 /* ambient.lobby.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.lobby.mp3; path = en.sounds/ambient.lobby.mp3; sourceTree = "<group>"; };
+		03FE0D9918A26BE500206675 /* ambient.town2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.town2.mp3; path = en.sounds/ambient.town2.mp3; sourceTree = "<group>"; };
+		03FE0D9A18A26BE500206675 /* ambient.town3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.town3.mp3; path = en.sounds/ambient.town3.mp3; sourceTree = "<group>"; };
+		03FE0D9B18A26BE500206675 /* ambient.warp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.warp.mp3; path = en.sounds/ambient.warp.mp3; sourceTree = "<group>"; };
 		03FE0DA918A2764500206675 /* interface.audio.open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = interface.audio.open.wav; path = en.sounds/interface.audio.open.wav; sourceTree = "<group>"; };
 		03FE0DAA18A2764500206675 /* interface.audio.close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = interface.audio.close.wav; path = en.sounds/interface.audio.close.wav; sourceTree = "<group>"; };
 		03FE0DAC18A2764500206675 /* interface.click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = interface.click.wav; path = en.sounds/interface.click.wav; sourceTree = "<group>"; };
@@ -939,7 +958,7 @@
 		570755CA1BF2D78300638CAE /* tile.112.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.112.png; path = en.assets/tile.112.png; sourceTree = "<group>"; };
 		570755CB1BF2D78300638CAE /* tile.113.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.113.png; path = en.assets/tile.113.png; sourceTree = "<group>"; };
 		570755CC1BF2D78300638CAE /* tile.E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tile.E.png; path = en.assets/tile.E.png; sourceTree = "<group>"; };
-		57255E151A76DD1500388B48 /* kamera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kamera.mp3; path = en.sounds/kamera.mp3; sourceTree = "<group>"; };
+		57255E151A76DD1500388B48 /* ambient.kamera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.kamera.mp3; path = en.sounds/ambient.kamera.mp3; sourceTree = "<group>"; };
 		57255E171A7710AC00388B48 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		572E93D51C0B923600A8037A /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		573697DE1C0B50FE006B9A74 /* Controls_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls_iOS.swift; sourceTree = "<group>"; };
@@ -1098,36 +1117,36 @@
 				57CB62EA1C0CE3F8000F045F /* Interface */,
 				57CB62D71C0CDF3A000F045F /* Dialog */,
 				03FE0DB918A2765300206675 /* Effect */,
-				038BA0EA188B84A600A3ED4B /* Soundtrack */,
+				038BA0EA188B84A600A3ED4B /* Ambient */,
 			);
 			name = Sounds;
 			path = Oquonie;
 			sourceTree = "<group>";
 		};
-		038BA0EA188B84A600A3ED4B /* Soundtrack */ = {
+		038BA0EA188B84A600A3ED4B /* Ambient */ = {
 			isa = PBXGroup;
 			children = (
-				57255E151A76DD1500388B48 /* kamera.mp3 */,
-				03A9D623196D8156005EB95C /* nastazie.mp3 */,
-				03DD5BC518A685DF00BFA21E /* play.mp3 */,
-				03DD5BC318A6807600BFA21E /* glitch.mp3 */,
-				03DD5BB918A67C0400BFA21E /* endless.mp3 */,
-				03DD5BBA18A67C0400BFA21E /* purgatory.mp3 */,
-				03FE0D8F18A26BE400206675 /* necomedre.mp3 */,
-				03FE0D9018A26BE400206675 /* nemedique.mp3 */,
-				03FE0D9118A26BE400206675 /* neomine.mp3 */,
-				03FE0D9218A26BE500206675 /* nephtaline.mp3 */,
-				03FE0D9318A26BE500206675 /* nepturne.mp3 */,
-				03FE0D9418A26BE500206675 /* nestorine.mp3 */,
-				03FE0D9518A26BE500206675 /* pillartree.mp3 */,
-				03FE0D9618A26BE500206675 /* quiet.mp3 */,
-				03FE0D9718A26BE500206675 /* secret.mp3 */,
-				03FE0D9818A26BE500206675 /* town1.mp3 */,
-				03FE0D9918A26BE500206675 /* town2.mp3 */,
-				03FE0D9A18A26BE500206675 /* town3.mp3 */,
-				03FE0D9B18A26BE500206675 /* warp.mp3 */,
+				57255E151A76DD1500388B48 /* ambient.kamera.mp3 */,
+				03A9D623196D8156005EB95C /* ambient.nastazie.mp3 */,
+				03DD5BC518A685DF00BFA21E /* ambient.play.mp3 */,
+				03DD5BC318A6807600BFA21E /* ambient.glitch.mp3 */,
+				03DD5BB918A67C0400BFA21E /* ambient.endless.mp3 */,
+				03DD5BBA18A67C0400BFA21E /* ambient.purgatory.mp3 */,
+				03FE0D8F18A26BE400206675 /* ambient.necomedre.mp3 */,
+				03FE0D9018A26BE400206675 /* ambient.nemedique.mp3 */,
+				03FE0D9118A26BE400206675 /* ambient.neomine.mp3 */,
+				03FE0D9218A26BE500206675 /* ambient.nephtaline.mp3 */,
+				03FE0D9318A26BE500206675 /* ambient.nepturne.mp3 */,
+				03FE0D9418A26BE500206675 /* ambient.nestorine.mp3 */,
+				03FE0D9518A26BE500206675 /* ambient.pillartree.mp3 */,
+				03FE0D9618A26BE500206675 /* ambient.quiet.mp3 */,
+				03FE0D9718A26BE500206675 /* ambient.secret.mp3 */,
+				03FE0D9818A26BE500206675 /* ambient.lobby.mp3 */,
+				03FE0D9918A26BE500206675 /* ambient.town2.mp3 */,
+				03FE0D9A18A26BE500206675 /* ambient.town3.mp3 */,
+				03FE0D9B18A26BE500206675 /* ambient.warp.mp3 */,
 			);
-			name = Soundtrack;
+			name = Ambient;
 			sourceTree = "<group>";
 		};
 		03BBFA9F178A9E4E00E79C3D = {
@@ -1938,6 +1957,7 @@
 				579304D41BF63F34005583CE /* notification.nestorine.png in Resources */,
 				579305431BF63FCA005583CE /* event.nephtaline.1.png in Resources */,
 				57618A461BFBC92A0060E177 /* letter.confusion1.png in Resources */,
+				57CB63091C0CEDBC000F045F /* ambient.pillartree.mp3 in Resources */,
 				579305E81BF63FCA005583CE /* tile.100.png in Resources */,
 				579304BB1BF63F2B005583CE /* wall.31.png in Resources */,
 				579305741BF63FCA005583CE /* event.rekka.portrait.png in Resources */,
@@ -1972,11 +1992,13 @@
 				579305711BF63FCA005583CE /* event.redgirl.3.png in Resources */,
 				579305491BF63FCA005583CE /* event.nestorine.3.png in Resources */,
 				579304C51BF63F2B005583CE /* wall.41.png in Resources */,
+				57CB63021C0CEDBC000F045F /* ambient.purgatory.mp3 in Resources */,
 				579305CA1BF63FCA005583CE /* tile.25.png in Resources */,
 				579304BA1BF63F2B005583CE /* wall.30.png in Resources */,
 				579305451BF63FCA005583CE /* event.nephtaline.3.png in Resources */,
 				579305691BF63FCA005583CE /* event.ramen.portrait.png in Resources */,
 				5793060C1BF63FF9005583CE /* char.catfishbird.stand.f.3.png in Resources */,
+				57CB630A1C0CEDBC000F045F /* ambient.quiet.mp3 in Resources */,
 				5793058B1BF63FCA005583CE /* parallax.3.png in Resources */,
 				579305BD1BF63FCA005583CE /* tile.12.png in Resources */,
 				579306421BF63FF9005583CE /* char.nephtaline.stand.f.3.png in Resources */,
@@ -2002,6 +2024,7 @@
 				579304ED1BF63F5E005583CE /* blocker.21.png in Resources */,
 				579304B01BF63F2B005583CE /* wall.18.png in Resources */,
 				579306261BF63FF9005583CE /* char.necomedre.stand.f.2.png in Resources */,
+				57CB630F1C0CEDBC000F045F /* ambient.warp.mp3 in Resources */,
 				579304BD1BF63F2B005583CE /* wall.33.png in Resources */,
 				5793052A1BF63FCA005583CE /* event.petunia.1.png in Resources */,
 				579304A21BF63F2B005583CE /* wall.3.png in Resources */,
@@ -2011,6 +2034,7 @@
 				579305B11BF63FCA005583CE /* tile.0.png in Resources */,
 				579304EE1BF63F5E005583CE /* blocker.22.png in Resources */,
 				579304D51BF63F34005583CE /* notification.nephtaline.png in Resources */,
+				57CB63041C0CEDBC000F045F /* ambient.nemedique.mp3 in Resources */,
 				579306111BF63FF9005583CE /* char.catfishbird.warp.png in Resources */,
 				57618A311BFBC92A0060E177 /* letter9.png in Resources */,
 				57D81F081C07B778008FAE67 /* dialog.bubble.devine.png in Resources */,
@@ -2058,9 +2082,11 @@
 				579305471BF63FCA005583CE /* event.nestorine.1.png in Resources */,
 				57618A3D1BFBC92A0060E177 /* letter.locked.png in Resources */,
 				579306241BF63FF9005583CE /* char.necomedre.stand.b.png in Resources */,
+				57CB63081C0CEDBC000F045F /* ambient.nestorine.mp3 in Resources */,
 				579304A11BF63F2B005583CE /* wall.2.png in Resources */,
 				57618A2C1BFBC92A0060E177 /* letter.hiversaires2.png in Resources */,
 				579304E11BF63F5E005583CE /* blocker.9.png in Resources */,
+				57CB630C1C0CEDBC000F045F /* ambient.lobby.mp3 in Resources */,
 				57CB62DF1C0CE13E000F045F /* effect.transform.wav in Resources */,
 				579305C31BF63FCA005583CE /* tile.18.png in Resources */,
 				579306271BF63FF9005583CE /* char.necomedre.stand.f.3.png in Resources */,
@@ -2074,8 +2100,10 @@
 				579304E31BF63F5E005583CE /* blocker.11.png in Resources */,
 				57CB62E11C0CE13E000F045F /* interface.spellbook.add.wav in Resources */,
 				579305E11BF63FCA005583CE /* tile.48.png in Resources */,
+				57CB63061C0CEDBC000F045F /* ambient.nephtaline.mp3 in Resources */,
 				579305461BF63FCA005583CE /* event.nephtaline.portrait.png in Resources */,
 				579305891BF63FCA005583CE /* parallax.1.png in Resources */,
+				57CB63071C0CEDBC000F045F /* ambient.nepturne.mp3 in Resources */,
 				579304D31BF63F34005583CE /* notification.nemedique.png in Resources */,
 				579306361BF63FF9005583CE /* char.neomine.stand.b.png in Resources */,
 				579306341BF63FF9005583CE /* char.nemedique.walk.f.1.png in Resources */,
@@ -2121,6 +2149,7 @@
 				579305521BF63FCA005583CE /* event.owl.portrait.png in Resources */,
 				579304B21BF63F2B005583CE /* wall.20.png in Resources */,
 				579305861BF63FCA005583CE /* fx.indicator.b.r.png in Resources */,
+				57CB62FE1C0CEDBC000F045F /* ambient.nastazie.mp3 in Resources */,
 				579304F51BF63F5E005583CE /* blocker.29.png in Resources */,
 				579305641BF63FCA005583CE /* event.radio.portrait.png in Resources */,
 				5793064E1BF63FF9005583CE /* char.nestorine.walk.f.1.png in Resources */,
@@ -2148,6 +2177,7 @@
 				57618A431BFBC92A0060E177 /* letter.key.png in Resources */,
 				579304E01BF63F5E005583CE /* blocker.8.png in Resources */,
 				579305271BF63FCA005583CE /* event.daniel.portrait.png in Resources */,
+				57CB63031C0CEDBC000F045F /* ambient.necomedre.mp3 in Resources */,
 				579305771BF63FCA005583CE /* event.shark.1.png in Resources */,
 				57618A401BFBC92A0060E177 /* letter.guide.png in Resources */,
 				579304F31BF63F5E005583CE /* blocker.27.png in Resources */,
@@ -2168,6 +2198,7 @@
 				579304F21BF63F5E005583CE /* blocker.26.png in Resources */,
 				579305D31BF63FCA005583CE /* tile.34.png in Resources */,
 				579305241BF63FCA005583CE /* event.daniel.1.png in Resources */,
+				57CB630D1C0CEDBC000F045F /* ambient.town2.mp3 in Resources */,
 				579305981BF63FCA005583CE /* fx.2.vertical.png in Resources */,
 				579305CE1BF63FCA005583CE /* tile.29.png in Resources */,
 				579306251BF63FF9005583CE /* char.necomedre.stand.f.1.png in Resources */,
@@ -2183,6 +2214,7 @@
 				579305671BF63FCA005583CE /* event.ramen.2.png in Resources */,
 				5793053F1BF63FCA005583CE /* event.neomine.1.png in Resources */,
 				579304CC1BF63F2B005583CE /* wall.1.broken.png in Resources */,
+				57CB63011C0CEDBC000F045F /* ambient.endless.mp3 in Resources */,
 				579306441BF63FF9005583CE /* char.nephtaline.walk.b.2.png in Resources */,
 				57618A3B1BFBC92A0060E177 /* letter.incorrect.png in Resources */,
 				57CB62F71C0CE811000F045F /* dialog.nemedique.wav in Resources */,
@@ -2222,6 +2254,7 @@
 				5793051F1BF63FCA005583CE /* event.boss.portrait.png in Resources */,
 				579305391BF63FCA005583CE /* event.necomedre.3.png in Resources */,
 				5793049F1BF63F2B005583CE /* wall.0.png in Resources */,
+				57CB62FF1C0CEDBC000F045F /* ambient.play.mp3 in Resources */,
 				579304D11BF63F34005583CE /* notification.blank.png in Resources */,
 				579305421BF63FCA005583CE /* event.neomine.portrait.png in Resources */,
 				579305BC1BF63FCA005583CE /* tile.11.png in Resources */,
@@ -2235,6 +2268,7 @@
 				579306151BF63FF9005583CE /* char.document.stand.f.3.png in Resources */,
 				579306311BF63FF9005583CE /* char.nemedique.walk..f.2.png in Resources */,
 				579305A71BF63FCA005583CE /* step.3.png in Resources */,
+				57CB63051C0CEDBC000F045F /* ambient.neomine.mp3 in Resources */,
 				579305AD1BF63FCA005583CE /* step.9.png in Resources */,
 				579305CC1BF63FCA005583CE /* tile.27.png in Resources */,
 				579306461BF63FF9005583CE /* char.nephtaline.walk.f.2.png in Resources */,
@@ -2292,6 +2326,7 @@
 				5793063D1BF63FF9005583CE /* char.neomine.walk.f.2.png in Resources */,
 				579305931BF63FCA005583CE /* fx.transform.1.png in Resources */,
 				579305A11BF63FCA005583CE /* map.nestorine.png in Resources */,
+				57CB630E1C0CEDBC000F045F /* ambient.town3.mp3 in Resources */,
 				57D81F271C07EEE6008FAE67 /* Splash.sks in Resources */,
 				5793062C1BF63FF9005583CE /* char.necomedre.warp.png in Resources */,
 				579305631BF63FCA005583CE /* event.radio.3.png in Resources */,
@@ -2319,9 +2354,11 @@
 				57D81F0B1C07B7B1008FAE67 /* letter.blank.png in Resources */,
 				579305591BF63FCA005583CE /* event.document.3.png in Resources */,
 				5793055A1BF63FCA005583CE /* event.document.portrait.png in Resources */,
+				57CB62FD1C0CEDBC000F045F /* ambient.kamera.mp3 in Resources */,
 				579305FF1BF63FEF005583CE /* wall.gate.nemedique.close.png in Resources */,
 				579305B31BF63FCA005583CE /* tile.2.png in Resources */,
 				5793052E1BF63FCA005583CE /* event.music.1.png in Resources */,
+				57CB63001C0CEDBC000F045F /* ambient.glitch.mp3 in Resources */,
 				579305C21BF63FCA005583CE /* tile.17.png in Resources */,
 				57D81F091C07B778008FAE67 /* dialog.bubble.rekka.png in Resources */,
 				579306471BF63FF9005583CE /* char.nephtaline.warp.png in Resources */,
@@ -2331,6 +2368,7 @@
 				57CB62DC1C0CE13E000F045F /* interface.click.wav in Resources */,
 				579305B51BF63FCA005583CE /* tile.4.png in Resources */,
 				5793062D1BF63FF9005583CE /* char.nemedique.stand.b.png in Resources */,
+				57CB630B1C0CEDBC000F045F /* ambient.secret.mp3 in Resources */,
 				57C843E51BF234C200288847 /* Default-568h@2x.png in Resources */,
 				57618A331BFBC92A0060E177 /* letter.nemedique.png in Resources */,
 				579304A81BF63F2B005583CE /* wall.10.png in Resources */,

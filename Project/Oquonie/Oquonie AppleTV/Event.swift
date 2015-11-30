@@ -101,7 +101,7 @@ class Event : SKNode
 	
 	func bind(node:Tile)
 	{
-		print("No bind action")
+		
 	}
 	
 	func remove()

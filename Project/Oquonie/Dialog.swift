@@ -61,8 +61,6 @@ class Dialog : SKNode
 		else if stage.roomId == 108 { dialog.bubble.texture = textureWithName("dialog.bubble.devine.png") }
 		else { dialog.bubble.texture = textureWithName("dialog.bubble.png") }
 		
-		print("show: \(letters) -> \(eventName)")
-		
 		letter1.texture = textureWithName("letter.\(letters[0]).png")
 		letter2.texture = textureWithName("letter.\(letters[1]).png")
 		letter3.texture = textureWithName("letter.\(letters[2]).png")
