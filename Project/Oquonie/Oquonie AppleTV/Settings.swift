@@ -11,9 +11,11 @@ let player = Player()
 let stage = Stage()
 let spellbook = Spellbook()
 let dialog = Dialog()
+let audio = Audio()
+let dialogs = Dialogs()
+
 var parallaxFront:SKSpriteNode!
 var parallaxBack:SKSpriteNode!
-let dialogs = Dialogs()
 var overlay:SKSpriteNode!
 var overlay_image:SKSpriteNode!
 var fx:SKSpriteNode!
@@ -180,6 +182,13 @@ func textureWithName(imageName:String) -> SKTexture!
 		print("!ERROR - Settings.unknown: \(imageName)")
 	}
 	return texture
+}
+
+enum soundType
+{
+	case dialog
+	case interface
+	case effect
 }
 
 var pillar_necomedre = Pillar(x: 0, y: 0, persona: Personas.necomedre)

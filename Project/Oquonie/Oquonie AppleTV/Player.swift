@@ -108,6 +108,7 @@ class Player : Event
 		stage.parallaxTo(stage.positionAt(self.x,y:self.y).x,y:stage.positionAt(self.x,y:self.y).y)
 		
 		player.zPosition = stage.eventDepthAtPosition(destination_x, y: destination_y)
+		audio.play(.effect, name: "walk")
 	}
 	
 	func stand()

@@ -26,7 +26,6 @@ func debugGame() -> Int
 	
 	print("! GAME - Started(debug).")
 	
-	return 59
 	return Waypoints.necomedre.rawValue
 }
 
