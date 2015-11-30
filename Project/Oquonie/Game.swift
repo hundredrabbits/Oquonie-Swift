@@ -21,12 +21,12 @@ func debugGame() -> Int
 	ramen_nestorine.isKnown = false
 	ramen_nemedique.isKnown = false
 	
-	player.persona = .neomine
+	player.persona = .document
 	player.isCompleted = false
 	
 	print("! GAME - Started(debug).")
 	
-	return Waypoints.nestorine.rawValue
+	return Waypoints.spawn.rawValue
 }
 
 func newGame() -> Int

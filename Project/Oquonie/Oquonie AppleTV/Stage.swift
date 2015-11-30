@@ -169,8 +169,10 @@ class Stage : SKNode
 		
 		applyTheme(room.theme)
 		
-		parallaxFront.alpha = 0
-		parallaxFront.position = CGPoint(x:templates.stage.x + (CGFloat(player.x) * 0.2),y:CGRectGetMidY(templates.screen) + (CGFloat(player.y) * 0.2))
+		parallaxFront.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame)), duration: 0.2))
+		parallaxBack.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame)), duration: 0.2))
+		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 1))
+		parallaxBack.runAction(SKAction.fadeAlphaTo(1, duration: 1))
 	}
 	
 	func applyTheme(newTheme:Theme)
@@ -267,7 +269,7 @@ class Stage : SKNode
 		self.runAction(SKAction.moveTo(CGPoint(x:pos_x,y:pos_y), duration: 0.25), completion: { })
 		
 		parallaxFront.runAction(SKAction.moveTo(CGPoint(x:templates.stage.x + (x * 0.2),y:CGRectGetMidY(gameScene.frame) + (y * 0.2)), duration: 0.25), completion: { })
-		parallaxBack.runAction(SKAction.moveTo(CGPoint(x:templates.stage.x + (x * 0.02),y:CGRectGetMidY(gameScene.frame) + (y * 0.02)), duration: 0.25), completion: { })
+		parallaxBack.runAction(SKAction.moveTo(CGPoint(x:templates.stage.x + (x * 0.05),y:CGRectGetMidY(gameScene.frame) + (y * 0.05)), duration: 0.25), completion: { })
 		
 		parallaxBack.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
 		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
@@ -303,8 +305,10 @@ class Stage : SKNode
 		let action_move = SKAction.moveToY(CGRectGetMidY(gameScene.frame) - gameScene.frame.height, duration: 3)
 		action_move.timingMode = .EaseIn
 		
-		parallaxBack.runAction(action_move)
 		parallaxFront.runAction(action_move)
+		parallaxBack.runAction(action_move)
+		parallaxFront.runAction(SKAction.fadeAlphaTo(0, duration: 1))
+		parallaxBack.runAction(SKAction.fadeAlphaTo(0, duration: 1))
 		
 		self.runAction(action_move, completion: {
 			
@@ -321,8 +325,7 @@ class Stage : SKNode
 			let action_move = SKAction.moveToY(templates.stage.y, duration: 3)
 			action_move.timingMode = .EaseOut
 			self.runAction(action_move)
-			parallaxBack.runAction(action_move)
-			parallaxFront.runAction(action_move)
+			stage.parallaxTo(stage.positionAt(player.x,y:player.y).x,y:stage.positionAt(player.x,y:player.y).y)
 			
 			player.land()
 			

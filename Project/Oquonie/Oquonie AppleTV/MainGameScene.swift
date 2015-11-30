@@ -76,15 +76,15 @@ class MainGameScene: SKScene
 	
 	func _addParalax()
 	{
-		parallaxBack = SKSpriteNode(texture: textureWithName("parallax.1.png"), color: SKColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
-		parallaxBack.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
+		parallaxBack = SKSpriteNode(texture: textureWithName("parallax.1.png"), color: SKColor.redColor(), size: CGSize(width: self.frame.size.width, height: self.frame.size.width))
 		parallaxBack.zPosition = -900
 		self.addChild(parallaxBack)
+		parallaxBack.alpha = 0
 		
-		parallaxFront = SKSpriteNode(texture: textureWithName("parallax.2.png"), color: SKColor.redColor(), size: CGSize(width: templates.stage.x, height: templates.stage.x))
-		parallaxFront.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
+		parallaxFront = SKSpriteNode(texture: textureWithName("parallax.2.png"), color: SKColor.redColor(), size: CGSize(width: self.frame.size.width, height: self.frame.size.width))
 		parallaxFront.zPosition = 9000
 		self.addChild(parallaxFront)
+		parallaxFront.alpha = 0
 	}
 	
 	func _addOverlay()

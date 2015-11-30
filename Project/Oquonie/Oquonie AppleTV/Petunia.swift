@@ -10,7 +10,6 @@ class Petunia : Event
 	override init(x:Int,y:Int)
 	{
 		super.init(x: x, y: y)
-		updateSprite("event.petunia.png")
 	}
 	
 	override func collide()

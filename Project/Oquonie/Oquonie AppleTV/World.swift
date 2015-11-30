@@ -656,7 +656,6 @@ class World
 		room.addEvent(Blocker(x: 0, y: 1, id:13))
 		room.addEvent(Door(x: 2, y: 1, room:62, to_x: -1, to_y:1))
 		room.addEvent(Map(x: 2, y: 0, world: "neomine"))
-		//		room.addEvent(Wizard(x: 2, y: -1, spell: petuniaFork))
 		room.addEvent(Door(x: 0, y: -2, requirement: Personas.neomine, room:3, to_x:0, to_y:1))
 		room.addEvent(Door(x: 2, y: -1, room:61, to_x:-1, to_y:-1))
 		all[60] = room
