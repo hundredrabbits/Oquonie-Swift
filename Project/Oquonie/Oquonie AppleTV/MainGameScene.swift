@@ -39,8 +39,14 @@ class MainGameScene: SKScene
 		_addParalax()
 		_addOverlay()
 		_addFx()
+		_AddAudio()
 		
 		stage.enter(debugGame())
+	}
+	
+	func _AddAudio()
+	{
+		self.addChild(audio)
 	}
 	
 	func _addPlayer()

@@ -79,6 +79,8 @@ class Dialog : SKNode
 		portrait.runAction(SKAction.moveToY(portrait_origin.y, duration: 0.25))
 		bubble.position = CGPoint(x: bubble_origin.x + 10, y: bubble_origin.y)
 		bubble.runAction(SKAction.moveToX(bubble_origin.x, duration: 0.25))
+		
+		audio.play(.interface, name: "dialog.open")
 	}
 	
 	func hideModal()
@@ -92,6 +94,8 @@ class Dialog : SKNode
 		
 		portrait.runAction(SKAction.moveToY(portrait_origin.y - 10, duration: 0.25))
 		bubble.runAction(SKAction.moveToX(bubble_origin.x + 10, duration: 0.25))
+		
+		audio.play(.interface, name: "dialog.close")
 	}
 	
 	required init?(coder aDecoder: NSCoder)

@@ -328,6 +328,7 @@ class Stage : SKNode
 			player.land()
 			self.applyTheme(self.room.theme)
 		})
+		audio.play(.effect, name: "teleport")
 	}
 	
 	func teleportDestination(room:Int)

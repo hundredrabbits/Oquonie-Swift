@@ -27,6 +27,7 @@ class Blocker : Event
 	{
 		if newDialog != nil { dialog.showModal(newDialog, eventName: self.eventName) }
 		player.isMoving = false
+		audio.play(.effect, name: "bump.1")
 	}
 
 	required init?(coder aDecoder: NSCoder)

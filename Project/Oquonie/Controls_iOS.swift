@@ -87,5 +87,7 @@ extension MainViewController
 		else if point.x > view.frame.size.width * 0.66 && point.y < view.frame.size.height * 0.33 { player.move(1, y: 0) }
 		else if point.x < view.frame.size.width * 0.33 && point.y > view.frame.size.height * 0.66 { player.move(-1, y: 0) }
 		else if point.x > view.frame.size.width * 0.66 && point.y > view.frame.size.height * 0.66 { player.move(0, y: -1) }
+		
+		audio.play(.interface, name: "click")
 	}
 }

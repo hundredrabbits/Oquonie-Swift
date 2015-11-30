@@ -69,7 +69,6 @@ class Player : Event
 		}
 		else if destination_x < 2 && destination_x > -2 && destination_y < 2 && destination_y > -2 {
 			if destination_tile != nil && destination_tile.id == 0 {
-				print("!! \(destination_tile.id) (\(destination_x)/\(destination_y))")
 				bump()
 			}
 			else{
@@ -78,6 +77,7 @@ class Player : Event
 		}
 		else{
 			player.bump()
+			audio.play(.effect, name: "bump.2")
 		}
 	}
 	
@@ -91,6 +91,7 @@ class Player : Event
 			sprite.position = CGPoint(x:-5,y:sprite_position.y)
 			sprite.runAction( SKAction.moveToX(sprite_position.x, duration: 0.1) )
 		}
+		audio.play(.effect, name: "bump.1")
 	}
 	
 	func walk(destination_x:Int, destination_y:Int)
@@ -168,6 +169,7 @@ class Player : Event
 		sprite.runAction(SKAction.fadeAlphaTo(0, duration: 2),completion:{
 			stage.fadeTransition(roomId,to_x:to_x,to_y:to_y)
 		})
+		audio.play(.effect, name: "warp")
 	}
 	
 	override func refreshSprite()
@@ -221,6 +223,8 @@ class Player : Event
 	
 	func transform(spell:Personas)
 	{
+		audio.play(.effect, name: "transform")
+		
 		dialog.showModal(dialogs.transform("\(spell)"),eventName: "\(spell)")
 		
 		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height * 0.5), duration: 1)

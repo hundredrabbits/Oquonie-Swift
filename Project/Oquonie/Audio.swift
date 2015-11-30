@@ -5,15 +5,21 @@
 import SpriteKit
 import Foundation
 
-class Audio
+class Audio : SKNode
 {
-	init()
+	override init()
 	{
-		
+		super.init()
 	}
 	
 	func play(route:soundType,name:String)
 	{
-		SKAction.playSoundFileNamed("\(route).\(name).wav", waitForCompletion: false)
+		print("> PLAY - \(route).\(name)")
+		self.runAction(SKAction.playSoundFileNamed("\(route).\(name).wav", waitForCompletion: false))
+	}
+	
+	required init?(coder aDecoder: NSCoder)
+	{
+		fatalError("init(coder:) has not been implemented")
 	}
 }

@@ -53,6 +53,8 @@ class Wizard : Event
 	
 	override func collide()
 	{
+		audio.play(.dialog, name: "\(spell)")
+		
 		if requiresPillar == true && player.hasPillar(pillar_nemedique) == false { dialog.showModal(dialogs.requiresPillar(),eventName: "\(spell)") ; return }
 		if player.persona == spell { dialog.showModal(dialogs.alreadyIsPersona("\(spell)"),eventName: "\(spell)") ; return }
 		if spellbook.spells.count == 3 && !player.hasSpell(self) { dialog.showModal(dialogs.spellbookFull(),eventName: "\(spell)") ; return }
