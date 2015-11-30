@@ -316,8 +316,8 @@ class Stage : SKNode
 			player.orientation = .r
 			player.direction = .f
 			player.position = stage.positionAt(0,y:0)
-			
-			// DeDislocate tiles
+
+//			// DeDislocate tiles
 			for node in self.room_root.children {
 				node.onRoomTeleportIn()
 			}
@@ -325,12 +325,8 @@ class Stage : SKNode
 			let action_move = SKAction.moveToY(templates.stage.y, duration: 3)
 			action_move.timingMode = .EaseOut
 			self.runAction(action_move)
-			stage.parallaxTo(stage.positionAt(player.x,y:player.y).x,y:stage.positionAt(player.x,y:player.y).y)
-			
 			player.land()
-			
 			self.applyTheme(self.room.theme)
-			
 		})
 	}
 	
@@ -465,7 +461,6 @@ class Stage : SKNode
 		let red = Red(x: 1, y: 0)
 		addEvent(red)
 		red.disapear()
-		player.unlock()
 		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "destroyTeleport", userInfo: nil, repeats: false)
 	}
 	

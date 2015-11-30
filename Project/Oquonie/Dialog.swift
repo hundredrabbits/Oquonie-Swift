@@ -54,8 +54,10 @@ class Dialog : SKNode
 		bubble.zPosition = 9000
 	}
 	
-	func showModal(letters:Array<String>, eventName:String)
+	func showModal(var letters:Array<String>, eventName:String)
 	{
+		if player.persona == Personas.catfishbird && stage.roomId != 14 { letters = dialogs.confusion() } // Fish sees confusion dialogs
+		
 		print("show: \(letters) -> \(eventName)")
 		
 		letter1.texture = textureWithName("letter.\(letters[0]).png")

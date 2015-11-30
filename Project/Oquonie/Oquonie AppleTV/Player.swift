@@ -120,11 +120,13 @@ class Player : Event
 	
 	func lock()
 	{
+		print("> LOCK - Locked!")
 		isLocked = true
 	}
 	
 	func unlock()
 	{
+		print("> LOCK - Unlocked!")
 		isLocked = false
 	}
 	

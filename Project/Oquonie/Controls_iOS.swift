@@ -84,8 +84,8 @@ extension MainViewController
 		// Poke Controls
 		
 		if point.x < view.frame.size.width * 0.33 && point.y < view.frame.size.height * 0.33 { player.move(0, y: 1) }
-		else if point.x > view.frame.size.width * 0.33 && point.y < view.frame.size.height * 0.33 { player.move(1, y: 0) }
-		else if point.x < view.frame.size.width * 0.33 && point.y > view.frame.size.height * 0.33 { player.move(-1, y: 0) }
-		else if point.x > view.frame.size.width * 0.33 && point.y > view.frame.size.height * 0.33 { player.move(0, y: -1) }
+		else if point.x > view.frame.size.width * 0.66 && point.y < view.frame.size.height * 0.33 { player.move(1, y: 0) }
+		else if point.x < view.frame.size.width * 0.33 && point.y > view.frame.size.height * 0.66 { player.move(-1, y: 0) }
+		else if point.x > view.frame.size.width * 0.66 && point.y > view.frame.size.height * 0.66 { player.move(0, y: -1) }
 	}
 }
