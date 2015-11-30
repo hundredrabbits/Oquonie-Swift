@@ -26,21 +26,29 @@ class Audio : SKNode
 	
 	var current:Soundtrack!
 	
-	func play_ambient(soundName:Soundtrack)
+	func play_ambient(sound:Soundtrack)
 	{
-		if current == soundName { return }
+		var soundName = "\(sound)"
+		
+		if current == sound { return }
+		
+		if "\(sound)" == "lobby" {
+			if player.hasPillar(pillar_nemedique) { soundName = "lobby.2"}
+			else if player.isCompleted == true { soundName = "lobby.3"}
+			else { soundName = "lobby.1"}
+		}
 		
 		let coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ambient.\(soundName)", ofType: "mp3")!)
 		do{
 			ambient = try AVAudioPlayer(contentsOfURL:coinSound)
 			ambient.prepareToPlay()
 			ambient.play()
-			print("playing")
+			ambient.numberOfLoops = -1
 		}catch {
 			print("Error getting the audio file")
 		}
 		
-		current = soundName
+		current = sound
 	}
 	
 	required init?(coder aDecoder: NSCoder)

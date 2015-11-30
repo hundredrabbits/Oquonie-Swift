@@ -9,7 +9,7 @@ class Room
 	var floors:Array<Int> = []
 	var walls:Array<Int> = []
 	var steps:Array<Int> = []
-	var audio:Soundtrack = Soundtrack.none
+	var audio:Soundtrack = Soundtrack.office
 	var theme:Theme = Theme.white
 	var events:Array<Event> = []
 	

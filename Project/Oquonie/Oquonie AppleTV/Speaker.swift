@@ -37,12 +37,14 @@ class Speaker : Event
 	{
 		player.hasMusic = true
 		dialog.showModal(dialogs.music(true), eventName: spriteName)
+		audio.ambient.volume = 1
 	}
 	
 	func turnOff()
 	{
 		player.hasMusic = false
 		dialog.showModal(dialogs.music(false), eventName: spriteName)
+		audio.ambient.volume = 0
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }

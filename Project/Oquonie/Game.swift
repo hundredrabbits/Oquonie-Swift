@@ -90,6 +90,8 @@ func loadGame() -> Int
 	
 	let storage = NSUserDefaults.standardUserDefaults()
 	
+	if (storage.valueForKey("room") == nil) { return newGame() }
+	
 	pillar_necomedre.isKnown = storage.valueForKey("pillar_necomedre") as! Bool
 	pillar_nephtaline.isKnown = storage.valueForKey("pillar_nephtaline") as! Bool
 	pillar_neomine.isKnown = storage.valueForKey("pillar_neomine") as! Bool

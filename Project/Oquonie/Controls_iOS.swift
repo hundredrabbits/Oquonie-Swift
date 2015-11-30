@@ -43,7 +43,6 @@ extension MainViewController
 			if touch_hold.y > touch_origin.y && touch_hold.x > touch_origin.x { player.move(0, y: -1) }
 			if touch_hold.y > touch_origin.y && touch_hold.x < touch_origin.x { player.move(-1, y: 0) }
 		}
-		print("!")
 	}
 	
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?)

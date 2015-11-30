@@ -9,7 +9,7 @@ class MainViewController: UIViewController
 	override func viewDidLoad()
 	{
 		super.viewDidLoad()
-		game_load()
+		splash_load()
 	}
 	
 	// MARK: Flow -

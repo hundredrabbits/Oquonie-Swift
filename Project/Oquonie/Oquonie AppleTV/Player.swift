@@ -261,7 +261,6 @@ class Player : Event
 				})
 			})
 		})
-		print("transform")
 	}
 	
 	// MARK: Teleport -

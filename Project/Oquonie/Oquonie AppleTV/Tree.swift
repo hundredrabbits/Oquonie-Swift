@@ -48,8 +48,6 @@ class Tree : Event
 		else{
 			dialog.showModal(dialogs.tree(pillarsCount), eventName:"owl")
 		}
-		
-		print("Hit blocker")
 		player.isMoving = false
 	}
 	

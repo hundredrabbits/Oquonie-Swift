@@ -10,12 +10,10 @@ class Kamera : Event
 	override init(x:Int,y:Int)
 	{
 		super.init(x: x, y: y)
-//		updateSprite("event.wizard.png")
 	}
 	
 	override func collide()
 	{
-		print("Hit blocker")
 		player.isMoving = false
 	}
 	

@@ -133,23 +133,18 @@ enum Personas
 
 enum Soundtrack
 {
-	case none
+	case office
 	case necomedre
 	case lobby
 	case nemedique
 	case nephtaline
 	case neomine
-	case quiet
 	case nestorine
-	case nastazie
-	case glitch
-	case photobooth
-	case endless
 	case nepturne
+	case nastazie
 	case pillar
 	case warp
-	case purgatory
-	case play
+	case glitch
 }
 
 enum Theme

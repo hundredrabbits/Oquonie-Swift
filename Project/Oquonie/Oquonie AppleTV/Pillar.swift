@@ -22,7 +22,6 @@ class Pillar : Event
 	override func onRoomEnter()
 	{
 		if display != nil {
-			print(display)
 			if player.hasPillar(display) { updateSprite("event.pillar.active.1.png") }
 			else{ updateSprite("event.pillar.base.png") }
 		}
@@ -51,7 +50,6 @@ class Pillar : Event
 			else if stage.roomId == Waypoints.nemedique_pillar.rawValue { player.teleportTrigger(9,to_x: 0,to_y: 0) }
 			else if stage.roomId == Waypoints.nastazie_pillar.rawValue { player.teleportTrigger(14,to_x: 0,to_y: 0) }
 			else if stage.roomId == Waypoints.necomedre_pillar.rawValue { player.teleportTrigger(5,to_x: 0,to_y: 0) }
-			else{ print("!!!!\(self.persona)") }
 		}
 	}
 

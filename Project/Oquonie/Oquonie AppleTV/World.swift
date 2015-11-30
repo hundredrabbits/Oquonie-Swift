@@ -164,7 +164,7 @@ class World
 		room.floors = [ 21,21,21, 21,21,21, 21,21,21 ]
 		room.walls  = [ 20,20,20, 24,21,20 ]
 		room.steps  = [ 0,0,0, 10,0,0 ]
-		room.audio  = Soundtrack.quiet
+		room.audio  = .office
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: 0, y: 0, id:14))
 		room.addEvent(Door(x: 2, y: 1, room:24, to_x: -1, to_y:1))
@@ -175,7 +175,7 @@ class World
 		room.floors = [ 21,21,21, 21,21,21, 21,21,21 ]
 		room.walls  = [ 24,20,20, 20,21,20 ]
 		room.steps  = [ 0,0,0, 0,10,0 ]
-		room.audio  = Soundtrack.quiet
+		room.audio  = .office
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: 1, y: 1, id:15))
 		room.addEvent(Blocker(x: -1, y: 0, id:16))
@@ -187,7 +187,7 @@ class World
 		room.floors = [ 21,21,21, 21,17,21, 21,21,21 ]
 		room.walls  = [ 19,1,19, 19,1,19 ]
 		room.steps  = [ 0,10,0, 0,0,0 ]
-		room.audio  = Soundtrack.quiet
+		room.audio  = .office
 		room.theme  = Theme.white
 		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.document))
 		room.addEvent(Blocker(x: 1, y: 1, id:15))
@@ -199,7 +199,7 @@ class World
 		room.floors = [ 21,21,21, 21,21,21, 21,21,21 ]
 		room.walls  = [ 20,24,20, 20,24,21 ]
 		room.steps  = [ 10,0,0, 0,10,0 ]
-		room.audio  = Soundtrack.quiet
+		room.audio  = .office
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: 1, y: 1, id:14))
 		room.addEvent(Blocker(x: -1, y: -1, id:16))
@@ -213,7 +213,7 @@ class World
 		room.floors = [ 21,21,21, 21,18,21, 21,21,21 ]
 		room.walls  = [ 21,20,20, 20,24,20 ]
 		room.steps  = [ 0,0,0, 0,0,0 ]
-		room.audio  = Soundtrack.quiet
+		room.audio  = .office
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:15))
 		room.addEvent(Blocker(x: 1, y: 1, id:16, orientation: .r))
@@ -225,7 +225,7 @@ class World
 		room.floors = [ 21,21,21, 21,21,21, 21,21,21 ]
 		room.walls  = [ 20,24,20, 20,20,21 ]
 		room.steps  = [ 0,10,0, 0,0,0 ]
-		room.audio  = Soundtrack.quiet
+		room.audio  = .office
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:14))
 		room.addEvent(Blocker(x: -1, y: 0, id:16))
@@ -237,7 +237,7 @@ class World
 		room.floors = [ 21,21,21, 21,19,21, 21,21,21 ]
 		room.walls  = [ 19,19,19, 19,21,20 ]
 		room.steps  = [ 0,0,0, 0,10,0 ]
-		room.audio  = .quiet
+		room.audio  = .office
 		room.theme  = .black
 		room.addEvent(Blocker(x: -1, y: 1, id:15))
 		room.addEvent(Speaker(x: 0, y: 1, orientation: .r, special: true))
@@ -250,7 +250,7 @@ class World
 		room.floors = [ 21,21,21, 21,21,21, 21,21,21 ]
 		room.walls  = [ 20,24,20, 20,24,21 ]
 		room.steps  = [ 0,10,0, 0,10,0 ]
-		room.audio  = Soundtrack.quiet
+		room.audio  = .office
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:14))
 		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.document))
@@ -265,7 +265,7 @@ class World
 		room.floors = [ 21,21,21, 21,8,21, 21,21,21 ]
 		room.walls  = [ 20,24,20, 20,28,21 ]
 		room.steps  = [ 0,0,0, 0,0,0 ]
-		room.audio  = .quiet
+		room.audio  = .office
 		room.theme  = .white
 		room.addEvent(Blocker(x: -1, y: 1, id:15))
 		room.addEvent(Blocker(x: 1, y: -1, id:16))
@@ -277,7 +277,7 @@ class World
 		room.floors = [ 21,21,21, 21,1,1, 21,21,1 ]
 		room.walls  = [ 20,20,20, 20,21,20 ]
 		room.steps  = [ 0,3,0, 0,0,0 ]
-		room.audio  = Soundtrack.quiet
+		room.audio  = .office
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: 1, id:16))
 		room.addEvent(Blocker(x: 1, y: -1, id:1))

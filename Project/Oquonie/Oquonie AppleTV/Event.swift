@@ -95,7 +95,6 @@ class Event : SKNode
 	
 	func collide()
 	{
-		print("hit generic event!")
 		player.isMoving = false
 	}
 	

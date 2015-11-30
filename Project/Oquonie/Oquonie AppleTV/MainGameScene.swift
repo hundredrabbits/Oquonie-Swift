@@ -17,7 +17,7 @@ class MainGameScene: SKScene
 	
 	func start()
 	{
-		let scale:CGFloat = self.view!.frame.width/760 ; print("  SIZE - \(scale)")
+		let scale:CGFloat = self.view!.frame.width/760
 		
 		templates.floor = CGSize(width: 200 * scale, height: 141 * scale)
 		templates.step = CGSize(width: 200 * scale, height: 141 * scale)
@@ -41,7 +41,7 @@ class MainGameScene: SKScene
 		_addFx()
 		_AddAudio()
 		
-		stage.enter(debugGame())
+		stage.enter(loadGame())
 	}
 	
 	func _AddAudio()
