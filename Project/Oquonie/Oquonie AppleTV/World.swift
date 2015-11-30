@@ -946,7 +946,7 @@ class World
 		room.steps  = [ 0,1,0, 0,1,0 ]
 		room.audio  = Soundtrack.nestorine
 		room.theme  = Theme.white
-		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.nemedique))
+		room.addEvent(Wizard(x: 1, y: 1, spell: Personas.nemedique, orientation: .r))
 		room.addEvent(Blocker(x: -1, y: 1, id:11))
 		room.addEvent(Door(x: 0, y: 2, requirement: Personas.nephtaline, room:90, to_x:0, to_y:-1))
 		room.addEvent(Door(x: -2, y: 0, room:80, to_x: 1, to_y:0))

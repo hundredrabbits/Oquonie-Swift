@@ -57,6 +57,9 @@ class Dialog : SKNode
 	func showModal(var letters:Array<String>, eventName:String)
 	{
 		if player.persona == Personas.catfishbird && stage.roomId != 14 { letters = dialogs.confusion() } // Fish sees confusion dialogs
+		if stage.roomId == 107 { dialog.bubble.texture = textureWithName("dialog.bubble.rekka.png") }
+		else if stage.roomId == 108 { dialog.bubble.texture = textureWithName("dialog.bubble.devine.png") }
+		else { dialog.bubble.texture = textureWithName("dialog.bubble.png") }
 		
 		print("show: \(letters) -> \(eventName)")
 		

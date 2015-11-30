@@ -8,25 +8,25 @@ func debugGame() -> Int
 {
 	print("! GAME - Starting(debug)..")
 	
-	pillar_necomedre.isKnown = false
-	pillar_nephtaline.isKnown = false
-	pillar_neomine.isKnown = false
-	pillar_nestorine.isKnown = false
-	pillar_nemedique.isKnown = false
-	pillar_nastazie.isKnown = false
+	pillar_necomedre.isKnown = true
+	pillar_nephtaline.isKnown = true
+	pillar_neomine.isKnown = true
+	pillar_nestorine.isKnown = true
+	pillar_nemedique.isKnown = true
+	pillar_nastazie.isKnown = true
 	
-	ramen_necomedre.isKnown = false
-	ramen_nephtaline.isKnown = false
-	ramen_neomine.isKnown = false
-	ramen_nestorine.isKnown = false
-	ramen_nemedique.isKnown = false
+	ramen_necomedre.isKnown = true
+	ramen_nephtaline.isKnown = true
+	ramen_neomine.isKnown = true
+	ramen_nestorine.isKnown = true
+	ramen_nemedique.isKnown = true
 	
-	player.persona = .document
+	player.persona = .nemedique
 	player.isCompleted = false
 	
 	print("! GAME - Started(debug).")
 	
-	return Waypoints.spawn.rawValue
+	return Waypoints.lobby.rawValue
 }
 
 func newGame() -> Int

@@ -50,6 +50,7 @@ class Pillar : Event
 			else if stage.roomId == Waypoints.neomine_pillar.rawValue { player.teleportTrigger(3,to_x: 0,to_y: 0) }
 			else if stage.roomId == Waypoints.nemedique_pillar.rawValue { player.teleportTrigger(9,to_x: 0,to_y: 0) }
 			else if stage.roomId == Waypoints.nastazie_pillar.rawValue { player.teleportTrigger(14,to_x: 0,to_y: 0) }
+			else if stage.roomId == Waypoints.necomedre_pillar.rawValue { player.teleportTrigger(5,to_x: 0,to_y: 0) }
 			else{ print("!!!!\(self.persona)") }
 		}
 	}
@@ -64,6 +65,8 @@ class Pillar : Event
 		self.isKnown = true
 		dialog.showModal(dialogs.pillarSocket(self), eventName: "owl")
 		updateSprite("event.pillar.gone.png")
+		spellbook.clearSpells()
+		spellbook.update()
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; updateSpriteReview() }

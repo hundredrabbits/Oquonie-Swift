@@ -47,7 +47,7 @@ class Dialogs
 	
 	func spellbookFull() -> Array<String>
 	{
-		return ["\(Letter.guide)","\(Letter.unlocked)","\(Letter.help)"]
+		return ["\(Letter.guide)","\(Letter.locked)","\(Letter.help)"]
 	}
 	
 	func music(toggle:Bool) -> Array<String>

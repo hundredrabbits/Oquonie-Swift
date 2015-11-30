@@ -22,6 +22,9 @@ class Ramen : Wizard
 		addChild(characterSprite)
 		
 		self.isWizard = isWizard
+		
+		if orientation == Orientation.r { sprite.xScale = -1.0 }
+		
 		refreshSprite()
 	}
 	
