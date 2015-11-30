@@ -102,7 +102,7 @@ class Player : Event
 		self.y = destination_y
 		print("  MOVE - \(self.x),\(self.y)")
 		
-		let action_move = SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.25)
+		let action_move = SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.3)
 		action_move.timingMode = .EaseInEaseOut
 		player.runAction(action_move, completion: { self.stand() })
 		stage.parallaxTo(stage.positionAt(self.x,y:self.y).x,y:stage.positionAt(self.x,y:self.y).y)

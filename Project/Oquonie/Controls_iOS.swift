@@ -6,30 +6,53 @@ import SpriteKit
 import Foundation
 
 var touch_origin:CGPoint!
+var touch_hold:CGPoint!
+var touchTimer:NSTimer!
+var isHolding:Bool = false
 
 extension MainViewController
-{
+{	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
 	{
+		if touchTimer != nil { touchTimer.invalidate() }
+		
 		if let touch = touches.first {
 			let point = touch.locationInView(self.view)
 			touch_origin = point
 		}
 		super.touchesBegan(touches, withEvent:event)
+		
+		touchTimer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "touchesHeld", userInfo: nil, repeats: true)
 	}
 	
 	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?)
 	{
-		/*
 		if let touch = touches.first {
-		let point = touch.locationInView(self.view)
+			let point = touch.locationInView(self.view)
+			touch_hold = point
 		}
 		super.touchesMoved(touches, withEvent:event)
-		*/
+	}
+	
+	func touchesHeld()
+	{
+		isHolding = true
+		if distanceBetweenTwoPoints(touch_hold, b: touch_origin) > templates.spell.width/2 {
+			if touch_hold.y < touch_origin.y && touch_hold.x > touch_origin.x { player.move(1, y: 0) }
+			if touch_hold.y < touch_origin.y && touch_hold.x < touch_origin.x { player.move(0, y: 1) }
+			if touch_hold.y > touch_origin.y && touch_hold.x > touch_origin.x { player.move(0, y: -1) }
+			if touch_hold.y > touch_origin.y && touch_hold.x < touch_origin.x { player.move(-1, y: 0) }
+		}
+		print("!")
 	}
 	
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?)
 	{
+		if isHolding == true {
+			touchTimer.invalidate()
+			isHolding = false
+			return
+		}
 		if let touch = touches.first {
 			let point = touch.locationInView(self.view)
 			
@@ -44,11 +67,12 @@ extension MainViewController
 			}
 		}
 		super.touchesEnded(touches, withEvent:event)
+		
+		touchTimer.invalidate()
 	}
 	
 	func poke(point:CGPoint)
 	{
-		
 		if overlay.alpha > 0 {
 			player.hideOverlay()
 		}

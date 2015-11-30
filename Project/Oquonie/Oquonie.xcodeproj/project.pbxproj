@@ -461,7 +461,7 @@
 		5793064F1BF63FF9005583CE /* char.nestorine.walk.f.2.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754AB1BF2D78200638CAE /* char.nestorine.walk.f.2.png */; };
 		579306501BF63FF9005583CE /* char.nestorine.warp.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754AC1BF2D78200638CAE /* char.nestorine.warp.png */; };
 		57A4A2E81BFA1CBE0027E909 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2E71BFA1CBE0027E909 /* Dialog.swift */; };
-		57A668661BEE98AA007CDD8B /* game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* game.sks */; };
+		57A668661BEE98AA007CDD8B /* Game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* Game.sks */; };
 		57A6686F1BEE98AA007CDD8B /* AppleTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686D1BEE98AA007CDD8B /* AppleTV.storyboard */; };
 		57A668711BEE98AA007CDD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
 		57C843D11BF233CB00288847 /* MainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* MainGameScene.swift */; };
@@ -472,7 +472,7 @@
 		57C843DB1BF233CB00288847 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2C01BF1059500E4D319 /* Room.swift */; };
 		57C843DC1BF233CB00288847 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0E2CE1BF147AC0067CC94 /* Player.swift */; };
 		57C843DD1BF233CB00288847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668631BEE98AA007CDD8B /* AppDelegate.swift */; };
-		57C843DE1BF233CB00288847 /* game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* game.sks */; };
+		57C843DE1BF233CB00288847 /* Game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* Game.sks */; };
 		57C843E01BF233CB00288847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
 		57C843E31BF2341100288847 /* iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C843E21BF2341100288847 /* iOS.storyboard */; };
 		57C843E51BF234C200288847 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C843E41BF234C200288847 /* Default-568h@2x.png */; };
@@ -1006,7 +1006,7 @@
 		57A668471BEE9894007CDD8B /* Oquonie iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A668611BEE98AA007CDD8B /* Oquonie AppleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie AppleTV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A668631BEE98AA007CDD8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Oquonie AppleTV/AppDelegate.swift"; sourceTree = "<group>"; };
-		57A668651BEE98AA007CDD8B /* game.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = game.sks; path = "Oquonie AppleTV/game.sks"; sourceTree = "<group>"; };
+		57A668651BEE98AA007CDD8B /* Game.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Game.sks; path = "Oquonie AppleTV/Game.sks"; sourceTree = "<group>"; };
 		57A668671BEE98AA007CDD8B /* MainGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainGameScene.swift; path = "Oquonie AppleTV/MainGameScene.swift"; sourceTree = "<group>"; };
 		57A6686E1BEE98AA007CDD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppleTV.storyboard; sourceTree = "<group>"; };
 		57A668701BEE98AA007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Oquonie AppleTV/Assets.xcassets"; sourceTree = "<group>"; };
@@ -1734,7 +1734,7 @@
 		57C843E61BF2356300288847 /* Oquonie Core */ = {
 			isa = PBXGroup;
 			children = (
-				57A668651BEE98AA007CDD8B /* game.sks */,
+				57A668651BEE98AA007CDD8B /* Game.sks */,
 				57A668671BEE98AA007CDD8B /* MainGameScene.swift */,
 				578BFDFF1BF0EA52006DAF1C /* Settings.swift */,
 				572E93D51C0B923600A8037A /* Game.swift */,
@@ -2133,7 +2133,7 @@
 				579305501BF63FCA005583CE /* event.owl.2.png in Resources */,
 				5793064A1BF63FF9005583CE /* char.nestorine.stand.f.2.png in Resources */,
 				579306301BF63FF9005583CE /* char.nemedique.stand.f.3.png in Resources */,
-				57C843DE1BF233CB00288847 /* game.sks in Resources */,
+				57C843DE1BF233CB00288847 /* Game.sks in Resources */,
 				579306401BF63FF9005583CE /* char.nephtaline.stand.f.1.png in Resources */,
 				5793056A1BF63FCA005583CE /* event.ramen.absent.png in Resources */,
 				579304E71BF63F5E005583CE /* blocker.15.png in Resources */,
@@ -2323,7 +2323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A6686F1BEE98AA007CDD8B /* AppleTV.storyboard in Resources */,
-				57A668661BEE98AA007CDD8B /* game.sks in Resources */,
+				57A668661BEE98AA007CDD8B /* Game.sks in Resources */,
 				57A668711BEE98AA007CDD8B /* Assets.xcassets in Resources */,
 				57C843EE1BF237B200288847 /* Info AppleTV.plist in Resources */,
 			);

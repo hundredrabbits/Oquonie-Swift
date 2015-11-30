@@ -16,7 +16,7 @@ class MainViewController: UIViewController
 	
 	func splash_load()
 	{
-		if let scene = SplashGameScene(fileNamed:"splash"){
+		if let scene = SplashGameScene(fileNamed:"Splash"){
 			let skView = self.view as! SKView
 			scene.viewController = self
 			scene.scaleMode = .AspectFill
@@ -32,7 +32,7 @@ class MainViewController: UIViewController
 	
 	func game_load()
 	{
-		if let scene = MainGameScene(fileNamed:"splash"){
+		if let scene = MainGameScene(fileNamed:"Game"){
 			let skView = self.view as! SKView
 			scene.viewController = self
 			scene.size = self.view.frame.size
