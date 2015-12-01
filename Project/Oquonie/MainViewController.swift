@@ -25,7 +25,7 @@ class MainViewController: UIViewController
 		}
 	}
 	
-	func splash_exited()
+	func splash_exit()
 	{
 		game_load()
 	}
@@ -45,31 +45,5 @@ class MainViewController: UIViewController
 	func game_exit()
 	{
 		
-	}
-	
-	// MARK: Defaults -
-	
-	override func shouldAutorotate() -> Bool
-	{
-		return true
-	}
-	
-	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
-	{
-		if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-			return .AllButUpsideDown
-		} else {
-			return .All
-		}
-	}
-	
-	override func didReceiveMemoryWarning()
-	{
-		super.didReceiveMemoryWarning()
-	}
-	
-	override func prefersStatusBarHidden() -> Bool
-	{
-		return true
 	}
 }

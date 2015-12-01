@@ -89,4 +89,24 @@ extension MainViewController
 		
 		audio.play(.interface, name: "click")
 	}
+	
+	
+	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
+	{
+		if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+			return .AllButUpsideDown
+		} else {
+			return .All
+		}
+	}
+	
+	override func didReceiveMemoryWarning()
+	{
+		super.didReceiveMemoryWarning()
+	}
+	
+	override func prefersStatusBarHidden() -> Bool
+	{
+		return true
+	}
 }

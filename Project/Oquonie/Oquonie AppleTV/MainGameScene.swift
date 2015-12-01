@@ -7,7 +7,6 @@ import SpriteKit
 class MainGameScene: SKScene
 {
 	var viewController: MainViewController!
-	
 	var time:NSTimer!
 
     override func didMoveToView(view: SKView)
@@ -95,7 +94,7 @@ class MainGameScene: SKScene
 	
 	func _addOverlay()
 	{
-		overlay = SKSpriteNode(color: UIColor.whiteColor(), size: self.size)
+		overlay = SKSpriteNode(color: SKColor.whiteColor(), size: self.size)
 		overlay.position = CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame))
 		overlay.zPosition = 1500
 		overlay_image = SKSpriteNode(texture: nil, color: SKColor.blueColor(), size: CGSize(width: overlay.size.width, height: self.size.width))

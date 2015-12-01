@@ -75,6 +75,7 @@ class Event : SKNode
 	
 	}
 	
+	
 	func updateSprite(imageName:String!)
 	{
 		if imageName == nil { sprite.texture = nil ; return }
