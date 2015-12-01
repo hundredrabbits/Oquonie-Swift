@@ -462,6 +462,14 @@
 		57A668661BEE98AA007CDD8B /* Game.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A668651BEE98AA007CDD8B /* Game.sks */; };
 		57A6686F1BEE98AA007CDD8B /* AppleTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A6686D1BEE98AA007CDD8B /* AppleTV.storyboard */; };
 		57A668711BEE98AA007CDD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
+		57A87CB51C0D2D6900629E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A87CB41C0D2D6900629E84 /* AppDelegate.swift */; };
+		57A87CB91C0D2D6900629E84 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57A87CB81C0D2D6900629E84 /* GameScene.sks */; };
+		57A87CBB1C0D2D6900629E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A87CBA1C0D2D6900629E84 /* Assets.xcassets */; };
+		57A87CBE1C0D2D6900629E84 /* OSX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A87CBC1C0D2D6900629E84 /* OSX.xib */; };
+		57A87CC31C0D331F00629E84 /* Splash.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57D81F261C07EEE6008FAE67 /* Splash.sks */; };
+		57A87CC51C0D331F00629E84 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F241C07E97E008FAE67 /* Rabbit.swift */; };
+		57A87CC61C0D331F00629E84 /* AlteHaasGroteskBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57D81F1E1C07E95D008FAE67 /* AlteHaasGroteskBold.ttf */; };
+		57A87CCA1C0D373400629E84 /* SplashGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */; };
 		57C843D11BF233CB00288847 /* MainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A668671BEE98AA007CDD8B /* MainGameScene.swift */; };
 		57C843D21BF233CB00288847 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D2BC1BF0FE0400E4D319 /* Stage.swift */; };
 		57C843D31BF233CB00288847 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578BFD871BF0E6D8006DAF1C /* Tile.swift */; };
@@ -1060,6 +1068,12 @@
 		57A668671BEE98AA007CDD8B /* MainGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainGameScene.swift; path = "Oquonie AppleTV/MainGameScene.swift"; sourceTree = "<group>"; };
 		57A6686E1BEE98AA007CDD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppleTV.storyboard; sourceTree = "<group>"; };
 		57A668701BEE98AA007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Oquonie AppleTV/Assets.xcassets"; sourceTree = "<group>"; };
+		57A87CB21C0D2D6900629E84 /* Oquonie OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57A87CB41C0D2D6900629E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		57A87CB81C0D2D6900629E84 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		57A87CBA1C0D2D6900629E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57A87CBD1C0D2D6900629E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OSX.xib; sourceTree = "<group>"; };
+		57A87CBF1C0D2D6900629E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57C843E21BF2341100288847 /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
 		57C843E41BF234C200288847 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		57C843EB1BF237A300288847 /* Info iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info iOS.plist"; sourceTree = "<group>"; };
@@ -1100,6 +1114,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		57A6685E1BEE98AA007CDD8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57A87CAF1C0D2D6900629E84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1160,6 +1181,7 @@
 				57C843E61BF2356300288847 /* Oquonie Core */,
 				57A668481BEE9894007CDD8B /* Oquonie iOS */,
 				57A668621BEE98AA007CDD8B /* Oquonie AppleTV */,
+				57A87CB31C0D2D6900629E84 /* Oquonie OSX */,
 				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
 				038BA0E9188B849B00A3ED4B /* Sounds */,
 				03BBFACE178AC8C200E79C3D /* Assets */,
@@ -1173,6 +1195,7 @@
 			children = (
 				57A668471BEE9894007CDD8B /* Oquonie iOS.app */,
 				57A668611BEE98AA007CDD8B /* Oquonie AppleTV.app */,
+				57A87CB21C0D2D6900629E84 /* Oquonie OSX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1745,6 +1768,18 @@
 			path = "Oquonie AppleTV";
 			sourceTree = "<group>";
 		};
+		57A87CB31C0D2D6900629E84 /* Oquonie OSX */ = {
+			isa = PBXGroup;
+			children = (
+				57A87CB81C0D2D6900629E84 /* GameScene.sks */,
+				57A87CB41C0D2D6900629E84 /* AppDelegate.swift */,
+				57A87CBA1C0D2D6900629E84 /* Assets.xcassets */,
+				57A87CBC1C0D2D6900629E84 /* OSX.xib */,
+				57A87CBF1C0D2D6900629E84 /* Info.plist */,
+			);
+			path = "Oquonie OSX";
+			sourceTree = "<group>";
+		};
 		57C82DDE1C03EFEE001B79D2 /* parallax */ = {
 			isa = PBXGroup;
 			children = (
@@ -1898,6 +1933,23 @@
 			productReference = 57A668611BEE98AA007CDD8B /* Oquonie AppleTV.app */;
 			productType = "com.apple.product-type.application";
 		};
+		57A87CB11C0D2D6900629E84 /* Oquonie OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57A87CC21C0D2D6900629E84 /* Build configuration list for PBXNativeTarget "Oquonie OSX" */;
+			buildPhases = (
+				57A87CAE1C0D2D6900629E84 /* Sources */,
+				57A87CAF1C0D2D6900629E84 /* Frameworks */,
+				57A87CB01C0D2D6900629E84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Oquonie OSX";
+			productName = "Oquonie OSX";
+			productReference = 57A87CB21C0D2D6900629E84 /* Oquonie OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1917,6 +1969,10 @@
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = B948MFAE5C;
 					};
+					57A87CB11C0D2D6900629E84 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = B948MFAE5C;
+					};
 				};
 			};
 			buildConfigurationList = 03BBFAA3178A9E4E00E79C3D /* Build configuration list for PBXProject "Oquonie" */;
@@ -1934,6 +1990,7 @@
 			targets = (
 				57A668461BEE9894007CDD8B /* Oquonie iOS */,
 				57A668601BEE98AA007CDD8B /* Oquonie AppleTV */,
+				57A87CB11C0D2D6900629E84 /* Oquonie OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -2450,6 +2507,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		57A87CB01C0D2D6900629E84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57A87CC31C0D331F00629E84 /* Splash.sks in Resources */,
+				57A87CBB1C0D2D6900629E84 /* Assets.xcassets in Resources */,
+				57A87CC61C0D331F00629E84 /* AlteHaasGroteskBold.ttf in Resources */,
+				57A87CB91C0D2D6900629E84 /* GameScene.sks in Resources */,
+				57A87CBE1C0D2D6900629E84 /* OSX.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2506,6 +2575,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		57A87CAE1C0D2D6900629E84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57A87CB51C0D2D6900629E84 /* AppDelegate.swift in Sources */,
+				57A87CC51C0D331F00629E84 /* Rabbit.swift in Sources */,
+				57A87CCA1C0D373400629E84 /* SplashGameScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -2515,6 +2594,14 @@
 				57A6686E1BEE98AA007CDD8B /* Base */,
 			);
 			name = AppleTV.storyboard;
+			sourceTree = "<group>";
+		};
+		57A87CBC1C0D2D6900629E84 /* OSX.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57A87CBD1C0D2D6900629E84 /* Base */,
+			);
+			name = OSX.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -2701,6 +2788,67 @@
 			};
 			name = Release;
 		};
+		57A87CC01C0D2D6900629E84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Oquonie OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		57A87CC11C0D2D6900629E84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Oquonie OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2730,6 +2878,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		57A87CC21C0D2D6900629E84 /* Build configuration list for PBXNativeTarget "Oquonie OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57A87CC01C0D2D6900629E84 /* Debug */,
+				57A87CC11C0D2D6900629E84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

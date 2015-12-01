@@ -10,8 +10,12 @@ var steps = 0
 
 class SplashGameScene: SKScene
 {
-	var viewController: MainViewController!
+	#if os(iOS) || os(watchOS) || os(tvOS)
+		var viewController: MainViewController!
+	#elseif os(OSX)
 	
+	#endif
+
     override func didMoveToView(view: SKView)
 	{
 	}
@@ -96,7 +100,11 @@ class SplashGameScene: SKScene
 	
 	func exit()
 	{
-		viewController.splash_exited()
+		#if os(iOS) || os(watchOS) || os(tvOS)
+			viewController.splash_exited()
+		#elseif os(OSX)
+			
+		#endif
 	}
 	
 	func scare()
