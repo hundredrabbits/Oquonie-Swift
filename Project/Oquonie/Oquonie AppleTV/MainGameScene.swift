@@ -16,7 +16,7 @@ class MainGameScene: SKScene
 	
 	func start()
 	{
-		let scale:CGFloat = self.view!.frame.width/760
+		let scale:CGFloat = ( view!.frame.height > view!.frame.width) ? self.view!.frame.width/760 : self.view!.frame.width/1600
 		
 		templates.floor = CGSize(width: 200 * scale, height: 141 * scale)
 		templates.step = CGSize(width: 200 * scale, height: 141 * scale)
@@ -81,12 +81,14 @@ class MainGameScene: SKScene
 	
 	func _addParalax()
 	{
-		parallaxBack = SKSpriteNode(texture: textureWithName("parallax.1.png"), color: SKColor.redColor(), size: CGSize(width: self.frame.size.width, height: self.frame.size.width))
+		let parallaxSize:CGFloat = ( view!.frame.height > view!.frame.width) ? self.frame.size.width : self.frame.size.height
+		
+		parallaxBack = SKSpriteNode(texture: textureWithName("parallax.1.png"), color: SKColor.redColor(), size: CGSize(width: parallaxSize, height: parallaxSize))
 		parallaxBack.zPosition = -900
 		self.addChild(parallaxBack)
 		parallaxBack.alpha = 0
 		
-		parallaxFront = SKSpriteNode(texture: textureWithName("parallax.2.png"), color: SKColor.redColor(), size: CGSize(width: self.frame.size.width, height: self.frame.size.width))
+		parallaxFront = SKSpriteNode(texture: textureWithName("parallax.2.png"), color: SKColor.redColor(), size: CGSize(width: parallaxSize, height: parallaxSize))
 		parallaxFront.zPosition = 9000
 		self.addChild(parallaxFront)
 		parallaxFront.alpha = 0

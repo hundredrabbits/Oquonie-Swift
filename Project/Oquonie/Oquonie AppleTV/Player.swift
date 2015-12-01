@@ -224,6 +224,7 @@ class Player : Event
 	func transform(spell:Personas)
 	{
 		audio.play(.effect, name: "transform")
+		lock()
 		
 		dialog.showModal(dialogs.transform("\(spell)"),eventName: "\(spell)")
 		
@@ -256,6 +257,7 @@ class Player : Event
 							self.orientation = Orientation.l
 							self.direction = Direction.f
 							self.refreshSprite()
+							self.unlock()
 						})
 					})
 				})

@@ -63,6 +63,7 @@
 		57618A4C1BFBDCB70060E177 /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = 57618A4B1BFBDCB70060E177 /* Todo */; };
 		576570691BF388B100F563B8 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576570671BF388AD00F563B8 /* SKNode.swift */; };
 		5770E39D1C08B41800297E89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770E39C1C08B41800297E89 /* MainViewController.swift */; };
+		5773F9E51C0DE4FF00CC1E08 /* Controls_AppleTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */; };
 		579304921BF634E6005583CE /* letter.spell.blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 579304911BF634E6005583CE /* letter.spell.blank.png */; };
 		579304941BF635D0005583CE /* letter.spell.nemedique.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755511BF2D78200638CAE /* letter.spell.nemedique.png */; };
 		579304951BF635D0005583CE /* letter.spell.nestorine.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755521BF2D78300638CAE /* letter.spell.nestorine.png */; };
@@ -3519,6 +3520,7 @@
 				57A881091C0D447700629E84 /* Ramen.swift in Sources */,
 				57A881111C0D447700629E84 /* DoorRed.swift in Sources */,
 				57A881061C0D447700629E84 /* Blocker.swift in Sources */,
+				5773F9E51C0DE4FF00CC1E08 /* Controls_AppleTV.swift in Sources */,
 				57A881171C0D447700629E84 /* Tree.swift in Sources */,
 				57A881041C0D447300629E84 /* SKNode.swift in Sources */,
 				57A881141C0D447700629E84 /* Owl.swift in Sources */,
@@ -3754,6 +3756,7 @@
 				57A880F11C0D43A600629E84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
