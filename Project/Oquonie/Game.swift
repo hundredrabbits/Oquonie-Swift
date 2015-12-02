@@ -20,13 +20,13 @@ func debugGame() -> Int
 	ramen_neomine.isKnown = true
 	ramen_nestorine.isKnown = true
 	
-	player.persona = .necomedre
+	player.persona = .nephtaline
 	player.isCompleted = false
 	player.isListening = false
 	
 	print("! GAME - Started(debug).")
 
-	return Waypoints.lobby.rawValue
+	return Waypoints.nephtaline.rawValue
 }
 
 func newGame() -> Int
