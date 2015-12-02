@@ -8,26 +8,25 @@ func debugGame() -> Int
 {
 	print("! GAME - Starting(debug)..")
 	
-	pillar_necomedre.isKnown = true
-	pillar_nephtaline.isKnown = true
-	pillar_neomine.isKnown = true
-	pillar_nestorine.isKnown = true
+	pillar_necomedre.isKnown = false
+	pillar_nephtaline.isKnown = false
+	pillar_neomine.isKnown = false
+	pillar_nestorine.isKnown = false
 	pillar_nemedique.isKnown = true
-	pillar_nastazie.isKnown = true
+	pillar_nastazie.isKnown = false
 	
 	ramen_necomedre.isKnown = true
 	ramen_nephtaline.isKnown = true
 	ramen_neomine.isKnown = true
 	ramen_nestorine.isKnown = true
-	ramen_nemedique.isKnown = true
 	
 	player.persona = .necomedre
 	player.isCompleted = false
 	player.isListening = false
 	
 	print("! GAME - Started(debug).")
-	
-	return Waypoints.necomedre.rawValue
+
+	return Waypoints.lobby.rawValue
 }
 
 func newGame() -> Int
@@ -45,7 +44,6 @@ func newGame() -> Int
 	ramen_nephtaline.isKnown = false
 	ramen_neomine.isKnown = false
 	ramen_nestorine.isKnown = false
-	ramen_nemedique.isKnown = false
 	
 	player.persona = .necomedre
 	player.isCompleted = false
@@ -75,7 +73,6 @@ func saveGame()
 	storage.setObject(ramen_nephtaline.isKnown, forKey: "ramen_nephtaline")
 	storage.setObject(ramen_neomine.isKnown, forKey: "ramen_neomine")
 	storage.setObject(ramen_nestorine.isKnown, forKey: "ramen_nestorine")
-	storage.setObject(ramen_nemedique.isKnown, forKey: "ramen_nemedique")
 	
 	storage.setObject("\(player.persona)", forKey: "persona")
 	storage.setObject(player.isCompleted, forKey: "completed")
@@ -106,7 +103,6 @@ func loadGame() -> Int
 	ramen_nephtaline.isKnown = storage.valueForKey("ramen_nephtaline") as! Bool
 	ramen_neomine.isKnown = storage.valueForKey("ramen_neomine") as! Bool
 	ramen_nestorine.isKnown = storage.valueForKey("ramen_nestorine") as! Bool
-	ramen_nemedique.isKnown = storage.valueForKey("ramen_nemedique") as! Bool
 	
 	if "\(storage.valueForKey("persona"))" == "\(Personas.necomedre)" { player.persona = Personas.necomedre }
 	if "\(storage.valueForKey("persona"))" == "\(Personas.nephtaline)" { player.persona = Personas.nephtaline }
@@ -141,7 +137,6 @@ func integrity() -> Bool
 	if storage.valueForKey("ramen_nephtaline") == nil { print("X GAME - Missing ramen_nephtaline") ; return false }
 	if storage.valueForKey("ramen_neomine") == nil { print("X GAME - Missing ramen_neomine") ; return false }
 	if storage.valueForKey("ramen_nestorine") == nil { print("X GAME - Missing ramen_nestorine") ; return false }
-	if storage.valueForKey("ramen_nemedique") == nil { print("X GAME - Missing ramen_nemedique") ; return false }
 	
 	if storage.valueForKey("persona") == nil { print("X GAME - Missing persona") ; return false }
 	if storage.valueForKey("completed") == nil { print("X GAME - Missing completed") ; return false }

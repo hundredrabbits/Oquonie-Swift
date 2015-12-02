@@ -341,7 +341,7 @@ class World
 		room.steps  = [ 0,6,0, 0,0,0 ]
 		room.audio  = Soundtrack.necomedre
 		room.theme  = Theme.white
-		room.addEvent(Ramen(x: 1, y: 1))
+		room.addEvent(ramen_necomedre)
 		room.addEvent(Speaker(x: -1, y: 1, orientation: Orientation.r))
 		room.addEvent(Door(x: 0, y: 2, room:32, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:36, to_x: -1, to_y:0))
@@ -1018,7 +1018,7 @@ class World
 		room.steps  = [ 0,7,0, 0,0,0 ]
 		room.audio  = Soundtrack.nemedique
 		room.theme  = Theme.white
-		room.addEvent(ramen_nemedique)
+		room.addEvent(Speaker(x: 1, y: 1))
 		room.addEvent(Door(x: 0, y: 2, room:102, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, requirement: Personas.necomedre, room:103, to_x:-1, to_y:0))
 		room.addEvent(Door(x: -2, y: 0, room:100, to_x: 1, to_y:0))

@@ -35,16 +35,16 @@ class Ramen : Wizard
 		if isWizard == false { return }
 		if !player.hasPillar(pillar_nemedique) { return }
 		
-		if ramen_necomedre.isKnown == true && player.persona == Personas.nephtaline {
+		if ramen_nephtaline.isKnown == true && player.persona == Personas.nephtaline {
 			spell = .nemedique
 		}
-		else if ramen_nephtaline.isKnown == true && player.persona == Personas.neomine {
+		else if ramen_neomine.isKnown == true && player.persona == Personas.neomine {
 			spell = .necomedre
 		}
-		else if ramen_neomine.isKnown == true && player.persona == Personas.nestorine {
+		else if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine {
 			spell = .nephtaline
 		}
-		else if ramen_neomine.isKnown == true && player.persona == Personas.necomedre {
+		else if ramen_necomedre.isKnown == true && player.persona == Personas.necomedre {
 			spell = .nestorine
 		}
 	}
@@ -63,6 +63,7 @@ class Ramen : Wizard
 		}
 		// In Levels
 		else if isWizard == false && isKnown == false {
+			print("!! \(isKnown)")
 			characterSprite.alpha = 1
 		}
 		refreshSprite()
@@ -101,10 +102,6 @@ class Ramen : Wizard
 				audio.play(.dialog, name: "ramen")
 			}
 			if ramen_nestorine.isKnown == true && player.persona == Personas.nestorine {
-				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
-				audio.play(.dialog, name: "ramen")
-			}
-			if ramen_nemedique.isKnown == true && player.persona == Personas.nemedique {
 				if player.hasSpell(self) == false { castSpell() } else{ removeSpell() }
 				audio.play(.dialog, name: "ramen")
 			}
