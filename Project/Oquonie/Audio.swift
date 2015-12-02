@@ -28,6 +28,7 @@ class Audio : SKNode
 	
 	func play_ambient(sound:Soundtrack)
 	{
+		print(" AUDIO - Ambient: \(sound)")
 		var soundName = "\(sound)"
 		
 		if current == sound { return }
@@ -48,7 +49,7 @@ class Audio : SKNode
 			print("Error getting the audio file")
 		}
 		current = sound
-		ambient.volume = (player.isListening == false) ? 1 : 0
+		ambient.volume = (player.isListening == true) ? 1 : 0
 	}
 	
 	func mute()

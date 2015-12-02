@@ -130,22 +130,22 @@ func integrity() -> Bool
 	
 	let storage = NSUserDefaults.standardUserDefaults()
 	
-	if storage.valueForKey("pillar_necomedre") == nil { return false }
-	if storage.valueForKey("pillar_nephtaline") == nil { return false }
-	if storage.valueForKey("pillar_neomine") == nil { return false }
-	if storage.valueForKey("pillar_nestorine") == nil { return false }
-	if storage.valueForKey("pillar_nemedique") == nil { return false }
-	if storage.valueForKey("pillar_nastazie") == nil { return false }
+	if storage.valueForKey("pillar_necomedre") == nil { print("X GAME - Missing pillar_necomedre") ; return false }
+	if storage.valueForKey("pillar_nephtaline") == nil { print("X GAME - Missing pillar_nephtaline") ; return false }
+	if storage.valueForKey("pillar_neomine") == nil { print("X GAME - Missing pillar_neomine") ; return false }
+	if storage.valueForKey("pillar_nestorine") == nil { print("X GAME - Missing pillar_nestorine") ; return false }
+	if storage.valueForKey("pillar_nemedique") == nil { print("X GAME - Missing pillar_nemedique") ; return false }
+	if storage.valueForKey("pillar_nastazie") == nil { print("X GAME - Missing pillar_nastazie") ; return false }
 	
-	if storage.valueForKey("ramen_necomedre") == nil { return false }
-	if storage.valueForKey("ramen_nephtaline") == nil { return false }
-	if storage.valueForKey("ramen_neomine") == nil { return false }
-	if storage.valueForKey("ramen_nestorine") == nil { return false }
-	if storage.valueForKey("ramen_nemedique") == nil { return false }
+	if storage.valueForKey("ramen_necomedre") == nil { print("X GAME - Missing ramen_necomedre") ; return false }
+	if storage.valueForKey("ramen_nephtaline") == nil { print("X GAME - Missing ramen_nephtaline") ; return false }
+	if storage.valueForKey("ramen_neomine") == nil { print("X GAME - Missing ramen_neomine") ; return false }
+	if storage.valueForKey("ramen_nestorine") == nil { print("X GAME - Missing ramen_nestorine") ; return false }
+	if storage.valueForKey("ramen_nemedique") == nil { print("X GAME - Missing ramen_nemedique") ; return false }
 	
-	if storage.valueForKey("persona") == nil { return false }
-	if storage.valueForKey("completed") == nil { return false }
-	if storage.valueForKey("listening") == nil { return false }
+	if storage.valueForKey("persona") == nil { print("X GAME - Missing persona") ; return false }
+	if storage.valueForKey("completed") == nil { print("X GAME - Missing completed") ; return false }
+	if storage.valueForKey("listening") == nil { print("X GAME - Missing listening") ; return false }
 	
 	print("! GAME - Integrity Passed.")
 	

@@ -23,7 +23,7 @@ class Speaker : Event
 	{
 		audio.play(.dialog, name: "speaker")
 		
-		if player.hasMusic == true {
+		if player.isListening == true {
 			turnOff()
 		}
 		else{
@@ -35,16 +35,14 @@ class Speaker : Event
 	
 	func turnOn()
 	{
-		player.hasMusic = true
 		dialog.showModal(dialogs.music(true), eventName: spriteName)
-		audio.ambient.volume = 1
+		audio.unMute()
 	}
 	
 	func turnOff()
 	{
-		player.hasMusic = false
 		dialog.showModal(dialogs.music(false), eventName: spriteName)
-		audio.ambient.volume = 0
+		audio.mute()
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }
@@ -53,7 +51,7 @@ class Speaker : Event
 	
 	override func refreshSprite()
 	{
-		if player.hasMusic == true { sprite.texture = textureWithName("event.\(spriteName).off.png") ; return }
+		if player.isListening == true { sprite.texture = textureWithName("event.\(spriteName).off.png") ; return }
 		sprite.texture = textureWithName("event.\(spriteName).\(activityFrame).png")
 	}
 	

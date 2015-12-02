@@ -137,6 +137,7 @@ class Stage : SKNode
 	
 	func enter(roomId:Int)
 	{
+		print("! WARP - \(roomId)")
 		self.roomId = roomId
 		
 		room = world.all[roomId]
