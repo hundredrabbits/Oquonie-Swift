@@ -40,7 +40,7 @@ class MainGameScene: SKScene
 		_addFx()
 		_AddAudio()
 		
-		stage.enter(debugGame())
+		stage.enter(loadGame())
 	}
 	
 	func _AddAudio()

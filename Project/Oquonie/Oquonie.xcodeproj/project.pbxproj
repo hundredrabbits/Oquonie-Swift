@@ -2425,6 +2425,7 @@
 					};
 					57A880DC1C0D43A500629E84 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = B948MFAE5C;
 					};
 				};
 			};
@@ -3627,7 +3628,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxiivv.oquonie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3659,7 +3660,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxiivv.oquonie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3687,7 +3688,7 @@
 				INFOPLIST_FILE = "Oquonie AppleTV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-AppleTV";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxiivv.oquonie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3720,7 +3721,7 @@
 				INFOPLIST_FILE = "Oquonie AppleTV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-AppleTV";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxiivv.oquonie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
