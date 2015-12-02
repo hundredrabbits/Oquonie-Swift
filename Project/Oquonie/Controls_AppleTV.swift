@@ -9,20 +9,44 @@ extension MainViewController
 {
 	func installGestures()
 	{
+		let swipeRightUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+		swipeRightUp.direction = UISwipeGestureRecognizerDirection.Right.union(.Up)
+		self.view.addGestureRecognizer(swipeRightUp)
+		
+		let swipeRightDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+		swipeRightDown.direction = UISwipeGestureRecognizerDirection.Down.union(.Right)
+		self.view.addGestureRecognizer(swipeRightDown)
+		
+		let swipeLeftUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+		swipeLeftUp.direction = UISwipeGestureRecognizerDirection.Up.union(.Left)
+		self.view.addGestureRecognizer(swipeLeftUp)
+		
+		let swipeLeftDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+		swipeLeftDown.direction = UISwipeGestureRecognizerDirection.Left.union(.Down)
+		self.view.addGestureRecognizer(swipeLeftDown)
+		
 		let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-		swipeRight.direction = .Right
+		swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+		swipeRight.requireGestureRecognizerToFail(swipeRightUp)
+		swipeRight.requireGestureRecognizerToFail(swipeRightDown)
 		self.view.addGestureRecognizer(swipeRight)
 		
 		let swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-		swipeDown.direction = .Down
+		swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+		swipeDown.requireGestureRecognizerToFail(swipeLeftDown)
+		swipeDown.requireGestureRecognizerToFail(swipeRightDown)
 		self.view.addGestureRecognizer(swipeDown)
 		
 		let swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-		swipeUp.direction = .Up
+		swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+		swipeUp.requireGestureRecognizerToFail(swipeRightUp)
+		swipeUp.requireGestureRecognizerToFail(swipeLeftUp)
 		self.view.addGestureRecognizer(swipeUp)
 		
 		let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-		swipeLeft.direction = .Left
+		swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+		swipeLeft.requireGestureRecognizerToFail(swipeLeftUp)
+		swipeLeft.requireGestureRecognizerToFail(swipeLeftDown)
 		self.view.addGestureRecognizer(swipeLeft)
 	}
 	
@@ -39,13 +63,13 @@ extension MainViewController
 		
 		if let swipeGesture = gesture as? UISwipeGestureRecognizer {
 			switch swipeGesture.direction {
-			case UISwipeGestureRecognizerDirection.Right:
+			case UISwipeGestureRecognizerDirection.Right, UISwipeGestureRecognizerDirection.Right.union(.Up):
 				player.move(1, y: 0)
-			case UISwipeGestureRecognizerDirection.Down:
+			case UISwipeGestureRecognizerDirection.Down, UISwipeGestureRecognizerDirection.Down.union(.Right):
 				player.move(0, y: -1)
-			case UISwipeGestureRecognizerDirection.Left:
+			case UISwipeGestureRecognizerDirection.Left, UISwipeGestureRecognizerDirection.Left.union(.Down):
 				player.move(-1, y: 0)
-			case UISwipeGestureRecognizerDirection.Up:
+			case UISwipeGestureRecognizerDirection.Up, UISwipeGestureRecognizerDirection.Up.union(.Left):
 				player.move(0, y: 1)
 			default:
 				break

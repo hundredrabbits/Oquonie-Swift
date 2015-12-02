@@ -12,6 +12,7 @@ class Player : Event
 	var isCompleted:Bool = false
 	var isMoving:Bool = false
 	var isLocked:Bool = false
+	var isListening:Bool = true
 	var animationFrame:Int = 0
 	var teleport_room:Int!
 	var teleport_x:Int!

@@ -47,8 +47,20 @@ class Audio : SKNode
 		}catch {
 			print("Error getting the audio file")
 		}
-		
 		current = sound
+		ambient.volume = (player.isListening == false) ? 1 : 0
+	}
+	
+	func mute()
+	{
+		player.isListening = false
+		ambient.volume = 0
+	}
+	
+	func unMute()
+	{
+		player.isListening = true
+		ambient.volume = 1
 	}
 	
 	required init?(coder aDecoder: NSCoder)

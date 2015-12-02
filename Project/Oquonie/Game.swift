@@ -23,6 +23,7 @@ func debugGame() -> Int
 	
 	player.persona = .necomedre
 	player.isCompleted = false
+	player.isListening = false
 	
 	print("! GAME - Started(debug).")
 	
@@ -48,6 +49,7 @@ func newGame() -> Int
 	
 	player.persona = .necomedre
 	player.isCompleted = false
+	player.isListening = true
 	
 	print("! GAME - Started.")
 	
@@ -78,6 +80,7 @@ func saveGame()
 	storage.setObject("\(player.persona)", forKey: "persona")
 	storage.setObject(player.isCompleted, forKey: "completed")
 	storage.setObject(stage.roomId, forKey: "room")
+	storage.setObject(player.isListening, forKey: "listening")
 	
 	storage.synchronize()
 	
@@ -90,7 +93,7 @@ func loadGame() -> Int
 	
 	let storage = NSUserDefaults.standardUserDefaults()
 	
-	if (storage.valueForKey("room") == nil) { return newGame() }
+	if integrity() == false { return newGame() }
 	
 	pillar_necomedre.isKnown = storage.valueForKey("pillar_necomedre") as! Bool
 	pillar_nephtaline.isKnown = storage.valueForKey("pillar_nephtaline") as! Bool
@@ -114,8 +117,38 @@ func loadGame() -> Int
 	if "\(storage.valueForKey("persona"))" == "\(Personas.nastazie)" { player.persona = Personas.nastazie }
 	
 	player.isCompleted = storage.valueForKey("completed") as! Bool
+	player.isListening = storage.valueForKey("listening") as! Bool
 	
 	print("! GAME - Loaded.")
 	
 	return storage.valueForKey("room") as! Int
+}
+
+func integrity() -> Bool
+{
+	print("! GAME - Verfifying Save Integrity..")
+	
+	let storage = NSUserDefaults.standardUserDefaults()
+	
+	if storage.valueForKey("pillar_necomedre") == nil { return false }
+	if storage.valueForKey("pillar_nephtaline") == nil { return false }
+	if storage.valueForKey("pillar_neomine") == nil { return false }
+	if storage.valueForKey("pillar_nestorine") == nil { return false }
+	if storage.valueForKey("pillar_nemedique") == nil { return false }
+	if storage.valueForKey("pillar_nastazie") == nil { return false }
+	
+	if storage.valueForKey("ramen_necomedre") == nil { return false }
+	if storage.valueForKey("ramen_nephtaline") == nil { return false }
+	if storage.valueForKey("ramen_neomine") == nil { return false }
+	if storage.valueForKey("ramen_nestorine") == nil { return false }
+	if storage.valueForKey("ramen_nemedique") == nil { return false }
+	
+	if storage.valueForKey("persona") == nil { return false }
+	if storage.valueForKey("completed") == nil { return false }
+	if storage.valueForKey("listening") == nil { return false }
+	
+	print("! GAME - Integrity Passed.")
+	
+	return true
+	
 }
