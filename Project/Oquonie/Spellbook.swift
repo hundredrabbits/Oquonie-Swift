@@ -90,6 +90,7 @@ class Spellbook : SKNode
 		if spells.first != nil { spells.first!.removeSpell() }
 		if spells.first != nil { spells.first!.removeSpell() }
 		if spells.first != nil { spells.first!.removeSpell() }
+		audio.play(.interface, name: "spellbook.remove")
 	}
 	
 	func addSpell(spell:Wizard)
@@ -114,8 +115,6 @@ class Spellbook : SKNode
 		spells = newSpellbook
 		update()
 		startActivity()
-		
-		audio.play(.interface, name: "spellbook.remove")
 	}
 	
 	func hasSequence() -> Bool
