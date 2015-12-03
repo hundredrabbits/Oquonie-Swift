@@ -457,7 +457,6 @@
 		579306501BF63FF9005583CE /* char.nestorine.warp.png in Resources */ = {isa = PBXBuildFile; fileRef = 570754AC1BF2D78200638CAE /* char.nestorine.warp.png */; };
 		57A4A2E81BFA1CBE0027E909 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2E71BFA1CBE0027E909 /* Dialog.swift */; };
 		57A880EB1C0D43A600629E84 /* AppleTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A880E91C0D43A600629E84 /* AppleTV.storyboard */; };
-		57A880ED1C0D43A600629E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A880EC1C0D43A600629E84 /* Assets.xcassets */; };
 		57A880F21C0D444C00629E84 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770E39C1C08B41800297E89 /* MainViewController.swift */; };
 		57A880F31C0D446900629E84 /* Splash.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57D81F261C07EEE6008FAE67 /* Splash.sks */; };
 		57A880F41C0D446900629E84 /* SplashGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81F1F1C07E95D008FAE67 /* SplashGameScene.swift */; };
@@ -1047,6 +1046,7 @@
 		57CB630D1C0CEDBC000F045F /* ambient.lobby.2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9918A26BE500206675 /* ambient.lobby.2.mp3 */; };
 		57CB630E1C0CEDBC000F045F /* ambient.lobby.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9A18A26BE500206675 /* ambient.lobby.3.mp3 */; };
 		57CB630F1C0CEDBC000F045F /* ambient.warp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0D9B18A26BE500206675 /* ambient.warp.mp3 */; };
+		57CCE5861C0F993500BE389D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A668701BEE98AA007CDD8B /* Assets.xcassets */; };
 		57D81EF21C077DB3008FAE67 /* DoorRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81EF11C077DB3008FAE67 /* DoorRed.swift */; };
 		57D81EF41C07A186008FAE67 /* RedEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81EF31C07A186008FAE67 /* RedEnd.swift */; };
 		57D81EF61C07AA4F008FAE67 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D81EF51C07AA4F008FAE67 /* Credit.swift */; };
@@ -1573,7 +1573,6 @@
 		57A668701BEE98AA007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../Oquonie AppleTV/Assets.xcassets"; sourceTree = "<group>"; };
 		57A880DD1C0D43A500629E84 /* Oquonie AppleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie AppleTV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A880EA1C0D43A600629E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppleTV.storyboard; sourceTree = "<group>"; };
-		57A880EC1C0D43A600629E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A880EE1C0D43A600629E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57C843E21BF2341100288847 /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
 		57C843E41BF234C200288847 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -2243,7 +2242,6 @@
 		57A880DE1C0D43A500629E84 /* Oquonie AppleTV */ = {
 			isa = PBXGroup;
 			children = (
-				57A880EC1C0D43A600629E84 /* Assets.xcassets */,
 				573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */,
 				57A880E91C0D43A600629E84 /* AppleTV.storyboard */,
 				57A880EE1C0D43A600629E84 /* Info.plist */,
@@ -3256,7 +3254,6 @@
 				57A881291C0D45C800629E84 /* dialog.shark.wav in Resources */,
 				57A881851C0D45F900629E84 /* char.nephtaline.stand.b.png in Resources */,
 				57A882AD1C0D45F900629E84 /* tile.15.png in Resources */,
-				57A880ED1C0D43A600629E84 /* Assets.xcassets in Resources */,
 				57A882611C0D45F900629E84 /* event.owl.2.png in Resources */,
 				57A882121C0D45F900629E84 /* letter8.png in Resources */,
 				57A881341C0D45C800629E84 /* effect.walk.wav in Resources */,
@@ -3393,6 +3390,7 @@
 				57A881581C0D45F900629E84 /* char.document.stand.b.png in Resources */,
 				57A8814B1C0D45C800629E84 /* ambient.lobby.2.mp3 in Resources */,
 				57A882421C0D45F900629E84 /* event.music.portrait.png in Resources */,
+				57CCE5861C0F993500BE389D /* Assets.xcassets in Resources */,
 				57A882931C0D45F900629E84 /* step.2.png in Resources */,
 				57A882211C0D45F900629E84 /* letter.sound.png in Resources */,
 				57A8817A1C0D45F900629E84 /* char.nemedique.walk.f.1.png in Resources */,
@@ -3670,7 +3668,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -3701,7 +3699,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
