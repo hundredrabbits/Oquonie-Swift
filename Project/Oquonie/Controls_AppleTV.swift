@@ -52,6 +52,8 @@ extension MainViewController
 	
 	func respondToSwipeGesture(gesture: UIGestureRecognizer)
 	{
+		if player == nil { return }
+		
 		if overlay.alpha > 0 {
 			player.hideOverlay()
 		}
@@ -79,6 +81,8 @@ extension MainViewController
 
 	override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?)
 	{
+		if player == nil { return }
+		
 		if overlay.alpha > 0 {
 			player.hideOverlay()
 		}

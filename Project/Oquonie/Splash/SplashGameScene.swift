@@ -14,6 +14,7 @@ class SplashGameScene: SKScene
 
     override func didMoveToView(view: SKView)
 	{
+		
 	}
 	
 	func start()

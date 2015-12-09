@@ -7,7 +7,7 @@ import Foundation
 
 var templates = Templates()
 let world = World()
-let player = Player()
+var player:Player!
 let stage = Stage()
 let spellbook = Spellbook()
 let dialog = Dialog()

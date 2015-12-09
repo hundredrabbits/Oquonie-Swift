@@ -50,6 +50,7 @@ class MainGameScene: SKScene
 	
 	func _addPlayer()
 	{
+		player = Player()
 		player.persona = .necomedre
 		player.position = CGPoint(x: 0, y: 0)
 		player.zPosition = stage.eventDepthAtPosition(0, y: 0)

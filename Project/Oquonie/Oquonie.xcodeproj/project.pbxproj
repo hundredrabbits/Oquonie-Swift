@@ -1570,7 +1570,7 @@
 		57A668631BEE98AA007CDD8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Oquonie AppleTV/AppDelegate.swift"; sourceTree = "<group>"; };
 		57A668651BEE98AA007CDD8B /* Game.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Game.sks; path = "Oquonie AppleTV/Game.sks"; sourceTree = "<group>"; };
 		57A668671BEE98AA007CDD8B /* MainGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainGameScene.swift; path = "Oquonie AppleTV/MainGameScene.swift"; sourceTree = "<group>"; };
-		57A668701BEE98AA007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../Oquonie AppleTV/Assets.xcassets"; sourceTree = "<group>"; };
+		57A668701BEE98AA007CDD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A880DD1C0D43A500629E84 /* Oquonie AppleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie AppleTV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A880EA1C0D43A600629E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AppleTV.storyboard; sourceTree = "<group>"; };
 		57A880EE1C0D43A600629E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2230,7 +2230,6 @@
 		57A668481BEE9894007CDD8B /* Oquonie iOS */ = {
 			isa = PBXGroup;
 			children = (
-				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
 				573697DE1C0B50FE006B9A74 /* Controls_iOS.swift */,
 				57C843E21BF2341100288847 /* iOS.storyboard */,
 				57C843EB1BF237A300288847 /* Info iOS.plist */,
@@ -2245,6 +2244,7 @@
 				573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */,
 				57A880E91C0D43A600629E84 /* AppleTV.storyboard */,
 				57A880EE1C0D43A600629E84 /* Info.plist */,
+				57A668701BEE98AA007CDD8B /* Assets.xcassets */,
 			);
 			path = "Oquonie AppleTV";
 			sourceTree = "<group>";
