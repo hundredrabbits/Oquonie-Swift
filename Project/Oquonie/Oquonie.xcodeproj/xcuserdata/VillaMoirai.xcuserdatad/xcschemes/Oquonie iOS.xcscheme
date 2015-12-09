@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "57A668161BEE9770007CDD8B"
+               BlueprintIdentifier = "57A668461BEE9894007CDD8B"
                BuildableName = "Oquonie iOS.app"
                BlueprintName = "Oquonie iOS"
                ReferencedContainer = "container:Oquonie.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "57A668161BEE9770007CDD8B"
+            BlueprintIdentifier = "57A668461BEE9894007CDD8B"
             BuildableName = "Oquonie iOS.app"
             BlueprintName = "Oquonie iOS"
             ReferencedContainer = "container:Oquonie.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "57A668161BEE9770007CDD8B"
+            BlueprintIdentifier = "57A668461BEE9894007CDD8B"
             BuildableName = "Oquonie iOS.app"
             BlueprintName = "Oquonie iOS"
             ReferencedContainer = "container:Oquonie.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "57A668161BEE9770007CDD8B"
+            BlueprintIdentifier = "57A668461BEE9894007CDD8B"
             BuildableName = "Oquonie iOS.app"
             BlueprintName = "Oquonie iOS"
             ReferencedContainer = "container:Oquonie.xcodeproj">
