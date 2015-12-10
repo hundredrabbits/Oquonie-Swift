@@ -20,6 +20,11 @@ class Dialogs
 		return ["\(Letter.foe)","\(Letter.locked)","\(Letter.pillar)"]
 	}
 	
+	func doorRequiresPersona(persona:String) -> Array<String>
+	{
+		return ["\(Letter.door)","\(Letter.locked)",persona]
+	}
+	
 	func requiresPersona(persona:String) -> Array<String>
 	{
 		return ["\(Letter.foe)","\(Letter.locked)",persona]
