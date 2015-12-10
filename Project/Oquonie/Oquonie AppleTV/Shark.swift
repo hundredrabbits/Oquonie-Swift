@@ -20,7 +20,14 @@ class Shark : Event
 		audio.play(.dialog, name: "shark")
 		
 		player.isMoving = false
-		if player.hasPillar(pillar_nemedique) == true && player.persona != Personas.necomedre && spellbook.spells.count > 0 {
+		if player.hasPillar(pillar_nemedique) == true && player.persona != Personas.necomedre {
+			dialog.showModal(dialogs.shark(), eventName: "shark")
+			player.transform(Personas.necomedre)
+			spellbook.clearSpells()
+			spellbook.update()
+		}
+		else if player.hasPillar(pillar_nemedique) == true && spellbook.spells.count > 0 {
+			dialog.showModal(dialogs.shark(), eventName: "shark")
 			player.transform(Personas.necomedre)
 			spellbook.clearSpells()
 			spellbook.update()
@@ -30,6 +37,9 @@ class Shark : Event
 			player.transform(Personas.necomedre)
 			spellbook.clearSpells()
 			spellbook.update()
+		}
+		else{
+			dialog.showModal(dialogs.shark(), eventName: "shark")
 		}
 	}
 	

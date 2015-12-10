@@ -26,12 +26,12 @@
                   moduleName = "Oquonie iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/VillaMoirai/Github/Oquonie/Project/Oquonie/Oquonie%20AppleTV/Stage.swift"
-                  timestampString = "471405768.919763"
+                  timestampString = "471407569.545932"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "282"
                   endingLineNumber = "282"
-                  offsetFromSymbolStart = "588">
+                  offsetFromSymbolStart = "404">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "Oquonie iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/VillaMoirai/Github/Oquonie/Project/Oquonie/Oquonie%20AppleTV/Stage.swift"
-                  timestampString = "471405768.920152"
+                  timestampString = "471407569.546351"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "283"
                   endingLineNumber = "283"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>

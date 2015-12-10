@@ -60,8 +60,6 @@ func saveGame()
 	
 	let storage = NSUserDefaults.standardUserDefaults()
 	
-	storage.setObject("\(player.persona)", forKey: "location")
-	
 	storage.setObject(pillar_necomedre.isKnown, forKey: "pillar_necomedre")
 	storage.setObject(pillar_nephtaline.isKnown, forKey: "pillar_nephtaline")
 	storage.setObject(pillar_neomine.isKnown, forKey: "pillar_neomine")
@@ -78,6 +76,8 @@ func saveGame()
 	storage.setObject(player.isCompleted, forKey: "completed")
 	storage.setObject(stage.roomId, forKey: "room")
 	storage.setObject(player.isListening, forKey: "listening")
+	
+	print("!!! Save \(player.persona)")
 	
 	storage.synchronize()
 	
@@ -104,13 +104,15 @@ func loadGame() -> Int
 	ramen_neomine.isKnown = storage.valueForKey("ramen_neomine") as! Bool
 	ramen_nestorine.isKnown = storage.valueForKey("ramen_nestorine") as! Bool
 	
-	if "\(storage.valueForKey("persona"))" == "\(Personas.necomedre)" { player.persona = Personas.necomedre }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.nephtaline)" { player.persona = Personas.nephtaline }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.neomine)" { player.persona = Personas.neomine }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.nestorine)" { player.persona = Personas.nestorine }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.nemedique)" { player.persona = Personas.nemedique }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.catfishbird)" { player.persona = Personas.catfishbird }
-	if "\(storage.valueForKey("persona"))" == "\(Personas.nastazie)" { player.persona = Personas.nastazie }
+	if "\(storage.valueForKey("persona")!)" == "\(Personas.necomedre)" { player.persona = Personas.necomedre }
+	else if "\(storage.valueForKey("persona")!)" == "\(Personas.nephtaline)" { player.persona = Personas.nephtaline }
+	else if "\(storage.valueForKey("persona")!)" == "\(Personas.neomine)" { player.persona = Personas.neomine }
+	else if "\(storage.valueForKey("persona")!)" == "\(Personas.nestorine)" { player.persona = Personas.nestorine }
+	else if "\(storage.valueForKey("persona")!)" == "\(Personas.nemedique)" { player.persona = Personas.nemedique }
+	else if "\(storage.valueForKey("persona")!)" == "\(Personas.catfishbird)" { player.persona = Personas.catfishbird }
+	else if "\(storage.valueForKey("persona")!)" == "\(Personas.nastazie)" { player.persona = Personas.nastazie }
+	
+	print("!!! Load \(storage.valueForKey("persona")) -> \(player.persona)")
 	
 	player.isCompleted = storage.valueForKey("completed") as! Bool
 	player.isListening = storage.valueForKey("listening") as! Bool
