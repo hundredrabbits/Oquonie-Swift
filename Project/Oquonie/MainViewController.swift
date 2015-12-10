@@ -39,6 +39,7 @@ class MainViewController: UIViewController
 			scene.scaleMode = .AspectFit
 			skView.presentScene(scene)
 			scene.start()
+            self.installGestures()
 		}
 	}
 	
@@ -46,4 +47,6 @@ class MainViewController: UIViewController
 	{
 		
 	}
+
+    func installGestures() {}
 }
