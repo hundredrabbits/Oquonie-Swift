@@ -73,7 +73,7 @@ class Stage : SKNode
 	}
 	
 	func start()
-	{
+	{		
 		room_root.addChild(wall3)
 		room_root.addChild(wall4)
 		room_root.addChild(wall2)
@@ -138,6 +138,7 @@ class Stage : SKNode
 	func enter(roomId:Int)
 	{
 		print("! WARP - \(roomId)")
+		
 		self.roomId = roomId
 		
 		room = world.all[roomId]
@@ -157,7 +158,7 @@ class Stage : SKNode
 			node.onRoomEnter()
 		}
 		
-		// Bind sprites to events
+//		// Bind sprites to events
 		for event in events_root.children {
 			let event = event as! Event
 			if event.x == -1 && event.y ==  2 { event.bind(wall1) }
@@ -167,7 +168,7 @@ class Stage : SKNode
 			if event.x ==  2 && event.y ==  0 { event.bind(wall5) }
 			if event.x ==  2 && event.y == -1 { event.bind(wall6) }
 		}
-		
+
 		applyTheme(room.theme)
 		audio.play_ambient(room.audio)
 		
@@ -184,26 +185,25 @@ class Stage : SKNode
 		print("!THEME - \(newTheme), from \(self.theme)")
 		
 		if player.isCompleted == true && stage.roomId < 15 {
-			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			background.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.3.png")
 			parallaxBack.texture = textureWithName("parallax.4.png")
 		}
 		else if newTheme == Theme.white {
-			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.9, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			background.runAction(SKAction.colorizeWithColor(SKColor(white: 0.9, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.2.png")
 			parallaxBack.texture = textureWithName("parallax.1.png")
 		}
 		else if newTheme == Theme.black {
-			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			background.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.3.png")
 			parallaxBack.texture = textureWithName("parallax.4.png")
 		}
 		else if newTheme == Theme.pillar {
-			gameScene.runAction(SKAction.colorizeWithColor(SKColor(white: 0.7, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			background.runAction(SKAction.colorizeWithColor(SKColor(white: 0.7, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.6.png")
 			parallaxBack.texture = textureWithName("parallax.7.png")
 		}
-		
 		self.theme = newTheme
 	}
 	

@@ -93,6 +93,11 @@ class MainGameScene: SKScene
 		parallaxFront.zPosition = 9000
 		self.addChild(parallaxFront)
 		parallaxFront.alpha = 0
+		
+		background = SKSpriteNode(color: UIColor.redColor(), size: CGSizeMake(2000, 2000))
+		background.position = CGPointMake(0, 0)
+		background.zPosition = -1000
+		self.addChild(background)
 	}
 	
 	func _addOverlay()

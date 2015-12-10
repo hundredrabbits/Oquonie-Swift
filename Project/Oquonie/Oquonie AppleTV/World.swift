@@ -263,7 +263,7 @@ class World
 		
 		room = Room()
 		room.floors = [ 21,21,21, 21,8,21, 21,21,21 ]
-		room.walls  = [ 20,24,20, 20,28,21 ]
+		room.walls  = [ 20,24,20, 20,24,21 ]
 		room.steps  = [ 0,0,0, 0,0,0 ]
 		room.audio  = .office
 		room.theme  = .white

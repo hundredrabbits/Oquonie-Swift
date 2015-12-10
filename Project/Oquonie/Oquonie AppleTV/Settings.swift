@@ -14,6 +14,7 @@ let dialog = Dialog()
 let audio = Audio()
 let dialogs = Dialogs()
 
+var background:SKSpriteNode!
 var parallaxFront:SKSpriteNode!
 var parallaxBack:SKSpriteNode!
 var overlay:SKSpriteNode!
