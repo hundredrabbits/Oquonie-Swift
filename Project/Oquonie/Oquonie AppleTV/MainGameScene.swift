@@ -94,8 +94,8 @@ class MainGameScene: SKScene
 		self.addChild(parallaxFront)
 		parallaxFront.alpha = 0
 		
-		background = SKSpriteNode(color: UIColor.redColor(), size: CGSizeMake(2000, 2000))
-		background.position = CGPointMake(0, 0)
+		background = SKSpriteNode(color: SKColor.redColor(), size: CGSizeMake(self.frame.size.width, self.frame.size.height))
+		background.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
 		background.zPosition = -1000
 		self.addChild(background)
 	}
