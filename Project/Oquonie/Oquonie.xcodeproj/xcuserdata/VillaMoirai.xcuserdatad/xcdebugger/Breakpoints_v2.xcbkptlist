@@ -17,6 +17,38 @@
             endingLineNumber = "282"
             landmarkName = "fadeTransition(_:to_x:to_y:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Oquonie_iOS.Stage.fadeTransition (Oquonie_iOS.Stage)(Swift.Int, to_x : Swift.Int, to_y : Swift.Int) -&gt; ()"
+                  moduleName = "Oquonie iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/VillaMoirai/Github/Oquonie/Project/Oquonie/Oquonie%20AppleTV/Stage.swift"
+                  timestampString = "471405768.919763"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "282"
+                  endingLineNumber = "282"
+                  offsetFromSymbolStart = "588">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Oquonie_iOS.Stage.(fadeTransition (Oquonie_iOS.Stage) -&gt; (Swift.Int, to_x : Swift.Int, to_y : Swift.Int) -&gt; ()).(closure #1)"
+                  moduleName = "Oquonie iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/VillaMoirai/Github/Oquonie/Project/Oquonie/Oquonie%20AppleTV/Stage.swift"
+                  timestampString = "471405768.920152"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "283"
+                  endingLineNumber = "283"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
