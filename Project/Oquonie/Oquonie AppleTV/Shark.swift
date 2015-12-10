@@ -31,7 +31,7 @@ class Shark : Event
 			spellbook.update()
 		}
 		else {
-			dialog.showModal(dialogs.shark(), eventName: "owl")
+			dialog.showModal(dialogs.shark(), eventName: "shark")
 		}
 	}
 	

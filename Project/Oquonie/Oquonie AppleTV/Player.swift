@@ -27,6 +27,8 @@ class Player : Event
 	{
 		super.init(x:0,y:0)
 		
+		isVisible = true
+		
 		sprite = SKSpriteNode(texture: nil, color: SKColor.clearColor(), size: templates.player)
 		sprite.position = sprite_position
 		addChild(sprite)
@@ -355,6 +357,7 @@ class Player : Event
 			overlay_image.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
 		})
 	}
+	
 	func hideOverlay()
 	{
 		overlay_image.runAction(SKAction.fadeAlphaTo(0, duration: 0.25), completion:{

@@ -63,7 +63,6 @@ class Ramen : Wizard
 		}
 		// In Levels
 		else if isWizard == false && isKnown == false {
-			print("!! \(isKnown)")
 			characterSprite.alpha = 1
 		}
 		refreshSprite()

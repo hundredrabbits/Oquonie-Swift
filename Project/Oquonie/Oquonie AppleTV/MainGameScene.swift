@@ -86,15 +86,17 @@ class MainGameScene: SKScene
 		
 		parallaxBack = SKSpriteNode(texture: textureWithName("parallax.1.png"), color: SKColor.redColor(), size: CGSize(width: parallaxSize, height: parallaxSize))
 		parallaxBack.zPosition = -900
+		parallaxBack.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
 		self.addChild(parallaxBack)
 		parallaxBack.alpha = 0
 		
 		parallaxFront = SKSpriteNode(texture: textureWithName("parallax.2.png"), color: SKColor.redColor(), size: CGSize(width: parallaxSize, height: parallaxSize))
 		parallaxFront.zPosition = 9000
+		parallaxFront.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
 		self.addChild(parallaxFront)
 		parallaxFront.alpha = 0
 		
-		background = SKSpriteNode(color: SKColor.redColor(), size: CGSizeMake(self.frame.size.width, self.frame.size.height))
+		background = SKSpriteNode(color: SKColor(white: 0.9, alpha: 1), size: CGSizeMake(self.frame.size.width, self.frame.size.height))
 		background.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
 		background.zPosition = -1000
 		self.addChild(background)

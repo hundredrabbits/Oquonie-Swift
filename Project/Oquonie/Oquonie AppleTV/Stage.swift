@@ -238,7 +238,6 @@ class Stage : SKNode
 	{
 		for event in events_root.children {
 			let event = event as! Event
-			event.isVisible = false
 			event.remove()
 		}
 	}
