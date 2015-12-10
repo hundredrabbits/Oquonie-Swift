@@ -63,6 +63,7 @@
 		57618A4C1BFBDCB70060E177 /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = 57618A4B1BFBDCB70060E177 /* Todo */; };
 		576570691BF388B100F563B8 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576570671BF388AD00F563B8 /* SKNode.swift */; };
 		5770E39D1C08B41800297E89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770E39C1C08B41800297E89 /* MainViewController.swift */; };
+		57726F561C1926910097FE0D /* dialog.nastazie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57726F551C1926910097FE0D /* dialog.nastazie.wav */; };
 		5773F9E51C0DE4FF00CC1E08 /* Controls_AppleTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */; };
 		579304921BF634E6005583CE /* letter.spell.blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 579304911BF634E6005583CE /* letter.spell.blank.png */; };
 		579304941BF635D0005583CE /* letter.spell.nemedique.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755511BF2D78200638CAE /* letter.spell.nemedique.png */; };
@@ -505,7 +506,7 @@
 		57A8811F1C0D45C800629E84 /* interface.audio.close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAA18A2764500206675 /* interface.audio.close.wav */; };
 		57A881201C0D45C800629E84 /* interface.dialog.close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAD18A2764500206675 /* interface.dialog.close.wav */; };
 		57A881211C0D45C800629E84 /* interface.dialog.open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAE18A2764500206675 /* interface.dialog.open.wav */; };
-		57A881221C0D45C800629E84 /* dialog.cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0375469318A70E5000807397 /* dialog.cat.wav */; };
+		57A881221C0D45C800629E84 /* dialog.catfishbird.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0375469318A70E5000807397 /* dialog.catfishbird.wav */; };
 		57A881231C0D45C800629E84 /* dialog.devine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB518A67C0400BFA21E /* dialog.devine.wav */; };
 		57A881241C0D45C800629E84 /* dialog.noface.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB618A67C0400BFA21E /* dialog.noface.wav */; };
 		57A881251C0D45C800629E84 /* dialog.petunia.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB718A67C0400BFA21E /* dialog.petunia.wav */; };
@@ -1009,7 +1010,7 @@
 		57CB62E71C0CE13E000F045F /* interface.dialog.close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAD18A2764500206675 /* interface.dialog.close.wav */; };
 		57CB62E81C0CE13E000F045F /* interface.dialog.open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAE18A2764500206675 /* interface.dialog.open.wav */; };
 		57CB62E91C0CE13E000F045F /* effect.bump.3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03FE0DAF18A2764500206675 /* effect.bump.3.wav */; };
-		57CB62EB1C0CE811000F045F /* dialog.cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0375469318A70E5000807397 /* dialog.cat.wav */; };
+		57CB62EB1C0CE811000F045F /* dialog.catfishbird.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0375469318A70E5000807397 /* dialog.catfishbird.wav */; };
 		57CB62EC1C0CE811000F045F /* dialog.devine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB518A67C0400BFA21E /* dialog.devine.wav */; };
 		57CB62ED1C0CE811000F045F /* dialog.noface.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB618A67C0400BFA21E /* dialog.noface.wav */; };
 		57CB62EE1C0CE811000F045F /* dialog.petunia.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03DD5BB718A67C0400BFA21E /* dialog.petunia.wav */; };
@@ -1085,7 +1086,7 @@
 		033124D918A327D100388D2F /* dialog.shark.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog.shark.wav; path = en.sounds/dialog.shark.wav; sourceTree = "<group>"; };
 		033124DD18A32DB300388D2F /* effect.teleport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = effect.teleport.wav; path = en.sounds/effect.teleport.wav; sourceTree = "<group>"; };
 		033D9D53188B91ED00B36C93 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		0375469318A70E5000807397 /* dialog.cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog.cat.wav; path = en.sounds/dialog.cat.wav; sourceTree = "<group>"; };
+		0375469318A70E5000807397 /* dialog.catfishbird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog.catfishbird.wav; path = en.sounds/dialog.catfishbird.wav; sourceTree = "<group>"; };
 		03A9D623196D8156005EB95C /* ambient.nastazie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambient.nastazie.mp3; path = en.sounds/ambient.nastazie.mp3; sourceTree = "<group>"; };
 		03BBFAAB178A9E4E00E79C3D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03BBFAAD178A9E4E00E79C3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1562,6 +1563,7 @@
 		57618A4B1BFBDCB70060E177 /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		576570671BF388AD00F563B8 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
 		5770E39C1C08B41800297E89 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		57726F551C1926910097FE0D /* dialog.nastazie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog.nastazie.wav; path = en.sounds/dialog.nastazie.wav; sourceTree = "<group>"; };
 		578BFD871BF0E6D8006DAF1C /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Oquonie AppleTV/Tile.swift"; sourceTree = "<group>"; };
 		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Oquonie AppleTV/Settings.swift"; sourceTree = "<group>"; };
 		579304911BF634E6005583CE /* letter.spell.blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.spell.blank.png; path = en.assets/letter.spell.blank.png; sourceTree = "<group>"; };
@@ -2292,10 +2294,11 @@
 		57CB62D71C0CDF3A000F045F /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
-				0375469318A70E5000807397 /* dialog.cat.wav */,
+				0375469318A70E5000807397 /* dialog.catfishbird.wav */,
 				03DD5BB518A67C0400BFA21E /* dialog.devine.wav */,
 				03DD5BB618A67C0400BFA21E /* dialog.noface.wav */,
 				03DD5BB718A67C0400BFA21E /* dialog.petunia.wav */,
+				57726F551C1926910097FE0D /* dialog.nastazie.wav */,
 				03DD5BB818A67C0400BFA21E /* dialog.rekka.wav */,
 				033124D718A327D100388D2F /* dialog.ghost.wav */,
 				033124D818A327D100388D2F /* dialog.red.wav */,
@@ -2719,6 +2722,7 @@
 				5793053F1BF63FCA005583CE /* event.neomine.1.png in Resources */,
 				579304CC1BF63F2B005583CE /* wall.1.broken.png in Resources */,
 				57CB63011C0CEDBC000F045F /* ambient.endless.mp3 in Resources */,
+				57726F561C1926910097FE0D /* dialog.nastazie.wav in Resources */,
 				579306441BF63FF9005583CE /* char.nephtaline.walk.b.2.png in Resources */,
 				57618A3B1BFBC92A0060E177 /* letter.incorrect.png in Resources */,
 				57CB62F71C0CE811000F045F /* dialog.nemedique.wav in Resources */,
@@ -2747,7 +2751,7 @@
 				579306401BF63FF9005583CE /* char.nephtaline.stand.f.1.png in Resources */,
 				5793056A1BF63FCA005583CE /* event.ramen.absent.png in Resources */,
 				579304E71BF63F5E005583CE /* blocker.15.png in Resources */,
-				57CB62EB1C0CE811000F045F /* dialog.cat.wav in Resources */,
+				57CB62EB1C0CE811000F045F /* dialog.catfishbird.wav in Resources */,
 				579306231BF63FF9005583CE /* char.nastazie.warp.png in Resources */,
 				579304AA1BF63F2B005583CE /* wall.12.png in Resources */,
 				579305D71BF63FCA005583CE /* tile.38.png in Resources */,
@@ -3085,7 +3089,7 @@
 				57A882061C0D45F900629E84 /* blocker.26.png in Resources */,
 				57A881A81C0D45F900629E84 /* letter.spell.document.png in Resources */,
 				57A882661C0D45F900629E84 /* event.photo.3.png in Resources */,
-				57A881221C0D45C800629E84 /* dialog.cat.wav in Resources */,
+				57A881221C0D45C800629E84 /* dialog.catfishbird.wav in Resources */,
 				57A8820E1C0D45F900629E84 /* letter.blank.png in Resources */,
 				57A881F81C0D45F900629E84 /* blocker.12.png in Resources */,
 				57A882E41C0D45F900629E84 /* map.lobby.png in Resources */,
