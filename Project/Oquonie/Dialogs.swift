@@ -10,9 +10,9 @@ class Dialogs
 	{
 	}
 	
-	func castSpell(_ spell:String) -> Array<String>
+	func castSpell(_ spell:String!) -> Array<String>
 	{
-		return ["\(Letter.foe)","\(Letter.unlocked)",spell]
+		return ["\(Letter.foe)","\(Letter.unlocked)",spell!]
 	}
 	
 	func requiresPillar() -> Array<String>
@@ -20,24 +20,24 @@ class Dialogs
 		return ["\(Letter.foe)","\(Letter.locked)","\(Letter.pillar)"]
 	}
 	
-	func doorRequiresPersona(_ persona:String) -> Array<String>
+	func doorRequiresPersona(_ persona:String!) -> Array<String>
 	{
-		return ["\(Letter.door)","\(Letter.locked)",persona]
+		return ["\(Letter.door)","\(Letter.locked)",persona!]
 	}
 	
-	func requiresPersona(_ persona:String) -> Array<String>
+	func requiresPersona(_ persona:String!) -> Array<String>
 	{
-		return ["\(Letter.foe)","\(Letter.locked)",persona]
+		return ["\(Letter.foe)","\(Letter.locked)",persona!]
 	}
 	
-	func alreadyIsPersona(_ spell:String) -> Array<String>
+	func alreadyIsPersona(_ spell:String!) -> Array<String>
 	{
-		return ["\(Letter.friend)","\(Letter.correct)",spell]
+		return ["\(Letter.friend)","\(Letter.correct)",spell!]
 	}
 	
-	func transform(_ persona:String) -> Array<String>
+	func transform(_ persona:String!) -> Array<String>
 	{
-		return ["\(Letter.friend)","\(Letter.outside)",persona]
+		return ["\(Letter.friend)","\(Letter.outside)",persona!]
 	}
 	
 	func confusion() -> Array<String>
@@ -77,8 +77,8 @@ class Dialogs
 	
 	func pillarSocket(_ pillar:Pillar) -> Array<String>
 	{
-		if player.hasPillar(pillar) == true { return ["\(Letter.guide)","\(Letter.unlocked)","\(pillar.persona)"] }
-		else { return ["\(Letter.guide)","\(Letter.locked)","\(pillar.persona)"]  }
+		if player.hasPillar(pillar) == true { return ["\(Letter.guide)","\(Letter.unlocked)","\(pillar.persona!)"] }
+		else { return ["\(Letter.guide)","\(Letter.locked)","\(pillar.persona!)"]  }
 	}
 	
 	func owl() -> Array<String>

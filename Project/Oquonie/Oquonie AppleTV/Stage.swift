@@ -446,7 +446,7 @@ class Stage : SKNode
 	func destroy1(){ floor10.updateSprite(1) ; wall6.updateSprite(26) }
 	func destroy2(){ wall1.updateSprite(15) ; floor11.updateSprite(1) ; step2.updateSprite(0) }
 	func destroy3(){ floor00.updateSprite(4) }
-	func destroy4(){ wall3.updateSprite(19) ; floor1e.updateSprite(5) ; let exit = eventAtLocation(-2, y: 0) as! Door ; exit.remove() }
+	func destroy4(){ wall3.updateSprite(19) ; floor1e.updateSprite(5) ; }
 	func destroy5(){ floor01.updateSprite(5) }
 	func destroy6(){ wall5.updateSprite(26) ; flooree.updateSprite(0) ; let table = eventAtLocation(1, y: -1) as! Blocker ; table.remove() }
 	func destroy7(){ floore0.updateSprite(6) }

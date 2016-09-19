@@ -19,7 +19,7 @@ class Map : Event
 	override func collide()
 	{
 		player.isMoving = false
-		player.showOverlay("map.\(world).png")
+		player.showOverlay("map.\(world!).png")
 		
 		audio.play(.dialog, name: "owl")
 	}

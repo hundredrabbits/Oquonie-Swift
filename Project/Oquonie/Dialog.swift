@@ -57,7 +57,7 @@ class Dialog : SKNode
 		bubble.zPosition = 9000
 	}
 	
-	func showModal(_ letters:Array<String>, eventName:String)
+	func showModal(_ letters:Array<String>, eventName:String!)
 	{
 		var letters = letters
 		if player.persona == Personas.catfishbird && stage.roomId != 14 { letters = dialogs.confusion() } // Fish sees confusion dialogs
@@ -68,7 +68,7 @@ class Dialog : SKNode
 		letter1.texture = textureWithName("letter.\(letters[0]).png")
 		letter2.texture = textureWithName("letter.\(letters[1]).png")
 		letter3.texture = textureWithName("letter.\(letters[2]).png")
-		portrait.texture = textureWithName("event.\(eventName).portrait.png")
+		portrait.texture = textureWithName("event.\(eventName!).portrait.png")
 		
 		let action_fade = SKAction.fadeAlpha(to: 1, duration: 0.25)
 		

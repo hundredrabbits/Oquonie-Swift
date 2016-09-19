@@ -196,5 +196,5 @@ var pillar_nastazie = Pillar(x: 0, y: 0, persona: Personas.nastazie)
 
 var ramen_necomedre = Ramen(x: 1, y: 1)
 var ramen_nephtaline = Ramen(x: 1, y: 1, orientation: .r)
-var ramen_neomine = Ramen(x: -1, y: 1, orientation: .r)
+var ramen_neomine = Ramen(x: -1, y: 1)
 var ramen_nestorine = Ramen(x: 1, y: 1)

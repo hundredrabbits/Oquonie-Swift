@@ -282,14 +282,14 @@ class World
 		room.addEvent(Blocker(x: -1, y: 1, id:16))
 		room.addEvent(Blocker(x: 1, y: -1, id:1))
 		room.addEvent(Boss(x: 1, y: 0, orientation: .r))
-		room.addEvent(Door(x: 0, y: 2, room:31, to_x: 0, to_y:-1))
-		room.addEvent(Door(x: -2, y: 0, room:29, to_x:1, to_y:0))
+//		room.addEvent(Door(x: 0, y: 2, room:31, to_x: 0, to_y:-1))
+//		room.addEvent(Door(x: -2, y: 0, room:29, to_x:1, to_y:0))
 		all[30] = room
 		
 		room = Room()
 		room.floors = [ 4,5,6, 4,5,4, 5,5,6 ]
 		room.walls  = [ 26,26,26, 26,40,15 ]
-		room.steps  = [ 0,0,0, 0,0,0 ]
+		room.steps  = [ 0,3,0, 0,0,0 ]
 		room.audio  = Soundtrack.pillar
 		room.theme  = Theme.black
 		room.addEvent(Red(x: 0, y: 1))
@@ -474,6 +474,7 @@ class World
 		room.theme  = Theme.white
 		room.addEvent(Blocker(x: -1, y: -1, id:7))
 		room.addEvent(Door(x: -2, y: 1, room:46, to_x: 1, to_y:1))
+		room.addEvent(Door(x: 1, y: -2, room:42, to_x: 1, to_y:1))
 //		room.addEvent(Wizard(x: 1, y: -2, spell: catDoorFork))
 		all[45] = room
 		
