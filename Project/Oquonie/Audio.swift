@@ -18,10 +18,10 @@ class Audio : SKNode
 		self.addChild(effects)
 	}
 	
-	func play(_ route:soundType,name:String)
+	func play(_ route:soundType,name:String!)
 	{
 		print("> PLAY - \(route).\(name)")
-		effects.run(SKAction.playSoundFileNamed("\(route).\(name).wav", waitForCompletion: false))
+		effects.run(SKAction.playSoundFileNamed("\(route).\(name!).wav", waitForCompletion: false))
 	}
 	
 	var current:Soundtrack!

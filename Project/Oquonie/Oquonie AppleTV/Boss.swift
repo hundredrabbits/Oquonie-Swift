@@ -8,6 +8,7 @@ import Foundation
 class Boss : Event
 {
 	var dialogSprite:SKSpriteNode!
+	var isComplete:Bool = false
 	
 	init(x:Int,y:Int, orientation:Orientation = Orientation.l)
 	{
@@ -21,12 +22,15 @@ class Boss : Event
 	
 	override func collide()
 	{
+		if isComplete == true { return }
+
 		audio.play(.dialog, name: "noface")
 		
 		dialogSprite.alpha = 0
 		
 		player.transform(.necomedre)
 		stage.destroyTrigger()
+		isComplete = true
 	}
 	
 	func _dialog()

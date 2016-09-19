@@ -29,14 +29,14 @@ class Wizard : Event
 		
 		if requiresPillar == true && player.hasPillar(pillar_nemedique) == false { dialogSprite.texture = textureWithName("test") }
 		else if player.persona == spell { dialogSprite.texture = textureWithName("test") }
-		else if spell != nil { dialogSprite.texture = textureWithName("notification.\(spell).png") }
+		else if spell != nil { dialogSprite.texture = textureWithName("notification.\(spell!).png") }
 		
 		refreshSprite()
 	}
 	
 	func _dialog()
 	{
-		let texture = ( spell != nil ) ? textureWithName("notification.\(spell).png") : nil
+		let texture = ( spell != nil ) ? textureWithName("notification.\(spell!).png") : nil
 		dialogSprite = SKSpriteNode(texture:texture)
 		dialogSprite.size = templates.player
 		dialogSprite.position = CGPoint(x: 0,y: templates.player.height/2)

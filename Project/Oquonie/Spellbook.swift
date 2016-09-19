@@ -60,19 +60,19 @@ class Spellbook : SKNode
 	func update()
 	{
 		spellSlot1.run(SKAction.move(to: CGPoint(x: -(templates.spell.width * 1), y: -10), duration: 0.15), completion: {
-			self.spellSlot1.texture = self.spells.count > 0 ? textureWithName("letter.spell.\(self.spells[0].spell).png") : textureWithName("letter.spell.blank.png")
+			self.spellSlot1.texture = self.spells.count > 0 ? textureWithName("letter.spell.\(self.spells[0].spell!).png") : textureWithName("letter.spell.blank.png")
 			self.spellSlot1.run(SKAction.move(to: CGPoint(x: -(templates.spell.width), y: 0), duration: 0.15))
 			self.spellSlot1.alpha = 0
 			self.spellSlot1.run(SKAction.fadeAlpha(to: 1, duration: 0.15))
 		})
 		spellSlot2.run(SKAction.move(to: CGPoint(x: 0, y: -10), duration: 0.20), completion: {
-			self.spellSlot2.texture = self.spells.count > 1 ? textureWithName("letter.spell.\(self.spells[1].spell).png") : textureWithName("letter.spell.blank.png")
+			self.spellSlot2.texture = self.spells.count > 1 ? textureWithName("letter.spell.\(self.spells[1].spell!).png") : textureWithName("letter.spell.blank.png")
 			self.spellSlot2.run(SKAction.move(to: CGPoint(x: 0, y: 0), duration: 0.20))
 			self.spellSlot2.alpha = 0
 			self.spellSlot2.run(SKAction.fadeAlpha(to: 1, duration: 0.20))
 		})
 		spellSlot3.run(SKAction.move(to: CGPoint(x: (templates.spell.width * 1), y: -10), duration: 0.25), completion: {
-			self.spellSlot3.texture = self.spells.count > 2 ? textureWithName("letter.spell.\(self.spells[2].spell).png") : textureWithName("letter.spell.blank.png")
+			self.spellSlot3.texture = self.spells.count > 2 ? textureWithName("letter.spell.\(self.spells[2].spell!).png") : textureWithName("letter.spell.blank.png")
 			self.spellSlot3.run(SKAction.move(to: CGPoint(x: (templates.spell.width), y: 0), duration: 0.25))
 			self.spellSlot3.alpha = 0
 			self.spellSlot3.run(SKAction.fadeAlpha(to: 1, duration: 0.25))
