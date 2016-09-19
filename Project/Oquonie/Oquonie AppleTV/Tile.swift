@@ -28,7 +28,7 @@ class Tile : SKSpriteNode
 			texture = nil
 		}
 		
-		super.init(texture: texture, color: SKColor.clearColor(), size: size)
+		super.init(texture: texture, color: SKColor.clear, size: size)
 		
 		self.sprite = sprite
 		self.id = id
@@ -38,11 +38,11 @@ class Tile : SKSpriteNode
 		origin = position
 	}
 	
-	func updateSprite(id:Int)
+	func updateSprite(_ id:Int)
 	{
 		self.id = id
 		
-		let imageName = "\(self.sprite).\(self.id).png"
+		let imageName = "\(self.sprite!).\(self.id!).png"
 		
 		var image:UIImage!
 		var texture:SKTexture!
@@ -52,12 +52,12 @@ class Tile : SKSpriteNode
 			texture = SKTexture(image: image!)
 		}
 		else if id > 0 {
-			print("!ERROR - Tile.unknown: \(imageName)")
+			print("!ERROR1 - Tile.unknown: \(imageName)")
 		}
 		self.texture = texture
 	}
 	
-	func updateSpriteWithName(imageName:String)
+	func updateSpriteWithName(_ imageName:String)
 	{
 		var image:UIImage!
 		var texture:SKTexture!
@@ -67,7 +67,7 @@ class Tile : SKSpriteNode
 			texture = SKTexture(image: image!)
 		}
 		else if id > 0 {
-			print("!ERROR - Tile.unknown: \(imageName)")
+			print("!ERROR2 - Tile.unknown: \(imageName)")
 		}
 		
 		self.texture = texture
@@ -79,13 +79,13 @@ class Tile : SKSpriteNode
 		self.alpha = 0
 		self.position = CGPoint(x: position.x, y: position.y - offset)
 		
-		let action_move = SKAction.moveTo(origin, duration: 0.25)
-		let action_fade = SKAction.fadeAlphaTo(1, duration:0.5)
+		let action_move = SKAction.move(to: origin, duration: 0.25)
+		let action_fade = SKAction.fadeAlpha(to: 1, duration:0.5)
 		let action_group = SKAction.group([action_move,action_fade])
 		
-		action_move.timingMode = .EaseInEaseOut
+		action_move.timingMode = .easeInEaseOut
 		
-		self.runAction(action_group)
+		self.run(action_group)
 	}
 	
 	override func onRoomTeleportOut()
@@ -93,18 +93,18 @@ class Tile : SKSpriteNode
 		let offset = randomBetweenNumbers(0, secondNum: templates.floor.height * 0.5)
 		
 		let targetPosition = CGPoint(x: position.x, y: position.y - offset)
-		let action_move = SKAction.moveTo(targetPosition, duration: 3)
-		action_move.timingMode = .EaseIn
+		let action_move = SKAction.move(to: targetPosition, duration: 3)
+		action_move.timingMode = .easeIn
 		
-		self.runAction(action_move, completion: { })
+		self.run(action_move, completion: { })
 	}
 	
 	override func onRoomTeleportIn()
 	{
-		let action_move = SKAction.moveTo(origin, duration: 2)
-		action_move.timingMode = .EaseOut
+		let action_move = SKAction.move(to: origin, duration: 2)
+		action_move.timingMode = .easeOut
 		
-		self.runAction(action_move, completion: { })
+		self.run(action_move, completion: { })
 	}
 
 	required init?(coder aDecoder: NSCoder)

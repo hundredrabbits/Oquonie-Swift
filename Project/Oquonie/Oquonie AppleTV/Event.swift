@@ -16,14 +16,14 @@ class Event : SKNode
 	
 	var isKnown:Bool = false
 	var isVisible:Bool = false
-	var activity:NSTimer!
+	var activity:Timer!
 	var activityFrame:Int = 1
 	
 	init(x:Int,y:Int)
 	{
 		super.init()
 		
-		sprite = SKSpriteNode(texture: nil, color: .clearColor(), size: templates.player)
+		sprite = SKSpriteNode(texture: nil, color: .clear, size: templates.player)
 		addChild(sprite)
 		
 		self.x = x
@@ -47,17 +47,17 @@ class Event : SKNode
 	func startActivity()
 	{
 		if activity != nil { activity.invalidate() }
-		activity = NSTimer.scheduledTimerWithTimeInterval(4.5, target: self, selector: "animateIdle", userInfo: nil, repeats: true)
+		activity = Timer.scheduledTimer(timeInterval: 4.5, target: self, selector: #selector(Event.animateIdle), userInfo: nil, repeats: true)
 	}
 	
 	func animateIdle()
 	{
 		if isVisible == false { return }
-		NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "animateFrame1", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: "animateFrame2", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(0.7, target: self, selector: "animateFrame3", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: "animateFrame2", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(0.9, target: self, selector: "animateFrame1", userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(Event.animateFrame1), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(Event.animateFrame2), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(Event.animateFrame3), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(Event.animateFrame2), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 0.9, target: self, selector: #selector(Event.animateFrame1), userInfo: nil, repeats: false)
 	}
 	
 	func animateFrame1() { }
@@ -67,7 +67,7 @@ class Event : SKNode
 	func bump()
 	{
 		sprite.position = CGPoint(x:0,y:sprite_position.y + 5)
-		sprite.runAction( SKAction.moveToY(sprite_position.y, duration: 0.1) )
+		sprite.run( SKAction.moveTo(y: sprite_position.y, duration: 0.1) )
 	}
 	
 	func refreshSprite()
@@ -75,7 +75,7 @@ class Event : SKNode
 	
 	}
 	
-	func updateSprite(imageName:String!)
+	func updateSprite(_ imageName:String!)
 	{
 		if imageName == nil { sprite.texture = nil ; return }
 		
@@ -87,7 +87,7 @@ class Event : SKNode
 			texture = SKTexture(image: image!)
 		}
 		else{
-			print("!ERROR - Event.unknown: \(imageName)")
+			print("!ERROR - Event.unknown: \(imageName!)")
 		}
 		
 		sprite.texture = texture
@@ -98,7 +98,7 @@ class Event : SKNode
 		player.isMoving = false
 	}
 	
-	func bind(node:Tile)
+	func bind(_ node:Tile)
 	{
 		
 	}

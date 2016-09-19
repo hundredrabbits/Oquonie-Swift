@@ -18,7 +18,7 @@ class Room
 		
 	}
 	
-	func addEvent(event:Event)
+	func addEvent(_ event:Event)
 	{
 		events.append(event)
 	}

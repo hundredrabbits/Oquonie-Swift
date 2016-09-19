@@ -43,12 +43,12 @@ class Wizard : Event
 		addChild(dialogSprite)
 		
 		let verticalPos = (templates.player.height/2)
-		let move_up   = SKAction.moveTo(CGPoint(x: 0,y: verticalPos), duration: 1.5)
-		let move_down = SKAction.moveTo(CGPoint(x: 0,y: verticalPos + 5), duration: 1.5)
+		let move_up   = SKAction.move(to: CGPoint(x: 0,y: verticalPos), duration: 1.5)
+		let move_down = SKAction.move(to: CGPoint(x: 0,y: verticalPos + 5), duration: 1.5)
 		let sequence  = SKAction.sequence([move_up,move_down])
-		let test = SKAction.repeatActionForever(sequence)
+		let test = SKAction.repeatForever(sequence)
 	
-		dialogSprite.runAction(test)
+		dialogSprite.run(test)
 	}
 	
 	override func collide()
@@ -82,10 +82,10 @@ class Wizard : Event
 	func updateDialog()
 	{
 		if player.hasSpell(self) == true {
-			dialogSprite.runAction(SKAction.fadeAlphaTo(0, duration: 0.1))
+			dialogSprite.run(SKAction.fadeAlpha(to: 0, duration: 0.1))
 		}
 		else{
-			dialogSprite.runAction(SKAction.fadeAlphaTo(1, duration: 0.1))
+			dialogSprite.run(SKAction.fadeAlpha(to: 1, duration: 0.1))
 		}
 	}
 	
@@ -95,7 +95,7 @@ class Wizard : Event
 	
 	override func refreshSprite()
 	{
-		updateSprite("event.\(spell).\(activityFrame).png")
+		updateSprite("event.\(spell!).\(activityFrame).png")
 	}
 	
 	required init?(coder aDecoder: NSCoder)

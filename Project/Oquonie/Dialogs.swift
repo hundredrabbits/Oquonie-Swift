@@ -10,7 +10,7 @@ class Dialogs
 	{
 	}
 	
-	func castSpell(spell:String) -> Array<String>
+	func castSpell(_ spell:String) -> Array<String>
 	{
 		return ["\(Letter.foe)","\(Letter.unlocked)",spell]
 	}
@@ -20,22 +20,22 @@ class Dialogs
 		return ["\(Letter.foe)","\(Letter.locked)","\(Letter.pillar)"]
 	}
 	
-	func doorRequiresPersona(persona:String) -> Array<String>
+	func doorRequiresPersona(_ persona:String) -> Array<String>
 	{
 		return ["\(Letter.door)","\(Letter.locked)",persona]
 	}
 	
-	func requiresPersona(persona:String) -> Array<String>
+	func requiresPersona(_ persona:String) -> Array<String>
 	{
 		return ["\(Letter.foe)","\(Letter.locked)",persona]
 	}
 	
-	func alreadyIsPersona(spell:String) -> Array<String>
+	func alreadyIsPersona(_ spell:String) -> Array<String>
 	{
 		return ["\(Letter.friend)","\(Letter.correct)",spell]
 	}
 	
-	func transform(persona:String) -> Array<String>
+	func transform(_ persona:String) -> Array<String>
 	{
 		return ["\(Letter.friend)","\(Letter.outside)",persona]
 	}
@@ -55,7 +55,7 @@ class Dialogs
 		return ["\(Letter.guide)","\(Letter.locked)","\(Letter.help)"]
 	}
 	
-	func music(toggle:Bool) -> Array<String>
+	func music(_ toggle:Bool) -> Array<String>
 	{
 		if toggle == true {
 			return ["\(Letter.guide)","\(Letter.unlocked)","\(Letter.sound)"]
@@ -63,7 +63,7 @@ class Dialogs
 		return ["\(Letter.guide)","\(Letter.locked)","\(Letter.sound)"]
 	}
 	
-	func tree(pillarsCount:Int) -> Array<String>
+	func tree(_ pillarsCount:Int) -> Array<String>
 	{
 		return ["\(Letter.foe)","\(Letter.locked)","\(Letter.pillar)"]
 	}
@@ -75,7 +75,7 @@ class Dialogs
 		return ["\(Letter.friend)","\(Letter.outside)","\(Letter.necomedre)"]
 	}
 	
-	func pillarSocket(pillar:Pillar) -> Array<String>
+	func pillarSocket(_ pillar:Pillar) -> Array<String>
 	{
 		if player.hasPillar(pillar) == true { return ["\(Letter.guide)","\(Letter.unlocked)","\(pillar.persona)"] }
 		else { return ["\(Letter.guide)","\(Letter.locked)","\(pillar.persona)"]  }

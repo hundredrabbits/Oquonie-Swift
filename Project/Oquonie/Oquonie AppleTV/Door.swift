@@ -37,15 +37,15 @@ class Door : Event
 		player.warp(self.destination,to_x:self.to_x,to_y:self.to_y)
 	}
 	
-	override func bind(node:Tile)
+	override func bind(_ node:Tile)
 	{
 		target = node
 		if self.requirement != nil {
 			if requirement == player.persona {
-				target.updateSpriteWithName("wall.gate.\(requirement).open.png")
+				target.updateSpriteWithName("wall.gate.\(requirement!).open.png")
 			}
 			else{
-				target.updateSpriteWithName("wall.gate.\(requirement).close.png")
+				target.updateSpriteWithName("wall.gate.\(requirement!).close.png")
 			}
 		}
 	}
@@ -54,10 +54,10 @@ class Door : Event
 	{
 		if self.requirement != nil {
 			if requirement == player.persona {
-				target.updateSpriteWithName("wall.gate.\(requirement).open.png")
+				target.updateSpriteWithName("wall.gate.\(requirement!).open.png")
 			}
 			else{
-				target.updateSpriteWithName("wall.gate.\(requirement).close.png")
+				target.updateSpriteWithName("wall.gate.\(requirement!).close.png")
 			}
 		}
 	}

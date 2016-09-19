@@ -37,12 +37,12 @@ class Boss : Event
 		addChild(dialogSprite)
 		
 		let verticalPos = (templates.player.height/2)
-		let move_up   = SKAction.moveTo(CGPoint(x: 0,y: verticalPos), duration: 1.5)
-		let move_down = SKAction.moveTo(CGPoint(x: 0,y: verticalPos + 5), duration: 1.5)
+		let move_up   = SKAction.move(to: CGPoint(x: 0,y: verticalPos), duration: 1.5)
+		let move_down = SKAction.move(to: CGPoint(x: 0,y: verticalPos + 5), duration: 1.5)
 		let sequence  = SKAction.sequence([move_up,move_down])
-		let test = SKAction.repeatActionForever(sequence)
+		let test = SKAction.repeatForever(sequence)
 		
-		dialogSprite.runAction(test)
+		dialogSprite.run(test)
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }

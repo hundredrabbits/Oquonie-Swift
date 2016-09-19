@@ -29,11 +29,11 @@ class Player : Event
 		
 		isVisible = true
 		
-		sprite = SKSpriteNode(texture: nil, color: SKColor.clearColor(), size: templates.player)
+		sprite = SKSpriteNode(texture: nil, color: SKColor.clear, size: templates.player)
 		sprite.position = sprite_position
 		addChild(sprite)
 		
-		shadow = SKSpriteNode(texture: textureWithName("char.shadow.png"), color: SKColor.clearColor(), size: templates.player)
+		shadow = SKSpriteNode(texture: textureWithName("char.shadow.png"), color: SKColor.clear, size: templates.player)
 		shadow.position = sprite_position
 		shadow.zPosition = 40
 		addChild(shadow)
@@ -45,7 +45,7 @@ class Player : Event
 	
 	// MARK: Action -
 	
-	func move(x:Int, y:Int)
+	func move(_ x:Int, y:Int)
 	{
 		if isLocked == true { return }
 		if isMoving == true { return }
@@ -58,7 +58,7 @@ class Player : Event
 		startActivity()
 	}
 	
-	func action(x:Int, y:Int)
+	func action(_ x:Int, y:Int)
 	{
 		let destination_x:Int = self.x + x
 		let destination_y:Int = self.y + y
@@ -84,20 +84,20 @@ class Player : Event
 		}
 	}
 	
-	func bump(event:Event)
+	func bump(_ event:Event)
 	{
 		if event.position.x < position.x {
 			sprite.position = CGPoint(x:5,y:sprite_position.y)
-			sprite.runAction( SKAction.moveToX(sprite_position.x, duration: 0.1) )
+			sprite.run( SKAction.moveTo(x: sprite_position.x, duration: 0.1) )
 		}
 		else{
 			sprite.position = CGPoint(x:-5,y:sprite_position.y)
-			sprite.runAction( SKAction.moveToX(sprite_position.x, duration: 0.1) )
+			sprite.run( SKAction.moveTo(x: sprite_position.x, duration: 0.1) )
 		}
 		audio.play(.effect, name: "bump.1")
 	}
 	
-	func walk(destination_x:Int, destination_y:Int)
+	func walk(_ destination_x:Int, destination_y:Int)
 	{
 		isMoving = true
 		self.state = States.walk
@@ -106,9 +106,9 @@ class Player : Event
 		self.y = destination_y
 		print("  MOVE - \(self.x),\(self.y)")
 		
-		let action_move = SKAction.moveTo(stage.positionAt(self.x,y:self.y), duration: 0.3)
-		action_move.timingMode = .EaseInEaseOut
-		player.runAction(action_move, completion: { self.stand() })
+		let action_move = SKAction.move(to: stage.positionAt(self.x,y:self.y), duration: 0.3)
+		action_move.timingMode = .easeInEaseOut
+		player.run(action_move, completion: { self.stand() })
 		stage.parallaxTo(stage.positionAt(self.x,y:self.y).x,y:stage.positionAt(self.x,y:self.y).y)
 		
 		player.zPosition = stage.eventDepthAtPosition(destination_x, y: destination_y)
@@ -135,7 +135,7 @@ class Player : Event
 		isLocked = false
 	}
 	
-	func updateSpriteStyle(x:Int, y:Int)
+	func updateSpriteStyle(_ x:Int, y:Int)
 	{
 		// Direction
 		if x > 0 || y > 0 { direction = Direction.b }
@@ -151,14 +151,14 @@ class Player : Event
 		else{ sprite.xScale = 1.0 }
 	}
 	
-	func updatePosition(x:Int,y:Int)
+	func updatePosition(_ x:Int,y:Int)
 	{
 		self.x = x
 		self.y = y
 		self.position = stage.positionAt(self.x,y:self.y)
 	}
 	
-	func warp(destination:Int,to_x:Int,to_y:Int)
+	func warp(_ destination:Int,to_x:Int,to_y:Int)
 	{
 		player.updatePosition(to_x,y:to_y)
 		stage.enter(destination)
@@ -166,10 +166,10 @@ class Player : Event
 		print("! MOVE - \(destination) -> \(x)/\(y)")
 	}
 	
-	func slowWarpTo(roomId:Int,to_x:Int,to_y:Int)
+	func slowWarpTo(_ roomId:Int,to_x:Int,to_y:Int)
 	{
 		player.lock()
-		sprite.runAction(SKAction.fadeAlphaTo(0, duration: 2),completion:{
+		sprite.run(SKAction.fadeAlpha(to: 0, duration: 2),completion:{
 			stage.fadeTransition(roomId,to_x:to_x,to_y:to_y)
 		})
 		audio.play(.effect, name: "warp")
@@ -202,7 +202,7 @@ class Player : Event
 		sprite.texture = texture
 	}
 	
-	func hasSpell(spell:Wizard) -> Bool
+	func hasSpell(_ spell:Wizard) -> Bool
 	{
 		for _spell in spellbook.spells {
 			if spell == _spell { return true}
@@ -210,7 +210,7 @@ class Player : Event
 		return false
 	}
 	
-	func hasPillar(pillar:Pillar) -> Bool
+	func hasPillar(_ pillar:Pillar) -> Bool
 	{
 		return pillar.isKnown
 	}
@@ -224,36 +224,36 @@ class Player : Event
 	
 	// MARK: Transform -
 	
-	func transform(spell:Personas)
+	func transform(_ spell:Personas)
 	{
 		audio.play(.effect, name: "transform")
 		lock()
 		
-		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height * 0.5), duration: 1)
-		action_levitate.timingMode = .EaseIn
-		let action_levitate_down = SKAction.moveToY(sprite_position.y + (templates.floor.height * 0.4), duration: 1.0)
-		action_levitate_down.timingMode = .EaseIn
-		let action_levitate_up = SKAction.moveToY(sprite_position.y + (templates.floor.height * 0.45), duration: 1.5)
-		action_levitate_up.timingMode = .EaseIn
-		let action_levitate_transform = SKAction.fadeAlphaTo(1, duration: 0.5)
-		action_levitate_transform.timingMode = .EaseInEaseOut
-		let action_levitate_land = SKAction.moveToY(sprite_position.y, duration: 2)
-		action_levitate_land.timingMode = .EaseOut
+		let action_levitate = SKAction.moveTo(y: sprite_position.y + (templates.floor.height * 0.5), duration: 1)
+		action_levitate.timingMode = .easeIn
+		let action_levitate_down = SKAction.moveTo(y: sprite_position.y + (templates.floor.height * 0.4), duration: 1.0)
+		action_levitate_down.timingMode = .easeIn
+		let action_levitate_up = SKAction.moveTo(y: sprite_position.y + (templates.floor.height * 0.45), duration: 1.5)
+		action_levitate_up.timingMode = .easeIn
+		let action_levitate_transform = SKAction.fadeAlpha(to: 1, duration: 0.5)
+		action_levitate_transform.timingMode = .easeInEaseOut
+		let action_levitate_land = SKAction.moveTo(y: sprite_position.y, duration: 2)
+		action_levitate_land.timingMode = .easeOut
 		
 		state = States.warp
 		refreshSprite()
 		
-		sprite.runAction(action_levitate, completion: {
-			self.sprite.runAction(action_levitate_down, completion: {
-				self.sprite.runAction(action_levitate_up, completion: {
+		sprite.run(action_levitate, completion: {
+			self.sprite.run(action_levitate_down, completion: {
+				self.sprite.run(action_levitate_up, completion: {
 					self.persona = spell
 					self.refreshSprite()
 					self.sprite.alpha = 0
 					stage.onPlayerTransformed()
-					self.sprite.runAction(action_levitate_transform, completion: {
+					self.sprite.run(action_levitate_transform, completion: {
 						self.refreshSprite()
 						stage.showFx("fx.1.vertical.png", duration:1)
-						self.sprite.runAction(action_levitate_land, completion: {
+						self.sprite.run(action_levitate_land, completion: {
 							self.state = States.stand
 							self.orientation = Orientation.l
 							self.direction = Direction.f
@@ -268,13 +268,13 @@ class Player : Event
 	
 	// MARK: Teleport -
 	
-	func teleportTrigger(room:Int,to_x:Int,to_y:Int)
+	func teleportTrigger(_ room:Int,to_x:Int,to_y:Int)
 	{
 		teleport_room = room
 		teleport_x = to_x
 		teleport_y = to_y
 		player.lock()
-		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "teleport", userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Player.teleport), userInfo: nil, repeats: false)
 	}
 	
 	func teleport()
@@ -282,8 +282,8 @@ class Player : Event
 		levitate()
 		stage.teleportOut(teleport_room, to_x:teleport_x, to_y:teleport_y)
 		
-		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)
-		action_levitate.timingMode = .EaseOut
+		let action_levitate = SKAction.moveTo(y: sprite_position.y + (templates.floor.height), duration: 4)
+		action_levitate.timingMode = .easeOut
 		
 		state = .warp
 		refreshSprite()
@@ -300,41 +300,41 @@ class Player : Event
 		refreshSprite()
 		sprite.position = CGPoint(x: self.sprite_position.x, y: self.sprite_position.y + (templates.floor.height))
 		
-		let action_land = SKAction.moveToY(self.sprite_position.y, duration: 4)
-		action_land.timingMode = .EaseOut
-		self.sprite.runAction(action_land, completion:{
+		let action_land = SKAction.moveTo(y: self.sprite_position.y, duration: 4)
+		action_land.timingMode = .easeOut
+		self.sprite.run(action_land, completion:{
 			self.state = .stand
 			self.direction = .f
 			self.refreshSprite()
 			player.unlock()
 			audio.play(.effect, name: "bump.2")
 		})
-		self.shadow.runAction(SKAction.fadeAlphaTo(1, duration: 2))
-		self.sprite.runAction(SKAction.fadeAlphaTo(1, duration: 1))
+		self.shadow.run(SKAction.fadeAlpha(to: 1, duration: 2))
+		self.sprite.run(SKAction.fadeAlpha(to: 1, duration: 1))
 	}
 	
 	func levitate()
 	{
-		let action_levitate = SKAction.moveToY(sprite_position.y + (templates.floor.height), duration: 4)
-		action_levitate.timingMode = .EaseIn
+		let action_levitate = SKAction.moveTo(y: sprite_position.y + (templates.floor.height), duration: 4)
+		action_levitate.timingMode = .easeIn
 		state = .warp
 		refreshSprite()
-		self.sprite.runAction(action_levitate)
+		self.sprite.run(action_levitate)
 		
-		self.shadow.runAction(SKAction.fadeAlphaTo(0, duration: 2))
+		self.shadow.run(SKAction.fadeAlpha(to: 0, duration: 2))
 	}
 	
 	func land()
 	{
-		let action_land = SKAction.moveToY(self.sprite_position.y, duration: 4)
-		action_land.timingMode = .EaseOut
-		self.sprite.runAction(action_land, completion:{
+		let action_land = SKAction.moveTo(y: self.sprite_position.y, duration: 4)
+		action_land.timingMode = .easeOut
+		self.sprite.run(action_land, completion:{
 			self.state = .stand
 			self.direction = .f
 			self.refreshSprite()
 			player.unlock()
 		})
-		self.shadow.runAction(SKAction.fadeAlphaTo(1, duration: 2))
+		self.shadow.run(SKAction.fadeAlpha(to: 1, duration: 2))
 	}
 	
 	override func animateFrame1() { activityFrame = 1 ; refreshSprite() }
@@ -343,7 +343,7 @@ class Player : Event
 	
 	// MARK: Overlay -
 	
-	func showOverlay(textureName:String)
+	func showOverlay(_ textureName:String)
 	{
 		hasOverlay = true
 		overlay.alpha = 0
@@ -351,15 +351,15 @@ class Player : Event
 		
 		overlay_image.texture = textureWithName(textureName)
 		
-		overlay.runAction(SKAction.fadeAlphaTo(1, duration: 0.25), completion:{
-			overlay_image.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
+		overlay.run(SKAction.fadeAlpha(to: 1, duration: 0.25), completion:{
+			overlay_image.run(SKAction.fadeAlpha(to: 1, duration: 0.25))
 		})
 	}
 	
 	func hideOverlay()
 	{
-		overlay_image.runAction(SKAction.fadeAlphaTo(0, duration: 0.25), completion:{
-			overlay.runAction(SKAction.fadeAlphaTo(0, duration: 0.25), completion:{
+		overlay_image.run(SKAction.fadeAlpha(to: 0, duration: 0.25), completion:{
+			overlay.run(SKAction.fadeAlpha(to: 0, duration: 0.25), completion:{
 				self.hasOverlay = false
 			})
 		})

@@ -5,8 +5,8 @@
 import Foundation
 import SpriteKit
 
-let black = SKColor.blackColor()
-let white = SKColor.whiteColor()
+let black = SKColor.black
+let white = SKColor.white
 
 let rabbitSize:CGFloat = 15
 
@@ -39,10 +39,10 @@ class Rabbit : SKNode
 		var test_x = 0
 		var test_y = 0
 		
-		if direction == Direction.Right { test_x = 1  }
-		if direction == Direction.Left  { test_x = -1 }
-		if direction == Direction.Up    { test_y = 1  }
-		if direction == Direction.Down  { test_y = -1 }
+		if direction == Direction.right { test_x = 1  }
+		if direction == Direction.left  { test_x = -1 }
+		if direction == Direction.up    { test_y = 1  }
+		if direction == Direction.down  { test_y = -1 }
 		
 		var canMove:Bool = true
 		
@@ -63,35 +63,35 @@ class Rabbit : SKNode
 	func sneak()
 	{
 		if moves.count < 1 { return }
-		let action_move = SKAction.moveTo(moves.last!, duration: 0.45)
-		action_move.timingMode = .EaseInEaseOut
-		runAction(action_move)
+		let action_move = SKAction.move(to: moves.last!, duration: 0.45)
+		action_move.timingMode = .easeInEaseOut
+		run(action_move)
 		
 		moves.removeLast()
 	}
 	
-	func appear(rank:Int)
+	func appear(_ rank:Int)
 	{
-		let action_scale0 = SKAction.scaleTo(0, duration: 0)
-		let action_wait = SKAction.waitForDuration(0.03 * Double(rank))
-		let action_scale1 = SKAction.scaleTo(1, duration: 0.5)
+		let action_scale0 = SKAction.scale(to: 0, duration: 0)
+		let action_wait = SKAction.wait(forDuration: 0.03 * Double(rank))
+		let action_scale1 = SKAction.scale(to: 1, duration: 0.5)
 		
 		let sequence = SKAction.sequence([action_scale0, action_wait, action_scale1])
-		self.sprite.runAction(sequence)
+		self.sprite.run(sequence)
 	}
 	
 	// MARK: Tools -
 
 	enum Direction: UInt32
 	{
-		case Up
-		case Down
-		case Left
-		case Right
+		case up
+		case down
+		case left
+		case right
 		
 		static func random() -> Direction
 		{
-			let rand = arc4random_uniform(Right.rawValue+1)
+			let rand = arc4random_uniform(right.rawValue+1)
 			return Direction(rawValue: rand)!
 		}
 	}

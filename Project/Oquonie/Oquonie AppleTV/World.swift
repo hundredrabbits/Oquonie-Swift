@@ -6,7 +6,7 @@ import Foundation
 
 class World
 {
-	var all:Array<Room!>!
+	var all:Array<Room?>!
 	
 	init()
 	{
@@ -1006,7 +1006,7 @@ class World
 		room.steps  = [ 0,0,0, 0,7,0 ]
 		room.audio  = Soundtrack.nemedique
 		room.theme  = Theme.white
-		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.nestorine, orientation: .r, requiresPillar:true))
+		room.addEvent(Wizard(x: -1, y: 1, spell: Personas.nestorine, requiresPillar:true, orientation: .r))
 		room.addEvent(DoorRed(x: 0, y: 2, room:104, to_x: 0, to_y:-1))
 		room.addEvent(Door(x: 2, y: 0, room:101, to_x: -1, to_y:0))
 		room.addEvent(Door(x: 0, y: -2, requirement: Personas.nemedique, room:9, to_x:0, to_y:1))

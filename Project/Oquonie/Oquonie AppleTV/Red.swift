@@ -20,7 +20,7 @@ class Red : Event
 	{
 		if isSeen == true { return }
 		player.lock()
-		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "disapear", userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Red.disapear), userInfo: nil, repeats: false)
 		
 	}
 	
@@ -31,13 +31,13 @@ class Red : Event
 	
 	func disapear()
 	{
-		let action_move = SKAction.moveToY(sprite.position.y + (templates.floor.height * 0.5), duration: 3)
-		let action_fade = SKAction.fadeAlphaTo(0, duration: 3)
+		let action_move = SKAction.moveTo(y: sprite.position.y + (templates.floor.height * 0.5), duration: 3)
+		let action_fade = SKAction.fadeAlpha(to: 0, duration: 3)
 		let action_group = SKAction.group([action_move,action_fade])
 		
-		action_move.timingMode = .EaseInEaseOut
+		action_move.timingMode = .easeInEaseOut
 		
-		sprite.runAction(action_group, completion:{ self.isSeen = true ; if stage.roomId != 30 { player.unlock() } })
+		sprite.run(action_group, completion:{ self.isSeen = true ; if stage.roomId != 30 { player.unlock() } })
 		
 		stage.showFx("fx.1.vertical.png",duration:2)
 		audio.play(.effect, name: "transform")

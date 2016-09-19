@@ -135,7 +135,7 @@ class Stage : SKNode
 		events_root.zPosition = 900
 	}
 	
-	func enter(roomId:Int)
+	func enter(_ roomId:Int)
 	{
 		print("! WARP - \(roomId)")
 		
@@ -172,35 +172,35 @@ class Stage : SKNode
 		applyTheme(room.theme)
 		audio.play_ambient(room.audio)
 		
-		parallaxFront.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame)), duration: 0.2))
-		parallaxBack.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(self.frame),y: CGRectGetMidY(self.frame)), duration: 0.2))
-		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 1))
-		parallaxBack.runAction(SKAction.fadeAlphaTo(1, duration: 1))
+		parallaxFront.run(SKAction.move(to: CGPoint(x: self.frame.midX,y: self.frame.midY), duration: 0.2))
+		parallaxBack.run(SKAction.move(to: CGPoint(x: self.frame.midX,y: self.frame.midY), duration: 0.2))
+		parallaxFront.run(SKAction.fadeAlpha(to: 1, duration: 1))
+		parallaxBack.run(SKAction.fadeAlpha(to: 1, duration: 1))
 	}
 	
-	func applyTheme(newTheme:Theme)
+	func applyTheme(_ newTheme:Theme)
 	{
 		if self.theme == newTheme { return }
 		
 		print("!THEME - \(newTheme), from \(self.theme)")
 		
 		if player.isCompleted == true && stage.roomId < 15 {
-			background.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			background.run(SKAction.colorize(with: SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.3.png")
 			parallaxBack.texture = textureWithName("parallax.4.png")
 		}
 		else if newTheme == Theme.white {
-			background.runAction(SKAction.colorizeWithColor(SKColor(white: 0.9, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			background.run(SKAction.colorize(with: SKColor(white: 0.9, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.2.png")
 			parallaxBack.texture = textureWithName("parallax.1.png")
 		}
 		else if newTheme == Theme.black {
-			background.runAction(SKAction.colorizeWithColor(SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			background.run(SKAction.colorize(with: SKColor(white: 0.1, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.3.png")
 			parallaxBack.texture = textureWithName("parallax.4.png")
 		}
 		else if newTheme == Theme.pillar {
-			background.runAction(SKAction.colorizeWithColor(SKColor(white: 0.7, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
+			background.run(SKAction.colorize(with: SKColor(white: 0.7, alpha: 1), colorBlendFactor: 1.0, duration: 1.0))
 			parallaxFront.texture = textureWithName("parallax.6.png")
 			parallaxBack.texture = textureWithName("parallax.7.png")
 		}
@@ -242,7 +242,7 @@ class Stage : SKNode
 		}
 	}
 	
-	func addEvent(event:Event)
+	func addEvent(_ event:Event)
 	{
 		event.isVisible = true
 		event.zPosition = eventDepthAtPosition(event.x,y:event.y)
@@ -256,38 +256,38 @@ class Stage : SKNode
 		}
 	}
 	
-	func showFx(spriteName:String, duration:Double)
+	func showFx(_ spriteName:String, duration:Double)
 	{
 		fx.alpha = 1
 		fx.texture = textureWithName(spriteName)
-		fx.runAction(SKAction.fadeAlphaTo(0, duration: duration))
+		fx.run(SKAction.fadeAlpha(to: 0, duration: duration))
 	}
 	
-	func parallaxTo(x:CGFloat, y:CGFloat)
+	func parallaxTo(_ x:CGFloat, y:CGFloat)
 	{
 		let pos_x = templates.stage.x + (x * 0.03)
 		let pos_y = templates.stage.y + (y * 0.03)
-		self.runAction(SKAction.moveTo(CGPoint(x:pos_x,y:pos_y), duration: 0.25), completion: { })
+		self.run(SKAction.move(to: CGPoint(x:pos_x,y:pos_y), duration: 0.25), completion: { })
 		
-		parallaxFront.runAction(SKAction.moveTo(CGPoint(x:templates.stage.x + (x * 0.2),y:CGRectGetMidY(gameScene.frame) + (y * 0.2)), duration: 0.25), completion: { })
-		parallaxBack.runAction(SKAction.moveTo(CGPoint(x:templates.stage.x + (x * 0.05),y:CGRectGetMidY(gameScene.frame) + (y * 0.05)), duration: 0.25), completion: { })
+		parallaxFront.run(SKAction.move(to: CGPoint(x:templates.stage.x + (x * 0.2),y:gameScene.frame.midY + (y * 0.2)), duration: 0.25), completion: { })
+		parallaxBack.run(SKAction.move(to: CGPoint(x:templates.stage.x + (x * 0.05),y:gameScene.frame.midY + (y * 0.05)), duration: 0.25), completion: { })
 		
-		parallaxBack.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
-		parallaxFront.runAction(SKAction.fadeAlphaTo(1, duration: 0.25))
+		parallaxBack.run(SKAction.fadeAlpha(to: 1, duration: 0.25))
+		parallaxFront.run(SKAction.fadeAlpha(to: 1, duration: 0.25))
 	}
 	
-	func fadeTransition(room:Int, to_x:Int, to_y:Int)
+	func fadeTransition(_ room:Int, to_x:Int, to_y:Int)
 	{
-		self.runAction(SKAction.moveToY(templates.stage.y + (templates.floor.height * 0.2), duration: 2))
-		self.runAction(SKAction.fadeAlphaTo(0, duration: 2),completion:{
+		self.run(SKAction.moveTo(y: templates.stage.y + (templates.floor.height * 0.2), duration: 2))
+		self.run(SKAction.fadeAlpha(to: 0, duration: 2),completion:{
 			self.teleportDestination(room)
 			player.x = to_x
 			player.y = to_y
 			player.position = stage.positionAt(to_x,y:to_y)
 			self.applyTheme(self.room.theme)
-			self.runAction(SKAction.fadeAlphaTo(1, duration: 2),completion:{})
-			self.runAction(SKAction.moveToY(templates.stage.y, duration: 3), completion:{
-				player.sprite.runAction(SKAction.fadeAlphaTo(1, duration: 8), completion:{
+			self.run(SKAction.fadeAlpha(to: 1, duration: 2),completion:{})
+			self.run(SKAction.moveTo(y: templates.stage.y, duration: 3), completion:{
+				player.sprite.run(SKAction.fadeAlpha(to: 1, duration: 8), completion:{
 					player.unlock()
 				})
 			})
@@ -296,22 +296,22 @@ class Stage : SKNode
 	
 	// MARK: Teleport -
 	
-	func teleportOut(room:Int, to_x:Int, to_y:Int)
+	func teleportOut(_ room:Int, to_x:Int, to_y:Int)
 	{
 		// Dislocate tiles
 		for node in room_root.children {
 			node.onRoomTeleportOut()
 		}
 		
-		let action_move = SKAction.moveToY(CGRectGetMidY(gameScene.frame) - gameScene.frame.height, duration: 3)
-		action_move.timingMode = .EaseIn
+		let action_move = SKAction.moveTo(y: gameScene.frame.midY - gameScene.frame.height, duration: 3)
+		action_move.timingMode = .easeIn
 		
-		parallaxFront.runAction(action_move)
-		parallaxBack.runAction(action_move)
-		parallaxFront.runAction(SKAction.fadeAlphaTo(0, duration: 1))
-		parallaxBack.runAction(SKAction.fadeAlphaTo(0, duration: 1))
+		parallaxFront.run(action_move)
+		parallaxBack.run(action_move)
+		parallaxFront.run(SKAction.fadeAlpha(to: 0, duration: 1))
+		parallaxBack.run(SKAction.fadeAlpha(to: 0, duration: 1))
 		
-		self.runAction(action_move, completion: {
+		self.run(action_move, completion: {
 			
 			self.teleportDestination(room)
 			player.orientation = .r
@@ -323,15 +323,15 @@ class Stage : SKNode
 				node.onRoomTeleportIn()
 			}
 			self.position = CGPoint(x: templates.stage.x, y: templates.stage.y * 3)
-			let action_move = SKAction.moveToY(templates.stage.y, duration: 3)
-			action_move.timingMode = .EaseOut
-			self.runAction(action_move)
+			let action_move = SKAction.moveTo(y: templates.stage.y, duration: 3)
+			action_move.timingMode = .easeOut
+			self.run(action_move)
 			player.land()
 			self.applyTheme(self.room.theme)
 		})
 	}
 	
-	func teleportDestination(room:Int)
+	func teleportDestination(_ room:Int)
 	{
 		self.room = world.all[room]
 		self.updateTiles()
@@ -363,7 +363,7 @@ class Stage : SKNode
 	
 	// MARK: Tools -
 	
-	func eventDepthAtPosition(x:Int,y:Int) -> CGFloat
+	func eventDepthAtPosition(_ x:Int,y:Int) -> CGFloat
 	{
 		var newDepth:CGFloat = 0
 		
@@ -379,7 +379,7 @@ class Stage : SKNode
 		return newDepth
 	}
 	
-	func eventAtLocation(x:Int,y:Int) -> Event!
+	func eventAtLocation(_ x:Int,y:Int) -> Event!
 	{
 		for event in events_root.children {
 			let event = event as! Event
@@ -389,7 +389,7 @@ class Stage : SKNode
 		return nil
 	}
 	
-	func tileAtLocation(x:Int,y:Int) -> Tile!
+	func tileAtLocation(_ x:Int,y:Int) -> Tile!
 	{
 		if x == 1 && y == 1 { return floor11 }
 		if x == 0 && y == 1 { return floor01 }
@@ -403,7 +403,7 @@ class Stage : SKNode
 		return nil
 	}
 
-	func positionAt(x:Int,y:Int) -> CGPoint
+	func positionAt(_ x:Int,y:Int) -> CGPoint
 	{
 		let offset:CGFloat = 0.7
 		if x == 1 && y == 1 { return CGPoint(x: 0, y: templates.floor.height * offset) }
@@ -422,7 +422,7 @@ class Stage : SKNode
 	
 	func destroyTrigger()
 	{
-		NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "destroy", userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(Stage.destroy), userInfo: nil, repeats: false)
 	}
 	
 	func destroy()
@@ -430,17 +430,17 @@ class Stage : SKNode
 		player.lock()
 		
 		shake()
-		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "destroy1", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "destroy2", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "destroy3", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(3.5, target: self, selector: "destroy4", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "destroy5", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(4.5, target: self, selector: "destroy6", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "destroy7", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(5.25, target: self, selector: "destroy8", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(5.5, target: self, selector: "destroy9", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "destroy10", userInfo: nil, repeats: false)
-		NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: "destroyEnd", userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Stage.destroy1), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(Stage.destroy2), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(Stage.destroy3), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 3.5, target: self, selector: #selector(Stage.destroy4), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(Stage.destroy5), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 4.5, target: self, selector: #selector(Stage.destroy6), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(Stage.destroy7), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 5.25, target: self, selector: #selector(Stage.destroy8), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 5.5, target: self, selector: #selector(Stage.destroy9), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(Stage.destroy10), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 7, target: self, selector: #selector(Stage.destroyEnd), userInfo: nil, repeats: false)
 	}
 	
 	func destroy1(){ floor10.updateSprite(1) ; wall6.updateSprite(26) }
@@ -462,7 +462,7 @@ class Stage : SKNode
 		let red = Red(x: 1, y: 0)
 		addEvent(red)
 		red.disapear()
-		NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "destroyTeleport", userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Stage.destroyTeleport), userInfo: nil, repeats: false)
 	}
 	
 	func destroyTeleport()
@@ -471,7 +471,7 @@ class Stage : SKNode
 	}
 	
 	var shakeStrenght:CGFloat = 0.1
-	var shakeTimer:NSTimer!
+	var shakeTimer:Timer!
 	
 	func shake()
 	{
@@ -482,7 +482,7 @@ class Stage : SKNode
 		
 		stage.position = CGPoint(x:templates.stage.x + rand1 - (2 * rand1),y:templates.stage.y + rand2 - (2 * rand2))
 		
-		shakeTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "shake", userInfo: nil, repeats: false)
+		shakeTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(Stage.shake), userInfo: nil, repeats: false)
 	}
 	
 	required init?(coder aDecoder: NSCoder)

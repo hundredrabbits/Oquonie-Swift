@@ -18,15 +18,15 @@ class Audio : SKNode
 		self.addChild(effects)
 	}
 	
-	func play(route:soundType,name:String)
+	func play(_ route:soundType,name:String)
 	{
 		print("> PLAY - \(route).\(name)")
-		effects.runAction(SKAction.playSoundFileNamed("\(route).\(name).wav", waitForCompletion: false))
+		effects.run(SKAction.playSoundFileNamed("\(route).\(name).wav", waitForCompletion: false))
 	}
 	
 	var current:Soundtrack!
 	
-	func play_ambient(sound:Soundtrack)
+	func play_ambient(_ sound:Soundtrack)
 	{
 		print(" AUDIO - Ambient: \(sound)")
 		var soundName = "\(sound)"
@@ -39,9 +39,9 @@ class Audio : SKNode
 			else { soundName = "lobby.1"}
 		}
 		
-		let coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ambient.\(soundName)", ofType: "mp3")!)
+		let coinSound = URL(fileURLWithPath: Bundle.main.path(forResource: "ambient.\(soundName)", ofType: "mp3")!)
 		do{
-			ambient = try AVAudioPlayer(contentsOfURL:coinSound)
+			ambient = try AVAudioPlayer(contentsOf:coinSound)
 			ambient.prepareToPlay()
 			ambient.play()
 			ambient.numberOfLoops = -1

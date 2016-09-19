@@ -58,24 +58,24 @@ func saveGame()
 {
 	print("! GAME - Saving..")
 	
-	let storage = NSUserDefaults.standardUserDefaults()
+	let storage = UserDefaults.standard
 	
-	storage.setObject(pillar_necomedre.isKnown, forKey: "pillar_necomedre")
-	storage.setObject(pillar_nephtaline.isKnown, forKey: "pillar_nephtaline")
-	storage.setObject(pillar_neomine.isKnown, forKey: "pillar_neomine")
-	storage.setObject(pillar_nestorine.isKnown, forKey: "pillar_nestorine")
-	storage.setObject(pillar_nemedique.isKnown, forKey: "pillar_nemedique")
-	storage.setObject(pillar_nastazie.isKnown, forKey: "pillar_nastazie")
+	storage.set(pillar_necomedre.isKnown, forKey: "pillar_necomedre")
+	storage.set(pillar_nephtaline.isKnown, forKey: "pillar_nephtaline")
+	storage.set(pillar_neomine.isKnown, forKey: "pillar_neomine")
+	storage.set(pillar_nestorine.isKnown, forKey: "pillar_nestorine")
+	storage.set(pillar_nemedique.isKnown, forKey: "pillar_nemedique")
+	storage.set(pillar_nastazie.isKnown, forKey: "pillar_nastazie")
 	
-	storage.setObject(ramen_necomedre.isKnown, forKey: "ramen_necomedre")
-	storage.setObject(ramen_nephtaline.isKnown, forKey: "ramen_nephtaline")
-	storage.setObject(ramen_neomine.isKnown, forKey: "ramen_neomine")
-	storage.setObject(ramen_nestorine.isKnown, forKey: "ramen_nestorine")
+	storage.set(ramen_necomedre.isKnown, forKey: "ramen_necomedre")
+	storage.set(ramen_nephtaline.isKnown, forKey: "ramen_nephtaline")
+	storage.set(ramen_neomine.isKnown, forKey: "ramen_neomine")
+	storage.set(ramen_nestorine.isKnown, forKey: "ramen_nestorine")
 	
-	storage.setObject("\(player.persona)", forKey: "persona")
-	storage.setObject(player.isCompleted, forKey: "completed")
-	storage.setObject(stage.roomId, forKey: "room")
-	storage.setObject(player.isListening, forKey: "listening")
+	storage.set("\(player.persona)", forKey: "persona")
+	storage.set(player.isCompleted, forKey: "completed")
+	storage.set(stage.roomId, forKey: "room")
+	storage.set(player.isListening, forKey: "listening")
 	
 	print("!!! Save \(player.persona)")
 	
@@ -88,61 +88,61 @@ func loadGame() -> Int
 {
 	print("! GAME - Loading..")
 	
-	let storage = NSUserDefaults.standardUserDefaults()
+	let storage = UserDefaults.standard
 	
 	if integrity() == false { return newGame() }
 	
-	pillar_necomedre.isKnown = storage.valueForKey("pillar_necomedre") as! Bool
-	pillar_nephtaline.isKnown = storage.valueForKey("pillar_nephtaline") as! Bool
-	pillar_neomine.isKnown = storage.valueForKey("pillar_neomine") as! Bool
-	pillar_nestorine.isKnown = storage.valueForKey("pillar_nestorine") as! Bool
-	pillar_nemedique.isKnown = storage.valueForKey("pillar_nemedique") as! Bool
-	pillar_nastazie.isKnown = storage.valueForKey("pillar_nastazie") as! Bool
+	pillar_necomedre.isKnown = storage.value(forKey: "pillar_necomedre") as! Bool
+	pillar_nephtaline.isKnown = storage.value(forKey: "pillar_nephtaline") as! Bool
+	pillar_neomine.isKnown = storage.value(forKey: "pillar_neomine") as! Bool
+	pillar_nestorine.isKnown = storage.value(forKey: "pillar_nestorine") as! Bool
+	pillar_nemedique.isKnown = storage.value(forKey: "pillar_nemedique") as! Bool
+	pillar_nastazie.isKnown = storage.value(forKey: "pillar_nastazie") as! Bool
 	
-	ramen_necomedre.isKnown = storage.valueForKey("ramen_necomedre") as! Bool
-	ramen_nephtaline.isKnown = storage.valueForKey("ramen_nephtaline") as! Bool
-	ramen_neomine.isKnown = storage.valueForKey("ramen_neomine") as! Bool
-	ramen_nestorine.isKnown = storage.valueForKey("ramen_nestorine") as! Bool
+	ramen_necomedre.isKnown = storage.value(forKey: "ramen_necomedre") as! Bool
+	ramen_nephtaline.isKnown = storage.value(forKey: "ramen_nephtaline") as! Bool
+	ramen_neomine.isKnown = storage.value(forKey: "ramen_neomine") as! Bool
+	ramen_nestorine.isKnown = storage.value(forKey: "ramen_nestorine") as! Bool
 	
-	if "\(storage.valueForKey("persona")!)" == "\(Personas.necomedre)" { player.persona = Personas.necomedre }
-	else if "\(storage.valueForKey("persona")!)" == "\(Personas.nephtaline)" { player.persona = Personas.nephtaline }
-	else if "\(storage.valueForKey("persona")!)" == "\(Personas.neomine)" { player.persona = Personas.neomine }
-	else if "\(storage.valueForKey("persona")!)" == "\(Personas.nestorine)" { player.persona = Personas.nestorine }
-	else if "\(storage.valueForKey("persona")!)" == "\(Personas.nemedique)" { player.persona = Personas.nemedique }
-	else if "\(storage.valueForKey("persona")!)" == "\(Personas.catfishbird)" { player.persona = Personas.catfishbird }
-	else if "\(storage.valueForKey("persona")!)" == "\(Personas.nastazie)" { player.persona = Personas.nastazie }
+	if "\(storage.value(forKey: "persona")!)" == "\(Personas.necomedre)" { player.persona = Personas.necomedre }
+	else if "\(storage.value(forKey: "persona")!)" == "\(Personas.nephtaline)" { player.persona = Personas.nephtaline }
+	else if "\(storage.value(forKey: "persona")!)" == "\(Personas.neomine)" { player.persona = Personas.neomine }
+	else if "\(storage.value(forKey: "persona")!)" == "\(Personas.nestorine)" { player.persona = Personas.nestorine }
+	else if "\(storage.value(forKey: "persona")!)" == "\(Personas.nemedique)" { player.persona = Personas.nemedique }
+	else if "\(storage.value(forKey: "persona")!)" == "\(Personas.catfishbird)" { player.persona = Personas.catfishbird }
+	else if "\(storage.value(forKey: "persona")!)" == "\(Personas.nastazie)" { player.persona = Personas.nastazie }
 	
-	print("!!! Load \(storage.valueForKey("persona")) -> \(player.persona)")
+	print("!!! Load \(storage.value(forKey: "persona")) -> \(player.persona)")
 	
-	player.isCompleted = storage.valueForKey("completed") as! Bool
-	player.isListening = storage.valueForKey("listening") as! Bool
+	player.isCompleted = storage.value(forKey: "completed") as! Bool
+	player.isListening = storage.value(forKey: "listening") as! Bool
 	
 	print("! GAME - Loaded.")
 	
-	return storage.valueForKey("room") as! Int
+	return storage.value(forKey: "room") as! Int
 }
 
 func integrity() -> Bool
 {
 	print("! GAME - Verfifying Save Integrity..")
 	
-	let storage = NSUserDefaults.standardUserDefaults()
+	let storage = UserDefaults.standard
 	
-	if storage.valueForKey("pillar_necomedre") == nil { print("X GAME - Missing pillar_necomedre") ; return false }
-	if storage.valueForKey("pillar_nephtaline") == nil { print("X GAME - Missing pillar_nephtaline") ; return false }
-	if storage.valueForKey("pillar_neomine") == nil { print("X GAME - Missing pillar_neomine") ; return false }
-	if storage.valueForKey("pillar_nestorine") == nil { print("X GAME - Missing pillar_nestorine") ; return false }
-	if storage.valueForKey("pillar_nemedique") == nil { print("X GAME - Missing pillar_nemedique") ; return false }
-	if storage.valueForKey("pillar_nastazie") == nil { print("X GAME - Missing pillar_nastazie") ; return false }
+	if storage.value(forKey: "pillar_necomedre") == nil { print("X GAME - Missing pillar_necomedre") ; return false }
+	if storage.value(forKey: "pillar_nephtaline") == nil { print("X GAME - Missing pillar_nephtaline") ; return false }
+	if storage.value(forKey: "pillar_neomine") == nil { print("X GAME - Missing pillar_neomine") ; return false }
+	if storage.value(forKey: "pillar_nestorine") == nil { print("X GAME - Missing pillar_nestorine") ; return false }
+	if storage.value(forKey: "pillar_nemedique") == nil { print("X GAME - Missing pillar_nemedique") ; return false }
+	if storage.value(forKey: "pillar_nastazie") == nil { print("X GAME - Missing pillar_nastazie") ; return false }
 	
-	if storage.valueForKey("ramen_necomedre") == nil { print("X GAME - Missing ramen_necomedre") ; return false }
-	if storage.valueForKey("ramen_nephtaline") == nil { print("X GAME - Missing ramen_nephtaline") ; return false }
-	if storage.valueForKey("ramen_neomine") == nil { print("X GAME - Missing ramen_neomine") ; return false }
-	if storage.valueForKey("ramen_nestorine") == nil { print("X GAME - Missing ramen_nestorine") ; return false }
+	if storage.value(forKey: "ramen_necomedre") == nil { print("X GAME - Missing ramen_necomedre") ; return false }
+	if storage.value(forKey: "ramen_nephtaline") == nil { print("X GAME - Missing ramen_nephtaline") ; return false }
+	if storage.value(forKey: "ramen_neomine") == nil { print("X GAME - Missing ramen_neomine") ; return false }
+	if storage.value(forKey: "ramen_nestorine") == nil { print("X GAME - Missing ramen_nestorine") ; return false }
 	
-	if storage.valueForKey("persona") == nil { print("X GAME - Missing persona") ; return false }
-	if storage.valueForKey("completed") == nil { print("X GAME - Missing completed") ; return false }
-	if storage.valueForKey("listening") == nil { print("X GAME - Missing listening") ; return false }
+	if storage.value(forKey: "persona") == nil { print("X GAME - Missing persona") ; return false }
+	if storage.value(forKey: "completed") == nil { print("X GAME - Missing completed") ; return false }
+	if storage.value(forKey: "listening") == nil { print("X GAME - Missing listening") ; return false }
 	
 	print("! GAME - Integrity Passed.")
 	

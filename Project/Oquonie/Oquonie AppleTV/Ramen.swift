@@ -8,7 +8,7 @@ import Foundation
 class Ramen : Wizard
 {
 	var isWizard:Bool = false
-	var characterSprite = SKSpriteNode(texture: textureWithName("event.ramen.1.png"), color: SKColor.redColor(), size: CGSize(width: 0,height: 0))
+	var characterSprite = SKSpriteNode(texture: textureWithName("event.ramen.1.png"), color: SKColor.red, size: CGSize(width: 0,height: 0))
 	
 	init(x:Int,y:Int,spell:Personas! = nil, isWizard:Bool = false, orientation:Orientation = Orientation.l)
 	{
@@ -16,7 +16,7 @@ class Ramen : Wizard
 		
 		sprite.texture = textureWithName("event.ramen.absent.png")
 		
-		characterSprite = SKSpriteNode(texture: nil, color: SKColor.redColor(), size: sprite.size)
+		characterSprite = SKSpriteNode(texture: nil, color: SKColor.red, size: sprite.size)
 		characterSprite.size = sprite.size
 		characterSprite.position = sprite_position
 		addChild(characterSprite)
@@ -75,7 +75,7 @@ class Ramen : Wizard
 		if isWizard == false { return }
 		
 		if player.hasSpell(self) == false  {
-			dialogSprite.runAction(SKAction.fadeAlphaTo(1, duration: 0.1))
+			dialogSprite.run(SKAction.fadeAlpha(to: 1, duration: 0.1))
 			dialogSprite.texture = textureWithName("notification.\(spell).png")
 		}
 	}
@@ -106,8 +106,8 @@ class Ramen : Wizard
 			}
 		}
 		else if isWizard == false && isKnown == false {
-			let action_fade = SKAction.fadeAlphaTo(0, duration: 1)
-			characterSprite.runAction(action_fade)
+			let action_fade = SKAction.fadeAlpha(to: 0, duration: 1)
+			characterSprite.run(action_fade)
 			isKnown = true
 			dialog.showModal(dialogs.ramen(), eventName: "ramen")
 			audio.play(.dialog, name: "ramen")

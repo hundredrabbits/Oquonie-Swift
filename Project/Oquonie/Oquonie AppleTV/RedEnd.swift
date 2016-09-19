@@ -23,12 +23,12 @@ class RedEnd : Event
 		player.lock()
 		dialog.showModal(dialogs.end1(), eventName: "redghost")
 		
-		self.runAction(SKAction.fadeAlphaTo(0, duration: 2),completion:{
+		self.run(SKAction.fadeAlpha(to: 0, duration: 2),completion:{
 			self.updateSprite("event.redgirl.1.png")
-			self.runAction(SKAction.fadeAlphaTo(1, duration: 2),completion:{
+			self.run(SKAction.fadeAlpha(to: 1, duration: 2),completion:{
 				dialog.hideModal()
-				NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: "dialog2", userInfo: nil, repeats: false)
-				NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "leave", userInfo: nil, repeats: false)
+				Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(RedEnd.dialog2), userInfo: nil, repeats: false)
+				Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(RedEnd.leave), userInfo: nil, repeats: false)
 			})
 		})
 		audio.play(.dialog, name: "nepturne")

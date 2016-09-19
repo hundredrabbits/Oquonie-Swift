@@ -17,7 +17,7 @@ class DoorRed : Door
 		self.to_y = to_y
 	}
 	
-	override func bind(node:Tile)
+	override func bind(_ node:Tile)
 	{
 		target = node
 		

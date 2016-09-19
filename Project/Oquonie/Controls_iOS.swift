@@ -7,35 +7,35 @@ import Foundation
 
 var touch_origin:CGPoint!
 var touch_hold:CGPoint!
-var touchTimer:NSTimer!
+var touchTimer:Timer!
 var isHolding:Bool = false
 
 extension MainViewController
 {	
-	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
 	{
 		if player == nil { return }
 		
 		if touchTimer != nil { touchTimer.invalidate() }
 		
 		if let touch = touches.first {
-			let point = touch.locationInView(self.view)
+			let point = touch.location(in: self.view)
 			touch_origin = point
 		}
-		super.touchesBegan(touches, withEvent:event)
+		super.touchesBegan(touches, with:event)
 		
-		touchTimer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "touchesHeld", userInfo: nil, repeats: true)
+		touchTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(MainViewController.touchesHeld), userInfo: nil, repeats: true)
 	}
 	
-	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?)
+	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
 	{
 		if player == nil { return }
 		
 		if let touch = touches.first {
-			let point = touch.locationInView(self.view)
+			let point = touch.location(in: self.view)
 			touch_hold = point
 		}
-		super.touchesMoved(touches, withEvent:event)
+		super.touchesMoved(touches, with:event)
 	}
 	
 	func touchesHeld()
@@ -51,7 +51,7 @@ extension MainViewController
 		}
 	}
 	
-	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?)
+	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?)
 	{
 		if player == nil { return }
 		
@@ -61,7 +61,7 @@ extension MainViewController
 			return
 		}
 		if let touch = touches.first {
-			let point = touch.locationInView(self.view)
+			let point = touch.location(in: self.view)
 			
 			if distanceBetweenTwoPoints(point, b: touch_origin) > self.view.frame.width/10 {
 				if point.y < touch_origin.y && point.x > touch_origin.x { player.move(1, y: 0) }
@@ -73,12 +73,12 @@ extension MainViewController
 				poke(point)
 			}
 		}
-		super.touchesEnded(touches, withEvent:event)
+		super.touchesEnded(touches, with:event)
 		
 		touchTimer.invalidate()
 	}
 	
-	func poke(point:CGPoint)
+	func poke(_ point:CGPoint)
 	{
 		if player == nil { return }
 		
@@ -100,12 +100,12 @@ extension MainViewController
 		audio.play(.interface, name: "click")
 	}
 	
-	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
+	override var supportedInterfaceOrientations : UIInterfaceOrientationMask
 	{
-		if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-			return .AllButUpsideDown
+		if UIDevice.current.userInterfaceIdiom == .phone {
+			return .allButUpsideDown
 		} else {
-			return .All
+			return .all
 		}
 	}
 	
@@ -114,7 +114,7 @@ extension MainViewController
 		super.didReceiveMemoryWarning()
 	}
 	
-	override func prefersStatusBarHidden() -> Bool
+	override var prefersStatusBarHidden : Bool
 	{
 		return true
 	}

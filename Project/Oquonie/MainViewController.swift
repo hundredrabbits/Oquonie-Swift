@@ -19,7 +19,7 @@ class MainViewController: UIViewController
 		if let scene = SplashGameScene(fileNamed:"Splash"){
 			let skView = self.view as! SKView
 			scene.viewController = self
-			scene.scaleMode = .AspectFill
+			scene.scaleMode = .aspectFill
 			skView.presentScene(scene)
 			scene.start()
 		}
@@ -36,7 +36,7 @@ class MainViewController: UIViewController
 			let skView = self.view as! SKView
 			scene.viewController = self
 			scene.size = self.view.frame.size
-			scene.scaleMode = .AspectFit
+			scene.scaleMode = .aspectFit
 			skView.presentScene(scene)
 			scene.start()
             self.installGestures()

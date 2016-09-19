@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "57A668601BEE98AA007CDD8B"
+               BlueprintIdentifier = "57A880DC1C0D43A500629E84"
                BuildableName = "Oquonie AppleTV.app"
                BlueprintName = "Oquonie AppleTV"
                ReferencedContainer = "container:Oquonie.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "57A668601BEE98AA007CDD8B"
+            BlueprintIdentifier = "57A880DC1C0D43A500629E84"
             BuildableName = "Oquonie AppleTV.app"
             BlueprintName = "Oquonie AppleTV"
             ReferencedContainer = "container:Oquonie.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "57A668601BEE98AA007CDD8B"
+            BlueprintIdentifier = "57A880DC1C0D43A500629E84"
             BuildableName = "Oquonie AppleTV.app"
             BlueprintName = "Oquonie AppleTV"
             ReferencedContainer = "container:Oquonie.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "57A668601BEE98AA007CDD8B"
+            BlueprintIdentifier = "57A880DC1C0D43A500629E84"
             BuildableName = "Oquonie AppleTV.app"
             BlueprintName = "Oquonie AppleTV"
             ReferencedContainer = "container:Oquonie.xcodeproj">

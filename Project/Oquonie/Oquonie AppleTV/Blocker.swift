@@ -17,8 +17,8 @@ class Blocker : Event
 		self.newDialog = newDialog
 		self.eventName = eventName
 		
-		if eventName != nil { updateSprite("event.\(self.eventName).png") }
-		else { updateSprite("blocker.\(id).png") }
+		if eventName != nil { updateSprite("event.\(self.eventName!).png") }
+		else { updateSprite("blocker.\(id!).png") }
 		
 		if orientation == Orientation.r { sprite.xScale = -1.0 }
 	}
