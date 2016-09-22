@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>StickerPackExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -53,6 +58,11 @@
 			<true/>
 		</dict>
 		<key>571A8C7D1A79341D008E846E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5779C4701D935CFC004BD79B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

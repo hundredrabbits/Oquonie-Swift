@@ -1,0 +1,71 @@
+{
+  "stickers" : [
+    {
+      "filename" : "event.catfishbird.portrait.sticker"
+    },
+    {
+      "filename" : "event.photo.portrait.sticker"
+    },
+    {
+      "filename" : "event.devine.portrait.sticker"
+    },
+    {
+      "filename" : "event.neomine.portrait.sticker"
+    },
+    {
+      "filename" : "event.noface.portrait.sticker"
+    },
+    {
+      "filename" : "event.music.portrait.sticker"
+    },
+    {
+      "filename" : "event.owl.portrait.sticker"
+    },
+    {
+      "filename" : "event.nephtaline.portrait.sticker"
+    },
+    {
+      "filename" : "event.redghost.portrait.sticker"
+    },
+    {
+      "filename" : "event.redgirl.portrait.sticker"
+    },
+    {
+      "filename" : "event.nemedique.portrait.sticker"
+    },
+    {
+      "filename" : "event.rekka.portrait.sticker"
+    },
+    {
+      "filename" : "event.radio.portrait.sticker"
+    },
+    {
+      "filename" : "event.shark.portrait.sticker"
+    },
+    {
+      "filename" : "event.necomedre.portrait.sticker"
+    },
+    {
+      "filename" : "event.petunia.portrait.sticker"
+    },
+    {
+      "filename" : "event.nestorine.portrait.sticker"
+    },
+    {
+      "filename" : "event.boss.portrait.sticker"
+    },
+    {
+      "filename" : "event.hiversaire.portrait.sticker"
+    },
+    {
+      "filename" : "event.ramen.portrait.sticker"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "grid-size" : "regular"
+  }
+}

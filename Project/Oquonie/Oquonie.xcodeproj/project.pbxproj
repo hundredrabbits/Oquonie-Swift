@@ -65,6 +65,9 @@
 		5770E39D1C08B41800297E89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770E39C1C08B41800297E89 /* MainViewController.swift */; };
 		57726F561C1926910097FE0D /* dialog.nastazie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57726F551C1926910097FE0D /* dialog.nastazie.wav */; };
 		5773F9E51C0DE4FF00CC1E08 /* Controls_AppleTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573697E01C0B5165006B9A74 /* Controls_AppleTV.swift */; };
+		5779C4721D935CFC004BD79B /* StickerPackExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5779C4711D935CFC004BD79B /* StickerPackExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5779C4761D935CFC004BD79B /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 5779C4751D935CFC004BD79B /* Stickers.xcstickers */; };
+		5779C4771D935CFC004BD79B /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 5779C4751D935CFC004BD79B /* Stickers.xcstickers */; };
 		579304921BF634E6005583CE /* letter.spell.blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 579304911BF634E6005583CE /* letter.spell.blank.png */; };
 		579304941BF635D0005583CE /* letter.spell.nemedique.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755511BF2D78200638CAE /* letter.spell.nemedique.png */; };
 		579304951BF635D0005583CE /* letter.spell.nestorine.png in Resources */ = {isa = PBXBuildFile; fileRef = 570755521BF2D78300638CAE /* letter.spell.nestorine.png */; };
@@ -1062,6 +1065,30 @@
 		57D81F271C07EEE6008FAE67 /* Splash.sks in Resources */ = {isa = PBXBuildFile; fileRef = 57D81F261C07EEE6008FAE67 /* Splash.sks */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5779C4731D935CFC004BD79B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03BBFAA0178A9E4E00E79C3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5779C4701D935CFC004BD79B;
+			remoteInfo = StickerPackExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5779C47D1D935CFC004BD79B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5779C4721D935CFC004BD79B /* StickerPackExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		033124B518A30EEB00388D2F /* effect.walk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = effect.walk.wav; path = en.sounds/effect.walk.wav; sourceTree = "<group>"; };
 		033124B718A30F8B00388D2F /* effect.warp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = effect.warp.wav; path = en.sounds/effect.warp.wav; sourceTree = "<group>"; };
@@ -1562,6 +1589,9 @@
 		576570671BF388AD00F563B8 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
 		5770E39C1C08B41800297E89 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57726F551C1926910097FE0D /* dialog.nastazie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dialog.nastazie.wav; path = en.sounds/dialog.nastazie.wav; sourceTree = "<group>"; };
+		5779C46E1D935CFC004BD79B /* Oquonie Stickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Oquonie Stickers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5779C4711D935CFC004BD79B /* StickerPackExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StickerPackExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5779C4751D935CFC004BD79B /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; name = Stickers.xcstickers; path = StickerPackExtension/Stickers.xcstickers; sourceTree = "<group>"; };
 		578BFD871BF0E6D8006DAF1C /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = "Oquonie AppleTV/Tile.swift"; sourceTree = "<group>"; };
 		578BFDFF1BF0EA52006DAF1C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Oquonie AppleTV/Settings.swift"; sourceTree = "<group>"; };
 		579304911BF634E6005583CE /* letter.spell.blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter.spell.blank.png; path = en.assets/letter.spell.blank.png; sourceTree = "<group>"; };
@@ -1664,6 +1694,7 @@
 			isa = PBXGroup;
 			children = (
 				57618A4B1BFBDCB70060E177 /* Todo */,
+				5779C4751D935CFC004BD79B /* Stickers.xcstickers */,
 				57D81F1D1C07E92B008FAE67 /* Splash */,
 				57C843E61BF2356300288847 /* Oquonie Core */,
 				57A668481BEE9894007CDD8B /* Oquonie iOS */,
@@ -1678,6 +1709,8 @@
 			children = (
 				57A668471BEE9894007CDD8B /* Oquonie iOS.app */,
 				57A880DD1C0D43A500629E84 /* Oquonie AppleTV.app */,
+				5779C46E1D935CFC004BD79B /* Oquonie Stickers.app */,
+				5779C4711D935CFC004BD79B /* StickerPackExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2373,6 +2406,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5779C46D1D935CFC004BD79B /* Oquonie Stickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5779C47E1D935CFC004BD79B /* Build configuration list for PBXNativeTarget "Oquonie Stickers" */;
+			buildPhases = (
+				5779C46C1D935CFC004BD79B /* Resources */,
+				5779C47D1D935CFC004BD79B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5779C4741D935CFC004BD79B /* PBXTargetDependency */,
+			);
+			name = "Oquonie Stickers";
+			productName = "Oquonie Stickers";
+			productReference = 5779C46E1D935CFC004BD79B /* Oquonie Stickers.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		5779C4701D935CFC004BD79B /* StickerPackExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5779C47C1D935CFC004BD79B /* Build configuration list for PBXNativeTarget "StickerPackExtension" */;
+			buildPhases = (
+				5779C46F1D935CFC004BD79B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StickerPackExtension;
+			productName = StickerPackExtension;
+			productReference = 5779C4711D935CFC004BD79B /* StickerPackExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
 		57A668461BEE9894007CDD8B /* Oquonie iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57A6685A1BEE9894007CDD8B /* Build configuration list for PBXNativeTarget "Oquonie iOS" */;
@@ -2418,6 +2483,16 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = XXIIVV;
 				TargetAttributes = {
+					5779C46D1D935CFC004BD79B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = B948MFAE5C;
+						ProvisioningStyle = Automatic;
+					};
+					5779C4701D935CFC004BD79B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = B948MFAE5C;
+						ProvisioningStyle = Automatic;
+					};
 					57A668461BEE9894007CDD8B = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = B948MFAE5C;
@@ -2444,11 +2519,29 @@
 			targets = (
 				57A668461BEE9894007CDD8B /* Oquonie iOS */,
 				57A880DC1C0D43A500629E84 /* Oquonie AppleTV */,
+				5779C46D1D935CFC004BD79B /* Oquonie Stickers */,
+				5779C4701D935CFC004BD79B /* StickerPackExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5779C46C1D935CFC004BD79B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5779C4771D935CFC004BD79B /* Stickers.xcstickers in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5779C46F1D935CFC004BD79B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5779C4761D935CFC004BD79B /* Stickers.xcstickers in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57A668451BEE9894007CDD8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3535,6 +3628,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5779C4741D935CFC004BD79B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5779C4701D935CFC004BD79B /* StickerPackExtension */;
+			targetProxy = 5779C4731D935CFC004BD79B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		57A880E91C0D43A600629E84 /* AppleTV.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -3620,6 +3721,102 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5779C4781D935CFC004BD79B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = B948MFAE5C;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Oquonie Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5779C4791D935CFC004BD79B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = B948MFAE5C;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Oquonie Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5779C47A1D935CFC004BD79B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = B948MFAE5C;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = StickerPackExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-Stickers.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5779C47B1D935CFC004BD79B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = B948MFAE5C;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = StickerPackExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxiivv.Oquonie-Stickers.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -3760,6 +3957,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5779C47C1D935CFC004BD79B /* Build configuration list for PBXNativeTarget "StickerPackExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5779C47A1D935CFC004BD79B /* Debug */,
+				5779C47B1D935CFC004BD79B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5779C47E1D935CFC004BD79B /* Build configuration list for PBXNativeTarget "Oquonie Stickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5779C4781D935CFC004BD79B /* Debug */,
+				5779C4791D935CFC004BD79B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		57A6685A1BEE9894007CDD8B /* Build configuration list for PBXNativeTarget "Oquonie iOS" */ = {
 			isa = XCConfigurationList;
